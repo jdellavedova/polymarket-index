@@ -1,0 +1,112 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="Methodology" description="How the Della Vedova Prediction Market Indices are constructed.">
+  <h1>Methodology</h1>
+  <p class="subtitle">Construction, data sources, and reproducibility notes for each published index.</p>
+
+  <h2>Data source</h2>
+  <p>
+    All indices derive from the universe of resolved Polymarket trades on the Polygon blockchain,
+    November 2022 to present (222M resolved trades across 1.98M wallets as of the latest snapshot).
+    Trades are deduplicated against the Paradigm events index and joined against the Polymarket
+    market-to-outcome mapping.
+  </p>
+  <p>
+    The framework applies to any binary prediction market with public settlement data. Kalshi integration
+    is contingent on wallet-level data access and is planned for a future release.
+  </p>
+
+  <h2>Wallet classification</h2>
+  <p>
+    Wallets are partitioned into five exclusive classes using Paper 1's rule: <em>bot</em> (more than 50 trades
+    per active day or more than 1,000 total trades), <em>sophisticated</em> (more than $10K volume AND
+    HHI less than 0.5 AND span more than 30 days), <em>active retail</em> (10 to 1,000 trades),
+    <em>casual</em> (2 to 9 trades), and <em>one-shot</em> (single trade).
+  </p>
+
+  <h2>Indices</h2>
+
+  <h3>Probability Weighting Index (PWI)</h3>
+  <p>
+    Composite z-score of two weekly moments: mean calibration error (absolute gap between price and realized
+    frequency, pooled across all trades) and longshot fraction (share of trades at prices below 10%). Positive
+    PWI indicates elevated probability distortion; negative indicates compressed distortion.
+  </p>
+
+  <h3>Market Calibration Curve</h3>
+  <p>
+    Twenty price bins from 2.5% to 97.5%; for each bin we report the realized win rate across all non-bot
+    trades in the pooled sample, with a binomial confidence interval. A one-parameter Prelec function
+    (w(p) = exp(-(-log p)^alpha)) is fit by weighted nonlinear least squares with weights proportional to
+    trade counts. Reports alpha and the fit R-squared.
+  </p>
+
+  <h3>Execution Edge Monitor</h3>
+  <p>
+    Weekly Prelec alpha fit separately for each wallet class. The index value is alpha(bot) - alpha(active retail)
+    each week. A behavioral proxy for the bot-retail execution divergence documented in Paper 1
+    (bots capture -4.25 bps effective spread; active retail pays +11.68 bps).
+  </p>
+
+  <h3>Private Information Index (PII)</h3>
+  <p>
+    Wallet-level excess accuracy (accuracy - max(p, 1-p)) with a one-sided binomial z-test. Flagging threshold
+    is z &gt; 2.326 (p &lt; 0.01) with positive excess accuracy. Holm-Bonferroni and Benjamini-Hochberg
+    family-wise and false-discovery-rate corrections reported separately. Sub-populations are split by the
+    MNPI taxonomy (vote, action, performance, stochastic), ordered by a priori MNPI risk.
+  </p>
+
+  <h3>Bot Share of Volume</h3>
+  <p>Weekly share of trade count attributable to wallets in the <em>bot</em> class.</p>
+
+  <h3>Longshot / Favorite Price Gap</h3>
+  <p>
+    Realized win rate in the longshot price band (prices below 10%) minus the band midpoint (5%). Positive
+    values indicate longshots are underpriced; negative values indicate the traditional favorite-longshot bias.
+    Favorite-side gap is planned for a future release.
+  </p>
+
+  <h3>Market Efficiency Trend</h3>
+  <p>
+    Weekly R-squared of the one-parameter Prelec fit applied to active retail trades. Higher values mean the
+    week's calibration gap is well-described by a single behavioral parameter; lower values indicate
+    idiosyncratic shocks dominate.
+  </p>
+
+  <h2>Rolling statistics</h2>
+  <p>
+    Each weekly index is published with 4-, 13-, and 52-week moving averages and a 52-week rolling z-score.
+    The z-score requires at least 13 non-null observations before reporting. The "notable movements"
+    block on the landing page fires whenever the absolute z-score exceeds 1.0.
+  </p>
+
+  <h2>Refresh schedule</h2>
+  <p>
+    Indices refresh every Sunday at 22:00 Pacific time. The pipeline extracts new Polygon blocks via Alchemy,
+    updates the processed-trade panel, re-runs all aggregations, and pushes the updated CSVs and JSONs to
+    the public repository. Each refresh is tagged with a semantic version; each tag is archived to Zenodo
+    with a permanent DOI.
+  </p>
+
+  <h2>Reproducibility</h2>
+  <p>
+    All aggregation code is in the public repository, with pinned dependencies in <span class="mono">requirements.txt</span>.
+    The processed trade panel is derived from public blockchain data and is regenerable end-to-end. The
+    CHANGELOG records every methodology change with date and rationale; breaking changes to any published
+    column trigger a major version bump and a one-release deprecation window.
+  </p>
+
+  <h2>Daubert mapping</h2>
+  <p>
+    Each index design is mapped to the four Rule 702 factors. <strong>Testable</strong>: every index reports
+    an explicit null and the test statistic is recomputable. <strong>Known error rate</strong>: permutation-
+    validated false positive rates for the PII; bootstrap confidence intervals for the calibration and PWI.
+    <strong>Peer review</strong>: each index is tied to at least one working paper under review at a
+    peer-reviewed journal. <strong>General acceptance</strong>: the primitives (Kyle 1985, Glosten-Milgrom 1985,
+    Fama 1972, Anand et al. 2012, Tversky-Kahneman 1992, Prelec 1998) are standard in the literature.
+  </p>
+
+  <h2>Citation</h2>
+  <div class="citation">Della Vedova, J. (2026). Della Vedova Prediction Market Indices (DV-PMI). Version 0.1.0. https://jdellavedova.com</div>
+</Base>

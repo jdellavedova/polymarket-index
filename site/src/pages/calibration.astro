@@ -1,0 +1,61 @@
+---
+import Base from "../layouts/Base.astro";
+import CalibrationChart from "../components/CalibrationChart.astro";
+import cal from "../../public/data/calibration_latest.json";
+
+function fmt(n, d = 4) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : n.toFixed(d); }
+---
+<Base title="Market Calibration Curve" description="Polymarket non-bot realized win rate by price bin with Prelec fit.">
+  <h1>Market Calibration Curve</h1>
+  <p class="subtitle">Realized win rate by price bin across all non-bot Polymarket trades. One-parameter Prelec fit overlaid.</p>
+
+  <p>
+    Pooled across all resolved non-bot trades ({cal.n_trades_total.toLocaleString()} trades), the Prelec
+    weighting function fits with alpha = <strong>{fmt(cal.prelec_alpha, 3)}</strong> and
+    R-squared = <strong>{fmt(cal.prelec_r2, 3)}</strong>.
+  </p>
+
+  <CalibrationChart dataUrl="/data/calibration_latest.json" height={420} />
+  <p class="muted" style="font-size:14px; margin-top:-14px;">
+    Dots: realized win rate by price bin, sized by trade count. Vertical bars: 95% binomial CIs.
+    Dashed diagonal: identity (a calibrated market). Solid blue: fitted Prelec curve.
+  </p>
+
+  <h2>Bin-level data</h2>
+  <table>
+    <tr><th>Price bin</th><th>Realized win rate</th><th>n trades</th><th>Calibration gap</th></tr>
+    {cal.bins.map(b => (
+      <tr>
+        <td class="mono">{(b.price_bin_center * 100).toFixed(1)}%</td>
+        <td class="mono">{(b.realized_win_rate * 100).toFixed(2)}%</td>
+        <td class="mono">{b.n_trades.toLocaleString()}</td>
+        <td class="mono">{(b.calibration_gap >= 0 ? "+" : "") + (b.calibration_gap * 100).toFixed(2) + "%"}</td>
+      </tr>
+    ))}
+  </table>
+
+  <h2>Methodology</h2>
+  <p>
+    Non-bot trades (casual, one-shot, active retail, and sophisticated classes) are pooled into 20 price bins of
+    width 5%. For each bin, the realized win rate is the share of trades in that bin whose market resolved in
+    favor of the position taken. A one-parameter Prelec weighting function w(p) = exp(-(-log p)^alpha) is fit by
+    weighted nonlinear least squares, with weights proportional to trade counts. Alpha less than 1 implies the
+    classical inverse-S weighting (overweight tails); alpha greater than 1 implies the opposite.
+  </p>
+
+  <h2>Data</h2>
+  <p>
+    <a href="/data/calibration_snapshot.csv">calibration_snapshot.csv</a>
+    &middot;
+    <a href="/data/calibration_latest.json">calibration_latest.json</a> (includes the fitted curve)
+  </p>
+
+  <h2>Cite</h2>
+  <div class="citation">{`@misc{dellavedova2026calibration,
+  title        = {Market Calibration Curve},
+  author       = {Della Vedova, Joshua},
+  year         = {2026},
+  version      = {0.1.0},
+  url          = {https://jdellavedova.com/calibration}
+}`}</div>
+</Base>

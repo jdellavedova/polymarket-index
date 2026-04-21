@@ -1,0 +1,22 @@
+---
+export interface Props {
+  name: string;
+  value: string;
+  delta?: string;
+  deltaSign?: "pos" | "neg" | "neutral";
+  meta?: string;
+  href?: string;
+}
+const { name, value, delta, deltaSign = "neutral", meta, href } = Astro.props;
+const Tag = href ? "a" : "div";
+---
+<Tag class="index-card" href={href}>
+  <div class="name">{name}</div>
+  <div class="value">{value}</div>
+  {delta && (
+    <div class={`delta ${deltaSign === "pos" ? "pos" : deltaSign === "neg" ? "neg" : ""}`}>
+      {delta}
+    </div>
+  )}
+  {meta && <div class="meta">{meta}</div>}
+</Tag>

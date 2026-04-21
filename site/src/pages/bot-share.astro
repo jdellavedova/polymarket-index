@@ -1,0 +1,65 @@
+---
+import Base from "../layouts/Base.astro";
+import TimeSeriesChart from "../components/TimeSeriesChart.astro";
+import bot from "../../public/data/bot_share_latest.json";
+
+function pct(n, d = 1) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n * 100).toFixed(d) + "%"; }
+function signed(n, d = 2) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n >= 0 ? "+" : "") + n.toFixed(d); }
+---
+<Base title="Bot Share of Volume" description="Weekly share of Polymarket trades attributed to algorithmic wallets.">
+  <h1>Bot Share of Volume</h1>
+  <p class="subtitle">Weekly share of Polymarket trades executed by algorithmic wallets.</p>
+
+  <p>
+    As of <strong>{bot.as_of}</strong>, the bot share was <strong>{pct(bot.value, 1)}</strong> of weekly trades,
+    with a 52-week rolling z-score of <strong>{signed(bot.z52w, 2)}</strong>.
+    13-week moving average: <strong>{pct(bot.ma13w, 1)}</strong>.
+    Active retail share: <strong>{pct(bot.retail_share, 1)}</strong>.
+    Sophisticated share: <strong>{pct(bot.sophisticated_share, 1)}</strong>.
+    Based on <strong>{bot.n_trades_week.toLocaleString()}</strong> trades this week.
+  </p>
+
+  <h2>Weekly history</h2>
+  <TimeSeriesChart
+    dataUrl="/data/bot_share_timeseries.json"
+    yField="bot_share"
+    smoothField="bot_share_ma13w"
+    yLabel="share of weekly trades"
+    zeroLine={false}
+  />
+
+  <h2>52-week rolling statistics</h2>
+  <table>
+    <tr><th>Statistic</th><th>Value</th></tr>
+    <tr><td>Mean</td><td class="mono">{pct(bot.rolling.mean_52w, 1)}</td></tr>
+    <tr><td>SD</td><td class="mono">{pct(bot.rolling.sd_52w, 2)}</td></tr>
+    <tr><td>Min</td><td class="mono">{pct(bot.rolling.min_52w, 1)}</td></tr>
+    <tr><td>Max</td><td class="mono">{pct(bot.rolling.max_52w, 1)}</td></tr>
+  </table>
+
+  <h2>Methodology</h2>
+  <p>
+    Wallets are classified as <em>bot</em> if they made more than 50 trades on their peak day or more than 1,000
+    trades total. This rule follows Paper 1. Bot share is the fraction of weekly trade count attributable to
+    bot-class wallets. The remainder is split among active retail (10-1,000 trades), sophisticated (large volume
+    with diversified HHI), casual (2-9 trades), and one-shot (single trade) classes.
+  </p>
+
+  <h2>Data</h2>
+  <p>
+    <a href="/data/bot_share_history.csv">bot_share_history.csv</a>
+    &middot;
+    <a href="/data/bot_share_latest.json">bot_share_latest.json</a>
+    &middot;
+    <a href="/data/bot_share_timeseries.json">bot_share_timeseries.json</a>
+  </p>
+
+  <h2>Cite</h2>
+  <div class="citation">{`@misc{dellavedova2026botshare,
+  title        = {Bot Share of Volume},
+  author       = {Della Vedova, Joshua},
+  year         = {2026},
+  version      = {0.1.0},
+  url          = {https://jdellavedova.com/bot-share}
+}`}</div>
+</Base>

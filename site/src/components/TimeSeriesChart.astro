@@ -1,0 +1,49 @@
+---
+export interface Props {
+  dataUrl: string;
+  xField?: string;
+  yField?: string;
+  smoothField?: string;
+  yLabel?: string;
+  height?: number;
+  zeroLine?: boolean;
+  containerId?: string;
+}
+const {
+  dataUrl,
+  xField = "date",
+  yField = "value",
+  smoothField,
+  yLabel = "",
+  height = 280,
+  zeroLine = false,
+  containerId = "chart-" + Math.random().toString(36).slice(2, 9),
+} = Astro.props;
+---
+<div class="chart" id={containerId} style={`min-height:${height}px`}></div>
+<script type="module" define:vars={{ dataUrl, xField, yField, smoothField, yLabel, height, zeroLine, containerId }}>
+  import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/+esm";
+  const res = await fetch(dataUrl);
+  const raw = await res.json();
+  const data = raw.map(d => ({ ...d, [xField]: new Date(d[xField]) }));
+  const marks = [
+    Plot.ruleY(zeroLine ? [0] : []),
+    Plot.lineY(data, { x: xField, y: yField, stroke: "#75bee9", strokeWidth: 1.2 }),
+  ];
+  if (smoothField) {
+    marks.push(Plot.lineY(data, { x: xField, y: smoothField, stroke: "#003b70", strokeWidth: 2 }));
+  }
+  const el = document.getElementById(containerId);
+  el.replaceChildren(
+    Plot.plot({
+      width: Math.min(el.clientWidth || 680, 680),
+      height,
+      marginLeft: 48,
+      marginRight: 12,
+      marginBottom: 36,
+      y: { label: yLabel, grid: true },
+      x: { label: "" },
+      marks,
+    })
+  );
+</script>

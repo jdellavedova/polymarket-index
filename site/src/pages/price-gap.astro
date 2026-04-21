@@ -1,0 +1,62 @@
+---
+import Base from "../layouts/Base.astro";
+import TimeSeriesChart from "../components/TimeSeriesChart.astro";
+import pg from "../../public/data/price_gap_latest.json";
+
+function fmt(n, d = 3) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : n.toFixed(d); }
+function signed(n, d = 3) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n >= 0 ? "+" : "") + n.toFixed(d); }
+function pct(n, d = 1) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n * 100).toFixed(d) + "%"; }
+---
+<Base title="Longshot / Favorite Price Gap" description="Weekly longshot underpricing signal from Polymarket.">
+  <h1>Longshot / Favorite Price Gap</h1>
+  <p class="subtitle">Realized win rate of longshot trades minus the longshot-band midpoint.</p>
+
+  <p>
+    As of <strong>{pg.as_of}</strong> (week {pg.week}), the longshot gap is <strong>{signed(pg.value, 3)}</strong>,
+    with a 52-week rolling z-score of <strong>{signed(pg.z52w, 2)}</strong>.
+    Longshot win rate: <strong>{pct(pg.components.longshot_winrate, 2)}</strong>.
+    Longshot fraction: <strong>{pct(pg.components.longshot_fraction, 1)}</strong>.
+  </p>
+
+  <h2>Weekly history</h2>
+  <TimeSeriesChart
+    dataUrl="/data/price_gap_timeseries.json"
+    yField="longshot_gap"
+    smoothField="longshot_gap_ma13w"
+    yLabel="longshot winrate minus 5%"
+    zeroLine={true}
+  />
+  <p class="muted" style="font-size:14px; margin-top:-18px;">
+    Positive: longshots are underpriced (realized wins exceed the band midpoint). Negative: the classical favorite-longshot bias.
+  </p>
+
+  <h2>Methodology</h2>
+  <p>
+    Trades at prices below 10% are grouped into the <em>longshot</em> band. Each week we compute the realized
+    win rate among those trades and subtract the band midpoint (5%). The resulting gap is the weekly
+    underpricing signal. In most weeks, the gap is small and near zero; large positive gaps indicate that
+    longshot buyers are systematically winning more than their implied probability, a rare but persistent
+    deviation from mean pricing efficiency.
+  </p>
+  <p>
+    The favorite-side analog (top price bin) requires a separate weekly extraction and is planned for a future release.
+  </p>
+
+  <h2>Data</h2>
+  <p>
+    <a href="/data/price_gap_history.csv">price_gap_history.csv</a>
+    &middot;
+    <a href="/data/price_gap_latest.json">price_gap_latest.json</a>
+    &middot;
+    <a href="/data/price_gap_timeseries.json">price_gap_timeseries.json</a>
+  </p>
+
+  <h2>Cite</h2>
+  <div class="citation">{`@misc{dellavedova2026pricegap,
+  title        = {Longshot / Favorite Price Gap},
+  author       = {Della Vedova, Joshua},
+  year         = {2026},
+  version      = {0.1.0},
+  url          = {https://jdellavedova.com/price-gap}
+}`}</div>
+</Base>

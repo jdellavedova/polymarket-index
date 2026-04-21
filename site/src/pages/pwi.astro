@@ -1,0 +1,90 @@
+---
+import Base from "../layouts/Base.astro";
+import TimeSeriesChart from "../components/TimeSeriesChart.astro";
+import pwi from "../../public/data/pwi_latest.json";
+
+function fmt(n: number | null | undefined, d = 2) {
+  if (n === null || n === undefined || Number.isNaN(n)) return "n/a";
+  return n.toFixed(d);
+}
+function signed(n: number | null | undefined, d = 2) {
+  if (n === null || n === undefined || Number.isNaN(n)) return "n/a";
+  return (n >= 0 ? "+" : "") + n.toFixed(d);
+}
+---
+<Base title="Probability Weighting Index (PWI)" description="Weekly composite of calibration error and longshot fraction across 233M Polymarket trades.">
+  <h1>Probability Weighting Index (PWI)</h1>
+  <p class="subtitle">Composite z-score of weekly calibration error and longshot fraction. Positive values indicate elevated probability distortion.</p>
+
+  <p>
+    As of <strong>{pwi.as_of}</strong> (week {pwi.week}), the PWI stands at <strong>{fmt(pwi.value, 2)}</strong>,
+    with a 52-week rolling z-score of <strong>{signed(pwi.z52w, 2)}</strong>. The 13-week moving average is
+    <strong>{fmt(pwi.ma13w, 2)}</strong>; the 52-week moving average is <strong>{fmt(pwi.ma52w, 2)}</strong>.
+    Based on <strong>{pwi.n_trades_week.toLocaleString()}</strong> resolved trades in the latest week.
+  </p>
+
+  <h2>Weekly history</h2>
+  <TimeSeriesChart
+    dataUrl="/data/pwi_timeseries.json"
+    yField="pwi"
+    smoothField="pwi_ma13w"
+    yLabel="PWI (composite z-score)"
+    zeroLine={true}
+  />
+  <p class="muted" style="font-size:14px; margin-top:-18px;">
+    Thin line: weekly PWI. Bold line: 13-week moving average. Horizontal rule at zero marks the sample mean by construction.
+  </p>
+
+  <h2>Components</h2>
+  <table>
+    <tr><th>Component</th><th>Latest value</th><th>What it captures</th></tr>
+    <tr><td>Mean calibration error</td><td class="mono">{fmt(pwi.components.mean_cal_error, 4)}</td><td>Pooled absolute gap between price and realized frequency</td></tr>
+    <tr><td>Longshot fraction</td><td class="mono">{fmt(pwi.components.longshot_fraction, 4)}</td><td>Share of trades at prices below 10%</td></tr>
+    <tr><td>Longshot win rate</td><td class="mono">{fmt(pwi.components.longshot_winrate, 4)}</td><td>Realized win rate among longshot trades</td></tr>
+  </table>
+
+  <h2>52-week rolling statistics</h2>
+  <table>
+    <tr><th>Statistic</th><th>Value</th></tr>
+    <tr><td>Mean</td><td class="mono">{fmt(pwi.rolling.mean_52w, 3)}</td></tr>
+    <tr><td>SD</td><td class="mono">{fmt(pwi.rolling.sd_52w, 3)}</td></tr>
+    <tr><td>Min</td><td class="mono">{fmt(pwi.rolling.min_52w, 3)}</td></tr>
+    <tr><td>Max</td><td class="mono">{fmt(pwi.rolling.max_52w, 3)}</td></tr>
+    <tr><td>Observations</td><td class="mono">{pwi.rolling.n_obs_52w}</td></tr>
+  </table>
+
+  <h2>Methodology</h2>
+  <p>
+    Each week, we compute two moments across all resolved non-bot trades: (i) the volume-weighted absolute gap
+    between trade price and realized outcome frequency (mean calibration error), and (ii) the share of trades
+    transacted at prices below 10% (longshot fraction). Both series are standardized to their full-sample mean
+    and standard deviation, and the PWI is the unweighted mean of the two z-scores. A positive PWI indicates
+    both more mispricing and more tail-chasing than the sample average week.
+  </p>
+  <p>
+    The 52-week rolling z-score requires at least 13 non-null observations and is blank before the 13th week.
+    The "notable movement" threshold on the landing page fires whenever the absolute z-score exceeds 1.0.
+    See the full <a href="/methodology">methodology document</a> for the primitives.
+  </p>
+
+  <h2>Data</h2>
+  <p>
+    <a href="/data/pwi_history.csv">pwi_history.csv</a>
+    {' '}({pwi.n_weeks_history} weeks, from {pwi.first_week})
+    &middot;
+    <a href="/data/pwi_latest.json">pwi_latest.json</a>
+    &middot;
+    <a href="/data/pwi_timeseries.json">pwi_timeseries.json</a>
+  </p>
+
+  <h2>Cite</h2>
+  <div class="citation">{`@misc{dellavedova2026pwi,
+  title        = {Probability Weighting Index},
+  author       = {Della Vedova, Joshua},
+  year         = {2026},
+  version      = {0.1.0},
+  publisher    = {University of San Diego},
+  url          = {https://jdellavedova.com/pwi},
+  note         = {Part of the Della Vedova Prediction Market Indices (DV-PMI)}
+}`}</div>
+</Base>

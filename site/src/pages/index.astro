@@ -1,0 +1,153 @@
+---
+import Base from "../layouts/Base.astro";
+import IndexCard from "../components/IndexCard.astro";
+import TimeSeriesChart from "../components/TimeSeriesChart.astro";
+import CalibrationChart from "../components/CalibrationChart.astro";
+
+import pwi from "../../public/data/pwi_latest.json";
+import execution from "../../public/data/execution_latest.json";
+import botShare from "../../public/data/bot_share_latest.json";
+import priceGap from "../../public/data/price_gap_latest.json";
+import efficiency from "../../public/data/efficiency_latest.json";
+import pii from "../../public/data/pii_latest.json";
+import calibration from "../../public/data/calibration_latest.json";
+
+function fmt(n: number, digits = 2) {
+  if (n === null || n === undefined || Number.isNaN(n)) return "n/a";
+  return n.toFixed(digits);
+}
+function pct(n: number, digits = 1) {
+  if (n === null || n === undefined || Number.isNaN(n)) return "n/a";
+  return (n * 100).toFixed(digits) + "%";
+}
+function signedZ(z: number | null | undefined) {
+  if (z === null || z === undefined || Number.isNaN(z)) return null;
+  return (z >= 0 ? "+" : "") + z.toFixed(2);
+}
+function zSign(z: number | null | undefined): "pos" | "neg" | "neutral" {
+  if (z === null || z === undefined) return "neutral";
+  if (z > 0.5) return "pos";
+  if (z < -0.5) return "neg";
+  return "neutral";
+}
+
+// Build notable movements list (|z52w| > 1)
+const movements: { label: string; z: number }[] = [];
+if (pwi.z52w && Math.abs(pwi.z52w) > 1) movements.push({ label: "Probability Weighting Index", z: pwi.z52w });
+if (execution.z52w && Math.abs(execution.z52w) > 1) movements.push({ label: "Execution Edge gap", z: execution.z52w });
+if (botShare.z52w && Math.abs(botShare.z52w) > 1) movements.push({ label: "Bot Share of Volume", z: botShare.z52w });
+if (priceGap.z52w && Math.abs(priceGap.z52w) > 1) movements.push({ label: "Longshot Price Gap", z: priceGap.z52w });
+if (efficiency.z52w && Math.abs(efficiency.z52w) > 1) movements.push({ label: "Market Efficiency", z: efficiency.z52w });
+
+const asOf = pwi.as_of;
+---
+<Base title="Della Vedova Prediction Market Indices (DV-PMI)" description="Weekly behavioral and microstructure indices from 233M on-chain Polymarket trades.">
+  <h1>Della Vedova Prediction Market Indices</h1>
+  <p class="subtitle">
+    Weekly behavioral and microstructure measurements from 233&thinsp;million on-chain Polymarket trades.
+    Maintained by Joshua Della Vedova, University of San Diego.
+  </p>
+
+  <p>
+    As of <strong>{asOf}</strong>. Next refresh Sunday 22:00 Pacific.
+    See <a href="/methodology">methodology</a>, <a href="/data">full historical downloads</a>, and the
+    <a href="/research">underlying research</a>.
+  </p>
+
+  <h2 style="margin-top:36px">Bot Share of Volume</h2>
+  <TimeSeriesChart
+    dataUrl="/data/bot_share_timeseries.json"
+    yField="bot_share"
+    smoothField="bot_share_ma13w"
+    yLabel="share of weekly trades"
+    zeroLine={false}
+  />
+  <p class="muted" style="font-size:14px; margin-top:-18px;">
+    Weekly share of trades executed by algorithmic wallets (trades_per_day &gt; 50 OR n_trades &gt; 1000).
+    Bold line is a 13-week moving average.
+  </p>
+
+  {movements.length > 0 && (
+    <>
+      <h2>This week</h2>
+      <div class="movements">
+        {movements.map(m => (
+          <div class="item">
+            <strong>{m.label}</strong> is {m.z > 0 ? "elevated" : "depressed"} at z&thinsp;=&thinsp;{signedZ(m.z)} vs the 52-week mean.
+          </div>
+        ))}
+      </div>
+    </>
+  )}
+
+  <h2>All indices</h2>
+  <div class="index-grid">
+    <IndexCard
+      name="Probability Weighting"
+      value={fmt(pwi.value, 2)}
+      delta={signedZ(pwi.z52w) ? `z52w ${signedZ(pwi.z52w)}` : undefined}
+      deltaSign={zSign(pwi.z52w)}
+      meta={`${pwi.n_weeks_history} weeks`}
+      href="/pwi"
+    />
+    <IndexCard
+      name="Execution Gap"
+      value={fmt(execution.value, 3)}
+      delta={signedZ(execution.z52w) ? `z52w ${signedZ(execution.z52w)}` : undefined}
+      deltaSign={zSign(execution.z52w)}
+      meta="bot minus retail alpha"
+      href="/execution"
+    />
+    <IndexCard
+      name="Bot Share"
+      value={pct(botShare.value, 1)}
+      delta={signedZ(botShare.z52w) ? `z52w ${signedZ(botShare.z52w)}` : undefined}
+      deltaSign={zSign(botShare.z52w)}
+      meta="of weekly trades"
+      href="/bot-share"
+    />
+    <IndexCard
+      name="Longshot Gap"
+      value={fmt(priceGap.value, 3)}
+      delta={signedZ(priceGap.z52w) ? `z52w ${signedZ(priceGap.z52w)}` : undefined}
+      deltaSign={zSign(priceGap.z52w)}
+      meta="winrate minus band mid"
+      href="/price-gap"
+    />
+    <IndexCard
+      name="Market Efficiency"
+      value={fmt(efficiency.value, 3)}
+      delta={signedZ(efficiency.z52w) ? `z52w ${signedZ(efficiency.z52w)}` : undefined}
+      deltaSign={zSign(efficiency.z52w)}
+      meta="Prelec fit R squared"
+      href="/efficiency"
+    />
+    <IndexCard
+      name="Prelec Alpha (pooled)"
+      value={fmt(calibration.prelec_alpha, 3)}
+      meta={`R^2 = ${fmt(calibration.prelec_r2, 3)}`}
+      href="/calibration"
+    />
+    <IndexCard
+      name="Private Information"
+      value={`${pii.headline.total_flagged_p_lt_01.toLocaleString()} wallets`}
+      delta={`${pct(pii.headline.flag_rate, 2)} of tested`}
+      meta={`${pii.headline.holm_bonferroni_survivors} Holm survivors`}
+      href="/pii"
+    />
+  </div>
+
+  <h2>Market calibration, pooled to date</h2>
+  <CalibrationChart dataUrl="/data/calibration_latest.json" height={360} />
+  <p class="muted" style="font-size:14px; margin-top:-10px;">
+    Non-bot trades pooled across all resolved markets. Dots sized by trade count.
+    Prelec alpha = {fmt(calibration.prelec_alpha, 3)}, R&sup2; = {fmt(calibration.prelec_r2, 3)}.
+    See the <a href="/calibration">calibration deep-dive</a>.
+  </p>
+
+  <h2>Cite this dashboard</h2>
+  <div class="citation">Della Vedova, J. (2026). Della Vedova Prediction Market Indices (DV-PMI). v0.1.0. https://jdellavedova.com</div>
+  <p class="muted" style="font-size:14px;">
+    A BibTeX entry for each index is available on its deep-dive page. See also <a href="/methodology">methodology</a>.
+  </p>
+</Base>

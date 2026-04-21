@@ -1,0 +1,103 @@
+---
+import Base from "../layouts/Base.astro";
+import PiiChart from "../components/PiiChart.astro";
+import pii from "../../public/data/pii_latest.json";
+
+function pct(n, d = 2) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n * 100).toFixed(d) + "%"; }
+---
+<Base title="Private Information Index (PII)" description="Wallet-level signatures of private information in Polymarket trading.">
+  <h1>Private Information Index (PII)</h1>
+  <p class="subtitle">Count and classification of Polymarket wallets whose trading is consistent with private information.</p>
+
+  <p>
+    Of <strong>{pii.headline.total_wallets_tested.toLocaleString()}</strong> wallets tested,
+    <strong>{pii.headline.total_flagged_p_lt_01.toLocaleString()}</strong> were flagged at the
+    one-percent significance threshold (flag rate {pct(pii.headline.flag_rate, 2)}).
+    <strong>{pii.headline.holm_bonferroni_survivors}</strong> wallets survive the Holm-Bonferroni family-wise
+    correction; <strong>{pii.headline.bh_fdr_survivors}</strong> survive the Benjamini-Hochberg FDR procedure.
+  </p>
+
+  <h2>Flag rate by MNPI taxonomy</h2>
+  <PiiChart dataUrl="/data/pii_latest.json" />
+  <p class="muted" style="font-size:14px; margin-top:-8px;">
+    Categories ordered by a priori MNPI risk: vote markets (elections, awards) are the highest-risk category
+    because outcomes are determined by discrete human decisions; stochastic markets (crypto prices) are the
+    lowest-risk because outcomes are aggregate and leak-resistant. The observed flag-rate ordering confirms
+    the theoretical prediction.
+  </p>
+
+  <table>
+    <tr><th>MNPI category</th><th>Wallets tested</th><th>Flagged (p &lt; 0.01)</th><th>Flag rate</th></tr>
+    {pii.mnpi_taxonomy.map(m => (
+      <tr>
+        <td>{m.mnpi_type}</td>
+        <td class="mono">{m.n_wallets_tested.toLocaleString()}</td>
+        <td class="mono">{m.n_flagged_01.toLocaleString()}</td>
+        <td class="mono">{pct(m.flag_rate_01, 2)}</td>
+      </tr>
+    ))}
+  </table>
+
+  <h2>By wallet class</h2>
+  <table>
+    <tr><th>Wallet class</th><th>Wallets</th><th>Flagged</th><th>Flag rate</th></tr>
+    {pii.by_wallet_type.map(t => (
+      <tr>
+        <td>{t.wallet_type}</td>
+        <td class="mono">{t.n_wallets.toLocaleString()}</td>
+        <td class="mono">{t.n_significant_01.toLocaleString()}</td>
+        <td class="mono">{pct(t.flag_rate, 2)}</td>
+      </tr>
+    ))}
+  </table>
+
+  <h2>Comparison with Mitts and Ofir (2026)</h2>
+  <p>
+    The concurrent paper by Mitts and Ofir uses a five-signal heuristic (cross-sectional bet size, within-trader
+    bet size, profitability, pre-event timing, directional concentration) to flag suspicious wallet-market pairs.
+    Applied to the same sample, their approach flags roughly <strong>{pct(pii.vs_mitts_ofir.their_flag_rate, 1)}</strong>
+    of wallets; our microstructure-grounded orthogonality test flags <strong>{pct(pii.vs_mitts_ofir.our_flag_rate, 2)}</strong>.
+    Cohen's kappa between the two flag sets is <strong>{pii.vs_mitts_ofir.cohens_kappa.toFixed(3)}</strong>.
+    Near-zero concordance indicates the two approaches identify different populations: ours isolates wallets with
+    the structural signature of information (accuracy and execution coupled to a common signal); theirs isolates
+    wallets with large, winning, concentrated bets near event resolution.
+  </p>
+
+  <h2>Methodology</h2>
+  <p>
+    For each wallet, excess accuracy is defined as accuracy minus max(price, 1 - price), the accuracy achievable
+    by mechanically following the price signal. A one-sided binomial z-test at threshold z &gt; 2.326 (p &lt; 0.01)
+    flags wallets whose accuracy cannot be explained by price-following alone. The theta-epsilon orthogonality
+    violation (a positive correlation between accuracy and execution at the wallet level, not present in the
+    population-level orthogonality established in Paper 1) distinguishes informed traders from lucky ones.
+    MNPI-category assignment uses a rules-and-LLM pipeline validated against hand-coded markets
+    (vote, action, performance, stochastic).
+  </p>
+  <p>
+    Weekly time series for PII is a future release item; it requires a separate pipeline joining the flagged
+    wallet set with per-wallet trade timestamps across the 233M-row trade panel.
+  </p>
+
+  <h2>Source paper</h2>
+  <p>
+    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6567238">
+      Della Vedova, J. (2026). Detecting Informed Trading in Prediction Markets: An Orthogonality Test. SSRN.
+    </a>
+  </p>
+
+  <h2>Data</h2>
+  <p>
+    <a href="/data/pii_snapshot.csv">pii_snapshot.csv</a>
+    &middot;
+    <a href="/data/pii_latest.json">pii_latest.json</a>
+  </p>
+
+  <h2>Cite</h2>
+  <div class="citation">{`@misc{dellavedova2026pii,
+  title        = {Private Information Index},
+  author       = {Della Vedova, Joshua},
+  year         = {2026},
+  version      = {0.1.0},
+  url          = {https://jdellavedova.com/pii}
+}`}</div>
+</Base>

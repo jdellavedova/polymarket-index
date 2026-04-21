@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-04-21T06:53:33+00:00",
+  "n_weeks": 163,
+  "first_date": "2022-12-12",
+  "last_date": "2026-01-26",
+  "columns": [
+    "date",
+    "pwi",
+    "pwi_ma13w",
+    "alpha_gap",
+    "alpha_gap_ma13w",
+    "bot_share",
+    "bot_share_ma13w",
+    "longshot_gap",
+    "longshot_gap_ma13w",
+    "efficiency",
+    "efficiency_ma13w"
+  ]
+}

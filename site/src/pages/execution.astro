@@ -1,0 +1,78 @@
+---
+import Base from "../layouts/Base.astro";
+import TimeSeriesChart from "../components/TimeSeriesChart.astro";
+import execution from "../../public/data/execution_latest.json";
+
+function fmt(n, d = 3) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : n.toFixed(d); }
+function signed(n, d = 2) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n >= 0 ? "+" : "") + n.toFixed(d); }
+---
+<Base title="Execution Edge Monitor" description="Weekly bot-retail Prelec alpha gap from 233M Polymarket trades.">
+  <h1>Execution Edge Monitor</h1>
+  <p class="subtitle">The bot-minus-retail Prelec alpha gap. A behavioral proxy for execution-quality divergence.</p>
+
+  <p>
+    As of <strong>{execution.as_of}</strong>, the alpha gap stands at <strong>{signed(execution.value, 3)}</strong>,
+    with a 52-week rolling z-score of <strong>{signed(execution.z52w, 2)}</strong>.
+    Bot Prelec alpha: <strong>{fmt(execution.per_type_alpha.bot?.alpha, 3)}</strong>.
+    Active retail Prelec alpha: <strong>{fmt(execution.per_type_alpha.active_retail?.alpha, 3)}</strong>.
+    Week based on <strong>{execution.n_trades_week?.toLocaleString?.() ?? execution.n_trades_week}</strong> trades across all classes.
+  </p>
+
+  <h2>Weekly history</h2>
+  <TimeSeriesChart
+    dataUrl="/data/execution_timeseries.json"
+    yField="alpha_gap"
+    smoothField="alpha_gap_ma13w"
+    yLabel="bot alpha minus retail alpha"
+    zeroLine={true}
+  />
+  <p class="muted" style="font-size:14px; margin-top:-18px;">
+    A positive gap indicates bots weight tails more heavily than active retail. The bold line is a 13-week moving average.
+  </p>
+
+  <h2>Current per-type alphas</h2>
+  <table>
+    <tr><th>Wallet class</th><th>Prelec alpha</th></tr>
+    {Object.entries(execution.per_type_alpha).map(([k, v]) => (
+      <tr><td>{k}</td><td class="mono">{fmt((v as any).alpha, 3)}</td></tr>
+    ))}
+  </table>
+
+  <h2>52-week rolling statistics on the gap</h2>
+  <table>
+    <tr><th>Statistic</th><th>Value</th></tr>
+    <tr><td>Mean</td><td class="mono">{fmt(execution.rolling.mean_52w, 3)}</td></tr>
+    <tr><td>SD</td><td class="mono">{fmt(execution.rolling.sd_52w, 3)}</td></tr>
+    <tr><td>Min</td><td class="mono">{fmt(execution.rolling.min_52w, 3)}</td></tr>
+    <tr><td>Max</td><td class="mono">{fmt(execution.rolling.max_52w, 3)}</td></tr>
+  </table>
+
+  <h2>Methodology</h2>
+  <p>
+    For each wallet class (bot, active retail, sophisticated, casual, one-shot), we fit a one-parameter Prelec
+    weighting function to that class's weekly calibration curve. The resulting alpha captures how strongly the
+    class distorts probabilities away from the identity. The Execution Edge gap is alpha(bot) - alpha(active
+    retail). In Paper 1, bots capture -4.25 bps effective spread on their trades while active retail pays +11.68
+    bps; the alpha gap is the behavioral signature of that divergence and tracks it week-by-week.
+  </p>
+
+  <h2>Data</h2>
+  <p>
+    <a href="/data/execution_history.csv">execution_history.csv</a>
+    {' '}(wide, {execution.n_weeks_history} weeks from {execution.first_date})
+    &middot;
+    <a href="/data/execution_by_type_history.csv">execution_by_type_history.csv</a> (long)
+    &middot;
+    <a href="/data/execution_latest.json">execution_latest.json</a>
+  </p>
+
+  <h2>Cite</h2>
+  <div class="citation">{`@misc{dellavedova2026execution,
+  title        = {Execution Edge Monitor},
+  author       = {Della Vedova, Joshua},
+  year         = {2026},
+  version      = {0.1.0},
+  publisher    = {University of San Diego},
+  url          = {https://jdellavedova.com/execution}
+}`}</div>
+</Base>

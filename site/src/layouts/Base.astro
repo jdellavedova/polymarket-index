@@ -1,0 +1,48 @@
+---
+import "../styles/main.css";
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={description ?? "Prediction market indices and research by Joshua Della Vedova, University of San Diego."} />
+  <title>{title}</title>
+  <link rel="canonical" href={Astro.url.href} />
+</head>
+<body>
+  <header class="site-head">
+    <div class="inner">
+      <a class="brand" href="/">Joshua Della Vedova</a>
+      <nav>
+        <a href="/">Indices</a>
+        <a href="/research">Research</a>
+        <a href="/methodology">Methodology</a>
+        <a href="/data">Data</a>
+        <a href="/expert-witness">Expert Witness</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <slot />
+  </main>
+
+  <footer class="site-foot">
+    <div>
+      Joshua Della Vedova &middot; Knauss School of Business &middot; University of San Diego
+    </div>
+    <div style="margin-top:6px;">
+      Data updated weekly &middot; <a href="/methodology">Methodology</a> &middot; <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2583491">SSRN</a> &middot; <a href="https://scholar.google.com/citations?user=6KY3PLwAAAAJ&hl=en">Scholar</a> &middot; &copy; {year}
+    </div>
+  </footer>
+</body>
+</html>

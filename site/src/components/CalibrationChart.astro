@@ -1,0 +1,54 @@
+---
+export interface Props {
+  dataUrl: string;
+  height?: number;
+  containerId?: string;
+}
+const {
+  dataUrl,
+  height = 400,
+  containerId = "calib-" + Math.random().toString(36).slice(2, 9),
+} = Astro.props;
+---
+<div class="chart" id={containerId} style={`min-height:${height}px`}></div>
+<script type="module" define:vars={{ dataUrl, height, containerId }}>
+  import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/+esm";
+  const res = await fetch(dataUrl);
+  const data = await res.json();
+  const el = document.getElementById(containerId);
+  const W = Math.min(el.clientWidth || 680, 680);
+  el.replaceChildren(
+    Plot.plot({
+      width: W,
+      height,
+      marginLeft: 48,
+      marginRight: 12,
+      marginBottom: 40,
+      x: { label: "price (prediction market)", domain: [0, 1], grid: true },
+      y: { label: "realized win rate", domain: [0, 1], grid: true },
+      marks: [
+        Plot.ruleY([0]),
+        Plot.ruleX([0]),
+        Plot.line(
+          Array.from({ length: 51 }, (_, i) => ({ x: i / 50, y: i / 50 })),
+          { x: "x", y: "y", stroke: "#bbb", strokeDasharray: "3,3" }
+        ),
+        Plot.line(data.fit_curve, { x: "price", y: "fit", stroke: "#0074c8", strokeWidth: 2 }),
+        Plot.dot(data.bins, {
+          x: "price_bin_center",
+          y: "realized_win_rate",
+          r: d => Math.sqrt(d.n_trades) / 80,
+          fill: "#003b70",
+          fillOpacity: 0.85,
+        }),
+        Plot.ruleX(data.bins, {
+          x: "price_bin_center",
+          y1: "ci_lower",
+          y2: "ci_upper",
+          stroke: "#003b70",
+          strokeOpacity: 0.35,
+        }),
+      ],
+    })
+  );
+</script>

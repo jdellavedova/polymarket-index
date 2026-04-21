@@ -1,0 +1,43 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="Data Downloads" description="Full historical panels for every index in the Della Vedova Prediction Market Indices (DV-PMI).">
+  <h1>Data Downloads</h1>
+  <p class="subtitle">Full weekly history for every index. Refreshed every Sunday 22:00 Pacific.</p>
+
+  <p>
+    Each index is published as a CSV with the complete weekly history since inception (November 2022).
+    The master table merges all indices into a single date-indexed wide panel, analogous to
+    the Baker-Wurgler sentiment file or Ken French's factor library.
+  </p>
+
+  <h2>Master table</h2>
+  <table>
+    <tr><th>File</th><th>Description</th></tr>
+    <tr><td><a href="/data/polymarket_indices_weekly.csv">polymarket_indices_weekly.csv</a></td><td>All indices, wide format, date-indexed. Canonical citation file.</td></tr>
+  </table>
+
+  <h2>Per-index history</h2>
+  <table>
+    <tr><th>Index</th><th>File</th></tr>
+    <tr><td>Probability Weighting (PWI)</td><td><a href="/data/pwi_history.csv">pwi_history.csv</a></td></tr>
+    <tr><td>Execution Edge (bot-retail gap)</td><td><a href="/data/execution_history.csv">execution_history.csv</a></td></tr>
+    <tr><td>Execution by type (long)</td><td><a href="/data/execution_by_type_history.csv">execution_by_type_history.csv</a></td></tr>
+    <tr><td>Bot Share of Volume</td><td><a href="/data/bot_share_history.csv">bot_share_history.csv</a></td></tr>
+    <tr><td>Longshot / Favorite Price Gap</td><td><a href="/data/price_gap_history.csv">price_gap_history.csv</a></td></tr>
+    <tr><td>Market Efficiency Trend</td><td><a href="/data/efficiency_history.csv">efficiency_history.csv</a></td></tr>
+  </table>
+
+  <h2>Snapshots</h2>
+  <table>
+    <tr><th>Index</th><th>File</th></tr>
+    <tr><td>Market Calibration Curve (20 price bins)</td><td><a href="/data/calibration_snapshot.csv">calibration_snapshot.csv</a></td></tr>
+    <tr><td>Private Information Index (PII)</td><td><a href="/data/pii_snapshot.csv">pii_snapshot.csv</a></td></tr>
+  </table>
+
+  <h2>License</h2>
+  <p>Data released under Creative Commons Attribution 4.0 (CC BY 4.0). Please cite.</p>
+
+  <h2>Citation</h2>
+  <div class="citation">Della Vedova, J. (2026). Della Vedova Prediction Market Indices (DV-PMI). Version 0.1.0. https://jdellavedova.com</div>
+</Base>

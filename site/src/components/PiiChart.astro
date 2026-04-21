@@ -1,0 +1,52 @@
+---
+export interface Props {
+  dataUrl: string;
+  height?: number;
+  containerId?: string;
+}
+const {
+  dataUrl,
+  height = 260,
+  containerId = "pii-" + Math.random().toString(36).slice(2, 9),
+} = Astro.props;
+---
+<div class="chart" id={containerId} style={`min-height:${height}px`}></div>
+<script type="module" define:vars={{ dataUrl, height, containerId }}>
+  import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/+esm";
+  const res = await fetch(dataUrl);
+  const pii = await res.json();
+  const order = ["vote", "action", "performance", "stochastic"];
+  const data = pii.mnpi_taxonomy
+    .slice()
+    .sort((a, b) => order.indexOf(a.mnpi_type) - order.indexOf(b.mnpi_type))
+    .map(d => ({
+      type: d.mnpi_type,
+      flag_rate: d.flag_rate_01,
+      n_tested: d.n_wallets_tested,
+    }));
+  const el = document.getElementById(containerId);
+  el.replaceChildren(
+    Plot.plot({
+      width: Math.min(el.clientWidth || 680, 680),
+      height,
+      marginLeft: 90,
+      marginRight: 48,
+      marginBottom: 40,
+      x: { label: "wallet flag rate (p < 0.01)", grid: true, tickFormat: d => (d * 100).toFixed(1) + "%" },
+      y: { label: "", domain: order },
+      marks: [
+        Plot.ruleX([0]),
+        Plot.barX(data, { y: "type", x: "flag_rate", fill: "#003b70" }),
+        Plot.text(data, {
+          y: "type",
+          x: "flag_rate",
+          text: d => (d.flag_rate * 100).toFixed(2) + "%",
+          dx: 6,
+          textAnchor: "start",
+          fontSize: 12,
+          fill: "#111",
+        }),
+      ],
+    })
+  );
+</script>

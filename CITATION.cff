@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it using the metadata from this file."
+title: "Della Vedova Prediction Market Indices"
+abstract: "The Della Vedova Prediction Market Indices (DV-PMI) are a weekly-updated family of behavioral and microstructure indices derived from on-chain prediction-market trade data, including probability weighting, execution edge, private information, and market calibration metrics. Current coverage: Polymarket."
+type: dataset
+authors:
+  - family-names: "Della Vedova"
+    given-names: "Joshua"
+    affiliation: "Knauss School of Business, University of San Diego"
+    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"  # add when ORCID is registered
+repository-code: "https://github.com/jdellavedova/polymarket-index"
+url: "https://jdellavedova.com"
+license: CC-BY-4.0
+keywords:
+  - Della Vedova Prediction Market Indices
+  - DV-PMI
+  - prediction markets
+  - Polymarket
+  - probability weighting
+  - market microstructure
+  - insider trading detection
+  - behavioral finance
+version: 0.1.0
+date-released: "2026-04-20"

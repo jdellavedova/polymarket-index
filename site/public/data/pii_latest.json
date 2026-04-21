@@ -1,0 +1,115 @@
+{
+  "index_name": "Private Information Index",
+  "short_name": "PII",
+  "snapshot_note": "Cumulative snapshot; weekly time series requires trade-timestamp join (v1.1)",
+  "as_of": "2026-02-28",
+  "source_paper": "Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets'",
+  "headline": {
+    "total_wallets_tested": 450048,
+    "total_flagged_p_lt_01": 6032,
+    "flag_rate": 0.013403014789533561,
+    "holm_bonferroni_survivors": 746,
+    "bh_fdr_survivors": 2337
+  },
+  "mnpi_taxonomy": [
+    {
+      "mnpi_type": "vote",
+      "n_wallets_tested": 90797,
+      "n_flagged_01": 2534,
+      "flag_rate_01": 0.0279084110708503,
+      "z_above_1pct": 54.23444584872853
+    },
+    {
+      "mnpi_type": "action",
+      "n_wallets_tested": 78548,
+      "n_flagged_01": 755,
+      "flag_rate_01": 0.0096119570199113,
+      "z_above_1pct": -1.0930242556986256
+    },
+    {
+      "mnpi_type": "performance",
+      "n_wallets_tested": 157755,
+      "n_flagged_01": 1598,
+      "flag_rate_01": 0.0101296313904472,
+      "z_above_1pct": 0.5174687747028562
+    },
+    {
+      "mnpi_type": "stochastic",
+      "n_wallets_tested": 134972,
+      "n_flagged_01": 1613,
+      "flag_rate_01": 0.0119506267966689,
+      "z_above_1pct": 7.202419788571609
+    }
+  ],
+  "by_wallet_type": [
+    {
+      "wallet_type": "bot",
+      "n_wallets": 52262,
+      "n_significant_01": 815,
+      "pct_significant_01": 1.5594504611381117,
+      "mean_excess_accuracy": -0.467262710542458,
+      "flag_rate": 0.015594504611381118
+    },
+    {
+      "wallet_type": "sophisticated",
+      "n_wallets": 45357,
+      "n_significant_01": 1181,
+      "pct_significant_01": 2.6037877284652864,
+      "mean_excess_accuracy": -0.3168071418677081,
+      "flag_rate": 0.026037877284652865
+    },
+    {
+      "wallet_type": "active_retail",
+      "n_wallets": 352429,
+      "n_significant_01": 4036,
+      "pct_significant_01": 1.145195202437938,
+      "mean_excess_accuracy": -0.3695902188587076,
+      "flag_rate": 0.011451952024379378
+    }
+  ],
+  "by_raw_category": [
+    {
+      "category": "politics",
+      "n_wallets_tested": 90797,
+      "n_significant_01": 2534,
+      "frac_significant_01": 0.0279084110708503
+    },
+    {
+      "category": "sports",
+      "n_wallets_tested": 157755,
+      "n_significant_01": 1598,
+      "frac_significant_01": 0.0101296313904472
+    },
+    {
+      "category": "crypto",
+      "n_wallets_tested": 134972,
+      "n_significant_01": 1613,
+      "frac_significant_01": 0.0119506267966689
+    },
+    {
+      "category": "business",
+      "n_wallets_tested": 78548,
+      "n_significant_01": 755,
+      "frac_significant_01": 0.0096119570199113
+    },
+    {
+      "category": "other",
+      "n_wallets_tested": 89761,
+      "n_significant_01": 2034,
+      "frac_significant_01": 0.0226601753545526
+    }
+  ],
+  "vs_mitts_ofir": {
+    "their_flag_rate": 0.38,
+    "our_flag_rate": 0.013403014789533561,
+    "cohens_kappa": 0.007,
+    "note": "Near-zero concordance between structural (orthogonality) and heuristic (5-signal) approaches."
+  },
+  "generated_at": "2026-04-21T06:53:33+00:00",
+  "sources": [
+    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage19_significant_wallets.csv",
+    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage19_summary_by_type.csv",
+    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage22_mnpi_placebo.csv",
+    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage22_significant_by_category.csv"
+  ]
+}

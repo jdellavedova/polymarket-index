@@ -1,0 +1,209 @@
+/* Palette inspired by the University of San Diego brand
+   Founders Blue #003b70, Immaculata Blue #0074c8, Torero Blue #75bee9
+   Sagebrush (accent up) #6aa14a, Poppy (accent down) #f2650d
+   Typography: Spectral (body serif) + Sofia Sans (headings), per USD brand */
+@import url("https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Sofia+Sans:wght@500;600;700&display=swap");
+
+:root {
+  --text: #121a2a;
+  --muted: #5a6472;
+  --border: #d8dde4;
+  --founders: #003b70;
+  --immaculata: #0074c8;
+  --torero: #75bee9;
+  --link: #003b70;
+  --link-hover: #0074c8;
+  --bg: #ffffff;
+  --bg-soft: #f6f8fb;
+  --pos: #6aa14a;
+  --neg: #f2650d;
+  --serif: "Spectral", Charter, "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --sans: "Sofia Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: "SF Mono", Menlo, Consolas, monospace;
+  --content-w: 680px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--content-w);
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+}
+
+header.site-head {
+  border-bottom: 3px solid var(--founders);
+  padding: 20px 24px;
+  font-family: var(--sans);
+  font-size: 14px;
+  background: var(--bg);
+}
+header.site-head .inner {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+header.site-head .brand {
+  font-family: var(--sans);
+  font-weight: 700;
+  color: var(--founders);
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+}
+header.site-head nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 18px;
+}
+header.site-head nav a:hover { color: var(--founders); }
+
+h1 {
+  font-family: var(--sans);
+  font-size: 32px;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: var(--founders);
+  letter-spacing: -0.005em;
+}
+h2 {
+  font-family: var(--sans);
+  font-size: 22px;
+  line-height: 1.3;
+  margin: 48px 0 12px;
+  font-weight: 600;
+  color: var(--founders);
+}
+h3 {
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.3;
+  margin: 28px 0 8px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.subtitle { color: var(--muted); font-size: 17px; margin: 0 0 28px; font-style: italic; }
+
+p { margin: 0 0 14px; }
+
+a { color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--link-hover); }
+
+.muted { color: var(--muted); }
+.mono { font-family: var(--mono); font-size: 13px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 14px 0; }
+table th, table td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+table th { font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+
+pre, .citation {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.45;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Index grid */
+.index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  margin: 24px 0 36px;
+}
+
+.index-card {
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  background: var(--bg);
+}
+.index-card:hover { border-color: #999; }
+
+.index-card .name {
+  font-family: var(--sans);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.index-card .value {
+  font-family: var(--sans);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--text);
+}
+.index-card .delta { font-family: var(--sans); font-size: 12px; margin-top: 4px; }
+.index-card .delta.pos { color: var(--pos); }
+.index-card .delta.neg { color: var(--neg); }
+.index-card .meta {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Chart containers */
+.chart {
+  margin: 18px 0 30px;
+  min-height: 260px;
+}
+.chart svg { max-width: 100%; height: auto; }
+
+/* Notable movements */
+.movements {
+  border-left: 2px solid var(--border);
+  padding: 6px 0 6px 16px;
+  margin: 8px 0 28px;
+  color: var(--muted);
+  font-size: 15px;
+}
+.movements .item { margin: 4px 0; }
+.movements strong { color: var(--text); font-weight: 600; }
+
+/* Footer */
+footer.site-foot {
+  border-top: 1px solid var(--border);
+  margin-top: 60px;
+  padding: 24px;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+footer.site-foot a { color: var(--muted); }
+
+@media (max-width: 560px) {
+  .container { padding: 32px 18px 64px; }
+  h1 { font-size: 26px; }
+  h2 { font-size: 19px; }
+}
