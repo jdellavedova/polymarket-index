@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import ThisWeek from "../components/ThisWeek.astro";
+import KpiTiles from "../components/KpiTiles.astro";
 import EmailSignup from "../components/EmailSignup.astro";
 
 import pwi from "../../public/data/pwi_latest.json";
@@ -117,6 +118,8 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
   </p>
 
   <ThisWeek />
+
+  <KpiTiles />
 
   <h2>What happened this week</h2>
   <table class="snapshot">

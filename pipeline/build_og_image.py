@@ -140,9 +140,9 @@ def main() -> None:
     box_w = (W - 48 * 2 - gap * 2) // 3
     boxes = [
         {
-            "label": "BOT SHARE OF TRADES",
+            "label": "ALGORITHMIC SHARE",
             "value": f"{bot_share * 100:.0f}%",
-            "sub": "the rest are human traders",
+            "sub": "of weekly participation events",
         },
         {
             "label": "NEW PARTICIPANTS",
