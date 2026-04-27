@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-04-21T06:53:33+00:00",
-  "n_weeks": 163,
-  "first_date": "2022-12-12",
-  "last_date": "2026-01-26",
+  "generated_at": "2026-04-24T17:48:14+00:00",
+  "n_weeks": 179,
+  "first_date": "2022-11-21",
+  "last_date": "2026-04-20",
   "columns": [
     "date",
-    "pwi",
-    "pwi_ma13w",
+    "pwi_alpha",
+    "pwi_alpha_ma13w",
     "alpha_gap",
     "alpha_gap_ma13w",
     "bot_share",

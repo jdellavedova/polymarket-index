@@ -23,27 +23,41 @@ const {
 <div class="chart" id={containerId} style={`min-height:${height}px`}></div>
 <script type="module" define:vars={{ dataUrl, xField, yField, smoothField, yLabel, height, zeroLine, containerId }}>
   import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/+esm";
+  const root = document.documentElement;
+  const css = getComputedStyle(root);
+  const cPrimary = css.getPropertyValue("--chart-primary").trim() || "#75bee9";
+  const cSecondary = css.getPropertyValue("--chart-secondary").trim() || "#0074c8";
+  const cText = css.getPropertyValue("--chart-text").trim() || "#c4d2e4";
+  const cGrid = css.getPropertyValue("--chart-grid").trim() || "#1f3152";
+  const cBg = css.getPropertyValue("--bg").trim() || "#0a1420";
+
   const res = await fetch(dataUrl);
   const raw = await res.json();
   const data = raw.map(d => ({ ...d, [xField]: new Date(d[xField]) }));
   const marks = [
-    Plot.ruleY(zeroLine ? [0] : []),
-    Plot.lineY(data, { x: xField, y: yField, stroke: "#75bee9", strokeWidth: 1.2 }),
+    Plot.ruleY(zeroLine ? [0] : [], { stroke: cText, strokeOpacity: 0.4 }),
+    Plot.lineY(data, { x: xField, y: yField, stroke: cSecondary, strokeWidth: 1.2, strokeOpacity: 0.85 }),
   ];
   if (smoothField) {
-    marks.push(Plot.lineY(data, { x: xField, y: smoothField, stroke: "#003b70", strokeWidth: 2 }));
+    marks.push(Plot.lineY(data, { x: xField, y: smoothField, stroke: cPrimary, strokeWidth: 2.2 }));
   }
   const el = document.getElementById(containerId);
   el.replaceChildren(
     Plot.plot({
       width: Math.min(el.clientWidth || 680, 680),
       height,
-      marginLeft: 48,
+      marginLeft: 52,
       marginRight: 12,
       marginBottom: 36,
+      style: { background: cBg, color: cText, fontFamily: "Sofia Sans, sans-serif" },
       y: { label: yLabel, grid: true },
       x: { label: "" },
+      color: { scheme: "blues" },
       marks,
     })
   );
+  // Plot does not expose grid color via style; recolor grid lines post-render.
+  el.querySelectorAll("g[aria-label='y-grid'] line, g[aria-label='x-grid'] line").forEach(l => {
+    l.setAttribute("stroke", cGrid);
+  });
 </script>

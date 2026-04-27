@@ -1,0 +1,37 @@
+{
+  "quotes": [
+    {
+      "topic": "Algorithmic dominance of Polymarket volume",
+      "quote": "Bots now capture nearly every dollar of volume on Polymarket, up from about half two years ago. The retail trader's share of the market is vanishing.",
+      "context": "From Paper 1 and the weekly Bot Share of Volume index: bots execute 94% of weekly trades in recent weeks.",
+      "citation_line": "Joshua Della Vedova, Assistant Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Who Profits from Prediction Markets? Execution, not Information.'"
+    },
+    {
+      "topic": "Informed trading detection in prediction markets",
+      "quote": "About one in a hundred Polymarket wallets show trading signatures consistent with private information. The flag rate is three times higher in markets where humans control the outcome, such as elections and awards, than in markets driven by aggregate forces, such as crypto prices.",
+      "context": "From Paper 2: 6,032 of 450,048 wallets flagged at p < 0.01; flag rate is 2.79% in vote-category markets, 1.20% in stochastic markets.",
+      "citation_line": "Joshua Della Vedova, Assistant Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets: An Orthogonality Test,' SSRN abstract 6567238."
+    },
+    {
+      "topic": "Human traders and probability weighting",
+      "quote": "Human traders on Polymarket distort probabilities in exactly the way Tversky and Kahneman predicted in 1992. The weekly pattern is visible, measurable, and remarkably stable.",
+      "context": "From Paper 4 (in progress): non-bot Prelec alpha averaged roughly 0.65 across 150 weeks, matching the canonical experimental estimate.",
+      "citation_line": "Joshua Della Vedova, Assistant Professor of Finance, University of San Diego. Source: Della Vedova and Grant (2026, in progress), 'Probability Weighting from Prediction Markets.'"
+    },
+    {
+      "topic": "Welfare and retail losses",
+      "quote": "Information asymmetry in prediction markets imposes real costs on uninformed traders. Approximately $150 million in profits flowed to wallets trading on private information; most of that was absorbed by automated market makers and passed through to retail as wider spreads.",
+      "context": "From Paper 2. Welfare interpretation is bounded: the market is zero-sum by construction, so transfer estimates are lower bounds under current fee structures.",
+      "citation_line": "Joshua Della Vedova, Assistant Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets,' SSRN abstract 6567238."
+    },
+    {
+      "topic": "Two-dimensional trading skill",
+      "quote": "Trading skill in prediction markets is two-dimensional. Forecasting accuracy and execution quality are different capacities drawing on different resources, and they are nearly uncorrelated at the trader level. Execution, not forecasting, is what determines who profits.",
+      "context": "From Paper 1. Bots achieve coin-flip forecasting accuracy (49.9%) yet earn positive returns via execution; active retail achieves 51.3% accuracy but loses money due to poor execution.",
+      "citation_line": "Joshua Della Vedova, Assistant Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Who Profits from Prediction Markets? Execution, not Information.'"
+    }
+  ],
+  "media_mentions": [],
+  "speaking": [],
+  "usage_note": "Quotes are released under Creative Commons Attribution 4.0. Attribution line included with each quote is the minimum citation; journalists are welcome to edit for length or style as long as the attribution remains."
+}

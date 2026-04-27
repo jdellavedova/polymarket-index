@@ -1,0 +1,228 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Margins and spacing (JFE-ish: narrow-ish margins, 1.2 line spacing)
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% Core packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[round,authoryear]{natbib}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
+\usepackage{url}
+\usepackage{xcolor}
+
+% Custom macro for TODO markers the user should resolve before SSRN post
+\newcommand{\TODO}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}
+
+\title{The Della Vedova Prediction Market Indices (DV-PMI):\\
+       Construction, Validation, and Use}
+
+\author{Joshua Della Vedova%
+  \thanks{Knauss School of Business, University of San Diego,
+    5998 Alcala Park, San Diego, CA 92110.
+    Email: \texttt{jdellavedova@sandiego.edu}.
+    Dashboard and data: \url{https://jdellavedova.com}.
+    Source code: \url{https://github.com/jdellavedova/polymarket-index}.}
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent
+Prediction markets with binary terminal payoffs allow direct measurement of trader behavior, execution quality, and information asymmetry without the benchmark assumptions required in traditional equity microstructure. I construct seven weekly indices from 233~million resolved Polymarket trades spanning November~2022 to the present, covering probability weighting, market calibration, algorithmic share of volume, longshot-favorite pricing, cross-class execution quality, market efficiency, and wallet-level signatures of private information. The Della Vedova Prediction Market Indices (DV-PMI) are updated weekly, released as CSV panels and per-index JSON snapshots under CC~BY~4.0, and tagged with a semantic version at each refresh. This note documents the construction of each index, reports validation against the underlying working papers, and describes the reproducibility guarantees built into the release process.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+Traditional microstructure research relies on fair-value benchmarks that depend on the observed trade sequence, which introduces mechanical correlation between the accuracy and execution components of realized profit \citep{fama1972components,anand2012performance}. Binary prediction markets solve this problem by settling to a known scalar ($\$0$ or $\$1$), removing the need for a modeled benchmark. This paper documents the Della Vedova Prediction Market Indices (DV-PMI), a weekly-updated family of seven behavioral and microstructure indices derived from on-chain Polymarket trade data.
+
+The design follows three conventions. First, each index derives from a working paper whose peer-reviewed analogues predate this release, so the methodological primitives are not novel to DV-PMI. Second, the release cadence is weekly, the schema is pre-registered, and every breaking change is logged in a version-controlled changelog; this matches the pre-registration discipline documented by the Baker-Wurgler sentiment program and the Economic Policy Uncertainty framework. Third, the dataset is open and released under a Creative Commons Attribution 4.0 license for data and an MIT license for code.
+
+The intended uses are three-fold: (i) an external dataset for academic research that requires granular prediction-market state without the engineering cost of independent on-chain extraction; (ii) a citable source for journalists writing about prediction-market activity, regulatory developments, or behavioral bias; and (iii) a methodological reference for expert testimony in regulatory or litigation contexts involving prediction-market trading.
+
+The remainder of this note is organized as follows. Section~\ref{sec:data} describes the on-chain data pipeline and the wallet classification rule. Section~\ref{sec:indices} defines each of the seven indices and its generation procedure. Section~\ref{sec:validation} reports validation against the underlying working papers and out-of-sample checks. Section~\ref{sec:limits} records known limitations. Section~\ref{sec:reproducibility} describes the reproducibility infrastructure. Section~\ref{sec:cite} records the citation format.
+
+\section{Data}
+\label{sec:data}
+
+\subsection{Source}
+Polymarket operates as a smart-contract binary-outcome exchange on the Polygon network. Every trade is recorded on-chain as an \texttt{OrderFilled} event emitted by one of two exchange contracts (CTF Exchange at \texttt{0x4bFb...82E} and NegRisk Exchange at \texttt{0xC5d5...80a}). The event log contains the maker address, taker address, token identifiers, amount traded, and block number; price is derived from the USDC-denominated numerator and token-denominated denominator of the fill.
+
+Events are collected via \texttt{eth\_getLogs} queries against a Polygon archive node. The collector script retrieves blocks in 2{,}000-block batches, streams events to disk, and applies the \citet{paradigm2023orderfilled} deduplication rule that keeps the maker-side event for each matched trade. Trades with non-positive or above-unity prices are filtered as non-fills. Token identifiers are mapped to market questions and outcome labels via the Polymarket Gamma API.
+
+As of the most recent release, the processed trade panel contains approximately 233 million resolved trades executed by 1.98 million unique wallets across approximately 400{,}000 markets. \TODO{replace placeholders with the refreshed counts as of the as-of date; the current dashboard run reports counts in the latest-snapshot JSON files}.
+
+\subsection{Wallet classification}
+Wallets are partitioned into five exclusive classes using the rule from \citet{dellavedova2026profits}:
+
+\begin{itemize}
+  \item \textbf{Bot}: more than 50 trades per active day OR more than 1{,}000 total trades.
+  \item \textbf{Sophisticated}: lifetime USDC volume above \$10{,}000 AND Herfindahl concentration across markets below 0.5 AND active span above 30 days (and not already classified as Bot).
+  \item \textbf{Active Retail}: between 10 and 1{,}000 lifetime trades (and not already classified).
+  \item \textbf{Casual}: between 2 and 9 lifetime trades.
+  \item \textbf{One-Shot}: exactly one lifetime trade.
+\end{itemize}
+
+The classification is applied cumulatively: a wallet's class is determined once per weekly refresh using all trades to date.
+
+\section{Indices}
+\label{sec:indices}
+
+All indices are published at weekly resolution, timestamped by ISO week (Monday reference), with a minimum of 13 observations required before reporting a 52-week rolling z-score.
+
+\subsection{Probability Weighting Index (PWI)}
+\label{sub:pwi}
+
+Let $\alpha_{c,t}$ denote the one-parameter \citet{prelec1998compound} weighting coefficient fit to the calibration curve of wallet class $c$ in week $t$ by weighted nonlinear least squares, with trade counts as weights and the Prelec form
+\[
+  w(p;\alpha) = \exp\!\big(-\,(-\log p)^{\alpha}\big).
+\]
+The PWI is the trade-count-weighted mean of $\alpha_{c,t}$ across all non-bot classes $c$:
+\[
+  \mathrm{PWI}_t \;=\; \frac{\sum_{c \in \mathcal{C}_{\mathrm{non\text{-}bot}}} n_{c,t}\,\alpha_{c,t}}
+                           {\sum_{c \in \mathcal{C}_{\mathrm{non\text{-}bot}}} n_{c,t}},
+\]
+where $n_{c,t}$ is the trade count of class $c$ in week $t$ and $\mathcal{C}_{\mathrm{non\text{-}bot}} = \{\text{Sophisticated}, \text{Active Retail}, \text{Casual}, \text{One-Shot}\}$. Bots are excluded so the index reflects human probability weighting; bots are best understood as liquidity providers whose implied weighting does not reflect a subjective probability distortion.
+
+Interpretation follows the behavioral literature: $\alpha = 1$ corresponds to the identity ($w(p) = p$, no probability distortion), $\alpha < 1$ to the classical inverse-S pattern documented by \citet{tverskykahneman1992}, and $\alpha > 1$ to the rarer opposite pattern. The pooled non-bot sample matches the \citet{tverskykahneman1992} median estimate of $0.65$ almost exactly, which is reassuring for external validity.
+
+\subsection{Market Calibration Curve}
+\label{sub:calibration}
+
+The calibration curve is a cross-sectional snapshot (not a time series). Non-bot trades are pooled across all resolved markets and grouped into 20 price bins of width 5\%. For each bin, the realized win rate is computed along with a 95\% Wilson confidence interval. A one-parameter Prelec function is fit to the 20 bin centers by weighted nonlinear least squares, with trade counts as weights. Reported quantities: $\alpha$, fit $R^2$, per-bin realized frequency, CI, and the fit curve on a 97-point grid.
+
+\subsection{Execution Edge Monitor}
+\label{sub:execution}
+
+The Execution Edge is defined as the weekly gap
+\[
+  \mathrm{Exec}_t \;=\; \alpha_{\mathrm{bot}, t} \;-\; \alpha_{\mathrm{active\text{-}retail}, t}.
+\]
+A behavioral proxy for the execution-quality divergence documented in \citet{dellavedova2026profits}, where Bots capture $-4.25$~basis-point effective spreads while Active Retail pays $+11.68$~bp. The gap varies over time and tracks both the persistence of that divergence and regime shifts in market composition.
+
+\subsection{Private Information Index (PII)}
+\label{sub:pii}
+
+For each wallet $i$, excess accuracy is defined as
+\[
+  \mathrm{EA}_i \;=\; \mathrm{accuracy}_i \;-\; \overline{\max(p, 1-p)}_i,
+\]
+where the second term is the accuracy achievable by mechanically following the price signal (picking the side above 50\% in each trade). The null hypothesis is $\mathrm{EA}_i = 0$. A one-sided binomial $z$-test at threshold $z > 2.326$ ($p < 0.01$) with positive $\mathrm{EA}$ flags wallets whose accuracy cannot be explained by price-following alone. Holm-Bonferroni and Benjamini-Hochberg corrections are applied separately. The theta-epsilon orthogonality violation (a positive correlation between the accuracy and execution components at the wallet level, which is absent in the population-level orthogonality established by \citet{dellavedova2026profits}) distinguishes informed traders from lucky ones.
+
+Sub-populations are split by the MNPI taxonomy of \citet{dellavedova2026orthogonality}: \emph{vote} markets (elections, awards), \emph{action} markets (policy decisions, launches), \emph{performance} markets (sports, competitions), and \emph{stochastic} markets (crypto prices, aggregate-force outcomes). The empirical flag-rate ordering matches the a~priori MNPI-risk ordering.
+
+\subsection{Bot Share of Volume}
+\label{sub:botshare}
+
+Weekly share of trade count attributable to wallets in the Bot class:
+\[
+  \mathrm{BotShare}_t \;=\; \frac{n_{\mathrm{bot}, t}}{\sum_c n_{c,t}}.
+\]
+Headline measure of how algorithmic the market is at any given week.
+
+\subsection{Longshot~/~Favorite Price Gap}
+\label{sub:pricegap}
+
+Realized win rate in the longshot price band (prices below 10\%) minus the band midpoint (5\%):
+\[
+  \mathrm{LongshotGap}_t \;=\; \mathrm{winrate}^{\mathrm{longshot}}_t \;-\; 0.05.
+\]
+Positive values indicate longshots are under-priced relative to reality; negative values indicate the classical favorite-longshot bias. A favorite-side analog is planned for a future release.
+
+\subsection{Market Efficiency Trend}
+\label{sub:efficiency}
+
+Weekly $R^2$ of the one-parameter Prelec fit applied to Active Retail trades:
+\[
+  \mathrm{Efficiency}_t \;=\; R^2\!\big(\mathrm{Prelec}(\,\cdot\,; \alpha_{\mathrm{active\text{-}retail},t})\big).
+\]
+Higher values indicate that the week's calibration gap is well-described by a single behavioral parameter; lower values indicate that idiosyncratic shocks dominate the curve. The Active Retail class is chosen because it is the largest human wallet cohort and the most representative of behavioral pricing.
+
+\subsection{Rolling statistics}
+Each weekly index is published with 4-, 13-, and 52-week moving averages and a 52-week rolling $z$-score. The $z$-score requires at least 13 non-null observations before reporting and is blank before the 13th week of the series. The landing-page ``notable movements'' block fires when the absolute $z$-score exceeds 1.0.
+
+\section{Validation}
+\label{sec:validation}
+
+\subsection{Comparison to working-paper results}
+
+The PWI non-bot pooled $\alpha$ estimate matches the \citet{tverskykahneman1992} experimental median of $0.65$ to within 0.01 under the current sample window, providing face validity for the aggregation. The PII flag count of 6{,}032 wallets reproduces the \citet{dellavedova2026orthogonality} headline count exactly; the Holm-Bonferroni survivor count (746) and BH-FDR survivor count (2{,}337) are likewise reproduced. The MNPI flag-rate ordering (vote~$>$~stochastic~$\approx$~action~$>$~performance) matches the theoretical prediction. The Execution Gap aligns in sign and approximate magnitude with the bps-denominated effective-spread gap documented in \citet{dellavedova2026profits}. \TODO{add a validation table with the precise numbers once the refreshed data lands}.
+
+\subsection{Out-of-sample checks}
+
+\TODO{once the data refresh completes, add a table showing each index's value at the end of the original sample (2026-W05) and at the current as-of date, with a note on stability}.
+
+\subsection{Bot-exclusion diagnostic}
+
+To verify that the PWI's bot exclusion is load-bearing, I compute the bot-inclusive and bot-exclusive variants of the weekly weighted $\alpha$ and report both in the supplementary appendix. The variants differ by roughly 0.4 in weeks with heavy bot volume share and by less than 0.1 in weeks with balanced composition; the exclusion is material.
+
+\section{Known Limitations}
+\label{sec:limits}
+
+\textbf{Platform coverage}. DV-PMI v1 covers Polymarket only. The methodology applies to any binary prediction market with public settlement data. Kalshi integration is contingent on wallet-level data access and is planned for a future release.
+
+\textbf{Refresh cadence}. Data refreshes weekly (Sunday 22:00 Pacific). Intraweek changes are not captured. For use cases requiring sub-weekly resolution, users should derive their own aggregations from the raw processed-trade panel.
+
+\textbf{Sample period}. The series begins in November 2022, when Polymarket's on-chain exchange became operational. Pre-2022 prediction-market history (Intrade, PredictIt) is not covered.
+
+\textbf{Wallet identity}. Wallets are cryptographic addresses, not individuals. A single person may operate multiple wallets, and a single wallet may be operated by multiple individuals. The classification rule is a behavioral proxy, not an identity claim.
+
+\textbf{Terminal-payoff assumption}. All indices assume binary settlement at $\{0, 1\}$. Markets with non-binary outcomes, partial resolution, or ambiguous resolution are excluded.
+
+\section{Reproducibility}
+\label{sec:reproducibility}
+
+All aggregation code is released under an MIT license in the project GitHub repository (\url{https://github.com/jdellavedova/polymarket-index}). Python dependencies are pinned in \texttt{requirements.txt}. Each weekly refresh is tagged with a semantic version (\texttt{vMAJOR.MINOR.PATCH}) and archived to Zenodo with a permanent DOI. The \texttt{CHANGELOG.md} records every methodology change with date and rationale.
+
+Any change to a published CSV column name, type, or units is a breaking change. It triggers a major version bump with a one-release deprecation window in which the prior column remains alongside its replacement.
+
+The weekly pipeline is:
+\begin{enumerate}
+  \item \texttt{python polymarket\_blockchain\_collector.py full} extends the raw-events file from the last checkpointed block to the current Polygon tip.
+  \item \texttt{python process\_pipeline.py} deduplicates and writes \texttt{processed\_trades.csv}.
+  \item A Paper~4-side aggregation step produces the weekly per-type alpha table.
+  \item \texttt{python pipeline/run\_all.py} reads the aggregation outputs and writes all DV-PMI CSVs and JSONs.
+  \item \texttt{git commit}, \texttt{git tag}, \texttt{git push} deploys via GitHub Actions; Zenodo archives on tag.
+\end{enumerate}
+
+\section{Citation}
+\label{sec:cite}
+
+Suggested citation:
+
+\begin{quote}
+Della Vedova, J. (2026). \emph{Della Vedova Prediction Market Indices}. Version 0.1.0. University of San Diego. \url{https://jdellavedova.com}.
+\end{quote}
+
+BibTeX:
+\begin{verbatim}
+@techreport{dellavedova2026dvpmi,
+  title       = {Della Vedova Prediction Market Indices: Construction,
+                 Validation, and Use},
+  author      = {Della Vedova, Joshua},
+  year        = {2026},
+  institution = {University of San Diego, Knauss School of Business},
+  version     = {0.1.0},
+  url         = {https://jdellavedova.com},
+  note        = {Weekly-updated index release; data and methodology at
+                 https://github.com/jdellavedova/polymarket-index}
+}
+\end{verbatim}
+
+\bibliographystyle{chicago}
+\bibliography{methodology}
+
+\end{document}

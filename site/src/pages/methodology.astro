@@ -8,7 +8,8 @@ import Base from "../layouts/Base.astro";
   <h2>Data source</h2>
   <p>
     All indices derive from the universe of resolved Polymarket trades on the Polygon blockchain,
-    November 2022 to present (222M resolved trades across 1.98M wallets as of the latest snapshot).
+    November 2022 to present (640M trades across 1.98M wallets as of the latest snapshot, of which
+    a subset have resolved markets and enter the Prelec and calibration aggregations).
     Trades are deduplicated against the Paradigm events index and joined against the Polymarket
     market-to-outcome mapping.
   </p>
@@ -19,9 +20,9 @@ import Base from "../layouts/Base.astro";
 
   <h2>Wallet classification</h2>
   <p>
-    Wallets are partitioned into five exclusive classes using Paper 1's rule: <em>bot</em> (more than 50 trades
-    per active day or more than 1,000 total trades), <em>sophisticated</em> (more than $10K volume AND
-    HHI less than 0.5 AND span more than 30 days), <em>active retail</em> (10 to 1,000 trades),
+    Wallets are partitioned into five exclusive classes using Paper 1&rsquo;s rule: <em>algorithmic</em> (more than
+    50 trades per active day or more than 1,000 total trades), <em>sophisticated</em> (more than $10K volume
+    AND HHI less than 0.5 AND span more than 30 days), <em>active retail</em> (10 to 1,000 trades),
     <em>casual</em> (2 to 9 trades), and <em>one-shot</em> (single trade).
   </p>
 
@@ -44,9 +45,10 @@ import Base from "../layouts/Base.astro";
 
   <h3>Execution Edge Monitor</h3>
   <p>
-    Weekly Prelec alpha fit separately for each wallet class. The index value is alpha(bot) - alpha(active retail)
-    each week. A behavioral proxy for the bot-retail execution divergence documented in Paper 1
-    (bots capture -4.25 bps effective spread; active retail pays +11.68 bps).
+    Weekly Prelec alpha fit separately for each wallet class. The index value is alpha(algorithmic) minus
+    alpha(active retail) each week. A behavioral proxy for the algorithmic-retail execution divergence
+    documented in <a href="/research">Paper 1</a> (algorithmic wallets capture &minus;4.25 bps effective
+    spread; active retail pays +11.68 bps).
   </p>
 
   <h3>Private Information Index (PII)</h3>
@@ -57,8 +59,12 @@ import Base from "../layouts/Base.astro";
     MNPI taxonomy (vote, action, performance, stochastic), ordered by a priori MNPI risk.
   </p>
 
-  <h3>Bot Share of Volume</h3>
-  <p>Weekly share of trade count attributable to wallets in the <em>bot</em> class.</p>
+  <h3>Algorithmic Share of Participation</h3>
+  <p>
+    Weekly share of counterparty events (each match contributes one maker and one taker) attributable to
+    wallets in the <em>algorithmic</em> class. Counting both sides keeps the human side of the market
+    visible: maker-only attribution would assign roughly 95&#37; to algorithms.
+  </p>
 
   <h3>Longshot / Favorite Price Gap</h3>
   <p>
@@ -102,8 +108,8 @@ import Base from "../layouts/Base.astro";
     Each index design is mapped to the four Rule 702 factors. <strong>Testable</strong>: every index reports
     an explicit null and the test statistic is recomputable. <strong>Known error rate</strong>: permutation-
     validated false positive rates for the PII; bootstrap confidence intervals for the calibration and PWI.
-    <strong>Peer review</strong>: each index is tied to at least one working paper under review at a
-    peer-reviewed journal. <strong>General acceptance</strong>: the primitives (Kyle 1985, Glosten-Milgrom 1985,
+    <strong>Peer review</strong>: each index is grounded in a working paper (see the research page) and in
+    previously peer-reviewed primitives. <strong>General acceptance</strong>: the primitives (Kyle 1985, Glosten-Milgrom 1985,
     Fama 1972, Anand et al. 2012, Tversky-Kahneman 1992, Prelec 1998) are standard in the literature.
   </p>
 

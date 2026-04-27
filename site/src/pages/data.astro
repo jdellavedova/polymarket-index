@@ -11,6 +11,63 @@ import Base from "../layouts/Base.astro";
     the Baker-Wurgler sentiment file or Ken French's factor library.
   </p>
 
+  <h2>Research use cases</h2>
+  <p class="section-lead" style="font-size:15px;">
+    Active research programs using or citable to this dataset include:
+  </p>
+  <ul>
+    <li>Measuring informed trading in prediction markets and binary-event contracts</li>
+    <li>Studying algorithmic liquidity provision, maker-taker dynamics, and execution quality</li>
+    <li>Testing probability weighting in field markets at population scale (Tversky-Kahneman replication)</li>
+    <li>Comparing political, sports, macro, and crypto information environments</li>
+    <li>Benchmarking retail versus algorithmic trader performance and the directional-vs-execution split</li>
+    <li>Market-microstructure research on binary-payoff venues, including calibration and pricing efficiency</li>
+    <li>Regulatory and policy analysis of prediction-market integrity</li>
+  </ul>
+
+  <h2>Ways to use this data</h2>
+
+  <h3>Python</h3>
+  <pre>import pandas as pd
+
+url = "https://jdellavedova.com/data/polymarket_indices_weekly.csv"
+dvpmi = pd.read_csv(url, parse_dates=["date"]).set_index("date")
+dvpmi[["pwi_alpha", "bot_share", "alpha_gap"]].plot()</pre>
+
+  <h3>Stata</h3>
+  <pre>import delimited "https://jdellavedova.com/data/polymarket_indices_weekly.csv", ///
+    varnames(1) clear
+generate date_d = date(date, "YMD")
+format date_d %td
+tsset date_d
+tsline pwi_alpha bot_share alpha_gap</pre>
+
+  <h3>R</h3>
+  <pre>library(tidyverse)
+
+url &lt;- "https://jdellavedova.com/data/polymarket_indices_weekly.csv"
+dvpmi &lt;- read_csv(url)
+dvpmi %&gt;% select(date, pwi_alpha, bot_share, alpha_gap) %&gt;%
+  pivot_longer(-date) %&gt;% ggplot(aes(date, value, color = name)) + geom_line()</pre>
+
+  <h3>BibTeX</h3>
+  <pre>{`@techreport{dellavedova2026dvpmi,
+  title       = {Della Vedova Prediction Market Indices},
+  author      = {Della Vedova, Joshua},
+  year        = {2026},
+  version     = {0.1.0},
+  institution = {University of San Diego, Knauss School of Business},
+  url         = {https://jdellavedova.com},
+  note        = {Weekly-updated dataset}
+}`}</pre>
+
+  <p class="muted" style="font-size:14px;">
+    All URLs stable for the canonical release. For research that must reference an exact snapshot,
+    cite the Zenodo DOI corresponding to the weekly release version (reported in the footer of every
+    page). Column schemas follow semantic versioning; breaking changes trigger a major-version bump
+    with a one-release deprecation window.
+  </p>
+
   <h2>Master table</h2>
   <table>
     <tr><th>File</th><th>Description</th></tr>

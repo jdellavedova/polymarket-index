@@ -14,7 +14,7 @@ from config import DATA_OUT
 
 
 INDICES = [
-    ("pwi_history.csv", ["pwi", "pwi_ma13w"]),
+    ("pwi_history.csv", ["pwi_alpha", "pwi_alpha_ma13w"]),
     ("execution_history.csv", ["alpha_gap", "alpha_gap_ma13w"]),
     ("bot_share_history.csv", ["bot_share", "bot_share_ma13w"]),
     ("price_gap_history.csv", ["longshot_gap", "longshot_gap_ma13w"]),

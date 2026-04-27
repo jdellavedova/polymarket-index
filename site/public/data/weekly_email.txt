@@ -1,0 +1,55 @@
+DV-PMI WEEKLY DIGEST / Week of 2026-04-20
+============================================================
+
+Polymarket traders moved $776 million this week, above trend, with 37,569 new participants joining the market.
+
+------------------------------------------------------------
+THIS WEEK BY THE NUMBERS
+------------------------------------------------------------
+  Total USD volume        $776M
+  Total trades            30.9M
+  New participants        37,569
+  Bot share of trades     91.0%
+  Non-bot Prelec alpha    0.722 (Kahneman-Tversky: 0.65)
+
+------------------------------------------------------------
+THE STORY
+------------------------------------------------------------
+Traders moved $776 million through Polymarket in the week of 2026-04-20, across 30.9 million individual trades, with 37,569 wallets placing their first-ever bet (below the recent trend). Algorithmic wallets handled 91% of the trade count; everyone else split the remaining 9%.
+
+The most-traded market was "Will the next Prime Minister of Hungary be Péter Magyar?", pulling in $6 million of volume. Politics dominated the week's attention.
+
+An unusual reversal: retail traders outperformed bots this week. Active retail earned $7K (+84 bps on volume) while algorithms lost $137K (-119 bps). Weeks like this are rare (bots are typically on top by the execution channel).
+
+------------------------------------------------------------
+MOST-TRADED MARKETS THIS WEEK
+------------------------------------------------------------
+  1. $6M  Will the next Prime Minister of Hungary be Péter Magyar?
+  2. $6M  Will the next Prime Minister of Hungary be Viktor Orbán?
+  3. $5M  Will there be no change in Fed interest rates after the April 2026 meeting?
+  4. $2M  Will Roberto Sánchez Palomino win the 2026 Peruvian presidential election?
+  5. $2M  Will Rafael López Aliaga win the 2026 Peruvian presidential election?
+
+------------------------------------------------------------
+WHO MADE MONEY (resolved trades only)
+------------------------------------------------------------
+  Active Retail           $7K   (+84 bps on volume)
+  Bot                  -$137K   (-119 bps on volume)
+  Casual                  $1K   (+1910 bps on volume)
+  One-Shot               $151   (+4202 bps on volume)
+  Sophisticated         -$19K   (-132 bps on volume)
+
+------------------------------------------------------------
+INSIDER-TRADING FLAG COUNT (to date)
+------------------------------------------------------------
+  Wallets flagged as likely informed:   6,291
+  Out of wallets tested:                483,002 (1.30%)
+  After strict statistical correction:  806
+
+============================================================
+Full dashboard: https://jdellavedova.com
+Downloads + DOI: https://jdellavedova.com/data
+Methodology:     https://jdellavedova.com/methodology
+
+To unsubscribe, reply with UNSUBSCRIBE.
+-- Joshua Della Vedova, University of San Diego (2026-04-24T17:48:14+00:00)

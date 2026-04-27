@@ -5,11 +5,11 @@
   "as_of": "2026-02-28",
   "source_paper": "Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets'",
   "headline": {
-    "total_wallets_tested": 450048,
-    "total_flagged_p_lt_01": 6032,
-    "flag_rate": 0.013403014789533561,
-    "holm_bonferroni_survivors": 746,
-    "bh_fdr_survivors": 2337
+    "total_wallets_tested": 483002,
+    "total_flagged_p_lt_01": 6291,
+    "flag_rate": 0.013024790787615786,
+    "holm_bonferroni_survivors": 806,
+    "bh_fdr_survivors": 2493
   },
   "mnpi_taxonomy": [
     {
@@ -44,27 +44,27 @@
   "by_wallet_type": [
     {
       "wallet_type": "bot",
-      "n_wallets": 52262,
-      "n_significant_01": 815,
-      "pct_significant_01": 1.5594504611381117,
-      "mean_excess_accuracy": -0.467262710542458,
-      "flag_rate": 0.015594504611381118
+      "n_wallets": 64351,
+      "n_significant_01": 1026,
+      "pct_significant_01": 1.5943808177029106,
+      "mean_excess_accuracy": -0.4532993322619947,
+      "flag_rate": 0.015943808177029107
     },
     {
       "wallet_type": "sophisticated",
-      "n_wallets": 45357,
-      "n_significant_01": 1181,
-      "pct_significant_01": 2.6037877284652864,
-      "mean_excess_accuracy": -0.3168071418677081,
-      "flag_rate": 0.026037877284652865
+      "n_wallets": 64947,
+      "n_significant_01": 1352,
+      "pct_significant_01": 2.081697384020817,
+      "mean_excess_accuracy": -0.3631760108633969,
+      "flag_rate": 0.02081697384020817
     },
     {
       "wallet_type": "active_retail",
-      "n_wallets": 352429,
-      "n_significant_01": 4036,
-      "pct_significant_01": 1.145195202437938,
-      "mean_excess_accuracy": -0.3695902188587076,
-      "flag_rate": 0.011451952024379378
+      "n_wallets": 353704,
+      "n_significant_01": 3913,
+      "pct_significant_01": 1.1062922669803,
+      "mean_excess_accuracy": -0.3735512042695794,
+      "flag_rate": 0.011062922669802999
     }
   ],
   "by_raw_category": [
@@ -101,11 +101,11 @@
   ],
   "vs_mitts_ofir": {
     "their_flag_rate": 0.38,
-    "our_flag_rate": 0.013403014789533561,
+    "our_flag_rate": 0.013024790787615786,
     "cohens_kappa": 0.007,
     "note": "Near-zero concordance between structural (orthogonality) and heuristic (5-signal) approaches."
   },
-  "generated_at": "2026-04-21T06:53:33+00:00",
+  "generated_at": "2026-04-24T17:35:55+00:00",
   "sources": [
     "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage19_significant_wallets.csv",
     "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage19_summary_by_type.csv",

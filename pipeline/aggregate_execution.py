@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from common import add_rolling_stats, summary_stats, utc_now, write_json
+from common import add_rolling_stats, drop_partial_weeks, summary_stats, utc_now, write_json
 from config import DATA_OUT, require_source
 
 
@@ -27,6 +27,7 @@ def main() -> None:
     src = require_source("weekly_alpha_by_type")
     df = pd.read_csv(src)
     df["date"] = pd.to_datetime(df["date"])
+    df = drop_partial_weeks(df)
     df = df.sort_values(["date", "wallet_type"]).reset_index(drop=True)
 
     # Save the long-format per-type panel with MAs on alpha

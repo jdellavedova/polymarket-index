@@ -1,0 +1,73 @@
+---
+import Base from "../layouts/Base.astro";
+import press from "../../public/data/press_quotes.json";
+---
+<Base title="Press and media" description="Quotes, media mentions, and speaking engagements for Joshua Della Vedova.">
+  <h1>Press and media</h1>
+  <p class="subtitle">Quotes ready to cite, prior media mentions, and speaking engagements.</p>
+
+  <p class="muted">
+    Media inquiries: <a href="mailto:jdellavedova@sandiego.edu">jdellavedova@sandiego.edu</a>.
+    Expected response within 24 hours on weekdays.
+  </p>
+
+  <h2>Quotes ready to cite</h2>
+  <p class="section-lead">
+    The quotes below are released under Creative Commons Attribution 4.0. Journalists are welcome
+    to edit for length or style as long as the attribution remains. No interview needed to quote
+    them; an email heads-up is appreciated so the corresponding paper can be linked or any
+    clarifying context provided.
+  </p>
+
+  {press.quotes.map(q => (
+    <article class="press-quote">
+      <div class="pq-topic">{q.topic}</div>
+      <blockquote class="pq-quote">&ldquo;{q.quote}&rdquo;</blockquote>
+      <p class="pq-context">{q.context}</p>
+      <p class="pq-attribution">&mdash; {q.citation_line}</p>
+    </article>
+  ))}
+
+  <h2>In the news</h2>
+  {press.media_mentions.length === 0 && (
+    <p class="muted">Recent media mentions will appear here as pieces run.</p>
+  )}
+  {press.media_mentions.length > 0 && (
+    <table>
+      <tr><th>Date</th><th>Outlet</th><th>Headline</th><th>Link</th></tr>
+      {press.media_mentions.map(m => (
+        <tr>
+          <td>{m.date}</td>
+          <td>{m.outlet}</td>
+          <td>{m.headline}</td>
+          <td>{m.url ? <a href={m.url}>Article</a> : "—"}</td>
+        </tr>
+      ))}
+    </table>
+  )}
+
+  <h2>Speaking engagements</h2>
+  {press.speaking.length === 0 && (
+    <p class="muted">Upcoming and recent talks will appear here.</p>
+  )}
+  {press.speaking.length > 0 && (
+    <table>
+      <tr><th>Date</th><th>Venue</th><th>Talk</th></tr>
+      {press.speaking.map(s => (
+        <tr><td>{s.date}</td><td>{s.venue}</td><td>{s.title}</td></tr>
+      ))}
+    </table>
+  )}
+
+  <h2>About the source</h2>
+  <p>
+    Joshua Della Vedova is an Assistant Professor of Finance at the Knauss School of Business,
+    University of San Diego. His research on prediction markets draws on 640&thinsp;million on-chain
+    Polymarket trades. See the <a href="/research">research page</a> and the
+    <a href="/">DV-PMI dashboard</a> for methodology, sources, and contact information.
+  </p>
+
+  <p class="muted" style="font-size:13px;">
+    {press.usage_note}
+  </p>
+</Base>

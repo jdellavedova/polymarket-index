@@ -1,50 +1,53 @@
-"""Bot Share of Volume — weekly % of trades attributed to bot wallets.
+"""Bot Share of Volume — weekly % of trades from bot wallets.
 
-Reads weekly_alpha_by_type.csv and computes bot_share = bot_n_trades / total
-per week. Emits history CSV with MAs and z-score, plus latest JSON and
-chart-ready timeseries.
+Reads `weekly_activity_history.csv` (produced by aggregate_weekly_activity),
+which has TRUE per-type trade counts from processed_trades.csv joined with
+wallet_statistics.csv. This fixes the earlier bug where the shares were based
+on Prelec-fit-included trades and casual/one_shot types often dropped to zero.
 """
 from __future__ import annotations
 
 import pandas as pd
 
 from common import add_rolling_stats, summary_stats, utc_now, write_json
-from config import DATA_OUT, require_source
+from config import DATA_OUT
 
 
 def main() -> None:
-    src = require_source("weekly_alpha_by_type")
+    src = DATA_OUT / "weekly_activity_history.csv"
+    if not src.exists():
+        raise RuntimeError(
+            f"Missing {src}. Run aggregate_weekly_activity before aggregate_bot_share."
+        )
     df = pd.read_csv(src)
     df["date"] = pd.to_datetime(df["date"])
+    df = df.sort_values("date").reset_index(drop=True)
 
-    weekly = (
-        df.pivot_table(index="date", columns="wallet_type", values="n_trades",
-                       aggfunc="sum", fill_value=0)
-          .reset_index()
-          .sort_values("date")
-    )
-    weekly.columns.name = None
+    # The activity aggregator already applies the partial-week filter with a
+    # 0.5 threshold, so rows here are all complete weeks.
+    df = df.rename(columns={
+        "share_bot": "bot_share",
+        "share_active_retail": "retail_share",
+        "share_sophisticated": "sophisticated_share",
+        "share_casual": "casual_share",
+        "share_one_shot": "one_shot_share",
+    })
+    df["n_trades_total"] = df["total_trades"]
+    df = add_rolling_stats(df, "bot_share")
 
-    type_cols = [c for c in weekly.columns if c != "date"]
-    weekly["n_trades_total"] = weekly[type_cols].sum(axis=1)
-    weekly["bot_share"] = weekly.get("bot", 0) / weekly["n_trades_total"]
-    weekly["retail_share"] = weekly.get("active_retail", 0) / weekly["n_trades_total"]
-    weekly["sophisticated_share"] = weekly.get("sophisticated", 0) / weekly["n_trades_total"]
-
-    weekly = add_rolling_stats(weekly, "bot_share")
-
-    hist = weekly.copy()
+    hist = df.copy()
     hist["date"] = hist["date"].dt.strftime("%Y-%m-%d")
     out_cols = [
         "date", "n_trades_total",
         "bot_share", "retail_share", "sophisticated_share",
+        "casual_share", "one_shot_share",
         "bot_share_ma4w", "bot_share_ma13w", "bot_share_ma52w", "bot_share_z52w",
     ]
     hist[[c for c in out_cols if c in hist.columns]].to_csv(
         DATA_OUT / "bot_share_history.csv", index=False
     )
 
-    latest = weekly.iloc[-1]
+    latest = df.iloc[-1]
     payload = {
         "index_name": "Bot Share of Volume",
         "short_name": "BotShare",
@@ -56,20 +59,28 @@ def main() -> None:
         "z52w": None if pd.isna(latest["bot_share_z52w"]) else float(latest["bot_share_z52w"]),
         "retail_share": float(latest["retail_share"]),
         "sophisticated_share": float(latest["sophisticated_share"]),
+        "casual_share": float(latest["casual_share"]),
+        "one_shot_share": float(latest["one_shot_share"]),
         "n_trades_week": int(latest["n_trades_total"]),
-        "rolling": summary_stats(weekly["bot_share"]),
-        "n_weeks_history": int(len(weekly)),
-        "first_date": weekly.iloc[0]["date"].strftime("%Y-%m-%d"),
+        "rolling": summary_stats(df["bot_share"]),
+        "n_weeks_history": int(len(df)),
+        "first_date": df.iloc[0]["date"].strftime("%Y-%m-%d"),
         "generated_at": utc_now(),
         "source": str(src),
+        "methodology": (
+            "Shares are fraction of actual resolved trades per week attributed "
+            "to each wallet-type class (not Prelec-fit-included trades). "
+            "Wallet-type assignment is static per wallet based on the full trade "
+            "history thresholds defined in Paper 1."
+        ),
     }
     write_json(DATA_OUT / "bot_share_latest.json", payload)
 
-    series = weekly[["date", "bot_share", "bot_share_ma13w"]].copy()
+    series = df[["date", "bot_share", "bot_share_ma13w"]].copy()
     series["date"] = series["date"].dt.strftime("%Y-%m-%d")
     write_json(DATA_OUT / "bot_share_timeseries.json", series.to_dict(orient="records"))
 
-    print(f"BotShare: {len(weekly)} weeks, latest={latest['date'].strftime('%Y-%m-%d')}, "
+    print(f"BotShare: {len(df)} weeks, latest={latest['date'].strftime('%Y-%m-%d')}, "
           f"bot_share={latest['bot_share']:.1%}")
 
 

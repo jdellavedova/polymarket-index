@@ -13,14 +13,21 @@ const {
 <div class="chart" id={containerId} style={`min-height:${height}px`}></div>
 <script type="module" define:vars={{ dataUrl, height, containerId }}>
   import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/+esm";
+  const css = getComputedStyle(document.documentElement);
+  const cPrimary = css.getPropertyValue("--chart-primary").trim() || "#75bee9";
+  const cText = css.getPropertyValue("--chart-text").trim() || "#c4d2e4";
+  const cGrid = css.getPropertyValue("--chart-grid").trim() || "#1f3152";
+  const cBg = css.getPropertyValue("--bg").trim() || "#0a1420";
+
   const res = await fetch(dataUrl);
   const pii = await res.json();
   const order = ["vote", "action", "performance", "stochastic"];
+  const labels = { vote: "Vote", action: "Action", performance: "Performance", stochastic: "Stochastic" };
   const data = pii.mnpi_taxonomy
     .slice()
     .sort((a, b) => order.indexOf(a.mnpi_type) - order.indexOf(b.mnpi_type))
     .map(d => ({
-      type: d.mnpi_type,
+      type: labels[d.mnpi_type] ?? d.mnpi_type,
       flag_rate: d.flag_rate_01,
       n_tested: d.n_wallets_tested,
     }));
@@ -29,14 +36,15 @@ const {
     Plot.plot({
       width: Math.min(el.clientWidth || 680, 680),
       height,
-      marginLeft: 90,
+      marginLeft: 110,
       marginRight: 48,
       marginBottom: 40,
+      style: { background: cBg, color: cText, fontFamily: "Sofia Sans, sans-serif" },
       x: { label: "wallet flag rate (p < 0.01)", grid: true, tickFormat: d => (d * 100).toFixed(1) + "%" },
-      y: { label: "", domain: order },
+      y: { label: "", domain: order.map(o => labels[o] ?? o) },
       marks: [
-        Plot.ruleX([0]),
-        Plot.barX(data, { y: "type", x: "flag_rate", fill: "#003b70" }),
+        Plot.ruleX([0], { stroke: cText, strokeOpacity: 0.3 }),
+        Plot.barX(data, { y: "type", x: "flag_rate", fill: cPrimary }),
         Plot.text(data, {
           y: "type",
           x: "flag_rate",
@@ -44,9 +52,12 @@ const {
           dx: 6,
           textAnchor: "start",
           fontSize: 12,
-          fill: "#111",
+          fill: cText,
         }),
       ],
     })
   );
+  el.querySelectorAll("g[aria-label='y-grid'] line, g[aria-label='x-grid'] line").forEach(l => {
+    l.setAttribute("stroke", cGrid);
+  });
 </script>

@@ -4,6 +4,21 @@ import PiiChart from "../components/PiiChart.astro";
 import pii from "../../public/data/pii_latest.json";
 
 function pct(n, d = 2) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n * 100).toFixed(d) + "%"; }
+const WALLET_LABEL: Record<string, string> = {
+  bot: "Algorithmic",
+  active_retail: "Active Retail",
+  sophisticated: "Sophisticated",
+  casual: "Casual",
+  one_shot: "One-Shot",
+};
+function walletLabel(k: string) { return WALLET_LABEL[k] ?? k; }
+const MNPI_LABEL: Record<string, string> = {
+  vote: "Vote",
+  action: "Action",
+  performance: "Performance",
+  stochastic: "Stochastic",
+};
+function mnpiLabel(k: string) { return MNPI_LABEL[k] ?? k; }
 ---
 <Base title="Private Information Index (PII)" description="Wallet-level signatures of private information in Polymarket trading.">
   <h1>Private Information Index (PII)</h1>
@@ -30,7 +45,7 @@ function pct(n, d = 2) { return (n === null || n === undefined || Number.isNaN(n
     <tr><th>MNPI category</th><th>Wallets tested</th><th>Flagged (p &lt; 0.01)</th><th>Flag rate</th></tr>
     {pii.mnpi_taxonomy.map(m => (
       <tr>
-        <td>{m.mnpi_type}</td>
+        <td>{mnpiLabel(m.mnpi_type)}</td>
         <td class="mono">{m.n_wallets_tested.toLocaleString()}</td>
         <td class="mono">{m.n_flagged_01.toLocaleString()}</td>
         <td class="mono">{pct(m.flag_rate_01, 2)}</td>
@@ -43,7 +58,7 @@ function pct(n, d = 2) { return (n === null || n === undefined || Number.isNaN(n
     <tr><th>Wallet class</th><th>Wallets</th><th>Flagged</th><th>Flag rate</th></tr>
     {pii.by_wallet_type.map(t => (
       <tr>
-        <td>{t.wallet_type}</td>
+        <td>{walletLabel(t.wallet_type)}</td>
         <td class="mono">{t.n_wallets.toLocaleString()}</td>
         <td class="mono">{t.n_significant_01.toLocaleString()}</td>
         <td class="mono">{pct(t.flag_rate, 2)}</td>
@@ -75,7 +90,7 @@ function pct(n, d = 2) { return (n === null || n === undefined || Number.isNaN(n
   </p>
   <p>
     Weekly time series for PII is a future release item; it requires a separate pipeline joining the flagged
-    wallet set with per-wallet trade timestamps across the 233M-row trade panel.
+    wallet set with per-wallet trade timestamps across the 640M-row trade panel.
   </p>
 
   <h2>Source paper</h2>

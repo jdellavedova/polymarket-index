@@ -17,7 +17,7 @@ INSIDER_OUT = Path("G:/My Drive/1. Research/1. Polymarket/2. Insider/output")
 
 SOURCES = {
     "weekly_pwi": PAPER4 / "weekly_pwi.csv",
-    "calibration_nonbot": PAPER4 / "calibration_nonbot.csv",
+    "calibration_nonbot": PAPER4 / "calibration_nonbot_market.csv",
     "weekly_alpha_by_type": PAPER4 / "weekly_alpha_by_type.csv",
     "stage19_significant_wallets": INSIDER_OUT / "stage19_significant_wallets.csv",
 }

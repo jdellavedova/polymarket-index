@@ -7,7 +7,7 @@ authors:
   - family-names: "Della Vedova"
     given-names: "Joshua"
     affiliation: "Knauss School of Business, University of San Diego"
-    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"  # add when ORCID is registered
+    orcid: "https://orcid.org/0000-0003-3371-9735"
 repository-code: "https://github.com/jdellavedova/polymarket-index"
 url: "https://jdellavedova.com"
 license: CC-BY-4.0

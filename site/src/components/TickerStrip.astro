@@ -1,0 +1,51 @@
+---
+import pwi from "../../public/data/pwi_latest.json";
+import execution from "../../public/data/execution_latest.json";
+import botShare from "../../public/data/bot_share_latest.json";
+import priceGap from "../../public/data/price_gap_latest.json";
+import efficiency from "../../public/data/efficiency_latest.json";
+import pii from "../../public/data/pii_latest.json";
+import calibration from "../../public/data/calibration_latest.json";
+
+function fmt(n, d = 2) {
+  if (n === null || n === undefined || Number.isNaN(n)) return "n/a";
+  return n.toFixed(d);
+}
+function pctFmt(n, d = 1) {
+  if (n === null || n === undefined || Number.isNaN(n)) return "n/a";
+  return (n * 100).toFixed(d) + "%";
+}
+function arrow(z) {
+  if (z === null || z === undefined || Number.isNaN(z)) return "";
+  if (z > 0.5) return "▲"; // up triangle
+  if (z < -0.5) return "▼"; // down triangle
+  return "";
+}
+function cls(z) {
+  if (z === null || z === undefined || Number.isNaN(z)) return "flat";
+  if (z > 0.5) return "up";
+  if (z < -0.5) return "down";
+  return "flat";
+}
+
+const tiles = [
+  { label: "PWI (non-bot alpha)",   value: fmt(pwi.value, 3),                     z: pwi.z52w,         href: "/pwi" },
+  { label: "Exec. gap",             value: (execution.value >= 0 ? "+" : "") + fmt(execution.value, 3),  z: execution.z52w,    href: "/execution" },
+  { label: "Bot share",             value: pctFmt(botShare.value, 1),             z: botShare.z52w,    href: "/bot-share" },
+  { label: "Longshot gap",          value: (priceGap.value >= 0 ? "+" : "") + fmt(priceGap.value, 3),    z: priceGap.z52w,    href: "/price-gap" },
+  { label: "Efficiency",            value: fmt(efficiency.value, 3),              z: efficiency.z52w,  href: "/efficiency" },
+  { label: "Prelec α (pooled)", value: fmt(calibration.prelec_alpha, 3),     z: null,             href: "/calibration" },
+  { label: "PII flagged",           value: pii.headline.total_flagged_p_lt_01.toLocaleString(),          z: null,             href: "/pii" },
+];
+---
+<div class="ticker">
+  {tiles.map(t => (
+    <a class={`tile ${cls(t.z)}`} href={t.href}>
+      <span class="t-label">{t.label}</span>
+      <span class="t-value">{t.value}</span>
+      {t.z !== null && t.z !== undefined && !Number.isNaN(t.z) && (
+        <span class="t-delta">{arrow(t.z)} {(t.z >= 0 ? "+" : "") + t.z.toFixed(2)}</span>
+      )}
+    </a>
+  ))}
+</div>

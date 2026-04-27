@@ -1,22 +1,53 @@
 ---
+import MiniSparkline from "./MiniSparkline.astro";
+
 export interface Props {
   name: string;
   value: string;
-  delta?: string;
-  deltaSign?: "pos" | "neg" | "neutral";
+  description: string;
+  howToRead?: string;
+  href: string;
+  z52w?: number | null;
+  sparklineUrl?: string;
+  sparklineField?: string;
   meta?: string;
-  href?: string;
 }
-const { name, value, delta, deltaSign = "neutral", meta, href } = Astro.props;
-const Tag = href ? "a" : "div";
+const {
+  name,
+  value,
+  description,
+  howToRead,
+  href,
+  z52w = null,
+  sparklineUrl,
+  sparklineField = "value",
+  meta,
+} = Astro.props;
+
+const zSign =
+  z52w === null || z52w === undefined || Number.isNaN(z52w)
+    ? "neutral"
+    : z52w > 0.5
+    ? "pos"
+    : z52w < -0.5
+    ? "neg"
+    : "neutral";
+
+const zLabel =
+  z52w === null || z52w === undefined || Number.isNaN(z52w)
+    ? null
+    : `${z52w >= 0 ? "+" : ""}${z52w.toFixed(2)}`;
 ---
-<Tag class="index-card" href={href}>
-  <div class="name">{name}</div>
+<a class="index-card-rich" href={href}>
+  <div class="top">
+    <div class="name">{name}</div>
+    {zLabel && <div class={`z-badge ${zSign}`}>z52w {zLabel}</div>}
+  </div>
   <div class="value">{value}</div>
-  {delta && (
-    <div class={`delta ${deltaSign === "pos" ? "pos" : deltaSign === "neg" ? "neg" : ""}`}>
-      {delta}
-    </div>
+  {sparklineUrl && (
+    <MiniSparkline dataUrl={sparklineUrl} yField={sparklineField} />
   )}
+  <p class="desc">{description}</p>
+  {howToRead && <p class="how-to-read"><span class="htr-label">How to read:</span> {howToRead}</p>}
   {meta && <div class="meta">{meta}</div>}
-</Tag>
+</a>

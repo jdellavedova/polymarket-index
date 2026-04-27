@@ -1,0 +1,422 @@
+[
+  {
+    "week": "2026-W05",
+    "top": [
+      {
+        "rank": 1,
+        "market_id": "601699",
+        "question": "No change in Fed interest rates after January 2026 meeting?",
+        "usd_volume": 29485764.48112105
+      },
+      {
+        "rank": 2,
+        "market_id": "680392",
+        "question": "Will there be another US government shutdown by January 31?",
+        "usd_volume": 25241479.34640999
+      },
+      {
+        "rank": 3,
+        "market_id": "572473",
+        "question": "Will Trump nominate Judy Shelton as the next Fed chair?",
+        "usd_volume": 17662186.989893004
+      },
+      {
+        "rank": 4,
+        "market_id": "1199779",
+        "question": null,
+        "usd_volume": 9421687.395453
+      },
+      {
+        "rank": 5,
+        "market_id": "572469",
+        "question": "Will Trump nominate Kevin Warsh as the next Fed chair?",
+        "usd_volume": 7940400.763422983
+      }
+    ]
+  },
+  {
+    "week": "2026-W06",
+    "top": [
+      {
+        "rank": 1,
+        "market_id": "680392",
+        "question": "Will there be another US government shutdown by January 31?",
+        "usd_volume": 57579424.740955904
+      },
+      {
+        "rank": 2,
+        "market_id": "1144023",
+        "question": null,
+        "usd_volume": 22108447.717438005
+      },
+      {
+        "rank": 3,
+        "market_id": "572473",
+        "question": "Will Trump nominate Judy Shelton as the next Fed chair?",
+        "usd_volume": 18141590.76864598
+      },
+      {
+        "rank": 4,
+        "market_id": "572469",
+        "question": "Will Trump nominate Kevin Warsh as the next Fed chair?",
+        "usd_volume": 8577799.684975984
+      },
+      {
+        "rank": 5,
+        "market_id": "920389",
+        "question": null,
+        "usd_volume": 5330526.296956999
+      }
+    ]
+  },
+  {
+    "week": "2026-W07",
+    "top": [
+      {
+        "rank": 1,
+        "market_id": "1269423",
+        "question": null,
+        "usd_volume": 16324940.05115802
+      },
+      {
+        "rank": 2,
+        "market_id": "572473",
+        "question": "Will Trump nominate Judy Shelton as the next Fed chair?",
+        "usd_volume": 14986268.920326991
+      },
+      {
+        "rank": 3,
+        "market_id": "572469",
+        "question": "Will Trump nominate Kevin Warsh as the next Fed chair?",
+        "usd_volume": 3801720.766765999
+      },
+      {
+        "rank": 4,
+        "market_id": "555793",
+        "question": "Will Cardi B perform during the Super Bowl LX halftime show?",
+        "usd_volume": 3535881.677665001
+      },
+      {
+        "rank": 5,
+        "market_id": "654414",
+        "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+        "usd_volume": 3530241.0637269993
+      }
+    ]
+  },
+  {
+    "week": "2026-W09",
+    "top": [
+      {
+        "rank": 1,
+        "market_id": "1198423",
+        "question": null,
+        "usd_volume": 6470765.993281989
+      },
+      {
+        "rank": 2,
+        "market_id": "572473",
+        "question": "Will Trump nominate Judy Shelton as the next Fed chair?",
+        "usd_volume": 5010487.114473996
+      },
+      {
+        "rank": 3,
+        "market_id": "703257",
+        "question": "Will the US confirm that aliens exist before 2027?",
+        "usd_volume": 3624164.303077999
+      },
+      {
+        "rank": 4,
+        "market_id": "654414",
+        "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+        "usd_volume": 2906143.961354999
+      },
+      {
+        "rank": 5,
+        "market_id": "984441",
+        "question": null,
+        "usd_volume": 2850532.264798
+      }
+    ]
+  },
+  {
+    "week": "2026-W10",
+    "top": [
+      {
+        "rank": 1,
+        "market_id": "1180303",
+        "question": null,
+        "usd_volume": 49726715.828793064
+      },
+      {
+        "rank": 2,
+        "market_id": "1198423",
+        "question": null,
+        "usd_volume": 19340428.89430797
+      },
+      {
+        "rank": 3,
+        "market_id": "572473",
+        "question": "Will Trump nominate Judy Shelton as the next Fed chair?",
+        "usd_volume": 13427379.174942013
+      },
+      {
+        "rank": 4,
+        "market_id": "916732",
+        "question": null,
+        "usd_volume": 12259953.996690959
+      },
+      {
+        "rank": 5,
+        "market_id": "572469",
+        "question": "Will Trump nominate Kevin Warsh as the next Fed chair?",
+        "usd_volume": 11803238.270196002
+      }
+    ]
+  },
+  {
+    "week": "2026-W11",
+    "top": [
+      {
+        "rank": 1,
+        "market_id": "654414",
+        "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+        "usd_volume": 11389935.23052601
+      },
+      {
+        "rank": 2,
+        "market_id": "1227361",
+        "question": null,
+        "usd_volume": 10895336.29230799
+      },
+      {
+        "rank": 3,
+        "market_id": "958442",
+        "question": null,
+        "usd_volume": 4117776.390752995
+      },
+      {
+        "rank": 4,
+        "market_id": "958443",
+        "question": null,
+        "usd_volume": 2744907.6689760014
+      },
+      {
+        "rank": 5,
+        "market_id": "654415",
+        "question": "Will the Fed increase interest rates by 25+ bps after the March 2026 meeting?",
+        "usd_volume": 2736286.8296660017
+      }
+    ]
+  },
+  {
+    "week": "2026-W12",
+    "top": [
+      {
+        "rank": 1,
+        "market_id": "1227361",
+        "question": null,
+        "usd_volume": 13411689.182295006
+      },
+      {
+        "rank": 2,
+        "market_id": "654414",
+        "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+        "usd_volume": 11954637.65140598
+      },
+      {
+        "rank": 3,
+        "market_id": "654415",
+        "question": "Will the Fed increase interest rates by 25+ bps after the March 2026 meeting?",
+        "usd_volume": 3810468.598554072
+      },
+      {
+        "rank": 4,
+        "market_id": "958442",
+        "question": null,
+        "usd_volume": 2569046.757818002
+      },
+      {
+        "rank": 5,
+        "market_id": "654412",
+        "question": "Will the Fed decrease interest rates by 50+ bps after the March 2026 meeting?",
+        "usd_volume": 1646649.416871999
+      }
+    ]
+  },
+  {
+    "week": "2026-W13",
+    "top": [
+      {
+        "rank": 1,
+        "market_id": "958442",
+        "question": null,
+        "usd_volume": 4319407.219759998
+      },
+      {
+        "rank": 2,
+        "market_id": "654414",
+        "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+        "usd_volume": 3287129.8904359997
+      },
+      {
+        "rank": 3,
+        "market_id": "677397",
+        "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
+        "usd_volume": 2356543.2336519985
+      },
+      {
+        "rank": 4,
+        "market_id": "1162940",
+        "question": null,
+        "usd_volume": 1986877.3748010006
+      },
+      {
+        "rank": 5,
+        "market_id": "654413",
+        "question": "Will the Fed decrease interest rates by 25 bps after the March 2026 meeting?",
+        "usd_volume": 1950279.1662890015
+      }
+    ]
+  },
+  {
+    "week": "2026-W14",
+    "top": [
+      {
+        "rank": 1,
+        "market_id": "677397",
+        "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
+        "usd_volume": 48415483.13609103
+      },
+      {
+        "rank": 2,
+        "market_id": "1162940",
+        "question": null,
+        "usd_volume": 9311347.017490968
+      },
+      {
+        "rank": 3,
+        "market_id": "958442",
+        "question": null,
+        "usd_volume": 7470316.828559991
+      },
+      {
+        "rank": 4,
+        "market_id": "604490",
+        "question": "Will Trump visit China by March 31?",
+        "usd_volume": 5258466.591608005
+      },
+      {
+        "rank": 5,
+        "market_id": "669662",
+        "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
+        "usd_volume": 1825285.645483002
+      }
+    ]
+  },
+  {
+    "week": "2026-W15",
+    "top": [
+      {
+        "rank": 1,
+        "market_id": "1162940",
+        "question": null,
+        "usd_volume": 19447348.970209993
+      },
+      {
+        "rank": 2,
+        "market_id": "669662",
+        "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
+        "usd_volume": 2780568.3959530042
+      },
+      {
+        "rank": 3,
+        "market_id": "958443",
+        "question": null,
+        "usd_volume": 2374599.2370429994
+      },
+      {
+        "rank": 4,
+        "market_id": "553866",
+        "question": "Will the San Antonio Spurs win the 2026 NBA Finals?",
+        "usd_volume": 2231328.349221
+      },
+      {
+        "rank": 5,
+        "market_id": "567621",
+        "question": "Will China invade Taiwan by end of 2026?",
+        "usd_volume": 1663662.8048929987
+      }
+    ]
+  },
+  {
+    "week": "2026-W16",
+    "top": [
+      {
+        "rank": 1,
+        "market_id": "567560",
+        "question": "Will the next Prime Minister of Hungary be Viktor Orb\u00e1n?",
+        "usd_volume": 4259477.229508993
+      },
+      {
+        "rank": 2,
+        "market_id": "669662",
+        "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
+        "usd_volume": 3550867.3460990004
+      },
+      {
+        "rank": 3,
+        "market_id": "567561",
+        "question": "Will the next Prime Minister of Hungary be P\u00e9ter Magyar?",
+        "usd_volume": 3173159.8578529945
+      },
+      {
+        "rank": 4,
+        "market_id": "665374",
+        "question": "Will the U.S. invade Iran before 2027?",
+        "usd_volume": 2354356.524383994
+      },
+      {
+        "rank": 5,
+        "market_id": "958443",
+        "question": null,
+        "usd_volume": 2187914.0583350044
+      }
+    ]
+  },
+  {
+    "week": "2026-W17",
+    "top": [
+      {
+        "rank": 1,
+        "market_id": "567561",
+        "question": "Will the next Prime Minister of Hungary be P\u00e9ter Magyar?",
+        "usd_volume": 6364379.429678993
+      },
+      {
+        "rank": 2,
+        "market_id": "567560",
+        "question": "Will the next Prime Minister of Hungary be Viktor Orb\u00e1n?",
+        "usd_volume": 6354367.421017997
+      },
+      {
+        "rank": 3,
+        "market_id": "669662",
+        "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
+        "usd_volume": 5051119.974299995
+      },
+      {
+        "rank": 4,
+        "market_id": "947289",
+        "question": null,
+        "usd_volume": 2423299.6115630004
+      },
+      {
+        "rank": 5,
+        "market_id": "947268",
+        "question": null,
+        "usd_volume": 2391545.0217260015
+      }
+    ]
+  }
+]

@@ -1,0 +1,106 @@
+---
+import pwi from "../../public/data/pwi_latest.json";
+import execution from "../../public/data/execution_latest.json";
+import botShare from "../../public/data/bot_share_latest.json";
+import priceGap from "../../public/data/price_gap_latest.json";
+import efficiency from "../../public/data/efficiency_latest.json";
+
+type Mover = {
+  name: string;
+  href: string;
+  value: string;
+  z: number;
+  direction: "up" | "down";
+  oneliner: string;
+};
+
+function fmt(n: number, d = 3) {
+  return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : n.toFixed(d);
+}
+function pct(n: number, d = 1) {
+  return (n * 100).toFixed(d) + "%";
+}
+
+const candidates = [
+  {
+    name: "Probability Weighting",
+    href: "/pwi",
+    value: fmt(pwi.value, 3),
+    z: pwi.z52w,
+    oneliners: {
+      up: "Humans pricing closer to rational than usual",
+      down: "Tails more heavily over-weighted than usual",
+    },
+  },
+  {
+    name: "Execution Edge",
+    href: "/execution",
+    value: fmt(execution.value, 3),
+    z: execution.z52w,
+    oneliners: {
+      up: "Bot vs retail gap wider than usual",
+      down: "Bot vs retail gap narrower than usual",
+    },
+  },
+  {
+    name: "Bot Share of Volume",
+    href: "/bot-share",
+    value: pct(botShare.value, 1),
+    z: botShare.z52w,
+    oneliners: {
+      up: "Algorithmic share elevated",
+      down: "Algorithmic share depressed",
+    },
+  },
+  {
+    name: "Longshot Price Gap",
+    href: "/price-gap",
+    value: fmt(priceGap.value, 3),
+    z: priceGap.z52w,
+    oneliners: {
+      up: "Longshots under-priced",
+      down: "Favorite-longshot bias more pronounced",
+    },
+  },
+  {
+    name: "Market Efficiency",
+    href: "/efficiency",
+    value: fmt(efficiency.value, 3),
+    z: efficiency.z52w,
+    oneliners: {
+      up: "Cleaner single-parameter fit this week",
+      down: "Noisier pricing than usual",
+    },
+  },
+];
+
+const movers: Mover[] = candidates
+  .filter(c => c.z !== null && c.z !== undefined && !Number.isNaN(c.z) && Math.abs(c.z) > 0.5)
+  .map(c => ({
+    name: c.name,
+    href: c.href,
+    value: c.value,
+    z: c.z,
+    direction: c.z > 0 ? "up" : "down",
+    oneliner: c.z > 0 ? c.oneliners.up : c.oneliners.down,
+  }))
+  .sort((a, b) => Math.abs(b.z) - Math.abs(a.z))
+  .slice(0, 3);
+---
+{movers.length > 0 && (
+  <section class="movers">
+    <div class="movers-label">Trending this week</div>
+    <div class="movers-grid">
+      {movers.map(m => (
+        <a class={`mover ${m.direction}`} href={m.href}>
+          <span class="m-arrow">{m.direction === "up" ? "▲" : "▼"}</span>
+          <div class="m-body">
+            <div class="m-name">{m.name}</div>
+            <div class="m-oneliner">{m.oneliner}</div>
+          </div>
+          <div class="m-z">z {m.z >= 0 ? "+" : ""}{m.z.toFixed(2)}</div>
+        </a>
+      ))}
+    </div>
+  </section>
+)}

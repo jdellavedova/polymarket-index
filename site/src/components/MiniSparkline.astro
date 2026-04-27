@@ -1,0 +1,49 @@
+---
+export interface Props {
+  dataUrl: string;
+  yField?: string;
+  height?: number;
+  width?: number;
+  stroke?: string;
+  containerId?: string;
+}
+const {
+  dataUrl,
+  yField = "value",
+  height = 38,
+  width = 200,
+  stroke,
+  containerId = "spark-" + Math.random().toString(36).slice(2, 9),
+} = Astro.props;
+---
+<div class="spark" id={containerId} style={`min-height:${height}px`}></div>
+<script type="module" define:vars={{ dataUrl, yField, height, width, stroke, containerId }}>
+  import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/+esm";
+  try {
+    const css = getComputedStyle(document.documentElement);
+    const color = stroke || css.getPropertyValue("--chart-primary").trim() || "#75bee9";
+    const res = await fetch(dataUrl);
+    const raw = await res.json();
+    const data = raw.map(d => ({ date: new Date(d.date), v: d[yField] }))
+      .filter(d => d.v !== null && !Number.isNaN(d.v));
+    if (data.length === 0) return;
+    const el = document.getElementById(containerId);
+    const W = Math.min(el.clientWidth || width, width);
+    el.replaceChildren(
+      Plot.plot({
+        width: W,
+        height,
+        marginLeft: 2,
+        marginRight: 2,
+        marginTop: 2,
+        marginBottom: 2,
+        style: { background: "transparent" },
+        x: { axis: null },
+        y: { axis: null },
+        marks: [
+          Plot.lineY(data, { x: "date", y: "v", stroke: color, strokeWidth: 1.4 }),
+        ],
+      })
+    );
+  } catch (e) {}
+</script>

@@ -29,6 +29,14 @@ def main() -> None:
     df["date"] = df["week"].map(iso_week_to_date)
     df = df.sort_values("date").reset_index(drop=True)
 
+    # Drop partial weeks (n_trades < 30% of prior 4-week median)
+    med4 = df["n_trades"].rolling(4, min_periods=1).median().shift(1)
+    mask_partial = med4.notna() & (df["n_trades"] < 0.3 * med4)
+    if mask_partial.any():
+        for d in df.loc[mask_partial, "week"]:
+            print(f"  Dropped partial week: {d}")
+        df = df[~mask_partial].reset_index(drop=True)
+
     df["longshot_gap"] = df["longshot_winrate"] - LONGSHOT_BAND_MIDPOINT
     df = add_rolling_stats(df, "longshot_gap")
 

@@ -1,0 +1,56 @@
+{
+  "index_name": "Weekly Activity",
+  "short_name": "Activity",
+  "as_of": "2026-04-20",
+  "week": "2026-W17",
+  "total_usd_volume": 775758598.0908401,
+  "total_trades": 30874218,
+  "total_participations": 61748436,
+  "active_wallets": 318595,
+  "new_wallets": 37569,
+  "flagged_active_this_week": 691,
+  "by_type_participations": {
+    "bot": 56192182,
+    "active_retail": 4719712,
+    "sophisticated": 764374,
+    "casual": 66781,
+    "one_shot": 5387
+  },
+  "by_type_volume": {
+    "bot": 1304623011.2784278,
+    "active_retail": 145663854.07128593,
+    "sophisticated": 88558631.06957524,
+    "casual": 10813022.40975996,
+    "one_shot": 1858677.3522929996
+  },
+  "by_type_share": {
+    "bot": 0.9100178990768284,
+    "active_retail": 0.07643451892449551,
+    "sophisticated": 0.01237883984624323,
+    "casual": 0.0010815010763997326,
+    "one_shot": 8.724107603308365e-05
+  },
+  "volume_ma4w": 882537063.335916,
+  "volume_ma13w": 773174328.845932,
+  "volume_z52w": 1.4495612052868312,
+  "new_wallets_ma4w": 43436.75,
+  "new_wallets_ma13w": 49347.692307692305,
+  "rolling_volume": {
+    "mean_52w": 381229771.4814298,
+    "sd_52w": 272171209.5843121,
+    "min_52w": 92348862.15167773,
+    "max_52w": 1036908165.7222261,
+    "n_obs_52w": 52
+  },
+  "rolling_new_wallets": {
+    "mean_52w": 28537.115384615383,
+    "sd_52w": 18442.139320901017,
+    "min_52w": 4450.0,
+    "max_52w": 61323.0,
+    "n_obs_52w": 52
+  },
+  "n_weeks_history": 177,
+  "methodology": "Every Polymarket match has a maker (limit order) and a taker (market order). Per-type shares count each match twice, once for the maker's type and once for the taker's type \u2014 an honest participation measure. `total_trades` is the match count (single-count), so total_participations = 2 * total_trades by construction. new_wallets is the count of wallets whose first-ever trade fell in the week. flagged_active_this_week is the count of Paper 2-flagged wallets that participated.",
+  "generated_at": "2026-04-24T18:15:47+00:00",
+  "source": "J:/Research/10. Prediction/data/blockchain/processed_trades.csv"
+}

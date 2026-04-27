@@ -3,7 +3,7 @@ import Base from "../layouts/Base.astro";
 import TimeSeriesChart from "../components/TimeSeriesChart.astro";
 import pwi from "../../public/data/pwi_latest.json";
 
-function fmt(n: number | null | undefined, d = 2) {
+function fmt(n: number | null | undefined, d = 3) {
   if (n === null || n === undefined || Number.isNaN(n)) return "n/a";
   return n.toFixed(d);
 }
@@ -12,35 +12,35 @@ function signed(n: number | null | undefined, d = 2) {
   return (n >= 0 ? "+" : "") + n.toFixed(d);
 }
 ---
-<Base title="Probability Weighting Index (PWI)" description="Weekly composite of calibration error and longshot fraction across 233M Polymarket trades.">
+<Base title="Probability Weighting Index (PWI)" description="Trade-count-weighted non-bot Prelec alpha from 640M Polymarket trades.">
   <h1>Probability Weighting Index (PWI)</h1>
-  <p class="subtitle">Composite z-score of weekly calibration error and longshot fraction. Positive values indicate elevated probability distortion.</p>
+  <p class="subtitle">Trade-count-weighted non-bot Prelec alpha. Alpha = 1 is rational pricing; below 1 is the classical inverse-S weighting.</p>
 
   <p>
-    As of <strong>{pwi.as_of}</strong> (week {pwi.week}), the PWI stands at <strong>{fmt(pwi.value, 2)}</strong>,
-    with a 52-week rolling z-score of <strong>{signed(pwi.z52w, 2)}</strong>. The 13-week moving average is
-    <strong>{fmt(pwi.ma13w, 2)}</strong>; the 52-week moving average is <strong>{fmt(pwi.ma52w, 2)}</strong>.
-    Based on <strong>{pwi.n_trades_week.toLocaleString()}</strong> resolved trades in the latest week.
+    As of <strong>{pwi.as_of}</strong>, the PWI stands at <strong>{fmt(pwi.value, 3)}</strong>,
+    with a 52-week rolling z-score of <strong>{signed(pwi.z52w, 2)}</strong>.
+    13-week moving average: <strong>{fmt(pwi.ma13w, 3)}</strong>.
+    52-week moving average: <strong>{fmt(pwi.ma52w, 3)}</strong>.
+    Based on <strong>{pwi.n_trades_nonbot_week.toLocaleString()}</strong> non-bot trades this week.
   </p>
 
   <h2>Weekly history</h2>
   <TimeSeriesChart
     dataUrl="/data/pwi_timeseries.json"
-    yField="pwi"
-    smoothField="pwi_ma13w"
-    yLabel="PWI (composite z-score)"
-    zeroLine={true}
+    yField="pwi_alpha"
+    smoothField="pwi_alpha_ma13w"
+    yLabel="non-bot Prelec alpha"
+    zeroLine={false}
   />
   <p class="muted" style="font-size:14px; margin-top:-18px;">
-    Thin line: weekly PWI. Bold line: 13-week moving average. Horizontal rule at zero marks the sample mean by construction.
+    Light line: weekly alpha. Bold line: 13-week moving average. An alpha of 1.0 would mean the market prices binary outcomes rationally.
   </p>
 
-  <h2>Components</h2>
+  <h2>Components (weighted averages across non-bot wallets)</h2>
   <table>
     <tr><th>Component</th><th>Latest value</th><th>What it captures</th></tr>
-    <tr><td>Mean calibration error</td><td class="mono">{fmt(pwi.components.mean_cal_error, 4)}</td><td>Pooled absolute gap between price and realized frequency</td></tr>
-    <tr><td>Longshot fraction</td><td class="mono">{fmt(pwi.components.longshot_fraction, 4)}</td><td>Share of trades at prices below 10%</td></tr>
-    <tr><td>Longshot win rate</td><td class="mono">{fmt(pwi.components.longshot_winrate, 4)}</td><td>Realized win rate among longshot trades</td></tr>
+    <tr><td>Trade-weighted mean calibration error</td><td class="mono">{fmt(pwi.components.weighted_mean_cal_error, 4)}</td><td>Absolute gap between trade price and realized frequency</td></tr>
+    <tr><td>Trade-weighted longshot fraction</td><td class="mono">{fmt(pwi.components.weighted_longshot_fraction, 4)}</td><td>Share of trades at prices below 10%</td></tr>
   </table>
 
   <h2>52-week rolling statistics</h2>
@@ -55,22 +55,23 @@ function signed(n: number | null | undefined, d = 2) {
 
   <h2>Methodology</h2>
   <p>
-    Each week, we compute two moments across all resolved non-bot trades: (i) the volume-weighted absolute gap
-    between trade price and realized outcome frequency (mean calibration error), and (ii) the share of trades
-    transacted at prices below 10% (longshot fraction). Both series are standardized to their full-sample mean
-    and standard deviation, and the PWI is the unweighted mean of the two z-scores. A positive PWI indicates
-    both more mispricing and more tail-chasing than the sample average week.
+    Each week, a one-parameter Prelec weighting function w(p) = exp(-(-log p)^alpha) is fit by weighted
+    nonlinear least squares separately to each wallet class (active retail, sophisticated, casual, one-shot,
+    bot). The PWI is the trade-count-weighted mean of the alphas across all <strong>non-bot</strong> wallet
+    classes that week. Bots are excluded (<em>trades_per_day</em> &gt; 50 OR <em>n_trades</em> &gt; 1000) so
+    the index reflects human probability weighting rather than algorithmic liquidity provision.
   </p>
   <p>
-    The 52-week rolling z-score requires at least 13 non-null observations and is blank before the 13th week.
-    The "notable movement" threshold on the landing page fires whenever the absolute z-score exceeds 1.0.
-    See the full <a href="/methodology">methodology document</a> for the primitives.
+    Interpretation: an alpha of 1.0 corresponds to rational pricing with no probability distortion. An alpha
+    below 1 is the classical inverse-S weighting (small probabilities over-weighted, mid probabilities
+    under-weighted) documented in Tversky and Kahneman (1992). An alpha above 1 implies the rarer opposite
+    pattern. The 52-week rolling z-score requires at least 13 non-null observations and is blank before that.
   </p>
 
   <h2>Data</h2>
   <p>
     <a href="/data/pwi_history.csv">pwi_history.csv</a>
-    {' '}({pwi.n_weeks_history} weeks, from {pwi.first_week})
+    {' '}({pwi.n_weeks_history} weeks, from {pwi.first_date})
     &middot;
     <a href="/data/pwi_latest.json">pwi_latest.json</a>
     &middot;

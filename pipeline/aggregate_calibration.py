@@ -18,14 +18,27 @@ def main() -> None:
     src = require_source("calibration_nonbot")
     df = pd.read_csv(src).sort_values("price_bin_center").reset_index(drop=True)
 
+    # Handle both legacy ("n_trades") and current ("n_obs") column names
+    if "n_obs" in df.columns and "n_trades" not in df.columns:
+        df = df.rename(columns={"n_obs": "n_trades"})
+
+    # Paper convention: fit price = prelec(win_rate, alpha). The Prelec
+    # weighting function maps true probability (win_rate) to subjective
+    # probability (price). alpha < 1 indicates classical inverse-S / FLB.
     fit = fit_prelec(
-        prices=df["price_bin_center"].values,
-        realized=df["realized_win_rate"].values,
+        prices=df["realized_win_rate"].values,
+        realized=df["price_bin_center"].values,
         weights=df["n_trades"].values,
     )
-    # Smooth fit curve for plotting
+    # The chart plots price on x-axis and win_rate on y-axis. To overlay the
+    # fitted curve on that orientation, we need win_rate = prelec_inv(price).
+    # For one-parameter Prelec, the inverse has closed form (reciprocal alpha
+    # is a close approximation). Compute the exact inverse directly.
     grid = np.linspace(0.02, 0.98, 97)
-    fit_curve = prelec_1p(grid, fit["alpha"])
+    # w(p) = exp(-(-ln p)^alpha)  =>  p = exp(-(-ln w)^(1/alpha))
+    alpha = fit["alpha"]
+    w_grid = np.clip(grid, 1e-9, 1 - 1e-9)
+    fit_curve = np.exp(-((-np.log(w_grid)) ** (1.0 / alpha)))
 
     bins = df.to_dict(orient="records")
     bins_clean = [

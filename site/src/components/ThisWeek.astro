@@ -1,0 +1,13 @@
+---
+import data from "../../public/data/weekly_narrative.json";
+---
+<section class="this-week">
+  <div class="tw-label">This week on Polymarket</div>
+  <p class="tw-quote">&ldquo;{data.headline_quote}&rdquo;</p>
+  <ol class="tw-sentences">
+    {data.sentences.map(s => <li>{s}</li>)}
+  </ol>
+  <div class="tw-attribution">
+    {data.author} &middot; Week of {data.as_of}
+  </div>
+</section>

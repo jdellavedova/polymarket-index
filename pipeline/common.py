@@ -68,3 +68,31 @@ def write_json(path: Path, payload: dict | list) -> None:
 
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+
+def drop_partial_weeks(
+    df: pd.DataFrame,
+    date_col: str = "date",
+    type_col: str = "wallet_type",
+    n_trades_col: str = "n_trades",
+    reference_type: str = "active_retail",
+    threshold_frac: float = 0.3,
+    window: int = 4,
+) -> pd.DataFrame:
+    """Drop rows for any date whose active_retail n_trades is below
+    `threshold_frac` of the prior `window`-week median. Catches partial
+    weeks (e.g. the in-progress current week when data is refreshed
+    mid-week) without needing a hard-coded absolute threshold.
+    """
+    if type_col not in df.columns or n_trades_col not in df.columns:
+        return df
+    ref = df[df[type_col] == reference_type].sort_values(date_col).copy()
+    if ref.empty:
+        return df
+    ref["_med"] = ref[n_trades_col].rolling(window, min_periods=1).median().shift(1)
+    partial = ref[(ref["_med"].notna()) &
+                  (ref[n_trades_col] < threshold_frac * ref["_med"])]
+    if partial.empty:
+        return df
+    drop_dates = set(partial[date_col])
+    return df[~df[date_col].isin(drop_dates)].copy()

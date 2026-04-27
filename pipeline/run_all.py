@@ -17,11 +17,18 @@ SCRIPTS = [
     "aggregate_pwi",
     "aggregate_calibration",
     "aggregate_execution",
+    # weekly_activity must run before bot_share (bot_share reads its output)
+    "aggregate_weekly_activity",
     "aggregate_bot_share",
     "aggregate_price_gap",
     "aggregate_efficiency",
     "aggregate_pii",
+    "aggregate_top_markets",
+    "aggregate_profit_split",
     "build_master_table",
+    "build_weekly_narrative",
+    "build_og_image",
+    "build_email_digest",
 ]
 
 

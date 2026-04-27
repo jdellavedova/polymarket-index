@@ -6,17 +6,17 @@ import bot from "../../public/data/bot_share_latest.json";
 function pct(n, d = 1) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n * 100).toFixed(d) + "%"; }
 function signed(n, d = 2) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n >= 0 ? "+" : "") + n.toFixed(d); }
 ---
-<Base title="Bot Share of Volume" description="Weekly share of Polymarket trades attributed to algorithmic wallets.">
-  <h1>Bot Share of Volume</h1>
-  <p class="subtitle">Weekly share of Polymarket trades executed by algorithmic wallets.</p>
+<Base title="Algorithmic Share of Participation" description="Weekly share of Polymarket counterparty events (maker plus taker sides) attributed to algorithmic wallets.">
+  <h1>Algorithmic Share of Participation</h1>
+  <p class="subtitle">Weekly share of Polymarket counterparty events (maker plus taker sides) executed by algorithmic wallets.</p>
 
   <p>
-    As of <strong>{bot.as_of}</strong>, the bot share was <strong>{pct(bot.value, 1)}</strong> of weekly trades,
+    As of <strong>{bot.as_of}</strong>, the algorithmic share was <strong>{pct(bot.value, 1)}</strong> of weekly counterparty events,
     with a 52-week rolling z-score of <strong>{signed(bot.z52w, 2)}</strong>.
     13-week moving average: <strong>{pct(bot.ma13w, 1)}</strong>.
     Active retail share: <strong>{pct(bot.retail_share, 1)}</strong>.
     Sophisticated share: <strong>{pct(bot.sophisticated_share, 1)}</strong>.
-    Based on <strong>{bot.n_trades_week.toLocaleString()}</strong> trades this week.
+    Based on <strong>{bot.n_trades_week.toLocaleString()}</strong> trades this week (each generates two participations).
   </p>
 
   <h2>Weekly history</h2>
@@ -24,7 +24,7 @@ function signed(n, d = 2) { return (n === null || n === undefined || Number.isNa
     dataUrl="/data/bot_share_timeseries.json"
     yField="bot_share"
     smoothField="bot_share_ma13w"
-    yLabel="share of weekly trades"
+    yLabel="share of weekly participation"
     zeroLine={false}
   />
 
@@ -39,9 +39,11 @@ function signed(n, d = 2) { return (n === null || n === undefined || Number.isNa
 
   <h2>Methodology</h2>
   <p>
-    Wallets are classified as <em>bot</em> if they made more than 50 trades on their peak day or more than 1,000
-    trades total. This rule follows Paper 1. Bot share is the fraction of weekly trade count attributable to
-    bot-class wallets. The remainder is split among active retail (10-1,000 trades), sophisticated (large volume
+    Wallets are classified as <em>algorithmic</em> if they placed more than 50 trades on their peak day or more
+    than 1,000 trades over their lifetime. This rule follows <a href="/research">Paper 1</a>. Algorithmic share is
+    the fraction of weekly counterparty events attributable to algorithmic wallets. Each on-chain match has a
+    maker (limit order) and a taker (market order); both are counted as separate participations to capture both
+    sides honestly. The remainder is split among active retail (10-1,000 trades), sophisticated (large volume
     with diversified HHI), casual (2-9 trades), and one-shot (single trade) classes.
   </p>
 

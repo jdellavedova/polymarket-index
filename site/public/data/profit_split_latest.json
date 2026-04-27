@@ -1,0 +1,67 @@
+{
+  "index_name": "Profit Split",
+  "short_name": "ProfitSplit",
+  "as_of_week": "2026-W16",
+  "as_of": "2026-04-13",
+  "benchmark": "per-token VWAP (USDC / token_amount)",
+  "by_type": {
+    "active_retail": {
+      "n_trades": 25466,
+      "usd_volume": 835576.316021002,
+      "accuracy": 0.7483431140705605,
+      "pnl": 7007.576361000136,
+      "directional": 2568.0094220166648,
+      "execution": 4439.566938983446,
+      "pnl_roi_bps": 83.8651865381977,
+      "directional_roi_bps": 30.733391705565268,
+      "execution_roi_bps": 53.13179483263212
+    },
+    "bot": {
+      "n_trades": 575248,
+      "usd_volume": 11501442.135765368,
+      "accuracy": 0.5333085908276399,
+      "pnl": -137072.57050499527,
+      "directional": -33150.977501856236,
+      "execution": -103921.59300313711,
+      "pnl_roi_bps": -119.17859420319877,
+      "directional_roi_bps": -28.823322423862447,
+      "execution_roi_bps": -90.35527177933466
+    },
+    "casual": {
+      "n_trades": 96,
+      "usd_volume": 6593.013409,
+      "accuracy": 0.6448177975361934,
+      "pnl": 1259.228372,
+      "directional": 1457.7360172416306,
+      "execution": -198.50764524163077,
+      "pnl_roi_bps": 1909.9435931391415,
+      "directional_roi_bps": 2211.0314765198295,
+      "execution_roi_bps": -301.08788338068854
+    },
+    "one_shot": {
+      "n_trades": 3,
+      "usd_volume": 359.1,
+      "accuracy": 0.9444444444444444,
+      "pnl": 150.90000000000003,
+      "directional": 127.56339025896482,
+      "execution": 23.336609741035208,
+      "pnl_roi_bps": 4202.17209690894,
+      "directional_roi_bps": 3552.3082778881876,
+      "execution_roi_bps": 649.863819020752
+    },
+    "sophisticated": {
+      "n_trades": 12794,
+      "usd_volume": 1449093.640687999,
+      "accuracy": 0.522843693041517,
+      "pnl": -19069.177873000066,
+      "directional": -11222.34511009011,
+      "execution": -7846.832762909863,
+      "pnl_roi_bps": -131.59382760072305,
+      "directional_roi_bps": -77.44389178853878,
+      "execution_roi_bps": -54.14993581218362
+    }
+  },
+  "methodology": "For each trade: sign S = +1 for BUY / -1 for SELL; W = 1 if this token side won, else 0; v = volume-weighted average price across ALL trades in the same token; P = entry price, Q = token amount. Directional = S*(W-v)*Q (picked the winner); Execution = S*(v-P)*Q (beat the market avg). Sum = realized P&L exactly. ROI is P&L / USD volume in basis points (x10000).",
+  "generated_at": "2026-04-24T17:48:14+00:00",
+  "source": "J:\\Research\\10. Prediction\\data\\blockchain\\processed_trades.csv"
+}

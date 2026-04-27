@@ -13,6 +13,13 @@ const {
 <div class="chart" id={containerId} style={`min-height:${height}px`}></div>
 <script type="module" define:vars={{ dataUrl, height, containerId }}>
   import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/+esm";
+  const css = getComputedStyle(document.documentElement);
+  const cPrimary = css.getPropertyValue("--chart-primary").trim() || "#75bee9";
+  const cSecondary = css.getPropertyValue("--chart-secondary").trim() || "#0074c8";
+  const cText = css.getPropertyValue("--chart-text").trim() || "#c4d2e4";
+  const cGrid = css.getPropertyValue("--chart-grid").trim() || "#1f3152";
+  const cBg = css.getPropertyValue("--bg").trim() || "#0a1420";
+
   const res = await fetch(dataUrl);
   const data = await res.json();
   const el = document.getElementById(containerId);
@@ -21,34 +28,38 @@ const {
     Plot.plot({
       width: W,
       height,
-      marginLeft: 48,
+      marginLeft: 52,
       marginRight: 12,
       marginBottom: 40,
+      style: { background: cBg, color: cText, fontFamily: "Sofia Sans, sans-serif" },
       x: { label: "price (prediction market)", domain: [0, 1], grid: true },
       y: { label: "realized win rate", domain: [0, 1], grid: true },
       marks: [
-        Plot.ruleY([0]),
-        Plot.ruleX([0]),
+        Plot.ruleY([0], { stroke: cText, strokeOpacity: 0.3 }),
+        Plot.ruleX([0], { stroke: cText, strokeOpacity: 0.3 }),
         Plot.line(
           Array.from({ length: 51 }, (_, i) => ({ x: i / 50, y: i / 50 })),
-          { x: "x", y: "y", stroke: "#bbb", strokeDasharray: "3,3" }
+          { x: "x", y: "y", stroke: cText, strokeOpacity: 0.35, strokeDasharray: "3,3" }
         ),
-        Plot.line(data.fit_curve, { x: "price", y: "fit", stroke: "#0074c8", strokeWidth: 2 }),
+        Plot.line(data.fit_curve, { x: "price", y: "fit", stroke: cPrimary, strokeWidth: 2.2 }),
         Plot.dot(data.bins, {
           x: "price_bin_center",
           y: "realized_win_rate",
           r: d => Math.sqrt(d.n_trades) / 80,
-          fill: "#003b70",
+          fill: cPrimary,
           fillOpacity: 0.85,
         }),
         Plot.ruleX(data.bins, {
           x: "price_bin_center",
           y1: "ci_lower",
           y2: "ci_upper",
-          stroke: "#003b70",
-          strokeOpacity: 0.35,
+          stroke: cPrimary,
+          strokeOpacity: 0.4,
         }),
       ],
     })
   );
+  el.querySelectorAll("g[aria-label='y-grid'] line, g[aria-label='x-grid'] line").forEach(l => {
+    l.setAttribute("stroke", cGrid);
+  });
 </script>

@@ -56,762 +56,812 @@
   },
   {
     "date": "2023-03-06",
-    "efficiency": 0.3625036164889638,
-    "efficiency_ma13w": 0.4311979981467555
+    "efficiency": 0.3614223920372051,
+    "efficiency_ma13w": 0.43065738592087616
   },
   {
     "date": "2023-03-13",
-    "efficiency": 0.9681200631931464,
-    "efficiency_ma13w": 0.6101720198288858
+    "efficiency": 0.9692303127771206,
+    "efficiency_ma13w": 0.6101816948729576
   },
   {
     "date": "2023-03-20",
-    "efficiency": 0.8664378331247953,
-    "efficiency_ma13w": 0.6742384731528632
+    "efficiency": 0.8776834293830257,
+    "efficiency_ma13w": 0.6770571285004746
   },
   {
     "date": "2023-03-27",
     "efficiency": 0.7913236233412918,
-    "efficiency_ma13w": 0.6976555031905489
+    "efficiency_ma13w": 0.6999104274686381
   },
   {
     "date": "2023-04-03",
     "efficiency": NaN,
-    "efficiency_ma13w": 0.6976555031905489
+    "efficiency_ma13w": 0.6999104274686381
   },
   {
     "date": "2023-04-10",
     "efficiency": NaN,
-    "efficiency_ma13w": 0.6976555031905489
+    "efficiency_ma13w": 0.6999104274686381
   },
   {
     "date": "2023-04-17",
     "efficiency": NaN,
-    "efficiency_ma13w": 0.6976555031905489
+    "efficiency_ma13w": 0.6999104274686381
   },
   {
     "date": "2023-04-24",
     "efficiency": NaN,
-    "efficiency_ma13w": 0.6976555031905489
+    "efficiency_ma13w": 0.6999104274686381
   },
   {
     "date": "2023-05-01",
     "efficiency": NaN,
-    "efficiency_ma13w": 0.6976555031905489
+    "efficiency_ma13w": 0.6999104274686381
   },
   {
     "date": "2023-05-08",
-    "efficiency": 0.6604112943389245,
-    "efficiency_ma13w": 0.6914481350486116
+    "efficiency": 0.646529884667743,
+    "efficiency_ma13w": 0.6910136703351556
   },
   {
     "date": "2023-05-15",
     "efficiency": NaN,
-    "efficiency_ma13w": 0.6914481350486116
+    "efficiency_ma13w": 0.6910136703351556
   },
   {
     "date": "2023-05-22",
-    "efficiency": 0.7720247241388801,
-    "efficiency_ma13w": 0.7029590763472212
+    "efficiency": 0.7717243408185479,
+    "efficiency_ma13w": 0.7025437661184972
   },
   {
     "date": "2023-05-29",
     "efficiency": NaN,
-    "efficiency_ma13w": 0.7368035257710003
+    "efficiency_ma13w": 0.7363189971708223
   },
   {
     "date": "2023-06-05",
-    "efficiency": 0.9269995578183676,
-    "efficiency_ma13w": 0.8308861826592343
+    "efficiency": 0.9269462022059836,
+    "efficiency_ma13w": 0.8305729655322853
   },
   {
     "date": "2023-06-12",
     "efficiency": 0.2385896002804154,
-    "efficiency_ma13w": 0.7092977721737791
+    "efficiency_ma13w": 0.7087995134495012
   },
   {
     "date": "2023-06-19",
-    "efficiency": 0.9179366475680212,
-    "efficiency_ma13w": 0.7178809079143167
+    "efficiency": 0.914330480536908,
+    "efficiency_ma13w": 0.7149073553084816
   },
   {
     "date": "2023-06-26",
-    "efficiency": 0.6623505452703866,
-    "efficiency_ma13w": 0.6963853949024993
+    "efficiency": 0.6741693121759029,
+    "efficiency_ma13w": 0.6953816367809168
   },
   {
     "date": "2023-07-03",
     "efficiency": NaN,
-    "efficiency_ma13w": 0.6963853949024993
+    "efficiency_ma13w": 0.6953816367809168
   },
   {
     "date": "2023-07-10",
-    "efficiency": 0.5991796102261764,
-    "efficiency_ma13w": 0.6824988542344531
+    "efficiency": 0.5898014937003278,
+    "efficiency_ma13w": 0.6802987591979756
   },
   {
     "date": "2023-07-17",
-    "efficiency": 0.7981920124062519,
-    "efficiency_ma13w": 0.6969604990059279
+    "efficiency": 0.7899892218597988,
+    "efficiency_ma13w": 0.6940100670307034
   },
   {
     "date": "2023-07-24",
-    "efficiency": 0.9027039057061222,
-    "efficiency_ma13w": 0.7198208775281718
+    "efficiency": 0.8999781814184405,
+    "efficiency_ma13w": 0.7168954130737853
   },
   {
     "date": "2023-07-31",
-    "efficiency": 0.7659634848772255,
-    "efficiency_ma13w": 0.7244351382630771
+    "efficiency": 0.7608705991561953,
+    "efficiency_ma13w": 0.7212929316820264
   },
   {
     "date": "2023-08-07",
-    "efficiency": 0.7848989468346705,
-    "efficiency_ma13w": 0.7368839035126518
+    "efficiency": 0.7799260829675699,
+    "efficiency_ma13w": 0.7346325515120091
   },
   {
     "date": "2023-08-14",
-    "efficiency": 0.7486646414713265,
-    "efficiency_ma13w": 0.737954879690713
+    "efficiency": 0.7699752480406216,
+    "efficiency_ma13w": 0.7378455239237011
   },
   {
     "date": "2023-08-21",
-    "efficiency": 0.8594872667095784,
-    "efficiency_ma13w": 0.7459060199244131
+    "efficiency": 0.8619209024812771,
+    "efficiency_ma13w": 0.7460452113475856
   },
   {
     "date": "2023-08-28",
-    "efficiency": 0.7580171473973683,
-    "efficiency_ma13w": 0.7469152805471593
+    "efficiency": 0.7579403170362933,
+    "efficiency_ma13w": 0.7470364701549778
   },
   {
     "date": "2023-09-04",
     "efficiency": 0.9140835572751784,
-    "efficiency_ma13w": 0.7458389471685601
+    "efficiency_ma13w": 0.7459645830774106
   },
   {
     "date": "2023-09-11",
-    "efficiency": 0.5486245886303069,
-    "efficiency_ma13w": 0.7716751961977177
+    "efficiency": 0.5962879818327338,
+    "efficiency_ma13w": 0.775772781540104
   },
   {
     "date": "2023-09-18",
-    "efficiency": 0.3248633090594818,
-    "efficiency_ma13w": 0.7222524179886728
+    "efficiency": 0.3165841370201327,
+    "efficiency_ma13w": 0.7259605862470394
   },
   {
     "date": "2023-09-25",
-    "efficiency": 0.6939770190861488,
-    "efficiency_ma13w": 0.7248879574733196
+    "efficiency": 0.6847932590592801,
+    "efficiency_ma13w": 0.7268459151539876
   },
   {
     "date": "2023-10-02",
     "efficiency": 0.9000948652816717,
-    "efficiency_ma13w": 0.738365411920116
+    "efficiency_ma13w": 0.7401727574715017
   },
   {
     "date": "2023-10-09",
     "efficiency": 0.9022292201869307,
-    "efficiency_ma13w": 0.7616769203786355
+    "efficiency_ma13w": 0.7642056595089326
   },
   {
     "date": "2023-10-16",
-    "efficiency": 0.7351085544612155,
-    "efficiency_ma13w": 0.7568243466905558
+    "efficiency": 0.7352774056823408,
+    "efficiency_ma13w": 0.7599970582645128
   },
   {
     "date": "2023-10-23",
-    "efficiency": 0.8768309939643648,
-    "efficiency_ma13w": 0.7548341227104205
+    "efficiency": 0.8788684513530821,
+    "efficiency_ma13w": 0.7583732328748698
   },
   {
     "date": "2023-10-30",
-    "efficiency": 0.9303516129047084,
-    "efficiency_ma13w": 0.7674793633279192
+    "efficiency": 0.9300762244035654,
+    "efficiency_ma13w": 0.7713890502015904
   },
   {
     "date": "2023-11-06",
     "efficiency": 0.8846954939574737,
-    "efficiency_ma13w": 0.7751560207989042
+    "efficiency_ma13w": 0.7794482356623524
   },
   {
     "date": "2023-11-13",
-    "efficiency": 0.8978173162310499,
-    "efficiency_ma13w": 0.786629303472729
+    "efficiency": 0.8975410213217111,
+    "efficiency_ma13w": 0.7892609874532055
   },
   {
     "date": "2023-11-20",
-    "efficiency": 0.9800019853405396,
-    "efficiency_ma13w": 0.7958996664443413
+    "efficiency": 0.9839507762206592,
+    "efficiency_ma13w": 0.7986479008177733
   },
   {
     "date": "2023-11-27",
-    "efficiency": 0.9095923632081524,
-    "efficiency_ma13w": 0.8075592984297864
+    "efficiency": 0.9076587793444316,
+    "efficiency_ma13w": 0.810164705610707
   },
   {
     "date": "2023-12-04",
-    "efficiency": 0.7992283877019354,
-    "efficiency_ma13w": 0.7987242853856907
+    "efficiency": 0.8106519808991268,
+    "efficiency_ma13w": 0.8022084305048569
   },
   {
     "date": "2023-12-11",
-    "efficiency": 0.935489280732774,
-    "efficiency_ma13w": 0.8284831078551114
+    "efficiency": 0.9128796620487004,
+    "efficiency_ma13w": 0.8265616366753158
   },
   {
     "date": "2023-12-18",
-    "efficiency": 0.8943181702215676,
-    "efficiency_ma13w": 0.8722873279445025
+    "efficiency": 0.8943448338819153,
+    "efficiency_ma13w": 0.8710047672031452
   },
   {
     "date": "2023-12-25",
-    "efficiency": 0.950084268066372,
-    "efficiency_ma13w": 0.8919878855583658
+    "efficiency": 0.9531158041934352,
+    "efficiency_ma13w": 0.8916449629826957
   },
   {
     "date": "2024-01-01",
-    "efficiency": 0.9290864934414452,
-    "efficiency_ma13w": 0.8942180108014253
+    "efficiency": 0.9317246115268556,
+    "efficiency_ma13w": 0.8940780203861713
   },
   {
     "date": "2024-01-08",
-    "efficiency": 0.9350661557041156,
-    "efficiency_ma13w": 0.8967439289181318
+    "efficiency": 0.9350526989601116,
+    "efficiency_ma13w": 0.8966029033687236
   },
   {
     "date": "2024-01-15",
-    "efficiency": 0.7736488954379823,
-    "efficiency_ma13w": 0.8997085705317294
+    "efficiency": 0.7744265150301096,
+    "efficiency_ma13w": 0.8996143733185522
   },
   {
     "date": "2024-01-22",
-    "efficiency": 0.7787567980491179,
-    "efficiency_ma13w": 0.8921644016151719
+    "efficiency": 0.7715108639986613,
+    "efficiency_ma13w": 0.891356097368212
   },
   {
     "date": "2024-01-29",
-    "efficiency": 0.2339576509556534,
-    "efficiency_ma13w": 0.8385956353113985
+    "efficiency": 0.2356107666319127,
+    "efficiency_ma13w": 0.8379356775396235
   },
   {
     "date": "2024-02-05",
-    "efficiency": 0.5574385534302323,
-    "efficiency_ma13w": 0.8134220245016105
+    "efficiency": 0.5910954861054554,
+    "efficiency_ma13w": 0.8153510615510066
   },
   {
     "date": "2024-02-12",
     "efficiency": 0.9704181940023648,
-    "efficiency_ma13w": 0.8190067074070964
+    "efficiency_ma13w": 0.8209569979110569
   },
   {
     "date": "2024-02-19",
-    "efficiency": 0.6604227010709418,
-    "efficiency_ma13w": 0.7944236855402041
+    "efficiency": 0.6604227010674593,
+    "efficiency_ma13w": 0.7960702228992722
   },
   {
     "date": "2024-02-26",
-    "efficiency": 0.6419670815189,
-    "efficiency_ma13w": 0.7738371254102616
+    "efficiency": 0.6450753850037338,
+    "efficiency_ma13w": 0.7758715002576803
   },
   {
     "date": "2024-03-04",
     "efficiency": 0.8978504313213547,
-    "efficiency_ma13w": 0.7814234364579093
+    "efficiency_ma13w": 0.7825790733670822
   },
   {
     "date": "2024-03-11",
-    "efficiency": 0.8951862942252155,
-    "efficiency_ma13w": 0.7783232067265586
+    "efficiency": 0.8957339362394581,
+    "efficiency_ma13w": 0.781260171381756
   },
   {
     "date": "2024-03-18",
     "efficiency": 0.7579014427907278,
-    "efficiency_ma13w": 0.7678296123088018
+    "efficiency_ma13w": 0.7707645259132031
   },
   {
     "date": "2024-03-25",
-    "efficiency": 0.4875198729424352,
-    "efficiency_ma13w": 0.7322477357608066
+    "efficiency": 0.4952424916635656,
+    "efficiency_ma13w": 0.7355435018724439
   },
   {
     "date": "2024-04-01",
     "efficiency": 0.0926666604423833,
-    "efficiency_ma13w": 0.6679077486070326
+    "efficiency_ma13w": 0.6710005825582537
   },
   {
     "date": "2024-04-08",
-    "efficiency": 0.6920010733597759,
-    "efficiency_ma13w": 0.6492104345805451
+    "efficiency": 0.6918549266687668,
+    "efficiency_ma13w": 0.6522930616127656
   },
   {
     "date": "2024-04-15",
-    "efficiency": 0.5302678661058999,
-    "efficiency_ma13w": 0.6304888169396156
+    "efficiency": 0.5365600876589178,
+    "efficiency_ma13w": 0.633995644122674
   },
   {
     "date": "2024-04-22",
-    "efficiency": 0.7064454663478625,
-    "efficiency_ma13w": 0.6249264068087498
+    "efficiency": 0.7061198234069609,
+    "efficiency_ma13w": 0.6289655640771585
   },
   {
     "date": "2024-04-29",
-    "efficiency": 0.3762491205644926,
-    "efficiency_ma13w": 0.6358719044709681
+    "efficiency": 0.3762113635362413,
+    "efficiency_ma13w": 0.6397809946082608
   },
   {
     "date": "2024-05-06",
-    "efficiency": 0.6186831592237639,
-    "efficiency_ma13w": 0.6405830279935476
+    "efficiency": 0.608917626039599,
+    "efficiency_ma13w": 0.6411519284493488
   },
   {
     "date": "2024-05-13",
-    "efficiency": 0.8013725308178397,
-    "efficiency_ma13w": 0.6275795154408917
+    "efficiency": 0.8180959187386774,
+    "efficiency_ma13w": 0.629434830352142
   },
   {
     "date": "2024-05-20",
-    "efficiency": 0.9505058332530016,
-    "efficiency_ma13w": 0.6498936025318194
+    "efficiency": 0.9505403298620926,
+    "efficiency_ma13w": 0.6517515710286522
   },
   {
     "date": "2024-05-27",
-    "efficiency": 0.8667694498369563,
-    "efficiency_ma13w": 0.6671860924024392
+    "efficiency": 0.8694894106234158,
+    "efficiency_ma13w": 0.6690141883840124
   },
   {
     "date": "2024-06-03",
-    "efficiency": 0.8079640606588151,
-    "efficiency_ma13w": 0.6602717561976283
+    "efficiency": 0.806152967433092,
+    "efficiency_ma13w": 0.6619605373156845
   },
   {
     "date": "2024-06-10",
-    "efficiency": 0.6335830131242852,
-    "efficiency_ma13w": 0.6401484268821722
+    "efficiency": 0.6411917613923885,
+    "efficiency_ma13w": 0.6423803700197561
   },
   {
     "date": "2024-06-17",
-    "efficiency": 0.914085355077118,
-    "efficiency_ma13w": 0.6521625739811253
+    "efficiency": 0.9120159413378222,
+    "efficiency_ma13w": 0.6542353314464557
   },
   {
     "date": "2024-06-24",
-    "efficiency": 0.9125105743181404,
-    "efficiency_ma13w": 0.6848541663946411
+    "efficiency": 0.91217056305178,
+    "efficiency_ma13w": 0.6863067215532414
   },
   {
     "date": "2024-07-01",
-    "efficiency": 0.9256891280747092,
-    "efficiency_ma13w": 0.7489328177509739
+    "efficiency": 0.9246049646858486,
+    "efficiency_ma13w": 0.7503019757258157
   },
   {
     "date": "2024-07-08",
-    "efficiency": 0.8973027429636765,
-    "efficiency_ma13w": 0.7647252538743508
+    "efficiency": 0.8963213989075887,
+    "efficiency_ma13w": 0.7660301658980326
   },
   {
     "date": "2024-07-15",
-    "efficiency": 0.7073475013485274,
-    "efficiency_ma13w": 0.7783467642776298
+    "efficiency": 0.7109292260540414,
+    "efficiency_ma13w": 0.7794431765438113
   },
   {
     "date": "2024-07-22",
-    "efficiency": 0.5904389528219582,
-    "efficiency_ma13w": 0.7694231863140988
+    "efficiency": 0.5871688044571117,
+    "efficiency_ma13w": 0.7702930981630538
   },
   {
     "date": "2024-07-29",
-    "efficiency": 0.6522982496227598,
-    "efficiency_ma13w": 0.7906577347031962
+    "efficiency": 0.6504643674068877,
+    "efficiency_ma13w": 0.7913894830761804
   },
   {
     "date": "2024-08-05",
-    "efficiency": 0.7899155970095734,
-    "efficiency_ma13w": 0.80382946068672
+    "efficiency": 0.7840207641987413,
+    "efficiency_ma13w": 0.8048589552422682
   },
   {
     "date": "2024-08-12",
-    "efficiency": 0.690438939764632,
-    "efficiency_ma13w": 0.795296107528781
+    "efficiency": 0.6876329462869202,
+    "efficiency_ma13w": 0.7948233419767484
   },
   {
     "date": "2024-08-19",
-    "efficiency": 0.5546776308991859,
-    "efficiency_ma13w": 0.7648477842707953
+    "efficiency": 0.5714957124530713,
+    "efficiency_ma13w": 0.7656660637145161
   },
   {
     "date": "2024-08-26",
-    "efficiency": 0.6970043756722317,
-    "efficiency_ma13w": 0.7517889324119703
+    "efficiency": 0.7073779566026552,
+    "efficiency_ma13w": 0.7531959518667654
   },
   {
     "date": "2024-09-02",
-    "efficiency": 0.6765504573428174,
-    "efficiency_ma13w": 0.741680193695355
+    "efficiency": 0.6663949871304704,
+    "efficiency_ma13w": 0.7424453379973328
   },
   {
     "date": "2024-09-09",
-    "efficiency": 0.3444993779598653,
-    "efficiency_ma13w": 0.7194429909903997
+    "efficiency": 0.3423194389403046,
+    "efficiency_ma13w": 0.7194551593471725
   },
   {
     "date": "2024-09-16",
-    "efficiency": 0.6772489955297656,
-    "efficiency_ma13w": 0.7012248094867571
+    "efficiency": 0.6805838827142252,
+    "efficiency_ma13w": 0.7016526932992035
   },
   {
     "date": "2024-09-23",
-    "efficiency": 0.5271242612748219,
-    "efficiency_ma13w": 0.671579708483425
+    "efficiency": 0.5338986419828999,
+    "efficiency_ma13w": 0.672554853216982
   },
   {
     "date": "2024-09-30",
-    "efficiency": 0.1903803635191953,
-    "efficiency_ma13w": 0.6150174958253085
+    "efficiency": 0.1912684959587687,
+    "efficiency_ma13w": 0.6161443556225913
   },
   {
     "date": "2024-10-07",
-    "efficiency": 0.7747133143105432,
-    "efficiency_ma13w": 0.6055875397750674
+    "efficiency": 0.7827780149009347,
+    "efficiency_ma13w": 0.607410249160541
   },
   {
     "date": "2024-10-14",
-    "efficiency": 0.6282276683742855,
-    "efficiency_ma13w": 0.5995013987770489
+    "efficiency": 0.6235313343555193,
+    "efficiency_ma13w": 0.6006873344145007
   },
   {
     "date": "2024-10-21",
-    "efficiency": 0.6124783010050414,
-    "efficiency_ma13w": 0.6011967332526706
+    "efficiency": 0.612580795031063,
+    "efficiency_ma13w": 0.6026421029201893
   },
   {
     "date": "2024-10-28",
-    "efficiency": 0.9622722680068276,
-    "efficiency_ma13w": 0.6250408885129836
+    "efficiency": 0.9631270812450048,
+    "efficiency_ma13w": 0.6266930809077368
   },
   {
     "date": "2024-11-04",
-    "efficiency": 0.9627709227331668,
-    "efficiency_ma13w": 0.6383374520301831
+    "efficiency": 0.964370687086326,
+    "efficiency_ma13w": 0.6405661518990894
   },
   {
     "date": "2024-11-11",
-    "efficiency": 0.965729499251584,
-    "efficiency_ma13w": 0.6595136489137947
+    "efficiency": 0.9646305015948268,
+    "efficiency_ma13w": 0.6618736561535439
   },
   {
     "date": "2024-11-18",
-    "efficiency": 0.978459830631353,
-    "efficiency_ma13w": 0.692112279662423
+    "efficiency": 0.9793915097823104,
+    "efficiency_ma13w": 0.6932502559481007
   },
   {
     "date": "2024-11-25",
-    "efficiency": 0.9819040561732828,
-    "efficiency_ma13w": 0.7140276397009653
+    "efficiency": 0.9814925889134136,
+    "efficiency_ma13w": 0.7143359968950821
   },
   {
     "date": "2024-12-02",
-    "efficiency": 0.9661972485616336,
-    "efficiency_ma13w": 0.7363081621024128
+    "efficiency": 0.9666824887717028,
+    "efficiency_ma13w": 0.7374350354828692
   },
   {
     "date": "2024-12-09",
-    "efficiency": 0.9812421154434764,
-    "efficiency_ma13w": 0.7852883726780752
+    "efficiency": 0.9803534140136032,
+    "efficiency_ma13w": 0.7865145720269691
   },
   {
     "date": "2024-12-16",
-    "efficiency": 0.996558850052676,
-    "efficiency_ma13w": 0.8098506691798375
+    "efficiency": 0.9964701275563996,
+    "efficiency_ma13w": 0.8108135139379056
   },
   {
     "date": "2024-12-23",
-    "efficiency": 0.9777932441570192,
-    "efficiency_ma13w": 0.8445175140169295
+    "efficiency": 0.9762724329800194,
+    "efficiency_ma13w": 0.8448422670915302
   },
   {
     "date": "2024-12-30",
-    "efficiency": 0.952336124226106,
-    "efficiency_ma13w": 0.9031294956097689
+    "efficiency": 0.951197426544676,
+    "efficiency_ma13w": 0.9032983386750615
   },
   {
     "date": "2025-01-06",
-    "efficiency": 0.9128956474806852,
-    "efficiency_ma13w": 0.9137589058536258
+    "efficiency": 0.9112545373314198,
+    "efficiency_ma13w": 0.9131811480927912
   },
   {
     "date": "2025-01-13",
-    "efficiency": 0.9190496163807532,
-    "efficiency_ma13w": 0.9361298249310466
+    "efficiency": 0.9162676455272776,
+    "efficiency_ma13w": 0.935699325875234
   },
   {
     "date": "2025-01-20",
-    "efficiency": 0.9552331691714336,
-    "efficiency_ma13w": 0.9624955840207691
+    "efficiency": 0.9530829289096396,
+    "efficiency_ma13w": 0.9618917977120477
   },
   {
     "date": "2025-01-27",
-    "efficiency": 0.9826339936712584,
-    "efficiency_ma13w": 0.9640618706103408
+    "efficiency": 0.9822671069691068,
+    "efficiency_ma13w": 0.9633641073831325
   },
   {
     "date": "2025-02-03",
-    "efficiency": 0.9718805381168596,
-    "efficiency_ma13w": 0.96476261025524
+    "efficiency": 0.9716387838969548,
+    "efficiency_ma13w": 0.9639231917531809
   },
   {
     "date": "2025-02-10",
-    "efficiency": 0.9825408056299844,
-    "efficiency_ma13w": 0.9660557876689632
+    "efficiency": 0.9808674113406356,
+    "efficiency_ma13w": 0.9651721848105507
   },
   {
     "date": "2025-02-17",
-    "efficiency": 0.9852497094207252,
-    "efficiency_ma13w": 0.9665780860373765
+    "efficiency": 0.9851618507621708,
+    "efficiency_ma13w": 0.9656160571936169
   },
   {
     "date": "2025-02-24",
-    "efficiency": 0.8985012044174511,
-    "efficiency_ma13w": 0.9601624820561587
+    "efficiency": 0.8981007273274273,
+    "efficiency_ma13w": 0.9592012986100795
   },
   {
     "date": "2025-03-03",
-    "efficiency": 0.9065120107621284,
-    "efficiency_ma13w": 0.9555713099177351
+    "efficiency": 0.9058066606113137,
+    "efficiency_ma13w": 0.9545185425977418
   },
   {
     "date": "2025-03-10",
-    "efficiency": 0.7745877531602562,
-    "efficiency_ma13w": 0.9396748205113337
+    "efficiency": 0.7766033931655838,
+    "efficiency_ma13w": 0.9388454640709711
   },
   {
     "date": "2025-03-17",
-    "efficiency": 0.9057910016935028,
-    "efficiency_ma13w": 0.9326926783298587
+    "efficiency": 0.907955026761199,
+    "efficiency_ma13w": 0.9320366101636481
   },
   {
     "date": "2025-03-24",
-    "efficiency": 0.8961581016121302,
-    "efficiency_ma13w": 0.9264130519802519
+    "efficiency": 0.8955840076300773,
+    "efficiency_ma13w": 0.9258298082136525
   },
   {
     "date": "2025-03-31",
-    "efficiency": 0.948787545919352,
-    "efficiency_ma13w": 0.926140084418194
+    "efficiency": 0.9491908266667664,
+    "efficiency_ma13w": 0.9256754543768901
   },
   {
     "date": "2025-04-07",
-    "efficiency": 0.977136142288894,
-    "efficiency_ma13w": 0.9310816609419023
+    "efficiency": 0.9769334518492008,
+    "efficiency_ma13w": 0.9307276785705656
   },
   {
     "date": "2025-04-14",
-    "efficiency": 0.9688328904909852,
-    "efficiency_ma13w": 0.9349111435657662
+    "efficiency": 0.9661100750403874,
+    "efficiency_ma13w": 0.9345617116100358
   },
   {
     "date": "2025-04-21",
-    "efficiency": 0.9858003922563292,
-    "efficiency_ma13w": 0.9372624684184505
+    "efficiency": 0.985020073082326,
+    "efficiency_ma13w": 0.9370184150079345
   },
   {
     "date": "2025-04-28",
-    "efficiency": 0.9438484676350758,
-    "efficiency_ma13w": 0.9342789664156672
+    "efficiency": 0.9454469793859376,
+    "efficiency_ma13w": 0.9341860975015369
   },
   {
     "date": "2025-05-05",
-    "efficiency": 0.9431239517323724,
-    "efficiency_ma13w": 0.9320669213091682
+    "efficiency": 0.9522146072110466,
+    "efficiency_ma13w": 0.9326919300641594
   },
   {
     "date": "2025-05-12",
-    "efficiency": 0.9399404888465884,
-    "efficiency_ma13w": 0.9287899738642917
+    "efficiency": 0.9475425415920974,
+    "efficiency_ma13w": 0.930128478545041
   },
   {
     "date": "2025-05-19",
-    "efficiency": 0.7864885180669561,
-    "efficiency_ma13w": 0.9135006514524632
+    "efficiency": 0.7974590917147859,
+    "efficiency_ma13w": 0.9156898047721653
   },
   {
     "date": "2025-05-26",
-    "efficiency": 0.925756590922596,
-    "efficiency_ma13w": 0.9155972196451666
+    "efficiency": 0.9356025110907662,
+    "efficiency_ma13w": 0.9185745573693451
   },
   {
     "date": "2025-06-02",
-    "efficiency": 0.9812680370824416,
-    "efficiency_ma13w": 0.9213476832082677
+    "efficiency": 0.9913350293769796,
+    "efficiency_ma13w": 0.9251536626590119
   },
   {
     "date": "2025-06-09",
-    "efficiency": 0.9762612395116338,
-    "efficiency_ma13w": 0.9368610283122197
+    "efficiency": 0.9755164800021108,
+    "efficiency_ma13w": 0.9404546693387447
   },
   {
     "date": "2025-06-16",
-    "efficiency": 0.967556449942234,
-    "efficiency_ma13w": 0.9416122166390453
+    "efficiency": 0.9651687004183036,
+    "efficiency_ma13w": 0.9448557211585219
   },
   {
     "date": "2025-06-23",
-    "efficiency": 0.9377770156677626,
-    "efficiency_ma13w": 0.9448136715664016
+    "efficiency": 0.9564030853725148,
+    "efficiency_ma13w": 0.9495341117540941
   },
   {
     "date": "2025-06-30",
-    "efficiency": 0.947642908651872,
-    "efficiency_ma13w": 0.9447256225458263
+    "efficiency": 0.959195161874289,
+    "efficiency_ma13w": 0.9503036760008267
   },
   {
     "date": "2025-07-07",
-    "efficiency": 0.9625668920956504,
-    "efficiency_ma13w": 0.9436049109924998
+    "efficiency": 0.962187181166044,
+    "efficiency_ma13w": 0.9491693474867376
   },
   {
     "date": "2025-07-14",
-    "efficiency": 0.952804659705626,
-    "efficiency_ma13w": 0.9423719701628569
+    "efficiency": 0.9564216173866824,
+    "efficiency_ma13w": 0.9484240815133755
   },
   {
     "date": "2025-07-21",
-    "efficiency": 0.9519347032542308,
-    "efficiency_ma13w": 0.9397669171626953
+    "efficiency": 0.9516305470951528,
+    "efficiency_ma13w": 0.9458556564374393
   },
   {
     "date": "2025-07-28",
-    "efficiency": 0.97567628088364,
-    "efficiency_ma13w": 0.9422152104895078
+    "efficiency": 0.9734972904439448,
+    "efficiency_ma13w": 0.9480133726726707
   },
   {
     "date": "2025-08-04",
-    "efficiency": 0.9627633658029224,
-    "efficiency_ma13w": 0.9437259346487811
+    "efficiency": 0.9657295963615152,
+    "efficiency_ma13w": 0.9490529872227066
   },
   {
     "date": "2025-08-11",
-    "efficiency": 0.9811524406093336,
-    "efficiency_ma13w": 0.9468960847843768
+    "efficiency": 0.9818959614704682,
+    "efficiency_ma13w": 0.9516955579825813
   },
   {
     "date": "2025-08-18",
-    "efficiency": 0.9796551640016326,
-    "efficiency_ma13w": 0.9617550575485828
+    "efficiency": 0.9795648731947082,
+    "efficiency_ma13w": 0.9657036950194985
   },
   {
     "date": "2025-08-25",
-    "efficiency": 0.9738799220114388,
-    "efficiency_ma13w": 0.9654568522477245
+    "efficiency": 0.9735578927557168,
+    "efficiency_ma13w": 0.9686233397629562
   },
   {
     "date": "2025-09-01",
-    "efficiency": 0.9791908586943872,
-    "efficiency_ma13w": 0.9652970692947972
+    "efficiency": 0.9803186698035956,
+    "efficiency_ma13w": 0.9677759274880805
   },
   {
     "date": "2025-09-08",
-    "efficiency": 0.9393147602069012,
-    "efficiency_ma13w": 0.9624550324252025
+    "efficiency": 0.9410915085907066,
+    "efficiency_ma13w": 0.9651278527641265
   },
   {
     "date": "2025-09-15",
-    "efficiency": 0.9727891237567272,
-    "efficiency_ma13w": 0.962857545795548
+    "efficiency": 0.966997772231892,
+    "efficiency_ma13w": 0.9652685505959409
   },
   {
     "date": "2025-09-22",
-    "efficiency": 0.9567619732368338,
-    "efficiency_ma13w": 0.9643179271470151
+    "efficiency": 0.9622167457614204,
+    "efficiency_ma13w": 0.9657157552412413
   },
   {
     "date": "2025-09-29",
-    "efficiency": 0.9684490076835816,
-    "efficiency_ma13w": 0.9659183963033005
+    "efficiency": 0.9738908161366892,
+    "efficiency_ma13w": 0.9668461901845027
   },
   {
     "date": "2025-10-06",
-    "efficiency": 0.9818164219068388,
-    "efficiency_ma13w": 0.9673991293656996
+    "efficiency": 0.9830116337101524,
+    "efficiency_ma13w": 0.9684480711494341
   },
   {
     "date": "2025-10-13",
-    "efficiency": 0.9818475919587132,
-    "efficiency_ma13w": 0.9696332010774754
+    "efficiency": 0.9781502496937122,
+    "efficiency_ma13w": 0.9701195044038211
   },
   {
     "date": "2025-10-20",
-    "efficiency": 0.9905124611613888,
-    "efficiency_ma13w": 0.9726007209164877
+    "efficiency": 0.9901412206962432,
+    "efficiency_ma13w": 0.9730818639115975
   },
   {
     "date": "2025-10-27",
-    "efficiency": 0.9920691243199116,
-    "efficiency_ma13w": 0.973861708873124
+    "efficiency": 0.9923295067671414,
+    "efficiency_ma13w": 0.9745304959364585
   },
   {
     "date": "2025-11-03",
-    "efficiency": 0.9823022626686682,
-    "efficiency_ma13w": 0.9753647009397197
+    "efficiency": 0.9803975470749684,
+    "efficiency_ma13w": 0.9756587998374934
   },
   {
     "date": "2025-11-10",
-    "efficiency": 0.9268056043587682,
-    "efficiency_ma13w": 0.9711841750742916
+    "efficiency": 0.92713957364789,
+    "efficiency_ma13w": 0.9714467700049874
   },
   {
     "date": "2025-11-17",
-    "efficiency": 0.9183982691389736,
-    "efficiency_ma13w": 0.9664721062387025
+    "efficiency": 0.9203013478244412,
+    "efficiency_ma13w": 0.9668880372841977
   },
   {
     "date": "2025-11-24",
-    "efficiency": 0.98352877464651,
-    "efficiency_ma13w": 0.9672143256721696
+    "efficiency": 0.9797881209515062,
+    "efficiency_ma13w": 0.9673672856069507
   },
   {
     "date": "2025-12-01",
-    "efficiency": 0.9859246271759314,
-    "efficiency_ma13w": 0.9677323078630575
+    "efficiency": 0.98422451170208,
+    "efficiency_ma13w": 0.9676677349837572
   },
   {
     "date": "2025-12-08",
-    "efficiency": 0.975479150783501,
-    "efficiency_ma13w": 0.9705141840612576
+    "efficiency": 0.9869769807648888,
+    "efficiency_ma13w": 0.9711973866894635
   },
   {
     "date": "2025-12-15",
-    "efficiency": 0.9895056191513836,
-    "efficiency_ma13w": 0.971800068322385
+    "efficiency": 0.989072260248268,
+    "efficiency_ma13w": 0.9728954242291846
   },
   {
     "date": "2025-12-22",
-    "efficiency": 0.9890117414345254,
-    "efficiency_ma13w": 0.9742808197222074
+    "efficiency": 0.9848725040174344,
+    "efficiency_ma13w": 0.9746381748642627
   },
   {
     "date": "2025-12-29",
-    "efficiency": 0.993254177840106,
-    "efficiency_ma13w": 0.9761889097342475
+    "efficiency": 0.9747078993366208,
+    "efficiency_ma13w": 0.9747010274181036
   },
   {
     "date": "2026-01-05",
-    "efficiency": 0.9955371281853528,
-    "efficiency_ma13w": 0.9772443486787488
+    "efficiency": 0.987055502856215,
+    "efficiency_ma13w": 0.9750120942754931
   },
   {
     "date": "2026-01-12",
-    "efficiency": 0.9900019433345012,
-    "efficiency_ma13w": 0.9778716064768862
+    "efficiency": 0.9887853757781664,
+    "efficiency_ma13w": 0.9758301808973742
   },
   {
     "date": "2026-01-19",
-    "efficiency": 0.9931096197614202,
-    "efficiency_ma13w": 0.9780713879076579
+    "efficiency": 0.9863710089807034,
+    "efficiency_ma13w": 0.9755401646115633
   },
   {
     "date": "2026-01-26",
-    "efficiency": 0.9956316132479118,
-    "efficiency_ma13w": 0.978345425517504
+    "efficiency": 0.988182703937046,
+    "efficiency_ma13w": 0.9752211797784791
+  },
+  {
+    "date": "2026-02-02",
+    "efficiency": 0.926943244552616,
+    "efficiency_ma13w": 0.9711093103536828
+  },
+  {
+    "date": "2026-02-23",
+    "efficiency": 0.896310914594715,
+    "efficiency_ma13w": 0.9687378750419001
+  },
+  {
+    "date": "2026-03-02",
+    "efficiency": 0.969555423770349,
+    "efficiency_ma13w": 0.9725266501146622
+  },
+  {
+    "date": "2026-03-09",
+    "efficiency": 0.9530941403051124,
+    "efficiency_ma13w": 0.9704732669880165
+  },
+  {
+    "date": "2026-03-16",
+    "efficiency": 0.9108487505032512,
+    "efficiency_ma13w": 0.9648289776650297
+  },
+  {
+    "date": "2026-03-23",
+    "efficiency": 0.9494858381618636,
+    "efficiency_ma13w": 0.9619450436186431
+  },
+  {
+    "date": "2026-03-30",
+    "efficiency": 0.8747259322842734,
+    "efficiency_ma13w": 0.9531491722367975
+  },
+  {
+    "date": "2026-04-06",
+    "efficiency": 0.9078340479456912,
+    "efficiency_ma13w": 0.9472231371543557
+  },
+  {
+    "date": "2026-04-13",
+    "efficiency": 0.9252321319147456,
+    "efficiency_ma13w": 0.9434173088911345
+  },
+  {
+    "date": "2026-04-20",
+    "efficiency": 0.894807921668753,
+    "efficiency_ma13w": 0.9363213411074837
   }
 ]

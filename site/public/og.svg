@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1420"/>
+      <stop offset="100%" stop-color="#102740"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#75bee9"/>
+      <stop offset="100%" stop-color="#0074c8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="8" fill="url(#bar)"/>
+
+  <g font-family="Sofia Sans, -apple-system, sans-serif" fill="#e7edf6">
+    <text x="80" y="120" font-size="24" font-weight="600" letter-spacing="4" fill="#75bee9">DV-PMI</text>
+    <text x="80" y="210" font-size="66" font-weight="700" letter-spacing="-1">Della Vedova Prediction</text>
+    <text x="80" y="280" font-size="66" font-weight="700" letter-spacing="-1">Market Indices</text>
+
+    <text x="80" y="360" font-size="28" fill="#8fa1b6" font-style="italic" font-family="Spectral, Georgia, serif">
+      The weekly evidence on who profits, who loses,
+    </text>
+    <text x="80" y="400" font-size="28" fill="#8fa1b6" font-style="italic" font-family="Spectral, Georgia, serif">
+      and how prediction markets price uncertainty.
+    </text>
+
+    <text x="80" y="490" font-size="22" font-weight="600" fill="#75bee9">
+      233M on-chain trades  ·  seven weekly indices  ·  open data
+    </text>
+
+    <line x1="80" y1="540" x2="260" y2="540" stroke="#1b2c45" stroke-width="1"/>
+    <text x="80" y="575" font-size="20" fill="#8fa1b6">Joshua Della Vedova</text>
+    <text x="80" y="600" font-size="16" fill="#8fa1b6">Knauss School of Business, University of San Diego</text>
+
+    <!-- Simple chart motif on the right -->
+    <g transform="translate(850 350)">
+      <polyline points="0,120 40,90 80,110 120,60 160,70 200,30 240,50 280,10"
+                fill="none" stroke="#75bee9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="280" cy="10" r="8" fill="#75bee9"/>
+    </g>
+  </g>
+
+  <text x="80" y="70" font-family="Sofia Sans, sans-serif" font-size="16" fill="#8fa1b6" letter-spacing="2">
+    jdellavedova.com
+  </text>
+</svg>

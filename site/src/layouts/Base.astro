@@ -4,18 +4,42 @@ import "../styles/main.css";
 export interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
-const { title, description } = Astro.props;
+const {
+  title,
+  description,
+  ogImage = "/og.png",
+} = Astro.props;
 const year = new Date().getFullYear();
+const fullOgUrl = new URL(ogImage, Astro.site ?? "https://jdellavedova.com").toString();
+const canonical = Astro.url.href;
+const desc = description ?? "Weekly behavioral and microstructure indices from 640M on-chain Polymarket trades. By Joshua Della Vedova, University of San Diego.";
 ---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content={description ?? "Prediction market indices and research by Joshua Della Vedova, University of San Diego."} />
+  <meta name="description" content={desc} />
   <title>{title}</title>
-  <link rel="canonical" href={Astro.url.href} />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={desc} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={fullOgUrl} />
+  <meta property="og:site_name" content="Della Vedova Prediction Market Indices" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={desc} />
+  <meta name="twitter:image" content={fullOgUrl} />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 </head>
 <body>
   <header class="site-head">
@@ -26,7 +50,8 @@ const year = new Date().getFullYear();
         <a href="/research">Research</a>
         <a href="/methodology">Methodology</a>
         <a href="/data">Data</a>
-        <a href="/expert-witness">Expert Witness</a>
+        <a href="/press">Press</a>
+        <a href="/expert-witness">Consulting</a>
         <a href="/about">About</a>
       </nav>
     </div>
@@ -41,7 +66,12 @@ const year = new Date().getFullYear();
       Joshua Della Vedova &middot; Knauss School of Business &middot; University of San Diego
     </div>
     <div style="margin-top:6px;">
-      Data updated weekly &middot; <a href="/methodology">Methodology</a> &middot; <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2583491">SSRN</a> &middot; <a href="https://scholar.google.com/citations?user=6KY3PLwAAAAJ&hl=en">Scholar</a> &middot; &copy; {year}
+      Data updated weekly &middot; <a href="/methodology">Methodology</a> &middot; <a href="https://orcid.org/0000-0003-3371-9735">ORCID</a> &middot; <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2583491">SSRN</a> &middot; <a href="https://scholar.google.com/citations?user=6KY3PLwAAAAJ&hl=en">Scholar</a> &middot; &copy; {year}
+    </div>
+    <div class="disclaimer">
+      The Della Vedova Prediction Market Indices are a research dataset. Nothing on this site
+      is investment advice or a recommendation to buy or sell any prediction-market contract,
+      security, or derivative. Past patterns do not predict future outcomes.
     </div>
   </footer>
 </body>

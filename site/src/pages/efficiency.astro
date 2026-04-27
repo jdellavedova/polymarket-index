@@ -5,6 +5,14 @@ import eff from "../../public/data/efficiency_latest.json";
 
 function fmt(n, d = 3) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : n.toFixed(d); }
 function signed(n, d = 2) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n >= 0 ? "+" : "") + n.toFixed(d); }
+const WALLET_LABEL: Record<string, string> = {
+  bot: "Algorithmic",
+  active_retail: "Active Retail",
+  sophisticated: "Sophisticated",
+  casual: "Casual",
+  one_shot: "One-Shot",
+};
+function walletLabel(k: string) { return WALLET_LABEL[k] ?? k; }
 ---
 <Base title="Market Efficiency Trend" description="Weekly R-squared of the Prelec fit on active retail Polymarket trades.">
   <h1>Market Efficiency Trend</h1>
@@ -29,7 +37,7 @@ function signed(n, d = 2) { return (n === null || n === undefined || Number.isNa
   <table>
     <tr><th>Wallet class</th><th>R-squared</th></tr>
     {Object.entries(eff.per_type_r2).map(([k, v]) => (
-      <tr><td>{k}</td><td class="mono">{fmt(v as number, 3)}</td></tr>
+      <tr><td>{walletLabel(k)}</td><td class="mono">{fmt(v as number, 3)}</td></tr>
     ))}
   </table>
 
@@ -43,8 +51,8 @@ function signed(n, d = 2) { return (n === null || n === undefined || Number.isNa
   </p>
   <p>
     The headline index uses the active-retail R-squared because active retail is the largest human wallet
-    cohort and most closely represents how well human beliefs price the market. Bot R-squared is shown for
-    comparison but can be noisy because bot trading is more strategic than belief-driven.
+    cohort and most closely represents how well human beliefs price the market. The algorithmic R-squared is
+    shown for comparison but can be noisy because algorithmic trading is more strategic than belief-driven.
   </p>
 
   <h2>Data</h2>
