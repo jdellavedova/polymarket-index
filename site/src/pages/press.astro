@@ -24,7 +24,7 @@ import press from "../../public/data/press_quotes.json";
       <div class="pq-topic">{q.topic}</div>
       <blockquote class="pq-quote">&ldquo;{q.quote}&rdquo;</blockquote>
       <p class="pq-context">{q.context}</p>
-      <p class="pq-attribution">&mdash; {q.citation_line}</p>
+      <p class="pq-attribution">{q.citation_line}</p>
     </article>
   ))}
 
@@ -40,7 +40,7 @@ import press from "../../public/data/press_quotes.json";
           <td>{m.date}</td>
           <td>{m.outlet}</td>
           <td>{m.headline}</td>
-          <td>{m.url ? <a href={m.url}>Article</a> : "—"}</td>
+          <td>{m.url ? <a href={m.url}>Article</a> : "n/a"}</td>
         </tr>
       ))}
     </table>

@@ -148,7 +148,7 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
     </tr>
   </table>
 
-  <h3>Who is participating &mdash; share by wallet type</h3>
+  <h3>Who is participating: share by wallet type</h3>
   <table class="snapshot">
     <tr>
       <th>Type</th>
@@ -185,7 +185,7 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
       <tr>
         <td class="mono">{m.rank}</td>
         <td>{m.question ?? <span class="muted">(market #{m.market_id}, not in static metadata)</span>}</td>
-        <td class="muted">{m.category ?? "—"}</td>
+        <td class="muted">{m.category ?? "n/a"}</td>
         <td class="mono" style="text-align:right;">{usdCompact(m.usd_volume)}</td>
         <td class="mono" style="text-align:right;">{m.n_trades.toLocaleString()}</td>
       </tr>
@@ -196,38 +196,12 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
     Market names come from the static <code>polymarket_markets.csv</code> snapshot; new markets created after that snapshot appear with IDs only.
   </p>
 
-  <h2>Informed-Trading Signal <span class="h2-note">&mdash; who appears to know something before the market does</span></h2>
+  <h2>Who profits <span class="h2-note">(algorithmic wallets vs humans)</span></h2>
   <p class="section-lead">
-    A statistical test picks out wallets whose win rate is too high, too often, to be luck. A higher flag rate means a stronger fingerprint of private information. This is a statistical signal, not a legal finding about any individual trader.
+    Every trade&rsquo;s P&amp;L splits cleanly into <em>directional</em> (did you pick the winning side?) and <em>execution</em> (did you get a better price than the market&rsquo;s volume-weighted average?). Across 640 million resolved trades, algorithmic wallets capture almost all of the dollars; retail loses on execution even when their picks are right. Source: <a href="/research">Della Vedova (2026), &ldquo;Who Profits from Prediction Markets?&rdquo;</a>
   </p>
-
-  <table class="snapshot">
-    <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
-    <tr>
-      <td>Wallets flagged as likely informed</td>
-      <td class="mono">{pii.headline.total_flagged_p_lt_01.toLocaleString()}</td>
-      <td class="muted">Out of {pii.headline.total_wallets_tested.toLocaleString()} we can test ({pct(pii.headline.flag_rate, 2)})</td>
-    </tr>
-    <tr>
-      <td>After strict statistical correction</td>
-      <td class="mono">{pii.headline.holm_bonferroni_survivors.toLocaleString()}</td>
-      <td class="muted">Even under the harshest multiple-testing correction, this many remain</td>
-    </tr>
-    <tr>
-      <td>After moderate correction</td>
-      <td class="mono">{pii.headline.bh_fdr_survivors.toLocaleString()}</td>
-      <td class="muted">False-discovery-rate correction (balanced approach)</td>
-    </tr>
-    <tr>
-      <td>Algorithmic vs retail execution edge</td>
-      <td class="mono">{fmt(execution.value, 3)} {arrow(execution.z52w)}</td>
-      <td class="muted">How much better algorithmic wallets are at timing entries vs active retail (z-score vs last year: {signed(execution.z52w)})</td>
-    </tr>
-  </table>
-
-  <h3>Where algorithmic and retail traders actually make (or lose) money</h3>
   <p class="section-lead" style="font-size:14px;">
-    Resolved trades for the week of {profitSplit.as_of_week} (one week behind the activity panel above; we wait for markets to resolve before booking P&amp;L). Every trade&rsquo;s P&amp;L splits cleanly into two parts: <em>directional</em> (did you pick the winning side?) and <em>execution</em> (did you get a better price than the market&rsquo;s volume-weighted average?). Accuracy is the share-weighted fraction of tokens this group held on the winning side. ROI values are in basis points of USD traded.
+    Resolved trades for the week of {profitSplit.as_of_week} (one week behind the activity panel above; we wait for markets to resolve before booking P&amp;L). Accuracy is the share-weighted fraction of tokens this group held on the winning side. ROI values are in basis points of USD traded.
   </p>
   <table class="snapshot">
     <tr>
@@ -252,8 +226,42 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
     ))}
   </table>
   <p class="muted" style="font-size:14px;">
-    Directional + execution = total ROI (an algebraic identity). Accuracy is &ldquo;how often this group was on the winning side&rdquo; weighted by share size. Casual and one-shot traders can show very large ROIs in any given week because their samples are tiny (often under 100 trades).
+    Directional + execution = total ROI (an algebraic identity). Casual and one-shot traders can show very large ROIs in any given week because their samples are tiny (often under 100 trades).
   </p>
+
+  <h3>Algorithmic vs retail execution edge (this week)</h3>
+  <table class="snapshot">
+    <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
+    <tr>
+      <td>Algorithmic vs retail execution edge</td>
+      <td class="mono">{fmt(execution.value, 3)} {arrow(execution.z52w)}</td>
+      <td class="muted">How much better algorithmic wallets are at timing entries vs active retail (z-score vs last year: {signed(execution.z52w)})</td>
+    </tr>
+  </table>
+
+  <h2>Who appears to know something <span class="h2-note">(insider-trading signal)</span></h2>
+  <p class="section-lead">
+    A statistical test picks out wallets whose win rate is too high, too often, to be luck. A higher flag rate means a stronger fingerprint of private information. This is a statistical signal, not a legal finding about any individual trader. Source: <a href="/research">Della Vedova (2026), &ldquo;Detecting Informed Trading in Prediction Markets.&rdquo;</a>
+  </p>
+
+  <table class="snapshot">
+    <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
+    <tr>
+      <td>Wallets flagged as likely informed</td>
+      <td class="mono">{pii.headline.total_flagged_p_lt_01.toLocaleString()}</td>
+      <td class="muted">Out of {pii.headline.total_wallets_tested.toLocaleString()} we can test ({pct(pii.headline.flag_rate, 2)})</td>
+    </tr>
+    <tr>
+      <td>After strict statistical correction</td>
+      <td class="mono">{pii.headline.holm_bonferroni_survivors.toLocaleString()}</td>
+      <td class="muted">Even under the harshest multiple-testing correction, this many remain</td>
+    </tr>
+    <tr>
+      <td>After moderate correction</td>
+      <td class="mono">{pii.headline.bh_fdr_survivors.toLocaleString()}</td>
+      <td class="muted">False-discovery-rate correction (balanced approach)</td>
+    </tr>
+  </table>
 
   <h3>Flag rate by market type</h3>
   <p class="section-lead" style="font-size:14px;">
@@ -273,10 +281,13 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
 
   <p class="consulting-handoff">
     Rates and methodology are public. Identification of specific wallets for regulatory, litigation,
-    or journalistic purposes is handled case-by-case &mdash; see <a href="/expert-witness">consulting</a>.
+    or journalistic purposes is handled case-by-case; see <a href="/expert-witness">consulting</a>.
   </p>
 
-  <h2>How traders are pricing uncertainty</h2>
+  <h2>How crowds price uncertainty <span class="h2-note">(probability weighting)</span></h2>
+  <p class="section-lead">
+    Tversky and Kahneman (1992) showed that people overweight rare events and underweight common ones. We measure the same distortion week by week using realized win rates from non-bot Polymarket trades. Source: <a href="/research">Della Vedova and Grant (2026, in progress), &ldquo;Probability Weighting from Prediction Markets.&rdquo;</a>
+  </p>
   <table class="snapshot">
     <tr><th>Metric</th><th>Value</th><th>What it says</th></tr>
     <tr>
