@@ -2,6 +2,7 @@
 import activity from "../../public/data/weekly_activity_latest.json";
 import priceGap from "../../public/data/price_gap_latest.json";
 import profitSplit from "../../public/data/profit_split_latest.json";
+import pii from "../../public/data/pii_latest.json";
 
 function usdCompact(v: number) {
   const sign = v < 0 ? "-" : "";
@@ -81,9 +82,9 @@ const tiles = [
     cls: longshotCls,
   },
   {
-    label: "PRIVATE-INFO PROFIT",
-    value: "$111M",
-    sub: "to algorithmic makers (cumulative)",
+    label: "FLAGGED WALLETS ACTIVE",
+    value: compactInt(activity.flagged_active_this_week),
+    sub: `of ${compactInt(pii.headline.total_flagged_p_lt_01)} insider-flagged wallets`,
     cls: "flat",
   },
 ];
