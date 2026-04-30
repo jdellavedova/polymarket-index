@@ -1,51 +1,51 @@
 {
   "index_name": "Top Markets by Weekly Volume",
   "short_name": "TopMarkets",
-  "as_of_week": "2026-W17",
+  "as_of_week": "2026-W18",
   "top_k": 5,
   "markets": [
     {
       "rank": 1,
-      "market_id": "567561",
-      "question": "Will the next Prime Minister of Hungary be P\u00e9ter Magyar?",
-      "category": null,
-      "usd_volume": 6364379.429678993,
-      "n_trades": 14666
-    },
-    {
-      "rank": 2,
-      "market_id": "567560",
-      "question": "Will the next Prime Minister of Hungary be Viktor Orb\u00e1n?",
-      "category": null,
-      "usd_volume": 6354367.421017997,
-      "n_trades": 13231
-    },
-    {
-      "rank": 3,
       "market_id": "669662",
       "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
       "category": null,
-      "usd_volume": 5051119.974299995,
-      "n_trades": 9257
+      "usd_volume": 5766229.069609998,
+      "n_trades": 6839
+    },
+    {
+      "rank": 2,
+      "market_id": "573655",
+      "question": "Will Bitcoin hit $150k by June 30, 2026?",
+      "category": null,
+      "usd_volume": 3164181.919562,
+      "n_trades": 2087
+    },
+    {
+      "rank": 3,
+      "market_id": "669660",
+      "question": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
+      "category": null,
+      "usd_volume": 2067330.3182060001,
+      "n_trades": 3204
     },
     {
       "rank": 4,
-      "market_id": "947289",
-      "question": "Will Roberto S\u00e1nchez Palomino win the 2026 Peruvian presidential election?",
+      "market_id": "665374",
+      "question": "Will the U.S. invade Iran before 2027?",
       "category": null,
-      "usd_volume": 2423299.6115630004,
-      "n_trades": 41401
+      "usd_volume": 1967006.0357589957,
+      "n_trades": 13509
     },
     {
       "rank": 5,
-      "market_id": "947268",
-      "question": "Will Rafael L\u00f3pez Aliaga win the 2026 Peruvian presidential election?",
+      "market_id": "947289",
+      "question": "Will Roberto S\u00e1nchez Palomino win the 2026 Peruvian presidential election?",
       "category": null,
-      "usd_volume": 2391545.0217260015,
-      "n_trades": 29550
+      "usd_volume": 1710408.3178440002,
+      "n_trades": 22231
     }
   ],
-  "generated_at": "2026-04-24T17:39:48+00:00",
+  "generated_at": "2026-04-30T05:32:36+00:00",
   "source": "J:/Research/10. Prediction/data/blockchain/processed_trades.csv",
   "notes": "Top 5 resolved-trade markets by USD volume in the most recent complete week. Market questions come from polymarket_markets.csv (static snapshot); new markets not in that file will appear with question=null."
 }

@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-04-20",
-  "generated_at": "2026-04-24T17:48:14+00:00",
+  "as_of": "2026-04-27",
+  "generated_at": "2026-04-30T05:38:54+00:00",
   "sentences": [
-    "Traders moved $776 million through Polymarket in the week of 2026-04-20, across 30.9 million individual trades, with 37,569 wallets placing their first-ever bet (below the recent trend). Algorithmic wallets handled 91% of the trade count; everyone else split the remaining 9%.",
-    "The most-traded market was \"Will the next Prime Minister of Hungary be P\u00e9ter Magyar?\", pulling in $6 million of volume. Politics dominated the week's attention.",
-    "An unusual reversal: retail traders outperformed bots this week. Active retail earned $7K (+84 bps on volume) while algorithms lost $137K (-119 bps). Weeks like this are rare (bots are typically on top by the execution channel)."
+    "Traders moved $696 million through Polymarket in the week of 2026-04-27, across 27.6 million individual trades, with 13,216 wallets placing their first-ever bet (below the recent trend). Algorithmic wallets handled 87% of the trade count; everyone else split the remaining 13%.",
+    "The most-traded market was \"Will there be no change in Fed interest rates after the April 2026 meeting?\", pulling in $6 million of volume. Macro calls drove the action.",
+    "Both sides made money this week. Bots collected $118K (+178 bps); retail collected $47K (+923 bps)."
   ],
-  "headline_quote": "Polymarket traders moved $776 million this week, above trend, with 37,569 new participants joining the market.",
+  "headline_quote": "Polymarket traders moved $696 million this week, above trend, with 13,216 new participants joining the market.",
   "author": "Joshua Della Vedova, University of San Diego",
   "attribution_short": "Della Vedova (2026), Della Vedova Prediction Market Indices",
   "hand_edited": false,
