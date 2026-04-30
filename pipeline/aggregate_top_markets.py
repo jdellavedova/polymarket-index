@@ -19,6 +19,7 @@ import requests
 
 from common import utc_now, write_json
 from config import DATA_OUT
+from categorize import categorize as _categorize_question
 
 GAMMA_MARKET_ENDPOINT = "https://gamma-api.polymarket.com/markets/{mid}"
 GAMMA_TIMEOUT = 10
@@ -142,6 +143,10 @@ def main() -> None:
                 question = fetched["question"]
                 category = fetched["category"]
                 print(f"  Fetched question for market {r['market_id']} via Gamma API")
+        # If category is still missing (Polymarket+Gamma both null), classify
+        # heuristically from the question text (categorize.py).
+        if not category and question:
+            category = _categorize_question(question)
         markets_list.append({
             "rank": int(r["rnk"]),
             "market_id": str(r["market_id"]),

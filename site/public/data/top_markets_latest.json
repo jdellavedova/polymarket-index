@@ -8,7 +8,7 @@
       "rank": 1,
       "market_id": "669662",
       "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
-      "category": null,
+      "category": "Macro",
       "usd_volume": 5766229.069609998,
       "n_trades": 6839
     },
@@ -16,7 +16,7 @@
       "rank": 2,
       "market_id": "573655",
       "question": "Will Bitcoin hit $150k by June 30, 2026?",
-      "category": null,
+      "category": "Crypto",
       "usd_volume": 3164181.919562,
       "n_trades": 2087
     },
@@ -24,7 +24,7 @@
       "rank": 3,
       "market_id": "669660",
       "question": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
-      "category": null,
+      "category": "Macro",
       "usd_volume": 2067330.3182060001,
       "n_trades": 3204
     },
@@ -32,7 +32,7 @@
       "rank": 4,
       "market_id": "665374",
       "question": "Will the U.S. invade Iran before 2027?",
-      "category": null,
+      "category": "Geopolitics",
       "usd_volume": 1967006.0357589957,
       "n_trades": 13509
     },
@@ -40,12 +40,13 @@
       "rank": 5,
       "market_id": "947289",
       "question": "Will Roberto S\u00e1nchez Palomino win the 2026 Peruvian presidential election?",
-      "category": null,
+      "category": "Politics",
       "usd_volume": 1710408.3178440002,
       "n_trades": 22231
     }
   ],
-  "generated_at": "2026-04-30T05:32:36+00:00",
+  "generated_at": "2026-04-30T18:39:04.273807+00:00",
   "source": "J:/Research/10. Prediction/data/blockchain/processed_trades.csv",
-  "notes": "Top 5 resolved-trade markets by USD volume in the most recent complete week. Market questions come from polymarket_markets.csv (static snapshot); new markets not in that file will appear with question=null."
+  "notes": "Top 5 resolved-trade markets by USD volume in the most recent complete week. Market questions come from polymarket_markets.csv (static snapshot); new markets not in that file will appear with question=null.",
+  "categorization_note": "Categories from polymarket_markets.csv + Gamma API; null entries backfilled by heuristic keyword classifier in pipeline/categorize.py."
 }
