@@ -66,6 +66,45 @@ import Base from "../layouts/Base.astro";
     visible: maker-only attribution would assign roughly 95&#37; to algorithms.
   </p>
 
+  <h3>Profit Split Decomposition</h3>
+  <p>
+    Per-trade P&amp;L for each resolved trade is decomposed into directional (forecasting) and execution
+    (price) components using <a href="/research">Paper 1&rsquo;s</a> main-analysis benchmark: the
+    per-(market, token) volume-weighted average price across <strong>buy-side trades only</strong>. For
+    trade <em>i</em> in market <em>m</em> and token <em>T</em> with entry price <em>P</em>, fair-price
+    benchmark <em>v</em>(<em>m,T</em>), outcome <em>W</em> &isin; &#123;0,1&#125;, token quantity <em>Q</em>,
+    and side sign <em>S</em> = +1 (BUY) or &minus;1 (SELL):
+  </p>
+  <ul>
+    <li><strong>Total P&amp;L</strong> = <em>S</em> &times; (<em>W</em> &minus; <em>P</em>) &times; <em>Q</em></li>
+    <li><strong>Directional</strong> = <em>S</em> &times; (<em>W</em> &minus; <em>v</em>) &times; <em>Q</em>:
+      forecasting component (did the trade pick the side that the average buyer also picked?).</li>
+    <li><strong>Execution</strong> = <em>S</em> &times; (<em>v</em> &minus; <em>P</em>) &times; <em>Q</em>:
+      execution component (did the trade get a better price than the average buyer?).</li>
+    <li>Algebraic identity: directional + execution = total P&amp;L per trade.</li>
+  </ul>
+  <p>
+    Two deliberate dashboard choices distinguish this aggregator from Paper 1&rsquo;s published table:
+  </p>
+  <ol>
+    <li><strong>Both-side attribution.</strong> Paper 1 attributes each match to the maker side only
+      (the academic standard). The dashboard instead attributes the match to <em>both</em> the maker
+      and the taker with mirror-signed components. This makes dollar P&amp;L sum to zero across wallet
+      types by construction, which is the most readable framing for a public dashboard. The
+      cumulative cross-skill structure documented in Paper 1 (bots near-zero directional, positive
+      execution; retail negative execution) is unchanged because both methodologies use the same
+      benchmark and per-trade primitives.</li>
+    <li><strong>Volume-weighted ROI bps.</strong> Paper 1 Table 1 reports per-trade average edge
+      (sum of edge / number of trades) &times; 10000. The dashboard reports volume-weighted ROI
+      (P&amp;L / USD volume) &times; 10000. The two are not directly comparable; the dashboard&rsquo;s
+      framing is consistent with the dollar P&amp;L column in the same row.</li>
+  </ol>
+  <p>
+    The aggregator runs incrementally: a one-time backfill computes per-(market, token) buy-side VWAP
+    across the full 671M-trade panel, and a weekly update extends the cache as new trades arrive
+    without re-streaming the master file.
+  </p>
+
   <h3>Longshot / Favorite Price Gap</h3>
   <p>
     Realized win rate in the longshot price band (prices below 10%) minus the band midpoint (5%). Positive

@@ -204,7 +204,7 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
     Every trade&rsquo;s P&amp;L splits cleanly into <em>directional</em> (did you pick the winning side?) and <em>execution</em> (did you get a better price than the market&rsquo;s volume-weighted average?). Across 640 million resolved trades cumulative since 2022, algorithmic wallets capture almost all of the dollars (Paper 1: bots +$133M, retail &minus;$79M). Source: <a href="/research">Della Vedova (2026), &ldquo;Who Profits from Prediction Markets?&rdquo;</a>
   </p>
   <p class="section-lead" style="font-size:14px;">
-    The table below shows the most recent fully-resolved week ({profitSplit.as_of_week}; one week behind the activity panel above because we wait for markets to resolve before booking P&amp;L). P&amp;L sums to zero across all wallet types by construction (zero-sum market, no fees). Single-week numbers can flip the sign of any individual component because of trade-mix effects (a longshot-heavy week looks different from an even-prices week). The cumulative pattern is in the source paper. ROI values are in basis points of USD traded; participations count both maker and taker sides of every match.
+    The table below shows the most recent fully-resolved week ({profitSplit.as_of_week}; one week behind the activity panel above because we wait for markets to resolve before booking P&amp;L). Each match is attributed to BOTH the maker and the taker side with mirror-signed P&amp;L, so dollar totals sum to zero across all wallet types by construction (zero-sum market, no fees). The directional / execution decomposition uses Paper 1&rsquo;s benchmark: per-(market, token) volume-weighted average price across buy-side trades. Bps columns report ROI in basis points (P&amp;L divided by USD volume traded by that wallet type), not the per-trade edge measure used in Paper 1 Table 1; the two are not directly comparable. Across the cumulative 4-year sample, bots show near-zero directional and positive execution; retail shows the opposite (Paper 1: bots +$133M, retail &minus;$79M). Single-week dashboard numbers can deviate substantially from this cumulative pattern because of trade-mix noise. Participations count both maker and taker sides of every match.
   </p>
   <table class="snapshot">
     <tr>
@@ -212,8 +212,8 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
       <th style="text-align:right;">Participations</th>
       <th style="text-align:right;">Accuracy</th>
       <th style="text-align:right;">Total P&amp;L</th>
-      <th style="text-align:right;">Directional (bps)</th>
-      <th style="text-align:right;">Execution (bps)</th>
+      <th style="text-align:right;">Directional ROI (bps)</th>
+      <th style="text-align:right;">Execution ROI (bps)</th>
       <th style="text-align:right;">Total ROI (bps)</th>
     </tr>
     {profitRows.map(r => {

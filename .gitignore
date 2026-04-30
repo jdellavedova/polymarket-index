@@ -33,3 +33,6 @@ desktop.ini
 site/public/data/*.raw.csv
 pipeline/cache/
 *.log
+
+# profit_split derived cache (regeneratable from master CSV)
+pipeline/profit_split/cache/
