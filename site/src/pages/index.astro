@@ -201,15 +201,15 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
 
   <h2>Who profits <span class="h2-note">(algorithmic wallets vs humans)</span></h2>
   <p class="section-lead">
-    Every trade&rsquo;s P&amp;L splits cleanly into <em>directional</em> (did you pick the winning side?) and <em>execution</em> (did you get a better price than the market&rsquo;s volume-weighted average?). Across 640 million resolved trades, algorithmic wallets capture almost all of the dollars; retail loses on execution even when their picks are right. Source: <a href="/research">Della Vedova (2026), &ldquo;Who Profits from Prediction Markets?&rdquo;</a>
+    Every trade&rsquo;s P&amp;L splits cleanly into <em>directional</em> (did you pick the winning side?) and <em>execution</em> (did you get a better price than the market&rsquo;s volume-weighted average?). Across 640 million resolved trades cumulative since 2022, algorithmic wallets capture almost all of the dollars (Paper 1: bots +$133M, retail &minus;$79M). Source: <a href="/research">Della Vedova (2026), &ldquo;Who Profits from Prediction Markets?&rdquo;</a>
   </p>
   <p class="section-lead" style="font-size:14px;">
-    Resolved trades for the week of {profitSplit.as_of_week} (one week behind the activity panel above; we wait for markets to resolve before booking P&amp;L). Accuracy is the share-weighted fraction of tokens this group held on the winning side. ROI values are in basis points of USD traded.
+    The table below shows the most recent fully-resolved week ({profitSplit.as_of_week}; one week behind the activity panel above because we wait for markets to resolve before booking P&amp;L). P&amp;L sums to zero across all wallet types by construction (zero-sum market, no fees). Single-week numbers can flip the sign of any individual component because of trade-mix effects (a longshot-heavy week looks different from an even-prices week). The cumulative pattern is in the source paper. ROI values are in basis points of USD traded; participations count both maker and taker sides of every match.
   </p>
   <table class="snapshot">
     <tr>
       <th>Trader type</th>
-      <th style="text-align:right;">Trades</th>
+      <th style="text-align:right;">Participations</th>
       <th style="text-align:right;">Accuracy</th>
       <th style="text-align:right;">Total P&amp;L</th>
       <th style="text-align:right;">Directional (bps)</th>
@@ -229,7 +229,7 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
     ))}
   </table>
   <p class="muted" style="font-size:14px;">
-    Directional + execution = total ROI (an algebraic identity). Casual and one-shot traders can show very large ROIs in any given week because their samples are tiny (often under 100 trades).
+    Directional + execution = total ROI (an algebraic identity). Casual and one-shot traders can show very large ROIs in any given week because their samples are tiny (often under a few hundred participations).
   </p>
 
   <h3>Algorithmic vs retail execution edge (this week)</h3>
