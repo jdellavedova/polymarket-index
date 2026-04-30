@@ -216,20 +216,23 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
       <th style="text-align:right;">Execution (bps)</th>
       <th style="text-align:right;">Total ROI (bps)</th>
     </tr>
-    {profitRows.map(r => (
-      <tr>
-        <td>{r.label}</td>
-        <td class="mono" style="text-align:right;">{compactTrades(r.n_trades)}</td>
-        <td class="mono" style="text-align:right;">{r.accuracy != null ? (r.accuracy * 100).toFixed(1) + "%" : "n/a"}</td>
-        <td class="mono" style="text-align:right;">{usdCompact(r.pnl)}</td>
-        <td class="mono" style="text-align:right;">{signed(r.directional_roi_bps, 0)}</td>
-        <td class="mono" style="text-align:right;">{signed(r.execution_roi_bps, 0)}</td>
-        <td class="mono" style="text-align:right;"><strong>{signed(r.pnl_roi_bps, 0)}</strong></td>
-      </tr>
-    ))}
+    {profitRows.map(r => {
+      const smallSample = r.n_trades < 5000;
+      return (
+        <tr>
+          <td>{r.label}</td>
+          <td class="mono" style="text-align:right;">{compactTrades(r.n_trades)}</td>
+          <td class="mono" style="text-align:right;">{r.accuracy != null ? (r.accuracy * 100).toFixed(1) + "%" : "n/a"}</td>
+          <td class="mono" style="text-align:right;">{usdCompact(r.pnl)}</td>
+          <td class="mono" style="text-align:right;">{smallSample ? "—" : signed(r.directional_roi_bps, 0)}</td>
+          <td class="mono" style="text-align:right;">{smallSample ? "—" : signed(r.execution_roi_bps, 0)}</td>
+          <td class="mono" style="text-align:right;"><strong>{signed(r.pnl_roi_bps, 0)}</strong></td>
+        </tr>
+      );
+    })}
   </table>
   <p class="muted" style="font-size:14px;">
-    Directional + execution = total ROI (an algebraic identity). Casual and one-shot traders can show very large ROIs in any given week because their samples are tiny (often under a few hundred participations).
+    Directional + execution = total ROI (an algebraic identity). For trader types with fewer than 5,000 weekly participations (typically casual and one-shot), the component decomposition is dominated by individual-trade VWAP-benchmark noise; we suppress those components and report only the total. The total P&amp;L and ROI are still meaningful at any sample size.
   </p>
 
   <h3>Algorithmic vs retail execution edge (this week)</h3>
