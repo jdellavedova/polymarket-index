@@ -74,35 +74,80 @@ def main() -> None:
     n_vwap = con.execute("SELECT COUNT(*) FROM vwap").fetchone()[0]
     print(f"  VWAP computed for {n_vwap:,} tokens")
 
-    # Pass 2: stream trades again, join resolution + wallet + vwap, aggregate
-    print(f"[{time.strftime('%H:%M:%S')}] Pass 2: aggregating by (week, wallet_type) ...")
+    # Pass 2: stream trades again, attribute P&L to BOTH maker and taker.
+    # Each trade has a maker (limit) and a taker (market). They are exact
+    # mirror images: maker P&L = -taker P&L, by zero-sum construction. The
+    # earlier maker-only attribution silently hid all taker losses, making
+    # every wallet type appear as a net winner. The UNION ALL fixes this:
+    # totals across types now sum to zero per week as required.
+    print(f"[{time.strftime('%H:%M:%S')}] Pass 2: aggregating by (week, wallet_type) [both sides] ...")
     con.execute(f"""
         CREATE TEMP TABLE agg AS
+        WITH joined AS (
+            SELECT
+                strftime(CAST(t.date AS DATE), '%G-W%V') AS week,
+                LOWER(t.maker_address) AS maker_address,
+                LOWER(t.taker_address) AS taker_address,
+                t.maker_side,
+                CAST(t.usdc_amount AS DOUBLE) AS usdc_amount,
+                CAST(t.token_amount AS DOUBLE) AS token_amount,
+                CAST(t.price AS DOUBLE) AS price,
+                vwap.v AS v,
+                CASE WHEN tok.outcome_label = win.winner THEN 1.0 ELSE 0.0 END AS w
+            FROM read_csv_auto('{TRADES}', all_varchar=TRUE, parallel=TRUE) t
+            INNER JOIN tok ON t.token_id = tok.token_id
+            INNER JOIN win ON tok.resolve_market_id = win.resolve_market_id
+            INNER JOIN vwap ON t.token_id = vwap.token_id
+            WHERE vwap.v IS NOT NULL
+        ),
+        maker_side AS (
+            SELECT
+                j.week,
+                COALESCE(w.wallet_type, 'unclassified') AS wallet_type,
+                j.usdc_amount,
+                j.token_amount,
+                CASE WHEN j.maker_side = 'BUY' THEN 1.0 ELSE -1.0 END AS sign,
+                j.w,
+                j.price,
+                j.v,
+                CASE WHEN ((j.maker_side = 'BUY' AND j.w = 1.0)
+                        OR (j.maker_side = 'SELL' AND j.w = 0.0))
+                     THEN j.token_amount ELSE 0 END AS won_tokens
+            FROM joined j
+            LEFT JOIN wallets w ON j.maker_address = w.wallet
+        ),
+        taker_side AS (
+            SELECT
+                j.week,
+                COALESCE(w.wallet_type, 'unclassified') AS wallet_type,
+                j.usdc_amount,
+                j.token_amount,
+                -- Taker is on the OPPOSITE side of the maker
+                CASE WHEN j.maker_side = 'BUY' THEN -1.0 ELSE 1.0 END AS sign,
+                j.w,
+                j.price,
+                j.v,
+                CASE WHEN ((j.maker_side = 'BUY' AND j.w = 0.0)
+                        OR (j.maker_side = 'SELL' AND j.w = 1.0))
+                     THEN j.token_amount ELSE 0 END AS won_tokens
+            FROM joined j
+            LEFT JOIN wallets w ON j.taker_address = w.wallet
+        ),
+        combined AS (
+            SELECT * FROM maker_side
+            UNION ALL
+            SELECT * FROM taker_side
+        )
         SELECT
-            strftime(CAST(t.date AS DATE), '%G-W%V') AS week,
-            COALESCE(w.wallet_type, 'unclassified') AS wallet_type,
+            week,
+            wallet_type,
             COUNT(*) AS n_trades,
-            SUM(CAST(t.usdc_amount AS DOUBLE)) AS usd_volume,
-            SUM(CASE WHEN ((t.maker_side = 'BUY' AND tok.outcome_label = win.winner)
-                        OR (t.maker_side = 'SELL' AND tok.outcome_label != win.winner))
-                     THEN CAST(t.token_amount AS DOUBLE) ELSE 0 END)
-              / NULLIF(SUM(CAST(t.token_amount AS DOUBLE)), 0) AS accuracy,
-            SUM((CASE WHEN t.maker_side = 'BUY' THEN 1 ELSE -1 END)
-                * ((CASE WHEN tok.outcome_label = win.winner THEN 1.0 ELSE 0.0 END)
-                    - CAST(t.price AS DOUBLE))
-                * CAST(t.token_amount AS DOUBLE)) AS pnl,
-            SUM((CASE WHEN t.maker_side = 'BUY' THEN 1 ELSE -1 END)
-                * ((CASE WHEN tok.outcome_label = win.winner THEN 1.0 ELSE 0.0 END) - vwap.v)
-                * CAST(t.token_amount AS DOUBLE)) AS directional,
-            SUM((CASE WHEN t.maker_side = 'BUY' THEN 1 ELSE -1 END)
-                * (vwap.v - CAST(t.price AS DOUBLE))
-                * CAST(t.token_amount AS DOUBLE)) AS execution
-        FROM read_csv_auto('{TRADES}', all_varchar=TRUE, parallel=TRUE) t
-        INNER JOIN tok ON t.token_id = tok.token_id
-        INNER JOIN win ON tok.resolve_market_id = win.resolve_market_id
-        INNER JOIN vwap ON t.token_id = vwap.token_id
-        LEFT JOIN wallets w ON LOWER(t.maker_address) = w.wallet
-        WHERE vwap.v IS NOT NULL
+            SUM(usdc_amount) AS usd_volume,
+            SUM(won_tokens) / NULLIF(SUM(token_amount), 0) AS accuracy,
+            SUM(sign * (w - price) * token_amount) AS pnl,
+            SUM(sign * (w - v) * token_amount) AS directional,
+            SUM(sign * (v - price) * token_amount) AS execution
+        FROM combined
         GROUP BY 1, 2
     """)
 
