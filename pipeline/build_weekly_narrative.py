@@ -88,8 +88,9 @@ def main() -> None:
         f"Traders moved {_usd(total_vol)} through Polymarket in the week of {as_of}, "
         f"across {_compact_trades(total_trades)} individual trades, "
         f"with {_commas(new_participants)} wallets placing their first-ever bet{new_ctx}. "
-        f"Algorithmic wallets handled {bot_share_now * 100:.0f}% of the trade count; "
-        f"everyone else split the remaining {((1 - bot_share_now) * 100):.0f}%."
+        f"Algorithmic wallets accounted for {bot_share_now * 100:.0f}% of weekly counterparty events "
+        f"(both maker and taker sides counted); everyone else split the remaining "
+        f"{((1 - bot_share_now) * 100):.0f}%."
     )
 
     # Sentence 2: most-watched markets (narrative hook)
@@ -174,18 +175,17 @@ def main() -> None:
                 f"(parameter {alpha:.2f})."
             )
 
-    # Headline quote (one sentence, journalist-quotable)
-    pii_flag = pii["headline"]["total_flagged_p_lt_01"]
-    pii_frac = pii["headline"]["flag_rate"]
+    # Headline quote (one sentence, journalist-quotable). Volume trend and
+    # new-participant trend are SEPARATE facts; do not weld them.
     if vol_z is not None and vol_z > 1.5:
         headline_quote = (
             f"Polymarket saw {_usd(total_vol)} of trading this week, the busiest week since late "
-            f"last year, with {_commas(new_participants)} wallets placing their first bet."
+            f"last year. {_commas(new_participants)} wallets placed their first bet."
         )
     elif vol_z is not None and vol_z > 0.5:
         headline_quote = (
-            f"Polymarket traders moved {_usd(total_vol)} this week, above trend, "
-            f"with {_commas(new_participants)} new participants joining the market."
+            f"Polymarket traders moved {_usd(total_vol)} this week, above the 52-week trend, "
+            f"on {_compact_trades(total_trades)} individual trades."
         )
     elif top5 and any(t in (top5[0].get("question") or "").lower()
                        for t in ("election", "prime minister", "president")):
@@ -195,8 +195,8 @@ def main() -> None:
         )
     else:
         headline_quote = (
-            f"Polymarket traders moved {_usd(total_vol)} this week, with "
-            f"{_commas(new_participants)} new participants placing their first bet."
+            f"Polymarket traders moved {_usd(total_vol)} this week across "
+            f"{_compact_trades(total_trades)} individual trades."
         )
 
     payload = {
