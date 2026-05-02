@@ -38,13 +38,60 @@ def _money(v: float) -> str:
     return f"${a:.0f}"
 
 
-def _annotations(market: dict, micro: dict | None, baseline_bot_share: float, n_flagged_universe: int) -> list[dict]:
+def _annotations(market: dict, micro: dict | None, snap: dict | None, baseline_bot_share: float, n_flagged_universe: int) -> list[dict]:
     vol = market["usd_volume"]
     n = market["n_trades"]
-    a = [
-        {"label": "Weekly volume", "value": _money(vol), "tone": "flat"},
-        {"label": "Trades", "value": f"{n:,}", "tone": "flat"},
-    ]
+    a: list[dict] = []
+
+    # Lead with live odds when we have them. The implied probability is the
+    # most-asked-for number on a prediction-market briefing.
+    if snap and snap.get("yes_price") is not None:
+        yp = snap["yes_price"]
+        # Markets that have effectively resolved (price=1.0 or 0.0, no live book)
+        # get a clean "resolved" label instead of a misleading "100%" annotation.
+        yb = snap.get("yes_book") or {}
+        if (yp >= 0.999 or yp <= 0.001) and not yb.get("top_bid_price"):
+            a.append({"label": "Status", "value": "Resolved (book closed)", "tone": "ok"})
+        else:
+            chg = snap.get("yes_price_change_pp")
+            if chg is None:
+                val = f"{yp*100:.0f}% YES"
+            else:
+                arrow = "▲" if chg > 0.5 else ("▼" if chg < -0.5 else "•")
+                sign = "+" if chg >= 0 else ""
+                val = f"{yp*100:.0f}% YES  {arrow} {sign}{chg:.0f}pp 7d"
+            a.append({"label": "Implied probability", "value": val, "tone": "flat"})
+
+    a.append({"label": "Weekly volume", "value": _money(vol), "tone": "flat"})
+    a.append({"label": "Trades", "value": f"{n:,}", "tone": "flat"})
+
+    # Top-of-book + spread + depth (only if we have a live YES book)
+    if snap:
+        yb = snap.get("yes_book") or {}
+        if yb.get("top_bid_price") is not None and yb.get("top_ask_price") is not None:
+            a.append({
+                "label": "Top of book (YES)",
+                "value": f"Bid {yb['top_bid_price']:.2f} (${yb['top_bid_dollars']:,.0f}) / Ask {yb['top_ask_price']:.2f} (${yb['top_ask_dollars']:,.0f})",
+                "tone": "flat",
+            })
+            sp_c = yb.get("spread_cents")
+            sp_bp = yb.get("spread_bps")
+            if sp_c is not None and sp_bp is not None:
+                # Wide spread (>5%) = thin book, journalist warning
+                tone = "alert" if sp_bp > 500 else ("warn" if sp_bp > 200 else "flat")
+                a.append({
+                    "label": "Spread",
+                    "value": f"{sp_c:.1f}¢ ({sp_bp:.0f} bps)",
+                    "tone": tone,
+                })
+            db = yb.get("depth_5pct_bid_dollars")
+            da = yb.get("depth_5pct_ask_dollars")
+            if db is not None and da is not None:
+                a.append({
+                    "label": "Depth within ±5% of mid",
+                    "value": f"${db:,.0f} bid  /  ${da:,.0f} ask",
+                    "tone": "flat",
+                })
 
     if micro is None:
         # Fall back to global Polymarket-wide context if the microstructure
@@ -119,6 +166,15 @@ def main() -> None:
         micro_by_id = {}
         n_flagged_universe = pii["headline"]["total_flagged_p_lt_01"]
 
+    # Live odds + depth (Gamma + CLOB APIs)
+    snap_path = DATA_OUT / "market_snapshot_latest.json"
+    snap_by_id: dict[str, dict] = {}
+    if snap_path.exists():
+        snap_payload = json.loads(snap_path.read_text(encoding="utf-8"))
+        snap_by_id = {m["market_id"]: m for m in snap_payload.get("markets", [])}
+    else:
+        print("WARN: market_snapshot_latest.json not found; cards will lack live odds + depth.")
+
     # Preserve hand-edited news_angle / research_link / research_label
     existing_path = DATA_OUT / "briefings_latest.json"
     overrides: dict[str, dict] = {}
@@ -140,6 +196,17 @@ def main() -> None:
         mid = str(m["market_id"])
         cat = m.get("category") or CATEGORY_FALLBACK
         ovr = overrides.get(mid, {})
+        snap = snap_by_id.get(mid)
+        # Pull a compact slice of the YES book for the inline depth ladder.
+        depth_ladder = None
+        if snap:
+            yb = snap.get("yes_book") or {}
+            if yb.get("top5_bids") and yb.get("top5_asks"):
+                depth_ladder = {
+                    "bids": yb["top5_bids"],
+                    "asks": yb["top5_asks"],
+                }
+
         briefings.append({
             "rank": m["rank"],
             "category": cat,
@@ -148,7 +215,8 @@ def main() -> None:
             "market_url": _market_url(mid, m.get("question")),
             "volume_usd": m["usd_volume"],
             "n_trades": m["n_trades"],
-            "annotations": _annotations(m, micro_by_id.get(mid), baseline_bot, n_flagged_universe),
+            "annotations": _annotations(m, micro_by_id.get(mid), snap, baseline_bot, n_flagged_universe),
+            "depth_ladder": depth_ladder,
             "news_angle": ovr.get("news_angle", "(EDITORIAL: 1-2 sentences on the news context here)"),
             "research_link": ovr.get("research_link", "/research"),
             "research_label": ovr.get("research_label", "Research"),

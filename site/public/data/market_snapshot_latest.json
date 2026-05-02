@@ -1,0 +1,335 @@
+{
+  "as_of_week": "2026-W18",
+  "generated_at": "2026-05-02T16:05:40+00:00",
+  "markets": [
+    {
+      "market_id": "669662",
+      "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
+      "yes_price": 1.0,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        1.0,
+        0.0
+      ],
+      "yes_token_id": "63586620628756015058616403521099137018911742768824051367331188904593189743777",
+      "end_date": "2026-04-29T00:00:00Z",
+      "active": true,
+      "closed": true,
+      "volume_total_num": 76909226.49304736,
+      "fetched_at": "2026-05-02T16:05:36+00:00",
+      "yes_book": {},
+      "rank": 1,
+      "category": "Macro",
+      "weekly_volume_usd": 5766229.069609998,
+      "weekly_trades": 6839,
+      "yes_price_7d_ago": null,
+      "yes_price_change_pp": null
+    },
+    {
+      "market_id": "573655",
+      "question": "Will Bitcoin hit $150k by June 30, 2026?",
+      "yes_price": 0.0135,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.0135,
+        0.9865
+      ],
+      "yes_token_id": "13915689317269078219168496739008737517740566192006337297676041270492637394586",
+      "end_date": "2026-07-01T04:00:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 15734008.014241,
+      "fetched_at": "2026-05-02T16:05:37+00:00",
+      "yes_book": {
+        "n_bid_levels": 18,
+        "n_ask_levels": 47,
+        "top5_bids": [
+          {
+            "price": 0.019,
+            "size": 1887.13,
+            "dollars": 35.855470000000004
+          },
+          {
+            "price": 0.018,
+            "size": 4915.09,
+            "dollars": 88.47162
+          },
+          {
+            "price": 0.017,
+            "size": 7776.87,
+            "dollars": 132.20679
+          },
+          {
+            "price": 0.016,
+            "size": 3453.32,
+            "dollars": 55.25312
+          },
+          {
+            "price": 0.015,
+            "size": 874.79,
+            "dollars": 13.121849999999998
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.02,
+            "size": 1075.58,
+            "dollars": 21.511599999999998
+          },
+          {
+            "price": 0.023,
+            "size": 173.37,
+            "dollars": 3.98751
+          },
+          {
+            "price": 0.024,
+            "size": 977.35,
+            "dollars": 23.456400000000002
+          },
+          {
+            "price": 0.027,
+            "size": 70.0,
+            "dollars": 1.89
+          },
+          {
+            "price": 0.028,
+            "size": 1521.0,
+            "dollars": 42.588
+          }
+        ],
+        "top_bid_price": 0.019,
+        "top_bid_dollars": 35.855470000000004,
+        "top_ask_price": 0.02,
+        "top_ask_dollars": 21.511599999999998,
+        "mid": 0.0195,
+        "spread_cents": 0.10000000000000009,
+        "spread_bps": 512.8205128205133,
+        "depth_5pct_bid_dollars": 35.855470000000004,
+        "depth_5pct_ask_dollars": 21.511599999999998
+      },
+      "rank": 2,
+      "category": "Crypto",
+      "weekly_volume_usd": 3164181.919562,
+      "weekly_trades": 2087,
+      "yes_price_7d_ago": null,
+      "yes_price_change_pp": null
+    },
+    {
+      "market_id": "669660",
+      "question": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
+      "yes_price": 0.0,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.0,
+        1.0
+      ],
+      "yes_token_id": "18690049947242812495755151360212639738977254879109748949267393375856311641700",
+      "end_date": "2026-04-29T00:00:00Z",
+      "active": true,
+      "closed": true,
+      "volume_total_num": 66025383.9220003,
+      "fetched_at": "2026-05-02T16:05:38+00:00",
+      "yes_book": {},
+      "rank": 3,
+      "category": "Macro",
+      "weekly_volume_usd": 2067330.3182060001,
+      "weekly_trades": 3204,
+      "yes_price_7d_ago": null,
+      "yes_price_change_pp": null
+    },
+    {
+      "market_id": "665374",
+      "question": "Will the U.S. invade Iran before 2027?",
+      "yes_price": 0.295,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.295,
+        0.705
+      ],
+      "yes_token_id": "55115078421062885512539156303747803058407616201213034911037320915726138659123",
+      "end_date": "2026-12-31T00:00:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 19628002.18913217,
+      "fetched_at": "2026-05-02T16:05:39+00:00",
+      "yes_book": {
+        "n_bid_levels": 29,
+        "n_ask_levels": 66,
+        "top5_bids": [
+          {
+            "price": 0.29,
+            "size": 160774.7,
+            "dollars": 46624.663
+          },
+          {
+            "price": 0.28,
+            "size": 152774.98,
+            "dollars": 42776.99440000001
+          },
+          {
+            "price": 0.27,
+            "size": 399953.96,
+            "dollars": 107987.56920000001
+          },
+          {
+            "price": 0.26,
+            "size": 3243.32,
+            "dollars": 843.2632000000001
+          },
+          {
+            "price": 0.25,
+            "size": 6026.03,
+            "dollars": 1506.5075
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.3,
+            "size": 126699.47,
+            "dollars": 38009.841
+          },
+          {
+            "price": 0.31,
+            "size": 157426.45,
+            "dollars": 48802.1995
+          },
+          {
+            "price": 0.32,
+            "size": 416437.47,
+            "dollars": 133259.99039999998
+          },
+          {
+            "price": 0.33,
+            "size": 32518.25,
+            "dollars": 10731.022500000001
+          },
+          {
+            "price": 0.34,
+            "size": 20964.98,
+            "dollars": 7128.0932
+          }
+        ],
+        "top_bid_price": 0.29,
+        "top_bid_dollars": 46624.663,
+        "top_ask_price": 0.3,
+        "top_ask_dollars": 38009.841,
+        "mid": 0.295,
+        "spread_cents": 1.0000000000000009,
+        "spread_bps": 338.98305084745795,
+        "depth_5pct_bid_dollars": 46624.663,
+        "depth_5pct_ask_dollars": 38009.841
+      },
+      "rank": 4,
+      "category": "Geopolitics",
+      "weekly_volume_usd": 1967006.0357589957,
+      "weekly_trades": 13509,
+      "yes_price_7d_ago": null,
+      "yes_price_change_pp": null
+    },
+    {
+      "market_id": "947289",
+      "question": "Will Roberto S\u00e1nchez Palomino win the 2026 Peruvian presidential election?",
+      "yes_price": 0.3155,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.3155,
+        0.6845
+      ],
+      "yes_token_id": "40073700561695212653451049120779209383948898865772011302940523990213422296817",
+      "end_date": "2026-06-07T00:00:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 11995063.756683914,
+      "fetched_at": "2026-05-02T16:05:40+00:00",
+      "yes_book": {
+        "n_bid_levels": 49,
+        "n_ask_levels": 101,
+        "top5_bids": [
+          {
+            "price": 0.315,
+            "size": 1327.22,
+            "dollars": 418.0743
+          },
+          {
+            "price": 0.314,
+            "size": 1719.0,
+            "dollars": 539.766
+          },
+          {
+            "price": 0.313,
+            "size": 2212.03,
+            "dollars": 692.36539
+          },
+          {
+            "price": 0.312,
+            "size": 2233.54,
+            "dollars": 696.86448
+          },
+          {
+            "price": 0.311,
+            "size": 200.0,
+            "dollars": 62.2
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.316,
+            "size": 20.0,
+            "dollars": 6.32
+          },
+          {
+            "price": 0.317,
+            "size": 4544.36,
+            "dollars": 1440.5621199999998
+          },
+          {
+            "price": 0.318,
+            "size": 637.55,
+            "dollars": 202.74089999999998
+          },
+          {
+            "price": 0.319,
+            "size": 180.0,
+            "dollars": 57.42
+          },
+          {
+            "price": 0.32,
+            "size": 1702.63,
+            "dollars": 544.8416000000001
+          }
+        ],
+        "top_bid_price": 0.315,
+        "top_bid_dollars": 418.0743,
+        "top_ask_price": 0.316,
+        "top_ask_dollars": 6.32,
+        "mid": 0.3155,
+        "spread_cents": 0.10000000000000009,
+        "spread_bps": 31.695721077654543,
+        "depth_5pct_bid_dollars": 16533.07276,
+        "depth_5pct_ask_dollars": 14005.91883
+      },
+      "rank": 5,
+      "category": "Politics",
+      "weekly_volume_usd": 1710408.3178440002,
+      "weekly_trades": 22231,
+      "yes_price_7d_ago": null,
+      "yes_price_change_pp": null
+    }
+  ],
+  "notes": "Live odds + order-book depth from Polymarket Gamma + CLOB APIs. yes_price is the implied probability of the YES outcome (0..1). Spread is on the YES token; depth is dollars within +/-5% of mid. yes_price_change_pp diffs against a snapshot taken ~7 days prior."
+}

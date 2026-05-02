@@ -1,6 +1,6 @@
 {
   "as_of_week": "2026-W18",
-  "generated_at": "2026-05-02T15:58:49+00:00",
+  "generated_at": "2026-05-02T16:07:44+00:00",
   "lede": "Top 5 markets by USD volume from the week of 2026-W18, annotated with per-market microstructure from the DV-PMI weekly indices.",
   "briefings": [
     {
@@ -12,6 +12,11 @@
       "volume_usd": 5766229.069609998,
       "n_trades": 6839,
       "annotations": [
+        {
+          "label": "Status",
+          "value": "Resolved (book closed)",
+          "tone": "ok"
+        },
         {
           "label": "Weekly volume",
           "value": "$5.8M",
@@ -38,6 +43,7 @@
           "tone": "flat"
         }
       ],
+      "depth_ladder": null,
       "news_angle": "The week's largest market by dollars. Macro contracts on Fed decisions consistently draw the most liquidity on Polymarket and are dominated by algorithmic market-makers.",
       "research_link": "/research",
       "research_label": "Paper 1: Who Profits"
@@ -52,6 +58,11 @@
       "n_trades": 2087,
       "annotations": [
         {
+          "label": "Implied probability",
+          "value": "1% YES",
+          "tone": "flat"
+        },
+        {
           "label": "Weekly volume",
           "value": "$3.2M",
           "tone": "flat"
@@ -59,6 +70,21 @@
         {
           "label": "Trades",
           "value": "2,087",
+          "tone": "flat"
+        },
+        {
+          "label": "Top of book (YES)",
+          "value": "Bid 0.02 ($36) / Ask 0.02 ($22)",
+          "tone": "flat"
+        },
+        {
+          "label": "Spread",
+          "value": "0.1\u00a2 (513 bps)",
+          "tone": "alert"
+        },
+        {
+          "label": "Depth within \u00b15% of mid",
+          "value": "$36 bid  /  $22 ask",
           "tone": "flat"
         },
         {
@@ -77,6 +103,62 @@
           "tone": "flat"
         }
       ],
+      "depth_ladder": {
+        "bids": [
+          {
+            "price": 0.019,
+            "size": 1887.13,
+            "dollars": 35.855470000000004
+          },
+          {
+            "price": 0.018,
+            "size": 4915.09,
+            "dollars": 88.47162
+          },
+          {
+            "price": 0.017,
+            "size": 7776.87,
+            "dollars": 132.20679
+          },
+          {
+            "price": 0.016,
+            "size": 3453.32,
+            "dollars": 55.25312
+          },
+          {
+            "price": 0.015,
+            "size": 874.79,
+            "dollars": 13.121849999999998
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.02,
+            "size": 1075.58,
+            "dollars": 21.511599999999998
+          },
+          {
+            "price": 0.023,
+            "size": 173.37,
+            "dollars": 3.98751
+          },
+          {
+            "price": 0.024,
+            "size": 977.35,
+            "dollars": 23.456400000000002
+          },
+          {
+            "price": 0.027,
+            "size": 70.0,
+            "dollars": 1.89
+          },
+          {
+            "price": 0.028,
+            "size": 1521.0,
+            "dollars": 42.588
+          }
+        ]
+      },
       "news_angle": "High dollar volume on relatively few trades suggests larger ticket sizes. Crypto-price contracts sit in the longshot region of the calibration curve, where prices systematically overstate realized win rates.",
       "research_link": "/research",
       "research_label": "Paper 4: Probability Weighting"
@@ -90,6 +172,11 @@
       "volume_usd": 2067330.3182060001,
       "n_trades": 3204,
       "annotations": [
+        {
+          "label": "Status",
+          "value": "Resolved (book closed)",
+          "tone": "ok"
+        },
         {
           "label": "Weekly volume",
           "value": "$2.1M",
@@ -116,6 +203,7 @@
           "tone": "flat"
         }
       ],
+      "depth_ladder": null,
       "news_angle": "Companion contract to the no-change market above. Together, the two contracts span the binary policy outcome space and let analysts read implied probabilities directly off Polymarket prices.",
       "research_link": "/methodology",
       "research_label": "Methodology"
@@ -130,6 +218,11 @@
       "n_trades": 13509,
       "annotations": [
         {
+          "label": "Implied probability",
+          "value": "30% YES",
+          "tone": "flat"
+        },
+        {
           "label": "Weekly volume",
           "value": "$2.0M",
           "tone": "flat"
@@ -137,6 +230,21 @@
         {
           "label": "Trades",
           "value": "13,509",
+          "tone": "flat"
+        },
+        {
+          "label": "Top of book (YES)",
+          "value": "Bid 0.29 ($46,625) / Ask 0.30 ($38,010)",
+          "tone": "flat"
+        },
+        {
+          "label": "Spread",
+          "value": "1.0\u00a2 (339 bps)",
+          "tone": "warn"
+        },
+        {
+          "label": "Depth within \u00b15% of mid",
+          "value": "$46,625 bid  /  $38,010 ask",
           "tone": "flat"
         },
         {
@@ -155,6 +263,62 @@
           "tone": "flat"
         }
       ],
+      "depth_ladder": {
+        "bids": [
+          {
+            "price": 0.29,
+            "size": 160774.7,
+            "dollars": 46624.663
+          },
+          {
+            "price": 0.28,
+            "size": 152774.98,
+            "dollars": 42776.99440000001
+          },
+          {
+            "price": 0.27,
+            "size": 399953.96,
+            "dollars": 107987.56920000001
+          },
+          {
+            "price": 0.26,
+            "size": 3243.32,
+            "dollars": 843.2632000000001
+          },
+          {
+            "price": 0.25,
+            "size": 6026.03,
+            "dollars": 1506.5075
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.3,
+            "size": 126699.47,
+            "dollars": 38009.841
+          },
+          {
+            "price": 0.31,
+            "size": 157426.45,
+            "dollars": 48802.1995
+          },
+          {
+            "price": 0.32,
+            "size": 416437.47,
+            "dollars": 133259.99039999998
+          },
+          {
+            "price": 0.33,
+            "size": 32518.25,
+            "dollars": 10731.022500000001
+          },
+          {
+            "price": 0.34,
+            "size": 20964.98,
+            "dollars": 7128.0932
+          }
+        ]
+      },
       "news_angle": "Many small trades, a profile typical of retail-engaged geopolitical contracts. Markets in the 'Action' category (military, regulatory, decision-driven outcomes) carry the highest insider-trading flag rate in the dataset.",
       "research_link": "/research",
       "research_label": "Paper 2: Insider Detection"
@@ -169,6 +333,11 @@
       "n_trades": 22231,
       "annotations": [
         {
+          "label": "Implied probability",
+          "value": "32% YES",
+          "tone": "flat"
+        },
+        {
           "label": "Weekly volume",
           "value": "$1.7M",
           "tone": "flat"
@@ -176,6 +345,21 @@
         {
           "label": "Trades",
           "value": "22,231",
+          "tone": "flat"
+        },
+        {
+          "label": "Top of book (YES)",
+          "value": "Bid 0.32 ($418) / Ask 0.32 ($6)",
+          "tone": "flat"
+        },
+        {
+          "label": "Spread",
+          "value": "0.1\u00a2 (32 bps)",
+          "tone": "flat"
+        },
+        {
+          "label": "Depth within \u00b15% of mid",
+          "value": "$16,533 bid  /  $14,006 ask",
           "tone": "flat"
         },
         {
@@ -194,6 +378,62 @@
           "tone": "alert"
         }
       ],
+      "depth_ladder": {
+        "bids": [
+          {
+            "price": 0.315,
+            "size": 1327.22,
+            "dollars": 418.0743
+          },
+          {
+            "price": 0.314,
+            "size": 1719.0,
+            "dollars": 539.766
+          },
+          {
+            "price": 0.313,
+            "size": 2212.03,
+            "dollars": 692.36539
+          },
+          {
+            "price": 0.312,
+            "size": 2233.54,
+            "dollars": 696.86448
+          },
+          {
+            "price": 0.311,
+            "size": 200.0,
+            "dollars": 62.2
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.316,
+            "size": 20.0,
+            "dollars": 6.32
+          },
+          {
+            "price": 0.317,
+            "size": 4544.36,
+            "dollars": 1440.5621199999998
+          },
+          {
+            "price": 0.318,
+            "size": 637.55,
+            "dollars": 202.74089999999998
+          },
+          {
+            "price": 0.319,
+            "size": 180.0,
+            "dollars": 57.42
+          },
+          {
+            "price": 0.32,
+            "size": 1702.63,
+            "dollars": 544.8416000000001
+          }
+        ]
+      },
       "news_angle": "Highest trade count in the top five and the most retail-engaged market on the dashboard. The 14% algorithmic share is far below the 87% Polymarket-wide baseline; bots are largely absent. Retail traders paid 0.76\u00a2 more per share than the small bot footprint, the visible execution edge.",
       "research_link": "/research",
       "research_label": "Paper 2: Insider Detection"

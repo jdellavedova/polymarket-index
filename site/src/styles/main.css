@@ -1072,6 +1072,74 @@ h1.hero-thesis {
 .anno-ok    .anno-value { color: var(--text); }
 .anno-warn  .anno-value { color: #c9a14a; }
 .anno-alert .anno-value { color: #c95757; }
+/* Depth ladder: top-5 levels each side, bar length = dollar depth.
+   Reads at a glance. Bid side mirrored on the left; ask side on the right. */
+.depth-ladder {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.dl-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.dl-title { font-weight: 600; }
+.dl-axis { font-size: 9px; opacity: 0.8; }
+.dl-rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.dl-side {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.dl-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  height: 14px;
+}
+.dl-bids .dl-row {
+  justify-content: flex-end;  /* bars grow right-to-left visually via flex order */
+  flex-direction: row-reverse;
+}
+.dl-bar {
+  display: inline-block;
+  height: 9px;
+  border-radius: 1px;
+}
+.dl-bar-bid { background: rgba(127, 194, 100, 0.55); }   /* muted green */
+.dl-bar-ask { background: rgba(201, 87, 87, 0.55); }      /* muted brick */
+.dl-price {
+  color: var(--text);
+  min-width: 42px;
+  text-align: right;
+}
+.dl-dollars {
+  color: var(--muted);
+  min-width: 50px;
+  text-align: right;
+}
+.dl-asks .dl-dollars { text-align: left; }
+.dl-asks .dl-price { text-align: left; min-width: 42px; }
+@media (max-width: 560px) {
+  .dl-rows { grid-template-columns: 1fr; gap: 6px; }
+  .dl-bids .dl-row { flex-direction: row; justify-content: flex-start; }
+}
+
 .briefing-foot {
   display: flex;
   gap: 18px;

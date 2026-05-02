@@ -4,6 +4,15 @@ export interface Annotation {
   value: string;
   tone?: "ok" | "warn" | "alert" | "flat";
 }
+export interface BookLevel {
+  price: number;
+  size: number;
+  dollars: number;
+}
+export interface DepthLadder {
+  bids: BookLevel[];
+  asks: BookLevel[];
+}
 export interface Props {
   rank: number;
   category: string;
@@ -12,14 +21,33 @@ export interface Props {
   volume_usd: number;
   n_trades: number;
   annotations: Annotation[];
+  depth_ladder?: DepthLadder | null;
   news_angle: string;
   research_link: string;
   research_label: string;
 }
 const {
   rank, category, question, market_url,
-  annotations, news_angle, research_link, research_label,
+  annotations, depth_ladder, news_angle, research_link, research_label,
 } = Astro.props;
+
+// Depth ladder: 5 levels each side, bar length proportional to dollar depth
+// at that level. Single shared dollar scale across both sides so the visual
+// weight is honest. Width 280px, 10 rows of 12px each.
+function depthMeta() {
+  if (!depth_ladder || !depth_ladder.bids?.length || !depth_ladder.asks?.length) return null;
+  const allDollars = [...depth_ladder.bids, ...depth_ladder.asks].map(l => l.dollars);
+  const maxD = Math.max(...allDollars, 1);
+  const barWMax = 110;
+  return { maxD, barWMax };
+}
+const dm = depthMeta();
+
+function fmtDollars(n: number) {
+  if (n >= 1e6) return "$" + (n / 1e6).toFixed(1) + "M";
+  if (n >= 1e3) return "$" + (n / 1e3).toFixed(1) + "K";
+  return "$" + n.toFixed(0);
+}
 ---
 <article class="briefing">
   <header class="briefing-head">
@@ -39,6 +67,35 @@ const {
       </li>
     ))}
   </ul>
+
+  {dm && depth_ladder && (
+    <div class="depth-ladder">
+      <div class="dl-head">
+        <span class="dl-title">YES order book (top 5 levels each side)</span>
+        <span class="dl-axis">$ depth scaled to widest bar = {fmtDollars(dm.maxD)}</span>
+      </div>
+      <div class="dl-rows">
+        <div class="dl-side dl-bids">
+          {depth_ladder.bids.map(l => (
+            <div class="dl-row">
+              <span class="dl-bar dl-bar-bid" style={`width:${(l.dollars / dm.maxD) * dm.barWMax}px;`}></span>
+              <span class="dl-price">{l.price.toFixed(3)}</span>
+              <span class="dl-dollars">{fmtDollars(l.dollars)}</span>
+            </div>
+          ))}
+        </div>
+        <div class="dl-side dl-asks">
+          {depth_ladder.asks.map(l => (
+            <div class="dl-row dl-row-ask">
+              <span class="dl-price">{l.price.toFixed(3)}</span>
+              <span class="dl-dollars">{fmtDollars(l.dollars)}</span>
+              <span class="dl-bar dl-bar-ask" style={`width:${(l.dollars / dm.maxD) * dm.barWMax}px;`}></span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
 
   <footer class="briefing-foot">
     <a class="briefing-link" href={market_url} target="_blank" rel="noopener">
