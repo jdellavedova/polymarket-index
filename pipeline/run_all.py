@@ -27,6 +27,7 @@ SCRIPTS = [
     "aggregate_profit_split",
     "build_master_table",
     "build_weekly_narrative",
+    "build_briefings",
     "build_og_image",
     "build_email_digest",
 ]

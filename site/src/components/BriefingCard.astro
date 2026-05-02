@@ -1,0 +1,51 @@
+---
+export interface Annotation {
+  label: string;
+  value: string;
+  tone?: "ok" | "warn" | "alert" | "flat";
+}
+export interface Props {
+  rank: number;
+  category: string;
+  question: string;
+  market_url: string;
+  volume_usd: number;
+  n_trades: number;
+  annotations: Annotation[];
+  news_angle: string;
+  research_link: string;
+  research_label: string;
+}
+const {
+  rank, category, question, market_url,
+  annotations, news_angle, research_link, research_label,
+} = Astro.props;
+---
+<article class="briefing">
+  <header class="briefing-head">
+    <span class={`briefing-cat briefing-cat-${category.toLowerCase()}`}>{category}</span>
+    <span class="briefing-rank">#{rank} by weekly volume</span>
+  </header>
+
+  <h3 class="briefing-q">{question}</h3>
+
+  <p class="briefing-angle">{news_angle}</p>
+
+  <ul class="briefing-anno">
+    {annotations.map(a => (
+      <li class={`anno anno-${a.tone ?? "flat"}`}>
+        <span class="anno-label">{a.label}</span>
+        <span class="anno-value">{a.value}</span>
+      </li>
+    ))}
+  </ul>
+
+  <footer class="briefing-foot">
+    <a class="briefing-link" href={market_url} target="_blank" rel="noopener">
+      View market &rarr;
+    </a>
+    <a class="briefing-link" href={research_link}>
+      {research_label} &rarr;
+    </a>
+  </footer>
+</article>

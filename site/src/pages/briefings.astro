@@ -1,0 +1,86 @@
+---
+import Base from "../layouts/Base.astro";
+import BriefingCard from "../components/BriefingCard.astro";
+import briefings from "../../public/data/briefings_latest.json";
+
+function usdCompact(v: number) {
+  const a = Math.abs(v);
+  if (a >= 1e9) return "$" + (a / 1e9).toFixed(2) + "B";
+  if (a >= 1e6) return "$" + (a / 1e6).toFixed(0) + "M";
+  if (a >= 1e3) return "$" + (a / 1e3).toFixed(0) + "K";
+  return "$" + a.toFixed(0);
+}
+function compactTrades(n: number) {
+  if (n >= 1e6) return (n / 1e6).toFixed(1) + "M";
+  if (n >= 1e3) return (n / 1e3).toFixed(0) + "K";
+  return n.toString();
+}
+const ctx = briefings.global_context;
+---
+<Base
+  title="Briefings: prediction-market microstructure briefings | DV-PMI"
+  description="Weekly editorial briefings on the most-traded Polymarket contracts, annotated with microstructure context from the DV-PMI indices.">
+
+  <section class="hero">
+    <p class="hero-eyebrow">DV-PMI Briefings</p>
+    <h1 class="hero-thesis">
+      The week&rsquo;s biggest prediction markets, with microstructure context.
+    </h1>
+    <p class="hero-lede">
+      Each briefing pairs a high-volume Polymarket contract with the structural facts our weekly indices reveal about it: who&rsquo;s trading it, how it sits on the calibration curve, and whether it falls in a category historically associated with informed trading.
+    </p>
+    <p class="hero-byline">
+      Week of {briefings.as_of_week} &middot; <a href="/methodology">How these are constructed</a>
+    </p>
+
+    <div class="briefing-summary">
+      <div class="bs-cell">
+        <div class="bs-label">Polymarket-wide volume</div>
+        <div class="bs-value">{usdCompact(ctx.polymarket_wide_volume_usd)}</div>
+      </div>
+      <div class="bs-cell">
+        <div class="bs-label">Trades this week</div>
+        <div class="bs-value">{compactTrades(ctx.polymarket_wide_trades)}</div>
+      </div>
+      <div class="bs-cell">
+        <div class="bs-label">Algorithmic share</div>
+        <div class="bs-value">{(ctx.polymarket_wide_bot_share * 100).toFixed(0)}%</div>
+      </div>
+      <div class="bs-cell">
+        <div class="bs-label">Calibration α (cumulative)</div>
+        <div class="bs-value">{ctx.calibration_alpha.toFixed(3)}</div>
+      </div>
+    </div>
+  </section>
+
+  <p class="briefings-lede">{briefings.lede}</p>
+
+  <div class="briefing-grid">
+    {briefings.briefings.map(b => (
+      <BriefingCard
+        rank={b.rank}
+        category={b.category}
+        question={b.question}
+        market_url={b.market_url}
+        volume_usd={b.volume_usd}
+        n_trades={b.n_trades}
+        annotations={b.annotations}
+        news_angle={b.news_angle}
+        research_link={b.research_link}
+        research_label={b.research_label}
+      />
+    ))}
+  </div>
+
+  <section class="briefings-foot">
+    <h2>How to use these briefings</h2>
+    <ul class="briefings-uses">
+      <li><strong>Journalists:</strong> every annotation cites a published index. Quote the number, link to the methodology.</li>
+      <li><strong>Researchers:</strong> use the briefings as entry points to the underlying weekly data files in <a href="/data">Data Downloads</a>.</li>
+      <li><strong>Regulators &amp; counsel:</strong> the &ldquo;insider-trading hotspot&rdquo; tag flags markets in MNPI categories (Vote, Action) where flag rates run materially above baseline.</li>
+    </ul>
+    <p class="muted" style="font-size:14px;">
+      {briefings.notes}
+    </p>
+  </section>
+</Base>

@@ -1,0 +1,105 @@
+{
+  "as_of_week": "2026-W18",
+  "generated_at": "2026-05-02T00:00:00+00:00",
+  "lede": "Five markets carrying most of last week's $696M Polymarket volume, with microstructure context from the DV-PMI indices.",
+  "briefings": [
+    {
+      "rank": 1,
+      "category": "Macro",
+      "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
+      "market_id": "669662",
+      "market_url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-april-2026-meeting",
+      "volume_usd": 5766229,
+      "n_trades": 6839,
+      "annotations": [
+        { "label": "Weekly volume", "value": "$5.8M", "tone": "flat" },
+        { "label": "Trades", "value": "6,839", "tone": "flat" },
+        { "label": "Algorithmic share (Polymarket-wide)", "value": "87%", "tone": "warn" },
+        { "label": "Calibration regime", "value": "well-calibrated above 0.50", "tone": "ok" }
+      ],
+      "news_angle": "The week's largest market by dollars. Macro contracts on Fed decisions consistently draw the most liquidity on Polymarket and are dominated by algorithmic market-makers.",
+      "research_link": "/research",
+      "research_label": "Paper 1: Who Profits"
+    },
+    {
+      "rank": 2,
+      "category": "Crypto",
+      "question": "Will Bitcoin hit $150k by June 30, 2026?",
+      "market_id": "573655",
+      "market_url": "https://polymarket.com/event/will-bitcoin-hit-150k-by-june-30-2026",
+      "volume_usd": 3164182,
+      "n_trades": 2087,
+      "annotations": [
+        { "label": "Weekly volume", "value": "$3.2M", "tone": "flat" },
+        { "label": "Trades", "value": "2,087", "tone": "flat" },
+        { "label": "Volume per trade", "value": "$1,517", "tone": "warn" },
+        { "label": "Calibration regime", "value": "longshot zone (overpriced)", "tone": "warn" }
+      ],
+      "news_angle": "High dollar volume on relatively few trades suggests larger ticket sizes. Crypto-price contracts sit in the longshot region of the calibration curve, where prices systematically overstate realized win rates.",
+      "research_link": "/research",
+      "research_label": "Paper 4: Probability Weighting"
+    },
+    {
+      "rank": 3,
+      "category": "Macro",
+      "question": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
+      "market_id": "669660",
+      "market_url": "https://polymarket.com/event/will-the-fed-decrease-interest-rates-by-50-bps-after-the-april-2026-meeting",
+      "volume_usd": 2067330,
+      "n_trades": 3204,
+      "annotations": [
+        { "label": "Weekly volume", "value": "$2.1M", "tone": "flat" },
+        { "label": "Trades", "value": "3,204", "tone": "flat" },
+        { "label": "Pair with", "value": "Market #1 (no-change)", "tone": "ok" },
+        { "label": "Calibration regime", "value": "longshot zone (overpriced)", "tone": "warn" }
+      ],
+      "news_angle": "Companion contract to the no-change market above. Together, the two contracts span the binary policy outcome space and let analysts read implied probabilities directly off Polymarket prices.",
+      "research_link": "/methodology",
+      "research_label": "Methodology"
+    },
+    {
+      "rank": 4,
+      "category": "Geopolitics",
+      "question": "Will the U.S. invade Iran before 2027?",
+      "market_id": "665374",
+      "market_url": "https://polymarket.com/event/will-the-us-invade-iran-before-2027",
+      "volume_usd": 1967006,
+      "n_trades": 13509,
+      "annotations": [
+        { "label": "Weekly volume", "value": "$2.0M", "tone": "flat" },
+        { "label": "Trades", "value": "13,509", "tone": "flat" },
+        { "label": "Volume per trade", "value": "$146", "tone": "ok" },
+        { "label": "Insider-trading hotspot", "value": "Action category (3.10% flag rate)", "tone": "alert" }
+      ],
+      "news_angle": "Many small trades, a profile typical of retail-engaged geopolitical contracts. Markets in the 'Action' category (military, regulatory, decision-driven outcomes) carry the highest insider-trading flag rate in the dataset.",
+      "research_link": "/research",
+      "research_label": "Paper 2: Insider Detection"
+    },
+    {
+      "rank": 5,
+      "category": "Politics",
+      "question": "Will Roberto Sánchez Palomino win the 2026 Peruvian presidential election?",
+      "market_id": "947289",
+      "market_url": "https://polymarket.com/event/peru-2026-presidential-election",
+      "volume_usd": 1710408,
+      "n_trades": 22231,
+      "annotations": [
+        { "label": "Weekly volume", "value": "$1.7M", "tone": "flat" },
+        { "label": "Trades", "value": "22,231", "tone": "flat" },
+        { "label": "Volume per trade", "value": "$77", "tone": "ok" },
+        { "label": "Insider-trading hotspot", "value": "Vote category (1.80% flag rate)", "tone": "alert" }
+      ],
+      "news_angle": "Highest trade count in the top five — a small-ticket retail-heavy market. Election contracts show elevated insider-trading flag rates relative to stochastic markets like crypto prices.",
+      "research_link": "/research",
+      "research_label": "Paper 2: Insider Detection"
+    }
+  ],
+  "global_context": {
+    "polymarket_wide_bot_share": 0.868,
+    "polymarket_wide_volume_usd": 696000000,
+    "polymarket_wide_trades": 27600000,
+    "calibration_alpha": 0.6639,
+    "calibration_r2": 0.987
+  },
+  "notes": "Per-market microstructure annotations (bot share, flag count, calibration gap) draw on the DV-PMI weekly indices. News-angle text is editorial. Briefings are a dashboard product, not investment advice."
+}
