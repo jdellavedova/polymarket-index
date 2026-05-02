@@ -133,17 +133,28 @@ function squarify(items: { value: number }[], x: number, y: number, w: number, h
 const items = markets.map(m => ({ value: m.usd_volume }));
 const rects = squarify(items, 0, 0, W, H);
 
-/** Color from bot share. Single hue, light->dark. Markets with no micro data
- *  (the bulk in week 1 of the K=30 expansion) get neutral. */
+/** Diverging palette pivoted at the Polymarket-wide baseline (~87% bot share).
+ *  Cells BELOW baseline (retail-engaged, "interesting") render in cool teal.
+ *  Cells AT baseline render in neutral slate-blue.
+ *  Cells ABOVE baseline (very bot-dominated) render in warm amber/brown.
+ *  All three endpoints have ~similar luminance (~22-30%) so white text
+ *  carries 4.5:1+ contrast across the whole palette. */
+const BASELINE = 0.87;
+function lerp(a: number, b: number, t: number) { return Math.round(a + (b - a) * t); }
+function rgb(r: number, g: number, b: number) { return `rgb(${r}, ${g}, ${b})`; }
 function colorFromBotShare(bs: number | null) {
-  if (bs == null) return "#1c2e4a"; // neutral slate
-  // Map [0, 1] -> a USD-blue ramp from #102134 (low bot) to #4ea3d8 (high bot).
-  // Higher bot share = brighter blue (more "algorithmic intensity").
+  if (bs == null) return rgb(46, 56, 72); // neutral fallback for missing data
   const t = Math.max(0, Math.min(1, bs));
-  const r = Math.round(0x10 + (0x4e - 0x10) * t);
-  const g = Math.round(0x21 + (0xa3 - 0x21) * t);
-  const b = Math.round(0x34 + (0xd8 - 0x34) * t);
-  return `rgb(${r}, ${g}, ${b})`;
+  // Three keystops: cool teal #1f6470 -> neutral slate #2c3e54 -> warm amber #7a4a20
+  if (t <= BASELINE) {
+    // 0 -> 0.87 mapped to teal -> slate (a in [0,1])
+    const a = t / BASELINE;
+    return rgb(lerp(0x1f, 0x2c, a), lerp(0x64, 0x3e, a), lerp(0x70, 0x54, a));
+  } else {
+    // 0.87 -> 1.0 mapped to slate -> amber (a in [0,1])
+    const a = (t - BASELINE) / (1 - BASELINE);
+    return rgb(lerp(0x2c, 0x7a, a), lerp(0x3e, 0x4a, a), lerp(0x54, 0x20, a));
+  }
 }
 
 function fmtVol(v: number) {
@@ -157,6 +168,34 @@ function truncate(s: string | null, max: number): string {
   if (s.length <= max) return s;
   return s.slice(0, max - 1).trimEnd() + "…";
 }
+
+/** Wrap a string into up to maxLines lines of approx charsLine each, breaking
+ *  on word boundaries. Last line gets an ellipsis if text is truncated. */
+function wrap(s: string | null, charsLine: number, maxLines: number): string[] {
+  if (!s) return [];
+  const words = s.split(/\s+/);
+  const lines: string[] = [];
+  let cur = "";
+  for (const w of words) {
+    const candidate = cur ? cur + " " + w : w;
+    if (candidate.length <= charsLine) {
+      cur = candidate;
+    } else {
+      if (cur) lines.push(cur);
+      cur = w;
+      if (lines.length >= maxLines) break;
+    }
+  }
+  if (cur && lines.length < maxLines) lines.push(cur);
+  // ellipsis if we ran out of room
+  if (lines.length === maxLines) {
+    const used = lines.join(" ").split(/\s+/).length;
+    if (used < words.length) {
+      lines[lines.length - 1] = lines[lines.length - 1].replace(/[\s…]+$/, "") + "…";
+    }
+  }
+  return lines;
+}
 ---
 <figure class="topmkt-tm">
   <figcaption class="tm-caption">
@@ -169,37 +208,56 @@ function truncate(s: string | null, max: number): string {
     {rects.map((r, i) => {
       const m = markets[i];
       const col = colorFromBotShare(m.bot_share);
-      const tooMini = r.w < 56 || r.h < 32;
-      // Available text width inside the rectangle, with 6px padding
-      const innerW = r.w - 12;
-      const charsLine = Math.max(4, Math.floor(innerW / 6.2));
-      const showQuestion = !tooMini && m.question;
-      const showOdds = !tooMini && r.h >= 48 && m.yes_price != null;
-      const showVol = !tooMini && r.h >= 70;
-      const showBot = !tooMini && r.h >= 92 && m.bot_share != null;
+      const tooMini = r.w < 56 || r.h < 36;
+      // Tier the typography by cell area (Finviz-style: bigger cell = bigger text)
+      const area = r.w * r.h;
+      const isHero = area >= 60000;       // ~ top 1-2 cells
+      const isLarge = area >= 22000;
+      const qFontPx = isHero ? 16 : (isLarge ? 13 : 11);
+      const oddsFontPx = isHero ? 22 : (isLarge ? 17 : 14);
+      // Inner width with 8px padding each side
+      const innerW = r.w - 16;
+      const charsLine = Math.max(4, Math.floor(innerW / (qFontPx * 0.55)));
+      const maxQLines = isHero ? 3 : (isLarge ? 2 : 1);
+      const qLines = m.question ? wrap(m.question, charsLine, maxQLines) : [];
+      const showQuestion = !tooMini && qLines.length > 0;
+      const qBlockH = qLines.length * (qFontPx + 3);
+      const showOdds = !tooMini && r.h >= 56 && m.yes_price != null;
+      const showVol = !tooMini && r.h >= 78;
+      const showBot = !tooMini && r.h >= 100 && m.bot_share != null;
       return (
         <g class="tm-cell">
           <title>{`${m.question ?? "Market #" + m.market_id}\nVolume: ${fmtVol(m.usd_volume)}  ·  Trades: ${m.n_trades.toLocaleString()}\nImplied: ${m.yes_price != null ? (m.yes_price*100).toFixed(0)+"% YES" : "n/a"}\nAlgorithmic share: ${m.bot_share != null ? (m.bot_share*100).toFixed(0)+"%" : "n/a"}\nFlagged wallets: ${m.flagged ?? "n/a"}\nCategory: ${m.category ?? "n/a"}`}</title>
           <rect x={r.x} y={r.y} width={r.w} height={r.h} fill={col} class="tm-rect" />
           {tooMini ? null : (
             <g>
-              {showQuestion && (
-                <text x={r.x + 6} y={r.y + 16} class="tm-q">
-                  {truncate(m.question, charsLine)}
+              {showQuestion && qLines.map((line, li) => (
+                <text
+                  x={r.x + 8}
+                  y={r.y + 8 + (li + 1) * (qFontPx + 2)}
+                  class="tm-q"
+                  style={`font-size:${qFontPx}px;`}
+                >
+                  {line}
                 </text>
-              )}
+              ))}
               {showOdds && (
-                <text x={r.x + 6} y={r.y + 34} class="tm-v">
+                <text
+                  x={r.x + 8}
+                  y={r.y + 14 + qBlockH + oddsFontPx}
+                  class="tm-v"
+                  style={`font-size:${oddsFontPx}px;`}
+                >
                   {(m.yes_price! * 100).toFixed(0)}% YES
                 </text>
               )}
               {showVol && (
-                <text x={r.x + 6} y={r.y + 52} class="tm-vol">
+                <text x={r.x + 8} y={r.y + 18 + qBlockH + oddsFontPx + 18} class="tm-vol">
                   {fmtVol(m.usd_volume)} vol
                 </text>
               )}
               {showBot && (
-                <text x={r.x + 6} y={r.y + 70} class="tm-bot">
+                <text x={r.x + 8} y={r.y + 22 + qBlockH + oddsFontPx + 36} class="tm-bot">
                   {(m.bot_share! * 100).toFixed(0)}% algo
                 </text>
               )}
@@ -210,10 +268,15 @@ function truncate(s: string | null, max: number): string {
     })}
   </svg>
   <div class="tm-legend">
-    <span class="tm-leg-label">Algorithmic share</span>
-    <span class="tm-leg-bar"></span>
-    <span class="tm-leg-tick">0%</span>
-    <span class="tm-leg-tick">50%</span>
-    <span class="tm-leg-tick">100%</span>
+    <span class="tm-leg-label">Color = algorithmic share</span>
+    <div class="tm-leg-grad-wrap">
+      <span class="tm-leg-grad"></span>
+      <div class="tm-leg-ticks">
+        <span>0%</span>
+        <span class="tm-leg-baseline">87% baseline</span>
+        <span>100%</span>
+      </div>
+    </div>
+    <span class="tm-leg-label tm-leg-right">Cool = retail-engaged · Warm = bot-dominant</span>
   </div>
 </figure>

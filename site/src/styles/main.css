@@ -992,54 +992,100 @@ h1.hero-thesis {
   stroke-width: 1.5;
   transition: filter 0.15s ease;
 }
-.tm-cell:hover .tm-rect { filter: brightness(1.18); cursor: pointer; }
+.tm-cell:hover .tm-rect { filter: brightness(1.22); cursor: pointer; }
+
+/* All text in the heatmap gets a subtle drop shadow so it reads on any
+   palette tone (cool teal, neutral slate, warm amber). White at 95% opacity
+   plus a 1px shadow gives roughly 5:1 contrast against every cell color. */
+.tm-q, .tm-v, .tm-vol, .tm-bot {
+  paint-order: stroke;
+  stroke: rgba(0, 0, 0, 0.55);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+}
 .tm-q {
   font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 600;
-  fill: #f3f6fa;
+  font-weight: 700;
+  fill: #ffffff;
+  letter-spacing: -0.005em;
 }
 .tm-v {
-  font-family: var(--mono);
-  font-size: 14px;
-  font-weight: 600;
-  fill: #f3f6fa;
+  font-family: var(--sans);
+  font-weight: 700;
+  fill: #ffffff;
+  letter-spacing: -0.01em;
 }
 .tm-vol {
   font-family: var(--mono);
-  font-size: 11px;
-  fill: rgba(243, 246, 250, 0.85);
+  font-size: 12px;
+  fill: rgba(255, 255, 255, 0.92);
 }
 .tm-bot {
   font-family: var(--sans);
-  font-size: 10px;
-  fill: rgba(243, 246, 250, 0.75);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  fill: rgba(255, 255, 255, 0.85);
 }
+
 .tm-legend {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 14px;
+  margin-top: 12px;
   font-family: var(--sans);
   font-size: 11px;
   color: var(--muted);
+  flex-wrap: wrap;
 }
 .tm-leg-label {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 600;
 }
-.tm-leg-bar {
-  flex: 1;
-  height: 8px;
-  border-radius: 2px;
-  background: linear-gradient(to right, #102134, #4ea3d8);
-  border: 1px solid var(--border);
-  max-width: 240px;
+.tm-leg-right {
+  margin-left: auto;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 12px;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--text);
 }
-.tm-leg-tick {
+.tm-leg-grad-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  max-width: 320px;
+}
+.tm-leg-grad {
+  height: 10px;
+  border-radius: 2px;
+  /* Match the cell palette: teal -> slate -> amber, pivot at 87% (left of midpoint) */
+  background: linear-gradient(
+    to right,
+    rgb(31, 100, 112) 0%,
+    rgb(44, 62, 84) 87%,
+    rgb(122, 74, 32) 100%
+  );
+  border: 1px solid var(--border);
+}
+.tm-leg-ticks {
+  display: flex;
+  justify-content: space-between;
   font-family: var(--mono);
   font-size: 10px;
+}
+.tm-leg-baseline {
+  /* The middle tick is positioned at 87%, not 50%; nudge it so its label
+     points to the actual gradient baseline. */
+  position: relative;
+  left: 37%;
+  font-style: italic;
+  color: var(--text);
 }
 
 /* ===== Inline charts on the homepage ===== */
