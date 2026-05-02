@@ -1,0 +1,199 @@
+---
+/**
+ * Finviz-style treemap of the top weekly Polymarket markets.
+ *
+ * Each rectangle = one market.
+ *   Area = weekly USD volume (squarified treemap layout).
+ *   Color = % algorithmic share for that market (high bot share = warmer
+ *           color; bot-light retail-engaged markets = cooler color).
+ *   Label = market question (truncated) + category tag.
+ *   Hover = full question (browser tooltip via <title>).
+ *
+ * Data: top_markets_latest.json (questions + volumes + categories) joined to
+ * market_microstructure_latest.json (per-market bot share). Markets without
+ * microstructure context fall back to a neutral color.
+ *
+ * No JS chart library: layout computed at build time and emitted as inline SVG.
+ */
+import top from "../../public/data/top_markets_latest.json";
+
+let micro: { markets: any[] } | null = null;
+try {
+  micro = await import("../../public/data/market_microstructure_latest.json");
+} catch (_) {
+  micro = { markets: [] };
+}
+const microById: Record<string, any> = Object.fromEntries(
+  (micro?.markets ?? []).map((m: any) => [String(m.market_id), m])
+);
+
+type Market = {
+  rank: number;
+  market_id: string;
+  question: string | null;
+  category: string | null;
+  usd_volume: number;
+  n_trades: number;
+  bot_share: number | null;
+};
+
+const markets: Market[] = (top.markets as any[]).map(m => ({
+  rank: m.rank,
+  market_id: String(m.market_id),
+  question: m.question ?? null,
+  category: m.category ?? null,
+  usd_volume: m.usd_volume,
+  n_trades: m.n_trades,
+  bot_share: microById[String(m.market_id)]?.bot_share_participation ?? null,
+}));
+
+const W = 880;
+const H = 520;
+
+/** Squarified treemap (Bruls/Huijsmans/van Wijk 2000) with simplified slicing.
+ *  Returns rectangles in the same order as the input items array. */
+function squarify(items: { value: number }[], x: number, y: number, w: number, h: number) {
+  const total = items.reduce((s, it) => s + it.value, 0);
+  if (total <= 0) return items.map(() => ({ x, y, w: 0, h: 0 }));
+
+  const result: { x: number; y: number; w: number; h: number }[] = new Array(items.length);
+
+  function worst(row: number[], length: number) {
+    const sum = row.reduce((s, v) => s + v, 0);
+    const max = Math.max(...row);
+    const min = Math.min(...row);
+    return Math.max((length * length * max) / (sum * sum), (sum * sum) / (length * length * min));
+  }
+
+  function layoutRow(row: number[], rowIdx: number[], cx: number, cy: number, cw: number, ch: number, horizontal: boolean) {
+    const sum = row.reduce((s, v) => s + v, 0);
+    const total = horizontal ? ch : cw;
+    const thick = sum / total;
+    let off = 0;
+    for (let k = 0; k < row.length; k++) {
+      const seg = row[k] / thick;
+      if (horizontal) {
+        result[rowIdx[k]] = { x: cx, y: cy + off, w: thick, h: seg };
+      } else {
+        result[rowIdx[k]] = { x: cx + off, y: cy, w: seg, h: thick };
+      }
+      off += seg;
+    }
+    if (horizontal) return { x: cx + thick, y: cy, w: cw - thick, h: ch };
+    return { x: cx, y: cy + thick, w: cw, h: ch - thick };
+  }
+
+  function recurse(itemsLeft: number[], idxLeft: number[], cx: number, cy: number, cw: number, ch: number) {
+    if (itemsLeft.length === 0) return;
+    const horizontal = ch < cw;
+    const length = horizontal ? ch : cw;
+    const sum = itemsLeft.reduce((s, v) => s + v, 0);
+    const scale = (cw * ch) / sum;
+    const scaled = itemsLeft.map(v => v * scale);
+
+    let row: number[] = [];
+    let rowIdx: number[] = [];
+    let i = 0;
+    while (i < scaled.length) {
+      const rowTry = [...row, scaled[i]];
+      if (row.length === 0 || worst(rowTry, length) <= worst(row, length)) {
+        row.push(scaled[i]);
+        rowIdx.push(idxLeft[i]);
+        i++;
+      } else {
+        const next = layoutRow(row, rowIdx, cx, cy, cw, ch, horizontal);
+        cx = next.x; cy = next.y; cw = next.w; ch = next.h;
+        const nextSum = scaled.slice(i).reduce((s, v) => s + v, 0);
+        const nextScale = (cw * ch) / Math.max(nextSum, 1e-9);
+        recurse(itemsLeft.slice(i).map(v => v * nextScale / scale), idxLeft.slice(i), cx, cy, cw, ch);
+        return;
+      }
+    }
+    layoutRow(row, rowIdx, cx, cy, cw, ch, horizontal);
+  }
+
+  recurse(items.map(it => it.value), items.map((_, i) => i), x, y, w, h);
+  return result;
+}
+
+const items = markets.map(m => ({ value: m.usd_volume }));
+const rects = squarify(items, 0, 0, W, H);
+
+/** Color from bot share. Single hue, light->dark. Markets with no micro data
+ *  (the bulk in week 1 of the K=30 expansion) get neutral. */
+function colorFromBotShare(bs: number | null) {
+  if (bs == null) return "#1c2e4a"; // neutral slate
+  // Map [0, 1] -> a USD-blue ramp from #102134 (low bot) to #4ea3d8 (high bot).
+  // Higher bot share = brighter blue (more "algorithmic intensity").
+  const t = Math.max(0, Math.min(1, bs));
+  const r = Math.round(0x10 + (0x4e - 0x10) * t);
+  const g = Math.round(0x21 + (0xa3 - 0x21) * t);
+  const b = Math.round(0x34 + (0xd8 - 0x34) * t);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+function fmtVol(v: number) {
+  if (v >= 1e6) return "$" + (v / 1e6).toFixed(1) + "M";
+  if (v >= 1e3) return "$" + (v / 1e3).toFixed(0) + "K";
+  return "$" + v.toFixed(0);
+}
+
+function truncate(s: string | null, max: number): string {
+  if (!s) return "";
+  if (s.length <= max) return s;
+  return s.slice(0, max - 1).trimEnd() + "…";
+}
+---
+<figure class="topmkt-tm">
+  <figcaption class="tm-caption">
+    <span class="tm-title">Top {markets.length} Polymarket markets, week of {top.as_of_week}</span>
+    <span class="tm-sub">
+      Rectangle area = weekly USD volume. Color = algorithmic share for that market (lighter = more bot-mediated, darker = more retail-engaged). Hover for full market name.
+    </span>
+  </figcaption>
+  <svg viewBox={`0 0 ${W} ${H}`} class="tm-svg" preserveAspectRatio="none" aria-label="Top markets heatmap">
+    {rects.map((r, i) => {
+      const m = markets[i];
+      const col = colorFromBotShare(m.bot_share);
+      const tooMini = r.w < 56 || r.h < 32;
+      // Available text width inside the rectangle, with 6px padding
+      const innerW = r.w - 12;
+      const charsLine = Math.max(4, Math.floor(innerW / 6.2));
+      const showQuestion = !tooMini && m.question;
+      const showVol = !tooMini && r.h >= 50;
+      const showBot = !tooMini && r.h >= 70 && m.bot_share != null;
+      return (
+        <g class="tm-cell">
+          <title>{`${m.question ?? "Market #" + m.market_id}\nVolume: ${fmtVol(m.usd_volume)}\nTrades: ${m.n_trades.toLocaleString()}\nAlgorithmic share: ${m.bot_share != null ? (m.bot_share*100).toFixed(0)+"%" : "n/a"}\nCategory: ${m.category ?? "n/a"}`}</title>
+          <rect x={r.x} y={r.y} width={r.w} height={r.h} fill={col} class="tm-rect" />
+          {tooMini ? null : (
+            <g>
+              {showQuestion && (
+                <text x={r.x + 6} y={r.y + 16} class="tm-q">
+                  {truncate(m.question, charsLine)}
+                </text>
+              )}
+              {showVol && (
+                <text x={r.x + 6} y={r.y + 32} class="tm-v">
+                  {fmtVol(m.usd_volume)}
+                </text>
+              )}
+              {showBot && (
+                <text x={r.x + 6} y={r.y + 48} class="tm-bot">
+                  {(m.bot_share! * 100).toFixed(0)}% algo
+                </text>
+              )}
+            </g>
+          )}
+        </g>
+      );
+    })}
+  </svg>
+  <div class="tm-legend">
+    <span class="tm-leg-label">Algorithmic share</span>
+    <span class="tm-leg-bar"></span>
+    <span class="tm-leg-tick">0%</span>
+    <span class="tm-leg-tick">50%</span>
+    <span class="tm-leg-tick">100%</span>
+  </div>
+</figure>
