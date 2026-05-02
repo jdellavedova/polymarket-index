@@ -1007,20 +1007,16 @@ h1.hero-thesis {
   font-family: var(--sans);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 3px 8px;
+  padding: 3px 9px;
   border-radius: 3px;
-  background: var(--immaculata);
-  color: #fff;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--founders);
 }
-.briefing-cat-macro     { background: var(--immaculata); }
-.briefing-cat-crypto    { background: #5e3aa3; }
-.briefing-cat-politics  { background: #a4364c; }
-.briefing-cat-geopolitics { background: #b85c1c; }
-.briefing-cat-sports    { background: #2e7a4a; }
-.briefing-cat-business  { background: #4a5c75; }
-.briefing-cat-other     { background: #555; }
+/* Category accents removed in favor of single monochrome USD-blue label.
+   Color should encode meaning; a category name doesn't need its own color. */
 .briefing-rank {
   font-family: var(--sans);
   font-size: 11px;
@@ -1071,9 +1067,11 @@ h1.hero-thesis {
   color: var(--text);
   margin-top: 1px;
 }
-.anno-ok    .anno-value { color: var(--pos); }
-.anno-warn  .anno-value { color: #f5b84b; }
-.anno-alert .anno-value { color: var(--neg); }
+/* Muted tone palette: color encodes meaning, not decoration. "ok" deliberately
+   keeps default text color; only warn (ochre) and alert (brick red) are tinted. */
+.anno-ok    .anno-value { color: var(--text); }
+.anno-warn  .anno-value { color: #c9a14a; }
+.anno-alert .anno-value { color: #c95757; }
 .briefing-foot {
   display: flex;
   gap: 18px;

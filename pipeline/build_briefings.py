@@ -79,15 +79,26 @@ def _annotations(market: dict, micro: dict | None, baseline_bot_share: float, n_
         "tone": fw_tone,
     })
 
-    # Average entry price comparison: bots vs active retail
-    apt = micro.get("avg_price_by_type", {}) or {}
-    bot_p = apt.get("bot")
-    ret_p = apt.get("active_retail")
-    if bot_p is not None and ret_p is not None:
-        diff = ret_p - bot_p
-        ret_tone = "alert" if diff >= 0.05 else ("warn" if diff >= 0.02 else "flat")
-        a.append({"label": "Avg entry price — Bots", "value": f"${bot_p:.3f}", "tone": "flat"})
-        a.append({"label": "Avg entry price — Retail", "value": f"${ret_p:.3f}", "tone": ret_tone})
+    # Execution gap: volume-weighted across tokens where both bots and active
+    # retail had >=$1K of volume. Positive number means retail paid more per
+    # share than bots for the same exposure (the dashboard analog of Paper 1's
+    # execution edge).
+    gap = micro.get("execution_gap_retail_minus_bot")
+    n_tok = micro.get("n_tokens_compared", 0) or 0
+    if gap is not None and n_tok >= 1:
+        gap_cents = gap * 100  # $0.0077 -> 0.77¢
+        sign = "+" if gap_cents >= 0 else ""
+        if gap_cents >= 0.5:
+            tone = "alert"
+        elif gap_cents >= 0.2:
+            tone = "warn"
+        else:
+            tone = "flat"
+        a.append({
+            "label": "Execution gap (retail vs bots)",
+            "value": f"{sign}{gap_cents:.2f}¢ per share",
+            "tone": tone,
+        })
 
     return a
 

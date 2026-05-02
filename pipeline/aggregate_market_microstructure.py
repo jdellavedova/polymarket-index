@@ -86,11 +86,14 @@ def main() -> None:
     print(f"  loaded {len(flagged_set):,} flagged wallets")
 
     # Latest-week trades for the top markets only. Filter pushdown narrows the
-    # working set to the top-K markets in this week.
+    # working set to the top-K markets in this week. Keep token_id so we can
+    # compute execution-edge per token (binary markets have a YES and a NO
+    # token; comparing prices across them mixes side-selection with execution).
     con.execute(f"""
         CREATE TEMP TABLE w_trades AS
         SELECT
             market_id,
+            token_id,
             LOWER(maker_address) AS maker,
             LOWER(taker_address) AS taker,
             CAST(price AS DOUBLE) AS price,
@@ -108,27 +111,41 @@ def main() -> None:
     # full usdc_amount of the match (so vw avg price weights by full match volume).
     con.execute("""
         CREATE TEMP TABLE participations AS
-        SELECT t.market_id, COALESCE(wm.wallet_type, 'unknown') AS wallet_type,
+        SELECT t.market_id, t.token_id, COALESCE(wm.wallet_type, 'unknown') AS wallet_type,
                t.price, t.usdc, t.maker AS wallet
         FROM w_trades t
         LEFT JOIN wallet_type wm ON t.maker = wm.wallet
         UNION ALL
-        SELECT t.market_id, COALESCE(wt.wallet_type, 'unknown') AS wallet_type,
+        SELECT t.market_id, t.token_id, COALESCE(wt.wallet_type, 'unknown') AS wallet_type,
                t.price, t.usdc, t.taker AS wallet
         FROM w_trades t
         LEFT JOIN wallet_type wt ON t.taker = wt.wallet
     """)
 
-    # Per-market, per-wallet-type aggregates
+    # Per-market, per-wallet-type participation counts and volume (token-agnostic;
+    # used for bot share and total-volume context).
     by_type = con.execute("""
         SELECT
             market_id,
             wallet_type,
             COUNT(*) AS n_participations,
+            SUM(usdc) AS volume_usd
+        FROM participations
+        GROUP BY market_id, wallet_type
+    """).fetchdf()
+
+    # Per-market, per-token, per-wallet-type avg price (correct execution-edge
+    # benchmark: comparing bot and retail prices on the SAME token.)
+    by_token_type = con.execute("""
+        SELECT
+            market_id,
+            token_id,
+            wallet_type,
+            COUNT(*) AS n_participations,
             SUM(usdc) AS volume_usd,
             SUM(price * usdc) / NULLIF(SUM(usdc), 0) AS avg_price_vw
         FROM participations
-        GROUP BY market_id, wallet_type
+        GROUP BY market_id, token_id, wallet_type
     """).fetchdf()
 
     # Per-market totals + bot share
@@ -156,6 +173,46 @@ def main() -> None:
         GROUP BY t.market_id
     """).fetchdf()
 
+    # Per-market execution gap: for each token where BOTH bots and active_retail
+    # have non-trivial volume (>=$1K each), compute retail_avg - bot_avg, then
+    # volume-weight that gap across tokens by total bot+retail volume on the token.
+    # This isolates execution edge (price paid for the same exposure) from
+    # side-selection (which token each type chose to trade).
+    pivot = by_token_type.pivot_table(
+        index=["market_id", "token_id"],
+        columns="wallet_type",
+        values=["avg_price_vw", "volume_usd"],
+        aggfunc="first",
+    )
+    pivot.columns = ["__".join(map(str, c)) for c in pivot.columns]
+    pivot = pivot.reset_index()
+    if "avg_price_vw__bot" not in pivot.columns: pivot["avg_price_vw__bot"] = pd.NA
+    if "avg_price_vw__active_retail" not in pivot.columns: pivot["avg_price_vw__active_retail"] = pd.NA
+    if "volume_usd__bot" not in pivot.columns: pivot["volume_usd__bot"] = 0
+    if "volume_usd__active_retail" not in pivot.columns: pivot["volume_usd__active_retail"] = 0
+
+    pivot["bot_vol"] = pd.to_numeric(pivot["volume_usd__bot"], errors="coerce").fillna(0)
+    pivot["ret_vol"] = pd.to_numeric(pivot["volume_usd__active_retail"], errors="coerce").fillna(0)
+    pivot["both_present"] = (pivot["bot_vol"] >= 1000) & (pivot["ret_vol"] >= 1000)
+    pivot["bot_p"] = pd.to_numeric(pivot["avg_price_vw__bot"], errors="coerce")
+    pivot["ret_p"] = pd.to_numeric(pivot["avg_price_vw__active_retail"], errors="coerce")
+    pivot["gap"] = pivot["ret_p"] - pivot["bot_p"]
+    pivot["weight"] = pivot["bot_vol"] + pivot["ret_vol"]
+
+    def _market_exec_gap(mid: str) -> tuple[float | None, float | None, float | None, int]:
+        """Returns (gap_in_dollars, bot_avg, retail_avg, n_tokens_compared).
+        gap is volume-weighted across tokens where both types have >=$1K vol."""
+        sub = pivot[(pivot["market_id"] == mid) & pivot["both_present"]]
+        if sub.empty:
+            return None, None, None, 0
+        w = sub["weight"].sum()
+        if w <= 0:
+            return None, None, None, 0
+        gap = float((sub["gap"] * sub["weight"]).sum() / w)
+        bot_avg = float((sub["bot_p"] * sub["weight"]).sum() / w)
+        ret_avg = float((sub["ret_p"] * sub["weight"]).sum() / w)
+        return gap, bot_avg, ret_avg, int(len(sub))
+
     # Assemble per-market payload
     markets_out = []
     for m in top["markets"]:
@@ -163,12 +220,8 @@ def main() -> None:
         t_row = totals[totals["market_id"] == mid]
         f_row = flagged_per_market[flagged_per_market["market_id"] == mid]
         bt = by_type[by_type["market_id"] == mid].copy()
-        avg_price_by_type = {}
-        n_part_by_type = {}
-        for _, r in bt.iterrows():
-            wt = str(r["wallet_type"])
-            avg_price_by_type[wt] = float(r["avg_price_vw"]) if pd.notna(r["avg_price_vw"]) else None
-            n_part_by_type[wt] = int(r["n_participations"])
+        n_part_by_type = {str(r["wallet_type"]): int(r["n_participations"]) for _, r in bt.iterrows()}
+        gap, bot_avg, ret_avg, n_tok = _market_exec_gap(mid)
 
         markets_out.append({
             "market_id": mid,
@@ -179,7 +232,10 @@ def main() -> None:
             "usd_volume": m["usd_volume"],
             "bot_share_participation": float(t_row["bot_share_participation"].iloc[0]) if not t_row.empty else None,
             "flagged_wallets_active": int(f_row["flagged_count"].iloc[0]) if not f_row.empty else 0,
-            "avg_price_by_type": avg_price_by_type,
+            "execution_gap_retail_minus_bot": gap,
+            "avg_price_bot": bot_avg,
+            "avg_price_retail": ret_avg,
+            "n_tokens_compared": n_tok,
             "n_participations_by_type": n_part_by_type,
         })
 

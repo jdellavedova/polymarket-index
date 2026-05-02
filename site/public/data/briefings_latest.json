@@ -1,7 +1,7 @@
 {
   "as_of_week": "2026-W18",
-  "generated_at": "2026-05-02T00:00:00+00:00",
-  "lede": "Five markets carrying most of last week's $696M Polymarket volume, with microstructure context from the DV-PMI indices.",
+  "generated_at": "2026-05-02T15:58:49+00:00",
+  "lede": "Top 5 markets by USD volume from the week of 2026-W18, annotated with per-market microstructure from the DV-PMI weekly indices.",
   "briefings": [
     {
       "rank": 1,
@@ -9,13 +9,34 @@
       "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
       "market_id": "669662",
       "market_url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-april-2026-meeting",
-      "volume_usd": 5766229,
+      "volume_usd": 5766229.069609998,
       "n_trades": 6839,
       "annotations": [
-        { "label": "Weekly volume", "value": "$5.8M", "tone": "flat" },
-        { "label": "Trades", "value": "6,839", "tone": "flat" },
-        { "label": "Algorithmic share (Polymarket-wide)", "value": "87%", "tone": "warn" },
-        { "label": "Calibration regime", "value": "well-calibrated above 0.50", "tone": "ok" }
+        {
+          "label": "Weekly volume",
+          "value": "$5.8M",
+          "tone": "flat"
+        },
+        {
+          "label": "Trades",
+          "value": "6,839",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "69% (vs 87% Polymarket-wide)",
+          "tone": "ok"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "3 of 6,291",
+          "tone": "warn"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "-0.03\u00a2 per share",
+          "tone": "flat"
+        }
       ],
       "news_angle": "The week's largest market by dollars. Macro contracts on Fed decisions consistently draw the most liquidity on Polymarket and are dominated by algorithmic market-makers.",
       "research_link": "/research",
@@ -27,13 +48,34 @@
       "question": "Will Bitcoin hit $150k by June 30, 2026?",
       "market_id": "573655",
       "market_url": "https://polymarket.com/event/will-bitcoin-hit-150k-by-june-30-2026",
-      "volume_usd": 3164182,
+      "volume_usd": 3164181.919562,
       "n_trades": 2087,
       "annotations": [
-        { "label": "Weekly volume", "value": "$3.2M", "tone": "flat" },
-        { "label": "Trades", "value": "2,087", "tone": "flat" },
-        { "label": "Volume per trade", "value": "$1,517", "tone": "warn" },
-        { "label": "Calibration regime", "value": "longshot zone (overpriced)", "tone": "warn" }
+        {
+          "label": "Weekly volume",
+          "value": "$3.2M",
+          "tone": "flat"
+        },
+        {
+          "label": "Trades",
+          "value": "2,087",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "79% (vs 87% Polymarket-wide)",
+          "tone": "flat"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "0 of 6,291",
+          "tone": "ok"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "+0.06\u00a2 per share",
+          "tone": "flat"
+        }
       ],
       "news_angle": "High dollar volume on relatively few trades suggests larger ticket sizes. Crypto-price contracts sit in the longshot region of the calibration curve, where prices systematically overstate realized win rates.",
       "research_link": "/research",
@@ -44,14 +86,35 @@
       "category": "Macro",
       "question": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
       "market_id": "669660",
-      "market_url": "https://polymarket.com/event/will-the-fed-decrease-interest-rates-by-50-bps-after-the-april-2026-meeting",
-      "volume_usd": 2067330,
+      "market_url": "https://polymarket.com/event/will-the-fed-decrease-interest-rates-by-50+-bps-after-the-april-2026-meeting",
+      "volume_usd": 2067330.3182060001,
       "n_trades": 3204,
       "annotations": [
-        { "label": "Weekly volume", "value": "$2.1M", "tone": "flat" },
-        { "label": "Trades", "value": "3,204", "tone": "flat" },
-        { "label": "Pair with", "value": "Market #1 (no-change)", "tone": "ok" },
-        { "label": "Calibration regime", "value": "longshot zone (overpriced)", "tone": "warn" }
+        {
+          "label": "Weekly volume",
+          "value": "$2.1M",
+          "tone": "flat"
+        },
+        {
+          "label": "Trades",
+          "value": "3,204",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "64% (vs 87% Polymarket-wide)",
+          "tone": "ok"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "1 of 6,291",
+          "tone": "warn"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "+0.06\u00a2 per share",
+          "tone": "flat"
+        }
       ],
       "news_angle": "Companion contract to the no-change market above. Together, the two contracts span the binary policy outcome space and let analysts read implied probabilities directly off Polymarket prices.",
       "research_link": "/methodology",
@@ -63,13 +126,34 @@
       "question": "Will the U.S. invade Iran before 2027?",
       "market_id": "665374",
       "market_url": "https://polymarket.com/event/will-the-us-invade-iran-before-2027",
-      "volume_usd": 1967006,
+      "volume_usd": 1967006.0357589957,
       "n_trades": 13509,
       "annotations": [
-        { "label": "Weekly volume", "value": "$2.0M", "tone": "flat" },
-        { "label": "Trades", "value": "13,509", "tone": "flat" },
-        { "label": "Volume per trade", "value": "$146", "tone": "ok" },
-        { "label": "Insider-trading hotspot", "value": "Action category (3.10% flag rate)", "tone": "alert" }
+        {
+          "label": "Weekly volume",
+          "value": "$2.0M",
+          "tone": "flat"
+        },
+        {
+          "label": "Trades",
+          "value": "13,509",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "78% (vs 87% Polymarket-wide)",
+          "tone": "flat"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "9 of 6,291",
+          "tone": "alert"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "+0.12\u00a2 per share",
+          "tone": "flat"
+        }
       ],
       "news_angle": "Many small trades, a profile typical of retail-engaged geopolitical contracts. Markets in the 'Action' category (military, regulatory, decision-driven outcomes) carry the highest insider-trading flag rate in the dataset.",
       "research_link": "/research",
@@ -78,28 +162,49 @@
     {
       "rank": 5,
       "category": "Politics",
-      "question": "Will Roberto Sánchez Palomino win the 2026 Peruvian presidential election?",
+      "question": "Will Roberto S\u00e1nchez Palomino win the 2026 Peruvian presidential election?",
       "market_id": "947289",
-      "market_url": "https://polymarket.com/event/peru-2026-presidential-election",
-      "volume_usd": 1710408,
+      "market_url": "https://polymarket.com/event/will-roberto-s\u00e1nchez-palomino-win-the-2026-peruvian-presidential-election",
+      "volume_usd": 1710408.3178440002,
       "n_trades": 22231,
       "annotations": [
-        { "label": "Weekly volume", "value": "$1.7M", "tone": "flat" },
-        { "label": "Trades", "value": "22,231", "tone": "flat" },
-        { "label": "Volume per trade", "value": "$77", "tone": "ok" },
-        { "label": "Insider-trading hotspot", "value": "Vote category (1.80% flag rate)", "tone": "alert" }
+        {
+          "label": "Weekly volume",
+          "value": "$1.7M",
+          "tone": "flat"
+        },
+        {
+          "label": "Trades",
+          "value": "22,231",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "14% (vs 87% Polymarket-wide)",
+          "tone": "ok"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "1 of 6,291",
+          "tone": "warn"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "+0.76\u00a2 per share",
+          "tone": "alert"
+        }
       ],
-      "news_angle": "Highest trade count in the top five — a small-ticket retail-heavy market. Election contracts show elevated insider-trading flag rates relative to stochastic markets like crypto prices.",
+      "news_angle": "Highest trade count in the top five and the most retail-engaged market on the dashboard. The 14% algorithmic share is far below the 87% Polymarket-wide baseline; bots are largely absent. Retail traders paid 0.76\u00a2 more per share than the small bot footprint, the visible execution edge.",
       "research_link": "/research",
       "research_label": "Paper 2: Insider Detection"
     }
   ],
   "global_context": {
-    "polymarket_wide_bot_share": 0.868,
-    "polymarket_wide_volume_usd": 696000000,
-    "polymarket_wide_trades": 27600000,
-    "calibration_alpha": 0.6639,
-    "calibration_r2": 0.987
+    "polymarket_wide_bot_share": 0.8675154929132903,
+    "polymarket_wide_volume_usd": 696415632.9190068,
+    "polymarket_wide_trades": 27626502,
+    "calibration_alpha": 0.6639191266094694,
+    "calibration_r2": 0.9867800262365879
   },
-  "notes": "Per-market microstructure annotations (bot share, flag count, calibration gap) draw on the DV-PMI weekly indices. News-angle text is editorial. Briefings are a dashboard product, not investment advice."
+  "notes": "Per-market microstructure annotations come from aggregate_market_microstructure.py (per-market bot share, flagged-wallet activity, average entry price by wallet type). News-angle text is editorial. Briefings are a dashboard product, not investment advice."
 }

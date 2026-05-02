@@ -1,0 +1,125 @@
+{
+  "as_of_week": "2026-W18",
+  "generated_at": "2026-05-02T15:57:54+00:00",
+  "markets": [
+    {
+      "market_id": "669662",
+      "rank": 1,
+      "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
+      "category": "Macro",
+      "n_trades": 6839,
+      "usd_volume": 5766229.069609998,
+      "bot_share_participation": 0.691694692206463,
+      "flagged_wallets_active": 3,
+      "execution_gap_retail_minus_bot": -0.0003134762945194472,
+      "avg_price_bot": 0.9888107197475708,
+      "avg_price_retail": 0.9884972434530512,
+      "n_tokens_compared": 2,
+      "n_participations_by_type": {
+        "active_retail": 2681,
+        "casual": 558,
+        "unknown": 479,
+        "sophisticated": 466,
+        "bot": 9461,
+        "one_shot": 33
+      }
+    },
+    {
+      "market_id": "573655",
+      "rank": 2,
+      "question": "Will Bitcoin hit $150k by June 30, 2026?",
+      "category": "Crypto",
+      "n_trades": 2087,
+      "usd_volume": 3164181.919562,
+      "bot_share_participation": 0.7898897939626258,
+      "flagged_wallets_active": 0,
+      "execution_gap_retail_minus_bot": 0.0006117904042772388,
+      "avg_price_bot": 0.9250689545527417,
+      "avg_price_retail": 0.9256807449570189,
+      "n_tokens_compared": 2,
+      "n_participations_by_type": {
+        "one_shot": 1,
+        "sophisticated": 35,
+        "bot": 3297,
+        "active_retail": 525,
+        "casual": 97,
+        "unknown": 219
+      }
+    },
+    {
+      "market_id": "669660",
+      "rank": 3,
+      "question": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
+      "category": "Macro",
+      "n_trades": 3204,
+      "usd_volume": 2067330.3182060001,
+      "bot_share_participation": 0.6409176029962547,
+      "flagged_wallets_active": 1,
+      "execution_gap_retail_minus_bot": 0.0006152839551312509,
+      "avg_price_bot": 0.0011639662489692957,
+      "avg_price_retail": 0.0017792502041005466,
+      "n_tokens_compared": 1,
+      "n_participations_by_type": {
+        "sophisticated": 59,
+        "one_shot": 11,
+        "active_retail": 1889,
+        "unknown": 275,
+        "casual": 67,
+        "bot": 4107
+      }
+    },
+    {
+      "market_id": "665374",
+      "rank": 4,
+      "question": "Will the U.S. invade Iran before 2027?",
+      "category": "Geopolitics",
+      "n_trades": 13509,
+      "usd_volume": 1967006.0357589957,
+      "bot_share_participation": 0.7804056554889333,
+      "flagged_wallets_active": 9,
+      "execution_gap_retail_minus_bot": 0.001189002274820975,
+      "avg_price_bot": 0.600023013499517,
+      "avg_price_retail": 0.601212015774338,
+      "n_tokens_compared": 2,
+      "n_participations_by_type": {
+        "active_retail": 4371,
+        "casual": 223,
+        "unknown": 467,
+        "one_shot": 85,
+        "bot": 21085,
+        "sophisticated": 787
+      }
+    },
+    {
+      "market_id": "947289",
+      "rank": 5,
+      "question": "Will Roberto S\u00e1nchez Palomino win the 2026 Peruvian presidential election?",
+      "category": "Politics",
+      "n_trades": 22231,
+      "usd_volume": 1710408.3178440002,
+      "bot_share_participation": 0.14122171742161846,
+      "flagged_wallets_active": 1,
+      "execution_gap_retail_minus_bot": 0.0076471952331618066,
+      "avg_price_bot": 0.60194202623236,
+      "avg_price_retail": 0.6095892214655217,
+      "n_tokens_compared": 2,
+      "n_participations_by_type": {
+        "one_shot": 24,
+        "sophisticated": 9350,
+        "bot": 6279,
+        "active_retail": 28139,
+        "casual": 544,
+        "unknown": 126
+      }
+    }
+  ],
+  "n_flagged_wallets_universe": 6291,
+  "wallet_type_labels": {
+    "bot": "Algorithmic",
+    "active_retail": "Active Retail",
+    "sophisticated": "Sophisticated",
+    "casual": "Casual",
+    "one_shot": "One-Shot"
+  },
+  "notes": "Per-market microstructure for the top weekly markets. bot_share is share of (maker+taker) participations; avg_price is volume-weighted across both sides. flagged_wallets_active counts distinct wallets from the Paper-2 significant-at-p<0.01 set that traded the market in either role this week."
+}
