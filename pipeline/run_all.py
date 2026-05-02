@@ -24,6 +24,7 @@ SCRIPTS = [
     "aggregate_efficiency",
     "aggregate_pii",
     "aggregate_top_markets",
+    "aggregate_market_microstructure",
     "aggregate_profit_split",
     "build_master_table",
     "build_weekly_narrative",

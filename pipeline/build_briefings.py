@@ -1,17 +1,15 @@
-"""build_briefings.py — generate the Briefings page payload from existing indices.
+"""build_briefings.py — generate the Briefings page payload from existing
+indices plus the per-market microstructure file produced by
+aggregate_market_microstructure.py.
 
-Pulls the top markets list and the global weekly indices, computes a per-market
-microstructure annotation set, and writes briefings_latest.json. The news-angle
-text is editorial and must be hand-written each week; this script preserves any
-existing news_angle when regenerating (matched by market_id).
-
-Run weekly after aggregate_top_markets.py and aggregate_pii.py have produced
-fresh _latest.json files.
+Each card carries auto-pulled annotations (volume, trades, bot share for THIS
+market vs Polymarket-wide, flagged-wallet count, average entry price by group)
+plus an editorial news_angle that is preserved across regenerations (matched
+on market_id) so the user only re-edits text for newly-appearing markets.
 """
 from __future__ import annotations
 
 import json
-from pathlib import Path
 
 from common import utc_now, write_json
 from config import DATA_OUT
@@ -19,7 +17,7 @@ from config import DATA_OUT
 
 CATEGORY_FALLBACK = "Other"
 
-# Polymarket event-page URL pattern. Slug fallback: market_id.
+
 def _market_url(market_id: str, question: str | None) -> str:
     if not question:
         return f"https://polymarket.com/market/{market_id}"
@@ -32,66 +30,65 @@ def _market_url(market_id: str, question: str | None) -> str:
     return f"https://polymarket.com/event/{slug}"
 
 
-def _calibration_tag(category: str) -> str:
-    if category in ("Crypto",):
-        return "longshot zone (overpriced)"
-    if category in ("Macro", "Politics"):
-        return "well-calibrated near 0.50"
-    if category in ("Geopolitics",):
-        return "longshot zone (overpriced)"
-    return "mid-range"
+def _money(v: float) -> str:
+    a = abs(v)
+    if a >= 1e9: return f"${a/1e9:.2f}B"
+    if a >= 1e6: return f"${a/1e6:.1f}M"
+    if a >= 1e3: return f"${a/1e3:.0f}K"
+    return f"${a:.0f}"
 
 
-def _flag_rate_note(category: str, pii: dict) -> tuple[str, str] | None:
-    """Map question category -> MNPI category -> flag rate note. Returns
-    (annotation_value, tone) or None. Heuristic mapping; refine as we learn
-    which categories carry which informational profiles."""
-    rows = {r["mnpi_type"]: r for r in pii.get("mnpi_taxonomy", [])}
-    if category in ("Politics", "Macro"):
-        r = rows.get("vote") or rows.get("action")
-        if r:
-            return (
-                f"{r['mnpi_type'].capitalize()} category ({r['flag_rate_01']*100:.2f}% flag rate)",
-                "alert" if r["flag_rate_01"] > 0.015 else "warn",
-            )
-    if category in ("Geopolitics",):
-        r = rows.get("action")
-        if r:
-            return (
-                f"Action category ({r['flag_rate_01']*100:.2f}% flag rate)",
-                "alert" if r["flag_rate_01"] > 0.015 else "warn",
-            )
-    if category in ("Crypto",):
-        r = rows.get("stochastic")
-        if r:
-            return (
-                f"Stochastic category ({r['flag_rate_01']*100:.2f}% flag rate)",
-                "ok",
-            )
-    return None
-
-
-def _annotations(market: dict, bot_share: float, pii: dict) -> list[dict]:
+def _annotations(market: dict, micro: dict | None, baseline_bot_share: float, n_flagged_universe: int) -> list[dict]:
     vol = market["usd_volume"]
     n = market["n_trades"]
-    cat = market.get("category") or CATEGORY_FALLBACK
-    vpt = vol / n if n else 0.0
     a = [
-        {"label": "Weekly volume", "value": f"${vol/1e6:.1f}M" if vol >= 1e6 else f"${vol/1e3:.0f}K", "tone": "flat"},
+        {"label": "Weekly volume", "value": _money(vol), "tone": "flat"},
         {"label": "Trades", "value": f"{n:,}", "tone": "flat"},
     ]
-    # Volume per trade is informative: high $/trade signals larger sophisticated
-    # bets (whales, funds); low $/trade signals retail engagement.
-    if vpt >= 1000:
-        a.append({"label": "Volume per trade", "value": f"${vpt:,.0f}", "tone": "warn"})
-    else:
-        a.append({"label": "Volume per trade", "value": f"${vpt:,.0f}", "tone": "ok"})
 
-    fr = _flag_rate_note(cat, pii)
-    if fr:
-        a.append({"label": "Insider-trading hotspot", "value": fr[0], "tone": fr[1]})
-    else:
-        a.append({"label": "Calibration regime", "value": _calibration_tag(cat), "tone": "warn" if "longshot" in _calibration_tag(cat) else "ok"})
+    if micro is None:
+        # Fall back to global Polymarket-wide context if the microstructure
+        # aggregator hasn't run yet.
+        a.append({
+            "label": "Algorithmic share (Polymarket-wide)",
+            "value": f"{baseline_bot_share*100:.0f}%",
+            "tone": "warn",
+        })
+        return a
+
+    # Per-market bot share with delta vs Polymarket-wide baseline.
+    bs = micro.get("bot_share_participation")
+    if bs is not None:
+        delta_pp = (bs - baseline_bot_share) * 100
+        if abs(delta_pp) >= 3:
+            cmp = f"{bs*100:.0f}% (vs {baseline_bot_share*100:.0f}% Polymarket-wide)"
+        else:
+            cmp = f"{bs*100:.0f}% (in line with the {baseline_bot_share*100:.0f}% Polymarket-wide baseline)"
+        if bs >= 0.95: tone = "alert"
+        elif bs >= 0.90: tone = "warn"
+        elif bs >= 0.75: tone = "flat"
+        else: tone = "ok"  # human-heavy markets get a positive tone
+        a.append({"label": "Algorithmic share (this market)", "value": cmp, "tone": tone})
+
+    # Flagged wallet count
+    fw = micro.get("flagged_wallets_active", 0) or 0
+    fw_tone = "alert" if fw >= 5 else ("warn" if fw >= 1 else "ok")
+    a.append({
+        "label": "Flagged wallets active",
+        "value": f"{fw} of {n_flagged_universe:,}",
+        "tone": fw_tone,
+    })
+
+    # Average entry price comparison: bots vs active retail
+    apt = micro.get("avg_price_by_type", {}) or {}
+    bot_p = apt.get("bot")
+    ret_p = apt.get("active_retail")
+    if bot_p is not None and ret_p is not None:
+        diff = ret_p - bot_p
+        ret_tone = "alert" if diff >= 0.05 else ("warn" if diff >= 0.02 else "flat")
+        a.append({"label": "Avg entry price — Bots", "value": f"${bot_p:.3f}", "tone": "flat"})
+        a.append({"label": "Avg entry price — Retail", "value": f"${ret_p:.3f}", "tone": ret_tone})
+
     return a
 
 
@@ -101,15 +98,24 @@ def main() -> None:
     calib = json.loads((DATA_OUT / "calibration_latest.json").read_text(encoding="utf-8"))
     pii = json.loads((DATA_OUT / "pii_latest.json").read_text(encoding="utf-8"))
 
-    # Preserve hand-edited news_angle / research_link / research_label across
-    # regenerations. Keyed on market_id.
+    micro_path = DATA_OUT / "market_microstructure_latest.json"
+    if micro_path.exists():
+        micro_payload = json.loads(micro_path.read_text(encoding="utf-8"))
+        micro_by_id = {m["market_id"]: m for m in micro_payload.get("markets", [])}
+        n_flagged_universe = micro_payload.get("n_flagged_wallets_universe", pii["headline"]["total_flagged_p_lt_01"])
+    else:
+        print("WARN: market_microstructure_latest.json not found; cards will use Polymarket-wide annotations only.")
+        micro_by_id = {}
+        n_flagged_universe = pii["headline"]["total_flagged_p_lt_01"]
+
+    # Preserve hand-edited news_angle / research_link / research_label
     existing_path = DATA_OUT / "briefings_latest.json"
-    existing_overrides: dict[str, dict] = {}
+    overrides: dict[str, dict] = {}
     if existing_path.exists():
         try:
             old = json.loads(existing_path.read_text(encoding="utf-8"))
             for b in old.get("briefings", []):
-                existing_overrides[b["market_id"]] = {
+                overrides[b["market_id"]] = {
                     "news_angle": b.get("news_angle", ""),
                     "research_link": b.get("research_link", "/research"),
                     "research_label": b.get("research_label", "Research"),
@@ -117,12 +123,12 @@ def main() -> None:
         except Exception:
             pass
 
-    bot_share = activity["by_type_share"]["bot"]
+    baseline_bot = activity["by_type_share"]["bot"]
     briefings = []
     for m in top["markets"][:6]:
         mid = str(m["market_id"])
         cat = m.get("category") or CATEGORY_FALLBACK
-        ovr = existing_overrides.get(mid, {})
+        ovr = overrides.get(mid, {})
         briefings.append({
             "rank": m["rank"],
             "category": cat,
@@ -131,7 +137,7 @@ def main() -> None:
             "market_url": _market_url(mid, m.get("question")),
             "volume_usd": m["usd_volume"],
             "n_trades": m["n_trades"],
-            "annotations": _annotations(m, bot_share, pii),
+            "annotations": _annotations(m, micro_by_id.get(mid), baseline_bot, n_flagged_universe),
             "news_angle": ovr.get("news_angle", "(EDITORIAL: 1-2 sentences on the news context here)"),
             "research_link": ovr.get("research_link", "/research"),
             "research_label": ovr.get("research_label", "Research"),
@@ -142,18 +148,19 @@ def main() -> None:
         "generated_at": utc_now(),
         "lede": (
             f"Top {len(briefings)} markets by USD volume from the week of {top['as_of_week']}, "
-            "with microstructure context from the DV-PMI weekly indices."
+            "annotated with per-market microstructure from the DV-PMI weekly indices."
         ),
         "briefings": briefings,
         "global_context": {
-            "polymarket_wide_bot_share": bot_share,
+            "polymarket_wide_bot_share": baseline_bot,
             "polymarket_wide_volume_usd": activity["total_usd_volume"],
             "polymarket_wide_trades": activity["total_trades"],
             "calibration_alpha": calib["prelec_alpha"],
             "calibration_r2": calib["prelec_r2"],
         },
         "notes": (
-            "Per-market microstructure annotations draw on the DV-PMI weekly indices. "
+            "Per-market microstructure annotations come from aggregate_market_microstructure.py "
+            "(per-market bot share, flagged-wallet activity, average entry price by wallet type). "
             "News-angle text is editorial. Briefings are a dashboard product, not investment advice."
         ),
     }
