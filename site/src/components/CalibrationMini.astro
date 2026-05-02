@@ -1,0 +1,54 @@
+---
+import calib from "../../public/data/calibration_latest.json";
+
+const W = 360;
+const H = 280;
+const M = 38;
+
+const x = (v: number) => M + v * (W - M - 14);
+const y = (v: number) => M + (1 - v) * (H - M - 24);
+
+type Bin = { price_bin_center: number; realized_win_rate: number; n_trades: number };
+type Fit = { price: number; fit: number };
+const bins: Bin[] = calib.bins;
+const fit: Fit[] = calib.fit_curve;
+
+const fitPath = fit.map((p, i) => `${i === 0 ? "M" : "L"} ${x(p.price).toFixed(1)} ${y(p.fit).toFixed(1)}`).join(" ");
+const maxN = Math.max(...bins.map(b => b.n_trades));
+---
+<figure class="calib-mini">
+  <figcaption class="cm-caption">
+    <span class="cm-title">How human traders price uncertainty</span>
+    <span class="cm-sub">
+      Blue dots: realized win rates by market price. Diagonal: rational pricing.
+      Curve: best-fit Prelec weighting (α = {calib.prelec_alpha.toFixed(3)}, R² = {calib.prelec_r2.toFixed(3)}).
+    </span>
+  </figcaption>
+  <svg viewBox={`0 0 ${W} ${H}`} class="cm-svg" aria-label="Calibration curve">
+    {/* axis grid */}
+    {[0, 0.25, 0.5, 0.75, 1].map(v => (
+      <g>
+        <line x1={M} x2={W - 14} y1={y(v)} y2={y(v)} class="cm-grid" />
+        <line y1={M} y2={H - 24} x1={x(v)} x2={x(v)} class="cm-grid" />
+        <text x={M - 6} y={y(v) + 3} class="cm-axis" text-anchor="end">{v.toFixed(2)}</text>
+        <text x={x(v)} y={H - 8} class="cm-axis" text-anchor="middle">{v.toFixed(2)}</text>
+      </g>
+    ))}
+    {/* y=x rational reference */}
+    <line x1={x(0)} y1={y(0)} x2={x(1)} y2={y(1)} class="cm-rational" stroke-dasharray="3 3" />
+    {/* Prelec fit */}
+    <path d={fitPath} class="cm-fit" />
+    {/* bin scatter, dot size proportional to sample */}
+    {bins.map(b => (
+      <circle
+        cx={x(b.price_bin_center)}
+        cy={y(b.realized_win_rate)}
+        r={2 + 4 * Math.sqrt(b.n_trades / maxN)}
+        class="cm-dot"
+      />
+    ))}
+    {/* axis labels */}
+    <text x={W / 2} y={H - 0} class="cm-axislabel" text-anchor="middle">Market price</text>
+    <text x={6} y={H / 2} class="cm-axislabel" text-anchor="middle" transform={`rotate(-90, 6, ${H / 2})`}>Realized win rate</text>
+  </svg>
+</figure>

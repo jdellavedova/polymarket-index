@@ -952,6 +952,97 @@ h1.hero-thesis {
   .hero-lede { font-size: 16px; }
 }
 
+/* ===== Inline charts on the homepage ===== */
+.botshare-chart {
+  margin: 22px 0 10px;
+  padding: 16px 14px 8px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.bsc-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 6px;
+}
+.bsc-title {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+.bsc-as-of {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--text);
+}
+.bsc-svg { width: 100%; height: auto; display: block; }
+.bsc-grid { stroke: var(--border); stroke-width: 1; }
+.bsc-axis {
+  font-family: var(--sans);
+  font-size: 10px;
+  fill: var(--muted);
+}
+.bsc-area { fill: var(--immaculata); fill-opacity: 0.12; stroke: none; }
+.bsc-line { fill: none; stroke: var(--founders); stroke-width: 1.6; }
+.bsc-dot { fill: var(--founders); stroke: var(--bg-soft); stroke-width: 2; }
+.bsc-endlabel {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  fill: var(--text);
+}
+
+.calib-mini {
+  margin: 18px 0 12px;
+  padding: 14px 12px 10px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  max-width: 380px;
+}
+.cm-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+.cm-title {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+.cm-sub {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.cm-svg { width: 100%; height: auto; display: block; }
+.cm-grid { stroke: var(--border); stroke-width: 1; opacity: 0.6; }
+.cm-axis {
+  font-family: var(--sans);
+  font-size: 9px;
+  fill: var(--muted);
+}
+.cm-axislabel {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  fill: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.cm-rational { stroke: var(--muted); stroke-width: 1; opacity: 0.5; }
+.cm-fit { fill: none; stroke: var(--founders); stroke-width: 1.6; }
+.cm-dot { fill: var(--immaculata); fill-opacity: 0.85; }
+
 /* ===== Briefings page ===== */
 .briefing-summary {
   display: grid;

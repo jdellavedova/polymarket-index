@@ -2,6 +2,8 @@
 import Base from "../layouts/Base.astro";
 import ThisWeek from "../components/ThisWeek.astro";
 import KpiTiles from "../components/KpiTiles.astro";
+import BotShareChart from "../components/BotShareChart.astro";
+import CalibrationMini from "../components/CalibrationMini.astro";
 import EmailSignup from "../components/EmailSignup.astro";
 
 import pwi from "../../public/data/pwi_latest.json";
@@ -138,6 +140,8 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
 
   <KpiTiles />
 
+  <BotShareChart />
+
   <section class="audience">
     <h2 class="audience-h">Built for three audiences</h2>
     <div class="audience-grid">
@@ -213,31 +217,30 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
     </p>
   </details>
 
-  <h3>Most popular markets by volume</h3>
-  <p class="muted">
-    Top 5 resolved-trade markets by USD volume in the week of {topMarkets.as_of_week}.
-  </p>
-  <table class="snapshot">
-    <tr>
-      <th style="width:32px;">#</th>
-      <th>Market</th>
-      <th style="width:80px;">Category</th>
-      <th style="text-align:right; width:110px;">USD volume</th>
-      <th style="text-align:right; width:90px;">Trades</th>
-    </tr>
-    {topMarkets.markets.map((m) => (
+  <details class="section-fineprint">
+    <summary>Most popular markets this week (top 5 by USD volume)</summary>
+    <table class="snapshot" style="margin-top:8px;">
       <tr>
-        <td class="mono">{m.rank}</td>
-        <td>{m.question ?? <span class="muted">(market #{m.market_id}, not in static metadata)</span>}</td>
-        <td class="muted">{m.category ?? "n/a"}</td>
-        <td class="mono" style="text-align:right;">{usdCompact(m.usd_volume)}</td>
-        <td class="mono" style="text-align:right;">{m.n_trades.toLocaleString()}</td>
+        <th style="width:32px;">#</th>
+        <th>Market</th>
+        <th style="width:80px;">Category</th>
+        <th style="text-align:right; width:110px;">USD volume</th>
+        <th style="text-align:right; width:90px;">Trades</th>
       </tr>
-    ))}
-  </table>
-  <p class="muted" style="font-size:14px;">
-    Volume is the sum of <code>usdc_amount</code> across resolved trades. Market names come from a static metadata snapshot; markets created after the snapshot appear with IDs only.
-  </p>
+      {topMarkets.markets.map((m) => (
+        <tr>
+          <td class="mono">{m.rank}</td>
+          <td>{m.question ?? <span class="muted">(market #{m.market_id}, not in static metadata)</span>}</td>
+          <td class="muted">{m.category ?? "n/a"}</td>
+          <td class="mono" style="text-align:right;">{usdCompact(m.usd_volume)}</td>
+          <td class="mono" style="text-align:right;">{m.n_trades.toLocaleString()}</td>
+        </tr>
+      ))}
+    </table>
+    <p class="muted" style="font-size:13px;">
+      For per-market microstructure context (live odds, depth, execution gap), see the <a href="/briefings">Briefings page</a>.
+    </p>
+  </details>
 
   <h2>Who wins and who pays <span class="h2-note">(algorithmic wallets vs humans)</span></h2>
   <p class="section-lead">
@@ -278,15 +281,17 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
     Directional + execution = total ROI (an algebraic identity). For trader types with fewer than 5,000 weekly participations (typically casual and one-shot), the component decomposition is dominated by individual-trade VWAP-benchmark noise; we suppress those components and report only the total. The total P&amp;L and ROI are still meaningful at any sample size.
   </p>
 
-  <h3>Algorithmic vs retail execution edge (this week)</h3>
-  <table class="snapshot">
-    <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
-    <tr>
-      <td>Algorithmic vs retail execution edge</td>
-      <td class="mono">{fmt(execution.value, 3)} {arrow(execution.z52w)}</td>
-      <td class="muted">How much better algorithmic wallets are at timing entries vs active retail (z-score vs last year: {signed(execution.z52w)})</td>
-    </tr>
-  </table>
+  <details class="section-fineprint">
+    <summary>Algorithmic vs retail execution edge (this week)</summary>
+    <table class="snapshot" style="margin-top:8px;">
+      <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
+      <tr>
+        <td>Algorithmic vs retail execution edge</td>
+        <td class="mono">{fmt(execution.value, 3)} {arrow(execution.z52w)}</td>
+        <td class="muted">How much better algorithmic wallets are at timing entries vs active retail (z-score vs last year: {signed(execution.z52w)})</td>
+      </tr>
+    </table>
+  </details>
 
   <h2>Where private information shows up <span class="h2-note">(insider-trading signal)</span></h2>
   <p class="section-lead">
@@ -337,6 +342,8 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
   <p class="section-lead">
     Tversky and Kahneman (1992) showed that people overweight rare events and underweight common ones. We measure the same distortion week by week from realized win rates of non-bot Polymarket trades. Source: <a href="/research">Della Vedova and Grant (2026, in progress), &ldquo;Probability Weighting from Prediction Markets.&rdquo;</a>
   </p>
+
+  <CalibrationMini />
   <table class="snapshot">
     <tr><th>Metric</th><th>Value</th><th>What it says</th></tr>
     <tr>
