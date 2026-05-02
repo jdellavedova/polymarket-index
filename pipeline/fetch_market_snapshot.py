@@ -122,6 +122,8 @@ def fetch_one(market_id: str) -> dict | None:
         "active": g.get("active"),
         "closed": g.get("closed"),
         "volume_total_num": float(g.get("volumeNum") or g.get("volume") or 0) if (g.get("volumeNum") or g.get("volume")) else None,
+        "volume_24hr": float(g.get("volume24hr")) if g.get("volume24hr") else None,
+        "end_date_iso": g.get("endDateIso") or g.get("endDate"),
         "fetched_at": utc_now(),
     }
 

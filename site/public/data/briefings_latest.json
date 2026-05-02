@@ -1,6 +1,6 @@
 {
   "as_of_week": "2026-W18",
-  "generated_at": "2026-05-02T16:07:44+00:00",
+  "generated_at": "2026-05-02T16:13:28+00:00",
   "lede": "Top 5 markets by USD volume from the week of 2026-W18, annotated with per-market microstructure from the DV-PMI weekly indices.",
   "briefings": [
     {
@@ -73,8 +73,18 @@
           "tone": "flat"
         },
         {
+          "label": "24h volume (Gamma)",
+          "value": "$5.8M",
+          "tone": "flat"
+        },
+        {
+          "label": "Time to resolution",
+          "value": "60 days (2026-07-01)",
+          "tone": "flat"
+        },
+        {
           "label": "Top of book (YES)",
-          "value": "Bid 0.02 ($36) / Ask 0.02 ($22)",
+          "value": "Bid 0.02 ($36) / Ask 0.02 ($23)",
           "tone": "flat"
         },
         {
@@ -84,7 +94,7 @@
         },
         {
           "label": "Depth within \u00b15% of mid",
-          "value": "$36 bid  /  $22 ask",
+          "value": "$36 bid  /  $23 ask",
           "tone": "flat"
         },
         {
@@ -107,8 +117,8 @@
         "bids": [
           {
             "price": 0.019,
-            "size": 1887.13,
-            "dollars": 35.855470000000004
+            "size": 1887.0,
+            "dollars": 35.853
           },
           {
             "price": 0.018,
@@ -134,13 +144,13 @@
         "asks": [
           {
             "price": 0.02,
-            "size": 1075.58,
-            "dollars": 21.511599999999998
+            "size": 1170.19,
+            "dollars": 23.4038
           },
           {
             "price": 0.023,
-            "size": 173.37,
-            "dollars": 3.98751
+            "size": 208.37,
+            "dollars": 4.79251
           },
           {
             "price": 0.024,
@@ -233,8 +243,18 @@
           "tone": "flat"
         },
         {
+          "label": "24h volume (Gamma)",
+          "value": "$483K",
+          "tone": "flat"
+        },
+        {
+          "label": "Time to resolution",
+          "value": "243 days (2026-12-31)",
+          "tone": "flat"
+        },
+        {
           "label": "Top of book (YES)",
-          "value": "Bid 0.29 ($46,625) / Ask 0.30 ($38,010)",
+          "value": "Bid 0.29 ($43,610) / Ask 0.30 ($39,278)",
           "tone": "flat"
         },
         {
@@ -244,7 +264,7 @@
         },
         {
           "label": "Depth within \u00b15% of mid",
-          "value": "$46,625 bid  /  $38,010 ask",
+          "value": "$43,610 bid  /  $39,278 ask",
           "tone": "flat"
         },
         {
@@ -267,23 +287,23 @@
         "bids": [
           {
             "price": 0.29,
-            "size": 160774.7,
-            "dollars": 46624.663
+            "size": 150379.13,
+            "dollars": 43609.9477
           },
           {
             "price": 0.28,
-            "size": 152774.98,
-            "dollars": 42776.99440000001
+            "size": 164354.72,
+            "dollars": 46019.3216
           },
           {
             "price": 0.27,
-            "size": 399953.96,
-            "dollars": 107987.56920000001
+            "size": 400953.96,
+            "dollars": 108257.56920000001
           },
           {
             "price": 0.26,
-            "size": 3243.32,
-            "dollars": 843.2632000000001
+            "size": 2428.32,
+            "dollars": 631.3632000000001
           },
           {
             "price": 0.25,
@@ -294,28 +314,28 @@
         "asks": [
           {
             "price": 0.3,
-            "size": 126699.47,
-            "dollars": 38009.841
+            "size": 130928.19,
+            "dollars": 39278.457
           },
           {
             "price": 0.31,
-            "size": 157426.45,
-            "dollars": 48802.1995
+            "size": 163889.46,
+            "dollars": 50805.732599999996
           },
           {
             "price": 0.32,
-            "size": 416437.47,
-            "dollars": 133259.99039999998
+            "size": 413933.18,
+            "dollars": 132458.6176
           },
           {
             "price": 0.33,
-            "size": 32518.25,
-            "dollars": 10731.022500000001
+            "size": 31823.63,
+            "dollars": 10501.797900000001
           },
           {
             "price": 0.34,
-            "size": 20964.98,
-            "dollars": 7128.0932
+            "size": 20982.98,
+            "dollars": 7134.2132
           }
         ]
       },
@@ -348,8 +368,18 @@
           "tone": "flat"
         },
         {
+          "label": "24h volume (Gamma)",
+          "value": "$9K",
+          "tone": "flat"
+        },
+        {
+          "label": "Time to resolution",
+          "value": "36 days (2026-06-07)",
+          "tone": "flat"
+        },
+        {
           "label": "Top of book (YES)",
-          "value": "Bid 0.32 ($418) / Ask 0.32 ($6)",
+          "value": "Bid 0.32 ($434) / Ask 0.32 ($6)",
           "tone": "flat"
         },
         {
@@ -359,7 +389,7 @@
         },
         {
           "label": "Depth within \u00b15% of mid",
-          "value": "$16,533 bid  /  $14,006 ask",
+          "value": "$13,928 bid  /  $16,523 ask",
           "tone": "flat"
         },
         {
@@ -382,8 +412,8 @@
         "bids": [
           {
             "price": 0.315,
-            "size": 1327.22,
-            "dollars": 418.0743
+            "size": 1377.22,
+            "dollars": 433.8243
           },
           {
             "price": 0.314,
@@ -414,8 +444,8 @@
           },
           {
             "price": 0.317,
-            "size": 4544.36,
-            "dollars": 1440.5621199999998
+            "size": 4594.36,
+            "dollars": 1456.41212
           },
           {
             "price": 0.318,
@@ -424,8 +454,8 @@
           },
           {
             "price": 0.319,
-            "size": 180.0,
-            "dollars": 57.42
+            "size": 276.0,
+            "dollars": 88.044
           },
           {
             "price": 0.32,

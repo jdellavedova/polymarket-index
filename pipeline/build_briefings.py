@@ -65,6 +65,32 @@ def _annotations(market: dict, micro: dict | None, snap: dict | None, baseline_b
     a.append({"label": "Weekly volume", "value": _money(vol), "tone": "flat"})
     a.append({"label": "Trades", "value": f"{n:,}", "tone": "flat"})
 
+    # 24h volume (Gamma) gives a more recent activity pulse than the weekly bucket.
+    if snap and snap.get("volume_24hr") is not None:
+        a.append({"label": "24h volume (Gamma)", "value": _money(snap["volume_24hr"]), "tone": "flat"})
+
+    # Time to resolution: days until end_date_iso. Sub-7-day markets get a warn
+    # tone (close to settling, prices may be locked in by news rather than markets).
+    if snap and snap.get("end_date_iso"):
+        try:
+            end_iso = snap["end_date_iso"][:10]  # YYYY-MM-DD
+            from datetime import date as _date
+            end = _date.fromisoformat(end_iso)
+            days_left = (end - _date.today()).days
+            if days_left >= 0:
+                if days_left <= 7:
+                    val = f"{days_left} day{'s' if days_left != 1 else ''} ({end_iso})"
+                    tone = "warn"
+                elif days_left <= 30:
+                    val = f"{days_left} days ({end_iso})"
+                    tone = "flat"
+                else:
+                    val = f"{days_left} days ({end_iso})"
+                    tone = "flat"
+                a.append({"label": "Time to resolution", "value": val, "tone": tone})
+        except Exception:
+            pass
+
     # Top-of-book + spread + depth (only if we have a live YES book)
     if snap:
         yb = snap.get("yes_book") or {}
