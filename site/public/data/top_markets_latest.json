@@ -2,14 +2,14 @@
   "index_name": "Top Markets by Weekly Volume",
   "short_name": "TopMarkets",
   "as_of_week": "2026-W18",
-  "top_k": 5,
+  "top_k": 30,
   "markets": [
     {
       "rank": 1,
       "market_id": "669662",
       "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
       "category": "Macro",
-      "usd_volume": 5766229.069609998,
+      "usd_volume": 5766229.06961,
       "n_trades": 6839
     },
     {
@@ -17,7 +17,7 @@
       "market_id": "573655",
       "question": "Will Bitcoin hit $150k by June 30, 2026?",
       "category": "Crypto",
-      "usd_volume": 3164181.919562,
+      "usd_volume": 3164181.919562003,
       "n_trades": 2087
     },
     {
@@ -25,7 +25,7 @@
       "market_id": "669660",
       "question": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
       "category": "Macro",
-      "usd_volume": 2067330.3182060001,
+      "usd_volume": 2067330.318206,
       "n_trades": 3204
     },
     {
@@ -33,7 +33,7 @@
       "market_id": "665374",
       "question": "Will the U.S. invade Iran before 2027?",
       "category": "Geopolitics",
-      "usd_volume": 1967006.0357589957,
+      "usd_volume": 1967006.0357590003,
       "n_trades": 13509
     },
     {
@@ -41,12 +41,211 @@
       "market_id": "947289",
       "question": "Will Roberto S\u00e1nchez Palomino win the 2026 Peruvian presidential election?",
       "category": "Politics",
-      "usd_volume": 1710408.3178440002,
+      "usd_volume": 1710408.3178439992,
       "n_trades": 22231
+    },
+    {
+      "rank": 6,
+      "market_id": "553863",
+      "question": "Will the Los Angeles Lakers win the 2026 NBA Finals?",
+      "category": "Sports",
+      "usd_volume": 1421435.5612259987,
+      "n_trades": 25168
+    },
+    {
+      "rank": 7,
+      "market_id": "553866",
+      "question": "Will the San Antonio Spurs win the 2026 NBA Finals?",
+      "category": "Sports",
+      "usd_volume": 1302546.007910001,
+      "n_trades": 25911
+    },
+    {
+      "rank": 8,
+      "market_id": "1087519",
+      "question": "Will Lorenzo Musetti win the 2026 Men's French Open?",
+      "category": "Other",
+      "usd_volume": 1265867.0992009996,
+      "n_trades": 20474
+    },
+    {
+      "rank": 9,
+      "market_id": "553862",
+      "question": "Will the Boston Celtics win the 2026 NBA Finals?",
+      "category": "Sports",
+      "usd_volume": 1217574.6035790006,
+      "n_trades": 26441
+    },
+    {
+      "rank": 10,
+      "market_id": "553859",
+      "question": "Will the Minnesota Timberwolves win the 2026 NBA Finals?",
+      "category": "Sports",
+      "usd_volume": 995252.9867079998,
+      "n_trades": 26399
+    },
+    {
+      "rank": 11,
+      "market_id": "567621",
+      "question": "Will China invade Taiwan by end of 2026?",
+      "category": "Geopolitics",
+      "usd_volume": 988500.1957729998,
+      "n_trades": 14046
+    },
+    {
+      "rank": 12,
+      "market_id": "958443",
+      "question": "Will the Iranian regime fall by June 30?",
+      "category": "Other",
+      "usd_volume": 978974.9893480017,
+      "n_trades": 2939
+    },
+    {
+      "rank": 13,
+      "market_id": "553871",
+      "question": "Will the Detroit Pistons win the 2026 NBA Finals?",
+      "category": "Sports",
+      "usd_volume": 962090.0605490007,
+      "n_trades": 23534
+    },
+    {
+      "rank": 14,
+      "market_id": "1087516",
+      "question": "Will Joao Fonseca win the 2026 Men's French Open?",
+      "category": "Other",
+      "usd_volume": 943826.5040050002,
+      "n_trades": 13676
+    },
+    {
+      "rank": 15,
+      "market_id": "566146",
+      "question": "Will Atletico Madrid win the 2025\u201326 Champions League?",
+      "category": "Sports",
+      "usd_volume": 908703.4067890004,
+      "n_trades": 16459
+    },
+    {
+      "rank": 16,
+      "market_id": "553857",
+      "question": "Will the Cleveland Cavaliers win the 2026 NBA Finals?",
+      "category": "Sports",
+      "usd_volume": 871703.9531360012,
+      "n_trades": 20259
+    },
+    {
+      "rank": 17,
+      "market_id": "567561",
+      "question": "Will the next Prime Minister of Hungary be P\u00e9ter Magyar?",
+      "category": "Politics",
+      "usd_volume": 838291.5663999995,
+      "n_trades": 2359
+    },
+    {
+      "rank": 18,
+      "market_id": "947268",
+      "question": "Will Rafael L\u00f3pez Aliaga win the 2026 Peruvian presidential election?",
+      "category": "Politics",
+      "usd_volume": 808189.7123059991,
+      "n_trades": 13012
+    },
+    {
+      "rank": 19,
+      "market_id": "558936",
+      "question": "Will France win the 2026 FIFA World Cup?",
+      "category": "Sports",
+      "usd_volume": 723891.1421620012,
+      "n_trades": 13177
+    },
+    {
+      "rank": 20,
+      "market_id": "558940",
+      "question": "Will Portugal win the 2026 FIFA World Cup?",
+      "category": "Sports",
+      "usd_volume": 693192.105035,
+      "n_trades": 12526
+    },
+    {
+      "rank": 21,
+      "market_id": "558937",
+      "question": "Will Brazil win the 2026 FIFA World Cup?",
+      "category": "Sports",
+      "usd_volume": 659078.5120740008,
+      "n_trades": 11588
+    },
+    {
+      "rank": 22,
+      "market_id": "559661",
+      "question": "Will Jon Ossoff win the 2028 Democratic presidential nomination?",
+      "category": "Politics",
+      "usd_volume": 644170.4852830005,
+      "n_trades": 10259
+    },
+    {
+      "rank": 23,
+      "market_id": "553858",
+      "question": "Will the New York Knicks win the 2026 NBA Finals?",
+      "category": "Sports",
+      "usd_volume": 581619.8324010004,
+      "n_trades": 14925
+    },
+    {
+      "rank": 24,
+      "market_id": "553860",
+      "question": "Will the Houston Rockets win the 2026 NBA Finals?",
+      "category": "Sports",
+      "usd_volume": 553035.7421819997,
+      "n_trades": 17246
+    },
+    {
+      "rank": 25,
+      "market_id": "951182",
+      "question": "Will the All India Trinamool Congress (AITC) win the most seats in the 2026 West Bengal Legislative Assembly election?",
+      "category": "Politics",
+      "usd_volume": 545257.5429680005,
+      "n_trades": 11395
+    },
+    {
+      "rank": 26,
+      "market_id": "553856",
+      "question": "Will the Oklahoma City Thunder win the 2026 NBA Finals?",
+      "category": "Sports",
+      "usd_volume": 488622.86452700023,
+      "n_trades": 7113
+    },
+    {
+      "rank": 27,
+      "market_id": "703257",
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "category": "Other",
+      "usd_volume": 478372.08152,
+      "n_trades": 2444
+    },
+    {
+      "rank": 28,
+      "market_id": "965261",
+      "question": "MegaETH market cap (FDV) >$1B one day after launch?",
+      "category": "Other",
+      "usd_volume": 460330.34925799986,
+      "n_trades": 1767
+    },
+    {
+      "rank": 29,
+      "market_id": "553865",
+      "question": "Will the Denver Nuggets win the 2026 NBA Finals?",
+      "category": "Sports",
+      "usd_volume": 454408.58790899965,
+      "n_trades": 4774
+    },
+    {
+      "rank": 30,
+      "market_id": "558934",
+      "question": "Will Spain win the 2026 FIFA World Cup?",
+      "category": "Sports",
+      "usd_volume": 406534.556055,
+      "n_trades": 7320
     }
   ],
-  "generated_at": "2026-04-30T18:39:04.273807+00:00",
+  "generated_at": "2026-05-02T16:35:45+00:00",
   "source": "J:/Research/10. Prediction/data/blockchain/processed_trades.csv",
-  "notes": "Top 5 resolved-trade markets by USD volume in the most recent complete week. Market questions come from polymarket_markets.csv (static snapshot); new markets not in that file will appear with question=null.",
-  "categorization_note": "Categories from polymarket_markets.csv + Gamma API; null entries backfilled by heuristic keyword classifier in pipeline/categorize.py."
+  "notes": "Top 5 resolved-trade markets by USD volume in the most recent complete week. Market questions come from polymarket_markets.csv (static snapshot); new markets not in that file will appear with question=null."
 }

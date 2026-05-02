@@ -1,7 +1,7 @@
 {
   "as_of_week": "2026-W18",
-  "generated_at": "2026-05-02T16:13:28+00:00",
-  "lede": "Top 5 markets by USD volume from the week of 2026-W18, annotated with per-market microstructure from the DV-PMI weekly indices.",
+  "generated_at": "2026-05-02T16:40:31+00:00",
+  "lede": "Top 6 markets by USD volume from the week of 2026-W18, annotated with per-market microstructure from the DV-PMI weekly indices.",
   "briefings": [
     {
       "rank": 1,
@@ -9,7 +9,7 @@
       "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
       "market_id": "669662",
       "market_url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-april-2026-meeting",
-      "volume_usd": 5766229.069609998,
+      "volume_usd": 5766229.06961,
       "n_trades": 6839,
       "annotations": [
         {
@@ -39,7 +39,7 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.03\u00a2 per share",
+          "value": "-0.03¢ per share",
           "tone": "flat"
         }
       ],
@@ -54,7 +54,7 @@
       "question": "Will Bitcoin hit $150k by June 30, 2026?",
       "market_id": "573655",
       "market_url": "https://polymarket.com/event/will-bitcoin-hit-150k-by-june-30-2026",
-      "volume_usd": 3164181.919562,
+      "volume_usd": 3164181.919562003,
       "n_trades": 2087,
       "annotations": [
         {
@@ -84,17 +84,17 @@
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.02 ($36) / Ask 0.02 ($23)",
+          "value": "Bid 0.02 ($35) / Ask 0.02 ($13)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1\u00a2 (513 bps)",
+          "value": "0.1¢ (513 bps)",
           "tone": "alert"
         },
         {
-          "label": "Depth within \u00b15% of mid",
-          "value": "$36 bid  /  $23 ask",
+          "label": "Depth within ±5% of mid",
+          "value": "$35 bid  /  $13 ask",
           "tone": "flat"
         },
         {
@@ -109,7 +109,7 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+0.06\u00a2 per share",
+          "value": "+0.06¢ per share",
           "tone": "flat"
         }
       ],
@@ -117,40 +117,40 @@
         "bids": [
           {
             "price": 0.019,
-            "size": 1887.0,
-            "dollars": 35.853
+            "size": 1867.03,
+            "dollars": 35.473569999999995
           },
           {
             "price": 0.018,
-            "size": 4915.09,
-            "dollars": 88.47162
+            "size": 5015.09,
+            "dollars": 90.27162
           },
           {
             "price": 0.017,
-            "size": 7776.87,
-            "dollars": 132.20679
+            "size": 7876.87,
+            "dollars": 133.90679
           },
           {
             "price": 0.016,
-            "size": 3453.32,
-            "dollars": 55.25312
+            "size": 3553.32,
+            "dollars": 56.853120000000004
           },
           {
             "price": 0.015,
-            "size": 874.79,
-            "dollars": 13.121849999999998
+            "size": 974.79,
+            "dollars": 14.621849999999998
           }
         ],
         "asks": [
           {
             "price": 0.02,
-            "size": 1170.19,
-            "dollars": 23.4038
+            "size": 633.32,
+            "dollars": 12.666400000000001
           },
           {
             "price": 0.023,
-            "size": 208.37,
-            "dollars": 4.79251
+            "size": 98.0,
+            "dollars": 2.254
           },
           {
             "price": 0.024,
@@ -179,7 +179,7 @@
       "question": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
       "market_id": "669660",
       "market_url": "https://polymarket.com/event/will-the-fed-decrease-interest-rates-by-50+-bps-after-the-april-2026-meeting",
-      "volume_usd": 2067330.3182060001,
+      "volume_usd": 2067330.318206,
       "n_trades": 3204,
       "annotations": [
         {
@@ -209,7 +209,7 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+0.06\u00a2 per share",
+          "value": "+0.06¢ per share",
           "tone": "flat"
         }
       ],
@@ -224,7 +224,7 @@
       "question": "Will the U.S. invade Iran before 2027?",
       "market_id": "665374",
       "market_url": "https://polymarket.com/event/will-the-us-invade-iran-before-2027",
-      "volume_usd": 1967006.0357589957,
+      "volume_usd": 1967006.0357590003,
       "n_trades": 13509,
       "annotations": [
         {
@@ -244,7 +244,7 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$483K",
+          "value": "$474K",
           "tone": "flat"
         },
         {
@@ -254,17 +254,17 @@
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.29 ($43,610) / Ask 0.30 ($39,278)",
+          "value": "Bid 0.29 ($44,996) / Ask 0.30 ($38,691)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "1.0\u00a2 (339 bps)",
+          "value": "1.0¢ (339 bps)",
           "tone": "warn"
         },
         {
-          "label": "Depth within \u00b15% of mid",
-          "value": "$43,610 bid  /  $39,278 ask",
+          "label": "Depth within ±5% of mid",
+          "value": "$44,996 bid  /  $38,691 ask",
           "tone": "flat"
         },
         {
@@ -279,7 +279,7 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+0.12\u00a2 per share",
+          "value": "+0.12¢ per share",
           "tone": "flat"
         }
       ],
@@ -287,55 +287,55 @@
         "bids": [
           {
             "price": 0.29,
-            "size": 150379.13,
-            "dollars": 43609.9477
+            "size": 155158.33,
+            "dollars": 44995.91569999999
           },
           {
             "price": 0.28,
-            "size": 164354.72,
-            "dollars": 46019.3216
+            "size": 196570.72,
+            "dollars": 55039.801600000006
           },
           {
             "price": 0.27,
-            "size": 400953.96,
-            "dollars": 108257.56920000001
+            "size": 403106.24,
+            "dollars": 108838.6848
           },
           {
             "price": 0.26,
-            "size": 2428.32,
-            "dollars": 631.3632000000001
+            "size": 1964.08,
+            "dollars": 510.6608
           },
           {
             "price": 0.25,
-            "size": 6026.03,
-            "dollars": 1506.5075
+            "size": 6353.84,
+            "dollars": 1588.46
           }
         ],
         "asks": [
           {
             "price": 0.3,
-            "size": 130928.19,
-            "dollars": 39278.457
+            "size": 128968.51,
+            "dollars": 38690.553
           },
           {
             "price": 0.31,
-            "size": 163889.46,
-            "dollars": 50805.732599999996
+            "size": 162019.09,
+            "dollars": 50225.9179
           },
           {
             "price": 0.32,
-            "size": 413933.18,
-            "dollars": 132458.6176
+            "size": 410854.11,
+            "dollars": 131473.3152
           },
           {
             "price": 0.33,
-            "size": 31823.63,
-            "dollars": 10501.797900000001
+            "size": 27912.25,
+            "dollars": 9211.0425
           },
           {
             "price": 0.34,
-            "size": 20982.98,
-            "dollars": 7134.2132
+            "size": 20969.98,
+            "dollars": 7129.7932
           }
         ]
       },
@@ -346,10 +346,10 @@
     {
       "rank": 5,
       "category": "Politics",
-      "question": "Will Roberto S\u00e1nchez Palomino win the 2026 Peruvian presidential election?",
+      "question": "Will Roberto Sánchez Palomino win the 2026 Peruvian presidential election?",
       "market_id": "947289",
-      "market_url": "https://polymarket.com/event/will-roberto-s\u00e1nchez-palomino-win-the-2026-peruvian-presidential-election",
-      "volume_usd": 1710408.3178440002,
+      "market_url": "https://polymarket.com/event/will-roberto-sánchez-palomino-win-the-2026-peruvian-presidential-election",
+      "volume_usd": 1710408.3178439992,
       "n_trades": 22231,
       "annotations": [
         {
@@ -379,17 +379,17 @@
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.32 ($434) / Ask 0.32 ($6)",
+          "value": "Bid 0.32 ($409) / Ask 0.32 ($47)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1\u00a2 (32 bps)",
+          "value": "0.1¢ (32 bps)",
           "tone": "flat"
         },
         {
-          "label": "Depth within \u00b15% of mid",
-          "value": "$13,928 bid  /  $16,523 ask",
+          "label": "Depth within ±5% of mid",
+          "value": "$14,920 bid  /  $15,461 ask",
           "tone": "flat"
         },
         {
@@ -404,7 +404,7 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+0.76\u00a2 per share",
+          "value": "+0.76¢ per share",
           "tone": "alert"
         }
       ],
@@ -412,23 +412,23 @@
         "bids": [
           {
             "price": 0.315,
-            "size": 1377.22,
-            "dollars": 433.8243
+            "size": 1297.22,
+            "dollars": 408.6243
           },
           {
             "price": 0.314,
-            "size": 1719.0,
-            "dollars": 539.766
+            "size": 726.0,
+            "dollars": 227.964
           },
           {
             "price": 0.313,
-            "size": 2212.03,
-            "dollars": 692.36539
+            "size": 1070.0,
+            "dollars": 334.91
           },
           {
             "price": 0.312,
-            "size": 2233.54,
-            "dollars": 696.86448
+            "size": 3537.86,
+            "dollars": 1103.81232
           },
           {
             "price": 0.311,
@@ -439,34 +439,159 @@
         "asks": [
           {
             "price": 0.316,
-            "size": 20.0,
-            "dollars": 6.32
+            "size": 150.0,
+            "dollars": 47.4
           },
           {
             "price": 0.317,
-            "size": 4594.36,
-            "dollars": 1456.41212
+            "size": 3561.36,
+            "dollars": 1128.95112
           },
           {
             "price": 0.318,
-            "size": 637.55,
-            "dollars": 202.74089999999998
+            "size": 557.55,
+            "dollars": 177.30089999999998
           },
           {
             "price": 0.319,
-            "size": 276.0,
-            "dollars": 88.044
+            "size": 206.0,
+            "dollars": 65.714
           },
           {
             "price": 0.32,
-            "size": 1702.63,
-            "dollars": 544.8416000000001
+            "size": 1762.21,
+            "dollars": 563.9072
           }
         ]
       },
-      "news_angle": "Highest trade count in the top five and the most retail-engaged market on the dashboard. The 14% algorithmic share is far below the 87% Polymarket-wide baseline; bots are largely absent. Retail traders paid 0.76\u00a2 more per share than the small bot footprint, the visible execution edge.",
+      "news_angle": "Highest trade count in the top five and the most retail-engaged market on the dashboard. The 14% algorithmic share is far below the 87% Polymarket-wide baseline; bots are largely absent. Retail traders paid 0.76¢ more per share than the small bot footprint, the visible execution edge.",
       "research_link": "/research",
       "research_label": "Paper 2: Insider Detection"
+    },
+    {
+      "rank": 6,
+      "category": "Sports",
+      "question": "Will the Los Angeles Lakers win the 2026 NBA Finals?",
+      "market_id": "553863",
+      "market_url": "https://polymarket.com/event/will-the-los-angeles-lakers-win-the-2026-nba-finals",
+      "volume_usd": 1421435.5612259987,
+      "n_trades": 25168,
+      "annotations": [
+        {
+          "label": "Implied probability",
+          "value": "3% YES",
+          "tone": "flat"
+        },
+        {
+          "label": "Weekly volume",
+          "value": "$1.4M",
+          "tone": "flat"
+        },
+        {
+          "label": "Trades",
+          "value": "25,168",
+          "tone": "flat"
+        },
+        {
+          "label": "24h volume (Gamma)",
+          "value": "$257K",
+          "tone": "flat"
+        },
+        {
+          "label": "Time to resolution",
+          "value": "60 days (2026-07-01)",
+          "tone": "flat"
+        },
+        {
+          "label": "Top of book (YES)",
+          "value": "Bid 0.03 ($231) / Ask 0.03 ($15)",
+          "tone": "flat"
+        },
+        {
+          "label": "Spread",
+          "value": "0.1¢ (351 bps)",
+          "tone": "warn"
+        },
+        {
+          "label": "Depth within ±5% of mid",
+          "value": "$231 bid  /  $15 ask",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "43% (vs 87% Polymarket-wide)",
+          "tone": "ok"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "2 of 6,291",
+          "tone": "warn"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "-0.42¢ per share",
+          "tone": "flat"
+        }
+      ],
+      "depth_ladder": {
+        "bids": [
+          {
+            "price": 0.028,
+            "size": 8235.68,
+            "dollars": 230.59904
+          },
+          {
+            "price": 0.027,
+            "size": 70993.78,
+            "dollars": 1916.83206
+          },
+          {
+            "price": 0.026,
+            "size": 40165.42,
+            "dollars": 1044.30092
+          },
+          {
+            "price": 0.025,
+            "size": 4899.19,
+            "dollars": 122.47975
+          },
+          {
+            "price": 0.024,
+            "size": 430.0,
+            "dollars": 10.32
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.029,
+            "size": 504.57,
+            "dollars": 14.632530000000001
+          },
+          {
+            "price": 0.03,
+            "size": 12522.65,
+            "dollars": 375.67949999999996
+          },
+          {
+            "price": 0.031,
+            "size": 669.65,
+            "dollars": 20.759149999999998
+          },
+          {
+            "price": 0.032,
+            "size": 451.65,
+            "dollars": 14.4528
+          },
+          {
+            "price": 0.033,
+            "size": 349.65,
+            "dollars": 11.53845
+          }
+        ]
+      },
+      "news_angle": "The most-traded NBA finals contract on Polymarket this week. Sports markets sit between the heavily algorithmic policy markets and the retail-driven election contracts in microstructure profile.",
+      "research_link": "/research",
+      "research_label": "Research"
     }
   ],
   "global_context": {

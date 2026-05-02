@@ -27,6 +27,16 @@ const microById: Record<string, any> = Object.fromEntries(
   (micro?.markets ?? []).map((m: any) => [String(m.market_id), m])
 );
 
+let snap: { markets: any[] } | null = null;
+try {
+  snap = await import("../../public/data/market_snapshot_latest.json");
+} catch (_) {
+  snap = { markets: [] };
+}
+const snapById: Record<string, any> = Object.fromEntries(
+  (snap?.markets ?? []).map((m: any) => [String(m.market_id), m])
+);
+
 type Market = {
   rank: number;
   market_id: string;
@@ -35,6 +45,8 @@ type Market = {
   usd_volume: number;
   n_trades: number;
   bot_share: number | null;
+  yes_price: number | null;
+  flagged: number | null;
 };
 
 const markets: Market[] = (top.markets as any[]).map(m => ({
@@ -45,6 +57,8 @@ const markets: Market[] = (top.markets as any[]).map(m => ({
   usd_volume: m.usd_volume,
   n_trades: m.n_trades,
   bot_share: microById[String(m.market_id)]?.bot_share_participation ?? null,
+  yes_price: snapById[String(m.market_id)]?.yes_price ?? null,
+  flagged: microById[String(m.market_id)]?.flagged_wallets_active ?? null,
 }));
 
 const W = 880;
@@ -160,11 +174,12 @@ function truncate(s: string | null, max: number): string {
       const innerW = r.w - 12;
       const charsLine = Math.max(4, Math.floor(innerW / 6.2));
       const showQuestion = !tooMini && m.question;
-      const showVol = !tooMini && r.h >= 50;
-      const showBot = !tooMini && r.h >= 70 && m.bot_share != null;
+      const showOdds = !tooMini && r.h >= 48 && m.yes_price != null;
+      const showVol = !tooMini && r.h >= 70;
+      const showBot = !tooMini && r.h >= 92 && m.bot_share != null;
       return (
         <g class="tm-cell">
-          <title>{`${m.question ?? "Market #" + m.market_id}\nVolume: ${fmtVol(m.usd_volume)}\nTrades: ${m.n_trades.toLocaleString()}\nAlgorithmic share: ${m.bot_share != null ? (m.bot_share*100).toFixed(0)+"%" : "n/a"}\nCategory: ${m.category ?? "n/a"}`}</title>
+          <title>{`${m.question ?? "Market #" + m.market_id}\nVolume: ${fmtVol(m.usd_volume)}  ·  Trades: ${m.n_trades.toLocaleString()}\nImplied: ${m.yes_price != null ? (m.yes_price*100).toFixed(0)+"% YES" : "n/a"}\nAlgorithmic share: ${m.bot_share != null ? (m.bot_share*100).toFixed(0)+"%" : "n/a"}\nFlagged wallets: ${m.flagged ?? "n/a"}\nCategory: ${m.category ?? "n/a"}`}</title>
           <rect x={r.x} y={r.y} width={r.w} height={r.h} fill={col} class="tm-rect" />
           {tooMini ? null : (
             <g>
@@ -173,13 +188,18 @@ function truncate(s: string | null, max: number): string {
                   {truncate(m.question, charsLine)}
                 </text>
               )}
+              {showOdds && (
+                <text x={r.x + 6} y={r.y + 34} class="tm-v">
+                  {(m.yes_price! * 100).toFixed(0)}% YES
+                </text>
+              )}
               {showVol && (
-                <text x={r.x + 6} y={r.y + 32} class="tm-v">
-                  {fmtVol(m.usd_volume)}
+                <text x={r.x + 6} y={r.y + 52} class="tm-vol">
+                  {fmtVol(m.usd_volume)} vol
                 </text>
               )}
               {showBot && (
-                <text x={r.x + 6} y={r.y + 48} class="tm-bot">
+                <text x={r.x + 6} y={r.y + 70} class="tm-bot">
                   {(m.bot_share! * 100).toFixed(0)}% algo
                 </text>
               )}

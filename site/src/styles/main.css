@@ -1001,8 +1001,14 @@ h1.hero-thesis {
 }
 .tm-v {
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 600;
   fill: #f3f6fa;
+}
+.tm-vol {
+  font-family: var(--mono);
+  font-size: 11px;
+  fill: rgba(243, 246, 250, 0.85);
 }
 .tm-bot {
   font-family: var(--sans);
