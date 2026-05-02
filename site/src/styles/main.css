@@ -824,3 +824,160 @@ footer.site-foot .disclaimer {
   h1 { font-size: 26px; }
   h2 { font-size: 19px; }
 }
+
+/* ===== Editorial hero (homepage top) ===== */
+.hero {
+  margin: 8px 0 36px;
+  padding: 0;
+}
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--founders);
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+h1.hero-thesis {
+  font-family: var(--serif);
+  font-size: 34px;
+  line-height: 1.18;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 18px;
+  max-width: 30ch;
+  color: var(--text);
+}
+.hero-lede {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text);
+  margin: 0 0 12px;
+  max-width: 62ch;
+}
+.hero-byline {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 22px;
+}
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+.cta {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 9px 16px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--bg-soft);
+  transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+}
+.cta:hover {
+  border-color: var(--founders);
+  background: var(--card);
+  color: var(--link-hover);
+}
+.cta-primary {
+  background: var(--immaculata);
+  border-color: var(--immaculata);
+  color: #fff;
+}
+.cta-primary:hover {
+  background: var(--founders);
+  border-color: var(--founders);
+  color: #0a1420;
+}
+.hero-asof {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--muted);
+  margin: 6px 0 0;
+  padding: 8px 0 0;
+  border-top: 1px solid var(--border);
+}
+
+/* ===== Audience split cards ===== */
+.audience {
+  margin: 32px 0 36px;
+}
+.audience-h {
+  font-size: 18px;
+  margin: 0 0 14px;
+}
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.audience-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px;
+}
+.audience-tag {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--founders);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.audience-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 10px;
+  color: var(--text);
+}
+.audience-link {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+@media (max-width: 720px) {
+  .audience-grid { grid-template-columns: 1fr; }
+  h1.hero-thesis { font-size: 26px; }
+  .hero-lede { font-size: 16px; }
+}
+
+/* ===== Collapsible fineprint (replaces buried prose paragraphs) ===== */
+.section-fineprint {
+  margin: 8px 0 22px;
+  font-size: 14px;
+}
+.section-fineprint summary {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 0;
+  list-style: none;
+  user-select: none;
+}
+.section-fineprint summary::before {
+  content: "▸ ";
+  color: var(--founders);
+  font-size: 11px;
+}
+.section-fineprint[open] summary::before { content: "▾ "; }
+.section-fineprint summary:hover { color: var(--text); }
+.section-fineprint p {
+  color: var(--muted);
+  margin: 8px 0 0;
+  line-height: 1.55;
+  max-width: 70ch;
+}

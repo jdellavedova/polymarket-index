@@ -111,20 +111,55 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
   })
   .filter((r): r is NonNullable<typeof r> => r !== null);
 ---
-<Base title="Della Vedova Prediction Market Indices (DV-PMI)" description="Weekly descriptive, informational, and sentiment metrics from 640M on-chain Polymarket trades.">
-  <h1>Della Vedova Prediction Market Indices</h1>
-  <p class="subtitle">
-    Weekly market-structure intelligence for prediction markets. Who trades, who profits, where the information edge sits, and how crowds price uncertainty. Built from every on-chain Polymarket trade since November 2022 (671&thinsp;million trades and counting).
-  </p>
-  <p class="muted" style="font-size:14px; margin:-12px 0 16px;">
-    <strong>Data current through ISO week {activity.week}</strong> (week starting {activity.as_of}). Profit-split numbers below are for the previous fully-resolved week ({profitSplit.as_of_week}); we wait one extra week for markets to settle before booking P&amp;L.
-  </p>
+<Base title="Della Vedova Prediction Market Indices (DV-PMI)" description="Weekly descriptive, informational, and sentiment metrics from 671M on-chain Polymarket trades.">
+  <section class="hero">
+    <p class="hero-eyebrow">Della Vedova Prediction Market Indices</p>
+    <h1 class="hero-thesis">
+      Prediction markets are algorithmic, asymmetric, and increasingly surveillable.
+    </h1>
+    <p class="hero-lede">
+      We analyze every on-chain Polymarket trade to measure who trades, who profits, where private information shows up, and how human traders misprice uncertainty. <strong>671&thinsp;million trades since November 2022</strong>, refreshed weekly.
+    </p>
+    <p class="hero-byline">
+      Built by <a href="/about">Joshua Della Vedova</a>, Assistant Professor of Finance, University of San Diego.
+    </p>
+    <div class="hero-cta">
+      <a class="cta cta-primary" href="#this-week">This week&rsquo;s read</a>
+      <a class="cta" href="/research">Research papers</a>
+      <a class="cta" href="/data">Download the data</a>
+      <a class="cta" href="/expert-witness">Consulting</a>
+    </div>
+    <p class="hero-asof">
+      Data current through ISO week <strong>{activity.week}</strong> (week of {activity.as_of}). P&amp;L numbers reflect the previous fully-resolved week ({profitSplit.as_of_week}).
+    </p>
+  </section>
 
   <ThisWeek />
 
   <KpiTiles />
 
-  <h2>What happened this week</h2>
+  <section class="audience">
+    <h2 class="audience-h">Built for three audiences</h2>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-tag">Researchers</div>
+        <p>Cite the dataset, replicate the methods, download the weekly indices.</p>
+        <a class="audience-link" href="/data">Data &amp; methodology &rarr;</a>
+      </div>
+      <div class="audience-card">
+        <div class="audience-tag">Journalists &amp; analysts</div>
+        <p>Ready-to-cite statistics on bots, retail losses, private information, and probability distortions.</p>
+        <a class="audience-link" href="/press">Press kit &rarr;</a>
+      </div>
+      <div class="audience-card">
+        <div class="audience-tag">Regulators &amp; counsel</div>
+        <p>Microstructure-based surveillance for informed-trading detection and market-integrity review.</p>
+        <a class="audience-link" href="/expert-witness">Consulting &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <h2 id="this-week">This week&rsquo;s market structure</h2>
   <table class="snapshot">
     <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
     <tr>
@@ -171,9 +206,12 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
       </tr>
     ))}
   </table>
-  <p class="muted" style="font-size:14px;">
-    Each match has a maker (the limit order) and a taker (the market order filling it); both parties count. Algorithmic wallets are usually the maker; retail and casual traders are usually the taker. Treating only the maker side would attribute ~95&#37; to algorithms and hide the human side entirely. The five-type classification comes from the lifetime trade-history thresholds in <a href="/research">our first paper</a>. See the <a href="/methodology">methodology</a> page for details.
-  </p>
+  <details class="section-fineprint">
+    <summary>How wallets are typed</summary>
+    <p>
+      Each match has a maker (limit order) and a taker (market order); both count. Algorithmic wallets are usually the maker, retail and casual traders the taker. Maker-only attribution would assign ~95&#37; to algorithms and hide the human side. The five-type classification follows the lifetime trade-history thresholds in <a href="/research">Paper 1</a>. See the <a href="/methodology">methodology</a> page for details.
+    </p>
+  </details>
 
   <h3>Most popular markets by volume</h3>
   <p class="muted">
@@ -198,17 +236,19 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
     ))}
   </table>
   <p class="muted" style="font-size:14px;">
-    Volume is the sum of <code>usdc_amount</code> across resolved trades for the week.
-    Market names come from the static <code>polymarket_markets.csv</code> snapshot; new markets created after that snapshot appear with IDs only.
+    Volume is the sum of <code>usdc_amount</code> across resolved trades. Market names come from a static metadata snapshot; markets created after the snapshot appear with IDs only.
   </p>
 
-  <h2>Who profits <span class="h2-note">(algorithmic wallets vs humans)</span></h2>
+  <h2>Who wins and who pays <span class="h2-note">(algorithmic wallets vs humans)</span></h2>
   <p class="section-lead">
-    Every trade&rsquo;s P&amp;L splits cleanly into <em>directional</em> (did you pick the winning side?) and <em>execution</em> (did you get a better price than the market&rsquo;s volume-weighted average?). Across 640 million resolved trades cumulative since 2022, algorithmic wallets capture almost all of the dollars (Paper 1: bots +$133M, retail &minus;$79M). Source: <a href="/research">Della Vedova (2026), &ldquo;Who Profits from Prediction Markets?&rdquo;</a>
+    Every trade&rsquo;s P&amp;L splits into <em>directional</em> (picked the winner) and <em>execution</em> (better-than-VWAP entry). Cumulative since 2022: bots <strong>+$133M</strong>, retail <strong>&minus;$79M</strong>. Source: <a href="/research">Della Vedova (2026), &ldquo;Who Profits from Prediction Markets?&rdquo;</a>
   </p>
-  <p class="section-lead" style="font-size:14px;">
-    The table below shows the most recent fully-resolved week ({profitSplit.as_of_week}; one week behind the activity panel above because we wait for markets to resolve before booking P&amp;L). Each match is attributed to BOTH the maker and the taker side with mirror-signed P&amp;L, so dollar totals sum to zero across all wallet types by construction (zero-sum market, no fees). The directional / execution decomposition uses Paper 1&rsquo;s benchmark: per-(market, token) volume-weighted average price across buy-side trades. Bps columns report ROI in basis points (P&amp;L divided by USD volume traded by that wallet type), not the per-trade edge measure used in Paper 1 Table 1; the two are not directly comparable. Across the cumulative 4-year sample, bots show near-zero directional and positive execution; retail shows the opposite (Paper 1: bots +$133M, retail &minus;$79M). Single-week dashboard numbers can deviate substantially from this cumulative pattern because of trade-mix noise. Participations count both maker and taker sides of every match.
-  </p>
+  <details class="section-fineprint">
+    <summary>How this table is constructed</summary>
+    <p>
+      The table shows the most recent fully-resolved week ({profitSplit.as_of_week}; one week behind the activity panel above). Each match is attributed to <strong>both</strong> the maker and the taker side with mirror-signed P&amp;L, so dollar totals sum to zero across wallet types by construction (zero-sum market, no fees). The directional / execution decomposition uses Paper 1&rsquo;s benchmark: per-(market, token) volume-weighted average price across buy-side trades. Bps columns report ROI in basis points (P&amp;L divided by USD volume), not the per-trade edge measure in Paper 1 Table 1; the two are not directly comparable. Single-week numbers can deviate substantially from the cumulative pattern because of trade-mix noise. Participations count both sides of every match.
+    </p>
+  </details>
   <table class="snapshot">
     <tr>
       <th>Trader type</th>
@@ -248,9 +288,9 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
     </tr>
   </table>
 
-  <h2>Who appears to know something <span class="h2-note">(insider-trading signal)</span></h2>
+  <h2>Where private information shows up <span class="h2-note">(insider-trading signal)</span></h2>
   <p class="section-lead">
-    A statistical test picks out wallets whose win rate is too high, too often, to be luck. A higher flag rate means a stronger fingerprint of private information. This is a statistical signal, not a legal finding about any individual trader. Source: <a href="/research">Della Vedova (2026), &ldquo;Detecting Informed Trading in Prediction Markets.&rdquo;</a>
+    A wallet-level test picks out trader accounts whose win rate is too high, too often, to be luck. A higher flag rate means a stronger fingerprint of private information. <strong>Statistical signal, not a legal finding</strong> about any individual. Source: <a href="/research">Della Vedova (2026), &ldquo;Detecting Informed Trading in Prediction Markets.&rdquo;</a>
   </p>
 
   <table class="snapshot">
@@ -293,9 +333,9 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
     or journalistic purposes is handled case-by-case; see <a href="/expert-witness">consulting</a>.
   </p>
 
-  <h2>How crowds price uncertainty <span class="h2-note">(probability weighting)</span></h2>
+  <h2>How human traders distort probabilities <span class="h2-note">(probability weighting)</span></h2>
   <p class="section-lead">
-    Tversky and Kahneman (1992) showed that people overweight rare events and underweight common ones. We measure the same distortion week by week using realized win rates from non-bot Polymarket trades. Source: <a href="/research">Della Vedova and Grant (2026, in progress), &ldquo;Probability Weighting from Prediction Markets.&rdquo;</a>
+    Tversky and Kahneman (1992) showed that people overweight rare events and underweight common ones. We measure the same distortion week by week from realized win rates of non-bot Polymarket trades. Source: <a href="/research">Della Vedova and Grant (2026, in progress), &ldquo;Probability Weighting from Prediction Markets.&rdquo;</a>
   </p>
   <table class="snapshot">
     <tr><th>Metric</th><th>Value</th><th>What it says</th></tr>
