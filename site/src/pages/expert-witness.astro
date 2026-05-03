@@ -1,17 +1,14 @@
 ---
-import Base from "../layouts/Base.astro";
+import TextPageLayout from "../components/redesign/TextPageLayout.astro";
 ---
-<Base title="Consulting and expert testimony" description="Areas of expertise and inquiry information for consulting and expert-witness work by Joshua Della Vedova.">
-  <h1>Consulting and expert testimony</h1>
-  <p class="subtitle">Areas of expertise and inquiry information.</p>
+<TextPageLayout
+  title="Consulting and expert testimony"
+  description="Areas of expertise and inquiry information for consulting and expert-witness work by Joshua Della Vedova."
+  eyebrow="DV-PMI · Consulting"
+  lede="A limited number of consulting and expert-witness engagements each year on matters involving prediction-market surveillance, informed-trading detection, and market microstructure. All engagements are subject to institutional conflict-of-interest review at the University of San Diego."
+  asOf="Typical response within 2 business days">
 
-  <p>
-    I accept a limited number of consulting and expert-witness engagements each year on matters
-    involving prediction-market surveillance, informed-trading detection, and market microstructure.
-    All engagements are subject to institutional conflict-of-interest review at the University of San Diego.
-  </p>
-
-  <h2>Areas of expertise</h2>
+  <h2 class="tp-h2">Areas of expertise</h2>
   <ul>
     <li>Informed-trading detection in prediction markets (microstructure-grounded, Daubert-ready)</li>
     <li>Reference-price formation, disposition effects, retail behavior</li>
@@ -20,7 +17,7 @@ import Base from "../layouts/Base.astro";
     <li>Probability weighting, behavioral asset pricing, cross-market spillover analysis</li>
   </ul>
 
-  <h2>Engagement applications</h2>
+  <h2 class="tp-h2">Engagement applications</h2>
   <p>The detection framework, dataset, and methodology have direct application to:</p>
   <ul>
     <li>Statistical surveillance methodologies for prediction markets and binary-event contracts</li>
@@ -35,7 +32,7 @@ import Base from "../layouts/Base.astro";
     Findings and methodology are published; identification of specific wallets, accounts, or individuals for regulatory, litigation, or journalistic purposes is handled case by case under engagement letter.
   </p>
 
-  <h2>Methodology</h2>
+  <h2 class="tp-h2">Methodology and Daubert mapping</h2>
   <p>The detection framework is designed to map cleanly onto the four Rule 702 factors.</p>
   <table>
     <tr><th>Factor</th><th>How this work satisfies it</th></tr>
@@ -57,7 +54,7 @@ import Base from "../layouts/Base.astro";
     </tr>
   </table>
 
-  <h2>Affiliations and disclosures</h2>
+  <h2 class="tp-h2">Affiliations and disclosures</h2>
   <p>
     Joshua Della Vedova is an Assistant Professor of Finance at the Knauss School of Business,
     University of San Diego. No financial interest in Polymarket, Kalshi, or any prediction-market
@@ -65,7 +62,7 @@ import Base from "../layouts/Base.astro";
     review.
   </p>
 
-  <h2>Inquiries</h2>
+  <h2 class="tp-h2">Inquiries</h2>
   <p>
     Inquiries about consulting or expert-witness work are welcome by email at
     <a href="mailto:jdellavedova@sandiego.edu">jdellavedova@sandiego.edu</a>.
@@ -80,4 +77,4 @@ import Base from "../layouts/Base.astro";
     Typical response within 2 business days. No engagement exists until a written engagement letter
     is signed.
   </p>
-</Base>
+</TextPageLayout>

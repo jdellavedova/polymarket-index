@@ -2025,6 +2025,96 @@ h1.hero-thesis {
   .dd-h1 { font-size: 26px; }
 }
 
+/* Text pages (Phase 6) — methodology, about, expert-witness.
+   Narrow reading column kept; new hero treatment + section header + footer */
+.tp-hero {
+  margin: 0 0 28px;
+  padding: 0 0 22px;
+  background-image: linear-gradient(to right, var(--border) 0%, var(--border) 60%, transparent 100%);
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+}
+.tp-body {
+  max-width: 720px;
+}
+.tp-body p, .tp-body li {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.65;
+}
+.tp-body ul, .tp-body ol {
+  padding-left: 22px;
+}
+.tp-body li { margin-bottom: 6px; }
+.tp-body table {
+  width: 100%;
+  font-size: 14px;
+  border-collapse: collapse;
+  margin: 12px 0 24px;
+}
+.tp-body table th {
+  font-family: var(--sans);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 8px 10px 8px 0;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.tp-body table td {
+  padding: 10px 10px 10px 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.tp-h2 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--text);
+  margin: 28px 0 8px;
+  padding-bottom: 8px;
+  position: relative;
+  background-image: linear-gradient(to right, var(--border) 0%, var(--border) 50%, transparent 100%);
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+}
+.tp-h2::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--founders);
+  margin-right: 9px;
+  vertical-align: middle;
+  position: relative;
+  top: -3px;
+}
+.tp-h3 {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 18px 0 6px;
+  letter-spacing: -0.005em;
+}
+.tp-headshot {
+  margin: 0 0 22px;
+  max-width: 280px;
+}
+.tp-headshot img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.30), 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
 /* Data page (Phase 5) — dataset cards with sparkline previews */
 .ds-hero-stats {
   display: grid;

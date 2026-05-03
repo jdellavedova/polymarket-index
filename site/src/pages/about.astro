@@ -1,26 +1,23 @@
 ---
-import Base from "../layouts/Base.astro";
+import TextPageLayout from "../components/redesign/TextPageLayout.astro";
 ---
-<Base title="About: Joshua Della Vedova" description="About Joshua Della Vedova, Assistant Professor of Finance, Knauss School of Business, University of San Diego.">
-  <h1>About</h1>
+<TextPageLayout
+  title="About"
+  description="About Joshua Della Vedova, Assistant Professor of Finance, Knauss School of Business, University of San Diego."
+  eyebrow="DV-PMI · About"
+  lede="I study why markets behave irrationally and how human psychology shapes financial decisions. As an Assistant Professor of Finance at the Knauss School of Business, University of San Diego, my research explores asset pricing anomalies, individual investor behavior, and the economics of personality.">
 
-  <figure class="headshot">
+  <figure class="tp-headshot">
     <img src="/headshot.jpg" alt="Joshua Della Vedova, Assistant Professor of Finance, University of San Diego" />
   </figure>
 
-  <p>
-    I study why markets behave irrationally and how human psychology shapes financial decisions. As an
-    Assistant Professor of Finance at the Knauss School of Business, University of San Diego, my research
-    explores asset pricing anomalies, individual investor behavior, and the economics of personality.
-  </p>
-
-  <h2>Contact</h2>
+  <h2 class="tp-h2">Contact</h2>
   <p>
     Email: <a href="mailto:jdellavedova@sandiego.edu">jdellavedova@sandiego.edu</a><br>
     Mail: Knauss School of Business, The University of San Diego, 5998 Alcala Park, San Diego, CA 92110-2492
   </p>
 
-  <h2>Profiles</h2>
+  <h2 class="tp-h2">Profiles</h2>
   <ul>
     <li><a href="https://orcid.org/0000-0003-3371-9735">ORCID: 0000-0003-3371-9735</a></li>
     <li><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2583491">SSRN author page</a></li>
@@ -29,12 +26,12 @@ import Base from "../layouts/Base.astro";
     <li><a href="https://github.com/jdellavedova">GitHub</a></li>
   </ul>
 
-  <h2>Education</h2>
+  <h2 class="tp-h2">Education</h2>
   <ul>
     <li>Ph.D. in Finance, University of Sydney, 2019. Dissertation: <em>Investor Behavior and Asset Pricing Anomalies</em>. Advisors: Joakim Westerholm and Andrew Grant.</li>
   </ul>
 
-  <h2>Teaching at USD</h2>
+  <h2 class="tp-h2">Teaching at USD</h2>
   <p>USD career teaching evaluation average: 4.75 / 5.0. Fall 2025 evaluation: 4.9 / 5.0.</p>
   <ul>
     <li><strong>FINA 402: Investments</strong> (undergraduate). Fall 2022 to present. Sections of 35-42 students.</li>
@@ -42,7 +39,7 @@ import Base from "../layouts/Base.astro";
     <li><strong>FINA 300: Financial Management</strong> (undergraduate). Fall 2019 to Spring 2022.</li>
   </ul>
 
-  <h2>Awards and honors</h2>
+  <h2 class="tp-h2">Awards and honors</h2>
   <ul>
     <li>2024: Distinguished Article Prize, Foundation for the Advancement of Finnish Securities Markets</li>
     <li>2024: Teaching Excellence Award, Knauss School of Business</li>
@@ -52,7 +49,7 @@ import Base from "../layouts/Base.astro";
     <li>2023: Bowen-Jollineau Intellectual Contributions Award, Knauss School of Business</li>
   </ul>
 
-  <h2>Journal reviewing</h2>
+  <h2 class="tp-h2">Journal reviewing</h2>
   <ul>
     <li>Journal of Banking and Finance (March 2020 to present)</li>
     <li>Journal of Financial Markets (June 2024 to present)</li>
@@ -61,7 +58,7 @@ import Base from "../layouts/Base.astro";
     <li>Applied Economics Letters</li>
   </ul>
 
-  <h2>Service</h2>
+  <h2 class="tp-h2">Service</h2>
   <ul>
     <li>Co-Chair, KSB Impact Fellows (Fall 2023 to present)</li>
     <li>CEE Finance Faculty Representative (March 2020 to present)</li>
@@ -72,13 +69,13 @@ import Base from "../layouts/Base.astro";
     <li>Session Organizer, Southern Finance Association Annual Meeting (2023)</li>
   </ul>
 
-  <h2>Recent presentations</h2>
+  <h2 class="tp-h2">Recent presentations</h2>
   <ul>
     <li>2024: FMA Annual Meeting, European FMA Annual Meeting, FMA Europe, Multinational Finance Association Annual Meeting</li>
     <li>2023: FMA Annual Meeting (Chicago), Boca-ECGI Corporate Finance and Governance Conference, Northern Finance Association (Toronto), China International Finance Conference (Shanghai), Portuguese Financial Network Conference (Madeira), Midwest Finance Association (Chicago), California Corporate Finance Conference (Los Angeles), KSB Research Symposium</li>
     <li>2022: American Finance Association Annual Meeting</li>
   </ul>
 
-  <h2>CV</h2>
+  <h2 class="tp-h2">CV</h2>
   <p><a href="#">CV (PDF) (link to be added)</a></p>
-</Base>
+</TextPageLayout>

@@ -1,14 +1,16 @@
 ---
-import Base from "../layouts/Base.astro";
+import TextPageLayout from "../components/redesign/TextPageLayout.astro";
 ---
-<Base title="Methodology" description="How the Della Vedova Prediction Market Indices are constructed.">
-  <h1>Methodology</h1>
-  <p class="subtitle">Construction, data sources, and reproducibility notes for each published index.</p>
+<TextPageLayout
+  title="Methodology"
+  description="How the Della Vedova Prediction Market Indices are constructed."
+  eyebrow="DV-PMI · Methodology"
+  lede="Construction, data sources, and reproducibility notes for each published index. Every index ties back to a working paper or peer-reviewed primitive; every aggregator is in the public repository with pinned dependencies.">
 
-  <h2>Data source</h2>
+  <h2 class="tp-h2">Data source</h2>
   <p>
     All indices derive from the universe of resolved Polymarket trades on the Polygon blockchain,
-    November 2022 to present (640M trades across 1.98M wallets as of the latest snapshot, of which
+    November 2022 to present (671M trades across 1.98M wallets as of the latest snapshot, of which
     a subset have resolved markets and enter the Prelec and calibration aggregations).
     Trades are deduplicated against the Paradigm events index and joined against the Polymarket
     market-to-outcome mapping.
@@ -18,7 +20,7 @@ import Base from "../layouts/Base.astro";
     is contingent on wallet-level data access and is planned for a future release.
   </p>
 
-  <h2>Wallet classification</h2>
+  <h2 class="tp-h2">Wallet classification</h2>
   <p>
     Wallets are partitioned into five exclusive classes using Paper 1&rsquo;s rule: <em>algorithmic</em> (more than
     50 trades per active day or more than 1,000 total trades), <em>sophisticated</em> (more than $10K volume
@@ -26,16 +28,16 @@ import Base from "../layouts/Base.astro";
     <em>casual</em> (2 to 9 trades), and <em>one-shot</em> (single trade).
   </p>
 
-  <h2>Indices</h2>
+  <h2 class="tp-h2">Indices</h2>
 
-  <h3>Probability Weighting Index (PWI)</h3>
+  <h3 class="tp-h3">Probability Weighting Index (PWI)</h3>
   <p>
     Composite z-score of two weekly moments: mean calibration error (absolute gap between price and realized
     frequency, pooled across all trades) and longshot fraction (share of trades at prices below 10%). Positive
     PWI indicates elevated probability distortion; negative indicates compressed distortion.
   </p>
 
-  <h3>Market Calibration Curve</h3>
+  <h3 class="tp-h3">Market Calibration Curve</h3>
   <p>
     Twenty price bins from 2.5% to 97.5%; for each bin we report the realized win rate across all non-bot
     trades in the pooled sample, with a binomial confidence interval. A one-parameter Prelec function
@@ -43,7 +45,7 @@ import Base from "../layouts/Base.astro";
     trade counts. Reports alpha and the fit R-squared.
   </p>
 
-  <h3>Execution Edge Monitor</h3>
+  <h3 class="tp-h3">Execution Edge Monitor</h3>
   <p>
     Weekly Prelec alpha fit separately for each wallet class. The index value is alpha(algorithmic) minus
     alpha(active retail) each week. A behavioral proxy for the algorithmic-retail execution divergence
@@ -51,7 +53,7 @@ import Base from "../layouts/Base.astro";
     spread; active retail pays +11.68 bps).
   </p>
 
-  <h3>Private Information Index (PII)</h3>
+  <h3 class="tp-h3">Private Information Index (PII)</h3>
   <p>
     Wallet-level excess accuracy (accuracy - max(p, 1-p)) with a one-sided binomial z-test. Flagging threshold
     is z &gt; 2.326 (p &lt; 0.01) with positive excess accuracy. Holm-Bonferroni and Benjamini-Hochberg
@@ -59,14 +61,14 @@ import Base from "../layouts/Base.astro";
     MNPI taxonomy (vote, action, performance, stochastic), ordered by a priori MNPI risk.
   </p>
 
-  <h3>Algorithmic Share of Participation</h3>
+  <h3 class="tp-h3">Algorithmic Share of Participation</h3>
   <p>
     Weekly share of counterparty events (each match contributes one maker and one taker) attributable to
     wallets in the <em>algorithmic</em> class. Counting both sides keeps the human side of the market
     visible: maker-only attribution would assign roughly 95&#37; to algorithms.
   </p>
 
-  <h3>Profit Split Decomposition</h3>
+  <h3 class="tp-h3">Profit Split Decomposition</h3>
   <p>
     Per-trade P&amp;L for each resolved trade is decomposed into directional (forecasting) and execution
     (price) components using <a href="/research">Paper 1&rsquo;s</a> main-analysis benchmark: the
@@ -90,14 +92,11 @@ import Base from "../layouts/Base.astro";
     <li><strong>Both-side attribution.</strong> Paper 1 attributes each match to the maker side only
       (the academic standard). The dashboard instead attributes the match to <em>both</em> the maker
       and the taker with mirror-signed components. This makes dollar P&amp;L sum to zero across wallet
-      types by construction, which is the most readable framing for a public dashboard. The
-      cumulative cross-skill structure documented in Paper 1 (bots near-zero directional, positive
-      execution; retail negative execution) is unchanged because both methodologies use the same
-      benchmark and per-trade primitives.</li>
+      types by construction, which is the most readable framing for a public dashboard.</li>
     <li><strong>Volume-weighted ROI bps.</strong> Paper 1 Table 1 reports per-trade average edge
-      (sum of edge / number of trades) &times; 10000. The dashboard reports volume-weighted ROI
-      (P&amp;L / USD volume) &times; 10000. The two are not directly comparable; the dashboard&rsquo;s
-      framing is consistent with the dollar P&amp;L column in the same row.</li>
+      &times; 10000. The dashboard reports volume-weighted ROI (P&amp;L / USD volume) &times; 10000.
+      The two are not directly comparable; the dashboard&rsquo;s framing is consistent with the dollar
+      P&amp;L column in the same row.</li>
   </ol>
   <p>
     The aggregator runs incrementally: a one-time backfill computes per-(market, token) buy-side VWAP
@@ -105,28 +104,27 @@ import Base from "../layouts/Base.astro";
     without re-streaming the master file.
   </p>
 
-  <h3>Longshot / Favorite Price Gap</h3>
+  <h3 class="tp-h3">Longshot / Favorite Price Gap</h3>
   <p>
     Realized win rate in the longshot price band (prices below 10%) minus the band midpoint (5%). Positive
     values indicate longshots are underpriced; negative values indicate the traditional favorite-longshot bias.
     Favorite-side gap is planned for a future release.
   </p>
 
-  <h3>Market Efficiency Trend</h3>
+  <h3 class="tp-h3">Market Efficiency Trend</h3>
   <p>
     Weekly R-squared of the one-parameter Prelec fit applied to active retail trades. Higher values mean the
     week's calibration gap is well-described by a single behavioral parameter; lower values indicate
     idiosyncratic shocks dominate.
   </p>
 
-  <h2>Rolling statistics</h2>
+  <h2 class="tp-h2">Rolling statistics</h2>
   <p>
     Each weekly index is published with 4-, 13-, and 52-week moving averages and a 52-week rolling z-score.
-    The z-score requires at least 13 non-null observations before reporting. The "notable movements"
-    block on the landing page fires whenever the absolute z-score exceeds 1.0.
+    The z-score requires at least 13 non-null observations before reporting.
   </p>
 
-  <h2>Refresh schedule</h2>
+  <h2 class="tp-h2">Refresh schedule</h2>
   <p>
     Indices refresh every Sunday at 22:00 Pacific time. The pipeline extracts new Polygon blocks via Alchemy,
     updates the processed-trade panel, re-runs all aggregations, and pushes the updated CSVs and JSONs to
@@ -134,7 +132,7 @@ import Base from "../layouts/Base.astro";
     with a permanent DOI.
   </p>
 
-  <h2>Reproducibility</h2>
+  <h2 class="tp-h2">Reproducibility</h2>
   <p>
     All aggregation code is in the public repository, with pinned dependencies in <span class="mono">requirements.txt</span>.
     The processed trade panel is derived from public blockchain data and is regenerable end-to-end. The
@@ -142,7 +140,7 @@ import Base from "../layouts/Base.astro";
     column trigger a major version bump and a one-release deprecation window.
   </p>
 
-  <h2>Daubert mapping</h2>
+  <h2 class="tp-h2">Daubert mapping</h2>
   <p>
     Each index design is mapped to the four Rule 702 factors. <strong>Testable</strong>: every index reports
     an explicit null and the test statistic is recomputable. <strong>Known error rate</strong>: permutation-
@@ -151,7 +149,4 @@ import Base from "../layouts/Base.astro";
     previously peer-reviewed primitives. <strong>General acceptance</strong>: the primitives (Kyle 1985, Glosten-Milgrom 1985,
     Fama 1972, Anand et al. 2012, Tversky-Kahneman 1992, Prelec 1998) are standard in the literature.
   </p>
-
-  <h2>Citation</h2>
-  <div class="citation">Della Vedova, J. (2026). Della Vedova Prediction Market Indices (DV-PMI). Version 0.1.0. https://jdellavedova.com</div>
-</Base>
+</TextPageLayout>

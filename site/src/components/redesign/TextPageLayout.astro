@@ -1,0 +1,35 @@
+---
+/**
+ * Layout for the text-led pages (/methodology, /about, /expert-witness).
+ * Keeps the narrow 680px reading column (correct typographic width for prose),
+ * adds the consistent eyebrow/h1/stamp/lede hero, and an AuthorityStrip
+ * footer. Section headers inside the body should use class="tp-h2" to get
+ * the same dot+hairline treatment as the rest of the site.
+ */
+import Base from "../../layouts/Base.astro";
+import AuthorityStrip from "./AuthorityStrip.astro";
+
+export interface Props {
+  title: string;
+  description?: string;
+  eyebrow: string;
+  lede: string;
+  asOf?: string;
+}
+const { title, description, eyebrow, lede, asOf } = Astro.props;
+const desc = description ?? lede;
+---
+<Base title={title} description={desc}>
+  <section class="tp-hero">
+    <p class="dd-eyebrow">{eyebrow}</p>
+    <h1 class="dd-h1">{title}</h1>
+    {asOf && <p class="dd-stamp">{asOf}</p>}
+    <p class="dd-lede">{lede}</p>
+  </section>
+
+  <article class="tp-body">
+    <slot />
+  </article>
+
+  <AuthorityStrip />
+</Base>
