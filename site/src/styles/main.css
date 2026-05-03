@@ -1870,6 +1870,97 @@ footer.site-foot .disclaimer {
   .mi-logo-famag { font-size: 14px; }
 }
 
+/* About page — better headshot fit + quick-links row */
+.ab-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.ab-quick-link {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--founders);
+  transition: color 0.12s ease;
+}
+.ab-quick-link:hover { color: var(--link-hover); }
+.ab-headshot {
+  margin: 0;
+  text-align: center;
+}
+.ab-headshot img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.30), 0 8px 22px rgba(0, 0, 0, 0.22);
+}
+.ab-headshot figcaption {
+  margin-top: 10px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+/* Methodology page — wide container, hero text + body article */
+.md-toc {
+  margin-top: 14px;
+  padding: 12px 14px 14px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.md-toc-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--founders);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.md-toc-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+}
+.md-toc-link {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.12s ease;
+}
+.md-toc-link:hover { color: var(--founders); }
+.md-body {
+  max-width: 800px;
+  margin: 28px 0 0;
+}
+.md-body p, .md-body li {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.65;
+}
+.md-body ul, .md-body ol { padding-left: 22px; }
+.md-body li { margin-bottom: 6px; }
+.md-h3 {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 22px 0 6px;
+  letter-spacing: -0.005em;
+}
+
 /* Text pages (Phase 6) — methodology, about, expert-witness.
    Narrow reading column kept; new hero treatment + section header + footer */
 .tp-hero {

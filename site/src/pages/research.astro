@@ -1,6 +1,5 @@
 ---
 import Base from "../layouts/Base.astro";
-import CumulativePnlChart from "../components/CumulativePnlChart.astro";
 import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
 
 const SSRN_AUTHOR = "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2583491";
@@ -120,21 +119,15 @@ const otherWorking = [
   description="Published and working research on prediction markets, microstructure, and behavioral finance."
   wide={true}>
 
-  <section class="dd-hero">
-    <div class="dd-hero-text">
+  <section class="re-hero">
+    <div class="re-hero-text">
       <p class="dd-eyebrow">DV-PMI · Research program</p>
-      <h1 class="dd-h1">Research</h1>
-      <p class="dd-lede">
+      <h1 class="re-h1">Research</h1>
+      <p class="re-lede">
         Three working papers form the basis for the DV-PMI dashboard. Paper 1 establishes that trading skill in prediction markets is two-dimensional and that execution, not forecasting, determines who profits. Paper 2 turns the same orthogonality into a forensic test for informed trading. Paper 4 (with Andrew Grant) extracts probability weighting from on-chain trades. Earlier peer-reviewed work spans behavioral finance, microstructure, and momentum.
       </p>
       <p class="dd-stamp">
         Full abstracts on <a href={SSRN_AUTHOR}>SSRN</a> &middot; citations on <a href={SCHOLAR}>Google Scholar</a>
-      </p>
-    </div>
-    <div class="dd-hero-chart">
-      <CumulativePnlChart />
-      <p class="dd-caption">
-        Paper 1's headline finding, in dollars: cumulative P&amp;L on Polymarket since November 2022 by trader type. Bots clear roughly $135M, active retail loses roughly $82M.
       </p>
     </div>
   </section>

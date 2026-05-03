@@ -1,152 +1,173 @@
 ---
-import TextPageLayout from "../components/redesign/TextPageLayout.astro";
+import Base from "../layouts/Base.astro";
+import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
+
+const indexLinks = [
+  { name: "Algorithmic share", href: "/bot-share" },
+  { name: "Probability weighting", href: "/pwi" },
+  { name: "Calibration curve", href: "/calibration" },
+  { name: "Execution edge", href: "/execution" },
+  { name: "Market efficiency", href: "/efficiency" },
+  { name: "Longshot pricing gap", href: "/price-gap" },
+  { name: "Insider screen (PII)", href: "/pii" },
+];
 ---
-<TextPageLayout
-  title="Methodology"
+<Base
+  title="Methodology · DV-PMI"
   description="How the Della Vedova Prediction Market Indices are constructed."
-  eyebrow="DV-PMI · Methodology"
-  lede="Construction, data sources, and reproducibility notes for each published index. Every index ties back to a working paper or peer-reviewed primitive; every aggregator is in the public repository with pinned dependencies.">
+  wide={true}>
 
-  <h2 class="tp-h2">Data source</h2>
-  <p>
-    All indices derive from the universe of resolved Polymarket trades on the Polygon blockchain,
-    November 2022 to present (671M trades across 1.98M wallets as of the latest snapshot, of which
-    a subset have resolved markets and enter the Prelec and calibration aggregations).
-    Trades are deduplicated against the Paradigm events index and joined against the Polymarket
-    market-to-outcome mapping.
-  </p>
-  <p>
-    The framework applies to any binary prediction market with public settlement data. Kalshi integration
-    is contingent on wallet-level data access and is planned for a future release.
-  </p>
+  <section class="re-hero">
+    <div class="re-hero-text">
+      <p class="dd-eyebrow">DV-PMI · Methodology</p>
+      <h1 class="re-h1">Methodology</h1>
+      <p class="re-lede">
+        Construction, data sources, and reproducibility notes for each published index. Every index ties back to a working paper or peer-reviewed primitive; every aggregator is in the public repository with pinned dependencies.
+      </p>
+      <div class="md-toc">
+        <div class="md-toc-label">Jump to an index</div>
+        <div class="md-toc-row">
+          {indexLinks.map(l => <a class="md-toc-link" href={l.href}>{l.name} →</a>)}
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2 class="tp-h2">Wallet classification</h2>
-  <p>
-    Wallets are partitioned into five exclusive classes using Paper 1&rsquo;s rule: <em>algorithmic</em> (more than
-    50 trades per active day or more than 1,000 total trades), <em>sophisticated</em> (more than $10K volume
-    AND HHI less than 0.5 AND span more than 30 days), <em>active retail</em> (10 to 1,000 trades),
-    <em>casual</em> (2 to 9 trades), and <em>one-shot</em> (single trade).
-  </p>
+  <article class="md-body">
+    <h2 class="bf-section-h">Data source</h2>
+    <p>
+      All indices derive from the universe of resolved Polymarket trades on the Polygon blockchain,
+      November 2022 to present (671M trades across 1.98M wallets as of the latest snapshot, of which
+      a subset have resolved markets and enter the Prelec and calibration aggregations).
+      Trades are deduplicated against the Paradigm events index and joined against the Polymarket
+      market-to-outcome mapping.
+    </p>
+    <p>
+      The framework applies to any binary prediction market with public settlement data. Kalshi integration
+      is contingent on wallet-level data access and is planned for a future release.
+    </p>
 
-  <h2 class="tp-h2">Indices</h2>
+    <h2 class="bf-section-h">Wallet classification</h2>
+    <p>
+      Wallets are partitioned into five exclusive classes using Paper 1&rsquo;s rule: <em>algorithmic</em> (more than
+      50 trades per active day or more than 1,000 total trades), <em>sophisticated</em> (more than $10K volume
+      AND HHI less than 0.5 AND span more than 30 days), <em>active retail</em> (10 to 1,000 trades),
+      <em>casual</em> (2 to 9 trades), and <em>one-shot</em> (single trade).
+    </p>
 
-  <h3 class="tp-h3">Probability Weighting Index (PWI)</h3>
-  <p>
-    Composite z-score of two weekly moments: mean calibration error (absolute gap between price and realized
-    frequency, pooled across all trades) and longshot fraction (share of trades at prices below 10%). Positive
-    PWI indicates elevated probability distortion; negative indicates compressed distortion.
-  </p>
+    <h2 class="bf-section-h">Indices</h2>
 
-  <h3 class="tp-h3">Market Calibration Curve</h3>
-  <p>
-    Twenty price bins from 2.5% to 97.5%; for each bin we report the realized win rate across all non-bot
-    trades in the pooled sample, with a binomial confidence interval. A one-parameter Prelec function
-    (w(p) = exp(-(-log p)^alpha)) is fit by weighted nonlinear least squares with weights proportional to
-    trade counts. Reports alpha and the fit R-squared.
-  </p>
+    <h3 class="md-h3">Probability Weighting Index (PWI)</h3>
+    <p>
+      Composite z-score of two weekly moments: mean calibration error (absolute gap between price and realized
+      frequency, pooled across all trades) and longshot fraction (share of trades at prices below 10%). Positive
+      PWI indicates elevated probability distortion; negative indicates compressed distortion.
+    </p>
 
-  <h3 class="tp-h3">Execution Edge Monitor</h3>
-  <p>
-    Weekly Prelec alpha fit separately for each wallet class. The index value is alpha(algorithmic) minus
-    alpha(active retail) each week. A behavioral proxy for the algorithmic-retail execution divergence
-    documented in <a href="/research">Paper 1</a> (algorithmic wallets capture &minus;4.25 bps effective
-    spread; active retail pays +11.68 bps).
-  </p>
+    <h3 class="md-h3">Market Calibration Curve</h3>
+    <p>
+      Twenty price bins from 2.5% to 97.5%; for each bin we report the realized win rate across all non-bot
+      trades in the pooled sample, with a binomial confidence interval. A one-parameter Prelec function
+      (w(p) = exp(-(-log p)^alpha)) is fit by weighted nonlinear least squares with weights proportional to
+      trade counts. Reports alpha and the fit R-squared.
+    </p>
 
-  <h3 class="tp-h3">Private Information Index (PII)</h3>
-  <p>
-    Wallet-level excess accuracy (accuracy - max(p, 1-p)) with a one-sided binomial z-test. Flagging threshold
-    is z &gt; 2.326 (p &lt; 0.01) with positive excess accuracy. Holm-Bonferroni and Benjamini-Hochberg
-    family-wise and false-discovery-rate corrections reported separately. Sub-populations are split by the
-    MNPI taxonomy (vote, action, performance, stochastic), ordered by a priori MNPI risk.
-  </p>
+    <h3 class="md-h3">Execution Edge Monitor</h3>
+    <p>
+      Weekly Prelec alpha fit separately for each wallet class. The index value is alpha(algorithmic) minus
+      alpha(active retail) each week. A behavioral proxy for the algorithmic-retail execution divergence
+      documented in <a href="/research">Paper 1</a> (algorithmic wallets capture &minus;4.25 bps effective
+      spread; active retail pays +11.68 bps).
+    </p>
 
-  <h3 class="tp-h3">Algorithmic Share of Participation</h3>
-  <p>
-    Weekly share of counterparty events (each match contributes one maker and one taker) attributable to
-    wallets in the <em>algorithmic</em> class. Counting both sides keeps the human side of the market
-    visible: maker-only attribution would assign roughly 95&#37; to algorithms.
-  </p>
+    <h3 class="md-h3">Private Information Index (PII)</h3>
+    <p>
+      Wallet-level excess accuracy (accuracy - max(p, 1-p)) with a one-sided binomial z-test. Flagging threshold
+      is z &gt; 2.326 (p &lt; 0.01) with positive excess accuracy. Holm-Bonferroni and Benjamini-Hochberg
+      family-wise and false-discovery-rate corrections reported separately. Sub-populations are split by the
+      MNPI taxonomy (vote, action, performance, stochastic), ordered by a priori MNPI risk.
+    </p>
 
-  <h3 class="tp-h3">Profit Split Decomposition</h3>
-  <p>
-    Per-trade P&amp;L for each resolved trade is decomposed into directional (forecasting) and execution
-    (price) components using <a href="/research">Paper 1&rsquo;s</a> main-analysis benchmark: the
-    per-(market, token) volume-weighted average price across <strong>buy-side trades only</strong>. For
-    trade <em>i</em> in market <em>m</em> and token <em>T</em> with entry price <em>P</em>, fair-price
-    benchmark <em>v</em>(<em>m,T</em>), outcome <em>W</em> &isin; &#123;0,1&#125;, token quantity <em>Q</em>,
-    and side sign <em>S</em> = +1 (BUY) or &minus;1 (SELL):
-  </p>
-  <ul>
-    <li><strong>Total P&amp;L</strong> = <em>S</em> &times; (<em>W</em> &minus; <em>P</em>) &times; <em>Q</em></li>
-    <li><strong>Directional</strong> = <em>S</em> &times; (<em>W</em> &minus; <em>v</em>) &times; <em>Q</em>:
-      forecasting component (did the trade pick the side that the average buyer also picked?).</li>
-    <li><strong>Execution</strong> = <em>S</em> &times; (<em>v</em> &minus; <em>P</em>) &times; <em>Q</em>:
-      execution component (did the trade get a better price than the average buyer?).</li>
-    <li>Algebraic identity: directional + execution = total P&amp;L per trade.</li>
-  </ul>
-  <p>
-    Two deliberate dashboard choices distinguish this aggregator from Paper 1&rsquo;s published table:
-  </p>
-  <ol>
-    <li><strong>Both-side attribution.</strong> Paper 1 attributes each match to the maker side only
-      (the academic standard). The dashboard instead attributes the match to <em>both</em> the maker
-      and the taker with mirror-signed components. This makes dollar P&amp;L sum to zero across wallet
-      types by construction, which is the most readable framing for a public dashboard.</li>
-    <li><strong>Volume-weighted ROI bps.</strong> Paper 1 Table 1 reports per-trade average edge
-      &times; 10000. The dashboard reports volume-weighted ROI (P&amp;L / USD volume) &times; 10000.
-      The two are not directly comparable; the dashboard&rsquo;s framing is consistent with the dollar
-      P&amp;L column in the same row.</li>
-  </ol>
-  <p>
-    The aggregator runs incrementally: a one-time backfill computes per-(market, token) buy-side VWAP
-    across the full 671M-trade panel, and a weekly update extends the cache as new trades arrive
-    without re-streaming the master file.
-  </p>
+    <h3 class="md-h3">Algorithmic Share of Participation</h3>
+    <p>
+      Weekly share of counterparty events (each match contributes one maker and one taker) attributable to
+      wallets in the <em>algorithmic</em> class. Counting both sides keeps the human side of the market
+      visible: maker-only attribution would assign roughly 95&#37; to algorithms.
+    </p>
 
-  <h3 class="tp-h3">Longshot / Favorite Price Gap</h3>
-  <p>
-    Realized win rate in the longshot price band (prices below 10%) minus the band midpoint (5%). Positive
-    values indicate longshots are underpriced; negative values indicate the traditional favorite-longshot bias.
-    Favorite-side gap is planned for a future release.
-  </p>
+    <h3 class="md-h3">Profit Split Decomposition</h3>
+    <p>
+      Per-trade P&amp;L for each resolved trade is decomposed into directional (forecasting) and execution
+      (price) components using <a href="/research">Paper 1&rsquo;s</a> main-analysis benchmark: the
+      per-(market, token) volume-weighted average price across <strong>buy-side trades only</strong>.
+    </p>
+    <ul>
+      <li><strong>Total P&amp;L</strong> = <em>S</em> &times; (<em>W</em> &minus; <em>P</em>) &times; <em>Q</em></li>
+      <li><strong>Directional</strong> = <em>S</em> &times; (<em>W</em> &minus; <em>v</em>) &times; <em>Q</em>:
+        forecasting component (did the trade pick the side that the average buyer also picked?).</li>
+      <li><strong>Execution</strong> = <em>S</em> &times; (<em>v</em> &minus; <em>P</em>) &times; <em>Q</em>:
+        execution component (did the trade get a better price than the average buyer?).</li>
+      <li>Algebraic identity: directional + execution = total P&amp;L per trade.</li>
+    </ul>
+    <p>
+      Two deliberate dashboard choices distinguish this aggregator from Paper 1&rsquo;s published table:
+    </p>
+    <ol>
+      <li><strong>Both-side attribution.</strong> Paper 1 attributes each match to the maker side only
+        (the academic standard). The dashboard instead attributes the match to <em>both</em> the maker
+        and the taker with mirror-signed components. This makes dollar P&amp;L sum to zero across wallet
+        types by construction, which is the most readable framing for a public dashboard.</li>
+      <li><strong>Volume-weighted ROI bps.</strong> Paper 1 Table 1 reports per-trade average edge
+        &times; 10000. The dashboard reports volume-weighted ROI (P&amp;L / USD volume) &times; 10000.
+        The two are not directly comparable; the dashboard&rsquo;s framing is consistent with the dollar
+        P&amp;L column in the same row.</li>
+    </ol>
 
-  <h3 class="tp-h3">Market Efficiency Trend</h3>
-  <p>
-    Weekly R-squared of the one-parameter Prelec fit applied to active retail trades. Higher values mean the
-    week's calibration gap is well-described by a single behavioral parameter; lower values indicate
-    idiosyncratic shocks dominate.
-  </p>
+    <h3 class="md-h3">Longshot / Favorite Price Gap</h3>
+    <p>
+      Realized win rate in the longshot price band (prices below 10%) minus the band midpoint (5%). Positive
+      values indicate longshots are underpriced; negative values indicate the traditional favorite-longshot bias.
+    </p>
 
-  <h2 class="tp-h2">Rolling statistics</h2>
-  <p>
-    Each weekly index is published with 4-, 13-, and 52-week moving averages and a 52-week rolling z-score.
-    The z-score requires at least 13 non-null observations before reporting.
-  </p>
+    <h3 class="md-h3">Market Efficiency Trend</h3>
+    <p>
+      Weekly R-squared of the one-parameter Prelec fit applied to active retail trades. Higher values mean the
+      week's calibration gap is well-described by a single behavioral parameter; lower values indicate
+      idiosyncratic shocks dominate.
+    </p>
 
-  <h2 class="tp-h2">Refresh schedule</h2>
-  <p>
-    Indices refresh every Sunday at 22:00 Pacific time. The pipeline extracts new Polygon blocks via Alchemy,
-    updates the processed-trade panel, re-runs all aggregations, and pushes the updated CSVs and JSONs to
-    the public repository. Each refresh is tagged with a semantic version; each tag is archived to Zenodo
-    with a permanent DOI.
-  </p>
+    <h2 class="bf-section-h">Rolling statistics</h2>
+    <p>
+      Each weekly index is published with 4-, 13-, and 52-week moving averages and a 52-week rolling z-score.
+      The z-score requires at least 13 non-null observations before reporting.
+    </p>
 
-  <h2 class="tp-h2">Reproducibility</h2>
-  <p>
-    All aggregation code is in the public repository, with pinned dependencies in <span class="mono">requirements.txt</span>.
-    The processed trade panel is derived from public blockchain data and is regenerable end-to-end. The
-    CHANGELOG records every methodology change with date and rationale; breaking changes to any published
-    column trigger a major version bump and a one-release deprecation window.
-  </p>
+    <h2 class="bf-section-h">Refresh schedule</h2>
+    <p>
+      Indices refresh every Sunday at 22:00 Pacific time. The pipeline extracts new Polygon blocks via Alchemy,
+      updates the processed-trade panel, re-runs all aggregations, and pushes the updated CSVs and JSONs to
+      the public repository. Each refresh is tagged with a semantic version; each tag is archived to Zenodo
+      with a permanent DOI.
+    </p>
 
-  <h2 class="tp-h2">Daubert mapping</h2>
-  <p>
-    Each index design is mapped to the four Rule 702 factors. <strong>Testable</strong>: every index reports
-    an explicit null and the test statistic is recomputable. <strong>Known error rate</strong>: permutation-
-    validated false positive rates for the PII; bootstrap confidence intervals for the calibration and PWI.
-    <strong>Peer review</strong>: each index is grounded in a working paper (see the research page) and in
-    previously peer-reviewed primitives. <strong>General acceptance</strong>: the primitives (Kyle 1985, Glosten-Milgrom 1985,
-    Fama 1972, Anand et al. 2012, Tversky-Kahneman 1992, Prelec 1998) are standard in the literature.
-  </p>
-</TextPageLayout>
+    <h2 class="bf-section-h">Reproducibility</h2>
+    <p>
+      All aggregation code is in the public repository, with pinned dependencies in <span class="mono">requirements.txt</span>.
+      The processed trade panel is derived from public blockchain data and is regenerable end-to-end. The
+      CHANGELOG records every methodology change with date and rationale; breaking changes to any published
+      column trigger a major version bump and a one-release deprecation window.
+    </p>
+
+    <h2 class="bf-section-h">Daubert mapping</h2>
+    <p>
+      Each index design is mapped to the four Rule 702 factors. <strong>Testable</strong>: every index reports
+      an explicit null and the test statistic is recomputable. <strong>Known error rate</strong>: permutation-
+      validated false positive rates for the PII; bootstrap confidence intervals for the calibration and PWI.
+      <strong>Peer review</strong>: each index is grounded in a working paper (see the research page) and in
+      previously peer-reviewed primitives. <strong>General acceptance</strong>: the primitives (Kyle 1985, Glosten-Milgrom 1985,
+      Fama 1972, Anand et al. 2012, Tversky-Kahneman 1992, Prelec 1998) are standard in the literature.
+    </p>
+  </article>
+
+  <AuthorityStrip />
+</Base>

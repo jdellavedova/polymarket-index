@@ -1,80 +1,90 @@
 ---
-import TextPageLayout from "../components/redesign/TextPageLayout.astro";
+import Base from "../layouts/Base.astro";
+import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
 ---
-<TextPageLayout
-  title="Consulting and expert testimony"
+<Base
+  title="Consulting and expert testimony · DV-PMI"
   description="Areas of expertise and inquiry information for consulting and expert-witness work by Joshua Della Vedova."
-  eyebrow="DV-PMI · Consulting"
-  lede="A limited number of consulting and expert-witness engagements each year on matters involving prediction-market surveillance, informed-trading detection, and market microstructure. All engagements are subject to institutional conflict-of-interest review at the University of San Diego."
-  asOf="Typical response within 2 business days">
+  wide={true}>
 
-  <h2 class="tp-h2">Areas of expertise</h2>
-  <ul>
-    <li>Informed-trading detection in prediction markets (microstructure-grounded, Daubert-ready)</li>
-    <li>Reference-price formation, disposition effects, retail behavior</li>
-    <li>Execution quality and maker-taker dynamics (theta-epsilon decomposition)</li>
-    <li>Prediction-market regulatory surveillance and market-design review</li>
-    <li>Probability weighting, behavioral asset pricing, cross-market spillover analysis</li>
-  </ul>
+  <section class="re-hero">
+    <div class="re-hero-text">
+      <p class="dd-eyebrow">DV-PMI · Consulting</p>
+      <h1 class="re-h1">Consulting and expert testimony</h1>
+      <p class="dd-stamp">Typical response within 2 business days · Engagements subject to USD conflict-of-interest review</p>
+      <p class="re-lede">
+        A limited number of consulting and expert-witness engagements each year on matters involving prediction-market surveillance, informed-trading detection, and market microstructure. Findings and methodology are published; identification of specific wallets, accounts, or individuals for regulatory, litigation, or journalistic purposes is handled case by case under engagement letter.
+      </p>
+    </div>
+  </section>
 
-  <h2 class="tp-h2">Engagement applications</h2>
-  <p>The detection framework, dataset, and methodology have direct application to:</p>
-  <ul>
-    <li>Statistical surveillance methodologies for prediction markets and binary-event contracts</li>
-    <li>Microstructure-based detection of informed trading</li>
-    <li>Market-structure analysis for regulatory rulemaking and comment letters</li>
-    <li>Calibration and probability-weighting analysis in field markets</li>
-    <li>Expert testimony in matters involving forensic data analytics on prediction-market trade data</li>
-    <li>Methodology audits for compliance vendors, exchanges, and market-integrity teams</li>
-    <li>Academic collaborations and consulting on market-design research</li>
-  </ul>
-  <p class="muted" style="font-size:14px;">
-    Findings and methodology are published; identification of specific wallets, accounts, or individuals for regulatory, litigation, or journalistic purposes is handled case by case under engagement letter.
-  </p>
+  <article class="md-body">
+    <h2 class="bf-section-h">Areas of expertise</h2>
+    <ul>
+      <li>Informed-trading detection in prediction markets (microstructure-grounded, Daubert-ready)</li>
+      <li>Reference-price formation, disposition effects, retail behavior</li>
+      <li>Execution quality and maker-taker dynamics (theta-epsilon decomposition)</li>
+      <li>Prediction-market regulatory surveillance and market-design review</li>
+      <li>Probability weighting, behavioral asset pricing, cross-market spillover analysis</li>
+    </ul>
 
-  <h2 class="tp-h2">Methodology and Daubert mapping</h2>
-  <p>The detection framework is designed to map cleanly onto the four Rule 702 factors.</p>
-  <table>
-    <tr><th>Factor</th><th>How this work satisfies it</th></tr>
-    <tr>
-      <td>Testable</td>
-      <td>Formal null hypothesis (theta-epsilon orthogonality). The test statistic is recomputable from public data.</td>
-    </tr>
-    <tr>
-      <td>Known error rate</td>
-      <td>Permutation-validated false positive rate. Holm-Bonferroni and BH-FDR corrections reported.</td>
-    </tr>
-    <tr>
-      <td>Peer review</td>
-      <td>Documented in working papers and the published record; reproducible pipelines and pre-registered methodology log.</td>
-    </tr>
-    <tr>
-      <td>General acceptance</td>
-      <td>Built from Kyle (1985), Glosten-Milgrom (1985), Fama (1972), and Anand et al. (2012) primitives.</td>
-    </tr>
-  </table>
+    <h2 class="bf-section-h">Engagement applications</h2>
+    <p>The detection framework, dataset, and methodology have direct application to:</p>
+    <ul>
+      <li>Statistical surveillance methodologies for prediction markets and binary-event contracts</li>
+      <li>Microstructure-based detection of informed trading</li>
+      <li>Market-structure analysis for regulatory rulemaking and comment letters</li>
+      <li>Calibration and probability-weighting analysis in field markets</li>
+      <li>Expert testimony in matters involving forensic data analytics on prediction-market trade data</li>
+      <li>Methodology audits for compliance vendors, exchanges, and market-integrity teams</li>
+      <li>Academic collaborations and consulting on market-design research</li>
+    </ul>
 
-  <h2 class="tp-h2">Affiliations and disclosures</h2>
-  <p>
-    Joshua Della Vedova is an Assistant Professor of Finance at the Knauss School of Business,
-    University of San Diego. No financial interest in Polymarket, Kalshi, or any prediction-market
-    venue. Consulting and expert-witness work is undertaken under institutional conflict-of-interest
-    review.
-  </p>
+    <h2 class="bf-section-h">Methodology and Daubert mapping</h2>
+    <p>The detection framework is designed to map cleanly onto the four Rule 702 factors.</p>
+    <table>
+      <tr><th>Factor</th><th>How this work satisfies it</th></tr>
+      <tr>
+        <td>Testable</td>
+        <td>Formal null hypothesis (theta-epsilon orthogonality). The test statistic is recomputable from public data.</td>
+      </tr>
+      <tr>
+        <td>Known error rate</td>
+        <td>Permutation-validated false positive rate. Holm-Bonferroni and BH-FDR corrections reported.</td>
+      </tr>
+      <tr>
+        <td>Peer review</td>
+        <td>Documented in working papers and the published record; reproducible pipelines and pre-registered methodology log.</td>
+      </tr>
+      <tr>
+        <td>General acceptance</td>
+        <td>Built from Kyle (1985), Glosten-Milgrom (1985), Fama (1972), and Anand et al. (2012) primitives.</td>
+      </tr>
+    </table>
 
-  <h2 class="tp-h2">Inquiries</h2>
-  <p>
-    Inquiries about consulting or expert-witness work are welcome by email at
-    <a href="mailto:jdellavedova@sandiego.edu">jdellavedova@sandiego.edu</a>.
-    A short note with the following three items helps me respond quickly:
-  </p>
-  <ol>
-    <li>A one-line description of the matter (no privileged detail).</li>
-    <li>Approximate timeline.</li>
-    <li>Names of parties involved (for a standard conflict check).</li>
-  </ol>
-  <p class="muted" style="font-size:14px;">
-    Typical response within 2 business days. No engagement exists until a written engagement letter
-    is signed.
-  </p>
-</TextPageLayout>
+    <h2 class="bf-section-h">Affiliations and disclosures</h2>
+    <p>
+      Joshua Della Vedova is an Assistant Professor of Finance at the Knauss School of Business,
+      University of San Diego. No financial interest in Polymarket, Kalshi, or any prediction-market
+      venue. Consulting and expert-witness work is undertaken under institutional conflict-of-interest
+      review.
+    </p>
+
+    <h2 class="bf-section-h">Inquiries</h2>
+    <p>
+      Inquiries about consulting or expert-witness work are welcome by email at
+      <a href="mailto:jdellavedova@sandiego.edu">jdellavedova@sandiego.edu</a>.
+      A short note with the following three items helps me respond quickly:
+    </p>
+    <ol>
+      <li>A one-line description of the matter (no privileged detail).</li>
+      <li>Approximate timeline.</li>
+      <li>Names of parties involved (for a standard conflict check).</li>
+    </ol>
+    <p class="muted" style="font-size:14px;">
+      Typical response within 2 business days. No engagement exists until a written engagement letter is signed.
+    </p>
+  </article>
+
+  <AuthorityStrip />
+</Base>
