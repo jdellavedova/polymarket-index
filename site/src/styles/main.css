@@ -1980,6 +1980,73 @@ h1.hero-thesis {
   .dd-h1 { font-size: 26px; }
 }
 
+/* Briefings page (Phase 2) — uses dd-hero from above for the 2-col hero
+   with the heatmap on the right; below the hero is a card grid + uses block */
+.bf-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: 18px 0 4px;
+  padding: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.bf-summary-cell { padding: 4px 6px; }
+.bf-summary-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+.bf-summary-value {
+  font-family: var(--mono);
+  font-size: 18px;
+  color: var(--text);
+  margin-top: 2px;
+}
+
+.bf-section-h {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 32px 0 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.bf-section-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 18px;
+  max-width: 64ch;
+}
+
+.bf-uses {
+  margin: 32px 0 0;
+  max-width: 760px;
+}
+.bf-uses-list {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 12px 0 16px;
+  padding-left: 22px;
+}
+.bf-uses-list li { margin-bottom: 6px; }
+.bf-notes {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
 @media (max-width: 960px) {
   .re-hero {
     grid-template-columns: 1fr;
