@@ -5,6 +5,8 @@ import KpiTiles from "../components/KpiTiles.astro";
 import BotShareChart from "../components/BotShareChart.astro";
 import TopMarketsHeatmap from "../components/TopMarketsHeatmap.astro";
 import CalibrationMini from "../components/CalibrationMini.astro";
+import CumulativePnlChart from "../components/CumulativePnlChart.astro";
+import BriefingsTeaser from "../components/BriefingsTeaser.astro";
 import EmailSignup from "../components/EmailSignup.astro";
 
 import pwi from "../../public/data/pwi_latest.json";
@@ -145,6 +147,10 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
 
   <TopMarketsHeatmap />
 
+  <CumulativePnlChart />
+
+  <BriefingsTeaser />
+
   <section class="audience">
     <h2 class="audience-h">Built for three audiences</h2>
     <div class="audience-grid">
@@ -166,210 +172,48 @@ const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot
     </div>
   </section>
 
-  <h2 id="this-week">This week&rsquo;s market structure</h2>
-  <table class="snapshot">
-    <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
-    <tr>
-      <td>Total USD volume</td>
-      <td class="mono">{usdCompact(activity.total_usd_volume)}</td>
-      <td class="muted">Dollars traded across every market this week</td>
-    </tr>
-    <tr>
-      <td>Total trades</td>
-      <td class="mono">{(activity.total_trades / 1_000_000).toFixed(2)}M</td>
-      <td class="muted">One count per on-chain match (each match has a maker and a taker)</td>
-    </tr>
-    <tr>
-      <td>Active wallets</td>
-      <td class="mono">{activity.active_wallets.toLocaleString()}</td>
-      <td class="muted">Distinct wallets that traded at least once this week (maker or taker)</td>
-    </tr>
-    <tr>
-      <td>New participants this week</td>
-      <td class="mono">{activity.new_wallets.toLocaleString()}</td>
-      <td class="muted">Wallets that placed their first-ever Polymarket trade this week (13-week average: {Math.round(activity.new_wallets_ma13w).toLocaleString()})</td>
-    </tr>
-    <tr>
-      <td>Flagged wallets active</td>
-      <td class="mono">{activity.flagged_active_this_week.toLocaleString()}</td>
-      <td class="muted">Wallets flagged by the insider-trading test that actually traded this week (of {pii.headline.total_flagged_p_lt_01.toLocaleString()} flagged in total)</td>
-    </tr>
-  </table>
-
-  <h3>Who is participating: share by wallet type</h3>
-  <table class="snapshot">
-    <tr>
-      <th>Type</th>
-      <th style="text-align:right; width:130px;">Share of participation</th>
-      <th style="text-align:right; width:110px;">Participations</th>
-      <th>What that means (examples)</th>
-    </tr>
-    {classShares.map(c => (
-      <tr>
-        <td>{c.label}</td>
-        <td class="mono" style="text-align:right;">{smallPct(c.share)}</td>
-        <td class="mono" style="text-align:right;">{compactTrades(c.trades)}</td>
-        <td class="muted">{c.note}</td>
-      </tr>
-    ))}
-  </table>
-  <details class="section-fineprint">
-    <summary>How wallets are typed</summary>
-    <p>
-      Each match has a maker (limit order) and a taker (market order); both count. Algorithmic wallets are usually the maker, retail and casual traders the taker. Maker-only attribution would assign ~95&#37; to algorithms and hide the human side. The five-type classification follows the lifetime trade-history thresholds in <a href="/research">Paper 1</a>. See the <a href="/methodology">methodology</a> page for details.
-    </p>
-  </details>
-
-  <details class="section-fineprint">
-    <summary>Most popular markets this week (top 5 by USD volume)</summary>
-    <table class="snapshot" style="margin-top:8px;">
-      <tr>
-        <th style="width:32px;">#</th>
-        <th>Market</th>
-        <th style="width:80px;">Category</th>
-        <th style="text-align:right; width:110px;">USD volume</th>
-        <th style="text-align:right; width:90px;">Trades</th>
-      </tr>
-      {topMarkets.markets.map((m) => (
-        <tr>
-          <td class="mono">{m.rank}</td>
-          <td>{m.question ?? <span class="muted">(market #{m.market_id}, not in static metadata)</span>}</td>
-          <td class="muted">{m.category ?? "n/a"}</td>
-          <td class="mono" style="text-align:right;">{usdCompact(m.usd_volume)}</td>
-          <td class="mono" style="text-align:right;">{m.n_trades.toLocaleString()}</td>
-        </tr>
-      ))}
-    </table>
-    <p class="muted" style="font-size:13px;">
-      For per-market microstructure context (live odds, depth, execution gap), see the <a href="/briefings">Briefings page</a>.
-    </p>
-  </details>
-
-  <h2>Who wins and who pays <span class="h2-note">(algorithmic wallets vs humans)</span></h2>
+  <h2 id="this-week">How human traders distort probabilities</h2>
   <p class="section-lead">
-    Every trade&rsquo;s P&amp;L splits into <em>directional</em> (picked the winner) and <em>execution</em> (better-than-VWAP entry). Cumulative since 2022: bots <strong>+$133M</strong>, retail <strong>&minus;$79M</strong>. Source: <a href="/research">Della Vedova (2026), &ldquo;Who Profits from Prediction Markets?&rdquo;</a>
+    Tversky and Kahneman (1992) showed that people overweight rare events. We measure the same distortion every week from realized win rates of non-bot Polymarket trades. Pooled fit: Prelec α = <strong>{fmt(calibration.prelec_alpha, 3)}</strong> (R² = {fmt(calibration.prelec_r2, 2)}). Source: <a href="/research">Della Vedova and Grant (2026, in progress)</a>.
   </p>
-  <details class="section-fineprint">
-    <summary>How this table is constructed</summary>
-    <p>
-      The table shows the most recent fully-resolved week ({profitSplit.as_of_week}; one week behind the activity panel above). Each match is attributed to <strong>both</strong> the maker and the taker side with mirror-signed P&amp;L, so dollar totals sum to zero across wallet types by construction (zero-sum market, no fees). The directional / execution decomposition uses Paper 1&rsquo;s benchmark: per-(market, token) volume-weighted average price across buy-side trades. Bps columns report ROI in basis points (P&amp;L divided by USD volume), not the per-trade edge measure in Paper 1 Table 1; the two are not directly comparable. Single-week numbers can deviate substantially from the cumulative pattern because of trade-mix noise. Participations count both sides of every match.
-    </p>
-  </details>
-  <table class="snapshot">
-    <tr>
-      <th>Trader type</th>
-      <th style="text-align:right;">Participations</th>
-      <th style="text-align:right;">Accuracy</th>
-      <th style="text-align:right;">Total P&amp;L</th>
-      <th style="text-align:right;">Directional ROI (bps)</th>
-      <th style="text-align:right;">Execution ROI (bps)</th>
-      <th style="text-align:right;">Total ROI (bps)</th>
-    </tr>
-    {profitRows.map(r => {
-      const smallSample = r.n_trades < 5000;
-      return (
-        <tr>
-          <td>{r.label}</td>
-          <td class="mono" style="text-align:right;">{compactTrades(r.n_trades)}</td>
-          <td class="mono" style="text-align:right;">{r.accuracy != null ? (r.accuracy * 100).toFixed(1) + "%" : "n/a"}</td>
-          <td class="mono" style="text-align:right;">{usdCompact(r.pnl)}</td>
-          <td class="mono" style="text-align:right;">{smallSample ? "—" : signed(r.directional_roi_bps, 0)}</td>
-          <td class="mono" style="text-align:right;">{smallSample ? "—" : signed(r.execution_roi_bps, 0)}</td>
-          <td class="mono" style="text-align:right;"><strong>{signed(r.pnl_roi_bps, 0)}</strong></td>
-        </tr>
-      );
-    })}
-  </table>
-  <p class="muted" style="font-size:14px;">
-    Directional + execution = total ROI (an algebraic identity). For trader types with fewer than 5,000 weekly participations (typically casual and one-shot), the component decomposition is dominated by individual-trade VWAP-benchmark noise; we suppress those components and report only the total. The total P&amp;L and ROI are still meaningful at any sample size.
-  </p>
-
-  <details class="section-fineprint">
-    <summary>Algorithmic vs retail execution edge (this week)</summary>
-    <table class="snapshot" style="margin-top:8px;">
-      <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
-      <tr>
-        <td>Algorithmic vs retail execution edge</td>
-        <td class="mono">{fmt(execution.value, 3)} {arrow(execution.z52w)}</td>
-        <td class="muted">How much better algorithmic wallets are at timing entries vs active retail (z-score vs last year: {signed(execution.z52w)})</td>
-      </tr>
-    </table>
-  </details>
-
-  <h2>Where private information shows up <span class="h2-note">(insider-trading signal)</span></h2>
-  <p class="section-lead">
-    A wallet-level test picks out trader accounts whose win rate is too high, too often, to be luck. A higher flag rate means a stronger fingerprint of private information. <strong>Statistical signal, not a legal finding</strong> about any individual. Source: <a href="/research">Della Vedova (2026), &ldquo;Detecting Informed Trading in Prediction Markets.&rdquo;</a>
-  </p>
-
-  <table class="snapshot">
-    <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
-    <tr>
-      <td>Wallets flagged as likely informed</td>
-      <td class="mono">{pii.headline.total_flagged_p_lt_01.toLocaleString()}</td>
-      <td class="muted">Out of {pii.headline.total_wallets_tested.toLocaleString()} we can test ({pct(pii.headline.flag_rate, 2)})</td>
-    </tr>
-    <tr>
-      <td>After strict statistical correction</td>
-      <td class="mono">{pii.headline.holm_bonferroni_survivors.toLocaleString()}</td>
-      <td class="muted">Even under the harshest multiple-testing correction, this many remain</td>
-    </tr>
-    <tr>
-      <td>After moderate correction</td>
-      <td class="mono">{pii.headline.bh_fdr_survivors.toLocaleString()}</td>
-      <td class="muted">False-discovery-rate correction (balanced approach)</td>
-    </tr>
-  </table>
-
-  <h3>Flag rate by market type</h3>
-  <p class="section-lead" style="font-size:14px;">
-    We group markets by what generates the outcome. Types where somebody could plausibly know in advance (elections, committee decisions) should show higher flag rates than types driven by pure randomness (crypto prices). They do.
-  </p>
-  <table class="snapshot">
-    <tr><th>Category</th><th>Wallets tested</th><th>Flagged (p &lt; 0.01)</th><th>Flag rate</th></tr>
-    {mnpiRows.map(m => (
-      <tr>
-        <td>{mnpiLabels[m.mnpi_type]}</td>
-        <td class="mono">{m.n_wallets_tested.toLocaleString()}</td>
-        <td class="mono">{m.n_flagged_01.toLocaleString()}</td>
-        <td class="mono"><strong>{pct(m.flag_rate_01, 2)}</strong></td>
-      </tr>
-    ))}
-  </table>
-
-  <p class="consulting-handoff">
-    Rates and methodology are public. Identification of specific wallets for regulatory, litigation,
-    or journalistic purposes is handled case-by-case; see <a href="/expert-witness">consulting</a>.
-  </p>
-
-  <h2>How human traders distort probabilities <span class="h2-note">(probability weighting)</span></h2>
-  <p class="section-lead">
-    Tversky and Kahneman (1992) showed that people overweight rare events and underweight common ones. We measure the same distortion week by week from realized win rates of non-bot Polymarket trades. Source: <a href="/research">Della Vedova and Grant (2026, in progress), &ldquo;Probability Weighting from Prediction Markets.&rdquo;</a>
-  </p>
-
   <CalibrationMini />
-  <table class="snapshot">
-    <tr><th>Metric</th><th>Value</th><th>What it says</th></tr>
-    <tr>
-      <td><a href="/pwi">How traders weight unlikely outcomes</a></td>
-      <td class={`mono ${zCls(pwi.z52w)}`}>{fmt(pwi.value, 3)} {arrow(pwi.z52w)}</td>
-      <td class="muted">1.0 means rational; below 1 means long shots are over-priced (today vs last year: {signed(pwi.z52w)})</td>
-    </tr>
-    <tr>
-      <td><a href="/price-gap">Long-shot pricing gap</a></td>
-      <td class={`mono ${zCls(priceGap.z52w)}`}>{signed(priceGap.value, 3)} {arrow(priceGap.z52w)}</td>
-      <td class="muted">How much long shots win minus what the market implies (today vs last year: {signed(priceGap.z52w)})</td>
-    </tr>
-    <tr>
-      <td><a href="/efficiency">Calibration fit</a></td>
-      <td class={`mono ${zCls(efficiency.z52w)}`}>{fmt(efficiency.value, 3)} {arrow(efficiency.z52w)}</td>
-      <td class="muted">How well one behavioral parameter explains this week&rsquo;s pricing (today vs last year: {signed(efficiency.z52w)})</td>
-    </tr>
-    <tr>
-      <td><a href="/calibration">Long-run probability weighting (all weeks)</a></td>
-      <td class="mono">{fmt(calibration.prelec_alpha, 3)}</td>
-      <td class="muted">Pooled across every resolved trade since 2022. Kahneman-Tversky experimental value is 0.65.</td>
-    </tr>
-  </table>
+
+  <h2>Deep dives</h2>
+  <p class="section-lead">
+    Each index has its own page with the full time series, methodology, and download. The headline numbers are above; click through for detail.
+  </p>
+  <div class="deep-dive-grid">
+    <a class="dd-card" href="/bot-share">
+      <div class="dd-label">Algorithmic share</div>
+      <div class="dd-h">Who is trading</div>
+      <div class="dd-p">Weekly activity, 5-type wallet breakdown, time series.</div>
+    </a>
+    <a class="dd-card" href="/research">
+      <div class="dd-label">Profit decomposition</div>
+      <div class="dd-h">Who profits</div>
+      <div class="dd-p">By-type P&amp;L, directional vs execution, anchored to Paper 1.</div>
+    </a>
+    <a class="dd-card" href="/pii">
+      <div class="dd-label">Insider screen</div>
+      <div class="dd-h">Where private info shows up</div>
+      <div class="dd-p">{pii.headline.total_flagged_p_lt_01.toLocaleString()} flagged wallets, MNPI category breakdown.</div>
+    </a>
+    <a class="dd-card" href="/calibration">
+      <div class="dd-label">Probability weighting</div>
+      <div class="dd-h">How crowds price uncertainty</div>
+      <div class="dd-p">Prelec fit, calibration scatter, longshot pricing gap.</div>
+    </a>
+    <a class="dd-card" href="/execution">
+      <div class="dd-label">Execution edge</div>
+      <div class="dd-h">Bot vs retail timing</div>
+      <div class="dd-p">Weekly execution edge, 52-week trend, methodology.</div>
+    </a>
+    <a class="dd-card" href="/efficiency">
+      <div class="dd-label">Calibration fit</div>
+      <div class="dd-h">Market efficiency over time</div>
+      <div class="dd-p">Weekly R² of the Prelec fit; tracks pricing quality.</div>
+    </a>
+  </div>
 
   <p class="muted" style="font-size:14px;">
     Time-series charts and the calibration scatter (Prelec &alpha; = {fmt(calibration.prelec_alpha, 3)}, R&sup2; = {fmt(calibration.prelec_r2, 3)}) live on the deep-dive pages: <a href="/calibration">calibration</a>, <a href="/bot-share">algorithmic share</a>, <a href="/pwi">PWI</a>, <a href="/execution">execution edge</a>, <a href="/price-gap">price gap</a>, <a href="/efficiency">efficiency</a>.

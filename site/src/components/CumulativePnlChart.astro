@@ -1,0 +1,117 @@
+---
+import data from "../../public/data/cumulative_pnl_history.json";
+
+// Show only the two storyline series — bot and active_retail — to keep the
+// chart legible. Sophisticated/casual/one_shot end near zero and would clutter
+// the visual without changing the headline.
+const dates: string[] = data.dates;
+const botSeries: number[] = data.cumulative.bot;
+const retailSeries: number[] = data.cumulative.active_retail;
+
+const W = 720;
+const H = 280;
+const ML = 56, MR = 110, MT = 12, MB = 26;
+
+const allVals = [...botSeries, ...retailSeries, 0];
+const yMin = Math.min(...allVals);
+const yMax = Math.max(...allVals);
+const yPad = (yMax - yMin) * 0.05;
+const y0 = yMin - yPad;
+const y1 = yMax + yPad;
+
+const x = (i: number) => ML + (i / (dates.length - 1)) * (W - ML - MR);
+const y = (v: number) => MT + ((y1 - v) / (y1 - y0)) * (H - MT - MB);
+const yZero = y(0);
+
+function pathFor(series: number[]) {
+  return series.map((v, i) => `${i === 0 ? "M" : "L"} ${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(" ");
+}
+function areaFor(series: number[]) {
+  const line = pathFor(series);
+  return `${line} L ${x(series.length - 1).toFixed(1)} ${yZero.toFixed(1)} L ${x(0).toFixed(1)} ${yZero.toFixed(1)} Z`;
+}
+
+const botLine = pathFor(botSeries);
+const botArea = areaFor(botSeries);
+const retailLine = pathFor(retailSeries);
+const retailArea = areaFor(retailSeries);
+
+// Y-axis ticks at round dollar amounts
+function yTickValues(): number[] {
+  const range = y1 - y0;
+  const rough = range / 5;
+  const mag = Math.pow(10, Math.floor(Math.log10(rough)));
+  const step = Math.ceil(rough / mag) * mag;
+  const ticks: number[] = [];
+  let t = Math.ceil(y0 / step) * step;
+  while (t <= y1) { ticks.push(t); t += step; }
+  return ticks;
+}
+const yTicks = yTickValues();
+
+function fmtUsd(n: number): string {
+  const sign = n < 0 ? "-" : (n > 0 ? "+" : "");
+  const a = Math.abs(n);
+  if (a >= 1e9) return `${sign}$${(a/1e9).toFixed(2)}B`;
+  if (a >= 1e6) return `${sign}$${(a/1e6).toFixed(0)}M`;
+  if (a >= 1e3) return `${sign}$${(a/1e3).toFixed(0)}K`;
+  return `${sign}$${a.toFixed(0)}`;
+}
+
+// X-axis ticks: one per year change
+const yearTicks: { x: number; label: string }[] = [];
+let lastYear = "";
+dates.forEach((d, i) => {
+  const yr = d.slice(0, 4);
+  if (yr !== lastYear) {
+    yearTicks.push({ x: x(i), label: yr });
+    lastYear = yr;
+  }
+});
+
+const lastIdx = dates.length - 1;
+const botEnd = botSeries[lastIdx];
+const retailEnd = retailSeries[lastIdx];
+---
+<figure class="cum-pnl">
+  <figcaption class="cp-caption">
+    <span class="cp-title">Cumulative P&amp;L by trader type, Polymarket since November 2022</span>
+    <span class="cp-as-of">
+      Bots have captured <strong>{fmtUsd(botEnd)}</strong>; active retail traders are down <strong>{fmtUsd(retailEnd)}</strong>.
+      Zero-sum market: bot gains and retail losses balance to within fees and the smaller wallet types.
+    </span>
+  </figcaption>
+  <svg viewBox={`0 0 ${W} ${H}`} class="cp-svg" aria-label="Cumulative P&L since 2022">
+    {yTicks.map(t => (
+      <g>
+        <line x1={ML} x2={W - MR} y1={y(t)} y2={y(t)} class={t === 0 ? "cp-zero" : "cp-grid"} />
+        <text x={ML - 8} y={y(t) + 3} class="cp-axis" text-anchor="end">{fmtUsd(t)}</text>
+      </g>
+    ))}
+    {yearTicks.map(t => (
+      <g>
+        <line x1={t.x} x2={t.x} y1={H - MB} y2={H - MB + 3} class="cp-grid" />
+        <text x={t.x} y={H - 8} class="cp-axis" text-anchor="middle">{t.label}</text>
+      </g>
+    ))}
+    {/* Retail area + line (drawn first; sits below zero) */}
+    <path d={retailArea} class="cp-area-retail" />
+    <path d={retailLine} class="cp-line-retail" />
+    {/* Bot area + line (sits above zero) */}
+    <path d={botArea} class="cp-area-bot" />
+    <path d={botLine} class="cp-line-bot" />
+    {/* Endpoint markers + labels */}
+    <circle cx={x(lastIdx)} cy={y(botEnd)} r="4" class="cp-dot-bot" />
+    <text x={x(lastIdx) + 8} y={y(botEnd) + 4} class="cp-endlabel cp-endlabel-bot">
+      Bots: {fmtUsd(botEnd)}
+    </text>
+    <circle cx={x(lastIdx)} cy={y(retailEnd)} r="4" class="cp-dot-retail" />
+    <text x={x(lastIdx) + 8} y={y(retailEnd) + 4} class="cp-endlabel cp-endlabel-retail">
+      Active retail: {fmtUsd(retailEnd)}
+    </text>
+  </svg>
+  <div class="cp-source">
+    Source: Della Vedova (2026), <a href="/research">&ldquo;Who Profits from Prediction Markets?&rdquo;</a>
+    &middot; Updated weekly &middot; <a href="/data">Download data</a>
+  </div>
+</figure>

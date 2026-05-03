@@ -27,6 +27,7 @@ SCRIPTS = [
     "aggregate_market_microstructure",
     "fetch_market_snapshot",
     "aggregate_profit_split",
+    "aggregate_cumulative_pnl",
     "build_master_table",
     "build_weekly_narrative",
     "build_briefings",
