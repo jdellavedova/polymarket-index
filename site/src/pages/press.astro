@@ -4,8 +4,7 @@ import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
 import MentionedIn from "../components/redesign/MentionedIn.astro";
 import press from "../../public/data/press_quotes.json";
 
-const featured = press.quotes[0];
-const restQuotes = press.quotes.slice(1);
+const allQuotes = press.quotes;
 const commentTopics = [
   "Prediction-market microstructure",
   "Polymarket and Kalshi market integrity",
@@ -22,13 +21,13 @@ const commentTopics = [
   description="Quotes ready to cite, recent press, speaking engagements, and contact info for Joshua Della Vedova."
   wide={true}>
 
-  <section class="dd-hero">
-    <div class="dd-hero-text">
+  <section class="re-hero">
+    <div class="re-hero-text">
       <p class="dd-eyebrow">DV-PMI · Press</p>
-      <h1 class="dd-h1">Press and media</h1>
+      <h1 class="re-h1">Press and media</h1>
       <p class="dd-stamp">Available for comment within 24 hours, weekdays</p>
-      <p class="dd-lede">
-        Quotes ready to cite, recent press, speaking engagements, and contact info. All quotes below released under <strong>CC BY 4.0</strong>; edit for length or style, keep the attribution. No interview required.
+      <p class="re-lede">
+        Quotes ready to cite, recent press, speaking engagements, and contact info. All quotes below released under <strong>CC BY 4.0</strong>; edit for length or style, keep the attribution. No interview required; an email heads-up is appreciated so the corresponding paper can be linked or context clarified.
       </p>
       <p class="pr-contact">
         <span class="pr-contact-label">Contact</span>
@@ -42,23 +41,12 @@ const commentTopics = [
         </ul>
       </div>
     </div>
-
-    <div class="dd-hero-chart">
-      <figure class="pr-featured">
-        <div class="pr-featured-label">Featured quote</div>
-        <div class="pr-featured-topic">{featured.topic}</div>
-        <blockquote class="pr-featured-q">&ldquo;{featured.quote}&rdquo;</blockquote>
-        <figcaption class="pr-featured-cite">
-          {featured.citation_line}
-        </figcaption>
-      </figure>
-    </div>
   </section>
 
   <h2 class="bf-section-h">Quotes ready to cite</h2>
   <p class="bf-section-sub">All quotes released under CC BY 4.0; edit freely as long as attribution remains.</p>
   <div class="pr-quote-grid">
-    {restQuotes.map(q => (
+    {allQuotes.map(q => (
       <article class="pr-quote-card">
         <div class="pr-quote-topic">{q.topic}</div>
         <blockquote class="pr-quote-text">&ldquo;{q.quote}&rdquo;</blockquote>
