@@ -32,6 +32,7 @@ SCRIPTS = [
     "build_weekly_narrative",
     "build_briefings",
     "build_og_image",
+    "build_press_kit",
     "build_email_digest",
 ]
 
