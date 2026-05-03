@@ -28,25 +28,23 @@ function fmtUsd(n: number): string {
   <div class="re-hero-text">
     <p class="re-stamp">Updated {activity.week} &middot; week of {activity.as_of}</p>
     <h1 class="re-h1">Della Vedova Prediction Market Indices</h1>
-
     <p class="re-lede">{lede}</p>
-
     <p class="re-cum-line">
       Cumulative since November 2022:
       <span class="re-cum-bot">{fmtUsd(botEnd)} to algorithmic wallets</span>
       &middot;
       <span class="re-cum-retail">{fmtUsd(retailEnd)} from active retail</span>.
     </p>
-
-    <p class="re-source">
-      Source: <a href="/research">Della Vedova (2026), &ldquo;Who Profits from Prediction Markets?&rdquo;</a>
-      &middot; <a href="/methodology">Methodology</a>
-      &middot; <a href="/data">Download data</a>
-      &middot; <a href="/briefings">This week&rsquo;s briefings</a>
-    </p>
   </div>
 
   <div class="re-hero-chart">
     <CumulativePnlChart />
   </div>
+
+  <p class="re-source">
+    Source: <a href="/research">Della Vedova (2026), &ldquo;Who Profits from Prediction Markets?&rdquo;</a>
+    &middot; <a href="/methodology">Methodology</a>
+    &middot; <a href="/data">Download data</a>
+    &middot; <a href="/briefings">This week&rsquo;s briefings</a>
+  </p>
 </section>
