@@ -1,0 +1,105 @@
+---
+import Base from "../layouts/Base.astro";
+import HeroEssay from "../components/redesign/HeroEssay.astro";
+import FindingCard from "../components/redesign/FindingCard.astro";
+import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
+
+import botShare from "../../public/data/bot_share_timeseries.json";
+import pwi from "../../public/data/pwi_timeseries.json";
+import pii from "../../public/data/pii_latest.json";
+import execution from "../../public/data/execution_timeseries.json";
+import calibration from "../../public/data/calibration_latest.json";
+import topMarkets from "../../public/data/top_markets_latest.json";
+import briefings from "../../public/data/briefings_latest.json";
+import activity from "../../public/data/weekly_activity_latest.json";
+
+// --- Card 1: Algorithmic share ---
+const botShareSpark = (botShare as any[])
+  .filter(p => p.bot_share_ma13w != null)
+  .map(p => p.bot_share_ma13w);
+const botShareNow = botShare[botShare.length - 1].bot_share_ma13w * 100;
+
+// --- Card 2: Probability weighting (PWI) ---
+const pwiSpark = (pwi as any[]).filter(p => p.value != null).map(p => p.value);
+
+// --- Card 3: Insider screen (MNPI flag rates by category) ---
+const mnpiOrder = ["vote", "action", "performance", "stochastic"];
+const mnpiLabels: Record<string, string> = {
+  vote: "Vote", action: "Action", performance: "Performance", stochastic: "Stochastic",
+};
+const insiderBars = pii.mnpi_taxonomy
+  .slice()
+  .sort((a: any, b: any) => mnpiOrder.indexOf(a.mnpi_type) - mnpiOrder.indexOf(b.mnpi_type))
+  .map((m: any) => ({ label: mnpiLabels[m.mnpi_type] ?? m.mnpi_type, value: m.flag_rate_01 }));
+
+// --- Card 4: Execution edge ---
+const execSpark = (execution as any[]).filter(p => p.value != null).map(p => p.value);
+
+// --- Card 5: Calibration scatter (mini) ---
+const calibScatter = (calibration.bins as any[])
+  .filter((b: any) => b.realized_win_rate != null && b.price_bin_center != null)
+  .map((b: any) => ({ x: b.price_bin_center, y: b.realized_win_rate }));
+
+// --- Card 6: This week's biggest market (text-only) ---
+const topMarket = topMarkets.markets[0];
+const topQuestion = topMarket?.question || `Market #${topMarket?.market_id}`;
+const topVolume = topMarket?.usd_volume || 0;
+function fmtMarketVol(v: number): string {
+  if (v >= 1e6) return `$${(v / 1e6).toFixed(1)}M`;
+  if (v >= 1e3) return `$${(v / 1e3).toFixed(0)}K`;
+  return `$${v.toFixed(0)}`;
+}
+const briefingsCount = (briefings.briefings as any[]).length;
+
+const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + finding cards. Updated weekly by Joshua Della Vedova, University of San Diego.";
+---
+<Base title="Della Vedova Prediction Market Indices" description={desc}>
+  <HeroEssay />
+
+  <h2 class="re-findings-h">This week&rsquo;s findings</h2>
+  <div class="re-findings-grid">
+    <FindingCard
+      label="ALGORITHMIC SHARE"
+      headline={`${botShareNow.toFixed(0)}%`}
+      claim="Bots ran 87% of all counterparty events on Polymarket this week. The share has climbed from near zero in late 2022."
+      sparklineData={botShareSpark}
+      href="/bot-share"
+    />
+    <FindingCard
+      label="PROBABILITY WEIGHTING"
+      headline={`α = ${calibration.prelec_alpha.toFixed(3)}`}
+      claim="Non-bot traders overweight long shots and underweight near-certain outcomes. The fitted Prelec parameter matches Kahneman-Tversky's experimental 0.65."
+      sparklineData={pwiSpark}
+      href="/calibration"
+    />
+    <FindingCard
+      label="INSIDER SCREEN"
+      headline={`${pii.headline.total_flagged_p_lt_01.toLocaleString()}`}
+      claim="Wallets whose accuracy is too high, too often, to be luck (p<0.01). Action and Vote markets show the highest flag rates."
+      barData={insiderBars}
+      href="/pii"
+    />
+    <FindingCard
+      label="EXECUTION EDGE"
+      headline={execSpark.length ? execSpark[execSpark.length - 1].toFixed(3) : "—"}
+      claim="Bot vs retail Prelec divergence. Higher = bots are timing entries better than retail. The 52-week trend is the story; weekly noise is large."
+      sparklineData={execSpark}
+      href="/execution"
+    />
+    <FindingCard
+      label="CALIBRATION CURVE"
+      headline={`R² = ${calibration.prelec_r2.toFixed(3)}`}
+      claim="Realized win rates plotted against market prices. The dashed line is rational pricing; dots above-left and below-right show the longshot bias."
+      scatterData={calibScatter}
+      href="/calibration"
+    />
+    <FindingCard
+      label="THIS WEEK'S BRIEFINGS"
+      headline={fmtMarketVol(topVolume)}
+      claim={`Largest market by volume: ${topQuestion} ${briefingsCount} per-market briefings ready to read.`}
+      href="/briefings"
+    />
+  </div>
+
+  <AuthorityStrip />
+</Base>

@@ -60,10 +60,25 @@ def summary_stats(series: pd.Series, window: int = 52) -> dict:
     }
 
 
+def _sanitize_for_json(obj):
+    """Recursively replace NaN/Inf floats with None so the output is valid
+    per the JSON spec (Vite, browsers, jq all reject literal NaN tokens)."""
+    import math
+    if isinstance(obj, float):
+        if math.isnan(obj) or math.isinf(obj):
+            return None
+        return obj
+    if isinstance(obj, dict):
+        return {k: _sanitize_for_json(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [_sanitize_for_json(v) for v in obj]
+    return obj
+
+
 def write_json(path: Path, payload: dict | list) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
-        json.dump(payload, f, indent=2, default=str)
+        json.dump(_sanitize_for_json(payload), f, indent=2, default=str, allow_nan=False)
 
 
 def utc_now() -> str:

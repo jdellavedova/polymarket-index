@@ -1633,3 +1633,233 @@ h1.hero-thesis {
   line-height: 1.55;
   max-width: 70ch;
 }
+
+/* =====================================================================
+   Redesign-only styles (used ONLY by /redesign and re-* prefixed
+   components). The existing homepage continues to use the rules above
+   without modification. When the redesign is approved and the swap
+   commit lands, the old non-re-* homepage rules above can be deleted.
+   ===================================================================== */
+
+/* Hero (OWID essay style) */
+.re-hero {
+  margin: 0 0 36px;
+  padding: 0;
+}
+.re-stamp {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+.re-h1 {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  margin: 0 0 18px;
+  color: var(--text);
+}
+.re-lede {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--text);
+  margin: 0 0 14px;
+  max-width: 64ch;
+}
+.re-cum-line {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+.re-cum-bot { color: var(--pos); font-weight: 600; }
+.re-cum-retail { color: var(--neg); font-weight: 600; }
+.re-source {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--muted);
+  margin: 14px 0 0;
+  letter-spacing: 0.02em;
+}
+.re-source a { font-weight: 600; }
+
+/* Findings header + grid */
+.re-findings-h {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 36px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.re-findings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 0 0 36px;
+}
+
+/* Finding card */
+.re-card {
+  display: block;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.12s ease, transform 0.12s ease;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+}
+.re-card:hover {
+  border-color: var(--founders);
+  transform: translateY(-1px);
+}
+.re-card-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--founders);
+  margin-bottom: 10px;
+}
+.re-card-spark {
+  width: 100%;
+  height: 40px;
+  display: block;
+  margin-bottom: 10px;
+}
+.re-spark-line { fill: none; stroke: var(--founders); stroke-width: 1.4; }
+.re-spark-dot { fill: var(--founders); }
+
+.re-card-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.re-bar-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 48px;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 11px;
+}
+.re-bar-label { color: var(--muted); }
+.re-bar-track {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  height: 10px;
+  display: block;
+  overflow: hidden;
+}
+.re-bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--founders);
+  opacity: 0.85;
+}
+.re-bar-value {
+  font-family: var(--mono);
+  text-align: right;
+  color: var(--text);
+}
+
+.re-card-scatter { width: 100%; height: 80px; display: block; margin-bottom: 10px; }
+.re-scatter-rational { stroke: var(--muted); stroke-width: 1; opacity: 0.5; }
+.re-scatter-dot { fill: var(--immaculata); fill-opacity: 0.85; }
+
+.re-card-headline {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text);
+  margin: auto 0 8px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.re-card-claim {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+.re-card-more {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--founders);
+  margin-top: auto;
+}
+
+/* Authority strip */
+.re-authority {
+  margin: 36px 0 0;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--border);
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--muted);
+}
+.re-auth-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.re-auth-cell { line-height: 1.5; }
+.re-auth-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.re-auth-sep { color: var(--border); }
+.re-cite {
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.re-cite-label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.re-cite-text {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text);
+  background: var(--bg-soft);
+  padding: 6px 8px;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  word-break: break-word;
+}
+
+@media (max-width: 720px) {
+  .re-findings-grid { grid-template-columns: 1fr; }
+  .re-h1 { font-size: 24px; }
+  .re-lede { font-size: 17px; }
+}
+

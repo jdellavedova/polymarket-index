@@ -1,0 +1,91 @@
+---
+/**
+ * Generic chart-card for the homepage finding grid.
+ *
+ * Pass exactly ONE of: sparklineData (numeric series), barData (label/value
+ * pairs for horizontal mini-bars), scatterData ({x, y} pairs for a mini
+ * scatter with y=x reference). Or pass nothing for a text-only card.
+ */
+export interface BarPoint { label: string; value: number; }
+export interface ScatterPoint { x: number; y: number; }
+export interface Props {
+  label: string;
+  headline: string;
+  claim: string;
+  href: string;
+  sparklineData?: number[];
+  barData?: BarPoint[];
+  scatterData?: ScatterPoint[];
+}
+const { label, headline, claim, href, sparklineData, barData, scatterData } = Astro.props;
+
+// --- Sparkline geometry ---
+function sparklinePath(data: number[], w = 140, h = 40, pad = 2): string {
+  if (!data || data.length < 2) return "";
+  const lo = Math.min(...data);
+  const hi = Math.max(...data);
+  const span = hi - lo || 1;
+  const xStep = (w - 2 * pad) / (data.length - 1);
+  return data
+    .map((v, i) => {
+      const x = pad + i * xStep;
+      const y = pad + (h - 2 * pad) * (1 - (v - lo) / span);
+      return `${i === 0 ? "M" : "L"} ${x.toFixed(1)} ${y.toFixed(1)}`;
+    })
+    .join(" ");
+}
+const sparkPath = sparklineData ? sparklinePath(sparklineData) : "";
+const sparkLast = sparklineData && sparklineData.length
+  ? (() => {
+      const lo = Math.min(...sparklineData);
+      const hi = Math.max(...sparklineData);
+      const span = hi - lo || 1;
+      const xStep = (140 - 4) / (sparklineData.length - 1);
+      const v = sparklineData[sparklineData.length - 1];
+      return {
+        x: 2 + (sparklineData.length - 1) * xStep,
+        y: 2 + 36 * (1 - (v - lo) / span),
+      };
+    })()
+  : null;
+
+// --- Mini-bars geometry ---
+const maxBar = barData ? Math.max(...barData.map(b => b.value), 0) : 0;
+---
+<a class="re-card" href={href}>
+  <div class="re-card-label">{label}</div>
+
+  {sparklineData && (
+    <svg class="re-card-spark" viewBox="0 0 140 40" preserveAspectRatio="none" aria-hidden="true">
+      <path d={sparkPath} class="re-spark-line" />
+      {sparkLast && <circle cx={sparkLast.x} cy={sparkLast.y} r="2.5" class="re-spark-dot" />}
+    </svg>
+  )}
+
+  {barData && (
+    <div class="re-card-bars">
+      {barData.map(b => (
+        <div class="re-bar-row">
+          <span class="re-bar-label">{b.label}</span>
+          <span class="re-bar-track">
+            <span class="re-bar-fill" style={`width:${maxBar > 0 ? (b.value / maxBar) * 100 : 0}%;`}></span>
+          </span>
+          <span class="re-bar-value">{(b.value * 100).toFixed(2)}%</span>
+        </div>
+      ))}
+    </div>
+  )}
+
+  {scatterData && (
+    <svg class="re-card-scatter" viewBox="0 0 140 80" aria-hidden="true">
+      <line x1="6" y1="74" x2="138" y2="2" class="re-scatter-rational" stroke-dasharray="3 3" />
+      {scatterData.map(p => (
+        <circle cx={6 + p.x * 132} cy={74 - p.y * 72} r="2" class="re-scatter-dot" />
+      ))}
+    </svg>
+  )}
+
+  <div class="re-card-headline">{headline}</div>
+  <div class="re-card-claim">{claim}</div>
+  <div class="re-card-more">Read more &rarr;</div>
+</a>
