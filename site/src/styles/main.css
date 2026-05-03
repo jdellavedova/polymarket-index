@@ -1628,20 +1628,25 @@ footer.site-foot .disclaimer {
 /* Author tile (homepage, just above the briefings teaser) */
 .auth-tile {
   display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 18px;
-  align-items: start;
+  grid-template-columns: 168px 1fr;
+  gap: 22px;
+  align-items: stretch;
   margin: 28px 0 20px;
-  padding: 16px 18px;
+  padding: 18px 20px;
   background: var(--bg-soft);
   border: 1px solid var(--border);
   border-radius: 6px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22), 0 4px 10px rgba(0, 0, 0, 0.14);
 }
+.auth-photo {
+  height: 100%;
+  min-height: 168px;
+}
 .auth-photo img {
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center top;
   border-radius: 6px;
   border: 1px solid var(--border);
   display: block;
@@ -1674,6 +1679,28 @@ footer.site-foot .disclaimer {
   margin: 0 0 8px;
   max-width: 80ch;
 }
+.auth-collab {
+  font-family: var(--serif);
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 0 10px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 2px solid var(--accent, var(--border));
+  border-radius: 2px;
+  max-width: 80ch;
+}
+.auth-collab-label {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-right: 6px;
+}
+.auth-collab a { font-weight: 600; }
 .auth-links {
   font-family: var(--sans);
   font-size: 12px;
@@ -1681,8 +1708,10 @@ footer.site-foot .disclaimer {
 .auth-links a { font-weight: 600; }
 .auth-sep { color: var(--border); margin: 0 6px; }
 @media (max-width: 720px) {
-  .auth-tile { grid-template-columns: 80px 1fr; gap: 14px; padding: 14px; }
-  .auth-photo img { width: 80px; height: 80px; }
+  .auth-tile { grid-template-columns: 96px 1fr; gap: 14px; padding: 14px; align-items: start; }
+  .auth-photo { height: 96px; min-height: 96px; }
+  .auth-photo img { width: 96px; height: 96px; }
+  .auth-collab { font-size: 13px; padding: 8px; }
 }
 
 /* "This week on Polymarket" briefings teaser (top of homepage)
