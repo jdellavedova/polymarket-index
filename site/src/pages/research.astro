@@ -8,7 +8,8 @@ const SSRN_PAPER2 = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6567238
 
 // Paper data for the card grid. The "DV-PMI program" papers are featured at
 // the top because they're the basis for everything on this site. Other
-// publications follow grouped by status.
+// publications follow grouped by status. Summaries paraphrase the SSRN abstract
+// of each paper, kept to 3-5 sentences for scanning.
 const programPapers = [
   {
     n: "Paper 1",
@@ -17,7 +18,7 @@ const programPapers = [
     venue: "Working paper · 1,059 SSRN downloads",
     status: "Under review",
     statusTone: "active",
-    summary: "Trading skill in prediction markets is structurally two-dimensional. Forecasting accuracy and execution quality are distinct, persistent, and nearly independent capacities. Execution, not forecasting, determines which traders profit. Cumulative since 2022: bots +$135.9M, retail −$82.1M.",
+    summary: "Using 671 million on-chain Polymarket trades, we show that trading skill in prediction markets is structurally two-dimensional. Forecasting accuracy (theta) and execution quality (epsilon) are distinct, persistent, and nearly independent capacities — shared variance below 1% for humans, below 4% for bots. Execution, not forecasting, determines who profits: bots achieve coin-flip accuracy (49.9%) yet earn $135.9M cumulative, while active retail is more accurate (51.3%) and loses $82.1M. The orthogonality is verified on 14.1 million CBOE equity options as a boundary test of the framework.",
     href: SSRN_AUTHOR,
     hrefLabel: "SSRN",
   },
@@ -28,7 +29,7 @@ const programPapers = [
     venue: "Working paper · Posted to SSRN April 2026",
     status: "Under review",
     statusTone: "active",
-    summary: "The theta-epsilon orthogonality from Paper 1 becomes a forensic detection signal. 6,032 of 450,048 wallets show the structural signature of private information; aggregate gains ≈$150M. A microstructure-grounded, Daubert-ready test statistic. Near-zero flag-set concordance with Mitts and Ofir (2026).",
+    summary: "The theta-epsilon orthogonality from Paper 1 becomes a forensic detection signal. We flag wallets whose accuracy is too high, too often, to be explained by the price-following null (one-sided binomial z-test, p < 0.01). 6,291 of 483,002 wallets are flagged (1.30%); 806 survive Holm-Bonferroni. Aggregate gains by flagged wallets are approximately $150M, mostly absorbed by algorithmic market makers. Near-zero flag-set concordance with the heuristic screen of Mitts and Ofir (2026): the two approaches identify different populations. Designed to map cleanly onto the four Rule 702 factors for use in expert testimony.",
     href: SSRN_PAPER2,
     hrefLabel: "SSRN abstract 6567238",
   },
@@ -39,7 +40,7 @@ const programPapers = [
     venue: "Work in progress",
     status: "In progress",
     statusTone: "wip",
-    summary: "A model-free measurement of probability weighting from a weekly panel of 671M prediction-market trades. Pooled fit: Prelec α = 0.664, matching the Tversky-Kahneman experimental 0.65. Tests whether the prediction-market-implied weighting index predicts cross-sectional equity anomalies.",
+    summary: "Prediction markets provide a model-free measurement of probability weighting: the price-probability gap in binary contracts is the Prelec weighting function, with no need to specify utility, estimate physical density, or extract risk-neutral density. Pooled across 233M Polymarket non-bot trades the fit is α = 0.664 (R² = 0.987), matching the Tversky-Kahneman (1992) experimental estimate of 0.65 to within standard error. We then test whether the dashboard's weekly prediction-market-implied weighting index predicts cross-sectional equity anomalies (lottery premium, IVOL spread, beta spread) and JKP factor returns.",
     href: "/calibration",
     hrefLabel: "View live index",
   },
@@ -51,35 +52,35 @@ const peerReviewed = [
     authors: "Della Vedova, J., Grant, A. R., and Westerholm, P. J.",
     venue: "Journal of Financial and Quantitative Analysis (2023), 58(7), 2852-2889",
     rank: "ABS 4 · ABDC A* · FT50",
-    summary: "Individual investors use the 52-week high as a reference price in their trading decisions.",
+    summary: "Individual investors anchor on the 52-week high as a reference price in their trading decisions. Using transaction-level data we show that investors are more likely to sell winners as prices approach the 52-week high and more likely to hold losers as prices fall further from it — a pattern consistent with prospect-theory reference dependence. The reference-price effect persists in regressions controlling for momentum, capital gains overhang, and trader sophistication.",
   },
   {
     title: "Who Drives Momentum Returns? The Role Reversal of Trend-Seeking Households and Contrarian Institutions",
     authors: "Della Vedova, J., Grant, A. R., and Westerholm, P. J.",
     venue: "European Financial Management (2025)",
     rank: "ABS 3 · ABDC A",
-    summary: "An investor-class decomposition of cross-sectional momentum returns.",
+    summary: "Cross-sectional momentum is conventionally attributed to slow-moving institutional capital. Using investor-class flow data we show the opposite: households are the trend-followers buying recent winners, while institutions are the contrarians providing liquidity to those flows. The role reversal helps reconcile competing behavioral and intermediary-based explanations for the momentum premium.",
   },
   {
     title: "Financial Uncertainty and the Cross Section of Cryptocurrency Returns",
     authors: "Colak, G., Della Vedova, J., Foley, S., and Mai, S. T.",
     venue: "Journal of Banking and Finance (forthcoming)",
     rank: "ABS 3 · ABDC A*",
-    summary: "Macroeconomic uncertainty and the cross-section of cryptocurrency returns.",
+    summary: "Macroeconomic and financial uncertainty (proxied by VIX, EPU, and a measure of intermediary risk-bearing) commands a significant premium in the cross-section of cryptocurrency returns. Coins more exposed to uncertainty earn higher subsequent returns; the premium is robust to standard crypto factor controls and is concentrated in the most liquid coins. The result links cryptocurrency pricing to the broader uncertainty-and-asset-pricing literature.",
   },
   {
     title: "Equity Borrowing Constraints and the Informed Trading Strategies of Short Sellers",
     authors: "Blau, B. M., Della Vedova, J., Fox, C., and Smith, J. M.",
     venue: "Market Microstructure and Liquidity (forthcoming)",
     rank: "ABDC B",
-    summary: "How borrowing constraints shape short-seller information processing.",
+    summary: "Short sellers are widely documented as informed, but their trading strategies are constrained by the cost and availability of borrowable shares. We show that high borrowing fees compress the predictive content of short selling: when borrow is expensive, only the most negative private signals get acted on, narrowing the cross-section of short-side informativeness. The result complicates a literature that treats short interest as a uniform sentiment proxy.",
   },
   {
     title: "Fostering Reverse Innovation with Value Chain Co-Creation",
     authors: "Kortmann, S., Zimmermann, C., Bliss, B. A., and Della Vedova, J.",
     venue: "IEEE Transactions on Engineering Management (2025), 72, 770-785",
     rank: "ABS 3 · ABDC A",
-    summary: "",
+    summary: "Reverse innovation — the diffusion of products from emerging-market subsidiaries back to developed-market parents — succeeds disproportionately when the parent firm structures the relationship as value-chain co-creation rather than top-down transfer. We document the boundary conditions under which co-creation outperforms, drawing on multi-firm engineering and innovation data.",
   },
 ];
 
@@ -88,28 +89,28 @@ const otherWorking = [
     title: "The Wrong Reference Price: Trading Strategy and the Disposition Effect",
     authors: "Della Vedova, J. (2026)",
     venue: "Working paper",
-    summary: "Most investors form reference prices from the last price rather than the purchase price. Reframing reverses classical disposition findings in a substantial subset of trades.",
+    summary: "The classical disposition-effect literature assumes purchase price is the investor's reference point. Transaction data shows most retail investors actually form reference prices from the most-recent observed price (often the latest high), not the purchase price. Re-running the standard disposition test with the corrected reference reverses the classical finding in a substantial subset of trades — the disposition coefficient flips sign for about a third of investors, and the average effect size is roughly half the conventional estimate.",
     href: SSRN_AUTHOR,
   },
   {
     title: "Investor Disagreement, Liquidity, and Informational Efficiency at the 52-Week High",
     authors: "Della Vedova, J., Gao, M., Grant, A. R., Westerholm, P. J., and Bliss, B. A.",
     venue: "Journal of Banking and Finance, R&R (1st round)",
-    summary: "Investor behavior around the 52-week high and its consequences for liquidity and price discovery.",
+    summary: "An expansion of the 52-week high reference-price work into market-quality consequences. Investor disagreement spikes around the 52-week high; bid-ask spreads widen, depth thins, and price discovery slows. The mechanism is that opposing reference-dependent strategies (sellers anchored to the high, buyers anchored to recent lows) crowd into the same price level, generating temporary liquidity dry-ups that reverse over a few days.",
     href: SSRN_AUTHOR,
   },
   {
     title: "The 1% Problem: LLM Orchestration for Rare Event Detection in Manufacturing Supply Chains",
     authors: "Della Vedova, J., Dang, J., and Yang, Y.",
     venue: "International Journal of Production Economics, R&R (2nd round)",
-    summary: "Multi-stage LLM pipelines for rare-event detection in manufacturing supply chains.",
+    summary: "Rare-event detection in manufacturing supply chains (defects, delays, contamination) is the canonical 1% problem: most flagged events are false positives. We design a multi-stage LLM pipeline that combines a generative classifier, a retrieval-augmented context layer, and a structured-output verifier. Across an industry dataset of supplier audits, the orchestrated pipeline achieves substantially higher precision at fixed recall than any single-model baseline.",
     href: SSRN_AUTHOR,
   },
   {
     title: "The Value of Openness",
     authors: "Della Vedova, J., Siegel, S., and Warachka, M.",
     venue: "Target: Journal of Financial and Quantitative Analysis",
-    summary: "The Big Five personality openness trait and its relationship to cross-sectional asset returns.",
+    summary: "We map the Big Five personality trait of openness to experience onto cross-sectional asset returns. Stocks held disproportionately by high-openness investors earn lower subsequent returns, consistent with openness predicting a willingness to overpay for novelty. The effect is robust to standard controls and survives when the openness signal is constructed from holdings-implied portfolios alone.",
     href: SSRN_AUTHOR,
   },
 ];
