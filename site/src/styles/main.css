@@ -1342,7 +1342,20 @@ footer.site-foot .disclaimer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
-  margin: 0 0 36px;
+  margin: 0 0 24px;
+}
+.re-findings-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--muted);
+  font-size: 14px;
+  margin: -6px 0 14px;
+  max-width: 64ch;
+}
+.re-findings-sub a { font-style: normal; font-weight: 600; }
+.re-findings-single {
+  grid-template-columns: 1fr;
+  max-width: 720px;
 }
 
 /* Finding card */

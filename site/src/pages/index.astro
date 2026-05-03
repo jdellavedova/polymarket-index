@@ -16,6 +16,7 @@ import topMarkets from "../../public/data/top_markets_latest.json";
 import briefings from "../../public/data/briefings_latest.json";
 import activity from "../../public/data/weekly_activity_latest.json";
 import profitSplit from "../../public/data/profit_split_latest.json";
+import priceGap from "../../public/data/price_gap_latest.json";
 
 // --- Card 1: Algorithmic share ---
 const botShareSpark = (botShare as any[])
@@ -95,7 +96,8 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
 <Base title="Della Vedova Prediction Market Indices" description={desc} wide={true}>
   <HeroEssay />
 
-  <h2 class="re-findings-h">This week&rsquo;s findings</h2>
+  <h2 class="re-findings-h">Paper 1 · Who profits</h2>
+  <p class="re-findings-sub">Algorithmic wallets, retail traders, and the execution gap that separates them. <a href="/research">Read the paper →</a></p>
   <div class="re-findings-grid">
     <FindingCard
       label="ALGORITHMIC SHARE"
@@ -105,18 +107,10 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
       href="/bot-share"
     />
     <FindingCard
-      label="PROBABILITY WEIGHTING"
-      headline={`α = ${calibration.prelec_alpha.toFixed(3)}`}
-      claim="Non-bot traders overweight long shots and underweight near-certain outcomes. The fitted Prelec parameter matches Kahneman-Tversky's experimental 0.65."
-      sparklineData={pwiSpark}
-      href="/calibration"
-    />
-    <FindingCard
-      label="INSIDER SCREEN"
-      headline={`${pii.headline.total_flagged_p_lt_01.toLocaleString()}`}
-      claim="Wallets whose accuracy is too high, too often, to be luck (p<0.01). Action and Vote markets show the highest flag rates."
-      barData={insiderBars}
-      href="/pii"
+      label="WHO WON THIS WEEK"
+      headline={whoWonHeadline}
+      claim={whoWonClaim}
+      href="/research"
     />
     <FindingCard
       label="EXECUTION EDGE"
@@ -125,11 +119,41 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
       sparklineData={execSpark}
       href="/execution"
     />
+  </div>
+
+  <h2 class="re-findings-h">Paper 2 · Detecting informed trading</h2>
+  <p class="re-findings-sub">A wallet-level orthogonality test for private information. <a href="/research">Read the paper →</a></p>
+  <div class="re-findings-grid">
     <FindingCard
-      label="WHO WON THIS WEEK"
-      headline={whoWonHeadline}
-      claim={whoWonClaim}
-      href="/research"
+      label="WALLETS FLAGGED (CUMULATIVE)"
+      headline={`${pii.headline.total_flagged_p_lt_01.toLocaleString()}`}
+      claim={`Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets tested, ${pii.headline.total_flagged_p_lt_01.toLocaleString()} (${(pii.headline.flag_rate*100).toFixed(2)}%) show accuracy too high, too often, to be luck (p<0.01).`}
+      href="/pii"
+    />
+    <FindingCard
+      label="FLAG RATE BY MNPI CATEGORY"
+      headline={`${(Math.max(...pii.mnpi_taxonomy.map(m => m.flag_rate_01))*100).toFixed(2)}%`}
+      claim="Action and Vote markets (where humans control outcomes) show the highest flag rates; Stochastic markets (crypto prices) the lowest. The ordering matches the theoretical prediction."
+      barData={insiderBars}
+      href="/pii"
+    />
+    <FindingCard
+      label="FLAGGED ACTIVE THIS WEEK"
+      headline={`${activity.flagged_active_this_week.toLocaleString()}`}
+      claim={`${activity.flagged_active_this_week.toLocaleString()} of ${pii.headline.total_flagged_p_lt_01.toLocaleString()} flagged wallets traded on Polymarket this week. Live signal of which markets currently show the structural fingerprint of private information.`}
+      href="/pii"
+    />
+  </div>
+
+  <h2 class="re-findings-h">Paper 4 · Probability weighting (with A. Grant)</h2>
+  <p class="re-findings-sub">A model-free measurement of probability weighting from on-chain trades. <a href="/research">Read the paper →</a></p>
+  <div class="re-findings-grid">
+    <FindingCard
+      label="PROBABILITY WEIGHTING"
+      headline={`α = ${calibration.prelec_alpha.toFixed(3)}`}
+      claim="Non-bot traders overweight long shots and underweight near-certain outcomes. The fitted Prelec parameter matches Kahneman-Tversky's experimental 0.65."
+      sparklineData={pwiSpark}
+      href="/calibration"
     />
     <FindingCard
       label="CALIBRATION CURVE"
@@ -139,9 +163,19 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
       href="/calibration"
     />
     <FindingCard
+      label="LONGSHOT PRICING GAP"
+      headline={`${(priceGap.value*100 >= 0 ? "+" : "")}${(priceGap.value*100).toFixed(1)}%`}
+      claim="Realized win rate of trades at prices below 10% minus the band midpoint. Negative = the classical favorite-longshot bias; positive = longshots are underpriced this week."
+      href="/price-gap"
+    />
+  </div>
+
+  <h2 class="re-findings-h">This week on Polymarket</h2>
+  <div class="re-findings-grid re-findings-single">
+    <FindingCard
       label="THIS WEEK'S BRIEFINGS"
       headline={fmtMarketVol(topVolume)}
-      claim={`Largest market by volume: ${topQuestion} ${briefingsCount} per-market briefings ready to read.`}
+      claim={`Largest market by volume: ${topQuestion}. ${briefingsCount} per-market briefings with live odds, depth, and execution-gap context.`}
       href="/briefings"
     />
   </div>
