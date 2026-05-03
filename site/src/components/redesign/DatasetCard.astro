@@ -1,0 +1,65 @@
+---
+/**
+ * Dataset card for /data: sparkline preview + name + sample-size meta +
+ * download links + cite link. OWID-Grapher catalog pattern.
+ *
+ * Pass sparklineData (numeric array) for a sparkline preview, OR
+ * leave empty for a snapshot-style card (no time series).
+ */
+export interface Props {
+  label: string;
+  title: string;
+  meta: string;
+  description: string;
+  csvHref: string;
+  jsonHref?: string;
+  pageHref?: string;
+  sparklineData?: number[];
+}
+const { label, title, meta, description, csvHref, jsonHref, pageHref, sparklineData } = Astro.props;
+
+function sparkPath(data: number[], w = 240, h = 60, pad = 2): string {
+  if (!data || data.length < 2) return "";
+  const lo = Math.min(...data);
+  const hi = Math.max(...data);
+  const span = hi - lo || 1;
+  const xStep = (w - 2 * pad) / (data.length - 1);
+  return data.map((v, i) => {
+    const x = pad + i * xStep;
+    const y = pad + (h - 2 * pad) * (1 - (v - lo) / span);
+    return `${i === 0 ? "M" : "L"} ${x.toFixed(1)} ${y.toFixed(1)}`;
+  }).join(" ");
+}
+const path = sparklineData ? sparkPath(sparklineData) : "";
+const lastDot = sparklineData && sparklineData.length
+  ? (() => {
+      const lo = Math.min(...sparklineData);
+      const hi = Math.max(...sparklineData);
+      const span = hi - lo || 1;
+      const xStep = (240 - 4) / (sparklineData.length - 1);
+      const v = sparklineData[sparklineData.length - 1];
+      return {
+        x: 2 + (sparklineData.length - 1) * xStep,
+        y: 2 + 56 * (1 - (v - lo) / span),
+      };
+    })()
+  : null;
+---
+<article class="ds-card">
+  <div class="ds-label">{label}</div>
+  {sparklineData
+    ? <svg class="ds-spark" viewBox="0 0 240 60" preserveAspectRatio="none" aria-hidden="true">
+        <path d={path} class="ds-spark-line" />
+        {lastDot && <circle cx={lastDot.x} cy={lastDot.y} r="3" class="ds-spark-dot" />}
+      </svg>
+    : <div class="ds-spark-empty">snapshot</div>
+  }
+  <div class="ds-title">{title}</div>
+  <div class="ds-meta">{meta}</div>
+  <p class="ds-desc">{description}</p>
+  <div class="ds-links">
+    <a class="ds-link ds-link-primary" href={csvHref}>CSV</a>
+    {jsonHref && <a class="ds-link" href={jsonHref}>JSON</a>}
+    {pageHref && <a class="ds-link" href={pageHref}>Index page</a>}
+  </div>
+</article>

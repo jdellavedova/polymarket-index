@@ -1,100 +1,231 @@
 ---
 import Base from "../layouts/Base.astro";
+import DatasetCard from "../components/redesign/DatasetCard.astro";
+import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
+
+import botShare from "../../public/data/bot_share_timeseries.json";
+import pwi from "../../public/data/pwi_timeseries.json";
+import execution from "../../public/data/execution_timeseries.json";
+import efficiency from "../../public/data/efficiency_timeseries.json";
+import priceGap from "../../public/data/price_gap_timeseries.json";
+import cumulative from "../../public/data/cumulative_pnl_history.json";
+import calibration from "../../public/data/calibration_latest.json";
+import pii from "../../public/data/pii_latest.json";
+import activity from "../../public/data/weekly_activity_latest.json";
+
+// Sparkline series — pull the smoothed (13-week MA) field where available
+function pluck(arr: any[], field: string): number[] {
+  return arr.map((p: any) => p[field]).filter((v: any) => v != null && !Number.isNaN(v));
+}
+const botSpark = pluck(botShare as any[], "bot_share_ma13w");
+const pwiSpark = pluck(pwi as any[], "pwi_alpha_ma13w");
+const execSpark = pluck(execution as any[], "alpha_gap_ma13w");
+const effSpark = pluck(efficiency as any[], "efficiency_ma13w");
+const pgSpark = pluck(priceGap as any[], "longshot_gap_ma13w");
+const cumBotSpark = (cumulative.cumulative.bot as number[]).filter((v: number) => v != null);
+
+const totalRows = activity.total_trades || 0;
+function fmtRows(n: number): string {
+  if (n >= 1e9) return (n / 1e9).toFixed(2) + "B";
+  if (n >= 1e6) return (n / 1e6).toFixed(0) + "M";
+  if (n >= 1e3) return (n / 1e3).toFixed(0) + "K";
+  return n.toString();
+}
 ---
-<Base title="Data Downloads" description="Full historical panels for every index in the Della Vedova Prediction Market Indices (DV-PMI).">
-  <h1>Data Downloads</h1>
-  <p class="subtitle">Full weekly history for every index. Refreshed every Sunday 22:00 Pacific.</p>
+<Base
+  title="Data Downloads · DV-PMI"
+  description="Full historical panels for every index in the Della Vedova Prediction Market Indices. CSV + JSON, refreshed weekly, CC BY 4.0."
+  wide={true}>
 
-  <p>
-    Each index is published as a CSV with the complete weekly history since inception (November 2022).
-    The master table merges all indices into a single date-indexed wide panel, analogous to
-    the Baker-Wurgler sentiment file or Ken French's factor library.
-  </p>
+  <section class="dd-hero">
+    <div class="dd-hero-text">
+      <p class="dd-eyebrow">DV-PMI · Data downloads</p>
+      <h1 class="dd-h1">Data downloads</h1>
+      <p class="dd-stamp">Updated every Sunday 22:00 Pacific · {(botShare as any[]).length} weeks · CC BY 4.0</p>
+      <p class="dd-lede">
+        Full weekly history for every index, plus the master wide-format panel. Each file is published as CSV
+        with the complete history since November 2022. The master table merges all indices into a single
+        date-indexed panel, analogous to the Baker-Wurgler sentiment file or Ken French&rsquo;s factor library.
+      </p>
+      <div class="ds-hero-stats">
+        <div class="ds-hero-stat"><span class="ds-hero-num">671M</span><span class="ds-hero-lbl">underlying trades</span></div>
+        <div class="ds-hero-stat"><span class="ds-hero-num">{(botShare as any[]).length}</span><span class="ds-hero-lbl">weeks of history</span></div>
+        <div class="ds-hero-stat"><span class="ds-hero-num">12</span><span class="ds-hero-lbl">downloadable files</span></div>
+      </div>
+    </div>
+    <div class="dd-hero-chart">
+      <figure class="ds-master">
+        <div class="ds-master-label">Master wide-format panel</div>
+        <div class="ds-master-title">polymarket_indices_weekly.csv</div>
+        <p class="ds-master-desc">
+          All indices merged into a single date-indexed panel. Canonical citation file. Use this for
+          time-series research, panel regressions, or as a Baker-Wurgler-style supplement.
+        </p>
+        <div class="ds-links">
+          <a class="ds-link ds-link-primary" href="/data/polymarket_indices_weekly.csv">Download CSV</a>
+          <a class="ds-link" href="#cite">Cite</a>
+        </div>
+        <div class="ds-master-meta">
+          {fmtRows(totalRows)} trades aggregated &middot; updated weekly &middot; CC BY 4.0
+        </div>
+      </figure>
+    </div>
+  </section>
 
-  <h2>Research use cases</h2>
-  <p class="section-lead" style="font-size:15px;">
-    Active research programs using or citable to this dataset include:
-  </p>
-  <ul>
-    <li>Measuring informed trading in prediction markets and binary-event contracts</li>
-    <li>Studying algorithmic liquidity provision, maker-taker dynamics, and execution quality</li>
-    <li>Testing probability weighting in field markets at population scale (Tversky-Kahneman replication)</li>
-    <li>Comparing political, sports, macro, and crypto information environments</li>
-    <li>Benchmarking retail versus algorithmic trader performance and the directional-vs-execution split</li>
-    <li>Market-microstructure research on binary-payoff venues, including calibration and pricing efficiency</li>
-    <li>Regulatory and policy analysis of prediction-market integrity</li>
-  </ul>
+  <h2 class="bf-section-h">Per-index histories</h2>
+  <p class="bf-section-sub">Each card shows the smoothed (13-week MA) sparkline. Click "Index page" to see the full deep-dive.</p>
 
-  <h2>Ways to use this data</h2>
+  <div class="ds-grid">
+    <DatasetCard
+      label="Algorithmic share"
+      title="bot_share_history.csv"
+      meta={`${botSpark.length} weeks · weekly + 13/52w MAs · z-score`}
+      description="Share of weekly Polymarket counterparty events (maker + taker) attributed to algorithmic wallets."
+      csvHref="/data/bot_share_history.csv"
+      jsonHref="/data/bot_share_latest.json"
+      pageHref="/bot-share"
+      sparklineData={botSpark}
+    />
+    <DatasetCard
+      label="Probability weighting"
+      title="pwi_history.csv"
+      meta={`${pwiSpark.length} weeks · trade-weighted non-bot Prelec α`}
+      description="Weekly Prelec α from the calibration curve. α = 1 is rational pricing; α < 1 is the classical inverse-S weighting."
+      csvHref="/data/pwi_history.csv"
+      jsonHref="/data/pwi_latest.json"
+      pageHref="/pwi"
+      sparklineData={pwiSpark}
+    />
+    <DatasetCard
+      label="Execution edge"
+      title="execution_history.csv"
+      meta={`${execSpark.length} weeks · alpha gap (bot − retail)`}
+      description="Bot-minus-retail Prelec α gap. Positive means bots weight tails more heavily — the behavioral signature of execution-quality divergence."
+      csvHref="/data/execution_history.csv"
+      jsonHref="/data/execution_latest.json"
+      pageHref="/execution"
+      sparklineData={execSpark}
+    />
+    <DatasetCard
+      label="Market efficiency"
+      title="efficiency_history.csv"
+      meta={`${effSpark.length} weeks · R² of active-retail Prelec fit`}
+      description="How cleanly the Prelec model explains each week's calibration gap. Higher = stable behavioral signature; lower = idiosyncratic shocks."
+      csvHref="/data/efficiency_history.csv"
+      jsonHref="/data/efficiency_latest.json"
+      pageHref="/efficiency"
+      sparklineData={effSpark}
+    />
+    <DatasetCard
+      label="Longshot pricing gap"
+      title="price_gap_history.csv"
+      meta={`${pgSpark.length} weeks · realized minus 5%`}
+      description="Realized win rate of trades at prices < 10% minus the band midpoint. Positive = longshots underpriced."
+      csvHref="/data/price_gap_history.csv"
+      jsonHref="/data/price_gap_latest.json"
+      pageHref="/price-gap"
+      sparklineData={pgSpark}
+    />
+    <DatasetCard
+      label="Cumulative P&L"
+      title="cumulative_pnl_history.csv"
+      meta={`${cumBotSpark.length} weeks · running sum by wallet type`}
+      description={`Cumulative resolved P&L per wallet type since 2022. Bots end at +$${(cumulative.endpoints.bot/1e6).toFixed(0)}M; active retail at −$${Math.abs(cumulative.endpoints.active_retail/1e6).toFixed(0)}M.`}
+      csvHref="/data/cumulative_pnl_history.csv"
+      jsonHref="/data/cumulative_pnl_history.json"
+      pageHref="/research"
+      sparklineData={cumBotSpark}
+    />
+  </div>
 
-  <h3>Python</h3>
-  <pre>import pandas as pd
+  <h2 class="bf-section-h">Snapshots</h2>
+  <p class="bf-section-sub">Cumulative aggregations across the entire 671M-trade panel. No time-series component.</p>
 
+  <div class="ds-grid">
+    <DatasetCard
+      label="Calibration curve"
+      title="calibration_snapshot.csv"
+      meta={`${calibration.bins?.length ?? 20} bins · pooled non-bot trades`}
+      description={`20 price bins × realized win rate × CI bounds × n_trades. Prelec α = ${calibration.prelec_alpha.toFixed(3)}, R² = ${calibration.prelec_r2.toFixed(3)}.`}
+      csvHref="/data/calibration_snapshot.csv"
+      jsonHref="/data/calibration_latest.json"
+      pageHref="/calibration"
+    />
+    <DatasetCard
+      label="Insider screen (PII)"
+      title="pii_snapshot.csv"
+      meta={`${pii.headline.total_wallets_tested.toLocaleString()} wallets tested · ${pii.headline.total_flagged_p_lt_01.toLocaleString()} flagged`}
+      description="Per-wallet flagged status, MNPI category breakdowns, multiple-testing survivors. The Paper-2 forensic dataset."
+      csvHref="/data/pii_snapshot.csv"
+      jsonHref="/data/pii_latest.json"
+      pageHref="/pii"
+    />
+    <DatasetCard
+      label="Top markets (live)"
+      title="top_markets_latest.json"
+      meta="30 markets · weekly USD volume · per-market microstructure"
+      description="Top 30 markets by USD volume with bot share, flagged-wallet count, execution gap, and live odds via the briefings."
+      csvHref="/data/top_markets_history.csv"
+      jsonHref="/data/top_markets_latest.json"
+      pageHref="/briefings"
+    />
+    <DatasetCard
+      label="Market microstructure"
+      title="market_microstructure_latest.json"
+      meta="30 markets · per-market bot share + flagged + exec gap"
+      description="Per-(market, token, wallet_type) volume, average price, and execution-gap calculations for the briefings cards."
+      csvHref="/data/market_microstructure_latest.json"
+      jsonHref="/data/market_microstructure_latest.json"
+      pageHref="/briefings"
+    />
+  </div>
+
+  <h2 class="bf-section-h">Read the data</h2>
+  <p class="bf-section-sub">Copy-paste these snippets to load the master panel.</p>
+
+  <div class="ds-code-grid">
+    <div class="ds-code">
+      <div class="ds-code-lang">Python</div>
+<pre>{`import pandas as pd
 url = "https://jdellavedova.com/data/polymarket_indices_weekly.csv"
 dvpmi = pd.read_csv(url, parse_dates=["date"]).set_index("date")
-dvpmi[["pwi_alpha", "bot_share", "alpha_gap"]].plot()</pre>
-
-  <h3>Stata</h3>
-  <pre>import delimited "https://jdellavedova.com/data/polymarket_indices_weekly.csv", ///
-    varnames(1) clear
-generate date_d = date(date, "YMD")
+dvpmi[["pwi_alpha", "bot_share", "alpha_gap"]].plot()`}</pre>
+    </div>
+    <div class="ds-code">
+      <div class="ds-code-lang">R</div>
+<pre>{`library(tidyverse)
+url <- "https://jdellavedova.com/data/polymarket_indices_weekly.csv"
+dvpmi <- read_csv(url)
+dvpmi |> select(date, pwi_alpha, bot_share, alpha_gap) |>
+  pivot_longer(-date) |>
+  ggplot(aes(date, value, color = name)) + geom_line()`}</pre>
+    </div>
+    <div class="ds-code">
+      <div class="ds-code-lang">Stata</div>
+<pre>{`import delimited "https://jdellavedova.com/data/polymarket_indices_weekly.csv", ///
+  varnames(1) clear
+gen date_d = date(date, "YMD")
 format date_d %td
 tsset date_d
-tsline pwi_alpha bot_share alpha_gap</pre>
+tsline pwi_alpha bot_share alpha_gap`}</pre>
+    </div>
+  </div>
 
-  <h3>R</h3>
-  <pre>library(tidyverse)
-
-url &lt;- "https://jdellavedova.com/data/polymarket_indices_weekly.csv"
-dvpmi &lt;- read_csv(url)
-dvpmi %&gt;% select(date, pwi_alpha, bot_share, alpha_gap) %&gt;%
-  pivot_longer(-date) %&gt;% ggplot(aes(date, value, color = name)) + geom_line()</pre>
-
-  <h3>BibTeX</h3>
-  <pre>{`@techreport{dellavedova2026dvpmi,
+  <h2 id="cite" class="bf-section-h">Cite this dataset</h2>
+  <pre class="dd-cite">{`@techreport{dellavedova2026dvpmi,
   title       = {Della Vedova Prediction Market Indices},
   author      = {Della Vedova, Joshua},
   year        = {2026},
   version     = {0.1.0},
   institution = {University of San Diego, Knauss School of Business},
   url         = {https://jdellavedova.com},
-  note        = {Weekly-updated dataset}
+  note        = {Weekly-updated dataset, 671M Polymarket trades since November 2022}
 }`}</pre>
 
-  <p class="muted" style="font-size:14px;">
-    All URLs stable for the canonical release. For research that must reference an exact snapshot,
-    cite the Zenodo DOI corresponding to the weekly release version (reported in the footer of every
-    page). Column schemas follow semantic versioning; breaking changes trigger a major-version bump
-    with a one-release deprecation window.
+  <p class="ds-license">
+    Data released under <strong>Creative Commons Attribution 4.0 (CC BY 4.0)</strong>. Please cite.
+    Column schemas follow semantic versioning; breaking changes trigger a major-version bump with a one-release deprecation window.
   </p>
 
-  <h2>Master table</h2>
-  <table>
-    <tr><th>File</th><th>Description</th></tr>
-    <tr><td><a href="/data/polymarket_indices_weekly.csv">polymarket_indices_weekly.csv</a></td><td>All indices, wide format, date-indexed. Canonical citation file.</td></tr>
-  </table>
-
-  <h2>Per-index history</h2>
-  <table>
-    <tr><th>Index</th><th>File</th></tr>
-    <tr><td>Probability Weighting (PWI)</td><td><a href="/data/pwi_history.csv">pwi_history.csv</a></td></tr>
-    <tr><td>Execution Edge (bot-retail gap)</td><td><a href="/data/execution_history.csv">execution_history.csv</a></td></tr>
-    <tr><td>Execution by type (long)</td><td><a href="/data/execution_by_type_history.csv">execution_by_type_history.csv</a></td></tr>
-    <tr><td>Bot Share of Volume</td><td><a href="/data/bot_share_history.csv">bot_share_history.csv</a></td></tr>
-    <tr><td>Longshot / Favorite Price Gap</td><td><a href="/data/price_gap_history.csv">price_gap_history.csv</a></td></tr>
-    <tr><td>Market Efficiency Trend</td><td><a href="/data/efficiency_history.csv">efficiency_history.csv</a></td></tr>
-  </table>
-
-  <h2>Snapshots</h2>
-  <table>
-    <tr><th>Index</th><th>File</th></tr>
-    <tr><td>Market Calibration Curve (20 price bins)</td><td><a href="/data/calibration_snapshot.csv">calibration_snapshot.csv</a></td></tr>
-    <tr><td>Private Information Index (PII)</td><td><a href="/data/pii_snapshot.csv">pii_snapshot.csv</a></td></tr>
-  </table>
-
-  <h2>License</h2>
-  <p>Data released under Creative Commons Attribution 4.0 (CC BY 4.0). Please cite.</p>
-
-  <h2>Citation</h2>
-  <div class="citation">Della Vedova, J. (2026). Della Vedova Prediction Market Indices (DV-PMI). Version 0.1.0. https://jdellavedova.com</div>
+  <AuthorityStrip />
 </Base>
