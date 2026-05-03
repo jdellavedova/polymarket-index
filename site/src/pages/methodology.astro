@@ -60,11 +60,78 @@ const indexLinks = [
     <h2 class="bf-section-h">Pipeline architecture</h2>
     <p>
       The pipeline runs as a sequence of Python aggregators orchestrated by <code>pipeline/run_all.py</code>.
-      Each aggregator reads from the master <code class="mono">processed_trades.csv</code> panel (~295&nbsp;GB
-      after Phase 7 cleanup) via DuckDB streaming queries and writes a typed JSON snapshot plus a long-format
-      CSV history to <code>site/public/data/</code>. The Astro static site rebuilds on each refresh and
-      deploys via GitHub Pages.
+      Each aggregator reads from the master <code class="mono">processed_trades.csv</code> panel (~295&nbsp;GB)
+      via DuckDB streaming queries and writes a typed JSON snapshot plus a long-format CSV history to
+      <code>site/public/data/</code>. The Astro static site rebuilds on each refresh and deploys via GitHub Pages.
     </p>
+
+    <figure class="md-flow">
+      <svg viewBox="0 0 880 280" class="md-flow-svg" aria-label="Data pipeline flow diagram">
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#75bee9" />
+          </marker>
+        </defs>
+        <g class="mf-stage">
+          <rect x="20" y="40" width="140" height="64" rx="6" />
+          <text x="90" y="62" class="mf-title">Polygon</text>
+          <text x="90" y="80" class="mf-sub">blockchain</text>
+          <text x="90" y="96" class="mf-sub">(Polymarket CTF)</text>
+        </g>
+        <line x1="160" y1="72" x2="200" y2="72" class="mf-arrow" marker-end="url(#arrow)" />
+
+        <g class="mf-stage">
+          <rect x="200" y="40" width="160" height="64" rx="6" />
+          <text x="280" y="62" class="mf-title">Alchemy</text>
+          <text x="280" y="80" class="mf-sub">eth_getLogs (10x async)</text>
+          <text x="280" y="96" class="mf-sub">~36 min / week</text>
+        </g>
+        <line x1="360" y1="72" x2="400" y2="72" class="mf-arrow" marker-end="url(#arrow)" />
+
+        <g class="mf-stage">
+          <rect x="400" y="40" width="180" height="64" rx="6" />
+          <text x="490" y="62" class="mf-title">processed_trades.csv</text>
+          <text x="490" y="80" class="mf-sub">~295 GB master panel</text>
+          <text x="490" y="96" class="mf-sub">671M trades since Nov 2022</text>
+        </g>
+        <line x1="580" y1="72" x2="620" y2="72" class="mf-arrow" marker-end="url(#arrow)" />
+
+        <g class="mf-stage">
+          <rect x="620" y="40" width="240" height="64" rx="6" />
+          <text x="740" y="62" class="mf-title">DuckDB aggregators</text>
+          <text x="740" y="80" class="mf-sub">PWI · calibration · execution · PII</text>
+          <text x="740" y="96" class="mf-sub">profit_split · top_markets · briefings</text>
+        </g>
+
+        <line x1="740" y1="104" x2="740" y2="144" class="mf-arrow" marker-end="url(#arrow)" />
+        <g class="mf-stage">
+          <rect x="600" y="144" width="280" height="64" rx="6" />
+          <text x="740" y="166" class="mf-title">JSON + CSV outputs</text>
+          <text x="740" y="184" class="mf-sub">site/public/data/*_latest.json</text>
+          <text x="740" y="200" class="mf-sub">site/public/data/*_history.csv</text>
+        </g>
+
+        <line x1="600" y1="176" x2="560" y2="176" class="mf-arrow" marker-end="url(#arrow)" />
+        <g class="mf-stage">
+          <rect x="380" y="144" width="180" height="64" rx="6" />
+          <text x="470" y="166" class="mf-title">Astro static build</text>
+          <text x="470" y="184" class="mf-sub">npm run build</text>
+          <text x="470" y="200" class="mf-sub">~1 sec, 16 pages</text>
+        </g>
+
+        <line x1="380" y1="176" x2="340" y2="176" class="mf-arrow" marker-end="url(#arrow)" />
+        <g class="mf-stage mf-stage-final">
+          <rect x="160" y="144" width="180" height="64" rx="6" />
+          <text x="250" y="166" class="mf-title">GitHub Pages</text>
+          <text x="250" y="184" class="mf-sub">jdellavedova.com</text>
+          <text x="250" y="200" class="mf-sub">CDN deploy ~2 min</text>
+        </g>
+
+        <text x="440" y="252" class="mf-foot" text-anchor="middle">
+          Total wall time, Sunday refresh: ~60-75 min end-to-end. Each tag archived to Zenodo with permanent DOI.
+        </text>
+      </svg>
+    </figure>
     <table class="md-spec">
       <tr><th>Stage</th><th>Script</th><th>Wall time</th></tr>
       <tr><td>Polygon delta pull</td><td><code>pull_polygon_delta_fast.py</code> (aiohttp, 10 in-flight)</td><td>~36 min for ~30M new trades</td></tr>

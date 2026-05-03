@@ -4,6 +4,7 @@ import HeroEssay from "../components/redesign/HeroEssay.astro";
 import FindingCard from "../components/redesign/FindingCard.astro";
 import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
 import MentionedIn from "../components/redesign/MentionedIn.astro";
+import AuthorTile from "../components/redesign/AuthorTile.astro";
 import EmailSignup from "../components/EmailSignup.astro";
 
 import botShare from "../../public/data/bot_share_timeseries.json";
@@ -95,6 +96,8 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
 ---
 <Base title="Della Vedova Prediction Market Indices" description={desc} wide={true}>
   <HeroEssay />
+
+  <AuthorTile />
 
   <section class="tw-briefings">
     <div class="tw-head">
