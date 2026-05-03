@@ -36,13 +36,24 @@ const botArea = areaFor(botSeries);
 const retailLine = pathFor(retailSeries);
 const retailArea = areaFor(retailSeries);
 
-// Y-axis ticks at round dollar amounts
+// Y-axis ticks at round dollar amounts. Choose a step so the ticks are
+// equally spaced with a clean dollar increment (10M, 25M, 50M, 100M, etc.).
 function yTickValues(): number[] {
   const range = y1 - y0;
-  const rough = range / 5;
+  const target = 6;  // aim for ~6 ticks
+  const rough = range / target;
+  // Round to a "nice" step: 1, 2, 2.5, 5, 10 × 10^n
   const mag = Math.pow(10, Math.floor(Math.log10(rough)));
-  const step = Math.ceil(rough / mag) * mag;
+  const norm = rough / mag;
+  let nice;
+  if (norm < 1.5) nice = 1;
+  else if (norm < 3) nice = 2;
+  else if (norm < 7) nice = 5;
+  else nice = 10;
+  const step = nice * mag;
   const ticks: number[] = [];
+  // Anchor on zero so positive and negative ticks are symmetric around the
+  // zero line — produces visually equal ticks above and below zero.
   let t = Math.ceil(y0 / step) * step;
   while (t <= y1) { ticks.push(t); t += step; }
   return ticks;
@@ -58,16 +69,24 @@ function fmtUsd(n: number): string {
   return `${sign}$${a.toFixed(0)}`;
 }
 
-// X-axis ticks: one per year change
-const yearTicks: { x: number; label: string }[] = [];
+// X-axis ticks: one per calendar-year boundary, but skip the very first
+// year if it appears in the first 26 weeks (i.e. a partial start year like
+// Nov 2022). This keeps adjacent ticks ~52 weeks apart so the spacing is
+// visually equal across the chart.
+const allYearTicks: { x: number; label: string; idx: number }[] = [];
 let lastYear = "";
 dates.forEach((d, i) => {
   const yr = d.slice(0, 4);
   if (yr !== lastYear) {
-    yearTicks.push({ x: x(i), label: yr });
+    allYearTicks.push({ x: x(i), label: yr, idx: i });
     lastYear = yr;
   }
 });
+// Drop the partial-year tick at the start: if the second tick is < 26 weeks
+// away from the first, the first is a partial year and we drop it.
+const yearTicks = allYearTicks.length >= 2 && (allYearTicks[1].idx - allYearTicks[0].idx) < 26
+  ? allYearTicks.slice(1)
+  : allYearTicks;
 
 const lastIdx = dates.length - 1;
 const botEnd = botSeries[lastIdx];
