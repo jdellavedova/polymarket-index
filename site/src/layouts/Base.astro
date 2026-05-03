@@ -5,11 +5,13 @@ export interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  wide?: boolean;
 }
 const {
   title,
   description,
   ogImage = "/og.png",
+  wide = false,
 } = Astro.props;
 const year = new Date().getFullYear();
 const fullOgUrl = new URL(ogImage, Astro.site ?? "https://jdellavedova.com").toString();
@@ -63,7 +65,7 @@ const desc = description ?? "Weekly behavioral and microstructure indices from 6
     </div>
   </header>
 
-  <main class="container">
+  <main class={wide ? "container container-wide" : "container"}>
     <slot />
   </main>
 

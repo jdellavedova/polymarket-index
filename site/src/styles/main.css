@@ -1641,6 +1641,19 @@ h1.hero-thesis {
    commit lands, the old non-re-* homepage rules above can be deleted.
    ===================================================================== */
 
+/* Wide-container variant: opt-in via Base.astro `wide={true}` prop.
+   Used on /redesign so the chart and card grid get more horizontal
+   room. Prose elements inside still cap at 64ch via .re-lede etc. */
+.container-wide {
+  max-width: 1200px;
+}
+@media (max-width: 1280px) {
+  .container-wide { max-width: calc(100vw - 64px); }
+}
+@media (max-width: 720px) {
+  .container-wide { max-width: calc(100vw - 36px); padding: 28px 0 56px; }
+}
+
 /* Hero (OWID essay style) */
 .re-hero {
   margin: 0 0 36px;
@@ -1656,12 +1669,13 @@ h1.hero-thesis {
 }
 .re-h1 {
   font-family: var(--serif);
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.005em;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   margin: 0 0 18px;
   color: var(--text);
+  max-width: 24ch;
 }
 .re-lede {
   font-family: var(--serif);
