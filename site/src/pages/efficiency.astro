@@ -1,5 +1,5 @@
 ---
-import Base from "../layouts/Base.astro";
+import DeepDiveLayout from "../components/redesign/DeepDiveLayout.astro";
 import TimeSeriesChart from "../components/TimeSeriesChart.astro";
 import eff from "../../public/data/efficiency_latest.json";
 
@@ -13,29 +13,35 @@ const WALLET_LABEL: Record<string, string> = {
   one_shot: "One-Shot",
 };
 function walletLabel(k: string) { return WALLET_LABEL[k] ?? k; }
+
+const lede = `As of ${eff.as_of}, the active-retail Prelec fit's R² stood at ${fmt(eff.value, 3)} with a 52-week rolling z-score of ${signed(eff.z52w, 2)}. Higher R² means a smooth, predictable distortion curve; lower R² means the week's mispricing is dominated by idiosyncratic shocks rather than a stable behavioral signature. The 13-week moving average is ${fmt(eff.ma13w, 3)}.`;
 ---
-<Base title="Market Efficiency Trend" description="Weekly R-squared of the Prelec fit on active retail Polymarket trades.">
-  <h1>Market Efficiency Trend</h1>
-  <p class="subtitle">Weekly R-squared of the one-parameter Prelec fit applied to active retail trades.</p>
+<DeepDiveLayout
+  title="Market Efficiency Trend"
+  description="Weekly R-squared of the Prelec fit on active retail Polymarket trades."
+  eyebrow="DV-PMI · Market efficiency"
+  lede={lede}
+  asOf={`Updated ${eff.as_of}`}
+  citeKey="dellavedova2026efficiency"
+  citeTitle="Market Efficiency Trend"
+  citePath="efficiency">
 
-  <p>
-    As of <strong>{eff.as_of}</strong>, the fit R-squared was <strong>{fmt(eff.value, 3)}</strong>,
-    with a 52-week rolling z-score of <strong>{signed(eff.z52w, 2)}</strong>.
-    13-week moving average: <strong>{fmt(eff.ma13w, 3)}</strong>.
-  </p>
+  <Fragment slot="chart">
+    <TimeSeriesChart
+      dataUrl="/data/efficiency_timeseries.json"
+      yField="efficiency"
+      smoothField="efficiency_ma13w"
+      yLabel="R² of active-retail Prelec fit"
+      zeroLine={false}
+    />
+  </Fragment>
+  <Fragment slot="caption">
+    Light line: weekly R². Bold line: 13-week moving average. Higher = the Prelec model explains the week's calibration gap more cleanly.
+  </Fragment>
 
-  <h2>Weekly history</h2>
-  <TimeSeriesChart
-    dataUrl="/data/efficiency_timeseries.json"
-    yField="efficiency"
-    smoothField="efficiency_ma13w"
-    yLabel="R-squared, active-retail Prelec fit"
-    zeroLine={false}
-  />
-
-  <h2>R-squared by wallet class (latest week)</h2>
+  <h2>R² by wallet class (latest week)</h2>
   <table>
-    <tr><th>Wallet class</th><th>R-squared</th></tr>
+    <tr><th>Wallet class</th><th>R²</th></tr>
     {Object.entries(eff.per_type_r2).map(([k, v]) => (
       <tr><td>{walletLabel(k)}</td><td class="mono">{fmt(v as number, 3)}</td></tr>
     ))}
@@ -44,14 +50,14 @@ function walletLabel(k: string) { return WALLET_LABEL[k] ?? k; }
   <h2>Methodology</h2>
   <p>
     Each week, for each wallet class, we fit a one-parameter Prelec weighting function to that class's pooled
-    price-vs-realized-frequency scatter. The R-squared captures how well a single behavioral parameter describes
+    price-vs-realized-frequency scatter. The R² captures how well a single behavioral parameter describes
     that week's calibration gap. Higher values indicate a smooth, predictable distortion curve; lower values
     indicate that the week's mispricing is dominated by idiosyncratic shocks rather than a stable behavioral
     signature.
   </p>
   <p>
-    The headline index uses the active-retail R-squared because active retail is the largest human wallet
-    cohort and most closely represents how well human beliefs price the market. The algorithmic R-squared is
+    The headline index uses the active-retail R² because active retail is the largest human wallet
+    cohort and most closely represents how well human beliefs price the market. The algorithmic R² is
     shown for comparison but can be noisy because algorithmic trading is more strategic than belief-driven.
   </p>
 
@@ -63,13 +69,4 @@ function walletLabel(k: string) { return WALLET_LABEL[k] ?? k; }
     &middot;
     <a href="/data/efficiency_timeseries.json">efficiency_timeseries.json</a>
   </p>
-
-  <h2>Cite</h2>
-  <div class="citation">{`@misc{dellavedova2026efficiency,
-  title        = {Market Efficiency Trend},
-  author       = {Della Vedova, Joshua},
-  year         = {2026},
-  version      = {0.1.0},
-  url          = {https://jdellavedova.com/efficiency}
-}`}</div>
-</Base>
+</DeepDiveLayout>

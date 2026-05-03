@@ -1,34 +1,36 @@
 ---
-import Base from "../layouts/Base.astro";
+import DeepDiveLayout from "../components/redesign/DeepDiveLayout.astro";
 import TimeSeriesChart from "../components/TimeSeriesChart.astro";
 import pg from "../../public/data/price_gap_latest.json";
 
 function fmt(n, d = 3) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : n.toFixed(d); }
 function signed(n, d = 3) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n >= 0 ? "+" : "") + n.toFixed(d); }
 function pct(n, d = 1) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n * 100).toFixed(d) + "%"; }
+
+const lede = `As of ${pg.as_of} (week ${pg.week}), the longshot gap is ${signed(pg.value, 3)} with a 52-week rolling z-score of ${signed(pg.z52w, 2)}. Trades at prices below 10% (the longshot band) won at ${pct(pg.components.longshot_winrate, 2)}; the band midpoint is 5%. Positive gaps mean longshots are underpriced; negative gaps are the classical favorite-longshot bias.`;
 ---
-<Base title="Longshot / Favorite Price Gap" description="Weekly longshot underpricing signal from Polymarket.">
-  <h1>Longshot / Favorite Price Gap</h1>
-  <p class="subtitle">Realized win rate of longshot trades minus the longshot-band midpoint.</p>
+<DeepDiveLayout
+  title="Longshot / Favorite Price Gap"
+  description="Weekly longshot underpricing signal from Polymarket."
+  eyebrow="DV-PMI · Longshot pricing"
+  lede={lede}
+  asOf={`Updated ${pg.as_of}`}
+  citeKey="dellavedova2026pricegap"
+  citeTitle="Longshot / Favorite Price Gap"
+  citePath="price-gap">
 
-  <p>
-    As of <strong>{pg.as_of}</strong> (week {pg.week}), the longshot gap is <strong>{signed(pg.value, 3)}</strong>,
-    with a 52-week rolling z-score of <strong>{signed(pg.z52w, 2)}</strong>.
-    Longshot win rate: <strong>{pct(pg.components.longshot_winrate, 2)}</strong>.
-    Longshot fraction: <strong>{pct(pg.components.longshot_fraction, 1)}</strong>.
-  </p>
-
-  <h2>Weekly history</h2>
-  <TimeSeriesChart
-    dataUrl="/data/price_gap_timeseries.json"
-    yField="longshot_gap"
-    smoothField="longshot_gap_ma13w"
-    yLabel="longshot winrate minus 5%"
-    zeroLine={true}
-  />
-  <p class="muted" style="font-size:14px; margin-top:-18px;">
+  <Fragment slot="chart">
+    <TimeSeriesChart
+      dataUrl="/data/price_gap_timeseries.json"
+      yField="longshot_gap"
+      smoothField="longshot_gap_ma13w"
+      yLabel="longshot winrate minus 5%"
+      zeroLine={true}
+    />
+  </Fragment>
+  <Fragment slot="caption">
     Positive: longshots are underpriced (realized wins exceed the band midpoint). Negative: the classical favorite-longshot bias.
-  </p>
+  </Fragment>
 
   <h2>Methodology</h2>
   <p>
@@ -50,13 +52,4 @@ function pct(n, d = 1) { return (n === null || n === undefined || Number.isNaN(n
     &middot;
     <a href="/data/price_gap_timeseries.json">price_gap_timeseries.json</a>
   </p>
-
-  <h2>Cite</h2>
-  <div class="citation">{`@misc{dellavedova2026pricegap,
-  title        = {Longshot / Favorite Price Gap},
-  author       = {Della Vedova, Joshua},
-  year         = {2026},
-  version      = {0.1.0},
-  url          = {https://jdellavedova.com/price-gap}
-}`}</div>
-</Base>
+</DeepDiveLayout>

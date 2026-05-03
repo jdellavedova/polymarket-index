@@ -1,32 +1,35 @@
 ---
-import Base from "../layouts/Base.astro";
+import DeepDiveLayout from "../components/redesign/DeepDiveLayout.astro";
 import TimeSeriesChart from "../components/TimeSeriesChart.astro";
 import bot from "../../public/data/bot_share_latest.json";
 
 function pct(n, d = 1) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n * 100).toFixed(d) + "%"; }
 function signed(n, d = 2) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n >= 0 ? "+" : "") + n.toFixed(d); }
+
+const lede = `As of ${bot.as_of}, algorithmic wallets executed ${pct(bot.value, 1)} of weekly counterparty events. The 13-week moving average is ${pct(bot.ma13w, 1)} and the 52-week rolling z-score is ${signed(bot.z52w, 2)}. The share has climbed from near zero in late 2022 to a sustained majority position; humans now appear on roughly one in eight participations.`;
 ---
-<Base title="Algorithmic Share of Participation" description="Weekly share of Polymarket counterparty events (maker plus taker sides) attributed to algorithmic wallets.">
-  <h1>Algorithmic Share of Participation</h1>
-  <p class="subtitle">Weekly share of Polymarket counterparty events (maker plus taker sides) executed by algorithmic wallets.</p>
+<DeepDiveLayout
+  title="Algorithmic Share of Participation"
+  description="Weekly share of Polymarket counterparty events (maker plus taker sides) attributed to algorithmic wallets."
+  eyebrow="DV-PMI · Algorithmic share"
+  lede={lede}
+  asOf={`Updated ${bot.as_of}`}
+  citeKey="dellavedova2026botshare"
+  citeTitle="Algorithmic Share of Participation"
+  citePath="bot-share">
 
-  <p>
-    As of <strong>{bot.as_of}</strong>, the algorithmic share was <strong>{pct(bot.value, 1)}</strong> of weekly counterparty events,
-    with a 52-week rolling z-score of <strong>{signed(bot.z52w, 2)}</strong>.
-    13-week moving average: <strong>{pct(bot.ma13w, 1)}</strong>.
-    Active retail share: <strong>{pct(bot.retail_share, 1)}</strong>.
-    Sophisticated share: <strong>{pct(bot.sophisticated_share, 1)}</strong>.
-    Based on <strong>{bot.n_trades_week.toLocaleString()}</strong> trades this week (each generates two participations).
-  </p>
-
-  <h2>Weekly history</h2>
-  <TimeSeriesChart
-    dataUrl="/data/bot_share_timeseries.json"
-    yField="bot_share"
-    smoothField="bot_share_ma13w"
-    yLabel="share of weekly participation"
-    zeroLine={false}
-  />
+  <Fragment slot="chart">
+    <TimeSeriesChart
+      dataUrl="/data/bot_share_timeseries.json"
+      yField="bot_share"
+      smoothField="bot_share_ma13w"
+      yLabel="share of weekly participation"
+      zeroLine={false}
+    />
+  </Fragment>
+  <Fragment slot="caption">
+    Light line: weekly share. Bold line: 13-week moving average. Each on-chain match has a maker (limit order) and a taker (market order); both are counted as separate participations.
+  </Fragment>
 
   <h2>52-week rolling statistics</h2>
   <table>
@@ -55,13 +58,4 @@ function signed(n, d = 2) { return (n === null || n === undefined || Number.isNa
     &middot;
     <a href="/data/bot_share_timeseries.json">bot_share_timeseries.json</a>
   </p>
-
-  <h2>Cite</h2>
-  <div class="citation">{`@misc{dellavedova2026botshare,
-  title        = {Bot Share of Volume},
-  author       = {Della Vedova, Joshua},
-  year         = {2026},
-  version      = {0.1.0},
-  url          = {https://jdellavedova.com/bot-share}
-}`}</div>
-</Base>
+</DeepDiveLayout>

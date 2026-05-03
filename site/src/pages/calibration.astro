@@ -1,25 +1,27 @@
 ---
-import Base from "../layouts/Base.astro";
+import DeepDiveLayout from "../components/redesign/DeepDiveLayout.astro";
 import CalibrationChart from "../components/CalibrationChart.astro";
 import cal from "../../public/data/calibration_latest.json";
 
 function fmt(n, d = 4) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : n.toFixed(d); }
+
+const lede = `Pooled across all resolved non-bot trades (${cal.n_trades_total.toLocaleString()} trades), the Prelec weighting function fits with alpha = ${fmt(cal.prelec_alpha, 3)} and R² = ${fmt(cal.prelec_r2, 3)}. The dashed diagonal is rational pricing; dots above-left and below-right are the longshot bias — long shots win less often than their prices imply, near-certain outcomes more often.`;
 ---
-<Base title="Market Calibration Curve" description="Polymarket non-bot realized win rate by price bin with Prelec fit.">
-  <h1>Market Calibration Curve</h1>
-  <p class="subtitle">Realized win rate by price bin across all non-bot Polymarket trades. One-parameter Prelec fit overlaid.</p>
+<DeepDiveLayout
+  title="Market Calibration Curve"
+  description="Polymarket non-bot realized win rate by price bin with Prelec fit."
+  eyebrow="DV-PMI · Calibration"
+  lede={lede}
+  citeKey="dellavedova2026calibration"
+  citeTitle="Market Calibration Curve"
+  citePath="calibration">
 
-  <p>
-    Pooled across all resolved non-bot trades ({cal.n_trades_total.toLocaleString()} trades), the Prelec
-    weighting function fits with alpha = <strong>{fmt(cal.prelec_alpha, 3)}</strong> and
-    R-squared = <strong>{fmt(cal.prelec_r2, 3)}</strong>.
-  </p>
-
-  <CalibrationChart dataUrl="/data/calibration_latest.json" height={420} />
-  <p class="muted" style="font-size:14px; margin-top:-14px;">
-    Dots: realized win rate by price bin, sized by trade count. Vertical bars: 95% binomial CIs.
-    Dashed diagonal: identity (a calibrated market). Solid blue: fitted Prelec curve.
-  </p>
+  <Fragment slot="chart">
+    <CalibrationChart dataUrl="/data/calibration_latest.json" height={420} />
+  </Fragment>
+  <Fragment slot="caption">
+    Dots: realized win rate by price bin, sized by trade count. Vertical bars: 95% binomial CIs. Dashed diagonal: identity (a calibrated market). Solid blue: fitted Prelec curve.
+  </Fragment>
 
   <h2>Bin-level data</h2>
   <table>
@@ -49,13 +51,4 @@ function fmt(n, d = 4) { return (n === null || n === undefined || Number.isNaN(n
     &middot;
     <a href="/data/calibration_latest.json">calibration_latest.json</a> (includes the fitted curve)
   </p>
-
-  <h2>Cite</h2>
-  <div class="citation">{`@misc{dellavedova2026calibration,
-  title        = {Market Calibration Curve},
-  author       = {Della Vedova, Joshua},
-  year         = {2026},
-  version      = {0.1.0},
-  url          = {https://jdellavedova.com/calibration}
-}`}</div>
-</Base>
+</DeepDiveLayout>

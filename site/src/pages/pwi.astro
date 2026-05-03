@@ -1,5 +1,5 @@
 ---
-import Base from "../layouts/Base.astro";
+import DeepDiveLayout from "../components/redesign/DeepDiveLayout.astro";
 import TimeSeriesChart from "../components/TimeSeriesChart.astro";
 import pwi from "../../public/data/pwi_latest.json";
 
@@ -11,30 +11,31 @@ function signed(n: number | null | undefined, d = 2) {
   if (n === null || n === undefined || Number.isNaN(n)) return "n/a";
   return (n >= 0 ? "+" : "") + n.toFixed(d);
 }
+
+const lede = `As of ${pwi.as_of}, the PWI stands at ${fmt(pwi.value, 3)} with a 52-week rolling z-score of ${signed(pwi.z52w, 2)}. Alpha = 1.0 corresponds to rational pricing; values below 1 are the classical inverse-S weighting documented in Tversky and Kahneman (1992). The 13-week moving average is ${fmt(pwi.ma13w, 3)} and the index is computed from ${pwi.n_trades_nonbot_week.toLocaleString()} non-bot trades this week.`;
 ---
-<Base title="Probability Weighting Index (PWI)" description="Trade-count-weighted non-bot Prelec alpha from 640M Polymarket trades.">
-  <h1>Probability Weighting Index (PWI)</h1>
-  <p class="subtitle">Trade-count-weighted non-bot Prelec alpha. Alpha = 1 is rational pricing; below 1 is the classical inverse-S weighting.</p>
+<DeepDiveLayout
+  title="Probability Weighting Index (PWI)"
+  description="Trade-count-weighted non-bot Prelec alpha from 671M Polymarket trades."
+  eyebrow="DV-PMI · Probability weighting"
+  lede={lede}
+  asOf={`Updated ${pwi.as_of}`}
+  citeKey="dellavedova2026pwi"
+  citeTitle="Probability Weighting Index"
+  citePath="pwi">
 
-  <p>
-    As of <strong>{pwi.as_of}</strong>, the PWI stands at <strong>{fmt(pwi.value, 3)}</strong>,
-    with a 52-week rolling z-score of <strong>{signed(pwi.z52w, 2)}</strong>.
-    13-week moving average: <strong>{fmt(pwi.ma13w, 3)}</strong>.
-    52-week moving average: <strong>{fmt(pwi.ma52w, 3)}</strong>.
-    Based on <strong>{pwi.n_trades_nonbot_week.toLocaleString()}</strong> non-bot trades this week.
-  </p>
-
-  <h2>Weekly history</h2>
-  <TimeSeriesChart
-    dataUrl="/data/pwi_timeseries.json"
-    yField="pwi_alpha"
-    smoothField="pwi_alpha_ma13w"
-    yLabel="non-bot Prelec alpha"
-    zeroLine={false}
-  />
-  <p class="muted" style="font-size:14px; margin-top:-18px;">
+  <Fragment slot="chart">
+    <TimeSeriesChart
+      dataUrl="/data/pwi_timeseries.json"
+      yField="pwi_alpha"
+      smoothField="pwi_alpha_ma13w"
+      yLabel="non-bot Prelec alpha"
+      zeroLine={false}
+    />
+  </Fragment>
+  <Fragment slot="caption">
     Light line: weekly alpha. Bold line: 13-week moving average. An alpha of 1.0 would mean the market prices binary outcomes rationally.
-  </p>
+  </Fragment>
 
   <h2>Components (weighted averages across non-bot wallets)</h2>
   <table>
@@ -77,15 +78,4 @@ function signed(n: number | null | undefined, d = 2) {
     &middot;
     <a href="/data/pwi_timeseries.json">pwi_timeseries.json</a>
   </p>
-
-  <h2>Cite</h2>
-  <div class="citation">{`@misc{dellavedova2026pwi,
-  title        = {Probability Weighting Index},
-  author       = {Della Vedova, Joshua},
-  year         = {2026},
-  version      = {0.1.0},
-  publisher    = {University of San Diego},
-  url          = {https://jdellavedova.com/pwi},
-  note         = {Part of the Della Vedova Prediction Market Indices (DV-PMI)}
-}`}</div>
-</Base>
+</DeepDiveLayout>

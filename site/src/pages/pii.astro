@@ -1,5 +1,5 @@
 ---
-import Base from "../layouts/Base.astro";
+import DeepDiveLayout from "../components/redesign/DeepDiveLayout.astro";
 import PiiChart from "../components/PiiChart.astro";
 import pii from "../../public/data/pii_latest.json";
 
@@ -19,28 +19,26 @@ const MNPI_LABEL: Record<string, string> = {
   stochastic: "Stochastic",
 };
 function mnpiLabel(k: string) { return MNPI_LABEL[k] ?? k; }
----
-<Base title="Private Information Index (PII)" description="Wallet-level signatures of private information in Polymarket trading.">
-  <h1>Private Information Index (PII)</h1>
-  <p class="subtitle">Count and classification of Polymarket wallets whose trading is consistent with private information.</p>
 
-  <p>
-    Of <strong>{pii.headline.total_wallets_tested.toLocaleString()}</strong> wallets tested,
-    <strong>{pii.headline.total_flagged_p_lt_01.toLocaleString()}</strong> were flagged at the
-    one-percent significance threshold (flag rate {pct(pii.headline.flag_rate, 2)}).
-    <strong>{pii.headline.holm_bonferroni_survivors}</strong> wallets survive the Holm-Bonferroni family-wise
-    correction; <strong>{pii.headline.bh_fdr_survivors}</strong> survive the Benjamini-Hochberg FDR procedure.
-  </p>
+const lede = `Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets tested, ${pii.headline.total_flagged_p_lt_01.toLocaleString()} were flagged at the one-percent significance threshold (flag rate ${pct(pii.headline.flag_rate, 2)}). ${pii.headline.holm_bonferroni_survivors} wallets survive the Holm-Bonferroni family-wise correction; ${pii.headline.bh_fdr_survivors} survive the Benjamini-Hochberg FDR procedure. The flag rate ordering across MNPI categories — Action highest, Stochastic lowest — confirms the theoretical prediction that markets where humans can know outcomes in advance show stronger informational signatures.`;
+---
+<DeepDiveLayout
+  title="Private Information Index (PII)"
+  description="Wallet-level signatures of private information in Polymarket trading."
+  eyebrow="DV-PMI · Insider screen"
+  lede={lede}
+  citeKey="dellavedova2026pii"
+  citeTitle="Private Information Index"
+  citePath="pii">
+
+  <Fragment slot="chart">
+    <PiiChart dataUrl="/data/pii_latest.json" />
+  </Fragment>
+  <Fragment slot="caption">
+    Categories ordered by a priori MNPI risk: vote markets (elections, awards) are the highest-risk category because outcomes are determined by discrete human decisions; stochastic markets (crypto prices) are the lowest-risk because outcomes are aggregate and leak-resistant.
+  </Fragment>
 
   <h2>Flag rate by MNPI taxonomy</h2>
-  <PiiChart dataUrl="/data/pii_latest.json" />
-  <p class="muted" style="font-size:14px; margin-top:-8px;">
-    Categories ordered by a priori MNPI risk: vote markets (elections, awards) are the highest-risk category
-    because outcomes are determined by discrete human decisions; stochastic markets (crypto prices) are the
-    lowest-risk because outcomes are aggregate and leak-resistant. The observed flag-rate ordering confirms
-    the theoretical prediction.
-  </p>
-
   <table>
     <tr><th>MNPI category</th><th>Wallets tested</th><th>Flagged (p &lt; 0.01)</th><th>Flag rate</th></tr>
     {pii.mnpi_taxonomy.map(m => (
@@ -90,7 +88,7 @@ function mnpiLabel(k: string) { return MNPI_LABEL[k] ?? k; }
   </p>
   <p>
     Weekly time series for PII is a future release item; it requires a separate pipeline joining the flagged
-    wallet set with per-wallet trade timestamps across the 640M-row trade panel.
+    wallet set with per-wallet trade timestamps across the 671M-row trade panel.
   </p>
 
   <h2>Source paper</h2>
@@ -106,13 +104,4 @@ function mnpiLabel(k: string) { return MNPI_LABEL[k] ?? k; }
     &middot;
     <a href="/data/pii_latest.json">pii_latest.json</a>
   </p>
-
-  <h2>Cite</h2>
-  <div class="citation">{`@misc{dellavedova2026pii,
-  title        = {Private Information Index},
-  author       = {Della Vedova, Joshua},
-  year         = {2026},
-  version      = {0.1.0},
-  url          = {https://jdellavedova.com/pii}
-}`}</div>
-</Base>
+</DeepDiveLayout>

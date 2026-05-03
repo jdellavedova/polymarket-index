@@ -1,5 +1,5 @@
 ---
-import Base from "../layouts/Base.astro";
+import DeepDiveLayout from "../components/redesign/DeepDiveLayout.astro";
 import TimeSeriesChart from "../components/TimeSeriesChart.astro";
 import execution from "../../public/data/execution_latest.json";
 
@@ -13,30 +13,31 @@ const WALLET_LABEL: Record<string, string> = {
   one_shot: "One-Shot",
 };
 function walletLabel(k: string) { return WALLET_LABEL[k] ?? k; }
+
+const lede = `As of ${execution.as_of}, the algorithmic-minus-retail Prelec alpha gap stands at ${signed(execution.value, 3)}, with a 52-week rolling z-score of ${signed(execution.z52w, 2)}. A positive gap indicates algorithmic wallets weight tails more heavily than active retail — the behavioral signature of execution-quality divergence. Algorithmic Prelec alpha: ${fmt(execution.per_type_alpha.bot?.alpha, 3)}. Active retail: ${fmt(execution.per_type_alpha.active_retail?.alpha, 3)}.`;
 ---
-<Base title="Execution Edge Monitor" description="Weekly algorithmic-retail Prelec alpha gap from 640M Polymarket trades.">
-  <h1>Execution Edge Monitor</h1>
-  <p class="subtitle">The algorithmic-minus-retail Prelec alpha gap. A behavioral proxy for execution-quality divergence.</p>
+<DeepDiveLayout
+  title="Execution Edge Monitor"
+  description="Weekly algorithmic-retail Prelec alpha gap from 671M Polymarket trades."
+  eyebrow="DV-PMI · Execution edge"
+  lede={lede}
+  asOf={`Updated ${execution.as_of}`}
+  citeKey="dellavedova2026execution"
+  citeTitle="Execution Edge Monitor"
+  citePath="execution">
 
-  <p>
-    As of <strong>{execution.as_of}</strong>, the alpha gap stands at <strong>{signed(execution.value, 3)}</strong>,
-    with a 52-week rolling z-score of <strong>{signed(execution.z52w, 2)}</strong>.
-    Algorithmic Prelec alpha: <strong>{fmt(execution.per_type_alpha.bot?.alpha, 3)}</strong>.
-    Active retail Prelec alpha: <strong>{fmt(execution.per_type_alpha.active_retail?.alpha, 3)}</strong>.
-    Week based on <strong>{execution.n_trades_week?.toLocaleString?.() ?? execution.n_trades_week}</strong> trades across all classes.
-  </p>
-
-  <h2>Weekly history</h2>
-  <TimeSeriesChart
-    dataUrl="/data/execution_timeseries.json"
-    yField="alpha_gap"
-    smoothField="alpha_gap_ma13w"
-    yLabel="algorithmic alpha minus retail alpha"
-    zeroLine={true}
-  />
-  <p class="muted" style="font-size:14px; margin-top:-18px;">
+  <Fragment slot="chart">
+    <TimeSeriesChart
+      dataUrl="/data/execution_timeseries.json"
+      yField="alpha_gap"
+      smoothField="alpha_gap_ma13w"
+      yLabel="algorithmic alpha minus retail alpha"
+      zeroLine={true}
+    />
+  </Fragment>
+  <Fragment slot="caption">
     A positive gap indicates algorithmic wallets weight tails more heavily than active retail. The bold line is a 13-week moving average.
-  </p>
+  </Fragment>
 
   <h2>Current per-type alphas</h2>
   <table>
@@ -74,14 +75,4 @@ function walletLabel(k: string) { return WALLET_LABEL[k] ?? k; }
     &middot;
     <a href="/data/execution_latest.json">execution_latest.json</a>
   </p>
-
-  <h2>Cite</h2>
-  <div class="citation">{`@misc{dellavedova2026execution,
-  title        = {Execution Edge Monitor},
-  author       = {Della Vedova, Joshua},
-  year         = {2026},
-  version      = {0.1.0},
-  publisher    = {University of San Diego},
-  url          = {https://jdellavedova.com/execution}
-}`}</div>
-</Base>
+</DeepDiveLayout>

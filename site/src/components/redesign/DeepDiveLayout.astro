@@ -1,0 +1,71 @@
+---
+/**
+ * Common layout for the 7 deep-dive pages (/bot-share, /calibration, /pwi,
+ * /execution, /efficiency, /price-gap, /pii). Applies the OWID-Grapher
+ * pattern shared with the homepage:
+ *   - wide container (1200px max)
+ *   - 2-column hero: eyebrow + h1 + lede on the left, big chart on the right
+ *   - below the hero: methodology, tables, data links, cite (single column,
+ *     constrained to a readable width via .dd-body)
+ *
+ * Usage:
+ *   <DeepDiveLayout
+ *     title="Algorithmic Share of Participation"
+ *     eyebrow="DV-PMI · Algorithmic share"
+ *     lede="As of 2026-04-27, ..."
+ *     asOf="Updated 2026-04-27"
+ *     citeKey="dellavedova2026botshare"
+ *     citeTitle="Algorithmic Share of Participation"
+ *     citePath="bot-share">
+ *     <Fragment slot="chart"><TimeSeriesChart ... /></Fragment>
+ *     <Fragment slot="caption">Description of the chart axes</Fragment>
+ *     <h2>52-week rolling statistics</h2>
+ *     <table>...</table>
+ *     <h2>Methodology</h2>
+ *     <p>...</p>
+ *     <h2>Data</h2>
+ *     <p><a href="...">file.csv</a></p>
+ *   </DeepDiveLayout>
+ */
+import Base from "../../layouts/Base.astro";
+
+export interface Props {
+  title: string;
+  description?: string;
+  eyebrow: string;
+  lede: string;
+  asOf?: string;
+  citeKey: string;
+  citeTitle: string;
+  citePath: string;
+}
+const { title, description, eyebrow, lede, asOf, citeKey, citeTitle, citePath } = Astro.props;
+const year = new Date().getFullYear();
+const desc = description ?? lede;
+---
+<Base title={title} description={desc} wide={true}>
+  <section class="dd-hero">
+    <div class="dd-hero-text">
+      <p class="dd-eyebrow">{eyebrow}</p>
+      <h1 class="dd-h1">{title}</h1>
+      {asOf && <p class="dd-stamp">{asOf}</p>}
+      <p class="dd-lede">{lede}</p>
+    </div>
+    <div class="dd-hero-chart">
+      <slot name="chart" />
+      <p class="dd-caption"><slot name="caption" /></p>
+    </div>
+  </section>
+
+  <div class="dd-body">
+    <slot />
+
+    <h2 class="dd-h2">Cite this index</h2>
+    <pre class="dd-cite">{`@misc{${citeKey},
+  title        = {${citeTitle}},
+  author       = {Della Vedova, Joshua},
+  year         = {${year}},
+  url          = {https://jdellavedova.com/${citePath}}
+}`}</pre>
+  </div>
+</Base>
