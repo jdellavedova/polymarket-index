@@ -1,0 +1,229 @@
+---
+import Base from "../layouts/Base.astro";
+import ThisWeek from "../components/ThisWeek.astro";
+import KpiTiles from "../components/KpiTiles.astro";
+import BotShareChart from "../components/BotShareChart.astro";
+import TopMarketsHeatmap from "../components/TopMarketsHeatmap.astro";
+import CalibrationMini from "../components/CalibrationMini.astro";
+import CumulativePnlChart from "../components/CumulativePnlChart.astro";
+import BriefingsTeaser from "../components/BriefingsTeaser.astro";
+import EmailSignup from "../components/EmailSignup.astro";
+
+import pwi from "../../public/data/pwi_latest.json";
+import execution from "../../public/data/execution_latest.json";
+import botShare from "../../public/data/bot_share_latest.json";
+import priceGap from "../../public/data/price_gap_latest.json";
+import efficiency from "../../public/data/efficiency_latest.json";
+import pii from "../../public/data/pii_latest.json";
+import calibration from "../../public/data/calibration_latest.json";
+import topMarkets from "../../public/data/top_markets_latest.json";
+import activity from "../../public/data/weekly_activity_latest.json";
+import profitSplit from "../../public/data/profit_split_latest.json";
+
+function usdCompact(v: number) {
+  const sign = v < 0 ? "-" : "";
+  const a = Math.abs(v);
+  if (a >= 1e9) return sign + "$" + (a / 1e9).toFixed(2) + "B";
+  if (a >= 1e6) return sign + "$" + (a / 1e6).toFixed(1) + "M";
+  if (a >= 1e3) return sign + "$" + (a / 1e3).toFixed(0) + "K";
+  return sign + "$" + a.toFixed(0);
+}
+
+function fmt(n: number, digits = 3) {
+  if (n === null || n === undefined || Number.isNaN(n)) return "n/a";
+  return n.toFixed(digits);
+}
+function pct(n: number, digits = 1) {
+  if (n === null || n === undefined || Number.isNaN(n)) return "n/a";
+  return (n * 100).toFixed(digits) + "%";
+}
+function signed(n: number | null | undefined, d = 2) {
+  if (n === null || n === undefined || Number.isNaN(n)) return null;
+  return (n >= 0 ? "+" : "") + n.toFixed(d);
+}
+function arrow(z: number | null | undefined) {
+  if (z === null || z === undefined || Number.isNaN(z)) return "";
+  if (z > 1) return "▲▲";
+  if (z > 0.5) return "▲";
+  if (z < -1) return "▼▼";
+  if (z < -0.5) return "▼";
+  return "";
+}
+function zCls(z: number | null | undefined) {
+  if (z === null || z === undefined || Number.isNaN(z)) return "flat";
+  if (z > 0.5) return "pos";
+  if (z < -0.5) return "neg";
+  return "flat";
+}
+
+// Pull the MNPI flag-rate breakdown for the Informational block
+const mnpiOrder = ["vote", "action", "performance", "stochastic"];
+const mnpiLabels: Record<string, string> = {
+  vote: "Vote", action: "Action", performance: "Performance", stochastic: "Stochastic",
+};
+const mnpiRows = pii.mnpi_taxonomy
+  .slice()
+  .sort((a, b) => mnpiOrder.indexOf(a.mnpi_type) - mnpiOrder.indexOf(b.mnpi_type));
+
+// Shares come from the weekly activity aggregator (true trade counts per type,
+// not Prelec-fit-included counts). This fixes the earlier casual=0, one_shot=0
+// artifact where those types failed the min-bin test in the Prelec fit.
+const classShares = [
+  { label: "Algorithmic", share: activity.by_type_share.bot, trades: activity.by_type_participations.bot,
+    note: "50+ trades/day or 1,000+ lifetime. Market-making scripts, arbitrage bots, and other high-frequency algorithms." },
+  { label: "Active Retail", share: activity.by_type_share.active_retail, trades: activity.by_type_participations.active_retail,
+    note: "10 to 1,000 lifetime trades. Think: the engaged hobbyist who bets on elections, sports, and news across many weeks." },
+  { label: "Sophisticated", share: activity.by_type_share.sophisticated, trades: activity.by_type_participations.sophisticated,
+    note: "Big volume, diversified across markets, 30+ day presence. Think: funds and professional discretionary traders." },
+  { label: "Casual", share: activity.by_type_share.casual, trades: activity.by_type_participations.casual,
+    note: "Between 2 and 9 lifetime trades. Think: someone who bet on the Super Bowl and one election, then moved on." },
+  { label: "One-Shot", share: activity.by_type_share.one_shot, trades: activity.by_type_participations.one_shot,
+    note: "A single lifetime trade. Think: placed one bet on a viral market (Taylor Swift engagement, election night) and left." },
+];
+
+function smallPct(n: number) {
+  const x = n * 100;
+  if (x >= 1) return x.toFixed(1) + "%";
+  if (x >= 0.01) return x.toFixed(2) + "%";
+  if (x >= 0.001) return x.toFixed(3) + "%";
+  return "<0.001%";
+}
+function compactTrades(n: number) {
+  if (n >= 1e6) return (n / 1e6).toFixed(1) + "M";
+  if (n >= 1e3) return (n / 1e3).toFixed(0) + "K";
+  return n.toLocaleString();
+}
+
+// Profit-split table rows, precomputed to keep typed-dict lookups out of the JSX template
+const profitTypeLabels: Record<string, string> = {
+  bot: "Algorithmic", active_retail: "Active Retail", sophisticated: "Sophisticated",
+  casual: "Casual", one_shot: "One-Shot",
+};
+const profitByType = profitSplit.by_type as Record<string, any>;
+const profitRows = ["bot", "active_retail", "sophisticated", "casual", "one_shot"]
+  .map(wt => {
+    const r = profitByType[wt];
+    if (!r) return null;
+    return {
+      label: profitTypeLabels[wt],
+      n_trades: r.n_trades,
+      accuracy: r.accuracy,
+      pnl: r.pnl,
+      directional_roi_bps: r.directional_roi_bps,
+      execution_roi_bps: r.execution_roi_bps,
+      pnl_roi_bps: r.pnl_roi_bps,
+    };
+  })
+  .filter((r): r is NonNullable<typeof r> => r !== null);
+---
+<Base title="Della Vedova Prediction Market Indices (DV-PMI)" description="Weekly descriptive, informational, and sentiment metrics from 671M on-chain Polymarket trades.">
+  <section class="hero">
+    <p class="hero-eyebrow">Della Vedova Prediction Market Indices</p>
+    <h1 class="hero-thesis">
+      Prediction markets are algorithmic, asymmetric, and increasingly surveillable.
+    </h1>
+    <p class="hero-lede">
+      We analyze every on-chain Polymarket trade to measure who trades, who profits, where private information shows up, and how human traders misprice uncertainty. <strong>671&thinsp;million trades since November 2022</strong>, refreshed weekly.
+    </p>
+    <p class="hero-byline">
+      Built by <a href="/about">Joshua Della Vedova</a>, Assistant Professor of Finance, University of San Diego.
+    </p>
+    <div class="hero-cta">
+      <a class="cta cta-primary" href="#this-week">This week&rsquo;s read</a>
+      <a class="cta" href="/research">Research papers</a>
+      <a class="cta" href="/data">Download the data</a>
+      <a class="cta" href="/expert-witness">Consulting</a>
+    </div>
+    <p class="hero-asof">
+      Data current through ISO week <strong>{activity.week}</strong> (week of {activity.as_of}). P&amp;L numbers reflect the previous fully-resolved week ({profitSplit.as_of_week}).
+    </p>
+  </section>
+
+  <ThisWeek />
+
+  <KpiTiles />
+
+  <BotShareChart />
+
+  <TopMarketsHeatmap />
+
+  <CumulativePnlChart />
+
+  <BriefingsTeaser />
+
+  <section class="audience">
+    <h2 class="audience-h">Built for three audiences</h2>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-tag">Researchers</div>
+        <p>Cite the dataset, replicate the methods, download the weekly indices.</p>
+        <a class="audience-link" href="/data">Data &amp; methodology &rarr;</a>
+      </div>
+      <div class="audience-card">
+        <div class="audience-tag">Journalists &amp; analysts</div>
+        <p>Ready-to-cite statistics on bots, retail losses, private information, and probability distortions.</p>
+        <a class="audience-link" href="/press">Press kit &rarr;</a>
+      </div>
+      <div class="audience-card">
+        <div class="audience-tag">Regulators &amp; counsel</div>
+        <p>Microstructure-based surveillance for informed-trading detection and market-integrity review.</p>
+        <a class="audience-link" href="/expert-witness">Consulting &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <h2 id="this-week">How human traders distort probabilities</h2>
+  <p class="section-lead">
+    Tversky and Kahneman (1992) showed that people overweight rare events. We measure the same distortion every week from realized win rates of non-bot Polymarket trades. Pooled fit: Prelec α = <strong>{fmt(calibration.prelec_alpha, 3)}</strong> (R² = {fmt(calibration.prelec_r2, 2)}). Source: <a href="/research">Della Vedova and Grant (2026, in progress)</a>.
+  </p>
+  <CalibrationMini />
+
+  <h2>Deep dives</h2>
+  <p class="section-lead">
+    Each index has its own page with the full time series, methodology, and download. The headline numbers are above; click through for detail.
+  </p>
+  <div class="deep-dive-grid">
+    <a class="dd-card" href="/bot-share">
+      <div class="dd-label">Algorithmic share</div>
+      <div class="dd-h">Who is trading</div>
+      <div class="dd-p">Weekly activity, 5-type wallet breakdown, time series.</div>
+    </a>
+    <a class="dd-card" href="/research">
+      <div class="dd-label">Profit decomposition</div>
+      <div class="dd-h">Who profits</div>
+      <div class="dd-p">By-type P&amp;L, directional vs execution, anchored to Paper 1.</div>
+    </a>
+    <a class="dd-card" href="/pii">
+      <div class="dd-label">Insider screen</div>
+      <div class="dd-h">Where private info shows up</div>
+      <div class="dd-p">{pii.headline.total_flagged_p_lt_01.toLocaleString()} flagged wallets, MNPI category breakdown.</div>
+    </a>
+    <a class="dd-card" href="/calibration">
+      <div class="dd-label">Probability weighting</div>
+      <div class="dd-h">How crowds price uncertainty</div>
+      <div class="dd-p">Prelec fit, calibration scatter, longshot pricing gap.</div>
+    </a>
+    <a class="dd-card" href="/execution">
+      <div class="dd-label">Execution edge</div>
+      <div class="dd-h">Bot vs retail timing</div>
+      <div class="dd-p">Weekly execution edge, 52-week trend, methodology.</div>
+    </a>
+    <a class="dd-card" href="/efficiency">
+      <div class="dd-label">Calibration fit</div>
+      <div class="dd-h">Market efficiency over time</div>
+      <div class="dd-p">Weekly R² of the Prelec fit; tracks pricing quality.</div>
+    </a>
+  </div>
+
+  <p class="muted" style="font-size:14px;">
+    Time-series charts and the calibration scatter (Prelec &alpha; = {fmt(calibration.prelec_alpha, 3)}, R&sup2; = {fmt(calibration.prelec_r2, 3)}) live on the deep-dive pages: <a href="/calibration">calibration</a>, <a href="/bot-share">algorithmic share</a>, <a href="/pwi">PWI</a>, <a href="/execution">execution edge</a>, <a href="/price-gap">price gap</a>, <a href="/efficiency">efficiency</a>.
+  </p>
+
+  <EmailSignup />
+
+  <h2>Cite this dashboard</h2>
+  <div class="citation">Della Vedova, J. (2026). Della Vedova Prediction Market Indices (DV-PMI). v0.1.0. https://jdellavedova.com</div>
+  <p class="muted" style="font-size:14px;">
+    BibTeX entries for each index are available on its deep-dive page. See the <a href="/methodology">methodology</a>, the <a href="/data">full historical data</a>, and the <a href="/research">source papers</a>.
+  </p>
+</Base>
