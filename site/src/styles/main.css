@@ -1980,6 +1980,115 @@ h1.hero-thesis {
   .dd-h1 { font-size: 26px; }
 }
 
+/* Research page (Phase 3) — paper card grid */
+.rs-section-h {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 32px 0 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.rs-section-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 16px;
+  max-width: 64ch;
+}
+.rs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 0 0 28px;
+}
+.rs-card {
+  display: block;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 18px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.12s ease, transform 0.12s ease;
+}
+a.rs-card:hover {
+  border-color: var(--founders);
+  transform: translateY(-1px);
+}
+.rs-card-program {
+  border-left: 3px solid var(--founders);
+}
+.rs-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.rs-paper-n {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--founders);
+}
+.rs-status {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.rs-status-active { color: #c9a14a; border-color: rgba(201, 161, 74, 0.35); }
+.rs-status-wip    { color: var(--founders); border-color: rgba(117, 190, 233, 0.35); }
+.rs-rank {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.rs-card-title {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.rs-card-meta {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+}
+.rs-card-summary {
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+.rs-card-link {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--founders);
+  letter-spacing: 0.02em;
+}
+@media (max-width: 720px) {
+  .rs-grid { grid-template-columns: 1fr; }
+}
+
 /* Briefings page (Phase 2) — uses dd-hero from above for the 2-col hero
    with the heatmap on the right; below the hero is a card grid + uses block */
 .bf-summary {

@@ -1,138 +1,186 @@
 ---
 import Base from "../layouts/Base.astro";
+import CumulativePnlChart from "../components/CumulativePnlChart.astro";
+import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
+
 const SSRN_AUTHOR = "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2583491";
 const SCHOLAR = "https://scholar.google.com/citations?user=6KY3PLwAAAAJ&hl=en";
+const SSRN_PAPER2 = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6567238";
+
+// Paper data for the card grid. The "DV-PMI program" papers are featured at
+// the top because they're the basis for everything on this site. Other
+// publications follow grouped by status.
+const programPapers = [
+  {
+    n: "Paper 1",
+    title: "Who Profits from Prediction Markets? Execution, not Information",
+    authors: "Della Vedova, J. (2026)",
+    venue: "Working paper · 1,059 SSRN downloads",
+    status: "Under review",
+    statusTone: "active",
+    summary: "Trading skill in prediction markets is structurally two-dimensional. Forecasting accuracy and execution quality are distinct, persistent, and nearly independent capacities. Execution, not forecasting, determines which traders profit. Cumulative since 2022: bots +$135.9M, retail −$82.1M.",
+    href: SSRN_AUTHOR,
+    hrefLabel: "SSRN",
+  },
+  {
+    n: "Paper 2",
+    title: "Detecting Informed Trading in Prediction Markets: An Orthogonality Test",
+    authors: "Della Vedova, J. (2026)",
+    venue: "Working paper · Posted to SSRN April 2026",
+    status: "Under review",
+    statusTone: "active",
+    summary: "The theta-epsilon orthogonality from Paper 1 becomes a forensic detection signal. 6,032 of 450,048 wallets show the structural signature of private information; aggregate gains ≈$150M. A microstructure-grounded, Daubert-ready test statistic. Near-zero flag-set concordance with Mitts and Ofir (2026).",
+    href: SSRN_PAPER2,
+    hrefLabel: "SSRN abstract 6567238",
+  },
+  {
+    n: "Paper 4",
+    title: "Probability Weighting from Prediction Markets",
+    authors: "Della Vedova, J. and Grant, A.",
+    venue: "Work in progress",
+    status: "In progress",
+    statusTone: "wip",
+    summary: "A model-free measurement of probability weighting from a weekly panel of 671M prediction-market trades. Pooled fit: Prelec α = 0.664, matching the Tversky-Kahneman experimental 0.65. Tests whether the prediction-market-implied weighting index predicts cross-sectional equity anomalies.",
+    href: "/calibration",
+    hrefLabel: "View live index",
+  },
+];
+
+const peerReviewed = [
+  {
+    title: "Investor Behavior at the 52-Week High",
+    authors: "Della Vedova, J., Grant, A. R., and Westerholm, P. J.",
+    venue: "Journal of Financial and Quantitative Analysis (2023), 58(7), 2852-2889",
+    rank: "ABS 4 · ABDC A* · FT50",
+    summary: "Individual investors use the 52-week high as a reference price in their trading decisions.",
+  },
+  {
+    title: "Who Drives Momentum Returns? The Role Reversal of Trend-Seeking Households and Contrarian Institutions",
+    authors: "Della Vedova, J., Grant, A. R., and Westerholm, P. J.",
+    venue: "European Financial Management (2025)",
+    rank: "ABS 3 · ABDC A",
+    summary: "An investor-class decomposition of cross-sectional momentum returns.",
+  },
+  {
+    title: "Financial Uncertainty and the Cross Section of Cryptocurrency Returns",
+    authors: "Colak, G., Della Vedova, J., Foley, S., and Mai, S. T.",
+    venue: "Journal of Banking and Finance (forthcoming)",
+    rank: "ABS 3 · ABDC A*",
+    summary: "Macroeconomic uncertainty and the cross-section of cryptocurrency returns.",
+  },
+  {
+    title: "Equity Borrowing Constraints and the Informed Trading Strategies of Short Sellers",
+    authors: "Blau, B. M., Della Vedova, J., Fox, C., and Smith, J. M.",
+    venue: "Market Microstructure and Liquidity (forthcoming)",
+    rank: "ABDC B",
+    summary: "How borrowing constraints shape short-seller information processing.",
+  },
+  {
+    title: "Fostering Reverse Innovation with Value Chain Co-Creation",
+    authors: "Kortmann, S., Zimmermann, C., Bliss, B. A., and Della Vedova, J.",
+    venue: "IEEE Transactions on Engineering Management (2025), 72, 770-785",
+    rank: "ABS 3 · ABDC A",
+    summary: "",
+  },
+];
+
+const otherWorking = [
+  {
+    title: "The Wrong Reference Price: Trading Strategy and the Disposition Effect",
+    authors: "Della Vedova, J. (2026)",
+    venue: "Working paper",
+    summary: "Most investors form reference prices from the last price rather than the purchase price. Reframing reverses classical disposition findings in a substantial subset of trades.",
+    href: SSRN_AUTHOR,
+  },
+  {
+    title: "Investor Disagreement, Liquidity, and Informational Efficiency at the 52-Week High",
+    authors: "Della Vedova, J., Gao, M., Grant, A. R., Westerholm, P. J., and Bliss, B. A.",
+    venue: "Journal of Banking and Finance, R&R (1st round)",
+    summary: "Investor behavior around the 52-week high and its consequences for liquidity and price discovery.",
+    href: SSRN_AUTHOR,
+  },
+  {
+    title: "The 1% Problem: LLM Orchestration for Rare Event Detection in Manufacturing Supply Chains",
+    authors: "Della Vedova, J., Dang, J., and Yang, Y.",
+    venue: "International Journal of Production Economics, R&R (2nd round)",
+    summary: "Multi-stage LLM pipelines for rare-event detection in manufacturing supply chains.",
+    href: SSRN_AUTHOR,
+  },
+  {
+    title: "The Value of Openness",
+    authors: "Della Vedova, J., Siegel, S., and Warachka, M.",
+    venue: "Target: Journal of Financial and Quantitative Analysis",
+    summary: "The Big Five personality openness trait and its relationship to cross-sectional asset returns.",
+    href: SSRN_AUTHOR,
+  },
+];
 ---
-<Base title="Research: Joshua Della Vedova" description="Published and working research on prediction markets, microstructure, and behavioral finance.">
-  <h1>Research</h1>
-  <p class="subtitle">Peer-reviewed publications, working papers, and work in progress. Abstracts and full text on my <a href={SSRN_AUTHOR}>SSRN author page</a>. See <a href={SCHOLAR}>Google Scholar</a> for citations.</p>
+<Base
+  title="Research: Joshua Della Vedova"
+  description="Published and working research on prediction markets, microstructure, and behavioral finance."
+  wide={true}>
 
-  <h2>Peer-reviewed publications</h2>
+  <section class="dd-hero">
+    <div class="dd-hero-text">
+      <p class="dd-eyebrow">DV-PMI · Research program</p>
+      <h1 class="dd-h1">Research</h1>
+      <p class="dd-lede">
+        Three working papers form the basis for the DV-PMI dashboard. Paper 1 establishes that trading skill in prediction markets is two-dimensional and that execution, not forecasting, determines who profits. Paper 2 turns the same orthogonality into a forensic test for informed trading. Paper 4 (with Andrew Grant) extracts probability weighting from on-chain trades. Earlier peer-reviewed work spans behavioral finance, microstructure, and momentum.
+      </p>
+      <p class="dd-stamp">
+        Full abstracts on <a href={SSRN_AUTHOR}>SSRN</a> &middot; citations on <a href={SCHOLAR}>Google Scholar</a>
+      </p>
+    </div>
+    <div class="dd-hero-chart">
+      <CumulativePnlChart />
+      <p class="dd-caption">
+        Paper 1's headline finding, in dollars: cumulative P&amp;L on Polymarket since November 2022 by trader type. Bots clear roughly $135M, active retail loses roughly $82M.
+      </p>
+    </div>
+  </section>
 
-  <h3>Investor Behavior at the 52-Week High</h3>
-  <p class="muted">
-    Della Vedova, J., Grant, A. R., and Westerholm, P. J. (2023).
-    <em>Journal of Financial and Quantitative Analysis</em>, 58(7), 2852-2889. (ABS 4, ABDC A*, FT50)
-  </p>
-  <p>
-    Individual investors use the 52-week high as a reference price in their trading decisions.
-    See <a href={SSRN_AUTHOR}>SSRN</a> for the full abstract.
-  </p>
+  <h2 class="rs-section-h">DV-PMI program</h2>
+  <p class="rs-section-sub">The three working papers behind the indices on this site.</p>
+  <div class="rs-grid">
+    {programPapers.map(p => (
+      <a class="rs-card rs-card-program" href={p.href}>
+        <div class="rs-card-top">
+          <span class="rs-paper-n">{p.n}</span>
+          <span class={`rs-status rs-status-${p.statusTone}`}>{p.status}</span>
+        </div>
+        <div class="rs-card-title">{p.title}</div>
+        <div class="rs-card-meta">{p.authors} &middot; {p.venue}</div>
+        <p class="rs-card-summary">{p.summary}</p>
+        <div class="rs-card-link">{p.hrefLabel} &rarr;</div>
+      </a>
+    ))}
+  </div>
 
-  <h3>Who Drives Momentum Returns? The Role Reversal of Trend-Seeking Households and Contrarian Institutions</h3>
-  <p class="muted">
-    Della Vedova, J., Grant, A. R., and Westerholm, P. J. (2025).
-    <em>European Financial Management</em>. (ABS 3, ABDC A)
-  </p>
-  <p>
-    An investor-class decomposition of cross-sectional momentum returns. See <a href={SSRN_AUTHOR}>SSRN</a>
-    for the full abstract.
-  </p>
+  <h2 class="rs-section-h">Peer-reviewed publications</h2>
+  <div class="rs-grid">
+    {peerReviewed.map(p => (
+      <article class="rs-card">
+        <div class="rs-card-top">
+          <span class="rs-rank">{p.rank}</span>
+        </div>
+        <div class="rs-card-title">{p.title}</div>
+        <div class="rs-card-meta">{p.authors} &middot; {p.venue}</div>
+        {p.summary && <p class="rs-card-summary">{p.summary}</p>}
+      </article>
+    ))}
+  </div>
 
-  <h3>Fostering Reverse Innovation with Value Chain Co-Creation</h3>
-  <p class="muted">
-    Kortmann, S., Zimmermann, C., Bliss, B. A., and Della Vedova, J. (2025).
-    <em>IEEE Transactions on Engineering Management</em>, 72, 770-785. (ABS 3, ABDC A)
-  </p>
+  <h2 class="rs-section-h">Other working papers</h2>
+  <div class="rs-grid">
+    {otherWorking.map(p => (
+      <a class="rs-card" href={p.href}>
+        <div class="rs-card-title">{p.title}</div>
+        <div class="rs-card-meta">{p.authors} &middot; {p.venue}</div>
+        <p class="rs-card-summary">{p.summary}</p>
+        <div class="rs-card-link">SSRN &rarr;</div>
+      </a>
+    ))}
+  </div>
 
-  <h3>Equity Borrowing Constraints and the Informed Trading Strategies of Short Sellers</h3>
-  <p class="muted">
-    Blau, B. M., Della Vedova, J., Fox, C., and Smith, J. M. (Forthcoming).
-    <em>Market Microstructure and Liquidity</em>. (ABDC B)
-  </p>
-
-  <h3>Financial Uncertainty and the Cross Section of Cryptocurrency Returns</h3>
-  <p class="muted">
-    Colak, G., Della Vedova, J., Foley, S., and Mai, S. T. (Forthcoming).
-    <em>Journal of Banking and Finance</em>. (ABS 3, ABDC A*)
-  </p>
-  <p>
-    Macroeconomic uncertainty and the cross-section of cryptocurrency returns. See
-    <a href={SSRN_AUTHOR}>SSRN</a> for the full abstract.
-  </p>
-
-  <h2>Working papers</h2>
-
-  <h3>Who Profits from Prediction Markets? Execution, not Information</h3>
-  <p class="muted">Della Vedova, J. (2026). <em>Working paper</em>. 1,059 SSRN downloads.</p>
-  <p>
-    Trading skill in prediction markets is structurally two-dimensional. Forecasting accuracy and execution
-    quality are distinct, persistent, and nearly independent capacities (shared variance below 1% for humans,
-    below 4% for bots). Execution, not forecasting, determines which traders profit. 222M Polymarket trades;
-    external validation on 14.1M CBOE equity options contracts.
-  </p>
-  <p class="muted" style="font-size:14px;">
-    <a href={SSRN_AUTHOR}>SSRN</a>
-  </p>
-
-  <h3>Detecting Informed Trading in Prediction Markets: An Orthogonality Test</h3>
-  <p class="muted">Della Vedova, J. (2026). <em>Working paper</em>. Posted to SSRN 20 April 2026.</p>
-  <p>
-    The theta-epsilon orthogonality from the companion paper becomes a forensic detection signal. 6,032 of
-    450,048 wallets (1.34%) show the structural signature of private information; aggregate gains approximately
-    $150M, with $111M absorbed by bot market makers. A microstructure-grounded, Daubert-ready test statistic.
-    Near-zero flag-set concordance with the heuristic screening in Mitts and Ofir (2026).
-  </p>
-  <p class="muted" style="font-size:14px;">
-    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6567238">SSRN abstract 6567238</a>
-  </p>
-
-  <h3>The Wrong Reference Price: Trading Strategy and the Disposition Effect</h3>
-  <p class="muted">Della Vedova, J. (2026). <em>Working paper</em>.</p>
-  <p>
-    Disposition-effect evidence rests on the assumption that purchase price is the reference point.
-    Transaction data shows most investors form reference prices from the last price rather than the
-    purchase price. Reframing the reference reverses classical disposition findings in a substantial
-    subset of trades.
-  </p>
-  <p class="muted" style="font-size:14px;">
-    <a href={SSRN_AUTHOR}>SSRN</a>
-  </p>
-
-  <h3>Investor Disagreement, Liquidity, and Informational Efficiency at the 52 Week High</h3>
-  <p class="muted">
-    Della Vedova, J., Gao, M., Grant, A. R., Westerholm, P. J., and Bliss, B. A.
-    <em>Journal of Banking and Finance</em>, R&amp;R (1st round). (ABS 3, ABDC A*)
-  </p>
-  <p>
-    Investor behavior around the 52-week high and its consequences for liquidity and price discovery.
-    See <a href={SSRN_AUTHOR}>SSRN</a> for the full abstract.
-  </p>
-
-  <h3>The 1% Problem: LLM Orchestration for Rare Event Detection in Manufacturing Supply Chains</h3>
-  <p class="muted">
-    Della Vedova, J., Dang, J., and Yang, Y.
-    <em>International Journal of Production Economics</em>, R&amp;R (2nd round). (ABS 3, ABDC A)
-  </p>
-  <p>
-    Multi-stage LLM pipelines for rare-event detection in manufacturing supply chains. See
-    <a href={SSRN_AUTHOR}>SSRN</a> for the full abstract.
-  </p>
-
-  <h3>The Value of Openness</h3>
-  <p class="muted">
-    Della Vedova, J., Siegel, S., and Warachka, M. Target: <em>Journal of Financial and Quantitative Analysis</em>.
-    (ABS 4, ABDC A*, FT50)
-  </p>
-  <p>
-    The Big Five personality openness trait and its relationship to cross-sectional asset returns. See
-    <a href={SSRN_AUTHOR}>SSRN</a> for the full abstract.
-  </p>
-
-  <h2>Work in progress</h2>
-
-  <h3>Probability Weighting from Prediction Markets (with A. Grant)</h3>
-  <p>
-    A model-free measurement of probability weighting from a weekly panel of 640M prediction-market trades.
-    Tests whether the prediction-market-implied weighting index predicts cross-sectional equity anomalies.
-  </p>
-
-  <h3>The Flaw of Averages: Realized Holding Period Returns vs Housing Price Indices</h3>
-  <p class="muted">With Jeremy Gabe and John Demas.</p>
-
-  <h2>Notes and commentary</h2>
-  <p class="muted">Updated when major prediction-market events warrant. Forthcoming.</p>
-
-  <h2>Cite this dashboard</h2>
-  <div class="citation">Della Vedova, J. (2026). Della Vedova Prediction Market Indices (DV-PMI). v0.1.0. https://jdellavedova.com</div>
+  <AuthorityStrip />
 </Base>
