@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import HeroEssay from "../components/redesign/HeroEssay.astro";
 import FindingCard from "../components/redesign/FindingCard.astro";
 import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
+import MentionedIn from "../components/redesign/MentionedIn.astro";
 import EmailSignup from "../components/EmailSignup.astro";
 
 import botShare from "../../public/data/bot_share_timeseries.json";
@@ -144,6 +145,19 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
       href="/briefings"
     />
   </div>
+
+  <a class="featured-video" href="https://www.cnbc.com/video/2026/05/01/finance-professor-josh-della-vedova-talks-new-report-bots-are-outperforming-traders-in-prediction-markets.html" target="_blank" rel="noopener">
+    <div class="fv-left">
+      <div class="fv-label">▶ Featured video · CNBC · May 1, 2026</div>
+      <div class="fv-headline">"Finance Professor Josh Della Vedova talks new report bots are outperforming traders in prediction markets"</div>
+      <div class="fv-cta">Watch on CNBC.com →</div>
+    </div>
+    <div class="fv-right">
+      <div class="fv-cnbc">CNBC</div>
+    </div>
+  </a>
+
+  <MentionedIn />
 
   <EmailSignup />
 

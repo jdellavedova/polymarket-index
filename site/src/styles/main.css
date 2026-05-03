@@ -1603,6 +1603,168 @@ footer.site-foot .disclaimer {
   .dd-h1 { font-size: 26px; }
 }
 
+/* Featured video card (CNBC, etc.) — used on homepage and press */
+.featured-video {
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  align-items: center;
+  gap: 20px;
+  margin: 28px 0 0;
+  padding: 18px 22px;
+  background: linear-gradient(135deg, var(--bg-soft) 0%, var(--card) 100%);
+  border: 1px solid var(--border);
+  border-left: 4px solid #f47521;  /* CNBC orange */
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.30), 0 6px 18px rgba(0, 0, 0, 0.20);
+}
+.featured-video:hover {
+  border-color: #f47521;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.40), 0 14px 28px rgba(0, 0, 0, 0.28);
+}
+.fv-left { min-width: 0; }
+.fv-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f47521;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.fv-headline {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.35;
+  color: var(--text);
+  margin-bottom: 8px;
+  font-style: italic;
+}
+.fv-cta {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--founders);
+  letter-spacing: 0.02em;
+}
+.fv-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  background: rgba(244, 117, 33, 0.08);
+  border: 1px solid rgba(244, 117, 33, 0.25);
+  border-radius: 4px;
+}
+.fv-cnbc {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: 0.04em;
+  color: #f47521;
+}
+@media (max-width: 720px) {
+  .featured-video { grid-template-columns: 1fr; }
+  .fv-right { height: 56px; }
+}
+
+/* "As featured in" media-logo strip (Phase 8 — social proof above footer)
+   Typographic treatment of each outlet's masthead style. No third-party
+   logo files; just font/weight/letter-spacing tricks that evoke the brand. */
+.mentioned-in {
+  margin: 36px 0 0;
+  padding: 24px 0 22px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.mi-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.mi-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 36px 44px;
+}
+.mi-logo {
+  text-decoration: none;
+  color: var(--muted);
+  display: inline-block;
+  transition: color 0.18s ease, transform 0.18s ease, filter 0.18s ease;
+  filter: grayscale(1) opacity(0.85);
+  white-space: nowrap;
+}
+.mi-logo:hover {
+  color: var(--text);
+  filter: grayscale(0) opacity(1);
+  transform: translateY(-1px);
+}
+.mi-logo-bloomberg {
+  font-family: "Times New Roman", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+.mi-logo-bloomberg:hover { color: #ff8800; }
+.mi-logo-cnbc {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.mi-logo-cnbc:hover { color: #f47521; }
+.mi-logo-yahoo {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+.mi-logo-yahoo:hover { color: #720e9e; }
+.mi-logo-benzinga {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.mi-logo-benzinga:hover { color: #fa6600; }
+.mi-logo-famag {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  font-variant: small-caps;
+}
+.mi-logo-famag:hover { color: #c8b88a; }
+.mi-foot {
+  margin-top: 16px;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.mi-foot a { font-weight: 600; }
+@media (max-width: 720px) {
+  .mi-row { gap: 22px 28px; }
+  .mi-logo-bloomberg, .mi-logo-cnbc { font-size: 18px; }
+  .mi-logo-yahoo, .mi-logo-benzinga { font-size: 16px; }
+  .mi-logo-famag { font-size: 14px; }
+}
+
 /* Text pages (Phase 6) — methodology, about, expert-witness.
    Narrow reading column kept; new hero treatment + section header + footer */
 .tp-hero {

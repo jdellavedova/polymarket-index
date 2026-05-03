@@ -31,7 +31,71 @@
       "citation_line": "Joshua Della Vedova, Assistant Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Who Profits from Prediction Markets? Execution, not Information.'"
     }
   ],
-  "media_mentions": [],
+  "media_mentions": [
+    {
+      "date": "2026-05-01",
+      "outlet": "CNBC",
+      "headline": "Finance Professor Josh Della Vedova talks new report bots are outperforming traders in prediction markets",
+      "url": "https://www.cnbc.com/video/2026/05/01/finance-professor-josh-della-vedova-talks-new-report-bots-are-outperforming-traders-in-prediction-markets.html",
+      "format": "On-camera segment"
+    },
+    {
+      "date": "2026-04-30",
+      "outlet": "Bloomberg",
+      "headline": "100,000 Polymarket Accounts Booked Four-Figure Losses Since 2025",
+      "url": "https://finance.yahoo.com/markets/crypto/articles/100-000-polymarket-accounts-booked-062234759.html",
+      "format": "Reported feature (carried by Yahoo Finance)"
+    },
+    {
+      "date": "2026-04-30",
+      "outlet": "Yahoo Finance",
+      "headline": "100,000 Polymarket Accounts Booked Four-Figure Losses Since 2025, Bloomberg Finds",
+      "url": "https://finance.yahoo.com/markets/crypto/articles/100-000-polymarket-accounts-booked-062234759.html",
+      "format": "Syndicated"
+    },
+    {
+      "date": "2026-04-30",
+      "outlet": "Financial Advisor Magazine",
+      "headline": "Most Prediction Market Traders Are Losing Money While Bots Rack Up Gains",
+      "url": "https://www.fa-mag.com/news/most-prediction-market-traders-are-losing-money-while-bots-rack-up-gains-86783.html",
+      "format": "Wire pickup"
+    },
+    {
+      "date": "2026-04-30",
+      "outlet": "Benzinga",
+      "headline": "Can You Consistently Win On Prediction Markets? This Study Says 'Probably Not'",
+      "url": "https://www.benzinga.com/markets/prediction-markets/26/04/52101404/can-you-consistently-win-on-prediction-markets-this-study-says-probably-not",
+      "format": "Reported"
+    },
+    {
+      "date": "2026-04-30",
+      "outlet": "BeInCrypto",
+      "headline": "Prediction Markets Yield Losses for Most: Bloomberg Finds",
+      "url": "https://beincrypto.com/prediction-market-retail-traders-losses-bloomberg/",
+      "format": "Wire pickup"
+    },
+    {
+      "date": "2026-04-30",
+      "outlet": "CXO Advisory",
+      "headline": "Prediction Versus Execution",
+      "url": "https://www.cxoadvisory.com/investing-expertise/prediction-versus-execution/",
+      "format": "Research review"
+    },
+    {
+      "date": "2026-04-30",
+      "outlet": "IPO Scanner",
+      "headline": "Prediction Market Traders Trail Behind Bots in Lopsided Performance",
+      "url": "https://www.iposcanner.ai/news/prediction-market-traders-trail-behind-bots-in-lopsided-performance",
+      "format": "Wire pickup"
+    },
+    {
+      "date": "2026-04-30",
+      "outlet": "MEXC News",
+      "headline": "Polymarket Users Lose Money as Automated Bots Steal Profits",
+      "url": "https://www.mexc.com/news/1061296",
+      "format": "Wire pickup"
+    }
+  ],
   "speaking": [],
   "usage_note": "Quotes are released under Creative Commons Attribution 4.0. Attribution line included with each quote is the minimum citation; journalists are welcome to edit for length or style as long as the attribution remains."
 }

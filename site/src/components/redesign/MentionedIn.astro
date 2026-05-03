@@ -1,0 +1,54 @@
+---
+/**
+ * "As featured in" / "Mentioned by" logo strip — Kalshinomics-style horizontal
+ * row of media outlets that have covered the research.
+ *
+ * Implementation note: typographic treatments rather than fetched logo SVGs.
+ * Each outlet name is rendered in a distinctive font/weight that evokes its
+ * masthead. This avoids the trademark/licensing exposure of hosting third-
+ * party logos. Real outlet logos can be swapped in later if needed.
+ *
+ * Each item is a link to the actual coverage so the social proof is verifiable
+ * with one click — no "trust me, they covered it" claims without proof.
+ */
+const outlets = [
+  {
+    name: "Bloomberg",
+    href: "https://finance.yahoo.com/markets/crypto/articles/100-000-polymarket-accounts-booked-062234759.html",
+    style: "bloomberg",
+  },
+  {
+    name: "CNBC",
+    href: "https://www.cnbc.com/video/2026/05/01/finance-professor-josh-della-vedova-talks-new-report-bots-are-outperforming-traders-in-prediction-markets.html",
+    style: "cnbc",
+  },
+  {
+    name: "Yahoo Finance",
+    href: "https://finance.yahoo.com/markets/crypto/articles/100-000-polymarket-accounts-booked-062234759.html",
+    style: "yahoo",
+  },
+  {
+    name: "Benzinga",
+    href: "https://www.benzinga.com/markets/prediction-markets/26/04/52101404/can-you-consistently-win-on-prediction-markets-this-study-says-probably-not",
+    style: "benzinga",
+  },
+  {
+    name: "Financial Advisor",
+    href: "https://www.fa-mag.com/news/most-prediction-market-traders-are-losing-money-while-bots-rack-up-gains-86783.html",
+    style: "famag",
+  },
+];
+---
+<section class="mentioned-in">
+  <div class="mi-label">As featured in</div>
+  <div class="mi-row">
+    {outlets.map(o => (
+      <a class={`mi-logo mi-logo-${o.style}`} href={o.href} target="_blank" rel="noopener" aria-label={`Coverage in ${o.name}`}>
+        {o.name}
+      </a>
+    ))}
+  </div>
+  <div class="mi-foot">
+    <a href="/press">See full press coverage &rarr;</a>
+  </div>
+</section>
