@@ -1437,26 +1437,36 @@ footer.site-foot .disclaimer {
 
 .re-card-headline {
   font-family: var(--serif);
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 600;
   color: var(--text);
-  margin: auto 0 10px;
-  line-height: 1;
+  margin: 0 0 12px;       /* sits right after the label (no auto push-down) */
+  line-height: 1.05;
   letter-spacing: -0.018em;
+  word-break: break-word; /* protect against long headlines wrapping past the card edge */
 }
-/* Long math-ish headlines like "α = 0.664" or "R² = 0.987" need a smaller
-   step so they fit without wrapping awkwardly. Detected by content length
-   isn't trivial in CSS, so we just give the cards a bit more padding-bottom
-   and let the headline fall back to normal flow. */
 @media (min-width: 720px) {
-  .re-card-headline { font-size: 38px; }
+  .re-card-headline { font-size: 34px; }
 }
+/* No-viz cards get a larger headline and a bit more breathing room since
+   they don't have a chart filling the middle. Looks intentional rather than
+   "missing chart". */
+.re-card--noviz .re-card-headline {
+  font-size: 38px;
+  margin-bottom: 16px;
+}
+@media (min-width: 720px) {
+  .re-card--noviz .re-card-headline { font-size: 42px; }
+}
+/* Claim fills the remaining space so the "Read more" link stays pinned to
+   the bottom on every card regardless of whether viz is present. */
 .re-card-claim {
   font-family: var(--serif);
   font-size: 13px;
   color: var(--muted);
   line-height: 1.45;
   margin-bottom: 10px;
+  flex: 1;
 }
 .re-card-more {
   font-family: var(--sans);

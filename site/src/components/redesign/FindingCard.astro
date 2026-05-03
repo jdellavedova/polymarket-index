@@ -2,9 +2,15 @@
 /**
  * Generic chart-card for the homepage finding grid.
  *
- * Pass exactly ONE of: sparklineData (numeric series), barData (label/value
- * pairs for horizontal mini-bars), scatterData ({x, y} pairs for a mini
- * scatter with y=x reference). Or pass nothing for a text-only card.
+ * Layout (always in this order so cards align across rows):
+ *   1. label (small uppercase eyebrow, top)
+ *   2. headline (big serif number — the answer)
+ *   3. viz (sparkline / mini-bars / mini-scatter, IF passed)
+ *   4. claim (1-2 sentence prose, fills remaining space)
+ *   5. "Read more →" link (bottom)
+ *
+ * Pass exactly ONE of: sparklineData, barData, scatterData.
+ * Or pass nothing for a text-only card — claim auto-fills the freed space.
  */
 export interface BarPoint { label: string; value: number; }
 export interface ScatterPoint { x: number; y: number; }
@@ -18,8 +24,8 @@ export interface Props {
   scatterData?: ScatterPoint[];
 }
 const { label, headline, claim, href, sparklineData, barData, scatterData } = Astro.props;
+const hasViz = !!(sparklineData || barData || scatterData);
 
-// --- Sparkline geometry ---
 function sparklinePath(data: number[], w = 140, h = 40, pad = 2): string {
   if (!data || data.length < 2) return "";
   const lo = Math.min(...data);
@@ -49,11 +55,11 @@ const sparkLast = sparklineData && sparklineData.length
     })()
   : null;
 
-// --- Mini-bars geometry ---
 const maxBar = barData ? Math.max(...barData.map(b => b.value), 0) : 0;
 ---
-<a class="re-card" href={href}>
+<a class={`re-card ${hasViz ? "re-card--viz" : "re-card--noviz"}`} href={href}>
   <div class="re-card-label">{label}</div>
+  <div class="re-card-headline">{headline}</div>
 
   {sparklineData && (
     <svg class="re-card-spark" viewBox="0 0 140 40" preserveAspectRatio="none" aria-hidden="true">
@@ -85,7 +91,6 @@ const maxBar = barData ? Math.max(...barData.map(b => b.value), 0) : 0;
     </svg>
   )}
 
-  <div class="re-card-headline">{headline}</div>
   <div class="re-card-claim">{claim}</div>
   <div class="re-card-more">Read more &rarr;</div>
 </a>
