@@ -28,12 +28,10 @@ const commentTopics = [
       <h1 class="dd-h1">Press and media</h1>
       <p class="dd-stamp">Available for comment within 24 hours, weekdays</p>
       <p class="dd-lede">
-        Quotes ready to cite, recent press, speaking engagements, and contact information.
-        Quotes below are released under <strong>CC BY 4.0</strong> — journalists are welcome to edit for length
-        or style as long as the attribution remains. No interview required; an email heads-up is appreciated
-        so the corresponding paper can be linked or context clarified.
+        Quotes ready to cite, recent press, speaking engagements, and contact info. All quotes below released under <strong>CC BY 4.0</strong>; edit for length or style, keep the attribution. No interview required.
       </p>
       <p class="pr-contact">
+        <span class="pr-contact-label">Contact</span>
         <a href="mailto:jdellavedova@sandiego.edu">jdellavedova@sandiego.edu</a>
       </p>
 
@@ -48,10 +46,10 @@ const commentTopics = [
     <div class="dd-hero-chart">
       <figure class="pr-featured">
         <div class="pr-featured-label">Featured quote</div>
+        <div class="pr-featured-topic">{featured.topic}</div>
         <blockquote class="pr-featured-q">&ldquo;{featured.quote}&rdquo;</blockquote>
         <figcaption class="pr-featured-cite">
-          <strong>{featured.topic}</strong><br/>
-          <span class="muted">{featured.citation_line}</span>
+          {featured.citation_line}
         </figcaption>
       </figure>
     </div>
