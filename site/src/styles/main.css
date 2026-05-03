@@ -1356,6 +1356,100 @@ footer.site-foot .disclaimer {
   grid-template-columns: 1fr;
   max-width: 720px;
 }
+.re-findings-pair {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Recent commentary stream — vertical timeline of dated notes */
+.rc-stream {
+  margin: 32px 0 24px;
+  padding: 22px 22px 18px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22), 0 4px 10px rgba(0, 0, 0, 0.14);
+}
+.rc-head { margin-bottom: 14px; }
+.rc-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--founders);
+  font-weight: 700;
+}
+.rc-sub {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.rc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+.rc-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.rc-item:last-child { border-bottom: none; padding-bottom: 4px; }
+.rc-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+.rc-date {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.rc-tag {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.rc-tag-press     { color: #f47521; border-color: rgba(244, 117, 33, 0.35); }
+.rc-tag-research  { color: var(--founders); border-color: rgba(117, 190, 233, 0.35); }
+.rc-tag-dashboard { color: #c9a14a; border-color: rgba(201, 161, 74, 0.35); }
+.rc-title {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+.rc-text {
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+.rc-link {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+@media (max-width: 720px) {
+  .rc-item { grid-template-columns: 1fr; gap: 6px; }
+  .rc-meta { flex-direction: row; align-items: center; gap: 10px; }
+  .re-findings-pair { grid-template-columns: 1fr; }
+}
 
 /* Finding card */
 .re-card {
@@ -1678,6 +1772,27 @@ footer.site-foot .disclaimer {
   color: var(--text);
   margin: 0 0 8px;
   max-width: 80ch;
+}
+.auth-collab {
+  font-family: var(--serif);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 0 10px;
+  padding: 8px 12px;
+  background: var(--bg);
+  border-left: 3px solid var(--founders);
+  border-radius: 0 4px 4px 0;
+  max-width: 80ch;
+}
+.auth-collab-label {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--founders);
+  margin-right: 6px;
 }
 .auth-collab {
   font-family: var(--serif);

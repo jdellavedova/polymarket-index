@@ -1,0 +1,44 @@
+---
+/**
+ * Recent commentary / changelog stream — 3-4 dated notes pulled from
+ * commentary.json. Displayed as a vertical timeline with the date in mono
+ * + tag chip + title + 1-paragraph body + optional link. Hand-curated by
+ * the user between weekly aggregator refreshes; gives the site weekday
+ * signal so it doesn't feel frozen 6 days out of 7.
+ */
+import data from "../../../public/data/commentary.json";
+
+const notes = (data.notes || []).slice(0, 4);
+
+function fmtDate(s: string): string {
+  const d = new Date(s + "T00:00:00Z");
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+---
+<section class="rc-stream">
+  <div class="rc-head">
+    <div>
+      <div class="rc-eyebrow">Recent commentary</div>
+      <div class="rc-sub">Press appearances, dashboard updates, and research-program notes between weekly refreshes</div>
+    </div>
+  </div>
+  <ol class="rc-list">
+    {notes.map(n => (
+      <li class="rc-item">
+        <div class="rc-meta">
+          <span class="rc-date">{fmtDate(n.date)}</span>
+          <span class={`rc-tag rc-tag-${n.tag.toLowerCase()}`}>{n.tag}</span>
+        </div>
+        <div class="rc-body">
+          <div class="rc-title">{n.title}</div>
+          <p class="rc-text">{n.body}</p>
+          {n.href && (
+            <a class="rc-link" href={n.href} target={n.href.startsWith("http") ? "_blank" : undefined} rel={n.href.startsWith("http") ? "noopener" : undefined}>
+              {n.href_label || "Read more"} &rarr;
+            </a>
+          )}
+        </div>
+      </li>
+    ))}
+  </ol>
+</section>

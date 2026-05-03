@@ -5,6 +5,7 @@ import FindingCard from "../components/redesign/FindingCard.astro";
 import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
 import MentionedIn from "../components/redesign/MentionedIn.astro";
 import AuthorTile from "../components/redesign/AuthorTile.astro";
+import RecentCommentary from "../components/redesign/RecentCommentary.astro";
 import EmailSignup from "../components/EmailSignup.astro";
 
 import botShare from "../../public/data/bot_share_timeseries.json";
@@ -120,7 +121,7 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
 
   <h2 class="re-findings-h">Paper 1 · Who profits</h2>
   <p class="re-findings-sub">Algorithmic wallets, retail traders, and the execution gap that separates them. <a href="/research">Read the paper →</a></p>
-  <div class="re-findings-grid">
+  <div class="re-findings-grid re-findings-pair">
     <FindingCard
       label="ALGORITHMIC SHARE"
       headline={`${botShareNow.toFixed(0)}%`}
@@ -134,18 +135,11 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
       claim={whoWonClaim}
       href="/research"
     />
-    <FindingCard
-      label="EXECUTION EDGE"
-      headline={execHeadline}
-      claim="Bot vs retail Prelec divergence (13-week moving average). Positive = bots are timing entries better than retail. Weekly noise is large; the trend is the story."
-      sparklineData={execSpark}
-      href="/execution"
-    />
   </div>
 
   <h2 class="re-findings-h">Paper 2 · Detecting informed trading</h2>
   <p class="re-findings-sub">A wallet-level orthogonality test for private information. <a href="/research">Read the paper →</a></p>
-  <div class="re-findings-grid">
+  <div class="re-findings-grid re-findings-pair">
     <FindingCard
       label="WALLETS FLAGGED (CUMULATIVE)"
       headline={`${pii.headline.total_flagged_p_lt_01.toLocaleString()}`}
@@ -159,17 +153,11 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
       barData={insiderBars}
       href="/pii"
     />
-    <FindingCard
-      label="FLAGGED ACTIVE THIS WEEK"
-      headline={`${activity.flagged_active_this_week.toLocaleString()}`}
-      claim={`${activity.flagged_active_this_week.toLocaleString()} of ${pii.headline.total_flagged_p_lt_01.toLocaleString()} flagged wallets traded on Polymarket this week. Live signal of which markets currently show the structural fingerprint of private information.`}
-      href="/pii"
-    />
   </div>
 
   <h2 class="re-findings-h">Paper 4 · Probability weighting (with A. Grant)</h2>
   <p class="re-findings-sub">A model-free measurement of probability weighting from on-chain trades. <a href="/research">Read the paper →</a></p>
-  <div class="re-findings-grid">
+  <div class="re-findings-grid re-findings-pair">
     <FindingCard
       label="PROBABILITY WEIGHTING"
       headline={`α = ${calibration.prelec_alpha.toFixed(3)}`}
@@ -184,13 +172,9 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
       scatterData={calibScatter}
       href="/calibration"
     />
-    <FindingCard
-      label="LONGSHOT PRICING GAP"
-      headline={`${(priceGap.value*100 >= 0 ? "+" : "")}${(priceGap.value*100).toFixed(1)}%`}
-      claim="Realized win rate of trades at prices below 10% minus the band midpoint. Negative = the classical favorite-longshot bias; positive = longshots are underpriced this week."
-      href="/price-gap"
-    />
   </div>
+
+  <RecentCommentary />
 
   <a class="featured-video" href="https://www.cnbc.com/video/2026/05/01/finance-professor-josh-della-vedova-talks-new-report-bots-are-outperforming-traders-in-prediction-markets.html" target="_blank" rel="noopener">
     <div class="fv-left">

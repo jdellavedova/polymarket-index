@@ -1,0 +1,38 @@
+{
+  "notes": [
+    {
+      "date": "2026-05-01",
+      "tag": "PRESS",
+      "title": "On CNBC: bots are outperforming traders in prediction markets",
+      "body": "Walked through the headline finding from Paper 1 and how the dashboard makes the bot-vs-retail transfer continuously visible. Watch the full segment on CNBC.com.",
+      "href": "https://www.cnbc.com/video/2026/05/01/finance-professor-josh-della-vedova-talks-new-report-bots-are-outperforming-traders-in-prediction-markets.html",
+      "href_label": "Watch on CNBC"
+    },
+    {
+      "date": "2026-04-30",
+      "tag": "PRESS",
+      "title": "Bloomberg: 100,000 Polymarket accounts booked four-figure losses since 2025",
+      "body": "Bloomberg's analysis of 233M trades using the DV-PMI methodology found the typical bot averaged 89 trades per active day vs 2.2 for non-bots. Carried by Yahoo Finance, BeInCrypto, FA Magazine, Benzinga, and several wire services.",
+      "href": "https://finance.yahoo.com/markets/crypto/articles/100-000-polymarket-accounts-booked-062234759.html",
+      "href_label": "Read on Yahoo Finance"
+    },
+    {
+      "date": "2026-04-26",
+      "tag": "DASHBOARD",
+      "title": "Dashboard live at jdellavedova.com",
+      "body": "Public weekly release of the Della Vedova Prediction Market Indices (DV-PMI). 7 indices + per-market briefings + downloadable CSV histories, refreshed every Sunday from 671M on-chain Polymarket trades.",
+      "href": "/methodology",
+      "href_label": "Read the methodology"
+    },
+    {
+      "date": "2026-04-20",
+      "tag": "RESEARCH",
+      "title": "Paper 2 posted to SSRN",
+      "body": "\"Detecting Informed Trading in Prediction Markets: An Orthogonality Test\" — turns the theta-epsilon orthogonality from Paper 1 into a forensic detection signal. 6,291 of 483K wallets flagged at p<0.01.",
+      "href": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6567238",
+      "href_label": "SSRN abstract 6567238"
+    }
+  ],
+  "notes_url": "/notes",
+  "generated_at": "2026-05-03T00:00:00+00:00"
+}
