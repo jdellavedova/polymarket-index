@@ -96,6 +96,25 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
 <Base title="Della Vedova Prediction Market Indices" description={desc} wide={true}>
   <HeroEssay />
 
+  <section class="tw-briefings">
+    <div class="tw-head">
+      <div>
+        <div class="tw-eyebrow">This week on Polymarket</div>
+        <div class="tw-sub">{fmtMarketVol(topVolume)} on the biggest market &middot; {briefingsCount} briefings ready to read</div>
+      </div>
+      <a class="tw-all" href="/briefings">View all {briefingsCount} briefings &rarr;</a>
+    </div>
+    <div class="tw-grid">
+      {briefings.briefings.slice(0, 3).map((b: any) => (
+        <a class="tw-pill" href="/briefings">
+          <span class="tw-pill-cat">{b.category}</span>
+          <span class="tw-pill-q">{b.question}</span>
+          <span class="tw-pill-vol">{fmtMarketVol(b.volume_usd)}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
   <h2 class="re-findings-h">Paper 1 · Who profits</h2>
   <p class="re-findings-sub">Algorithmic wallets, retail traders, and the execution gap that separates them. <a href="/research">Read the paper →</a></p>
   <div class="re-findings-grid">
@@ -167,16 +186,6 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
       headline={`${(priceGap.value*100 >= 0 ? "+" : "")}${(priceGap.value*100).toFixed(1)}%`}
       claim="Realized win rate of trades at prices below 10% minus the band midpoint. Negative = the classical favorite-longshot bias; positive = longshots are underpriced this week."
       href="/price-gap"
-    />
-  </div>
-
-  <h2 class="re-findings-h">This week on Polymarket</h2>
-  <div class="re-findings-grid re-findings-single">
-    <FindingCard
-      label="THIS WEEK'S BRIEFINGS"
-      headline={fmtMarketVol(topVolume)}
-      claim={`Largest market by volume: ${topQuestion}. ${briefingsCount} per-market briefings with live odds, depth, and execution-gap context.`}
-      href="/briefings"
     />
   </div>
 
