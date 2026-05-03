@@ -3,15 +3,18 @@ import Base from "../layouts/Base.astro";
 import HeroEssay from "../components/redesign/HeroEssay.astro";
 import FindingCard from "../components/redesign/FindingCard.astro";
 import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
+import EmailSignup from "../components/EmailSignup.astro";
 
 import botShare from "../../public/data/bot_share_timeseries.json";
 import pwi from "../../public/data/pwi_timeseries.json";
 import pii from "../../public/data/pii_latest.json";
 import execution from "../../public/data/execution_timeseries.json";
+import executionLatest from "../../public/data/execution_latest.json";
 import calibration from "../../public/data/calibration_latest.json";
 import topMarkets from "../../public/data/top_markets_latest.json";
 import briefings from "../../public/data/briefings_latest.json";
 import activity from "../../public/data/weekly_activity_latest.json";
+import profitSplit from "../../public/data/profit_split_latest.json";
 
 // --- Card 1: Algorithmic share ---
 const botShareSpark = (botShare as any[])
@@ -33,7 +36,38 @@ const insiderBars = pii.mnpi_taxonomy
   .map((m: any) => ({ label: mnpiLabels[m.mnpi_type] ?? m.mnpi_type, value: m.flag_rate_01 }));
 
 // --- Card 4: Execution edge ---
-const execSpark = (execution as any[]).filter(p => p.value != null).map(p => p.value);
+// Use the 13-week MA of the alpha-gap (smoother than weekly noise). Fall back
+// to the weekly value if the MA is missing.
+const execSpark = (execution as any[])
+  .map((p: any) => (p.alpha_gap_ma13w != null ? p.alpha_gap_ma13w : p.alpha_gap))
+  .filter((v: any) => v != null && !Number.isNaN(v));
+const execHeadline = executionLatest.ma13w != null
+  ? (executionLatest.ma13w >= 0 ? "+" : "") + executionLatest.ma13w.toFixed(3)
+  : "—";
+
+// --- Card 7: Who won this week (profit split) ---
+const profitTypes = profitSplit.by_type as Record<string, any>;
+const winner = Object.entries(profitTypes)
+  .filter(([_, r]: [string, any]) => r && typeof r.pnl === "number")
+  .sort(([_, a]: [string, any], [__, b]: [string, any]) => b.pnl - a.pnl)[0];
+const winnerLabels: Record<string, string> = {
+  bot: "Algorithmic", active_retail: "Active Retail", sophisticated: "Sophisticated",
+  casual: "Casual", one_shot: "One-Shot",
+};
+const winnerKey = winner?.[0] ?? "bot";
+const winnerProfit = winner?.[1]?.pnl ?? 0;
+const retailLoss = profitTypes.active_retail?.pnl ?? 0;
+function fmtPnl(n: number): string {
+  const sign = n < 0 ? "-" : "+";
+  const a = Math.abs(n);
+  if (a >= 1e6) return `${sign}$${(a/1e6).toFixed(1)}M`;
+  if (a >= 1e3) return `${sign}$${(a/1e3).toFixed(0)}K`;
+  return `${sign}$${a.toFixed(0)}`;
+}
+const whoWonHeadline = `${fmtPnl(winnerProfit)}`;
+const whoWonClaim = winnerKey === "bot"
+  ? `Algorithmic wallets cleared ${fmtPnl(winnerProfit)} of resolved P&L in week ${profitSplit.as_of_week}; active retail lost ${fmtPnl(retailLoss)}.`
+  : `${winnerLabels[winnerKey] ?? winnerKey} wallets cleared ${fmtPnl(winnerProfit)} of resolved P&L in week ${profitSplit.as_of_week}.`;
 
 // --- Card 5: Calibration scatter (mini) ---
 const calibScatter = (calibration.bins as any[])
@@ -81,10 +115,16 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
     />
     <FindingCard
       label="EXECUTION EDGE"
-      headline={execSpark.length ? execSpark[execSpark.length - 1].toFixed(3) : "—"}
-      claim="Bot vs retail Prelec divergence. Higher = bots are timing entries better than retail. The 52-week trend is the story; weekly noise is large."
+      headline={execHeadline}
+      claim="Bot vs retail Prelec divergence (13-week moving average). Positive = bots are timing entries better than retail. Weekly noise is large; the trend is the story."
       sparklineData={execSpark}
       href="/execution"
+    />
+    <FindingCard
+      label="WHO WON THIS WEEK"
+      headline={whoWonHeadline}
+      claim={whoWonClaim}
+      href="/research"
     />
     <FindingCard
       label="CALIBRATION CURVE"
@@ -100,6 +140,8 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
       href="/briefings"
     />
   </div>
+
+  <EmailSignup />
 
   <AuthorityStrip />
 </Base>
