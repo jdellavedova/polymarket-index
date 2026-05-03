@@ -2,7 +2,7 @@
    Founders Blue #003b70, Immaculata Blue #0074c8, Torero Blue #75bee9
    Sagebrush (accent up) #6aa14a, Poppy (accent down) #f2650d
    Typography: Spectral (body serif) + Sofia Sans (headings), per USD brand */
-@import url("https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Sofia+Sans:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Sofia+Sans:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 :root {
   color-scheme: dark;
@@ -25,7 +25,7 @@
   --chart-grid: #1f3152;
   --serif: "Spectral", Charter, "Iowan Old Style", Georgia, "Times New Roman", serif;
   --sans: "Sofia Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --mono: "SF Mono", Menlo, Consolas, monospace;
+  --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   --content-w: 680px;
 }
 
@@ -1218,7 +1218,12 @@ h1.hero-thesis {
   font-weight: 700;
   fill: #ffffff;
   letter-spacing: -0.005em;
+  /* Clip overflowing market names so they don't bleed past the rectangle */
+  overflow: hidden;
 }
+/* SVG <text> doesn't honor overflow:hidden, so we use a clipPath on each cell.
+   Browsers fall back gracefully if not supported. */
+.tm-cell text { pointer-events: none; }
 .tm-v {
   font-family: var(--sans);
   font-weight: 700;
@@ -1431,8 +1436,14 @@ h1.hero-thesis {
 .briefing {
   background: var(--bg-soft);
   border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 20px;
+  border-radius: 6px;
+  padding: 22px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28), 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+.briefing:hover {
+  border-color: var(--founders);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35), 0 12px 24px rgba(0, 0, 0, 0.26);
 }
 .briefing-head {
   display: flex;
@@ -1714,7 +1725,9 @@ h1.hero-thesis {
 .re-source a { font-weight: 600; }
 
 /* Findings header + grid */
-.re-findings-h {
+.re-findings-h,
+.bf-section-h,
+.rs-section-h {
   font-family: var(--sans);
   font-size: 12px;
   letter-spacing: 0.16em;
@@ -1722,8 +1735,30 @@ h1.hero-thesis {
   color: var(--muted);
   font-weight: 600;
   margin: 36px 0 14px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+  position: relative;
+  /* Hairline separator that fades out at the right edge instead of being a
+     hard 1px line all the way across — softer FT/Stripe feel. */
+  border-bottom: none;
+  background-image: linear-gradient(to right, var(--border) 0%, var(--border) 60%, transparent 100%);
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+}
+/* Tiny USD-blue dot before each section header (Bloomberg-style accent) */
+.re-findings-h::before,
+.bf-section-h::before,
+.rs-section-h::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--founders);
+  margin-right: 10px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
 }
 .re-findings-grid {
   display: grid;
@@ -1988,6 +2023,156 @@ h1.hero-thesis {
 @media (max-width: 960px) {
   .dd-hero { grid-template-columns: 1fr; gap: 18px; }
   .dd-h1 { font-size: 26px; }
+}
+
+/* Press page (Phase 4) — featured pull-quote + comment-topics + quote grid */
+.pr-contact {
+  font-family: var(--mono);
+  font-size: 14px;
+  margin: 0 0 18px;
+}
+.pr-comment-box {
+  margin-top: 8px;
+  padding: 14px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.pr-comment-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--founders);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.pr-comment-list {
+  margin: 0;
+  padding-left: 18px;
+  font-family: var(--serif);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text);
+}
+.pr-comment-list li { margin-bottom: 2px; }
+
+.pr-featured {
+  margin: 0;
+  padding: 26px 24px 22px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--founders);
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28), 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+.pr-featured-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--founders);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.pr-featured-q {
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--text);
+  position: relative;
+}
+.pr-featured-cite {
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.pr-featured-cite .muted { font-size: 11px; }
+
+.pr-quote-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 0 0 28px;
+}
+.pr-quote-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22), 0 4px 10px rgba(0, 0, 0, 0.14);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.pr-quote-card:hover {
+  border-color: var(--founders);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.30), 0 10px 22px rgba(0, 0, 0, 0.22);
+}
+.pr-quote-topic {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--founders);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.pr-quote-text {
+  margin: 0 0 10px;
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text);
+  font-style: italic;
+}
+.pr-quote-context {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+.pr-quote-cite {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.pr-media-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 0 24px;
+}
+.pr-media-row {
+  display: grid;
+  grid-template-columns: 100px 160px 1fr 16px;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+a.pr-media-row:hover { border-color: var(--founders); background: var(--card); }
+.pr-media-date { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.pr-media-outlet { font-family: var(--sans); font-weight: 600; color: var(--text); }
+.pr-media-headline { font-family: var(--serif); color: var(--text); }
+.pr-media-arrow { color: var(--founders); text-align: right; }
+.pr-about { font-family: var(--serif); font-size: 15px; line-height: 1.6; max-width: 70ch; }
+.pr-usage { font-size: 12px; max-width: 70ch; margin-top: 8px; }
+
+@media (max-width: 720px) {
+  .pr-quote-grid { grid-template-columns: 1fr; }
+  .pr-media-row { grid-template-columns: 1fr; gap: 4px; padding: 12px; }
 }
 
 /* Research page (Phase 3) — paper card grid */

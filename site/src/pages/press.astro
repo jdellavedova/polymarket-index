@@ -1,73 +1,116 @@
 ---
 import Base from "../layouts/Base.astro";
+import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
 import press from "../../public/data/press_quotes.json";
+
+const featured = press.quotes[0];
+const restQuotes = press.quotes.slice(1);
+const commentTopics = [
+  "Prediction-market microstructure",
+  "Polymarket and Kalshi market integrity",
+  "Informed trading in event contracts",
+  "Retail-trader losses to algorithmic wallets",
+  "Algorithmic liquidity provision",
+  "Probability weighting and longshot bias",
+  "Regulation of binary-event markets",
+  "Surveillance methods for crypto-native exchanges",
+];
 ---
-<Base title="Press and media" description="Quotes, media mentions, and speaking engagements for Joshua Della Vedova.">
-  <h1>Press and media</h1>
-  <p class="subtitle">Quotes ready to cite, prior media mentions, and speaking engagements.</p>
+<Base
+  title="Press and media · DV-PMI"
+  description="Quotes ready to cite, recent press, speaking engagements, and contact info for Joshua Della Vedova."
+  wide={true}>
 
-  <p class="muted">
-    Media inquiries: <a href="mailto:jdellavedova@sandiego.edu">jdellavedova@sandiego.edu</a>.
-    Expected response within 24 hours on weekdays.
-  </p>
+  <section class="dd-hero">
+    <div class="dd-hero-text">
+      <p class="dd-eyebrow">DV-PMI · Press</p>
+      <h1 class="dd-h1">Press and media</h1>
+      <p class="dd-stamp">Available for comment within 24 hours, weekdays</p>
+      <p class="dd-lede">
+        Quotes ready to cite, recent press, speaking engagements, and contact information.
+        Quotes below are released under <strong>CC BY 4.0</strong> — journalists are welcome to edit for length
+        or style as long as the attribution remains. No interview required; an email heads-up is appreciated
+        so the corresponding paper can be linked or context clarified.
+      </p>
+      <p class="pr-contact">
+        <a href="mailto:jdellavedova@sandiego.edu">jdellavedova@sandiego.edu</a>
+      </p>
 
-  <h2>Quotes ready to cite</h2>
-  <p class="section-lead">
-    The quotes below are released under Creative Commons Attribution 4.0. Journalists are welcome
-    to edit for length or style as long as the attribution remains. No interview needed to quote
-    them; an email heads-up is appreciated so the corresponding paper can be linked or any
-    clarifying context provided.
-  </p>
+      <div class="pr-comment-box">
+        <div class="pr-comment-label">Available for comment on</div>
+        <ul class="pr-comment-list">
+          {commentTopics.map(t => <li>{t}</li>)}
+        </ul>
+      </div>
+    </div>
 
-  {press.quotes.map(q => (
-    <article class="press-quote">
-      <div class="pq-topic">{q.topic}</div>
-      <blockquote class="pq-quote">&ldquo;{q.quote}&rdquo;</blockquote>
-      <p class="pq-context">{q.context}</p>
-      <p class="pq-attribution">{q.citation_line}</p>
-    </article>
-  ))}
+    <div class="dd-hero-chart">
+      <figure class="pr-featured">
+        <div class="pr-featured-label">Featured quote</div>
+        <blockquote class="pr-featured-q">&ldquo;{featured.quote}&rdquo;</blockquote>
+        <figcaption class="pr-featured-cite">
+          <strong>{featured.topic}</strong><br/>
+          <span class="muted">{featured.citation_line}</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
 
-  <h2>In the news</h2>
+  <h2 class="bf-section-h">Quotes ready to cite</h2>
+  <p class="bf-section-sub">All quotes released under CC BY 4.0; edit freely as long as attribution remains.</p>
+  <div class="pr-quote-grid">
+    {restQuotes.map(q => (
+      <article class="pr-quote-card">
+        <div class="pr-quote-topic">{q.topic}</div>
+        <blockquote class="pr-quote-text">&ldquo;{q.quote}&rdquo;</blockquote>
+        <p class="pr-quote-context">{q.context}</p>
+        <p class="pr-quote-cite">{q.citation_line}</p>
+      </article>
+    ))}
+  </div>
+
+  <h2 class="bf-section-h">In the news</h2>
   {press.media_mentions.length === 0 && (
-    <p class="muted">Recent media mentions will appear here as pieces run.</p>
+    <p class="bf-section-sub">Recent media mentions will appear here as pieces run.</p>
   )}
   {press.media_mentions.length > 0 && (
-    <table>
-      <tr><th>Date</th><th>Outlet</th><th>Headline</th><th>Link</th></tr>
+    <div class="pr-media-list">
       {press.media_mentions.map(m => (
-        <tr>
-          <td>{m.date}</td>
-          <td>{m.outlet}</td>
-          <td>{m.headline}</td>
-          <td>{m.url ? <a href={m.url}>Article</a> : "n/a"}</td>
-        </tr>
+        <a class="pr-media-row" href={m.url ?? "#"}>
+          <span class="pr-media-date">{m.date}</span>
+          <span class="pr-media-outlet">{m.outlet}</span>
+          <span class="pr-media-headline">{m.headline}</span>
+          <span class="pr-media-arrow">&rarr;</span>
+        </a>
       ))}
-    </table>
+    </div>
   )}
 
-  <h2>Speaking engagements</h2>
+  <h2 class="bf-section-h">Speaking engagements</h2>
   {press.speaking.length === 0 && (
-    <p class="muted">Upcoming and recent talks will appear here.</p>
+    <p class="bf-section-sub">Upcoming and recent talks will appear here.</p>
   )}
   {press.speaking.length > 0 && (
-    <table>
-      <tr><th>Date</th><th>Venue</th><th>Talk</th></tr>
+    <div class="pr-media-list">
       {press.speaking.map(s => (
-        <tr><td>{s.date}</td><td>{s.venue}</td><td>{s.title}</td></tr>
+        <div class="pr-media-row">
+          <span class="pr-media-date">{s.date}</span>
+          <span class="pr-media-outlet">{s.venue}</span>
+          <span class="pr-media-headline">{s.title}</span>
+        </div>
       ))}
-    </table>
+    </div>
   )}
 
-  <h2>About the source</h2>
-  <p>
+  <h2 class="bf-section-h">About the source</h2>
+  <p class="pr-about">
     Joshua Della Vedova is an Assistant Professor of Finance at the Knauss School of Business,
-    University of San Diego. His research on prediction markets draws on 640&thinsp;million on-chain
-    Polymarket trades. See the <a href="/research">research page</a> and the
-    <a href="/">DV-PMI dashboard</a> for methodology, sources, and contact information.
+    University of San Diego. His research on prediction markets draws on 671&thinsp;million on-chain
+    Polymarket trades. See the <a href="/research">research page</a> for working papers, the
+    <a href="/methodology">methodology page</a> for index construction, and the
+    <a href="/">DV-PMI dashboard</a> for live indices.
   </p>
+  <p class="pr-usage muted">{press.usage_note}</p>
 
-  <p class="muted" style="font-size:13px;">
-    {press.usage_note}
-  </p>
+  <AuthorityStrip />
 </Base>
