@@ -3,8 +3,8 @@
     {
       "date": "2026-05-03",
       "tag": "RESEARCH",
-      "title": "Who are the flagged wallets? Mostly retail, not bots.",
-      "body": "Of the 6,291 wallets flagged at p<0.01 by the orthogonality test, 62% are active retail (10–1,000 lifetime trades), 21% are sophisticated traders (high volume, diversified, 30+ day span), and only 16% are algorithmic. The insider-trading signal surfaces humans with private information far more often than it surfaces bots — the opposite of what most readers assume.",
+      "title": "Flagged wallets: mostly retail by count, almost entirely bots by dollars.",
+      "body": "Of 6,291 wallets flagged at p<0.01 by the orthogonality test, 62% are active retail, 21% are sophisticated, only 16% are algorithmic. But profitability tells the opposite story: 4,306 (68.4%) of the flagged set were profitable, generating $152.5M in aggregate. The 1,026 flagged bots captured $137.6M of that — 90% of all flagged-wallet gains flow to the algorithmic 16%, with mean PnL of $134K per bot vs $2.2K per retail wallet. The screen catches private information across every wallet class; the dollars accrue almost entirely to the algos who can act on it at scale.",
       "href": "/pii",
       "href_label": "See the screen"
     },

@@ -1,0 +1,37 @@
+{
+  "as_of": "2026-05-04T04:02:24+00:00",
+  "n_flagged_total": 6291,
+  "n_profitable_total": 4306,
+  "pct_profitable_total": 0.6844698776029248,
+  "aggregate_pnl_usd": 152476238.40596,
+  "by_wallet_type": [
+    {
+      "wallet_type": "active_retail",
+      "n_wallets": 3913,
+      "n_profitable": 2682,
+      "pct_profitable": 0.6854076156401738,
+      "total_pnl_usd": 8524739.56,
+      "mean_pnl_usd": 2178.57,
+      "median_pnl_usd": 44.73
+    },
+    {
+      "wallet_type": "bot",
+      "n_wallets": 1026,
+      "n_profitable": 704,
+      "pct_profitable": 0.6861598440545809,
+      "total_pnl_usd": 137616424.71,
+      "mean_pnl_usd": 134129.07,
+      "median_pnl_usd": 1009.44
+    },
+    {
+      "wallet_type": "sophisticated",
+      "n_wallets": 1352,
+      "n_profitable": 920,
+      "pct_profitable": 0.6804733727810651,
+      "total_pnl_usd": 6335074.13,
+      "mean_pnl_usd": 4685.71,
+      "median_pnl_usd": 1473.75
+    }
+  ],
+  "notes": "Per-wallet PnL computed as \u03a3 S \u00d7 (W \u2212 P) \u00d7 Q across all resolved trades by the wallet, where S is +1 for buys / \u22121 for sells, W is the binary outcome (1 winner, 0 loser), P is the entry price, and Q is token quantity. Both maker and taker sides counted with mirror signs."
+}

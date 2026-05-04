@@ -26,6 +26,7 @@ from config import DATA_OUT
 
 TRADES = "J:/Research/10. Prediction/data/blockchain/processed_trades.csv"
 TOKEN_OUTCOME = "J:/Research/10. Prediction/data/blockchain/token_outcome_map.pkl"
+MARKET_WINNER = "J:/Research/10. Prediction/data/blockchain/market_winner_map.pkl"
 FLAGGED = "G:/My Drive/1. Research/1. Polymarket/2. Insider/output/stage19_significant_wallets.csv"
 
 
@@ -38,13 +39,21 @@ def main() -> None:
     print(f"  loaded {len(flagged_df):,} flagged wallets")
 
     print(f"[{time.strftime('%H:%M:%S')}] Loading token-outcome map ...")
+    # token_outcome_map: {token_id_int: (market_id_str, outcome_label)}
+    # market_winner_map: {market_id_str: winning_label}
+    # Build per-token "is winner" by joining the two.
     with open(TOKEN_OUTCOME, "rb") as f:
-        token_outcome = pickle.load(f)  # {token_id: 1 if winner, 0 if loser}
-    outcome_df = pd.DataFrame(
-        [(str(k), int(v)) for k, v in token_outcome.items()],
-        columns=["token_id", "outcome"],
-    )
-    print(f"  loaded {len(outcome_df):,} token outcomes")
+        tom = pickle.load(f)
+    with open(MARKET_WINNER, "rb") as f:
+        mwm = pickle.load(f)
+    rows = []
+    for token_id, (market_id, outcome_label) in tom.items():
+        winner = mwm.get(str(market_id))
+        if winner is None:
+            continue  # market not yet resolved
+        rows.append((str(token_id), 1 if str(outcome_label) == str(winner) else 0))
+    outcome_df = pd.DataFrame(rows, columns=["token_id", "outcome"])
+    print(f"  loaded {len(outcome_df):,} resolved token outcomes")
 
     con = duckdb.connect(":memory:")
     con.execute("PRAGMA memory_limit='12GB'")
