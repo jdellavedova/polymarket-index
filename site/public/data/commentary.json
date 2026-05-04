@@ -1,6 +1,14 @@
 {
   "notes": [
     {
+      "date": "2026-05-03",
+      "tag": "RESEARCH",
+      "title": "Who are the flagged wallets? Mostly retail, not bots.",
+      "body": "Of the 6,291 wallets flagged at p<0.01 by the orthogonality test, 62% are active retail (10–1,000 lifetime trades), 21% are sophisticated traders (high volume, diversified, 30+ day span), and only 16% are algorithmic. The insider-trading signal surfaces humans with private information far more often than it surfaces bots — the opposite of what most readers assume.",
+      "href": "/pii",
+      "href_label": "See the screen"
+    },
+    {
       "date": "2026-05-01",
       "tag": "PRESS",
       "title": "On CNBC: bots are outperforming traders in prediction markets",
