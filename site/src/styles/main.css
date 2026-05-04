@@ -1722,8 +1722,8 @@ footer.site-foot .disclaimer {
 /* Author tile (homepage, just above the briefings teaser) */
 .auth-tile {
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 26px;
+  grid-template-columns: 380px 1fr;
+  gap: 28px;
   align-items: start;
   margin: 28px 0 20px;
   padding: 20px 22px;
@@ -1827,7 +1827,7 @@ footer.site-foot .disclaimer {
     padding: 16px;
     align-items: start;
   }
-  .auth-photo { width: 100%; max-width: 360px; }
+  .auth-photo { width: 100%; max-width: 440px; }
   .auth-photo img { width: 100%; height: auto; }
   .auth-collab { font-size: 13px; padding: 8px; }
 }
