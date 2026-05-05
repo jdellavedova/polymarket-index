@@ -2087,6 +2087,94 @@ footer.site-foot .disclaimer {
   .mi-logo-famag { font-size: 14px; }
 }
 
+/* Expert-witness CTA — primary intake button + email fallback */
+.ew-cta {
+  margin: 28px 0 32px;
+  padding: 22px 24px;
+  background: linear-gradient(135deg, var(--bg-soft) 0%, var(--card) 100%);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--founders);
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28), 0 6px 18px rgba(0, 0, 0, 0.18);
+  max-width: 760px;
+}
+.ew-cta-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--founders);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.ew-cta-lede {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text);
+  margin: 0 0 16px;
+  max-width: 60ch;
+}
+.ew-cta-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.ew-cta-primary {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 11px 18px;
+  background: var(--immaculata);
+  border: 1px solid var(--immaculata);
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);
+}
+.ew-cta-primary:hover {
+  background: var(--founders);
+  border-color: var(--founders);
+  color: var(--bg);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.30), 0 8px 14px rgba(0, 0, 0, 0.20);
+}
+.ew-cta-secondary {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--bg);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.ew-cta-secondary:hover {
+  border-color: var(--founders);
+  color: var(--link-hover);
+}
+.ew-cta-note {
+  font-family: var(--serif);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0;
+  max-width: 64ch;
+  font-style: italic;
+}
+@media (max-width: 540px) {
+  .ew-cta-buttons { flex-direction: column; align-items: stretch; }
+  .ew-cta-primary, .ew-cta-secondary { text-align: center; }
+}
+
 /* About page — better headshot fit + quick-links row */
 .ab-quick {
   display: flex;
