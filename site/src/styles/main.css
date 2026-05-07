@@ -1790,6 +1790,28 @@ footer.site-foot .disclaimer {
   color: var(--founders);
   margin-right: 6px;
 }
+.auth-consulting {
+  font-family: var(--serif);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 0 10px;
+  padding: 8px 12px;
+  background: var(--bg);
+  border-left: 3px solid #c9a14a;
+  border-radius: 0 4px 4px 0;
+  max-width: 80ch;
+}
+.auth-consulting-label {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c9a14a;
+  margin-right: 6px;
+}
+.auth-consulting a { font-weight: 600; }
 .auth-collab {
   font-family: var(--serif);
   font-size: 13.5px;
