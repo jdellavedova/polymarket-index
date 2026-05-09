@@ -1,7 +1,7 @@
 DV-PMI WEEKLY DIGEST / Week of 2026-04-27
 ============================================================
 
-Polymarket traders moved $696 million this week, above trend, with 13,216 new participants joining the market.
+Polymarket traders moved $696 million this week, above the 52-week trend, on 27.6 million individual trades.
 
 ------------------------------------------------------------
 THIS WEEK BY THE NUMBERS
@@ -15,11 +15,11 @@ THIS WEEK BY THE NUMBERS
 ------------------------------------------------------------
 THE STORY
 ------------------------------------------------------------
-Traders moved $696 million through Polymarket in the week of 2026-04-27, across 27.6 million individual trades, with 13,216 wallets placing their first-ever bet (below the recent trend). Algorithmic wallets handled 87% of the trade count; everyone else split the remaining 13%.
+Traders moved $696 million through Polymarket in the week of 2026-04-27, across 27.6 million individual trades, with 13,216 wallets placing their first-ever bet (below the recent trend). Algorithmic wallets accounted for 87% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 13%.
 
 The most-traded market was "Will there be no change in Fed interest rates after the April 2026 meeting?", pulling in $6 million of volume. Macro calls drove the action.
 
-Both sides made money this week. Bots collected $118K (+178 bps); retail collected $47K (+923 bps).
+The usual pattern held: algorithmic traders made $80K (+69 bps on volume) while retail traders lost $83K (-432 bps).
 
 ------------------------------------------------------------
 MOST-TRADED MARKETS THIS WEEK
@@ -33,17 +33,17 @@ MOST-TRADED MARKETS THIS WEEK
 ------------------------------------------------------------
 WHO MADE MONEY (resolved trades only)
 ------------------------------------------------------------
-  Active Retail          $47K   (+923 bps on volume)
-  Bot                   $118K   (+178 bps on volume)
-  Casual                 $299   (+119 bps on volume)
-  One-Shot                -$5   (-10000 bps on volume)
-  Sophisticated          $19K   (+253 bps on volume)
+  Active Retail         -$83K   (-432 bps on volume)
+  Bot                    $80K   (+69 bps on volume)
+  Casual                 -$3K   (-212 bps on volume)
+  One-Shot               -$1K   (-462 bps on volume)
+  Sophisticated           $7K   (+35 bps on volume)
 
 ------------------------------------------------------------
 INSIDER-TRADING FLAG COUNT (to date)
 ------------------------------------------------------------
-  Wallets flagged as likely informed:   6,291
-  Out of wallets tested:                483,002 (1.30%)
+  Wallets flagged as likely informed:   6,292
+  Out of wallets tested:                483,234 (1.30%)
   After strict statistical correction:  806
 
 ============================================================
@@ -52,4 +52,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-04-30T05:38:55+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-05-09T04:42:54+00:00)

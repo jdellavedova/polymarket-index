@@ -1,6 +1,6 @@
 {
   "as_of_week": "2026-W18",
-  "generated_at": "2026-05-02T16:40:31+00:00",
+  "generated_at": "2026-05-09T04:42:53+00:00",
   "lede": "Top 6 markets by USD volume from the week of 2026-W18, annotated with per-market microstructure from the DV-PMI weekly indices.",
   "briefings": [
     {
@@ -9,7 +9,7 @@
       "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
       "market_id": "669662",
       "market_url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-april-2026-meeting",
-      "volume_usd": 5766229.06961,
+      "volume_usd": 5766229.069610003,
       "n_trades": 6839,
       "annotations": [
         {
@@ -34,19 +34,19 @@
         },
         {
           "label": "Flagged wallets active",
-          "value": "3 of 6,291",
+          "value": "3 of 6,292",
           "tone": "warn"
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.03¢ per share",
+          "value": "-0.03\u00a2 per share",
           "tone": "flat"
         }
       ],
       "depth_ladder": null,
-      "news_angle": "The week's largest market by dollars. Macro contracts on Fed decisions consistently draw the most liquidity on Polymarket and are dominated by algorithmic market-makers.",
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
       "research_link": "/research",
-      "research_label": "Paper 1: Who Profits"
+      "research_label": "Research"
     },
     {
       "rank": 2,
@@ -54,7 +54,7 @@
       "question": "Will Bitcoin hit $150k by June 30, 2026?",
       "market_id": "573655",
       "market_url": "https://polymarket.com/event/will-bitcoin-hit-150k-by-june-30-2026",
-      "volume_usd": 3164181.919562003,
+      "volume_usd": 3164181.919562002,
       "n_trades": 2087,
       "annotations": [
         {
@@ -79,22 +79,22 @@
         },
         {
           "label": "Time to resolution",
-          "value": "60 days (2026-07-01)",
+          "value": "54 days (2026-07-01)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.02 ($35) / Ask 0.02 ($13)",
+          "value": "Bid 0.02 ($0) / Ask 0.02 ($2)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1¢ (513 bps)",
-          "tone": "alert"
+          "value": "0.1\u00a2 (488 bps)",
+          "tone": "warn"
         },
         {
-          "label": "Depth within ±5% of mid",
-          "value": "$35 bid  /  $13 ask",
+          "label": "Depth within \u00b15% of mid",
+          "value": "$0 bid  /  $2 ask",
           "tone": "flat"
         },
         {
@@ -104,74 +104,74 @@
         },
         {
           "label": "Flagged wallets active",
-          "value": "0 of 6,291",
+          "value": "0 of 6,292",
           "tone": "ok"
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+0.06¢ per share",
+          "value": "+0.06\u00a2 per share",
           "tone": "flat"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
+            "price": 0.02,
+            "size": 9.0,
+            "dollars": 0.18
+          },
+          {
             "price": 0.019,
-            "size": 1867.03,
-            "dollars": 35.473569999999995
+            "size": 9.0,
+            "dollars": 0.17099999999999999
           },
           {
             "price": 0.018,
-            "size": 5015.09,
-            "dollars": 90.27162
+            "size": 110.0,
+            "dollars": 1.9799999999999998
           },
           {
             "price": 0.017,
-            "size": 7876.87,
-            "dollars": 133.90679
+            "size": 10.0,
+            "dollars": 0.17
           },
           {
             "price": 0.016,
-            "size": 3553.32,
-            "dollars": 56.853120000000004
-          },
-          {
-            "price": 0.015,
-            "size": 974.79,
-            "dollars": 14.621849999999998
+            "size": 30.1,
+            "dollars": 0.48160000000000003
           }
         ],
         "asks": [
           {
-            "price": 0.02,
-            "size": 633.32,
-            "dollars": 12.666400000000001
+            "price": 0.021,
+            "size": 96.03,
+            "dollars": 2.01663
+          },
+          {
+            "price": 0.022,
+            "size": 28891.7,
+            "dollars": 635.6174
           },
           {
             "price": 0.023,
-            "size": 98.0,
-            "dollars": 2.254
+            "size": 1010.0,
+            "dollars": 23.23
           },
           {
             "price": 0.024,
-            "size": 977.35,
-            "dollars": 23.456400000000002
+            "size": 200.0,
+            "dollars": 4.8
           },
           {
-            "price": 0.027,
-            "size": 70.0,
-            "dollars": 1.89
-          },
-          {
-            "price": 0.028,
-            "size": 1521.0,
-            "dollars": 42.588
+            "price": 0.025,
+            "size": 500.0,
+            "dollars": 12.5
           }
         ]
       },
-      "news_angle": "High dollar volume on relatively few trades suggests larger ticket sizes. Crypto-price contracts sit in the longshot region of the calibration curve, where prices systematically overstate realized win rates.",
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
       "research_link": "/research",
-      "research_label": "Paper 4: Probability Weighting"
+      "research_label": "Research"
     },
     {
       "rank": 3,
@@ -204,19 +204,19 @@
         },
         {
           "label": "Flagged wallets active",
-          "value": "1 of 6,291",
+          "value": "1 of 6,292",
           "tone": "warn"
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+0.06¢ per share",
+          "value": "+0.06\u00a2 per share",
           "tone": "flat"
         }
       ],
       "depth_ladder": null,
-      "news_angle": "Companion contract to the no-change market above. Together, the two contracts span the binary policy outcome space and let analysts read implied probabilities directly off Polymarket prices.",
-      "research_link": "/methodology",
-      "research_label": "Methodology"
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "research_link": "/research",
+      "research_label": "Research"
     },
     {
       "rank": 4,
@@ -224,12 +224,12 @@
       "question": "Will the U.S. invade Iran before 2027?",
       "market_id": "665374",
       "market_url": "https://polymarket.com/event/will-the-us-invade-iran-before-2027",
-      "volume_usd": 1967006.0357590003,
+      "volume_usd": 1967006.0357589964,
       "n_trades": 13509,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "30% YES",
+          "value": "20% YES",
           "tone": "flat"
         },
         {
@@ -244,27 +244,27 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$474K",
+          "value": "$303K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "243 days (2026-12-31)",
+          "value": "237 days (2026-12-31)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.29 ($44,996) / Ask 0.30 ($38,691)",
+          "value": "Bid 0.20 ($1,476) / Ask 0.21 ($3,402)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "1.0¢ (339 bps)",
+          "value": "1.0\u00a2 (488 bps)",
           "tone": "warn"
         },
         {
-          "label": "Depth within ±5% of mid",
-          "value": "$44,996 bid  /  $38,691 ask",
+          "label": "Depth within \u00b15% of mid",
+          "value": "$1,476 bid  /  $3,402 ask",
           "tone": "flat"
         },
         {
@@ -274,87 +274,87 @@
         },
         {
           "label": "Flagged wallets active",
-          "value": "9 of 6,291",
+          "value": "9 of 6,292",
           "tone": "alert"
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+0.12¢ per share",
+          "value": "+0.12\u00a2 per share",
           "tone": "flat"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.29,
-            "size": 155158.33,
-            "dollars": 44995.91569999999
+            "price": 0.2,
+            "size": 7378.27,
+            "dollars": 1475.6540000000002
           },
           {
-            "price": 0.28,
-            "size": 196570.72,
-            "dollars": 55039.801600000006
+            "price": 0.19,
+            "size": 128467.53,
+            "dollars": 24408.8307
           },
           {
-            "price": 0.27,
-            "size": 403106.24,
-            "dollars": 108838.6848
+            "price": 0.18,
+            "size": 305478.13,
+            "dollars": 54986.0634
           },
           {
-            "price": 0.26,
-            "size": 1964.08,
-            "dollars": 510.6608
+            "price": 0.17,
+            "size": 19272.3,
+            "dollars": 3276.291
           },
           {
-            "price": 0.25,
-            "size": 6353.84,
-            "dollars": 1588.46
+            "price": 0.16,
+            "size": 15126.09,
+            "dollars": 2420.1744
           }
         ],
         "asks": [
           {
-            "price": 0.3,
-            "size": 128968.51,
-            "dollars": 38690.553
+            "price": 0.21,
+            "size": 16199.79,
+            "dollars": 3401.9559
           },
           {
-            "price": 0.31,
-            "size": 162019.09,
-            "dollars": 50225.9179
+            "price": 0.22,
+            "size": 53735.74,
+            "dollars": 11821.862799999999
           },
           {
-            "price": 0.32,
-            "size": 410854.11,
-            "dollars": 131473.3152
+            "price": 0.23,
+            "size": 14290.86,
+            "dollars": 3286.8978
           },
           {
-            "price": 0.33,
-            "size": 27912.25,
-            "dollars": 9211.0425
+            "price": 0.24,
+            "size": 63139.42,
+            "dollars": 15153.460799999999
           },
           {
-            "price": 0.34,
-            "size": 20969.98,
-            "dollars": 7129.7932
+            "price": 0.25,
+            "size": 26545.77,
+            "dollars": 6636.4425
           }
         ]
       },
-      "news_angle": "Many small trades, a profile typical of retail-engaged geopolitical contracts. Markets in the 'Action' category (military, regulatory, decision-driven outcomes) carry the highest insider-trading flag rate in the dataset.",
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
       "research_link": "/research",
-      "research_label": "Paper 2: Insider Detection"
+      "research_label": "Research"
     },
     {
       "rank": 5,
       "category": "Politics",
-      "question": "Will Roberto Sánchez Palomino win the 2026 Peruvian presidential election?",
+      "question": "Will Roberto S\u00e1nchez Palomino win the 2026 Peruvian presidential election?",
       "market_id": "947289",
-      "market_url": "https://polymarket.com/event/will-roberto-sánchez-palomino-win-the-2026-peruvian-presidential-election",
-      "volume_usd": 1710408.3178439992,
+      "market_url": "https://polymarket.com/event/will-roberto-s\u00e1nchez-palomino-win-the-2026-peruvian-presidential-election",
+      "volume_usd": 1710408.317843999,
       "n_trades": 22231,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "32% YES",
+          "value": "37% YES",
           "tone": "flat"
         },
         {
@@ -369,27 +369,27 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$9K",
+          "value": "$19K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "36 days (2026-06-07)",
+          "value": "30 days (2026-06-07)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.32 ($409) / Ask 0.32 ($47)",
+          "value": "Bid 0.37 ($166) / Ask 0.37 ($705)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1¢ (32 bps)",
+          "value": "0.1\u00a2 (27 bps)",
           "tone": "flat"
         },
         {
-          "label": "Depth within ±5% of mid",
-          "value": "$14,920 bid  /  $15,461 ask",
+          "label": "Depth within \u00b15% of mid",
+          "value": "$2,701 bid  /  $12,636 ask",
           "tone": "flat"
         },
         {
@@ -399,74 +399,74 @@
         },
         {
           "label": "Flagged wallets active",
-          "value": "1 of 6,291",
+          "value": "1 of 6,292",
           "tone": "warn"
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+0.76¢ per share",
+          "value": "+0.76\u00a2 per share",
           "tone": "alert"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.315,
-            "size": 1297.22,
-            "dollars": 408.6243
+            "price": 0.369,
+            "size": 450.0,
+            "dollars": 166.05
           },
           {
-            "price": 0.314,
-            "size": 726.0,
-            "dollars": 227.964
+            "price": 0.366,
+            "size": 150.0,
+            "dollars": 54.9
           },
           {
-            "price": 0.313,
-            "size": 1070.0,
-            "dollars": 334.91
+            "price": 0.365,
+            "size": 1050.0,
+            "dollars": 383.25
           },
           {
-            "price": 0.312,
-            "size": 3537.86,
-            "dollars": 1103.81232
+            "price": 0.364,
+            "size": 775.0,
+            "dollars": 282.09999999999997
           },
           {
-            "price": 0.311,
-            "size": 200.0,
-            "dollars": 62.2
+            "price": 0.363,
+            "size": 5.0,
+            "dollars": 1.815
           }
         ],
         "asks": [
           {
-            "price": 0.316,
-            "size": 150.0,
-            "dollars": 47.4
+            "price": 0.37,
+            "size": 1904.23,
+            "dollars": 704.5651
           },
           {
-            "price": 0.317,
-            "size": 3561.36,
-            "dollars": 1128.95112
+            "price": 0.372,
+            "size": 919.53,
+            "dollars": 342.06516
           },
           {
-            "price": 0.318,
-            "size": 557.55,
-            "dollars": 177.30089999999998
+            "price": 0.373,
+            "size": 3997.8,
+            "dollars": 1491.1794
           },
           {
-            "price": 0.319,
-            "size": 206.0,
-            "dollars": 65.714
+            "price": 0.374,
+            "size": 355.0,
+            "dollars": 132.77
           },
           {
-            "price": 0.32,
-            "size": 1762.21,
-            "dollars": 563.9072
+            "price": 0.375,
+            "size": 2620.0,
+            "dollars": 982.5
           }
         ]
       },
-      "news_angle": "Highest trade count in the top five and the most retail-engaged market on the dashboard. The 14% algorithmic share is far below the 87% Polymarket-wide baseline; bots are largely absent. Retail traders paid 0.76¢ more per share than the small bot footprint, the visible execution edge.",
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
       "research_link": "/research",
-      "research_label": "Paper 2: Insider Detection"
+      "research_label": "Research"
     },
     {
       "rank": 6,
@@ -474,12 +474,12 @@
       "question": "Will the Los Angeles Lakers win the 2026 NBA Finals?",
       "market_id": "553863",
       "market_url": "https://polymarket.com/event/will-the-los-angeles-lakers-win-the-2026-nba-finals",
-      "volume_usd": 1421435.5612259987,
+      "volume_usd": 1421435.5612259964,
       "n_trades": 25168,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "3% YES",
+          "value": "1% YES",
           "tone": "flat"
         },
         {
@@ -494,27 +494,27 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$257K",
+          "value": "$204K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "60 days (2026-07-01)",
+          "value": "54 days (2026-07-01)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.03 ($231) / Ask 0.03 ($15)",
+          "value": "Bid 0.01 ($831) / Ask 0.01 ($60)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1¢ (351 bps)",
-          "tone": "warn"
+          "value": "0.2\u00a2 (2500 bps)",
+          "tone": "alert"
         },
         {
-          "label": "Depth within ±5% of mid",
-          "value": "$231 bid  /  $15 ask",
+          "label": "Depth within \u00b15% of mid",
+          "value": "$0 bid  /  $0 ask",
           "tone": "flat"
         },
         {
@@ -524,79 +524,79 @@
         },
         {
           "label": "Flagged wallets active",
-          "value": "2 of 6,291",
+          "value": "2 of 6,292",
           "tone": "warn"
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.42¢ per share",
+          "value": "-0.42\u00a2 per share",
           "tone": "flat"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.028,
-            "size": 8235.68,
-            "dollars": 230.59904
+            "price": 0.007,
+            "size": 118654.46,
+            "dollars": 830.58122
           },
           {
-            "price": 0.027,
-            "size": 70993.78,
-            "dollars": 1916.83206
+            "price": 0.006,
+            "size": 1036.19,
+            "dollars": 6.2171400000000006
           },
           {
-            "price": 0.026,
-            "size": 40165.42,
-            "dollars": 1044.30092
+            "price": 0.005,
+            "size": 40713.0,
+            "dollars": 203.565
           },
           {
-            "price": 0.025,
-            "size": 4899.19,
-            "dollars": 122.47975
+            "price": 0.004,
+            "size": 200.0,
+            "dollars": 0.8
           },
           {
-            "price": 0.024,
-            "size": 430.0,
-            "dollars": 10.32
+            "price": 0.003,
+            "size": 60400.0,
+            "dollars": 181.20000000000002
           }
         ],
         "asks": [
           {
-            "price": 0.029,
-            "size": 504.57,
-            "dollars": 14.632530000000001
+            "price": 0.009,
+            "size": 6635.54,
+            "dollars": 59.71986
           },
           {
-            "price": 0.03,
-            "size": 12522.65,
-            "dollars": 375.67949999999996
+            "price": 0.01,
+            "size": 38984.83,
+            "dollars": 389.84830000000005
           },
           {
-            "price": 0.031,
-            "size": 669.65,
-            "dollars": 20.759149999999998
+            "price": 0.011,
+            "size": 12002.18,
+            "dollars": 132.02398
           },
           {
-            "price": 0.032,
-            "size": 451.65,
-            "dollars": 14.4528
+            "price": 0.012,
+            "size": 1105.84,
+            "dollars": 13.27008
           },
           {
-            "price": 0.033,
-            "size": 349.65,
-            "dollars": 11.53845
+            "price": 0.013,
+            "size": 101285.65,
+            "dollars": 1316.71345
           }
         ]
       },
-      "news_angle": "The most-traded NBA finals contract on Polymarket this week. Sports markets sit between the heavily algorithmic policy markets and the retail-driven election contracts in microstructure profile.",
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
       "research_link": "/research",
       "research_label": "Research"
     }
   ],
   "global_context": {
     "polymarket_wide_bot_share": 0.8675154929132903,
-    "polymarket_wide_volume_usd": 696415632.9190068,
+    "polymarket_wide_volume_usd": 696415632.9190019,
     "polymarket_wide_trades": 27626502,
     "calibration_alpha": 0.6639191266094694,
     "calibration_r2": 0.9867800262365879

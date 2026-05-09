@@ -3,12 +3,12 @@
   "short_name": "Activity",
   "as_of": "2026-04-27",
   "week": "2026-W18",
-  "total_usd_volume": 696415632.9190068,
+  "total_usd_volume": 696415632.9190019,
   "total_trades": 27626502,
   "total_participations": 55253004,
   "active_wallets": 302206,
   "new_wallets": 13216,
-  "flagged_active_this_week": 596,
+  "flagged_active_this_week": 597,
   "by_type_participations": {
     "bot": 47932837,
     "active_retail": 4526109,
@@ -17,11 +17,11 @@
     "one_shot": 39281
   },
   "by_type_volume": {
-    "bot": 1119667894.657846,
-    "active_retail": 147619374.60137132,
-    "sophisticated": 65402709.52724932,
-    "casual": 10013906.062278932,
-    "one_shot": 1494290.4905410018
+    "bot": 1119667894.6578522,
+    "active_retail": 147619374.60137266,
+    "sophisticated": 65402709.52724929,
+    "casual": 10013906.06227893,
+    "one_shot": 1494290.4905410006
   },
   "by_type_share": {
     "bot": 0.8675154929132903,
@@ -30,16 +30,16 @@
     "casual": 0.003979313052372682,
     "one_shot": 0.0007109296718057176
   },
-  "volume_ma4w": 831146906.176757,
-  "volume_ma13w": 784809785.6520988,
-  "volume_z52w": 1.1135757540563793,
+  "volume_ma4w": 831146906.176753,
+  "volume_ma13w": 784809785.6520944,
+  "volume_z52w": 1.1135757540563735,
   "new_wallets_ma4w": 33218.75,
   "new_wallets_ma13w": 46432.0,
   "rolling_volume": {
-    "mean_52w": 392037414.95183223,
-    "sd_52w": 273334092.3223477,
-    "min_52w": 92348862.15167783,
-    "max_52w": 1036908165.7222307,
+    "mean_52w": 392037414.95183057,
+    "sd_52w": 273334092.32234657,
+    "min_52w": 92348862.1516777,
+    "max_52w": 1036908165.722242,
     "n_obs_52w": 52
   },
   "rolling_new_wallets": {
@@ -51,6 +51,6 @@
   },
   "n_weeks_history": 178,
   "methodology": "Every Polymarket match has a maker (limit order) and a taker (market order). Per-type shares count each match twice, once for the maker's type and once for the taker's type \u2014 an honest participation measure. `total_trades` is the match count (single-count), so total_participations = 2 * total_trades by construction. new_wallets is the count of wallets whose first-ever trade fell in the week. flagged_active_this_week is the count of Paper 2-flagged wallets that participated.",
-  "generated_at": "2026-04-30T05:29:31+00:00",
+  "generated_at": "2026-05-09T03:52:36+00:00",
   "source": "J:/Research/10. Prediction/data/blockchain/processed_trades.csv"
 }
