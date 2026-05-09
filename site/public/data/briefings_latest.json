@@ -1,7 +1,7 @@
 {
   "as_of_week": "2026-W20",
   "generated_at": "2026-05-09T18:58:30+00:00",
-  "lede": "Top 6 markets by USD volume from the week of 2026-W20, annotated with per-market microstructure from the DV-PMI weekly indices.",
+  "lede": "Iran dominated prediction market volume in W20, with nearly $5M traded across invasion and regime-change contracts as US-Iran negotiators circulated a one-page ceasefire MOU. Three markets closed this week: BJP swept West Bengal (206 seats, ending TMC's 15-year rule), TVK emerged as Tamil Nadu's largest party in a hung assembly, and Péter Magyar's government formation advanced after TISZA's April 12 landslide over Orbán. In the NBA, Detroit (East's No. 1 seed, 60-22) leads Cleveland 2-0 in the second round behind Cade Cunningham's 31-point playoff average.",
   "briefings": [
     {
       "rank": 1,
@@ -124,7 +124,7 @@
           }
         ]
       },
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "news_angle": "Negotiators reported being closest to a deal since the war began, with US and Iranian officials circulating a one-page MOU that would declare an end to hostilities and open a 30-day window for nuclear and Strait of Hormuz talks. The invasion probability fell 9pp on the week as traders priced in diplomatic momentum.",
       "research_link": "/research",
       "research_label": "Research"
     },
@@ -244,7 +244,7 @@
           }
         ]
       },
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "news_angle": "The same diplomatic progress that drove down invasion odds also reduced regime-change probabilities: a negotiated ceasefire stabilizes rather than topples the government. At 4% with 52 days to expiry, the market assigns only tail risk to a June 30 collapse despite Iran's ongoing economic pressure.",
       "research_link": "/research",
       "research_label": "Research"
     },
@@ -369,7 +369,7 @@
           }
         ]
       },
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "news_angle": "Detroit entered the playoffs as the East's No. 1 seed (60-22) and swept past Orlando in the first round, ending an 11-game postseason home losing streak dating to 2008. Cade Cunningham is averaging 31 points on 55% three-point shooting; the Pistons lead Cleveland 2-0 in the second round.",
       "research_link": "/research",
       "research_label": "Research"
     },
@@ -414,7 +414,7 @@
         }
       ],
       "depth_ladder": null,
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "news_angle": "Results declared May 4 confirmed TVK as Tamil Nadu's largest party on its first electoral attempt, with roughly 35% of the vote ousting both the incumbent DMK and AIADMK. TVK fell 10 seats short of a majority, producing a hung assembly and ongoing coalition negotiations for government formation.",
       "research_link": "/research",
       "research_label": "Research"
     },
@@ -464,7 +464,7 @@
         }
       ],
       "depth_ladder": null,
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "news_angle": "Magyar's TISZA party won Hungary's April 12 election with 53.6% of the vote and 138 of 199 seats, ending Viktor Orbán's 16-year rule. Government formation proceedings were underway through the week, with Magyar's formal appointment as Prime Minister the remaining resolution condition.",
       "research_link": "/research",
       "research_label": "Research"
     },
@@ -509,7 +509,7 @@
         }
       ],
       "depth_ladder": null,
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "news_angle": "BJP secured 206 of 294 seats in results declared May 4, ending TMC's 15-year hold on West Bengal; Mamata Banerjee lost her own Bhabanipur constituency to BJP's Suvendu Adhikari. The formal swearing-in of a BJP Chief Minister is the remaining step before full market resolution.",
       "research_link": "/research",
       "research_label": "Research"
     }
