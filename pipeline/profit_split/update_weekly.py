@@ -236,7 +236,7 @@ def main() -> None:
             for col in ("n_trades", "usd_volume", "pnl", "directional", "execution"):
                 hist_idx.loc[key, col] = hist_idx.loc[key, col] + row[col]
         else:
-            hist_idx = pd.concat([hist_idx, pd.DataFrame([row], index=[key])])
+            hist_idx = pd.concat([hist_idx, pd.DataFrame([row], index=pd.MultiIndex.from_tuples([key], names=hist_idx.index.names))])
     hist = hist_idx.reset_index()
     hist["date"] = pd.to_datetime(hist["week"] + "-1", format="%G-W%V-%u", errors="coerce")
     hist = hist.sort_values(["date", "wallet_type"])

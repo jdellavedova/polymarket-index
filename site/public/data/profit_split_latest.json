@@ -30,10 +30,10 @@
     "casual": {
       "n_trades": 1036,
       "usd_volume": 134650.796298,
-      "accuracy": 0.15786896049128807,
+      "accuracy": 0.157868960491288,
       "pnl": -2852.1906179999983,
       "directional": -33621.44303739692,
-      "execution": 30769.252419396922,
+      "execution": 30769.25241939692,
       "pnl_roi_bps": -211.82129600538892,
       "directional_roi_bps": -2496.9360718066773,
       "execution_roi_bps": 2285.114775801288
@@ -41,7 +41,7 @@
     "one_shot": {
       "n_trades": 42,
       "usd_volume": 27678.971277,
-      "accuracy": 0.004815237222516101,
+      "accuracy": 0.0048152372225161,
       "pnl": -1279.556525,
       "directional": -8481.263678548308,
       "execution": 7201.707153548307,
@@ -52,7 +52,7 @@
     "sophisticated": {
       "n_trades": 15256,
       "usd_volume": 2145388.9396910006,
-      "accuracy": 0.39756088481604096,
+      "accuracy": 0.3975608848160409,
       "pnl": 7413.388051999998,
       "directional": 3005.778477166268,
       "execution": 4407.6095748337775,
@@ -61,7 +61,7 @@
       "execution_roi_bps": 20.544571165117517
     }
   },
-  "methodology": "Fair-price benchmark: per-(market_id, token_id) volume-weighted average price across BUY-side trades only (Paper 1 Section 4 main analysis). For each match: maker_pnl = sign * (W - P) * Q; maker_directional = sign * (W - fair) * Q; maker_execution = sign * (fair - P) * Q (sign = +1 if maker_side=BUY else -1). P&L is attributed to BOTH maker AND taker with mirror signs so dollar totals sum to zero across all wallet types per week. Bps fields are ROI = pnl / usd_volume in basis points (x10000). The dashboard departs from Paper 1's maker-only attribution to support the zero-sum public display; the benchmark and per-trade decomposition are unchanged.",
-  "generated_at": "2026-04-30T18:28:10+00:00",
+  "methodology": "Fair-price benchmark: per-(market_id, token_id) volume-weighted average price across BUY-side trades only (Paper 1 main analysis). P&L attributed to BOTH maker AND taker with mirror signs so dollar totals sum to zero across all wallet types per week. Bps fields are ROI = pnl / usd_volume in basis points (x10000).",
+  "generated_at": "2026-05-09T18:58:30+00:00",
   "source": "J:\\Research\\10. Prediction\\data\\blockchain\\processed_trades.csv"
 }

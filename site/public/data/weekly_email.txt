@@ -1,34 +1,34 @@
-DV-PMI WEEKLY DIGEST / Week of 2026-04-27
+DV-PMI WEEKLY DIGEST / Week of 2026-05-11
 ============================================================
 
-Polymarket traders moved $696 million this week, above the 52-week trend, on 27.6 million individual trades.
+Polymarket traders moved $546 million this week across 23.8 million individual trades.
 
 ------------------------------------------------------------
 THIS WEEK BY THE NUMBERS
 ------------------------------------------------------------
-  Total USD volume        $696M
-  Total trades            27.6M
-  New participants        13,216
-  Bot share of trades     86.8%
+  Total USD volume        $546M
+  Total trades            23.8M
+  New participants        0
+  Bot share of trades     72.8%
   Non-bot Prelec alpha    0.722 (Kahneman-Tversky: 0.65)
 
 ------------------------------------------------------------
 THE STORY
 ------------------------------------------------------------
-Traders moved $696 million through Polymarket in the week of 2026-04-27, across 27.6 million individual trades, with 13,216 wallets placing their first-ever bet (below the recent trend). Algorithmic wallets accounted for 87% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 13%.
+Traders moved $546 million through Polymarket in the week of 2026-05-11, across 23.8 million individual trades, with 0 wallets placing their first-ever bet (below the recent trend). Algorithmic wallets accounted for 73% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 27%.
 
-The most-traded market was "Will there be no change in Fed interest rates after the April 2026 meeting?", pulling in $6 million of volume. Macro calls drove the action.
+The most-traded market was "Will the U.S. invade Iran before 2027?", pulling in $3 million of volume.
 
 The usual pattern held: algorithmic traders made $80K (+69 bps on volume) while retail traders lost $83K (-432 bps).
 
 ------------------------------------------------------------
 MOST-TRADED MARKETS THIS WEEK
 ------------------------------------------------------------
-  1. $6M  Will there be no change in Fed interest rates after the April 2026 meeting?
-  2. $3M  Will Bitcoin hit $150k by June 30, 2026?
-  3. $2M  Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?
-  4. $2M  Will the U.S. invade Iran before 2027?
-  5. $2M  Will Roberto Sánchez Palomino win the 2026 Peruvian presidential election?
+  1. $3M  Will the U.S. invade Iran before 2027?
+  2. $2M  Will the Iranian regime fall by June 30?
+  3. $986K  Will the Detroit Pistons win the 2026 NBA Finals?
+  4. $772K  Will Tamilaga Vettri Kazhagam (TVK) win the most seats in the 2026 Tamil Nadu Legislative Assembly election?
+  5. $678K  Will the next Prime Minister of Hungary be Péter Magyar?
 
 ------------------------------------------------------------
 WHO MADE MONEY (resolved trades only)
@@ -52,4 +52,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-05-09T04:42:54+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-05-09T18:58:32+00:00)
