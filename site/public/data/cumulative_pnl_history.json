@@ -1004,6 +1004,6 @@
     "casual": -13557347.09,
     "one_shot": -2121569.92
   },
-  "generated_at": "2026-05-09T18:58:30+00:00",
+  "generated_at": "2026-05-11T21:41:37+00:00",
   "notes": "Cumulative weekly P&L by wallet type since the start of profit_split_history. Endpoints should match Paper 1 (bot ~ +$133M, active_retail ~ -$79M) within the dashboard's both-side mirror attribution convention."
 }

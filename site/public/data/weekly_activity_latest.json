@@ -3,7 +3,7 @@
   "short_name": "Activity",
   "as_of": "2026-05-11",
   "week": "2026-W20",
-  "total_usd_volume": 546426006.3432188,
+  "total_usd_volume": 546426006.3432088,
   "total_trades": 23839701,
   "total_participations": 47679402,
   "active_wallets": 239943,
@@ -17,11 +17,11 @@
     "one_shot": 64035
   },
   "by_type_volume": {
-    "bot": 800545484.4589485,
-    "active_retail": 87661108.05628772,
-    "sophisticated": 33911943.6828542,
-    "casual": 7439278.567614939,
-    "one_shot": 1572097.39408601
+    "bot": 800545484.4589555,
+    "active_retail": 87661108.0562881,
+    "sophisticated": 33911943.682854176,
+    "casual": 7439278.5676149335,
+    "one_shot": 1572097.3940860105
   },
   "by_type_share": {
     "bot": 0.7280806919516314,
@@ -30,16 +30,16 @@
     "casual": 0.006091875900624761,
     "one_shot": 0.0013430327838423813
   },
-  "volume_ma4w": 700713513.101181,
-  "volume_ma13w": 767256862.9435825,
-  "volume_z52w": 0.48714609858955277,
+  "volume_ma4w": 700713513.1011834,
+  "volume_ma13w": 767256862.943579,
+  "volume_z52w": 0.48714609858952085,
   "new_wallets_ma4w": 12696.25,
   "new_wallets_ma13w": 38153.692307692305,
   "rolling_volume": {
-    "mean_52w": 413339500.60524136,
-    "sd_52w": 273196287.7734348,
-    "min_52w": 92348862.1516777,
-    "max_52w": 1036908165.7222464,
+    "mean_52w": 413339500.6052405,
+    "sd_52w": 273196287.7734338,
+    "min_52w": 92348862.1516774,
+    "max_52w": 1036908165.72225,
     "n_obs_52w": 52
   },
   "rolling_new_wallets": {
@@ -51,6 +51,6 @@
   },
   "n_weeks_history": 180,
   "methodology": "Every Polymarket match has a maker (limit order) and a taker (market order). Per-type shares count each match twice, once for the maker's type and once for the taker's type \u2014 an honest participation measure. `total_trades` is the match count (single-count), so total_participations = 2 * total_trades by construction. new_wallets is the count of wallets whose first-ever trade fell in the week. flagged_active_this_week is the count of Paper 2-flagged wallets that participated.",
-  "generated_at": "2026-05-09T18:04:02+00:00",
+  "generated_at": "2026-05-11T21:07:27+00:00",
   "source": "J:/Research/10. Prediction/data/blockchain/processed_trades.csv"
 }

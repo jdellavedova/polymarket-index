@@ -1,7 +1,7 @@
 {
   "as_of_week": "2026-W20",
-  "generated_at": "2026-05-09T18:58:30+00:00",
-  "lede": "Iran dominated prediction market volume in W20, with nearly $5M traded across invasion and regime-change contracts as US-Iran negotiators circulated a one-page ceasefire MOU. Three markets closed this week: BJP swept West Bengal (206 seats, ending TMC's 15-year rule), TVK emerged as Tamil Nadu's largest party in a hung assembly, and Péter Magyar's government formation advanced after TISZA's April 12 landslide over Orbán. In the NBA, Detroit (East's No. 1 seed, 60-22) leads Cleveland 2-0 in the second round behind Cade Cunningham's 31-point playoff average.",
+  "generated_at": "2026-05-11T21:41:37+00:00",
+  "lede": "Top 6 markets by USD volume from the week of 2026-W20, annotated with per-market microstructure from the DV-PMI weekly indices.",
   "briefings": [
     {
       "rank": 1,
@@ -9,12 +9,12 @@
       "question": "Will the U.S. invade Iran before 2027?",
       "market_id": "665374",
       "market_url": "https://polymarket.com/event/will-the-us-invade-iran-before-2027",
-      "volume_usd": 3025743.4290839992,
+      "volume_usd": 3025743.4290839983,
       "n_trades": 9544,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "20% YES  \u25bc -9pp 7d",
+          "value": "26% YES  \u25bc -3pp 7d",
           "tone": "flat"
         },
         {
@@ -29,27 +29,27 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$300K",
+          "value": "$345K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "236 days (2026-12-31)",
+          "value": "234 days (2026-12-31)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.20 ($7,967) / Ask 0.21 ($5,303)",
+          "value": "Bid 0.26 ($4,009) / Ask 0.27 ($2,771)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "1.0\u00a2 (488 bps)",
+          "value": "1.0\u00a2 (377 bps)",
           "tone": "warn"
         },
         {
           "label": "Depth within \u00b15% of mid",
-          "value": "$7,967 bid  /  $5,303 ask",
+          "value": "$4,009 bid  /  $2,771 ask",
           "tone": "flat"
         },
         {
@@ -71,56 +71,56 @@
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.2,
-            "size": 39834.03,
-            "dollars": 7966.8060000000005
+            "price": 0.26,
+            "size": 15418.38,
+            "dollars": 4008.7788
           },
           {
-            "price": 0.19,
-            "size": 188155.45,
-            "dollars": 35749.535500000005
+            "price": 0.25,
+            "size": 122504.46,
+            "dollars": 30626.115
           },
           {
-            "price": 0.18,
-            "size": 238509.18,
-            "dollars": 42931.6524
+            "price": 0.24,
+            "size": 1158878.52,
+            "dollars": 278130.8448
           },
           {
-            "price": 0.17,
-            "size": 21638.22,
-            "dollars": 3678.4974000000007
+            "price": 0.23,
+            "size": 31992.54,
+            "dollars": 7358.284200000001
           },
           {
-            "price": 0.16,
-            "size": 19098.31,
-            "dollars": 3055.7296
+            "price": 0.22,
+            "size": 27229.43,
+            "dollars": 5990.4746000000005
           }
         ],
         "asks": [
           {
-            "price": 0.21,
-            "size": 25253.93,
-            "dollars": 5303.3252999999995
+            "price": 0.27,
+            "size": 10264.74,
+            "dollars": 2771.4798
           },
           {
-            "price": 0.22,
-            "size": 52525.65,
-            "dollars": 11555.643
+            "price": 0.28,
+            "size": 27171.06,
+            "dollars": 7607.896800000001
           },
           {
-            "price": 0.23,
-            "size": 56522.65,
-            "dollars": 13000.2095
+            "price": 0.29,
+            "size": 23241.38,
+            "dollars": 6740.0001999999995
           },
           {
-            "price": 0.24,
-            "size": 10498.54,
-            "dollars": 2519.6496
+            "price": 0.3,
+            "size": 25451.54,
+            "dollars": 7635.4619999999995
           },
           {
-            "price": 0.25,
-            "size": 26758.27,
-            "dollars": 6689.5675
+            "price": 0.31,
+            "size": 5489.79,
+            "dollars": 1701.8349
           }
         ]
       },
@@ -134,12 +134,12 @@
       "question": "Will the Iranian regime fall by June 30?",
       "market_id": "958443",
       "market_url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30",
-      "volume_usd": 1712066.0679739886,
+      "volume_usd": 1712066.0679739937,
       "n_trades": 5635,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "4% YES  \u25bc -2pp 7d",
+          "value": "6% YES  \u25bc -1pp 7d",
           "tone": "flat"
         },
         {
@@ -154,22 +154,22 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$197K",
+          "value": "$463K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "52 days (2026-06-30)",
+          "value": "50 days (2026-06-30)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.04 ($15,662) / Ask 0.05 ($11,171)",
+          "value": "Bid 0.05 ($14,269) / Ask 0.06 ($9,531)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "1.0\u00a2 (2222 bps)",
+          "value": "1.0\u00a2 (1818 bps)",
           "tone": "alert"
         },
         {
@@ -196,51 +196,56 @@
       "depth_ladder": {
         "bids": [
           {
+            "price": 0.05,
+            "size": 285374.65,
+            "dollars": 14268.732500000002
+          },
+          {
             "price": 0.04,
-            "size": 391555.68,
-            "dollars": 15662.2272
+            "size": 278173.99,
+            "dollars": 11126.9596
           },
           {
             "price": 0.03,
-            "size": 184737.32,
-            "dollars": 5542.1196
+            "size": 173638.71,
+            "dollars": 5209.1613
           },
           {
             "price": 0.02,
-            "size": 1027237.61,
-            "dollars": 20544.7522
+            "size": 556437.85,
+            "dollars": 11128.757
           },
           {
             "price": 0.01,
-            "size": 50731.51,
-            "dollars": 507.31510000000003
+            "size": 1152876.13,
+            "dollars": 11528.761299999998
           }
         ],
         "asks": [
           {
-            "price": 0.05,
-            "size": 223416.62,
-            "dollars": 11170.831
-          },
-          {
             "price": 0.06,
-            "size": 139624.76,
-            "dollars": 8377.4856
+            "size": 158843.63,
+            "dollars": 9530.6178
           },
           {
             "price": 0.07,
-            "size": 128825.3,
-            "dollars": 9017.771
+            "size": 228107.32,
+            "dollars": 15967.512400000001
           },
           {
             "price": 0.08,
-            "size": 40673.62,
-            "dollars": 3253.8896000000004
+            "size": 135090.58,
+            "dollars": 10807.2464
           },
           {
             "price": 0.09,
-            "size": 30179.32,
-            "dollars": 2716.1387999999997
+            "size": 49437.52,
+            "dollars": 4449.376799999999
+          },
+          {
+            "price": 0.1,
+            "size": 19643.99,
+            "dollars": 1964.3990000000003
           }
         ]
       },
@@ -254,12 +259,12 @@
       "question": "Will the Detroit Pistons win the 2026 NBA Finals?",
       "market_id": "553871",
       "market_url": "https://polymarket.com/event/will-the-detroit-pistons-win-the-2026-nba-finals",
-      "volume_usd": 986485.258054,
+      "volume_usd": 986485.2580539993,
       "n_trades": 5210,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "6% YES  \u25b2 +3pp 7d",
+          "value": "5% YES  \u25b2 +2pp 7d",
           "tone": "flat"
         },
         {
@@ -274,27 +279,27 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$137K",
+          "value": "$94K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "53 days (2026-07-01)",
+          "value": "51 days (2026-07-01)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.06 ($386) / Ask 0.06 ($125)",
+          "value": "Bid 0.05 ($2,409) / Ask 0.05 ($843)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1\u00a2 (160 bps)",
-          "tone": "flat"
+          "value": "0.1\u00a2 (215 bps)",
+          "tone": "warn"
         },
         {
           "label": "Depth within \u00b15% of mid",
-          "value": "$409 bid  /  $689 ask",
+          "value": "$2,491 bid  /  $2,470 ask",
           "tone": "flat"
         },
         {
@@ -316,56 +321,56 @@
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.062,
-            "size": 6223.46,
-            "dollars": 385.85452
+            "price": 0.046,
+            "size": 52362.12,
+            "dollars": 2408.65752
           },
           {
-            "price": 0.06,
-            "size": 386.98,
-            "dollars": 23.2188
+            "price": 0.045,
+            "size": 1826.12,
+            "dollars": 82.1754
           },
           {
-            "price": 0.059,
-            "size": 134.05,
-            "dollars": 7.90895
+            "price": 0.044,
+            "size": 3252.26,
+            "dollars": 143.09944
           },
           {
-            "price": 0.058,
-            "size": 128.04,
-            "dollars": 7.42632
+            "price": 0.043,
+            "size": 5000.57,
+            "dollars": 215.02450999999996
           },
           {
-            "price": 0.057,
-            "size": 104.41,
-            "dollars": 5.95137
+            "price": 0.042,
+            "size": 237.62,
+            "dollars": 9.98004
           }
         ],
         "asks": [
           {
-            "price": 0.063,
-            "size": 1991.16,
-            "dollars": 125.44308000000001
+            "price": 0.047,
+            "size": 17945.46,
+            "dollars": 843.43662
           },
           {
-            "price": 0.064,
-            "size": 1899.47,
-            "dollars": 121.56608
+            "price": 0.048,
+            "size": 33882.41,
+            "dollars": 1626.3556800000001
           },
           {
-            "price": 0.065,
-            "size": 6799.75,
-            "dollars": 441.98375000000004
+            "price": 0.049,
+            "size": 537.8,
+            "dollars": 26.3522
           },
           {
-            "price": 0.066,
-            "size": 3459.02,
-            "dollars": 228.29532
+            "price": 0.05,
+            "size": 128.04,
+            "dollars": 6.402
           },
           {
-            "price": 0.067,
-            "size": 21832.56,
-            "dollars": 1462.7815200000002
+            "price": 0.051,
+            "size": 128.04,
+            "dollars": 6.530039999999999
           }
         ]
       },
@@ -379,7 +384,7 @@
       "question": "Will Tamilaga Vettri Kazhagam (TVK) win the most seats in the 2026 Tamil Nadu Legislative Assembly election?",
       "market_id": "1003805",
       "market_url": "https://polymarket.com/event/will-tamilaga-vettri-kazhagam-(tvk)-win-the-most-seats-in-the-2026-tamil-nadu-legislative-assembly-election",
-      "volume_usd": 771984.23907,
+      "volume_usd": 771984.2390699998,
       "n_trades": 4933,
       "annotations": [
         {
@@ -443,11 +448,6 @@
           "tone": "flat"
         },
         {
-          "label": "24h volume (Gamma)",
-          "value": "$307K",
-          "tone": "flat"
-        },
-        {
           "label": "Algorithmic share (this market)",
           "value": "61% (vs 73% Polymarket-wide)",
           "tone": "ok"
@@ -464,7 +464,7 @@
         }
       ],
       "depth_ladder": null,
-      "news_angle": "Magyar's TISZA party won Hungary's April 12 election with 53.6% of the vote and 138 of 199 seats, ending Viktor Orbán's 16-year rule. Government formation proceedings were underway through the week, with Magyar's formal appointment as Prime Minister the remaining resolution condition.",
+      "news_angle": "Magyar's TISZA party won Hungary's April 12 election with 53.6% of the vote and 138 of 199 seats, ending Viktor Orb\u00e1n's 16-year rule. Government formation proceedings were underway through the week, with Magyar's formal appointment as Prime Minister the remaining resolution condition.",
       "research_link": "/research",
       "research_label": "Research"
     },
@@ -474,7 +474,7 @@
       "question": "Will the Bharatiya Janata Party (BJP) win the most seats in the 2026 West Bengal Legislative Assembly election?",
       "market_id": "951183",
       "market_url": "https://polymarket.com/event/will-the-bharatiya-janata-party-(bjp)-win-the-most-seats-in-the-2026-west-bengal-legislative-assembly-election",
-      "volume_usd": 660768.070893,
+      "volume_usd": 660768.0708930001,
       "n_trades": 4179,
       "annotations": [
         {
@@ -516,7 +516,7 @@
   ],
   "global_context": {
     "polymarket_wide_bot_share": 0.7280806919516314,
-    "polymarket_wide_volume_usd": 546426006.3432188,
+    "polymarket_wide_volume_usd": 546426006.3432088,
     "polymarket_wide_trades": 23839701,
     "calibration_alpha": 0.6639191266094694,
     "calibration_r2": 0.9867800262365879
