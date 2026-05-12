@@ -1,10 +1,10 @@
 {
   "title": "DV-PMI Surveillance Indices",
   "subtitle": "Eight market-integrity tests on the 670M-trade Polymarket on-chain panel. Patterns reported are statistical, not legal conclusions.",
-  "n_live": 7,
+  "n_live": 6,
   "n_total": 8,
   "as_of": "2026-02-28",
-  "generated_at": "2026-05-12T11:56:54+00:00",
+  "generated_at": "2026-05-12T15:24:06+00:00",
   "cards": [
     {
       "slot": 1,
@@ -49,20 +49,20 @@
     {
       "slot": 5,
       "status": "live",
-      "name": "Wash Trading (Tiers 1+2)",
+      "name": "Wash Trading (Tier 1)",
       "value": "905 self-matched",
-      "secondary": "Tier 1: 0.0001% self-matched. Tier 2 strict: 50,646 pairs, $1.90B round-trip volume (upper bound; includes algorithmic market making)",
-      "description": "Tier 1: self-matched trades, FINRA Rule 6140 analog. Polymarket's CLOB does not permit self-matching at scale; Tier 1 is essentially zero. Tier 2: round-trip wash, wallets buying and selling the same token through different counterparties. The Tier 2 strict-threshold set is dominated by algorithmic market makers, not manipulators; Tier 3 (linked-wallet clusters) is forthcoming and required to isolate wash from inventory rotation.",
+      "secondary": "0.0001% of trades self-matched ($233,757 of $27.7B); all in 2022-2023 launch window",
+      "description": "Self-matched trades, the FINRA Rule 6140 mechanical analog. Polymarket's CLOB does not permit self-matching at scale; Tier 1 is essentially zero. Network-based cluster-wash detection (Sirolly et al, Columbia 2025) supersedes the structural screens for the harder coordinated-washing question and is cited from the page.",
       "href": "/surveillance/wash-trading",
-      "pattern_consistent_with": "volume inflation via non-economic trading"
+      "pattern_consistent_with": "mechanical self-matching"
     },
     {
       "slot": 6,
-      "status": "live",
+      "status": "coming_soon",
       "name": "Matched / Pre-Arranged Orders",
-      "value": "2,366 pairs",
-      "secondary": "persistent counterparty pairs (1000+ shared trades, 30+ markets, $100,000+) | $0.98B shared volume",
-      "description": "Wallet pairs that have been counterparties on many matches across many markets. The signature distinguishes coordinated bilateral trading from the algorithmic-MM rotation that dominates Tier 2 wash. Patterns consistent with: coordinated bilateral trading (upper bound; includes competing MMs in the same niche).",
+      "value": "in development",
+      "secondary": "network-cluster detection of coordinated bilateral trading",
+      "description": "Wallet pairs and small clusters that trade primarily with each other and rarely with the broader market. Pending a network-cluster implementation consistent with Sirolly, Ma, Kanoria, and Sethi (Columbia, 2025). The earlier structural-persistence screen has been demoted; its raw output remains downloadable for reproducibility.",
       "href": "/surveillance/matched-orders",
       "pattern_consistent_with": "coordinated bilateral trading"
     },

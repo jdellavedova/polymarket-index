@@ -111,68 +111,53 @@ def main() -> None:
             "pattern_consistent_with": "ex-ante knowledge of contrarian outcomes",
         })
 
-    # --- Live: Wash Trading (Tiers 1 + 2 live; Tier 3 forthcoming) ---
+    # --- Live: Wash Trading (Tier 1 only on the public card) ---
+    # Tier 2 and Tier 3 / Matched Orders were structural screens that did not
+    # isolate coordinated washing from MM rotation; the network-cluster method
+    # of Sirolly, Ma, Kanoria, Sethi (Columbia, 2025) is the standard for the
+    # cluster-wash question and is referenced from the page. Tiers 2-3 data
+    # remain available for download but are off the public landing card.
     if wash:
         h = wash["headline"]
-        wash_t2 = _read("surveillance_wash_tier2_latest.json")
-        t2_strict = None
-        if wash_t2:
-            t2_strict = next((t for t in wash_t2.get("thresholds", []) if t.get("name") == "strict"), None)
-        if t2_strict:
-            secondary = (
-                f"Tier 1: {h['self_matched_share_by_count']*100:.4f}% self-matched. "
-                f"Tier 2 strict: {t2_strict['n_pairs']:,} pairs, "
-                f"${t2_strict['round_trip_volume']/1e9:.2f}B round-trip volume "
-                f"(upper bound; includes algorithmic market making)"
-            )
-        else:
-            secondary = (
-                f"Tier 1: {h['self_matched_share_by_count']*100:.4f}% of trades self-matched "
-                f"(${h['self_matched_volume']:,.0f} of ${h['total_volume']/1e9:.1f}B)"
-            )
         cards.append({
             "slot": 5,
             "status": "live",
-            "name": "Wash Trading (Tiers 1+2)",
+            "name": "Wash Trading (Tier 1)",
             "value": f"{h['n_self_matched']:,} self-matched",
-            "secondary": secondary,
+            "secondary": (
+                f"{h['self_matched_share_by_count']*100:.4f}% of trades self-matched "
+                f"(${h['self_matched_volume']:,.0f} of ${h['total_volume']/1e9:.1f}B); "
+                f"all in 2022-2023 launch window"
+            ),
             "description": (
-                "Tier 1: self-matched trades, FINRA Rule 6140 analog. Polymarket's CLOB does not "
-                "permit self-matching at scale; Tier 1 is essentially zero. Tier 2: round-trip wash, "
-                "wallets buying and selling the same token through different counterparties. The Tier 2 "
-                "strict-threshold set is dominated by algorithmic market makers, not manipulators; "
-                "Tier 3 (linked-wallet clusters) is forthcoming and required to isolate wash from "
-                "inventory rotation."
+                "Self-matched trades, the FINRA Rule 6140 mechanical analog. Polymarket's CLOB "
+                "does not permit self-matching at scale; Tier 1 is essentially zero. Network-based "
+                "cluster-wash detection (Sirolly et al, Columbia 2025) supersedes the structural "
+                "screens for the harder coordinated-washing question and is cited from the page."
             ),
             "href": "/surveillance/wash-trading",
-            "pattern_consistent_with": "volume inflation via non-economic trading",
+            "pattern_consistent_with": "mechanical self-matching",
         })
 
-    # --- Live: Matched / Pre-Arranged Orders (slot 6) ---
-    matched = _read("surveillance_matched_latest.json")
-    if matched:
-        m_strict = next((t for t in matched.get("thresholds", []) if t.get("name") == "strict"), None)
-        if m_strict:
-            cards.append({
-                "slot": 6,
-                "status": "live",
-                "name": "Matched / Pre-Arranged Orders",
-                "value": f"{m_strict['n_pairs']:,} pairs",
-                "secondary": (
-                    f"persistent counterparty pairs ({m_strict['min_trades']}+ shared trades, "
-                    f"{m_strict['min_markets']}+ markets, ${m_strict['min_vol']:,}+) | "
-                    f"${m_strict['shared_volume']/1e9:.2f}B shared volume"
-                ),
-                "description": (
-                    "Wallet pairs that have been counterparties on many matches across many "
-                    "markets. The signature distinguishes coordinated bilateral trading from "
-                    "the algorithmic-MM rotation that dominates Tier 2 wash. Patterns "
-                    "consistent with: coordinated bilateral trading (upper bound; includes "
-                    "competing MMs in the same niche)."
-                ),
-                "href": "/surveillance/matched-orders",
-                "pattern_consistent_with": "coordinated bilateral trading",
-            })
+    # --- In development: Matched / Pre-Arranged Orders (slot 6) ---
+    # The previous structural counterparty-persistence screen was demoted
+    # because it was dominated by competing MMs, not coordinated washers.
+    # Network-cluster method (Sirolly et al 2025) is the correct implementation.
+    cards.append({
+        "slot": 6,
+        "status": "coming_soon",
+        "name": "Matched / Pre-Arranged Orders",
+        "value": "in development",
+        "secondary": "network-cluster detection of coordinated bilateral trading",
+        "description": (
+            "Wallet pairs and small clusters that trade primarily with each other and rarely "
+            "with the broader market. Pending a network-cluster implementation consistent with "
+            "Sirolly, Ma, Kanoria, and Sethi (Columbia, 2025). The earlier structural-persistence "
+            "screen has been demoted; its raw output remains downloadable for reproducibility."
+        ),
+        "href": "/surveillance/matched-orders",
+        "pattern_consistent_with": "coordinated bilateral trading",
+    })
 
     # --- Roadmap stubs (7) ---
     stubs = [

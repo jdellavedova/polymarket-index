@@ -1,12 +1,8 @@
 ---
 import DeepDiveLayout from "../../components/redesign/DeepDiveLayout.astro";
 import data from "../../../public/data/surveillance_wash_latest.json";
-import t2 from "../../../public/data/surveillance_wash_tier2_latest.json";
 
 const h = data.headline;
-const t2pop = t2.population;
-const t2thresh = t2.thresholds;
-const strict = t2thresh.find((x: any) => x.name === "strict");
 
 function fmtPct(x: number, dp = 4): string { return (x * 100).toFixed(dp) + "%"; }
 function fmtUsd(x: number): string {
@@ -34,16 +30,7 @@ const MARKET_QUESTIONS: Record<string, string> = {
   "249524": "2023 FIDE World Chess Championship: Ian Nepomniachtchi vs. Ding Liren",
 };
 
-// Top-wallets summary stats (no wallet addresses shown).
-const tw = t2.top_wallets_strict as any[];
-const tw_avg_trips = tw.reduce((s, w) => s + w.total_round_trips, 0) / tw.length;
-const tw_avg_tokens = tw.reduce((s, w) => s + w.n_tokens_flagged, 0) / tw.length;
-const tw_avg_vol = tw.reduce((s, w) => s + w.total_round_trip_vol, 0) / tw.length;
-const tw_avg_churn = tw.reduce((s, w) => s + w.avg_churn, 0) / tw.length;
-const tw_max_trips = Math.max(...tw.map(w => w.total_round_trips));
-const tw_max_tokens = Math.max(...tw.map(w => w.n_tokens_flagged));
-
-const lede = `Two complementary tests on the full ${h.n_trades_total.toLocaleString()}-trade panel. Tier 1 (self-matched trades, where maker and taker are the same wallet) finds ${h.n_self_matched.toLocaleString()} matches (${fmtPct(h.self_matched_share_by_count, 4)} of trades, ${fmtPct(h.self_matched_share_by_volume, 4)} of dollar volume), all confined to the 2022-2023 launch window. Tier 2 (round-trip wash, single wallet buying and selling the same token through different counterparties) flags ${fmtNum(strict.n_pairs)} (wallet, token) pairs at the strict threshold across ${fmtNum(strict.n_wallets)} wallets totaling ${fmtUsd(strict.round_trip_volume)} of round-trip volume. The Tier 2 strict-flagged set is dominated by algorithmic market makers operating across hundreds of tokens; it represents an upper bound on wash-trading activity, with the true subset bounded below by Tier 1's near-zero floor. Tier 3 (linked-wallet clusters) is required to isolate wash trading from inventory rotation.`;
+const lede = `Tier 1 (self-matched trades, where the same wallet is the maker and the taker on a single match) finds ${h.n_self_matched.toLocaleString()} matches across the full ${h.n_trades_total.toLocaleString()}-trade panel (${fmtPct(h.self_matched_share_by_count, 4)} of trades, ${fmtPct(h.self_matched_share_by_volume, 4)} of dollar volume), all confined to the 2022-2023 launch window. The CLOB matching engine does not permit a wallet to fill its own resting order under normal operation; the residual count is consistent with pre-launch test transactions and contract-deployment artifacts. Tier 1 rules out the simplest, most mechanical regime of wash trading. It does not rule out the harder regimes (round-trip via different counterparties, linked-wallet clusters). For those, see the limitations and superseding-method notes below.`;
 ---
 <DeepDiveLayout
   title="Wash Trading (Tier 1)"
@@ -105,184 +92,41 @@ const lede = `Two complementary tests on the full ${h.n_trades_total.toLocaleStr
     ))}
   </table>
 
-  <h2>Methodology — Tier 1</h2>
+  <h2>Methodology</h2>
   <p>{data.tier1_methodology}</p>
   <p>
     The test is implemented as a single pass through the full processed-trades file via duckdb:
     {`{`} maker_address.lower() == taker_address.lower() {`}`}. Pre-filter to the small self-matched
-    subset, then aggregate counts, volumes, top markets, top wallets, and weekly time series. No
-    sampling; the denominator is the entire panel.
+    subset, then aggregate counts, volumes, top markets, and weekly time series. No sampling; the
+    denominator is the entire panel.
   </p>
 
-  <hr style="margin: 48px 0; border: none; border-top: 1px solid var(--c-border, #1c2a3a);" />
-
-  <h2>Tier 2 — Round-trip wash</h2>
+  <h2>Scope of this test</h2>
   <p>
-    Tier 2 catches a wallet that buys and sells the same outcome token through different counterparties,
-    netting to zero or near-zero exposure while inflating volume. For each <code>(wallet, token_id)</code>
-    pair we compute the churn ratio: <code>2 × min(buy_vol, sell_vol) / (buy_vol + sell_vol)</code>,
-    ranging from 0 (one-sided position) to 1 (perfectly balanced two-sided activity). A pair is flagged
-    at a given threshold if churn_ratio, total volume, and minimum-round-trips all clear the bar.
+    Tier 1 catches one specific economic form of wash trading: a single wallet on both sides of a single
+    match. A wallet that splits a coordinated wash across two addresses it controls is not detected here.
+    Neither is a single wallet that buys and sells the same outcome through different counterparties in
+    rapid succession. The near-zero Tier 1 result rules out volume inflation from the simplest mechanism;
+    it does not rule out wash trading more broadly.
   </p>
 
+  <h2>Superseding method (Sirolly, Ma, Kanoria, Sethi 2025)</h2>
   <p>
-    Population denominators: <strong>{fmtNum(t2pop.n_two_sided_pairs)}</strong> two-sided (wallet, token)
-    pairs in the panel, across <strong>{fmtNum(t2pop.n_wallets_with_two_sided_activity)}</strong> wallets,
-    totaling <strong>{fmtUsd(t2pop.total_volume_in_two_sided_pairs)}</strong> of volume.
-  </p>
-
-  <h3>Threshold table</h3>
-  <table>
-    <tr>
-      <th>Threshold</th>
-      <th>Min churn</th>
-      <th>Min volume</th>
-      <th>Min round-trips</th>
-      <th>Pairs flagged</th>
-      <th>Wallets</th>
-      <th>Round-trip volume</th>
-    </tr>
-    {t2thresh.map((row: any) => (
-      <tr>
-        <td><strong>{row.name}</strong></td>
-        <td class="mono">{row.min_churn.toFixed(2)}</td>
-        <td class="mono">{fmtUsd(row.min_vol)}</td>
-        <td class="mono">{row.min_trips}</td>
-        <td class="mono">{fmtNum(row.n_pairs)}</td>
-        <td class="mono">{fmtNum(row.n_wallets)}</td>
-        <td class="mono">{fmtUsd(row.round_trip_volume)}</td>
-      </tr>
-    ))}
-  </table>
-
-  <h3>Churn-ratio distribution across all two-sided pairs</h3>
-  <table>
-    <tr><th>Churn-ratio bin</th><th>Pairs</th><th>Share of pairs</th><th>Total volume</th></tr>
-    {t2.churn_histogram.map((b: any) => (
-      <tr>
-        <td class="mono">[{b.bin_low.toFixed(1)}, {(b.bin_low + 0.1).toFixed(1)})</td>
-        <td class="mono">{fmtNum(b.n_pairs)}</td>
-        <td class="mono">{((b.n_pairs / t2pop.n_two_sided_pairs) * 100).toFixed(1)}%</td>
-        <td class="mono">{fmtUsd(b.total_vol)}</td>
-      </tr>
-    ))}
-  </table>
-  <p>
-    The distribution is bimodal. Many pairs cluster near zero (one-side-dominant positions: a wallet
-    that mostly bought and then sold a small fraction, or vice versa), and a large mass clusters at
-    high churn (0.8 and above). The high-churn mass is what Tier 2 thresholds isolate.
-  </p>
-
-  <h3>Trade activity of strict-threshold-flagged wallets, by year</h3>
-  <table>
-    <tr><th>Year</th><th>Trades by flagged wallets</th><th>Volume</th></tr>
-    {t2.by_year_strict_flagged_wallets.map((y: any) => (
-      <tr>
-        <td class="mono">{y.year}</td>
-        <td class="mono">{fmtNum(y.n_trades_by_flagged)}</td>
-        <td class="mono">{fmtUsd(y.vol_by_flagged)}</td>
-      </tr>
-    ))}
-  </table>
-  <p>
-    Unlike Tier 1, where activity was confined to the 2022-2023 launch window, Tier 2 strict-threshold
-    flagged wallets are highly active in 2024-2026, with trade counts and volumes growing each year.
-    This is the dominant feature of the result and matches the broader Paper 1 finding that algorithmic
-    wallets have grown to ~90 percent of Polymarket participation over this period.
-  </p>
-
-  <h3>Top-wallet profile (strict threshold; addresses not shown)</h3>
-  <p>
-    At the strict threshold, summary statistics over the top 20 wallets by round-trip volume:
-  </p>
-  <table>
-    <tr><th>Metric</th><th>Average</th><th>Maximum</th></tr>
-    <tr>
-      <td>Tokens flagged per wallet</td>
-      <td class="mono">{tw_avg_tokens.toFixed(0)}</td>
-      <td class="mono">{fmtNum(tw_max_tokens)}</td>
-    </tr>
-    <tr>
-      <td>Round-trips per wallet</td>
-      <td class="mono">{fmtNum(Math.round(tw_avg_trips))}</td>
-      <td class="mono">{fmtNum(tw_max_trips)}</td>
-    </tr>
-    <tr>
-      <td>Round-trip volume per wallet</td>
-      <td class="mono">{fmtUsd(tw_avg_vol)}</td>
-      <td class="mono">{fmtUsd(Math.max(...tw.map((w: any) => w.total_round_trip_vol)))}</td>
-    </tr>
-    <tr>
-      <td>Average churn ratio</td>
-      <td class="mono">{tw_avg_churn.toFixed(3)}</td>
-      <td class="mono">{Math.max(...tw.map((w: any) => w.avg_churn)).toFixed(3)}</td>
-    </tr>
-  </table>
-
-  <h2>What Tier 2 actually catches: algorithmic market making</h2>
-  <p>
-    The top-wallet profile makes the limitation of Tier 2 explicit. The top wallet has
-    <strong>{fmtNum(tw_max_tokens)} tokens flagged</strong> at the strict threshold and the maximum
-    round-trip count across the top 20 is <strong>{fmtNum(tw_max_trips)}</strong>. A wash trader
-    making 5 or 10 manipulative round-trips would not generate {fmtNum(tw_max_trips)} balanced
-    buy/sell cycles across hundreds of distinct outcome tokens. That activity profile is the
-    signature of an algorithmic market maker rotating inventory across many markets simultaneously,
-    not a manipulator inflating volume in one or two contracts.
+    <a href="https://ssrn.com/abstract=5714122">Sirolly, Ma, Kanoria, and Sethi (Columbia Business School, 2025)</a>
+    propose an iterative network-clustering approach that identifies approximately-closed clusters of
+    counterparties who trade primarily with each other and rarely with the broader market. Applied to
+    Polymarket, they estimate that transaction patterns indicative of wash trading peaked at roughly 60
+    percent of weekly volume in December 2024, persisted through April 2025, and reached approximately 20
+    percent again in October 2025.
   </p>
   <p>
-    Tier 2 as implemented therefore measures the <em>magnitude of algorithmic two-sided liquidity
-    provision on Polymarket</em>, with wash trading as a subset embedded inside it. To isolate the
-    wash-trading subset specifically, the screen needs counterparty-network structure: paired wallets
-    trading repeatedly against each other in tight time windows with offsetting net exposure. That is
-    Tier 3 (cluster wash with linked counterparties), forthcoming.
-  </p>
-  <p>
-    We report Tier 2 here transparently rather than withhold it. The honest framing is "patterns
-    consistent with high-volume balanced two-sided activity" — a population that contains both
-    manipulative round-trip washing and legitimate algorithmic market making, with the latter
-    quantitatively dominant. The strict-threshold number ({fmtNum(strict.n_wallets)} wallets,
-    {fmtUsd(strict.round_trip_volume)} of round-trip volume) is the upper bound; the lower bound is
-    near-zero from Tier 1.
-  </p>
-
-  <h3>Tier 2 limitations</h3>
-  <ul>
-    {t2.interpretation_caveats.map((c: string) => <li>{c}</li>)}
-  </ul>
-
-  <h2>Tiers forthcoming</h2>
-  <ul>
-    <li><strong>Tier 2b — Within-window round-trips.</strong> Add a temporal-window constraint (e.g. all round-trips within a 24-hour window) to remove long-horizon position rotation by market makers from the count. Sharpens Tier 2 toward wash-specific activity.</li>
-    <li><strong>Tier 3 — Cluster wash (linked counterparties).</strong> Wallet pairs trading repeatedly against each other with offsetting net exposure. Requires counterparty-network construction across the full trade history. This is the only tier that can credibly isolate wash trading from inventory rotation.</li>
-  </ul>
-
-  <h2>Interpretation</h2>
-  <p>
-    Polymarket's order-matching engine does not permit a wallet to fill its own resting order under
-    normal operation; the residual self-matched count includes pre-launch test transactions,
-    contract-deployment artifacts, and edge cases where the engine accepted a self-cross during a
-    contract migration or upgrade. The near-zero share is the expected pattern for a competently-built
-    venue and is a baseline against which the more permissive Tier 2 and Tier 3 results will be reported.
-  </p>
-  <p>
-    Reporting the null finding explicitly is the point. A surveillance dashboard that only reported
-    positive flags would not be a surveillance dashboard. The economic question "is the volume number
-    inflated by self-matching" has been tested on the full on-chain record and the answer is no.
-  </p>
-
-  <h2>Limitations</h2>
-  <p>
-    A wallet can avoid Tier 1 detection by routing one side of the trade through a second address it
-    controls. Tier 3 (cluster wash) is designed to catch this case and is forthcoming. The clustering
-    threshold matters: legitimate algorithmic liquidity providers that operate paired makers/takers
-    will generate false positives, so Tier 3 will be reported as "patterns consistent with" rather than
-    "wash trades."
-  </p>
-
-  <h2>Source paper</h2>
-  <p>
-    Tier 1 is the simplest of the three-tier framework introduced in the DV-PMI surveillance methodology
-    paper (forthcoming). The economic and regulatory analog is FINRA Rule 6140.
+    Their network-based method is the right tool for the wash-detection question. The structural
+    counterparty-persistence screen we previously published as Tiers 2 and 3 captures the precondition
+    for cluster wash but does not check closed-cluster topology, and is consequently dominated by
+    competing algorithmic market makers rather than likely-manipulative activity. We have removed those
+    threshold tables from this page pending implementation of a network-cluster screen consistent with
+    Sirolly et al's method. The raw structural-screen output remains available via the data downloads
+    below for reproducibility.
   </p>
 
   <h2>Data</h2>
@@ -291,9 +135,11 @@ const lede = `Two complementary tests on the full ${h.n_trades_total.toLocaleStr
     <a href="/data/surveillance_wash_t1_weekly.csv">surveillance_wash_t1_weekly.csv</a>
   </p>
   <p>
-    Tier 2: <a href="/data/surveillance_wash_tier2_latest.json">surveillance_wash_tier2_latest.json</a> &middot;
-    <a href="/data/surveillance_wash_tier2_top_wallets.csv">surveillance_wash_tier2_top_wallets.csv</a>
-    (per-wallet detail; usage notice on <a href="/methodology">methodology page</a>)
+    Structural-screen output (Tiers 2 and 3 v1, not currently surfaced on the page):
+    <a href="/data/surveillance_wash_tier2_latest.json">surveillance_wash_tier2_latest.json</a> &middot;
+    <a href="/data/surveillance_wash_tier2_top_wallets.csv">surveillance_wash_tier2_top_wallets.csv</a> &middot;
+    <a href="/data/surveillance_matched_latest.json">surveillance_matched_latest.json</a> &middot;
+    <a href="/data/surveillance_matched_top_pairs.csv">surveillance_matched_top_pairs.csv</a>
   </p>
 
   <h2>Other surveillance indices</h2>
@@ -302,6 +148,7 @@ const lede = `Two complementary tests on the full ${h.n_trades_total.toLocaleStr
     <a href="/pii">Informed Trading (PII)</a> &middot;
     <a href="/surveillance/insider-timing">Insider Timing</a> &middot;
     <a href="/surveillance/adverse-selection">Adverse Selection</a> &middot;
-    <a href="/surveillance/resolution-surprise">Resolution Surprise</a>
+    <a href="/surveillance/resolution-surprise">Resolution Surprise</a> &middot;
+    <a href="/surveillance/concentration">Concentration</a>
   </p>
 </DeepDiveLayout>
