@@ -1,10 +1,10 @@
 {
   "title": "DV-PMI Surveillance Indices",
   "subtitle": "Eight market-integrity tests on the 670M-trade Polymarket on-chain panel. Patterns reported are statistical, not legal conclusions.",
-  "n_live": 6,
+  "n_live": 7,
   "n_total": 8,
   "as_of": "2026-02-28",
-  "generated_at": "2026-05-12T08:00:00+00:00",
+  "generated_at": "2026-05-12T11:56:54+00:00",
   "cards": [
     {
       "slot": 1,
@@ -58,12 +58,12 @@
     },
     {
       "slot": 6,
-      "status": "coming_soon",
+      "status": "live",
       "name": "Matched / Pre-Arranged Orders",
-      "value": "in development",
-      "secondary": "wallet pairs with persistent counterparty relationships",
-      "description": "Wallet pairs trading the same markets within short windows, repeatedly, with offsetting positions. Tighter Daubert burden than wash trading because legitimate liquidity providers create false positives; reported as 'patterns consistent with' only.",
-      "href": "/surveillance",
+      "value": "2,366 pairs",
+      "secondary": "persistent counterparty pairs (1000+ shared trades, 30+ markets, $100,000+) | $0.98B shared volume",
+      "description": "Wallet pairs that have been counterparties on many matches across many markets. The signature distinguishes coordinated bilateral trading from the algorithmic-MM rotation that dominates Tier 2 wash. Patterns consistent with: coordinated bilateral trading (upper bound; includes competing MMs in the same niche).",
+      "href": "/surveillance/matched-orders",
       "pattern_consistent_with": "coordinated bilateral trading"
     },
     {

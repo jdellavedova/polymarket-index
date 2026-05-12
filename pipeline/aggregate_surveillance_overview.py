@@ -148,23 +148,34 @@ def main() -> None:
             "pattern_consistent_with": "volume inflation via non-economic trading",
         })
 
-    # --- Roadmap stubs (6-8) ---
+    # --- Live: Matched / Pre-Arranged Orders (slot 6) ---
+    matched = _read("surveillance_matched_latest.json")
+    if matched:
+        m_strict = next((t for t in matched.get("thresholds", []) if t.get("name") == "strict"), None)
+        if m_strict:
+            cards.append({
+                "slot": 6,
+                "status": "live",
+                "name": "Matched / Pre-Arranged Orders",
+                "value": f"{m_strict['n_pairs']:,} pairs",
+                "secondary": (
+                    f"persistent counterparty pairs ({m_strict['min_trades']}+ shared trades, "
+                    f"{m_strict['min_markets']}+ markets, ${m_strict['min_vol']:,}+) | "
+                    f"${m_strict['shared_volume']/1e9:.2f}B shared volume"
+                ),
+                "description": (
+                    "Wallet pairs that have been counterparties on many matches across many "
+                    "markets. The signature distinguishes coordinated bilateral trading from "
+                    "the algorithmic-MM rotation that dominates Tier 2 wash. Patterns "
+                    "consistent with: coordinated bilateral trading (upper bound; includes "
+                    "competing MMs in the same niche)."
+                ),
+                "href": "/surveillance/matched-orders",
+                "pattern_consistent_with": "coordinated bilateral trading",
+            })
+
+    # --- Roadmap stubs (7) ---
     stubs = [
-        {
-            "slot": 6,
-            "status": "coming_soon",
-            "name": "Matched / Pre-Arranged Orders",
-            "value": "in development",
-            "secondary": "wallet pairs with persistent counterparty relationships",
-            "description": (
-                "Wallet pairs trading the same markets within short windows, "
-                "repeatedly, with offsetting positions. Tighter Daubert burden "
-                "than wash trading because legitimate liquidity providers create "
-                "false positives; reported as 'patterns consistent with' only."
-            ),
-            "href": "/surveillance",
-            "pattern_consistent_with": "coordinated bilateral trading",
-        },
         {
             "slot": 7,
             "status": "coming_soon",

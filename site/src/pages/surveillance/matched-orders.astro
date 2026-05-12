@@ -1,0 +1,161 @@
+---
+import DeepDiveLayout from "../../components/redesign/DeepDiveLayout.astro";
+import data from "../../../public/data/surveillance_matched_latest.json";
+
+const pop = data.population;
+const ss = pop.summary_stats;
+const thresh = data.thresholds as any[];
+const dist = data.trade_count_distribution as any[];
+const tp = data.top_pair_summary;
+
+const strict = thresh.find(t => t.name === "strict")!;
+const medium = thresh.find(t => t.name === "medium")!;
+const loose  = thresh.find(t => t.name === "loose")!;
+
+function fmtNum(x: number): string { return x.toLocaleString(); }
+function fmtUsd(x: number): string {
+  if (x >= 1e9) return `$${(x/1e9).toFixed(2)}B`;
+  if (x >= 1e6) return `$${(x/1e6).toFixed(1)}M`;
+  if (x >= 1e3) return `$${(x/1e3).toFixed(0)}K`;
+  return `$${x.toFixed(0)}`;
+}
+
+const lede = `Across the on-chain panel, ${fmtNum(pop.n_persistent_pairs)} wallet pairs have been counterparties on at least ${data.min_trades_per_pair} matches. The strict threshold (${fmtNum(strict.min_trades)}+ shared matches, ${strict.min_markets}+ shared markets, ${fmtUsd(strict.min_vol)}+ shared volume) is met by ${fmtNum(strict.n_pairs)} pairs, totaling ${fmtUsd(strict.shared_volume)} of shared volume. The flag is "patterns consistent with coordinated bilateral trading" — the structural precondition for wash trading via two linked wallets, but also produced naturally by competing algorithmic market makers that face each other in the same niche markets. Tier 3 v1 is a structural screen; a direction-weighted refinement is the natural next step.`;
+---
+<DeepDiveLayout
+  title="Matched / Pre-Arranged Orders"
+  description="Persistent wallet-pair counterparty relationships on Polymarket."
+  eyebrow="DV-PMI Surveillance · Matched orders"
+  lede={lede}
+  asOf={`Cumulative through ${data.as_of}`}
+  citeKey="dellavedova2026matched"
+  citeTitle="Matched / Pre-Arranged Orders Index"
+  citePath="surveillance/matched-orders">
+
+  <Fragment slot="chart">
+    <div style="padding:24px; background: var(--c-surface, #0c1622); border: 1px solid var(--c-border, #1c2a3a); border-radius: 6px;">
+      <table style="width:100%;">
+        <tr><th></th><th style="text-align:right;">Value</th></tr>
+        <tr><td>Persistent pairs (≥{data.min_trades_per_pair} shared trades)</td><td style="text-align:right;font-family:monospace;">{fmtNum(pop.n_persistent_pairs)}</td></tr>
+        <tr><td>Total trades within persistent pairs</td><td style="text-align:right;font-family:monospace;">{fmtNum(pop.total_trades_within_persistent_pairs)}</td></tr>
+        <tr><td>Total volume within persistent pairs</td><td style="text-align:right;font-family:monospace;">{fmtUsd(pop.total_volume_within_persistent_pairs)}</td></tr>
+        <tr><td>Median trades per pair</td><td style="text-align:right;font-family:monospace;">{ss.median_n_trades.toFixed(0)}</td></tr>
+        <tr><td>Mean markets per pair</td><td style="text-align:right;font-family:monospace;">{ss.mean_n_markets.toFixed(1)}</td></tr>
+        <tr><td>Median trades per shared market</td><td style="text-align:right;font-family:monospace;">{ss.median_trades_per_market.toFixed(2)}</td></tr>
+      </table>
+    </div>
+  </Fragment>
+  <Fragment slot="caption">
+    Population: wallet pairs with at least {data.min_trades_per_pair} matches against each other across the full on-chain panel.
+  </Fragment>
+
+  <h2>Threshold table</h2>
+  <p>
+    Three threshold tiers tighten the screen by increasing the required number of shared
+    matches, the breadth of shared markets, and the dollar volume floor. The strict tier
+    represents the highest-conviction subset of "patterns consistent with coordinated
+    bilateral trading."
+  </p>
+  <table>
+    <tr>
+      <th>Threshold</th>
+      <th>Min shared trades</th>
+      <th>Min shared markets</th>
+      <th>Min shared volume</th>
+      <th>Pairs flagged</th>
+      <th>Shared volume in flagged pairs</th>
+    </tr>
+    {thresh.map((row: any) => (
+      <tr>
+        <td><strong>{row.name}</strong></td>
+        <td class="mono">{fmtNum(row.min_trades)}</td>
+        <td class="mono">{fmtNum(row.min_markets)}</td>
+        <td class="mono">{fmtUsd(row.min_vol)}</td>
+        <td class="mono">{fmtNum(row.n_pairs)}</td>
+        <td class="mono">{fmtUsd(row.shared_volume)}</td>
+      </tr>
+    ))}
+  </table>
+
+  <h2>Distribution of pair sizes</h2>
+  <p>
+    Histogram of persistent pairs by number of shared matches. Most pairs sit just above
+    the persistence threshold; a tail of frequent counterparty pairs extends into the
+    thousands-of-trades range.
+  </p>
+  <table>
+    <tr><th>Shared trades</th><th>Pairs</th><th>Share of persistent pairs</th><th>Shared volume</th></tr>
+    {dist.map(b => (
+      <tr>
+        <td class="mono">{b.bucket}</td>
+        <td class="mono">{fmtNum(b.n_pairs)}</td>
+        <td class="mono">{((b.n_pairs / pop.n_persistent_pairs) * 100).toFixed(1)}%</td>
+        <td class="mono">{fmtUsd(b.total_volume)}</td>
+      </tr>
+    ))}
+  </table>
+
+  <h2>Top-pair profile (strict threshold; addresses not shown)</h2>
+  <p>
+    Summary statistics over the top 20 pairs ranked by shared volume. Pairs reaching the
+    highest volumes generally span many markets and many trades, which is the structural
+    signature of two-MM competition in the same niche rather than coordinated wash trading.
+  </p>
+  <table>
+    <tr><th>Metric</th><th>Median across top 20</th><th>Maximum</th></tr>
+    <tr><td>Shared trades</td><td class="mono">{fmtNum(Math.round(tp.median_n_trades))}</td><td class="mono">{fmtNum(tp.max_n_trades)}</td></tr>
+    <tr><td>Shared markets</td><td class="mono">{tp.median_n_markets.toFixed(0)}</td><td class="mono">—</td></tr>
+    <tr><td>Shared volume</td><td class="mono">{fmtUsd(tp.median_total_volume)}</td><td class="mono">{fmtUsd(tp.max_total_volume)}</td></tr>
+    <tr><td>Pair-relationship span (days)</td><td class="mono">{tp.median_span_days.toFixed(0)}</td><td class="mono">—</td></tr>
+  </table>
+
+  <h2>Methodology</h2>
+  <p>{data.methodology}</p>
+  <p>
+    The implementation uses a single-pass duckdb groupby with a HAVING-clause pre-filter
+    so the materialized result is small enough to aggregate in memory. The pair direction
+    is sorted ({"LEAST(maker, taker)"} and {"GREATEST(maker, taker)"}) so each unordered
+    pair appears once. Self-matches are excluded (those are Tier 1).
+  </p>
+
+  <h2>Interpretation</h2>
+  <p>
+    Tier 3 reaches the part of the wash-trading framework that Tiers 1 and 2 cannot. Tier 1
+    catches the trivial form (one wallet on both sides) and is essentially zero on Polymarket.
+    Tier 2 catches single-wallet round-trips and is dominated quantitatively by algorithmic
+    market makers, not manipulators. Tier 3 isolates the case where two wallets repeatedly
+    face each other across many markets — the precondition for coordinated wash trading via
+    linked counterparties.
+  </p>
+  <p>
+    The Tier 3 count is an upper bound on coordinated bilateral trading. The lower bound
+    comes from the recognition that some persistent pairs are simply two MMs competing in
+    the same liquidity niche; the structural test cannot distinguish between competing MMs
+    and coordinated washers without additional information. A direction-weighted Tier 3b
+    that measures whether the pair's joint activity nets to zero would tighten the screen
+    further and is a natural future iteration.
+  </p>
+
+  <h3>Limitations</h3>
+  <ul>
+    {data.interpretation_caveats.map((c: string) => <li>{c}</li>)}
+  </ul>
+
+  <h2>Data</h2>
+  <p>
+    <a href="/data/surveillance_matched_latest.json">surveillance_matched_latest.json</a> &middot;
+    <a href="/data/surveillance_matched_top_pairs.csv">surveillance_matched_top_pairs.csv</a>
+    (per-pair detail; usage notice on <a href="/methodology">methodology page</a>)
+  </p>
+
+  <h2>Other surveillance indices</h2>
+  <p>
+    <a href="/surveillance">&larr; All surveillance indices</a> &middot;
+    <a href="/pii">Informed Trading (PII)</a> &middot;
+    <a href="/surveillance/insider-timing">Insider Timing</a> &middot;
+    <a href="/surveillance/adverse-selection">Adverse Selection</a> &middot;
+    <a href="/surveillance/resolution-surprise">Resolution Surprise</a> &middot;
+    <a href="/surveillance/wash-trading">Wash Trading</a> &middot;
+    <a href="/surveillance/concentration">Concentration</a>
+  </p>
+</DeepDiveLayout>

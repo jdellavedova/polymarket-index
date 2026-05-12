@@ -1,0 +1,100 @@
+{
+  "index_name": "Matched / Pre-Arranged Orders",
+  "short_name": "Matched",
+  "as_of": "2026-05-12",
+  "snapshot_note": "Wallet pairs that have been counterparties on at least 10 matches across the on-chain panel. Persistent counterparty pairs that trade across many markets over a long time span are the signature of coordinated wash trading or pre-arranged order flow; algorithmic market makers, by contrast, rotate against many distinct counterparties and concentrate their pair-counts on no single wallet. The strict threshold (1000+ shared trades, 30+ shared markets, $100,000+ shared volume) is the headline; loose and medium thresholds are also reported.",
+  "methodology": "For each match, compute the unordered pair (LEAST(maker, taker), GREATEST(maker, taker)). Group by pair and count matches, distinct markets, total volume, first/last trade dates. Pairs with fewer than 10 shared trades are dropped before materialization. Self-matched trades (maker = taker) are excluded; those are Tier 1 of the wash-trading framework.",
+  "population": {
+    "n_persistent_pairs": 8035810,
+    "approx_n_wallets_involved": 744376,
+    "total_trades_within_persistent_pairs": 465393931,
+    "total_volume_within_persistent_pairs": 12037961753.611977,
+    "summary_stats": {
+      "mean_n_trades": 57.914999359118745,
+      "median_n_trades": 19.0,
+      "mean_n_markets": 7.2840328479642995,
+      "median_n_markets": 0.0,
+      "mean_trades_per_market": 6.678228924092198,
+      "median_trades_per_market": 2.2857142857142856
+    }
+  },
+  "thresholds": [
+    {
+      "name": "loose",
+      "min_trades": 10,
+      "min_markets": 3,
+      "min_vol": 1000,
+      "n_pairs": 498279,
+      "shared_trades": 122839336,
+      "shared_volume": 7455104273.739852
+    },
+    {
+      "name": "medium",
+      "min_trades": 100,
+      "min_markets": 10,
+      "min_vol": 10000,
+      "n_pairs": 36527,
+      "shared_trades": 65790564,
+      "shared_volume": 3061789565.9104805
+    },
+    {
+      "name": "strict",
+      "min_trades": 1000,
+      "min_markets": 30,
+      "min_vol": 100000,
+      "n_pairs": 2366,
+      "shared_trades": 26468314,
+      "shared_volume": 978809467.236088
+    }
+  ],
+  "trade_count_distribution": [
+    {
+      "bucket": "10-24",
+      "n_pairs": 4991282,
+      "total_volume": 3049304420.4322786
+    },
+    {
+      "bucket": "25-99",
+      "n_pairs": 2385799,
+      "total_volume": 3458022333.7840576
+    },
+    {
+      "bucket": "100-499",
+      "n_pairs": 561885,
+      "total_volume": 3002384321.9037
+    },
+    {
+      "bucket": "500-2,499",
+      "n_pairs": 83544,
+      "total_volume": 1411066244.5614438
+    },
+    {
+      "bucket": "2,500-9,999",
+      "n_pairs": 11287,
+      "total_volume": 642177836.0727751
+    },
+    {
+      "bucket": "10,000+",
+      "n_pairs": 2013,
+      "total_volume": 475006596.8576859
+    }
+  ],
+  "top_pair_summary": {
+    "median_n_trades": 468.5,
+    "median_n_markets": 67.0,
+    "median_total_volume": 9794099.388899501,
+    "median_span_days": 65.0,
+    "max_n_trades": 47136,
+    "max_total_volume": 31249134.876179893
+  },
+  "interpretation_caveats": [
+    "Persistent counterparty relationships are necessary but not sufficient for coordinated wash trading. Two algorithmic market makers that compete for liquidity in the same niche markets will appear as a persistent pair without any manipulative intent.",
+    "The flag is reported as 'patterns consistent with coordinated bilateral trading,' not 'wash trading.' Per the site's posture rules.",
+    "No public page names a specific wallet address. The top-pairs CSV with wallet addresses is available under the methodology page's usage notice.",
+    "Tier 3 v1 is a structural test; it does not directly measure offsetting net exposure between pair members. A direction-weighted refinement (Tier 3b) is the natural next iteration."
+  ],
+  "generated_at": "2026-05-12T11:55:36+00:00",
+  "source": "J:/Research/10. Prediction/data/blockchain/processed_trades.csv",
+  "min_trades_per_pair": 10,
+  "wallclock_seconds": 10939
+}
