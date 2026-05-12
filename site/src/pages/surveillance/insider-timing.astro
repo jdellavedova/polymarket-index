@@ -1,0 +1,99 @@
+---
+import DeepDiveLayout from "../../components/redesign/DeepDiveLayout.astro";
+import data from "../../../public/data/surveillance_insider_timing_latest.json";
+
+function fmtH(h: number): string {
+  if (h >= 24 * 30) return `${(h/24/30.4375).toFixed(1)} months`;
+  if (h >= 24) return `${(h/24).toFixed(1)} days`;
+  return `${h.toFixed(0)} hours`;
+}
+function pct(n: number, dp = 2): string { return (n * 100).toFixed(dp) + "%"; }
+
+const h = data.headline;
+const lede = `Wallets flagged by the orthogonality test enter markets at a mean of ${fmtH(h.flagged_mean_hours_to_resolution)} from resolution, compared to ${fmtH(h.nonflagged_mean_hours_to_resolution)} for the non-flagged population. The flagged ratio is ${(h.hours_ratio_flagged_to_nonflagged * 100).toFixed(0)} percent of the population mean. Concentration in the final 72 hours: ${pct(h.flagged_frac_final_72h, 2)} of flagged-wallet trades versus ${pct(h.nonflagged_frac_final_72h, 2)} of non-flagged. The pattern is consistent with late-window information leakage; it does not by itself establish material non-public information.`;
+const buckets = data.by_bucket as any[];
+---
+<DeepDiveLayout
+  title="Insider Timing Concentration"
+  description="When do flagged wallets place their trades, relative to market resolution?"
+  eyebrow="DV-PMI Surveillance · Timing"
+  lede={lede}
+  asOf={`Cumulative snapshot through ${data.as_of}`}
+  citeKey="dellavedova2026timing"
+  citeTitle="Insider Timing Concentration Index"
+  citePath="surveillance/insider-timing">
+
+  <Fragment slot="chart">
+    <div style="padding:24px; background: var(--c-surface, #0c1622); border: 1px solid var(--c-border, #1c2a3a); border-radius: 6px;">
+      <table style="width:100%;">
+        <tr><th style="text-align:left;">Days-to-resolution</th><th style="text-align:right;">Flagged EA</th><th style="text-align:right;">Non-flagged EA</th></tr>
+        {buckets.map(b => (
+          <tr>
+            <td style="font-family:monospace;">{b.dtr_bucket}</td>
+            <td style="text-align:right;font-family:monospace;">{b.flagged_ea !== null ? b.flagged_ea.toFixed(3) : "—"}</td>
+            <td style="text-align:right;font-family:monospace;">{b.nonflagged_ea !== null ? b.nonflagged_ea.toFixed(3) : "—"}</td>
+          </tr>
+        ))}
+      </table>
+    </div>
+  </Fragment>
+  <Fragment slot="caption">
+    Excess accuracy by time-to-resolution bucket. Flagged wallets show small positive excess accuracy in
+    every window; the non-flagged population is sharply negative because the population accuracy is bounded
+    above by the price-implied benchmark.
+  </Fragment>
+
+  <h2>Headline numbers</h2>
+  <table>
+    <tr><th></th><th>Flagged wallets</th><th>Non-flagged wallets</th></tr>
+    <tr><td>Sample size</td><td class="mono">{h.flagged_n_wallets.toLocaleString()}</td><td class="mono">{h.nonflagged_n_wallets.toLocaleString()}</td></tr>
+    <tr><td>Mean hours to resolution</td><td class="mono">{h.flagged_mean_hours_to_resolution.toFixed(0)}</td><td class="mono">{h.nonflagged_mean_hours_to_resolution.toFixed(0)}</td></tr>
+    <tr><td>Median hours to resolution</td><td class="mono">{h.flagged_median_hours_to_resolution.toFixed(0)}</td><td class="mono">{h.nonflagged_median_hours_to_resolution.toFixed(0)}</td></tr>
+    <tr><td>Fraction in final 72 hours</td><td class="mono">{pct(h.flagged_frac_final_72h, 3)}</td><td class="mono">{pct(h.nonflagged_frac_final_72h, 3)}</td></tr>
+  </table>
+
+  <h2>Methodology</h2>
+  <p>
+    For each wallet, we measure the mean and median hours between trade timestamp and the market's
+    resolution timestamp. The "flagged" population is the set of wallets whose excess accuracy survives
+    a one-sided binomial z-test at p &lt; 0.01 (the Paper 2 PII screen). The non-flagged population is
+    every other wallet that meets the minimum-trades threshold. The metric reports a pattern; it does
+    not establish intent or material non-public information.
+  </p>
+  <p>
+    Known false-positive sources: (a) flagged wallets that are short-horizon algorithmic strategies
+    rather than informed traders will mechanically trade closer to resolution; (b) markets with short
+    natural windows (sports, single-day events) compress the entire population toward resolution
+    regardless of information.
+  </p>
+
+  <h2>Limitations</h2>
+  <p>
+    Hours-to-resolution is computed from on-chain block timestamps. Sub-second precision is not available.
+    The metric is wallet-level mean, not trade-level; a wallet that places one early trade and many late
+    trades is still represented by a single mean. This is the convention in Paper 2; an alternative
+    trade-weighted decomposition is a candidate revision item.
+  </p>
+
+  <h2>Source paper</h2>
+  <p>
+    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6567238">
+      Della Vedova, J. (2026). Detecting Informed Trading in Prediction Markets: An Orthogonality Test. SSRN.
+    </a>
+    Section: Pre-Resolution Timing Test.
+  </p>
+
+  <h2>Data</h2>
+  <p>
+    <a href="/data/surveillance_insider_timing_latest.json">surveillance_insider_timing_latest.json</a>
+  </p>
+
+  <h2>Other surveillance indices</h2>
+  <p>
+    <a href="/surveillance">&larr; All surveillance indices</a> &middot;
+    <a href="/pii">Informed Trading (PII)</a> &middot;
+    <a href="/surveillance/adverse-selection">Adverse Selection</a> &middot;
+    <a href="/surveillance/resolution-surprise">Resolution Surprise</a> &middot;
+    <a href="/surveillance/wash-trading">Wash Trading</a>
+  </p>
+</DeepDiveLayout>

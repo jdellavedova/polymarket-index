@@ -1,0 +1,109 @@
+---
+import Base from "../../layouts/Base.astro";
+import AuthorityStrip from "../../components/redesign/AuthorityStrip.astro";
+
+import overview from "../../../public/data/surveillance_overview_latest.json";
+
+const cards = overview.cards as any[];
+const liveCards = cards.filter(c => c.status === "live");
+const stubCards = cards.filter(c => c.status === "coming_soon");
+const infeasible = overview.infeasible_tests as any[];
+---
+<Base
+  title="DV-PMI Surveillance Indices"
+  description="Eight market-integrity tests on the 670M-trade Polymarket on-chain panel. Patterns reported are statistical, not legal conclusions."
+  wide={true}>
+
+  <section class="re-hero">
+    <div class="re-hero-text">
+      <p class="dd-eyebrow">DV-PMI &middot; Market integrity</p>
+      <h1 class="re-h1">Surveillance Indices</h1>
+      <p class="re-lede">
+        {overview.subtitle} Of the eight indices we publish, <strong>{overview.n_live} are live</strong> and four are
+        in development. Three classic FINRA tests (spoofing, layering, quote stuffing) require order-book and
+        cancellation data that the on-chain trade record does not contain; we list them below the live indices
+        rather than approximate them.
+      </p>
+      <p class="dd-stamp">Cumulative snapshot through {overview.as_of} &middot; Per-wallet detail in <a href="/data">downloads</a></p>
+    </div>
+  </section>
+
+  <h2 class="rs-section-h">Live indices ({liveCards.length})</h2>
+  <p class="rs-section-sub">
+    Each test reports patterns consistent with the named conduct, not legal conclusions about any wallet.
+    No public page names a specific wallet address. Per-wallet detail is available in the downloadable CSVs.
+  </p>
+  <div class="rs-grid">
+    {liveCards.map(c => (
+      <a class="rs-card rs-card-program" href={c.href}>
+        <div class="rs-card-top">
+          <span class="rs-paper-n">#{c.slot}</span>
+          <span class="rs-status rs-status-active">Live</span>
+        </div>
+        <div class="rs-card-title">{c.name}</div>
+        <div class="rs-card-meta">{c.value} &middot; {c.secondary}</div>
+        <p class="rs-card-summary">{c.description}</p>
+        <div class="rs-card-meta" style="margin-top:8px; font-size:0.85em; opacity:0.85;">
+          <em>Pattern consistent with: {c.pattern_consistent_with}</em>
+        </div>
+        <div class="rs-card-link">View index &rarr;</div>
+      </a>
+    ))}
+  </div>
+
+  <h2 class="rs-section-h">In development ({stubCards.length})</h2>
+  <p class="rs-section-sub">
+    These four indices are scheduled for subsequent releases. Aggregator design and data feasibility are
+    confirmed; the bottleneck is implementation time.
+  </p>
+  <div class="rs-grid">
+    {stubCards.map(c => (
+      <article class="rs-card">
+        <div class="rs-card-top">
+          <span class="rs-paper-n">#{c.slot}</span>
+          <span class="rs-status rs-status-wip">In development</span>
+        </div>
+        <div class="rs-card-title">{c.name}</div>
+        <div class="rs-card-meta">{c.secondary}</div>
+        <p class="rs-card-summary">{c.description}</p>
+        <div class="rs-card-meta" style="margin-top:8px; font-size:0.85em; opacity:0.85;">
+          <em>Will flag patterns consistent with: {c.pattern_consistent_with}</em>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <h2 class="rs-section-h">Not feasible on this data</h2>
+  <p class="rs-section-sub">
+    Three classic FINRA-style surveillance tests cannot be run on the on-chain Polymarket panel.
+    We list them explicitly rather than approximate them.
+  </p>
+  <div class="rs-grid">
+    {infeasible.map(t => (
+      <article class="rs-card">
+        <div class="rs-card-title">{t.name}</div>
+        <div class="rs-card-meta">{t.finra_rule}</div>
+        <p class="rs-card-summary">{t.reason}</p>
+      </article>
+    ))}
+  </div>
+
+  <h2 class="rs-section-h">Methodology and posture</h2>
+  <div style="max-width: 760px; line-height: 1.7;">
+    <p>{overview.methodology_note}</p>
+    <p>
+      The four live indices are surfaces of empirical results from
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6567238">Della Vedova (2026), <em>Detecting Informed Trading
+      in Prediction Markets: An Orthogonality Test</em></a>. Each is mapped onto the four <em>Daubert</em> Rule 702 factors
+      (testability, known error rate, peer-reviewed methodology, general acceptance) in the source paper and on the
+      <a href="/expert-witness">consulting page</a>.
+    </p>
+    <p>
+      The dashboard is read-only. It does not produce enforcement recommendations or advisory opinions and is
+      not a substitute for forensic review by a qualified expert. For engagement inquiries, see
+      <a href="/expert-witness">/expert-witness</a>.
+    </p>
+  </div>
+
+  <AuthorityStrip />
+</Base>

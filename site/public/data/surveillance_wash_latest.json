@@ -1,0 +1,95 @@
+{
+  "index_name": "Wash Trading",
+  "short_name": "Wash",
+  "as_of": "2023-W17",
+  "snapshot_note": "Tier 1 (self-matched) result on the full on-chain panel. Polymarket's CLOB does not permit a single wallet to match its own resting order under normal operation; observed self-matched trades are either pre-launch test transactions, contract-deployment artifacts, or rare edge cases. The near-zero share is the expected pattern for a competently-built venue and rules out the simplest wash-trading regime.",
+  "tier1_methodology": "A trade is counted as Tier 1 wash if maker_address == taker_address (case-insensitive). FINRA Rule 6140 economic analog: a trade between two accounts under common beneficial control with no change in ownership.",
+  "headline": {
+    "n_trades_total": 712317074,
+    "n_self_matched": 905,
+    "self_matched_share_by_count": 1.2705016249547318e-06,
+    "total_volume": 27713496071.632545,
+    "self_matched_volume": 233757.14797599963,
+    "self_matched_share_by_volume": 8.434776593028722e-06,
+    "n_markets_affected": 245,
+    "n_wallets_involved": 70,
+    "n_repeat_wallets_ge_5_trades": 21
+  },
+  "top_markets": [
+    {
+      "market_id": "240380",
+      "n": 100,
+      "vol": 4285.506416000001
+    },
+    {
+      "market_id": "249497",
+      "n": 77,
+      "vol": 569.2499999999997
+    },
+    {
+      "market_id": "248974",
+      "n": 47,
+      "vol": 146.85000000000016
+    },
+    {
+      "market_id": "250113",
+      "n": 23,
+      "vol": 271.5
+    },
+    {
+      "market_id": "247266",
+      "n": 17,
+      "vol": 873.200286
+    },
+    {
+      "market_id": "248578",
+      "n": 17,
+      "vol": 110.67999999999999
+    },
+    {
+      "market_id": "248975",
+      "n": 16,
+      "vol": 182.94969999999998
+    },
+    {
+      "market_id": "248890",
+      "n": 16,
+      "vol": 10430.870005
+    },
+    {
+      "market_id": "248820",
+      "n": 14,
+      "vol": 2732.75
+    },
+    {
+      "market_id": "249524",
+      "n": 13,
+      "vol": 12769.408
+    }
+  ],
+  "by_year": [
+    {
+      "year": 2022,
+      "n": 109,
+      "vol": 18093.302254000002
+    },
+    {
+      "year": 2023,
+      "n": 796,
+      "vol": 215663.84572200078
+    }
+  ],
+  "tiers_forthcoming": [
+    {
+      "name": "Tier 2 \u2014 Round-trip wash",
+      "description": "Single wallet buys and sells the same outcome token within a short window, netting to zero or near-zero exposure while contributing to volume."
+    },
+    {
+      "name": "Tier 3 \u2014 Cluster wash (linked wallets)",
+      "description": "Repeated wallet-pair counterparties trading the same outcome in tight time windows with offsetting net exposure."
+    }
+  ],
+  "generated_at": "2026-05-12T02:21:56+00:00",
+  "source": "J:/Research/10. Prediction/data/blockchain/processed_trades.csv",
+  "wallclock_seconds": 6920
+}

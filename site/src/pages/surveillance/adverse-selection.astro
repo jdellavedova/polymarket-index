@@ -1,0 +1,112 @@
+---
+import DeepDiveLayout from "../../components/redesign/DeepDiveLayout.astro";
+import data from "../../../public/data/surveillance_spread_latest.json";
+
+const h = data.headline;
+function pct(n: number, dp = 2): string { return (n * 100).toFixed(dp) + "%"; }
+
+const lede = `Effective spreads on Polymarket are measurably ${h.direction} (${h.spread_gap.toFixed(3)} units, t = ${h.regression_t_has_sig_wallet.toFixed(0)}) in markets where flagged wallets trade. Of ${h.n_markets_total.toLocaleString()} markets with sufficient data, ${h.n_markets_with_flagged.toLocaleString()} (${pct(h.share_markets_with_flagged, 1)}) contain at least one wallet flagged by the orthogonality test. The textbook Glosten-Milgrom prediction is widening, not tightening; the realized direction inverts that prediction and is consistent with the Paper 1 finding that algorithmic market makers concentrate in information-rich markets rather than retreating from them.`;
+---
+<DeepDiveLayout
+  title="Adverse Selection / Spread Pattern"
+  description="Do effective spreads on Polymarket widen, or tighten, in markets where flagged wallets trade?"
+  eyebrow="DV-PMI Surveillance · Spreads"
+  lede={lede}
+  asOf={`Cumulative snapshot through ${data.as_of}`}
+  citeKey="dellavedova2026spreads"
+  citeTitle="Adverse Selection / Spread Pattern Index"
+  citePath="surveillance/adverse-selection">
+
+  <Fragment slot="chart">
+    <div style="padding:24px; background: var(--c-surface, #0c1622); border: 1px solid var(--c-border, #1c2a3a); border-radius: 6px;">
+      <table style="width:100%;">
+        <tr><th></th><th style="text-align:right;">Mean spread</th><th style="text-align:right;">Markets</th></tr>
+        <tr>
+          <td>Markets with flagged wallets</td>
+          <td style="text-align:right;font-family:monospace;">{h.mean_spread_in_flagged_markets.toFixed(3)}</td>
+          <td style="text-align:right;font-family:monospace;">{h.n_markets_with_flagged.toLocaleString()}</td>
+        </tr>
+        <tr>
+          <td>Markets without flagged wallets</td>
+          <td style="text-align:right;font-family:monospace;">{h.mean_spread_in_clean_markets.toFixed(3)}</td>
+          <td style="text-align:right;font-family:monospace;">{(h.n_markets_total - h.n_markets_with_flagged).toLocaleString()}</td>
+        </tr>
+        <tr style="border-top:1px solid var(--c-border, #1c2a3a);">
+          <td><strong>Gap</strong></td>
+          <td style="text-align:right;font-family:monospace;"><strong>{h.spread_gap >= 0 ? "+" : ""}{h.spread_gap.toFixed(3)}</strong></td>
+          <td style="text-align:right;font-family:monospace;">({h.direction})</td>
+        </tr>
+      </table>
+    </div>
+  </Fragment>
+  <Fragment slot="caption">
+    Effective spread is measured per trade as the gap between price paid and the immediate post-trade
+    mid; aggregated to the market level. The direction reverses the canonical Glosten-Milgrom prediction.
+  </Fragment>
+
+  <h2>Regression summary</h2>
+  <table>
+    <tr><th>Model</th><th>n</th><th>β (flagged indicator)</th><th>t</th><th>R²</th></tr>
+    {data.regression_summary.map((r: any) => (
+      <tr>
+        <td>{r.model}</td>
+        <td class="mono">{r.n.toLocaleString()}</td>
+        <td class="mono">{r.beta_sig.toFixed(3)}</td>
+        <td class="mono">{r.t_sig.toFixed(1)}</td>
+        <td class="mono">{r.R2.toFixed(3)}</td>
+      </tr>
+    ))}
+  </table>
+
+  <h2>Interpretation</h2>
+  <p>
+    The naive adverse-selection prediction (Glosten-Milgrom 1985) is that markets with private information
+    should exhibit wider spreads, because market makers widen to recoup expected losses to informed traders.
+    On Polymarket the pattern is reversed: spreads are tighter where flagged wallets trade. The most likely
+    explanation, drawn from Paper 1, is that algorithmic market makers do not retreat from information-rich
+    markets, they crowd into them. The information flow that should widen spreads instead attracts compete
+    among market makers, and the net effect is tighter spreads.
+  </p>
+  <p>
+    This is not a refutation of Glosten-Milgrom; it is a different equilibrium under different
+    market-maker incentives. Polymarket bots do not face the same inventory and capital constraints as
+    equity dealers, so the standard widening response is muted or reversed.
+  </p>
+
+  <h2>Methodology</h2>
+  <p>
+    For each market with at least 50 trades, we compute mean effective spread across all trades, the
+    presence of a flagged wallet (one-sided binomial z-test at p &lt; 0.01), and the fraction of trades
+    placed by flagged wallets. The reported regression is OLS of market-level mean spread on the flagged
+    indicator, with no fixed effects in (1), with controls (volume, n_trades) in (3).
+  </p>
+
+  <h2>Limitations</h2>
+  <p>
+    The effective-spread measure is a single-trade approximation that does not account for changing
+    quote depth or maker-taker fee schedules. The on-chain trade record does not include quote-level
+    data, so a tighter (Lee-Ready style) measure is not feasible.
+  </p>
+
+  <h2>Source paper</h2>
+  <p>
+    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6567238">
+      Della Vedova, J. (2026). Detecting Informed Trading in Prediction Markets: An Orthogonality Test. SSRN.
+    </a>
+    Section: Adverse Selection Test.
+  </p>
+
+  <h2>Data</h2>
+  <p>
+    <a href="/data/surveillance_spread_latest.json">surveillance_spread_latest.json</a>
+  </p>
+
+  <h2>Other surveillance indices</h2>
+  <p>
+    <a href="/surveillance">&larr; All surveillance indices</a> &middot;
+    <a href="/pii">Informed Trading (PII)</a> &middot;
+    <a href="/surveillance/insider-timing">Insider Timing</a> &middot;
+    <a href="/surveillance/resolution-surprise">Resolution Surprise</a> &middot;
+    <a href="/surveillance/wash-trading">Wash Trading</a>
+  </p>
+</DeepDiveLayout>

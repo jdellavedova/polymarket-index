@@ -1,0 +1,99 @@
+{
+  "index_name": "Resolution Surprise",
+  "short_name": "Surprise",
+  "as_of": "2026-02-28",
+  "snapshot_note": "Cumulative snapshot from Paper 2. Excess accuracy in markets that resolved opposite to the consensus pre-resolution price. Flagged wallets show positive excess accuracy in every surprise tercile, including in markets where the population was systematically wrong.",
+  "source_paper": "Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets'",
+  "headline": {
+    "regression_beta_flagged": 0.4773934919962701,
+    "regression_t_flagged": 49.38861624030879,
+    "regression_beta_interaction": 0.1662054791774339,
+    "regression_t_interaction": 9.089651331788996,
+    "regression_n": 2000000,
+    "high_surprise_ea_gap": 0.4498183937909386
+  },
+  "by_tercile": [
+    {
+      "surprise_tercile": "low",
+      "flagged_excess_accuracy": 0.0464122325421544,
+      "flagged_mean_edge": 0.0908831057855951,
+      "flagged_n_trades": 250110,
+      "flagged_volume": 64469535.184385344,
+      "nonflagged_excess_accuracy": -0.3944644334079472,
+      "nonflagged_mean_edge": 0.0029080230215719,
+      "nonflagged_n_trades": 49662822,
+      "nonflagged_volume": 4301515641.111604,
+      "ea_gap": 0.44087666595010155
+    },
+    {
+      "surprise_tercile": "medium",
+      "flagged_excess_accuracy": 0.165931708047994,
+      "flagged_mean_edge": 0.2043626251155379,
+      "flagged_n_trades": 751546,
+      "flagged_volume": 243575136.78594103,
+      "nonflagged_excess_accuracy": -0.2237283105336655,
+      "nonflagged_mean_edge": 0.0049506015824806,
+      "nonflagged_n_trades": 74788813,
+      "nonflagged_volume": 4960436950.597938,
+      "ea_gap": 0.3896600185816595
+    },
+    {
+      "surprise_tercile": "high",
+      "flagged_excess_accuracy": 0.05350057426951,
+      "flagged_mean_edge": 0.1007770326299652,
+      "flagged_n_trades": 431724,
+      "flagged_volume": 88033880.29110293,
+      "nonflagged_excess_accuracy": -0.3963178195214286,
+      "nonflagged_mean_edge": -0.0021357657477744,
+      "nonflagged_n_trades": 96302114,
+      "nonflagged_volume": 5913284160.494745,
+      "ea_gap": 0.4498183937909386
+    }
+  ],
+  "regression_summary": [
+    {
+      "model": "(1) Market surprise",
+      "n": 2000000,
+      "b_flagged": 0.4773934919962701,
+      "t_flagged": 49.38861624030879,
+      "b_surprise": -0.1362778019181465,
+      "t_surprise": -101.53869795058056,
+      "b_interaction": 0.1662054791774339,
+      "t_interaction": 9.089651331788996,
+      "b_volume": null,
+      "t_volume": null,
+      "R2": 0.0117510765409856
+    },
+    {
+      "model": "(2) + Volume",
+      "n": 2000000,
+      "b_flagged": 0.4557610465041405,
+      "t_flagged": 48.44866403243829,
+      "b_surprise": -0.1339415751668326,
+      "t_surprise": -99.86596168783468,
+      "b_interaction": 0.1380611800679509,
+      "t_interaction": 7.793132609743102,
+      "b_volume": 0.0102831464868038,
+      "t_volume": 79.75147126442859,
+      "R2": 0.01485160099724
+    },
+    {
+      "model": "(3) Trade surprise + Volume",
+      "n": 2000000,
+      "b_flagged": 0.5135601357110323,
+      "t_flagged": 80.05083291876066,
+      "b_surprise": 0.1005646394192277,
+      "t_surprise": 97.67018207633456,
+      "b_interaction": 0.0179352686204605,
+      "t_interaction": 1.609761941978788,
+      "b_volume": 0.0105607522410302,
+      "t_volume": 82.50326756163734,
+      "R2": 0.0145449141022127
+    }
+  ],
+  "generated_at": "2026-05-11T21:07:28+00:00",
+  "sources": [
+    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage31_surprise_regression.csv",
+    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage31_flag_rate_by_surprise.csv"
+  ]
+}

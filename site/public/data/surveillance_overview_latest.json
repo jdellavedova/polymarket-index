@@ -1,0 +1,108 @@
+{
+  "title": "DV-PMI Surveillance Indices",
+  "subtitle": "Eight market-integrity tests on the 670M-trade Polymarket on-chain panel. Patterns reported are statistical, not legal conclusions.",
+  "n_live": 5,
+  "n_total": 8,
+  "as_of": "2026-02-28",
+  "generated_at": "2026-05-12T05:54:13+00:00",
+  "cards": [
+    {
+      "slot": 1,
+      "status": "live",
+      "name": "Informed Trading (PII)",
+      "value": "6,292 flagged",
+      "secondary": "of 483,234 tested (1.30%)",
+      "description": "Wallets whose accuracy cannot be explained by price-following alone. Binomial orthogonality test at p<0.01 with Holm-Bonferroni and Benjamini-Hochberg corrections.",
+      "href": "/pii",
+      "pattern_consistent_with": "private information advantage"
+    },
+    {
+      "slot": 2,
+      "status": "live",
+      "name": "Insider Timing Concentration",
+      "value": "704h vs 1460h",
+      "secondary": "flagged wallets enter at 48% of population time-to-resolution",
+      "description": "How close to market resolution flagged wallets place their trades, versus the non-flagged population. Lower ratios are consistent with pre-resolution information leakage.",
+      "href": "/surveillance/insider-timing",
+      "pattern_consistent_with": "late-window information leakage"
+    },
+    {
+      "slot": 3,
+      "status": "live",
+      "name": "Adverse Selection",
+      "value": "-0.173 tighter",
+      "secondary": "in 65,910 markets with flagged wallets",
+      "description": "Effective spread differential between markets with and without flagged-wallet activity. The textbook Glosten-Milgrom prediction is wider spreads; on Polymarket the pattern is the opposite, consistent with algorithmic market makers crowding into information-rich markets.",
+      "href": "/surveillance/adverse-selection",
+      "pattern_consistent_with": "market-maker crowding (not adverse-selection retreat)"
+    },
+    {
+      "slot": 4,
+      "status": "live",
+      "name": "Resolution Surprise",
+      "value": "+0.450",
+      "secondary": "flagged minus non-flagged excess accuracy, high-surprise markets",
+      "description": "Excess accuracy of flagged wallets in markets that resolved opposite to the consensus pre-resolution price. Flagged wallets are positive in every surprise tercile; the population is negative in every tercile.",
+      "href": "/surveillance/resolution-surprise",
+      "pattern_consistent_with": "ex-ante knowledge of contrarian outcomes"
+    },
+    {
+      "slot": 5,
+      "status": "live",
+      "name": "Wash Trading (Tiers 1+2)",
+      "value": "905 self-matched",
+      "secondary": "Tier 1: 0.0001% self-matched. Tier 2 strict: 50,646 pairs, $1.90B round-trip volume (upper bound; includes algorithmic market making)",
+      "description": "Tier 1: self-matched trades, FINRA Rule 6140 analog. Polymarket's CLOB does not permit self-matching at scale; Tier 1 is essentially zero. Tier 2: round-trip wash, wallets buying and selling the same token through different counterparties. The Tier 2 strict-threshold set is dominated by algorithmic market makers, not manipulators; Tier 3 (linked-wallet clusters) is forthcoming and required to isolate wash from inventory rotation.",
+      "href": "/surveillance/wash-trading",
+      "pattern_consistent_with": "volume inflation via non-economic trading"
+    },
+    {
+      "slot": 6,
+      "status": "coming_soon",
+      "name": "Matched / Pre-Arranged Orders",
+      "value": "in development",
+      "secondary": "wallet pairs with persistent counterparty relationships",
+      "description": "Wallet pairs trading the same markets within short windows, repeatedly, with offsetting positions. Tighter Daubert burden than wash trading because legitimate liquidity providers create false positives; reported as 'patterns consistent with' only.",
+      "href": "/surveillance",
+      "pattern_consistent_with": "coordinated bilateral trading"
+    },
+    {
+      "slot": 7,
+      "status": "coming_soon",
+      "name": "Marking the Close",
+      "value": "in development",
+      "secondary": "directional concentration in final pre-resolution window",
+      "description": "Concentration of one-sided trading in the final hours before market resolution moving the settling price. Limited by minute-grain timestamps in on-chain data; intraday precision not possible.",
+      "href": "/surveillance",
+      "pattern_consistent_with": "settling-price manipulation"
+    },
+    {
+      "slot": 8,
+      "status": "coming_soon",
+      "name": "Concentration / Pump Risk",
+      "value": "in development",
+      "secondary": "Herfindahl + single-wallet directional dominance",
+      "description": "Herfindahl index of trader activity per market combined with single-wallet directional dominance and price drift. Flags markets where one trader is large enough to move the consensus price alone.",
+      "href": "/surveillance",
+      "pattern_consistent_with": "single-trader price control"
+    }
+  ],
+  "infeasible_tests": [
+    {
+      "name": "Spoofing",
+      "reason": "Requires cancelled-order data, which is not on-chain.",
+      "finra_rule": "Section 9(a) Securities Exchange Act; FINRA Rule 5210"
+    },
+    {
+      "name": "Layering",
+      "reason": "Requires order-book depth snapshots, which we do not collect.",
+      "finra_rule": "FINRA Rule 5210"
+    },
+    {
+      "name": "Quote Stuffing",
+      "reason": "Requires sub-second order submission rates, which the on-chain trade record does not contain.",
+      "finra_rule": "FINRA Rule 5210; Reg NMS Rule 605"
+    }
+  ],
+  "methodology_note": "All eight indices report patterns consistent with the named conduct rather than legal conclusions about any wallet's intent. No public page names a specific wallet address. Per-wallet detail is available in downloadable CSVs subject to the usage notice on the methodology page. We benchmark against the leading heuristic approach in the literature (Mitts and Ofir, 2026); the concordance is reported on the PII page."
+}

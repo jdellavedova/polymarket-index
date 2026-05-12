@@ -1,0 +1,115 @@
+---
+import DeepDiveLayout from "../../components/redesign/DeepDiveLayout.astro";
+import data from "../../../public/data/surveillance_surprise_latest.json";
+
+const h = data.headline;
+const terciles = data.by_tercile as any[];
+
+const highTercile = terciles.find(t => t.surprise_tercile === "high")!;
+
+const lede = `In markets that resolved opposite to the consensus pre-resolution price (the "high surprise" tercile), flagged wallets show ${highTercile.flagged_excess_accuracy.toFixed(3)} excess accuracy while the non-flagged population shows ${highTercile.nonflagged_excess_accuracy.toFixed(3)}. The pooled regression coefficient on the flagged indicator is ${h.regression_beta_flagged.toFixed(3)} (t = ${h.regression_t_flagged.toFixed(0)}, n = ${(h.regression_n/1e6).toFixed(1)}M trades). Flagged wallets are positive in every surprise tercile; the population is negative in every tercile. The pattern is consistent with ex-ante knowledge of outcomes that ran counter to the prevailing market consensus.`;
+---
+<DeepDiveLayout
+  title="Resolution Surprise"
+  description="When markets resolve opposite to the consensus, do flagged wallets show systematically higher excess accuracy?"
+  eyebrow="DV-PMI Surveillance · Surprise"
+  lede={lede}
+  asOf={`Cumulative snapshot through ${data.as_of}`}
+  citeKey="dellavedova2026surprise"
+  citeTitle="Resolution Surprise Index"
+  citePath="surveillance/resolution-surprise">
+
+  <Fragment slot="chart">
+    <div style="padding:24px; background: var(--c-surface, #0c1622); border: 1px solid var(--c-border, #1c2a3a); border-radius: 6px;">
+      <table style="width:100%;">
+        <tr><th>Surprise tercile</th><th style="text-align:right;">Flagged EA</th><th style="text-align:right;">Non-flagged EA</th><th style="text-align:right;">Gap</th></tr>
+        {terciles.map(t => (
+          <tr>
+            <td style="text-transform:capitalize;">{t.surprise_tercile}</td>
+            <td style="text-align:right;font-family:monospace;">{t.flagged_excess_accuracy >= 0 ? "+" : ""}{t.flagged_excess_accuracy.toFixed(3)}</td>
+            <td style="text-align:right;font-family:monospace;">{t.nonflagged_excess_accuracy >= 0 ? "+" : ""}{t.nonflagged_excess_accuracy.toFixed(3)}</td>
+            <td style="text-align:right;font-family:monospace;">{t.ea_gap >= 0 ? "+" : ""}{t.ea_gap.toFixed(3)}</td>
+          </tr>
+        ))}
+      </table>
+    </div>
+  </Fragment>
+  <Fragment slot="caption">
+    Excess accuracy is wallet accuracy minus max(price, 1-price), the accuracy achievable by mechanically
+    following the price. Surprise terciles are sorted by absolute deviation of final outcome from the
+    pre-resolution consensus price.
+  </Fragment>
+
+  <h2>Regression summary</h2>
+  <table>
+    <tr><th>Model</th><th>n</th><th>β flagged</th><th>t flagged</th><th>β surprise</th><th>t surprise</th><th>β interaction</th><th>t interaction</th><th>R²</th></tr>
+    {data.regression_summary.map((r: any) => (
+      <tr>
+        <td>{r.model}</td>
+        <td class="mono">{(r.n / 1e6).toFixed(1)}M</td>
+        <td class="mono">{r.b_flagged.toFixed(3)}</td>
+        <td class="mono">{r.t_flagged.toFixed(1)}</td>
+        <td class="mono">{r.b_surprise.toFixed(3)}</td>
+        <td class="mono">{r.t_surprise.toFixed(1)}</td>
+        <td class="mono">{r.b_interaction.toFixed(3)}</td>
+        <td class="mono">{r.t_interaction.toFixed(2)}</td>
+        <td class="mono">{r.R2.toFixed(3)}</td>
+      </tr>
+    ))}
+  </table>
+
+  <h2>Interpretation</h2>
+  <p>
+    The "surprise tercile" sort isolates markets in which the realized outcome diverged most strongly
+    from what trading prices had implied. In a clean market, no trader should systematically profit from
+    these markets because the consensus price reflected all public information and was wrong only because
+    of an unforecastable terminal outcome. The data show otherwise. Wallets flagged by the orthogonality
+    test maintain positive excess accuracy across all surprise terciles, including in markets where the
+    population was systematically wrong. The gap widens at higher levels of surprise.
+  </p>
+  <p>
+    Two interpretations remain on the table: (a) flagged wallets had ex-ante information about the
+    outcome that the market consensus lacked; (b) flagged wallets had ex-ante information about which
+    markets were likely to be mispriced ex-post, which is a softer version of the same claim. Either is
+    inconsistent with the strong-form efficient-pricing null. Neither, by itself, establishes the
+    presence of material non-public information.
+  </p>
+
+  <h2>Methodology</h2>
+  <p>
+    Each trade is assigned to a surprise tercile based on the absolute difference between the market's
+    terminal outcome and its pre-resolution mid-price (T-1 day mid). The reported regression is
+    OLS of trade-level excess accuracy on a flagged-wallet indicator, surprise magnitude, their
+    interaction, and (in model 2-3) trade volume. The interaction term in model (1) is positive and
+    significant, indicating flagged wallets do disproportionately well in high-surprise markets.
+  </p>
+
+  <h2>Limitations</h2>
+  <p>
+    Surprise is measured at the trade level using the T-1 mid-price. A subset of trades occur within
+    the T-1 window itself, mechanically loading on the surprise; the trade-surprise specification in
+    model (3) addresses this by using the price prevailing at trade time rather than at T-1.
+  </p>
+
+  <h2>Source paper</h2>
+  <p>
+    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6567238">
+      Della Vedova, J. (2026). Detecting Informed Trading in Prediction Markets: An Orthogonality Test. SSRN.
+    </a>
+    Section: Resolution Surprise Test.
+  </p>
+
+  <h2>Data</h2>
+  <p>
+    <a href="/data/surveillance_surprise_latest.json">surveillance_surprise_latest.json</a>
+  </p>
+
+  <h2>Other surveillance indices</h2>
+  <p>
+    <a href="/surveillance">&larr; All surveillance indices</a> &middot;
+    <a href="/pii">Informed Trading (PII)</a> &middot;
+    <a href="/surveillance/insider-timing">Insider Timing</a> &middot;
+    <a href="/surveillance/adverse-selection">Adverse Selection</a> &middot;
+    <a href="/surveillance/wash-trading">Wash Trading</a>
+  </p>
+</DeepDiveLayout>

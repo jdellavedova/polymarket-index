@@ -1,0 +1,97 @@
+{
+  "index_name": "Insider Timing Concentration",
+  "short_name": "Timing",
+  "as_of": "2026-02-28",
+  "snapshot_note": "Cumulative snapshot from Paper 2; weekly time series is a future release item.",
+  "source_paper": "Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets'",
+  "headline": {
+    "flagged_mean_hours_to_resolution": 704.1981001237324,
+    "flagged_median_hours_to_resolution": 377.5471603219699,
+    "nonflagged_mean_hours_to_resolution": 1459.5536068123852,
+    "nonflagged_median_hours_to_resolution": 1109.916911125133,
+    "flagged_frac_final_72h": 0.0202651942456176,
+    "nonflagged_frac_final_72h": 0.0161681112635735,
+    "flagged_n_wallets": 6032,
+    "nonflagged_n_wallets": 444016,
+    "hours_ratio_flagged_to_nonflagged": 0.4824749819649837
+  },
+  "by_bucket": [
+    {
+      "dtr_bucket": "0-12h",
+      "flagged_ea": 0.030617748485755,
+      "flagged_n_trades": 293,
+      "nonflagged_ea": -0.4692800965723511,
+      "nonflagged_n_trades": 64756
+    },
+    {
+      "dtr_bucket": "12-24h",
+      "flagged_ea": 0.1844861653275922,
+      "flagged_n_trades": 253,
+      "nonflagged_ea": -0.4797404296937133,
+      "nonflagged_n_trades": 94831
+    },
+    {
+      "dtr_bucket": "24-72h",
+      "flagged_ea": 0.0505207176710053,
+      "flagged_n_trades": 8707,
+      "nonflagged_ea": -0.3346288383830707,
+      "nonflagged_n_trades": 1335198
+    },
+    {
+      "dtr_bucket": "72h-7d",
+      "flagged_ea": 0.0755536826968649,
+      "flagged_n_trades": 179189,
+      "nonflagged_ea": -0.2802458587245524,
+      "nonflagged_n_trades": 27084048
+    },
+    {
+      "dtr_bucket": "7d-30d",
+      "flagged_ea": 0.1920894923533027,
+      "flagged_n_trades": 391631,
+      "nonflagged_ea": -0.3550890286911182,
+      "nonflagged_n_trades": 58198972
+    },
+    {
+      "dtr_bucket": "30d+",
+      "flagged_ea": 0.1475452897713962,
+      "flagged_n_trades": 226939,
+      "nonflagged_ea": -0.4630238316087262,
+      "nonflagged_n_trades": 40914873
+    }
+  ],
+  "regression_summary": [
+    {
+      "model": "(1) Significant only",
+      "dep_var": "frac_final_24h",
+      "n": 404839,
+      "beta_significant": -0.0002993358423177,
+      "se_significant": 0.0005889365724967,
+      "t_significant": -0.508264992015498,
+      "R2": 9.513573462349713e-07
+    },
+    {
+      "model": "(2) + Controls",
+      "dep_var": "frac_final_24h",
+      "n": 404839,
+      "beta_significant": -0.0004009862239186,
+      "se_significant": 0.0005895914095543,
+      "t_significant": -0.6801086607108241,
+      "R2": 0.0004818387580027
+    },
+    {
+      "model": "(3) frac_12h + Controls",
+      "dep_var": "frac_final_12h",
+      "n": 404839,
+      "beta_significant": -0.0003107709226282,
+      "se_significant": 0.0003453199242353,
+      "t_significant": -0.8999507436948544,
+      "R2": 0.0003650648489343
+    }
+  ],
+  "generated_at": "2026-05-11T21:07:27+00:00",
+  "sources": [
+    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage21_timing_by_significance.csv",
+    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage21_ea_by_timing_bucket.csv",
+    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage21_timing_regression.csv"
+  ]
+}

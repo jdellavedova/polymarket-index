@@ -1,0 +1,49 @@
+{
+  "index_name": "Adverse Selection / Spread Pattern",
+  "short_name": "Spreads",
+  "as_of": "2026-02-28",
+  "snapshot_note": "Cumulative snapshot from Paper 2. The negative coefficient indicates tighter, not wider, spreads in markets with flagged-wallet activity. This inverts the textbook Glosten-Milgrom prediction and is consistent with the Paper 1 finding that algorithmic market makers crowd into high-information-flow markets rather than retreating.",
+  "source_paper": "Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets'",
+  "headline": {
+    "n_markets_total": 204772,
+    "n_markets_with_flagged": 65910,
+    "share_markets_with_flagged": 0.32187017756333874,
+    "mean_spread_in_flagged_markets": 0.4707012518127149,
+    "mean_spread_in_clean_markets": 0.6433278079410528,
+    "spread_gap": -0.17262655612833794,
+    "regression_beta_has_sig_wallet": -0.1726265561283436,
+    "regression_t_has_sig_wallet": -175.74708474953633,
+    "direction": "tighter"
+  },
+  "regression_summary": [
+    {
+      "model": "(1) has_sig_wallet",
+      "n": 204772,
+      "beta_sig": -0.1726265561283436,
+      "se_sig": 0.0009822442083426,
+      "t_sig": -175.74708474953633,
+      "R2": 0.1002481673693393
+    },
+    {
+      "model": "(2) sig_fraction",
+      "n": 204772,
+      "beta_sig": -1.6738469857307168,
+      "se_sig": 0.0772239700723952,
+      "t_sig": -21.675225764248232,
+      "R2": 0.0158332909397096
+    },
+    {
+      "model": "(3) + Controls",
+      "n": 204772,
+      "beta_sig": -1.3539831810984673,
+      "se_sig": 0.0665468079349601,
+      "t_sig": -20.346327992498,
+      "R2": 0.1257724988800267
+    }
+  ],
+  "generated_at": "2026-05-11T21:07:28+00:00",
+  "sources": [
+    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage23_spread_regression.csv",
+    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage23_market_spreads.csv"
+  ]
+}

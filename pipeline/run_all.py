@@ -23,6 +23,13 @@ SCRIPTS = [
     "aggregate_price_gap",
     "aggregate_efficiency",
     "aggregate_pii",
+    "aggregate_insider_timing",
+    "aggregate_adverse_selection",
+    "aggregate_resolution_surprise",
+    "aggregate_wash_trading",
+    "aggregate_wash_trading_tier2",
+    # overview reads the surveillance JSONs above; must run after them
+    "aggregate_surveillance_overview",
     "aggregate_top_markets",
     "aggregate_market_microstructure",
     "fetch_market_snapshot",
@@ -34,6 +41,7 @@ SCRIPTS = [
     "build_og_image",
     "build_press_kit",
     "build_email_digest",
+    "build_social_posts",
 ]
 
 

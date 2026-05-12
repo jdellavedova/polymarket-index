@@ -1,0 +1,279 @@
+{
+  "index_name": "Wash Trading (Tier 2 \u2014 Round-trip)",
+  "short_name": "Wash T2",
+  "as_of": "2026-05-12",
+  "snapshot_note": "Cumulative through the most recent refresh. We report at three churn-ratio thresholds rather than a single binary flag. The loose threshold (0.80 churn) catches legitimate algorithmic market making in addition to wash trading; the strict threshold (0.95 churn, 10+ round-trips, $10K+) is the headline number.",
+  "tier2_methodology": "For each (wallet, token_id) pair where the wallet has at least one buy and one sell, compute churn_ratio = 2 * min(buy_vol, sell_vol) / (buy_vol + sell_vol). Range 0..1, where 1 is a perfectly-balanced position. A pair is flagged at a given threshold if churn_ratio >= T_churn AND total_vol >= T_vol AND min(n_buys, n_sells) >= T_trips. Direction logic per trade: maker = trader who placed the resting limit order; maker_side BUY means the maker acquired the outcome token, the taker disposed. We expand each match into two (wallet, side) records (maker and taker) and group by (wallet, token_id).",
+  "population": {
+    "n_two_sided_pairs": 50030285,
+    "n_wallets_with_two_sided_activity": 1915578,
+    "total_volume_in_two_sided_pairs": 31499247125.790283
+  },
+  "thresholds": [
+    {
+      "name": "loose",
+      "min_churn": 0.8,
+      "min_vol": 1000,
+      "min_trips": 5,
+      "n_pairs": 762213,
+      "n_wallets": 126222,
+      "total_volume": 9227026104.0727,
+      "round_trip_volume": 4340382597.112223
+    },
+    {
+      "name": "medium",
+      "min_churn": 0.9,
+      "min_vol": 5000,
+      "min_trips": 8,
+      "n_pairs": 139866,
+      "n_wallets": 38318,
+      "total_volume": 5660059002.662232,
+      "round_trip_volume": 2750327337.461446
+    },
+    {
+      "name": "strict",
+      "min_churn": 0.95,
+      "min_vol": 10000,
+      "min_trips": 10,
+      "n_pairs": 50646,
+      "n_wallets": 17665,
+      "total_volume": 3857753243.6889505,
+      "round_trip_volume": 1903253492.7456377
+    }
+  ],
+  "churn_histogram": [
+    {
+      "bin_low": 0.0,
+      "n_pairs": 3490679,
+      "total_vol": 4196067973.894377
+    },
+    {
+      "bin_low": 0.1,
+      "n_pairs": 2988052,
+      "total_vol": 1812250671.2914784
+    },
+    {
+      "bin_low": 0.2,
+      "n_pairs": 2808578,
+      "total_vol": 1636921962.9855323
+    },
+    {
+      "bin_low": 0.3,
+      "n_pairs": 2801609,
+      "total_vol": 1632145414.9923942
+    },
+    {
+      "bin_low": 0.4,
+      "n_pairs": 2925584,
+      "total_vol": 1682172146.3390186
+    },
+    {
+      "bin_low": 0.5,
+      "n_pairs": 3245911,
+      "total_vol": 1866385669.1808941
+    },
+    {
+      "bin_low": 0.6,
+      "n_pairs": 4896982,
+      "total_vol": 2345344328.1868143
+    },
+    {
+      "bin_low": 0.7,
+      "n_pairs": 4406627,
+      "total_vol": 2751389728.0968337
+    },
+    {
+      "bin_low": 0.8,
+      "n_pairs": 7176944,
+      "total_vol": 3394041889.9919863
+    },
+    {
+      "bin_low": 0.9,
+      "n_pairs": 13405149,
+      "total_vol": 9298912772.724705
+    },
+    {
+      "bin_low": 1.0,
+      "n_pairs": 1884170,
+      "total_vol": 883614568.102188
+    }
+  ],
+  "top_wallets_strict": [
+    {
+      "wallet": "0x971f91a412236cc942a6f4485d3d88aa8dcb5929",
+      "n_tokens_flagged": 7,
+      "total_round_trip_vol": 30749700.33356598,
+      "avg_churn": 0.9852150372388484,
+      "total_round_trips": 110351
+    },
+    {
+      "wallet": "0xc8ab97a9089a9ff7e6ef0688e6e591a066946418",
+      "n_tokens_flagged": 644,
+      "total_round_trip_vol": 30307928.704471003,
+      "avg_churn": 0.9789953084972527,
+      "total_round_trips": 57993
+    },
+    {
+      "wallet": "0x4b7410aefbf0f38012b0dfb1131a4de147a9e8d7",
+      "n_tokens_flagged": 656,
+      "total_round_trip_vol": 23339086.868843,
+      "avg_churn": 0.9880363499533198,
+      "total_round_trips": 109464
+    },
+    {
+      "wallet": "0x6d3c5bd13984b2de47c3a88ddc455309aab3d294",
+      "n_tokens_flagged": 1471,
+      "total_round_trip_vol": 21671249.017969992,
+      "avg_churn": 0.9859044935823834,
+      "total_round_trips": 111897
+    },
+    {
+      "wallet": "0x739264b66172de20f95696643b84a4dd596ef6ff",
+      "n_tokens_flagged": 11,
+      "total_round_trip_vol": 17573401.270236,
+      "avg_churn": 0.9872701522691778,
+      "total_round_trips": 67809
+    },
+    {
+      "wallet": "0x65d7ef90888c1cea25ed5720af69755b34b156d0",
+      "n_tokens_flagged": 8,
+      "total_round_trip_vol": 15658164.114899978,
+      "avg_churn": 0.999109965909547,
+      "total_round_trips": 2293
+    },
+    {
+      "wallet": "0xa128235e5cd1182d466e93f7c82363199f10d695",
+      "n_tokens_flagged": 8,
+      "total_round_trip_vol": 15618824.106197981,
+      "avg_churn": 0.9982964860234482,
+      "total_round_trips": 2288
+    },
+    {
+      "wallet": "0x1e8a3aec2e12020f06d0788cefd357c21aa29f8f",
+      "n_tokens_flagged": 4,
+      "total_round_trip_vol": 14386840.093337998,
+      "avg_churn": 0.9791471200117209,
+      "total_round_trips": 34534
+    },
+    {
+      "wallet": "0x2a6db57a2345fb0bc1df712cbd214a1dfffdcbac",
+      "n_tokens_flagged": 36,
+      "total_round_trip_vol": 11466318.758977998,
+      "avg_churn": 0.983649025701225,
+      "total_round_trips": 25664
+    },
+    {
+      "wallet": "0xeee92f1cc6d6e0ad0b4ffda20b01cf3678e27ecb",
+      "n_tokens_flagged": 778,
+      "total_round_trip_vol": 11306029.025456,
+      "avg_churn": 0.9767626596521112,
+      "total_round_trips": 138510
+    },
+    {
+      "wallet": "0x482bf5accdecfaffa67c14d4d4fbb59f428a3266",
+      "n_tokens_flagged": 15,
+      "total_round_trip_vol": 9730224.438716993,
+      "avg_churn": 0.9782850644884946,
+      "total_round_trips": 120834
+    },
+    {
+      "wallet": "0x7c3db723f1d4d8cb9c550095203b686cb11e5c6b",
+      "n_tokens_flagged": 115,
+      "total_round_trip_vol": 9620857.488336999,
+      "avg_churn": 0.9763018588128158,
+      "total_round_trips": 11493
+    },
+    {
+      "wallet": "0xe9cbb1c9b3f7f411dd4fdf2ea7afa780c8b4d096",
+      "n_tokens_flagged": 437,
+      "total_round_trip_vol": 8029907.69259,
+      "avg_churn": 0.976101816367074,
+      "total_round_trips": 79607
+    },
+    {
+      "wallet": "0x1521b47bf0c41f6b7fd3ad41cdec566812c8f23e",
+      "n_tokens_flagged": 21,
+      "total_round_trip_vol": 7892578.4580230005,
+      "avg_churn": 0.9759394905314142,
+      "total_round_trips": 4149
+    },
+    {
+      "wallet": "0x30e443872ddf63b2908a49f92cd690c304a55102",
+      "n_tokens_flagged": 101,
+      "total_round_trip_vol": 7683994.6112750005,
+      "avg_churn": 0.9748754601131457,
+      "total_round_trips": 13510
+    },
+    {
+      "wallet": "0x96b59f71f635da5da031e3e93448c54fe226f5e7",
+      "n_tokens_flagged": 275,
+      "total_round_trip_vol": 6929562.449265999,
+      "avg_churn": 0.9792073201791014,
+      "total_round_trips": 21777
+    },
+    {
+      "wallet": "0x6916cc00aa1c3e75ecf4081df7cae7d2f3592fd4",
+      "n_tokens_flagged": 201,
+      "total_round_trip_vol": 6565571.307393,
+      "avg_churn": 0.9749573151859988,
+      "total_round_trips": 22473
+    },
+    {
+      "wallet": "0xab19716584931d81cd9e7763402673a64baa4876",
+      "n_tokens_flagged": 32,
+      "total_round_trip_vol": 5867275.213796001,
+      "avg_churn": 0.9795593641216256,
+      "total_round_trips": 5679
+    },
+    {
+      "wallet": "0x44c1dfe43260c94ed4f1d00de2e1f80fb113ebc1",
+      "n_tokens_flagged": 25,
+      "total_round_trip_vol": 5725654.4898,
+      "avg_churn": 0.9796776814977695,
+      "total_round_trips": 1060
+    },
+    {
+      "wallet": "0x4bbe10ba5b7f6df147c0dae17b46c44a6e562cf3",
+      "n_tokens_flagged": 107,
+      "total_round_trip_vol": 5497467.208043999,
+      "avg_churn": 0.977595949290984,
+      "total_round_trips": 17360
+    }
+  ],
+  "by_year_strict_flagged_wallets": [
+    {
+      "year": 2022,
+      "n_trades_by_flagged": 1040,
+      "vol_by_flagged": 122824.49491700025
+    },
+    {
+      "year": 2023,
+      "n_trades_by_flagged": 150143,
+      "vol_by_flagged": 29665641.13056425
+    },
+    {
+      "year": 2024,
+      "n_trades_by_flagged": 23845808,
+      "vol_by_flagged": 3306668603.2956223
+    },
+    {
+      "year": 2025,
+      "n_trades_by_flagged": 74304870,
+      "vol_by_flagged": 7318320602.520803
+    },
+    {
+      "year": 2026,
+      "n_trades_by_flagged": 165271420,
+      "vol_by_flagged": 8989477791.48085
+    }
+  ],
+  "interpretation_caveats": [
+    "The loose threshold (0.80 churn) is intentionally inclusive and captures legitimate algorithmic market making as well as wash trading.",
+    "The strict threshold (0.95 churn, 10+ round-trips, $10K+) is intended for the headline 'patterns consistent with wash trading' count.",
+    "No temporal-window constraint is applied; a wallet that buys and sells the same token across months is included if the balance and volume thresholds are met. A within-window variant (e.g. all round-trips within 24h) is a candidate Tier 2b refinement.",
+    "No public page names a specific wallet address; the top-wallets CSV is available for download under the methodology page's usage notice."
+  ],
+  "generated_at": "2026-05-12T05:51:16+00:00",
+  "source": "J:/Research/10. Prediction/data/blockchain/processed_trades.csv",
+  "wallclock_seconds": 11857
+}
