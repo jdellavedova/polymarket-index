@@ -17,6 +17,23 @@ function fmtUsd(x: number): string {
 }
 function fmtNum(x: number): string { return x.toLocaleString(); }
 
+// Static lookup of market questions for the top Tier 1 affected markets.
+// These IDs are stable until the next full Tier 1 rerun; questions resolved
+// via the Gamma API once and frozen here. New IDs after a rerun would fall
+// back to the raw ID display.
+const MARKET_QUESTIONS: Record<string, string> = {
+  "240380": "Will Donald J. Trump win the 2024 Republican presidential nomination?",
+  "249497": "Will the Fed increase interest rates by 0 bps after its May meeting?",
+  "248974": "Will 'Creed III' gross more than $35 million domestically on its opening weekend?",
+  "250113": "Will U.S. inflation be greater than 0.1% from March to April 2023?",
+  "247266": "Will Donald J. Trump be indicted by March 31, 2023?",
+  "248578": "Will the price of $ETH be above $1700 on February 10?",
+  "248975": "Will 'Creed III' gross more than $40 million domestically on its opening weekend?",
+  "248890": "Will Arbitrum airdrop happen by March 31st?",
+  "248820": "Will Andrew Tate be released by April 30?",
+  "249524": "2023 FIDE World Chess Championship: Ian Nepomniachtchi vs. Ding Liren",
+};
+
 // Top-wallets summary stats (no wallet addresses shown).
 const tw = t2.top_wallets_strict as any[];
 const tw_avg_trips = tw.reduce((s, w) => s + w.total_round_trips, 0) / tw.length;
@@ -65,9 +82,10 @@ const lede = `Two complementary tests on the full ${h.n_trades_total.toLocaleStr
     operator or a deployment-test wallet seeded liquidity by trading against itself before public launch.
   </p>
   <table>
-    <tr><th>Market ID</th><th>Self-matched trades</th><th>Volume</th></tr>
+    <tr><th>Market</th><th>Market ID</th><th>Self-matched trades</th><th>Volume</th></tr>
     {data.top_markets.map(m => (
       <tr>
+        <td style="max-width: 480px;">{MARKET_QUESTIONS[m.market_id] ?? <em>resolved market #{m.market_id}</em>}</td>
         <td class="mono">{m.market_id}</td>
         <td class="mono">{m.n.toLocaleString()}</td>
         <td class="mono">{fmtUsd(m.vol)}</td>
