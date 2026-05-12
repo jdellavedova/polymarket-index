@@ -1,0 +1,222 @@
+{
+  "index_name": "Concentration / Pump Risk",
+  "short_name": "HHI",
+  "as_of": "2026-05-12",
+  "snapshot_note": "Per-market Herfindahl-Hirschman Index across all resolved Polymarket markets with at least 20 matches. HHI close to 1 means a single wallet drove most participation; close to 0 means activity was diffuse. High HHI is the precondition under which one trader can mechanically move the consensus price, not direct evidence that they did.",
+  "methodology": "For each market, compute each wallet's share of total participation events (each match contributes one event for the maker and one for the taker). HHI = sum(share^2). Threshold cutpoints 0.25 / 0.50 / 0.75 map onto the DOJ horizontal-merger-guideline categories (unconcentrated, moderately concentrated, highly concentrated). Markets with fewer than 20 matches (=40 participations) are excluded to avoid trivial HHI=1 from sparse activity. Material-activity top-markets table requires >=100 matches.",
+  "population": {
+    "n_markets_eligible": 229771,
+    "min_matches_per_eligible_market": 20,
+    "total_participations_in_eligible_markets": 548148748.0,
+    "summary_stats": {
+      "mean_hhi": 0.05623631779053161,
+      "median_hhi": 0.043704474505723206,
+      "p90_hhi": 0.10739795918367347,
+      "p99_hhi": 0.25144246395180797,
+      "mean_top_wallet_share": 0.13790247892677546,
+      "median_top_wallet_share": 0.1206896551724138
+    }
+  },
+  "thresholds": [
+    {
+      "min_hhi": 0.25,
+      "n_markets": 2331,
+      "share_of_eligible": 0.010144883383890918,
+      "participations_in_flagged_markets": 788122
+    },
+    {
+      "min_hhi": 0.5,
+      "n_markets": 30,
+      "share_of_eligible": 0.00013056477971545583,
+      "participations_in_flagged_markets": 1960
+    },
+    {
+      "min_hhi": 0.75,
+      "n_markets": 0,
+      "share_of_eligible": 0.0,
+      "participations_in_flagged_markets": 0
+    }
+  ],
+  "hhi_histogram": [
+    {
+      "bin_low": 0.0,
+      "n_markets": 202566,
+      "participations": 537151126
+    },
+    {
+      "bin_low": 0.1,
+      "n_markets": 22798,
+      "participations": 9541238
+    },
+    {
+      "bin_low": 0.2,
+      "n_markets": 3068,
+      "participations": 1022784
+    },
+    {
+      "bin_low": 0.3,
+      "n_markets": 987,
+      "participations": 295822
+    },
+    {
+      "bin_low": 0.4,
+      "n_markets": 322,
+      "participations": 135818
+    },
+    {
+      "bin_low": 0.5,
+      "n_markets": 30,
+      "participations": 1960
+    }
+  ],
+  "top_markets": [
+    {
+      "market_id": "1297729",
+      "total_participations": 1022,
+      "hhi": 0.49804879730086815,
+      "top_wallet_share": 0.49902152641878667,
+      "n_unique_wallets": 3
+    },
+    {
+      "market_id": "1305375",
+      "total_participations": 568,
+      "hhi": 0.4930569331481849,
+      "top_wallet_share": 0.5,
+      "n_unique_wallets": 3
+    },
+    {
+      "market_id": "618093",
+      "total_participations": 602,
+      "hhi": 0.4835653028112272,
+      "top_wallet_share": 0.49169435215946844,
+      "n_unique_wallets": 10
+    },
+    {
+      "market_id": "1300622",
+      "total_participations": 4936,
+      "hhi": 0.4727367680705248,
+      "top_wallet_share": 0.4977714748784441,
+      "n_unique_wallets": 13
+    },
+    {
+      "market_id": "1287901",
+      "total_participations": 2774,
+      "hhi": 0.4716774727111208,
+      "top_wallet_share": 0.4863013698630137,
+      "n_unique_wallets": 31
+    },
+    {
+      "market_id": "1308902",
+      "total_participations": 540,
+      "hhi": 0.47107681755829905,
+      "top_wallet_share": 0.4925925925925926,
+      "n_unique_wallets": 10
+    },
+    {
+      "market_id": "1246323",
+      "total_participations": 378,
+      "hhi": 0.4693457629965566,
+      "top_wallet_share": 0.5,
+      "n_unique_wallets": 14
+    },
+    {
+      "market_id": "1308633",
+      "total_participations": 1746,
+      "hhi": 0.46917122954250523,
+      "top_wallet_share": 0.48911798396334477,
+      "n_unique_wallets": 28
+    },
+    {
+      "market_id": "1300617",
+      "total_participations": 6510,
+      "hhi": 0.46487219237330724,
+      "top_wallet_share": 0.49923195084485406,
+      "n_unique_wallets": 12
+    },
+    {
+      "market_id": "1305391",
+      "total_participations": 1216,
+      "hhi": 0.46467467754501374,
+      "top_wallet_share": 0.48355263157894735,
+      "n_unique_wallets": 15
+    },
+    {
+      "market_id": "617081",
+      "total_participations": 376,
+      "hhi": 0.46361475780896333,
+      "top_wallet_share": 0.48404255319148937,
+      "n_unique_wallets": 13
+    },
+    {
+      "market_id": "694236",
+      "total_participations": 688,
+      "hhi": 0.46306280421849655,
+      "top_wallet_share": 0.48401162790697677,
+      "n_unique_wallets": 17
+    },
+    {
+      "market_id": "584251",
+      "total_participations": 298,
+      "hhi": 0.4608125760100895,
+      "top_wallet_share": 0.4798657718120805,
+      "n_unique_wallets": 10
+    },
+    {
+      "market_id": "1131203",
+      "total_participations": 2028,
+      "hhi": 0.45438758758057807,
+      "top_wallet_share": 0.47731755424063116,
+      "n_unique_wallets": 34
+    },
+    {
+      "market_id": "606553",
+      "total_participations": 364,
+      "hhi": 0.4528589542325806,
+      "top_wallet_share": 0.49175824175824173,
+      "n_unique_wallets": 8
+    },
+    {
+      "market_id": "1307050",
+      "total_participations": 638,
+      "hhi": 0.4513713505173888,
+      "top_wallet_share": 0.47962382445141066,
+      "n_unique_wallets": 19
+    },
+    {
+      "market_id": "1304494",
+      "total_participations": 862,
+      "hhi": 0.4497230312067657,
+      "top_wallet_share": 0.4802784222737819,
+      "n_unique_wallets": 16
+    },
+    {
+      "market_id": "941331",
+      "total_participations": 5996,
+      "hhi": 0.44966257246881514,
+      "top_wallet_share": 0.4743162108072048,
+      "n_unique_wallets": 34
+    },
+    {
+      "market_id": "1308962",
+      "total_participations": 922,
+      "hhi": 0.4491367911876944,
+      "top_wallet_share": 0.49023861171366595,
+      "n_unique_wallets": 9
+    },
+    {
+      "market_id": "1287899",
+      "total_participations": 1442,
+      "hhi": 0.4487901108223476,
+      "top_wallet_share": 0.47434119278779474,
+      "n_unique_wallets": 42
+    }
+  ],
+  "interpretation_caveats": [
+    "High HHI is necessary but not sufficient for single-trader price manipulation. A market with HHI = 1.0 (one wallet on both sides of every match) might be a venue-operator test market, an early-launch bootstrap, a tiny niche market with one dedicated trader, or actual manipulation.",
+    "Algorithmic market makers can drive a single market's HHI above 0.5 simply by providing most of the liquidity. The flag is on the market structure, not on the intent of the dominant wallet.",
+    "The HHI here is on participation count, not dollar volume. A wallet that places many small trades will weigh more in HHI than a wallet that places a few large trades. A volume-weighted variant is a candidate v2 refinement."
+  ],
+  "generated_at": "2026-05-12T07:58:26+00:00",
+  "source": "J:/Research/10. Prediction/data/blockchain/processed_trades.csv",
+  "wallclock_seconds": 6916
+}

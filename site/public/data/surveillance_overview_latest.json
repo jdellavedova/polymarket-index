@@ -1,10 +1,10 @@
 {
   "title": "DV-PMI Surveillance Indices",
   "subtitle": "Eight market-integrity tests on the 670M-trade Polymarket on-chain panel. Patterns reported are statistical, not legal conclusions.",
-  "n_live": 5,
+  "n_live": 6,
   "n_total": 8,
   "as_of": "2026-02-28",
-  "generated_at": "2026-05-12T05:54:13+00:00",
+  "generated_at": "2026-05-12T08:00:00+00:00",
   "cards": [
     {
       "slot": 1,
@@ -78,12 +78,12 @@
     },
     {
       "slot": 8,
-      "status": "coming_soon",
+      "status": "live",
       "name": "Concentration / Pump Risk",
-      "value": "in development",
-      "secondary": "Herfindahl + single-wallet directional dominance",
-      "description": "Herfindahl index of trader activity per market combined with single-wallet directional dominance and price drift. Flags markets where one trader is large enough to move the consensus price alone.",
-      "href": "/surveillance",
+      "value": "median HHI 0.044",
+      "secondary": "0 markets with HHI >= 0.75 (0.0% of 229,771 eligible)",
+      "description": "Per-market Herfindahl-Hirschman Index of participation. High HHI is the precondition under which one trader can move the consensus price alone, not direct evidence that they did. The index flags structure, not intent. Threshold cutpoints map onto DOJ horizontal-merger guideline categories.",
+      "href": "/surveillance/concentration",
       "pattern_consistent_with": "single-trader price control"
     }
   ],

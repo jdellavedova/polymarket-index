@@ -28,6 +28,7 @@ SCRIPTS = [
     "aggregate_resolution_surprise",
     "aggregate_wash_trading",
     "aggregate_wash_trading_tier2",
+    "aggregate_concentration",
     # overview reads the surveillance JSONs above; must run after them
     "aggregate_surveillance_overview",
     "aggregate_top_markets",

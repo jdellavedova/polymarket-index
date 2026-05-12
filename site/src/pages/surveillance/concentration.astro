@@ -1,0 +1,187 @@
+---
+import DeepDiveLayout from "../../components/redesign/DeepDiveLayout.astro";
+import data from "../../../public/data/surveillance_concentration_latest.json";
+
+const pop = data.population;
+const ss = pop.summary_stats;
+const thresh = data.thresholds as any[];
+const top = data.top_markets as any[];
+const hist = data.hhi_histogram as any[];
+
+const strict = thresh.find(t => t.min_hhi === 0.75)!;
+const moderate = thresh.find(t => t.min_hhi === 0.50)!;
+const loose = thresh.find(t => t.min_hhi === 0.25)!;
+
+function fmtNum(x: number): string { return x.toLocaleString(); }
+function fmtPct(x: number, dp = 1): string { return (x * 100).toFixed(dp) + "%"; }
+
+// Static lookup for top-concentration market questions. Frozen until next rerun.
+const MARKET_QUESTIONS: Record<string, string> = {
+  "1297729": "Valorant: Nobles vs yung - Map 1 Winner",
+  "1305375": "Set Handicap: Juvan (-1.5) vs Bertea (+1.5)",
+  "618093":  "Will the price of Ethereum be above $3,600 on October 7?",
+  "1300622": "1H Spread: Clippers (-0.5)",
+  "1287901": "Pistons vs. Suns: O/U 215.5",
+  "1308902": "Spread: Mercyhurst Lakers (-3.5)",
+  "1246323": "Ethereum Up or Down - January 23, 11:00PM-11:15PM ET",
+  "1308633": "Predators vs. Islanders: O/U 6.5",
+  "1300617": "1H Spread: Jazz (-2.5)",
+  "1305391": "Set Handicap: Danilovic (-1.5) vs Bulgaru (+1.5)",
+  "617081":  "Will the price of Solana be less than $170 on October 6?",
+  "694236":  "Lanka Premier League: Kandy Falcons vs Colombo Strikers (Game 1)",
+  "584251":  "Spread: Tigers (-1.5)",
+  "1131203": "Will fewer than 10 albums be ranked #1 on the Billboard 200 in 2026?",
+  "606553":  "Will the price of XRP be between $2.97 and $3.00 on September 21 at 4PM ET?",
+  "1307050": "Spread: George Washington Revolutionaries (-12.5)",
+  "1304494": "Southeast Missouri State Redhawks vs. Eastern Illinois Panthers: O/U 138.5",
+  "941331":  "Miami vs. Texas A&M: 1H Moneyline",
+  "1308962": "Tjen vs. Joint: Total Sets O/U 2.5",
+  "1287899": "Pistons vs. Suns: O/U 214.5",
+};
+
+const lede = `Across ${fmtNum(pop.n_markets_eligible)} resolved markets with at least ${pop.min_matches_per_eligible_market} matches, the median Herfindahl-Hirschman Index of participation is ${ss.median_hhi.toFixed(3)} and the mean is ${ss.mean_hhi.toFixed(3)}. The 99th percentile reaches ${ss.p99_hhi.toFixed(3)}. Highly concentrated markets (HHI ≥ 0.75, where one wallet typically controls more than 75 percent of participation): ${fmtNum(strict.n_markets)} (${fmtPct(strict.share_of_eligible, 1)} of eligible markets). High HHI is the precondition under which one trader can mechanically move the consensus price; it is not direct evidence that they did. The metric flags structure, not intent.`;
+---
+<DeepDiveLayout
+  title="Concentration / Pump Risk"
+  description="Herfindahl-Hirschman Index of participation per Polymarket market."
+  eyebrow="DV-PMI Surveillance · Concentration"
+  lede={lede}
+  asOf={`Cumulative through ${data.as_of}`}
+  citeKey="dellavedova2026concentration"
+  citeTitle="Concentration / Pump Risk Index"
+  citePath="surveillance/concentration">
+
+  <Fragment slot="chart">
+    <div style="padding:24px; background: var(--c-surface, #0c1622); border: 1px solid var(--c-border, #1c2a3a); border-radius: 6px;">
+      <table style="width:100%;">
+        <tr><th></th><th style="text-align:right;">Value</th></tr>
+        <tr><td>Median market HHI</td><td style="text-align:right;font-family:monospace;">{ss.median_hhi.toFixed(3)}</td></tr>
+        <tr><td>Mean market HHI</td><td style="text-align:right;font-family:monospace;">{ss.mean_hhi.toFixed(3)}</td></tr>
+        <tr><td>90th percentile HHI</td><td style="text-align:right;font-family:monospace;">{ss.p90_hhi.toFixed(3)}</td></tr>
+        <tr><td>99th percentile HHI</td><td style="text-align:right;font-family:monospace;">{ss.p99_hhi.toFixed(3)}</td></tr>
+        <tr><td>Median top-wallet share</td><td style="text-align:right;font-family:monospace;">{fmtPct(ss.median_top_wallet_share, 1)}</td></tr>
+        <tr><td>Mean top-wallet share</td><td style="text-align:right;font-family:monospace;">{fmtPct(ss.mean_top_wallet_share, 1)}</td></tr>
+      </table>
+    </div>
+  </Fragment>
+  <Fragment slot="caption">
+    Summary statistics over all eligible markets. HHI is calculated on participation events;
+    each match contributes one event for the maker and one for the taker.
+  </Fragment>
+
+  <h2>Threshold table</h2>
+  <p>
+    Cutpoints map onto DOJ horizontal-merger guideline categories: 0.25 = unconcentrated /
+    moderately concentrated boundary; 0.50 = moderately / highly concentrated boundary;
+    0.75 = a single dominant participant accounts for roughly three-quarters or more of activity.
+  </p>
+  <table>
+    <tr>
+      <th>Concentration category</th>
+      <th>Min HHI</th>
+      <th>Markets flagged</th>
+      <th>Share of eligible</th>
+      <th>Participations in flagged markets</th>
+    </tr>
+    {thresh.map(t => (
+      <tr>
+        <td>{t.min_hhi === 0.25 ? "Moderately concentrated +" : t.min_hhi === 0.50 ? "Highly concentrated" : "Single-trader dominated"}</td>
+        <td class="mono">{t.min_hhi.toFixed(2)}</td>
+        <td class="mono">{fmtNum(t.n_markets)}</td>
+        <td class="mono">{fmtPct(t.share_of_eligible, 1)}</td>
+        <td class="mono">{fmtNum(t.participations_in_flagged_markets)}</td>
+      </tr>
+    ))}
+  </table>
+
+  <h2>HHI distribution across eligible markets</h2>
+  <table>
+    <tr><th>HHI bin</th><th>Markets</th><th>Share of eligible</th><th>Participations</th></tr>
+    {hist.map(b => (
+      <tr>
+        <td class="mono">[{b.bin_low.toFixed(1)}, {(b.bin_low + 0.1).toFixed(1)})</td>
+        <td class="mono">{fmtNum(b.n_markets)}</td>
+        <td class="mono">{fmtPct(b.n_markets / pop.n_markets_eligible, 1)}</td>
+        <td class="mono">{fmtNum(b.participations)}</td>
+      </tr>
+    ))}
+  </table>
+
+  <h2>Top 20 markets by HHI (material activity only)</h2>
+  <p>
+    Markets ranked by HHI, restricted to those with at least 100 matches (200 participations) so
+    sparse-activity markets with mechanical HHI = 1 are excluded. The top markets are dominated by
+    niche sports spreads, single-game lines, and short-window crypto-price markets — settings where a
+    market-making bot provides essentially all the 2-sided liquidity because the audience is small.
+    The top-wallet share clusters near 50 percent, the structural signature of a single MM that
+    rests one side of the book at all times rather than a single trader pushing the price.
+  </p>
+  <table>
+    <tr>
+      <th>Market</th>
+      <th>Market ID</th>
+      <th>Total participations</th>
+      <th>Distinct wallets</th>
+      <th>HHI</th>
+      <th>Top-wallet share</th>
+    </tr>
+    {top.map(m => (
+      <tr>
+        <td style="max-width: 380px;">{MARKET_QUESTIONS[m.market_id] ?? <em>market #{m.market_id}</em>}</td>
+        <td class="mono">{m.market_id}</td>
+        <td class="mono">{fmtNum(m.total_participations)}</td>
+        <td class="mono">{fmtNum(m.n_unique_wallets)}</td>
+        <td class="mono">{m.hhi.toFixed(3)}</td>
+        <td class="mono">{fmtPct(m.top_wallet_share, 1)}</td>
+      </tr>
+    ))}
+  </table>
+
+  <h2>Methodology</h2>
+  <p>{data.methodology}</p>
+
+  <h2>Interpretation</h2>
+  <p>
+    A high HHI does not establish manipulation. It establishes that one trader had enough
+    presence in a market to move the consensus price unilaterally. Three classes of wallet
+    typically generate high HHI: (a) the venue operator's bootstrap wallet seeding early
+    liquidity (common for sparse-activity markets), (b) an algorithmic market maker that
+    crowded out other liquidity providers in a particular contract, (c) a single trader who
+    took a large directional position and held it across many small fills. Only (c) is the
+    classical pump-risk pattern. Discriminating among the three requires per-wallet behavioral
+    profiling that is outside the scope of this index.
+  </p>
+  <p>
+    The metric is reported as "patterns consistent with single-trader price control,"
+    consistent with the rest of the surveillance suite's posture rules.
+  </p>
+
+  <h3>Limitations</h3>
+  <ul>
+    {data.interpretation_caveats.map((c: string) => <li>{c}</li>)}
+  </ul>
+
+  <h2>Source</h2>
+  <p>
+    The HHI is computed from on-chain participation counts per market. No external benchmark or
+    market-specific assumption is required. This index is original to the DV-PMI surveillance
+    suite; the closest economic analog is the DOJ horizontal-merger-guideline application of
+    HHI to market structure.
+  </p>
+
+  <h2>Data</h2>
+  <p>
+    <a href="/data/surveillance_concentration_latest.json">surveillance_concentration_latest.json</a> &middot;
+    <a href="/data/surveillance_concentration_top_markets.csv">surveillance_concentration_top_markets.csv</a>
+  </p>
+
+  <h2>Other surveillance indices</h2>
+  <p>
+    <a href="/surveillance">&larr; All surveillance indices</a> &middot;
+    <a href="/pii">Informed Trading (PII)</a> &middot;
+    <a href="/surveillance/insider-timing">Insider Timing</a> &middot;
+    <a href="/surveillance/adverse-selection">Adverse Selection</a> &middot;
+    <a href="/surveillance/resolution-surprise">Resolution Surprise</a> &middot;
+    <a href="/surveillance/wash-trading">Wash Trading</a>
+  </p>
+</DeepDiveLayout>

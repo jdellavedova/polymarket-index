@@ -179,22 +179,34 @@ def main() -> None:
             "href": "/surveillance",
             "pattern_consistent_with": "settling-price manipulation",
         },
-        {
-            "slot": 8,
-            "status": "coming_soon",
-            "name": "Concentration / Pump Risk",
-            "value": "in development",
-            "secondary": "Herfindahl + single-wallet directional dominance",
-            "description": (
-                "Herfindahl index of trader activity per market combined with "
-                "single-wallet directional dominance and price drift. Flags markets "
-                "where one trader is large enough to move the consensus price alone."
-            ),
-            "href": "/surveillance",
-            "pattern_consistent_with": "single-trader price control",
-        },
     ]
     cards.extend(stubs)
+
+    # --- Live: Concentration / Pump Risk (slot 8) ---
+    conc = _read("surveillance_concentration_latest.json")
+    if conc:
+        ss = conc["population"]["summary_stats"]
+        strict = next((t for t in conc.get("thresholds", []) if t.get("min_hhi") == 0.75), None)
+        cards.append({
+            "slot": 8,
+            "status": "live",
+            "name": "Concentration / Pump Risk",
+            "value": f"median HHI {ss['median_hhi']:.3f}",
+            "secondary": (
+                f"{strict['n_markets']:,} markets with HHI >= 0.75 "
+                f"({strict['share_of_eligible']*100:.1f}% of "
+                f"{conc['population']['n_markets_eligible']:,} eligible)"
+                if strict else "Herfindahl per market"
+            ),
+            "description": (
+                "Per-market Herfindahl-Hirschman Index of participation. High HHI is the "
+                "precondition under which one trader can move the consensus price alone, "
+                "not direct evidence that they did. The index flags structure, not intent. "
+                "Threshold cutpoints map onto DOJ horizontal-merger guideline categories."
+            ),
+            "href": "/surveillance/concentration",
+            "pattern_consistent_with": "single-trader price control",
+        })
 
     # Aggregate stats for the page header strip.
     n_live = sum(1 for c in cards if c["status"] == "live")
