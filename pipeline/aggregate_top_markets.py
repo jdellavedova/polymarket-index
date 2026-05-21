@@ -40,8 +40,8 @@ def fetch_missing_question(market_id: str) -> dict | None:
     except Exception:
         return None
 
-TRADES = "J:/Research/10. Prediction/data/blockchain/processed_trades.csv"
-MARKETS = "J:/Research/10. Prediction/data/polymarket_markets.csv"
+TRADES = "H:/Research/10. Prediction/data/blockchain/processed_trades.csv"
+MARKETS = "H:/Research/10. Prediction/data/polymarket_markets.csv"
 N_WEEKS_HISTORY = 12  # limit history written to JSON to keep payload small
 TOP_K = 30  # latest week shows top 30 (powers the homepage heatmap); history keeps top 5
 

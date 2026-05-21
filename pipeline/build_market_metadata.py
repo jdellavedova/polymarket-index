@@ -37,10 +37,10 @@ import requests
 
 from categorize import categorize as heuristic_categorize
 
-STATIC_CSV = "J:/Research/10. Prediction/data/polymarket_markets.csv"
-MARKET_WINNER = "J:/Research/10. Prediction/data/blockchain/market_winner_map.pkl"
-TOKEN_OUTCOME = "J:/Research/10. Prediction/data/blockchain/token_outcome_map.pkl"
-OUT_PATH = Path("J:/Research/10. Prediction/data/blockchain/market_metadata.csv")
+STATIC_CSV = "H:/Research/10. Prediction/data/polymarket_markets.csv"
+MARKET_WINNER = "H:/Research/10. Prediction/data/blockchain/market_winner_map.pkl"
+TOKEN_OUTCOME = "H:/Research/10. Prediction/data/blockchain/token_outcome_map.pkl"
+OUT_PATH = Path("H:/Research/10. Prediction/data/blockchain/market_metadata.csv")
 
 GAMMA = "https://gamma-api.polymarket.com/markets/{mid}"
 GAMMA_TIMEOUT = 12

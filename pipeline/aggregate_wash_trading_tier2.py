@@ -30,7 +30,7 @@ import duckdb
 from common import utc_now, write_json
 from config import DATA_OUT
 
-TRADES = "J:/Research/10. Prediction/data/blockchain/processed_trades.csv"
+TRADES = "H:/Research/10. Prediction/data/blockchain/processed_trades.csv"
 
 # Thresholds to report. Each pair (churn, min_vol, min_trips) becomes a row in
 # the result table. Strictest threshold is the headline.

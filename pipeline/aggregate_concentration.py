@@ -29,7 +29,7 @@ import duckdb
 from common import utc_now, write_json
 from config import DATA_OUT
 
-TRADES = "J:/Research/10. Prediction/data/blockchain/processed_trades.csv"
+TRADES = "H:/Research/10. Prediction/data/blockchain/processed_trades.csv"
 
 # HHI thresholds. The 0.25 / 0.50 / 0.75 cutpoints map roughly onto the
 # DOJ horizontal-merger guidelines (unconcentrated / moderately / highly).

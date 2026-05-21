@@ -29,8 +29,8 @@ import pandas as pd
 from common import utc_now, write_json
 from config import DATA_OUT
 
-TRADES = "J:/Research/10. Prediction/data/blockchain/processed_trades.csv"
-WALLETS = "J:/Research/10. Prediction/data/blockchain/wallet_statistics.csv"
+TRADES = "H:/Research/10. Prediction/data/blockchain/processed_trades.csv"
+WALLETS = "H:/Research/10. Prediction/data/blockchain/wallet_statistics.csv"
 FLAGGED = "G:/My Drive/1. Research/1. Polymarket/2. Insider/output/stage19_significant_wallets.csv"
 
 WALLET_TYPE_LABELS = {

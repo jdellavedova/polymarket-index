@@ -12,7 +12,8 @@ load_dotenv(REPO_ROOT / ".env")
 DATA_OUT = REPO_ROOT / "site" / "public" / "data"
 DATA_OUT.mkdir(parents=True, exist_ok=True)
 
-PAPER4 = Path("J:/Research/10. Prediction/data/blockchain/paper4")
+BLOCKCHAIN = Path("H:/Research/10. Prediction/data/blockchain")
+PAPER4 = BLOCKCHAIN / "paper4"
 INSIDER_OUT = Path("G:/My Drive/1. Research/1. Polymarket/2. Insider/output")
 
 SOURCES = {

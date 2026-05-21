@@ -46,7 +46,7 @@ from config import DATA_OUT
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace', line_buffering=True)
 
-DATA_DIR = Path("J:/Research/10. Prediction/data/blockchain")
+DATA_DIR = Path("H:/Research/10. Prediction/data/blockchain")
 TRADES = DATA_DIR / "processed_trades.csv"
 TOKEN_PKL = DATA_DIR / "token_outcome_map.pkl"
 WINNER_PKL = DATA_DIR / "market_winner_map.pkl"

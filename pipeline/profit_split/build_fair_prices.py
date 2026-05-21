@@ -34,7 +34,7 @@ import pandas as pd
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace', line_buffering=True)
 
-DATA_DIR = Path("J:/Research/10. Prediction/data/blockchain")
+DATA_DIR = Path("H:/Research/10. Prediction/data/blockchain")
 TRADES = DATA_DIR / "processed_trades.csv"
 TOKEN_PKL = DATA_DIR / "token_outcome_map.pkl"
 

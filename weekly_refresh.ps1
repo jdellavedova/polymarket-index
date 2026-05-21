@@ -4,11 +4,13 @@
 
 $ErrorActionPreference = "Stop"
 $LOG      = "C:\Users\joshd\Dev\polymarket-index\refresh.log"
-$DATA     = "J:\Research\10. Prediction\data\blockchain"
+$DATA     = "H:\Research\10. Prediction\data\blockchain"
 $PAPER4   = "$DATA\paper4"
 $REPO     = "C:\Users\joshd\Dev\polymarket-index"
-$date_tag = (Get-Date -Format "yyyyMMdd")
-$week_label = (Get-Date -Format "yyyy-MM-dd")
+
+# Use UTC date to match Python's datetime.now(timezone.utc) in pull_polygon_delta_fast.py
+$date_tag   = (Get-Date -AsUTC -Format "yyyyMMdd")
+$week_label = (Get-Date -AsUTC -Format "yyyy-MM-dd")
 
 function Log($msg) {
     $ts   = Get-Date -Format "HH:mm:ss"
@@ -21,7 +23,7 @@ function Run($label, $scriptBlock) {
     Log "START: $label"
     $t = [System.Diagnostics.Stopwatch]::StartNew()
     & $scriptBlock
-    if ($LASTEXITCODE -and $LASTEXITCODE -gt 1) {
+    if ($LASTEXITCODE -ne 0) {
         Log "ERROR: $label failed (exit $LASTEXITCODE)"
         exit 1
     }

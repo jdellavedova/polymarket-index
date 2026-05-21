@@ -33,7 +33,7 @@ import duckdb
 from common import utc_now, write_json
 from config import DATA_OUT
 
-TRADES = "J:/Research/10. Prediction/data/blockchain/processed_trades.csv"
+TRADES = "H:/Research/10. Prediction/data/blockchain/processed_trades.csv"
 
 # Persistence threshold: minimum number of trades the same pair must have
 # against each other to be considered. Single coincidental matches in big

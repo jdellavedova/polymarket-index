@@ -24,9 +24,9 @@ import pandas as pd
 from common import utc_now, write_json
 from config import DATA_OUT
 
-TRADES = "J:/Research/10. Prediction/data/blockchain/processed_trades.csv"
-TOKEN_OUTCOME = "J:/Research/10. Prediction/data/blockchain/token_outcome_map.pkl"
-MARKET_WINNER = "J:/Research/10. Prediction/data/blockchain/market_winner_map.pkl"
+TRADES = "H:/Research/10. Prediction/data/blockchain/processed_trades.csv"
+TOKEN_OUTCOME = "H:/Research/10. Prediction/data/blockchain/token_outcome_map.pkl"
+MARKET_WINNER = "H:/Research/10. Prediction/data/blockchain/market_winner_map.pkl"
 FLAGGED = "G:/My Drive/1. Research/1. Polymarket/2. Insider/output/stage19_significant_wallets.csv"
 
 
