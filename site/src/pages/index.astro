@@ -123,9 +123,9 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
   <p class="re-findings-sub">Algorithmic wallets, retail traders, and the execution gap that separates them. <a href="/research">Read the paper →</a></p>
   <div class="re-findings-grid re-findings-pair">
     <FindingCard
-      label="ALGORITHMIC SHARE"
+      label="ALGORITHMIC SHARE (13-WEEK MA)"
       headline={`${botShareNow.toFixed(0)}%`}
-      claim="Bots ran 87% of all counterparty events on Polymarket this week. The share has climbed from near zero in late 2022."
+      claim={`Algorithmic wallets accounted for ${botShareNow.toFixed(0)}% of all counterparty events (13-week moving average). The share has climbed from near zero in late 2022.`}
       sparklineData={botShareSpark}
       href="/bot-share"
     />

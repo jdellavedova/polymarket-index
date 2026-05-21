@@ -102,7 +102,7 @@ def _annotations(market: dict, micro: dict | None, snap: dict | None, baseline_b
             })
             sp_c = yb.get("spread_cents")
             sp_bp = yb.get("spread_bps")
-            if sp_c is not None and sp_bp is not None:
+            if sp_c is not None and sp_bp is not None and sp_c > 0 and sp_bp > 0:
                 # Wide spread (>5%) = thin book, journalist warning
                 tone = "alert" if sp_bp > 500 else ("warn" if sp_bp > 200 else "flat")
                 a.append({
@@ -217,8 +217,28 @@ def main() -> None:
             pass
 
     baseline_bot = activity["by_type_share"]["bot"]
+
+    def _is_resolved(market_id: str) -> bool:
+        snap = snap_by_id.get(str(market_id))
+        if not snap:
+            return False
+        yp = snap.get("yes_price")
+        if yp is None:
+            return False
+        if yp >= 0.999 or yp <= 0.001:
+            yb = snap.get("yes_book") or {}
+            if not yb.get("top_bid_price"):
+                return True
+        return False
+
+    # Prefer live (unresolved) markets; fall back to resolved ones only if needed.
+    candidates = top["markets"]
+    live = [m for m in candidates if not _is_resolved(m["market_id"])]
+    resolved_fill = [m for m in candidates if _is_resolved(m["market_id"])]
+    ordered = (live + resolved_fill)[:6]
+
     briefings = []
-    for m in top["markets"][:6]:
+    for m in ordered:
         mid = str(m["market_id"])
         cat = m.get("category") or CATEGORY_FALLBACK
         ovr = overrides.get(mid, {})

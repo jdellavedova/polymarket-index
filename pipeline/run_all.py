@@ -56,6 +56,7 @@ SURVEILLANCE_OVERVIEW = ["aggregate_surveillance_overview"]
 PUBLISH = [
     "build_master_table",
     "build_weekly_narrative",
+    "build_commentary",
     "build_briefings",
     "build_og_image",
     "build_press_kit",

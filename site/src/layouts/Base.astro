@@ -14,6 +14,11 @@ const {
   wide = false,
 } = Astro.props;
 const year = new Date().getFullYear();
+const today = new Date();
+const daysUntilSunday = today.getDay() === 0 ? 7 : 7 - today.getDay();
+const nextSunday = new Date(today);
+nextSunday.setDate(today.getDate() + daysUntilSunday);
+const nextRefresh = nextSunday.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 const fullOgUrl = new URL(ogImage, Astro.site ?? "https://jdellavedova.com").toString();
 const canonical = Astro.url.href;
 const desc = description ?? "Weekly behavioral and microstructure indices from 640M on-chain Polymarket trades. By Joshua Della Vedova, University of San Diego.";
@@ -75,7 +80,7 @@ const desc = description ?? "Weekly behavioral and microstructure indices from 6
       Joshua Della Vedova &middot; Knauss School of Business &middot; University of San Diego
     </div>
     <div style="margin-top:6px;">
-      Data updated weekly &middot; <a href="/methodology">Methodology</a> &middot; <a href="https://orcid.org/0000-0003-3371-9735">ORCID</a> &middot; <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2583491">SSRN</a> &middot; <a href="https://scholar.google.com/citations?user=6KY3PLwAAAAJ&hl=en">Scholar</a> &middot; &copy; {year}
+      Data updated weekly &middot; Next refresh: {nextRefresh} &middot; <a href="/methodology">Methodology</a> &middot; <a href="https://orcid.org/0000-0003-3371-9735">ORCID</a> &middot; <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2583491">SSRN</a> &middot; <a href="https://scholar.google.com/citations?user=6KY3PLwAAAAJ&hl=en">Scholar</a> &middot; &copy; {year}
     </div>
     <div class="disclaimer">
       The Della Vedova Prediction Market Indices are a research dataset. Nothing on this site

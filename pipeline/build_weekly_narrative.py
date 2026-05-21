@@ -79,16 +79,24 @@ def main() -> None:
 
     # Sentence 1: headline activity (dollars, trades, new users)
     new_ctx = ""
-    if new_ma13w is not None:
+    if new_ma13w is not None and new_participants > 0:
         if new_participants > new_ma13w * 1.2:
             new_ctx = " (above the recent trend)"
         elif new_participants < new_ma13w * 0.8:
             new_ctx = " (below the recent trend)"
+
+    if new_participants > 50:
+        new_wallet_clause = (
+            f"with {_commas(new_participants)} wallets placing their first-ever bet{new_ctx}. "
+        )
+    else:
+        new_wallet_clause = ""
+
     s1 = (
         f"Traders moved {_usd(total_vol)} through Polymarket in the week of {as_of}, "
-        f"across {_compact_trades(total_trades)} individual trades, "
-        f"with {_commas(new_participants)} wallets placing their first-ever bet{new_ctx}. "
-        f"Algorithmic wallets accounted for {bot_share_now * 100:.0f}% of weekly counterparty events "
+        f"across {_compact_trades(total_trades)} individual trades. "
+        + new_wallet_clause
+        + f"Algorithmic wallets accounted for {bot_share_now * 100:.0f}% of weekly counterparty events "
         f"(both maker and taker sides counted); everyone else split the remaining "
         f"{((1 - bot_share_now) * 100):.0f}%."
     )

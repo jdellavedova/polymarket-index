@@ -139,52 +139,13 @@ def main() -> None:
             "pattern_consistent_with": "mechanical self-matching",
         })
 
-    # --- In development: Matched / Pre-Arranged Orders (slot 6) ---
-    # The previous structural counterparty-persistence screen was demoted
-    # because it was dominated by competing MMs, not coordinated washers.
-    # Network-cluster method (Sirolly et al 2025) is the correct implementation.
-    cards.append({
-        "slot": 6,
-        "status": "coming_soon",
-        "name": "Matched / Pre-Arranged Orders",
-        "value": "in development",
-        "secondary": "network-cluster detection of coordinated bilateral trading",
-        "description": (
-            "Wallet pairs and small clusters that trade primarily with each other and rarely "
-            "with the broader market. Pending a network-cluster implementation consistent with "
-            "Sirolly, Ma, Kanoria, and Sethi (Columbia, 2025). The earlier structural-persistence "
-            "screen has been demoted; its raw output remains downloadable for reproducibility."
-        ),
-        "href": "/surveillance/matched-orders",
-        "pattern_consistent_with": "coordinated bilateral trading",
-    })
-
-    # --- Roadmap stubs (7) ---
-    stubs = [
-        {
-            "slot": 7,
-            "status": "coming_soon",
-            "name": "Marking the Close",
-            "value": "in development",
-            "secondary": "directional concentration in final pre-resolution window",
-            "description": (
-                "Concentration of one-sided trading in the final hours before market "
-                "resolution moving the settling price. Limited by minute-grain "
-                "timestamps in on-chain data; intraday precision not possible."
-            ),
-            "href": "/surveillance",
-            "pattern_consistent_with": "settling-price manipulation",
-        },
-    ]
-    cards.extend(stubs)
-
-    # --- Live: Concentration / Pump Risk (slot 8) ---
+    # --- Live: Concentration / Pump Risk (slot 6) ---
     conc = _read("surveillance_concentration_latest.json")
     if conc:
         ss = conc["population"]["summary_stats"]
         strict = next((t for t in conc.get("thresholds", []) if t.get("min_hhi") == 0.75), None)
         cards.append({
-            "slot": 8,
+            "slot": 6,
             "status": "live",
             "name": "Concentration / Pump Risk",
             "value": f"median HHI {ss['median_hhi']:.3f}",
@@ -203,6 +164,37 @@ def main() -> None:
             "href": "/surveillance/concentration",
             "pattern_consistent_with": "single-trader price control",
         })
+
+    # --- In development ---
+    cards.append({
+        "slot": 7,
+        "status": "coming_soon",
+        "name": "Matched / Pre-Arranged Orders",
+        "value": "in development",
+        "secondary": "network-cluster detection of coordinated bilateral trading",
+        "description": (
+            "Wallet pairs and small clusters that trade primarily with each other and rarely "
+            "with the broader market. Pending a network-cluster implementation consistent with "
+            "Sirolly, Ma, Kanoria, and Sethi (Columbia, 2025). The earlier structural-persistence "
+            "screen has been demoted; its raw output remains downloadable for reproducibility."
+        ),
+        "href": "/surveillance/matched-orders",
+        "pattern_consistent_with": "coordinated bilateral trading",
+    })
+    cards.append({
+        "slot": 8,
+        "status": "coming_soon",
+        "name": "Marking the Close",
+        "value": "in development",
+        "secondary": "directional concentration in final pre-resolution window",
+        "description": (
+            "Concentration of one-sided trading in the final hours before market "
+            "resolution moving the settling price. Limited by minute-grain "
+            "timestamps in on-chain data; intraday precision not possible."
+        ),
+        "href": "/surveillance",
+        "pattern_consistent_with": "settling-price manipulation",
+    })
 
     # Aggregate stats for the page header strip.
     n_live = sum(1 for c in cards if c["status"] == "live")

@@ -53,14 +53,13 @@ const infeasible = overview.infeasible_tests as any[];
 
   <h2 class="rs-section-h">In development ({stubCards.length})</h2>
   <p class="rs-section-sub">
-    These four indices are scheduled for subsequent releases. Aggregator design and data feasibility are
+    These indices are scheduled for subsequent releases. Aggregator design and data feasibility are
     confirmed; the bottleneck is implementation time.
   </p>
   <div class="rs-grid">
     {stubCards.map(c => (
       <article class="rs-card">
         <div class="rs-card-top">
-          <span class="rs-paper-n">#{c.slot}</span>
           <span class="rs-status rs-status-wip">In development</span>
         </div>
         <div class="rs-card-title">{c.name}</div>
