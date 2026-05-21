@@ -6,31 +6,31 @@
         "rank": 1,
         "market_id": "1198423",
         "question": null,
-        "usd_volume": 6470765.993281988
+        "usd_volume": 6470765.993281991
       },
       {
         "rank": 2,
         "market_id": "572473",
         "question": "Will Trump nominate Judy Shelton as the next Fed chair?",
-        "usd_volume": 5010487.114473998
+        "usd_volume": 5010487.114473994
       },
       {
         "rank": 3,
         "market_id": "703257",
         "question": "Will the US confirm that aliens exist before 2027?",
-        "usd_volume": 3624164.3030779962
+        "usd_volume": 3624164.303078001
       },
       {
         "rank": 4,
         "market_id": "654414",
         "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
-        "usd_volume": 2906143.961355001
+        "usd_volume": 2906143.961354999
       },
       {
         "rank": 5,
         "market_id": "984441",
         "question": null,
-        "usd_volume": 2850532.264797998
+        "usd_volume": 2850532.2647979986
       },
       {
         "rank": 6,
@@ -42,13 +42,13 @@
         "rank": 7,
         "market_id": "1310506",
         "question": null,
-        "usd_volume": 2122269.7015559995
+        "usd_volume": 2122269.701556
       },
       {
         "rank": 8,
         "market_id": "564205",
         "question": "Will the Toronto Raptors win the NBA Eastern Conference Finals?",
-        "usd_volume": 1818865.8163670022
+        "usd_volume": 1818865.8163670003
       },
       {
         "rank": 9,
@@ -60,19 +60,19 @@
         "rank": 10,
         "market_id": "553828",
         "question": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
-        "usd_volume": 1650223.6467120005
+        "usd_volume": 1650223.646712002
       },
       {
         "rank": 11,
         "market_id": "572469",
         "question": "Will Trump nominate Kevin Warsh as the next Fed chair?",
-        "usd_volume": 1599050.7161860012
+        "usd_volume": 1599050.7161860003
       },
       {
         "rank": 12,
         "market_id": "561237",
         "question": "Will Andy Beshear win the 2028 US Presidential Election?",
-        "usd_volume": 1539883.1783510002
+        "usd_volume": 1539883.1783510004
       },
       {
         "rank": 13,
@@ -84,19 +84,19 @@
         "rank": 14,
         "market_id": "1180303",
         "question": null,
-        "usd_volume": 1202026.4180110004
+        "usd_volume": 1202026.4180110001
       },
       {
         "rank": 15,
         "market_id": "559654",
         "question": "Will Pete Buttigieg win the 2028 Democratic presidential nomination?",
-        "usd_volume": 1193693.173862001
+        "usd_volume": 1193693.173862
       },
       {
         "rank": 16,
         "market_id": "564163",
         "question": "Will Luka Doncic win the 2025\u20132026 NBA MVP?",
-        "usd_volume": 1190142.481118
+        "usd_volume": 1190142.4811179996
       },
       {
         "rank": 17,
@@ -108,37 +108,37 @@
         "rank": 18,
         "market_id": "561231",
         "question": "Will Alexandria Ocasio-Cortez win the 2028 US Presidential Election?",
-        "usd_volume": 1142019.2633939998
+        "usd_volume": 1142019.2633940002
       },
       {
         "rank": 19,
         "market_id": "567563",
         "question": "Will the next Prime Minister of Hungary be L\u00e1szl\u00f3 Toroczkai?",
-        "usd_volume": 1122974.818553
+        "usd_volume": 1122974.8185529995
       },
       {
         "rank": 20,
         "market_id": "1273931",
         "question": null,
-        "usd_volume": 993754.8354779995
+        "usd_volume": 993754.8354780001
       },
       {
         "rank": 21,
         "market_id": "566145",
         "question": "Will Inter win the 2025\u201326 Champions League?",
-        "usd_volume": 969697.6332420001
+        "usd_volume": 969697.633242
       },
       {
         "rank": 22,
         "market_id": "558951",
         "question": "Will Norway win the 2026 FIFA World Cup?",
-        "usd_volume": 958179.2180920003
+        "usd_volume": 958179.2180919996
       },
       {
         "rank": 23,
         "market_id": "566149",
         "question": "Will Tottenham win the 2025\u201326 Champions League?",
-        "usd_volume": 902285.0979819999
+        "usd_volume": 902285.0979819997
       },
       {
         "rank": 24,
@@ -150,13 +150,13 @@
         "rank": 25,
         "market_id": "654413",
         "question": "Will the Fed decrease interest rates by 25 bps after the March 2026 meeting?",
-        "usd_volume": 803035.4989550001
+        "usd_volume": 803035.4989549996
       },
       {
         "rank": 26,
         "market_id": "1303400",
         "question": null,
-        "usd_volume": 763157.4832770004
+        "usd_volume": 763157.4832769997
       },
       {
         "rank": 27,
@@ -168,19 +168,19 @@
         "rank": 28,
         "market_id": "1198479",
         "question": null,
-        "usd_volume": 714068.6242389999
+        "usd_volume": 714068.6242390001
       },
       {
         "rank": 29,
         "market_id": "558938",
         "question": "Will Argentina win the 2026 FIFA World Cup?",
-        "usd_volume": 696111.5974290002
+        "usd_volume": 696111.5974290001
       },
       {
         "rank": 30,
         "market_id": "897776",
         "question": null,
-        "usd_volume": 676333.5664179999
+        "usd_volume": 676333.5664180004
       }
     ]
   },
@@ -191,79 +191,79 @@
         "rank": 1,
         "market_id": "1180303",
         "question": null,
-        "usd_volume": 49726715.828793034
+        "usd_volume": 49726715.82879304
       },
       {
         "rank": 2,
         "market_id": "1198423",
         "question": null,
-        "usd_volume": 19340428.89430796
+        "usd_volume": 19340428.894307956
       },
       {
         "rank": 3,
         "market_id": "572473",
         "question": "Will Trump nominate Judy Shelton as the next Fed chair?",
-        "usd_volume": 13427379.174942017
+        "usd_volume": 13427379.174942005
       },
       {
         "rank": 4,
         "market_id": "916732",
         "question": null,
-        "usd_volume": 12259953.996690962
+        "usd_volume": 12259953.996690966
       },
       {
         "rank": 5,
         "market_id": "572469",
         "question": "Will Trump nominate Kevin Warsh as the next Fed chair?",
-        "usd_volume": 11803238.270196011
+        "usd_volume": 11803238.27019601
       },
       {
         "rank": 6,
         "market_id": "958442",
         "question": null,
-        "usd_volume": 5794349.448559994
+        "usd_volume": 5794349.448560002
       },
       {
         "rank": 7,
         "market_id": "654414",
         "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
-        "usd_volume": 5087039.472850999
+        "usd_volume": 5087039.472850996
       },
       {
         "rank": 8,
         "market_id": "1227361",
         "question": null,
-        "usd_volume": 4887434.86915799
+        "usd_volume": 4887434.869157989
       },
       {
         "rank": 9,
         "market_id": "1273937",
         "question": null,
-        "usd_volume": 2685533.5523300003
+        "usd_volume": 2685533.5523299994
       },
       {
         "rank": 10,
         "market_id": "703257",
         "question": "Will the US confirm that aliens exist before 2027?",
-        "usd_volume": 2661931.268963996
+        "usd_volume": 2661931.2689640005
       },
       {
         "rank": 11,
         "market_id": "1288111",
         "question": null,
-        "usd_volume": 2642144.6761869993
+        "usd_volume": 2642144.676187
       },
       {
         "rank": 12,
         "market_id": "958443",
         "question": null,
-        "usd_volume": 2611862.1740019894
+        "usd_volume": 2611862.1740019917
       },
       {
         "rank": 13,
         "market_id": "984441",
         "question": null,
-        "usd_volume": 2344936.8575100005
+        "usd_volume": 2344936.8575099995
       },
       {
         "rank": 14,
@@ -275,31 +275,31 @@
         "rank": 15,
         "market_id": "1178277",
         "question": null,
-        "usd_volume": 2127189.0310659995
+        "usd_volume": 2127189.031066
       },
       {
         "rank": 16,
         "market_id": "1169205",
         "question": null,
-        "usd_volume": 1725564.0628700005
+        "usd_volume": 1725564.0628700003
       },
       {
         "rank": 17,
         "market_id": "561237",
         "question": "Will Andy Beshear win the 2028 US Presidential Election?",
-        "usd_volume": 1650313.5831699995
+        "usd_volume": 1650313.5831699993
       },
       {
         "rank": 18,
         "market_id": "679229",
         "question": "Will James Talarico be the Democratic nominee for Senate in Texas?",
-        "usd_volume": 1584341.0805690007
+        "usd_volume": 1584341.0805690018
       },
       {
         "rank": 19,
         "market_id": "553828",
         "question": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
-        "usd_volume": 1575697.488346
+        "usd_volume": 1575697.4883460004
       },
       {
         "rank": 20,
@@ -311,61 +311,61 @@
         "rank": 21,
         "market_id": "540881",
         "question": "GTA VI released before June 2026?",
-        "usd_volume": 1432843.1402870002
+        "usd_volume": 1432843.140287001
       },
       {
         "rank": 22,
         "market_id": "561231",
         "question": "Will Alexandria Ocasio-Cortez win the 2028 US Presidential Election?",
-        "usd_volume": 1428552.9539400015
+        "usd_volume": 1428552.9539400009
       },
       {
         "rank": 23,
         "market_id": "703258",
         "question": "Will Jesus Christ return before 2027?",
-        "usd_volume": 1378271.4388450007
+        "usd_volume": 1378271.438845001
       },
       {
         "rank": 24,
         "market_id": "527079",
         "question": "Will GTA 6 cost $100+?",
-        "usd_volume": 1231233.6967440003
+        "usd_volume": 1231233.696744001
       },
       {
         "rank": 25,
         "market_id": "1198709",
         "question": null,
-        "usd_volume": 1193412.7046450009
+        "usd_volume": 1193412.7046450002
       },
       {
         "rank": 26,
         "market_id": "654413",
         "question": "Will the Fed decrease interest rates by 25 bps after the March 2026 meeting?",
-        "usd_volume": 1184333.80275
+        "usd_volume": 1184333.802749999
       },
       {
         "rank": 27,
         "market_id": "663583",
         "question": "Will the Iranian regime fall before 2027?",
-        "usd_volume": 1163670.4992100028
+        "usd_volume": 1163670.4992100038
       },
       {
         "rank": 28,
         "market_id": "1273936",
         "question": null,
-        "usd_volume": 1148963.2713660016
+        "usd_volume": 1148963.2713660009
       },
       {
         "rank": 29,
         "market_id": "568634",
         "question": "Will Xander Schauffele win the 2026 Masters tournament?",
-        "usd_volume": 1094238.669681002
+        "usd_volume": 1094238.6696810033
       },
       {
         "rank": 30,
         "market_id": "564205",
         "question": "Will the Toronto Raptors win the NBA Eastern Conference Finals?",
-        "usd_volume": 1093726.6063360008
+        "usd_volume": 1093726.6063360013
       }
     ]
   },
@@ -376,43 +376,43 @@
         "rank": 1,
         "market_id": "654414",
         "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
-        "usd_volume": 11389935.230525997
+        "usd_volume": 11389935.230526
       },
       {
         "rank": 2,
         "market_id": "1227361",
         "question": null,
-        "usd_volume": 10895336.292308
+        "usd_volume": 10895336.292307995
       },
       {
         "rank": 3,
         "market_id": "958442",
         "question": null,
-        "usd_volume": 4117776.3907529935
+        "usd_volume": 4117776.3907529954
       },
       {
         "rank": 4,
         "market_id": "958443",
         "question": null,
-        "usd_volume": 2744907.668976003
+        "usd_volume": 2744907.668976001
       },
       {
         "rank": 5,
         "market_id": "654415",
         "question": "Will the Fed increase interest rates by 25+ bps after the March 2026 meeting?",
-        "usd_volume": 2736286.829666001
+        "usd_volume": 2736286.829665999
       },
       {
         "rank": 6,
         "market_id": "1162940",
         "question": null,
-        "usd_volume": 1888556.8931449985
+        "usd_volume": 1888556.8931449978
       },
       {
         "rank": 7,
         "market_id": "654413",
         "question": "Will the Fed decrease interest rates by 25 bps after the March 2026 meeting?",
-        "usd_volume": 1570363.6098250016
+        "usd_volume": 1570363.6098250006
       },
       {
         "rank": 8,
@@ -430,25 +430,25 @@
         "rank": 10,
         "market_id": "665307",
         "question": "Will Iran close the Strait of Hormuz before 2027?",
-        "usd_volume": 1292618.8162750003
+        "usd_volume": 1292618.8162750008
       },
       {
         "rank": 11,
         "market_id": "1227362",
         "question": null,
-        "usd_volume": 1271891.1735890005
+        "usd_volume": 1271891.1735890007
       },
       {
         "rank": 12,
         "market_id": "654412",
         "question": "Will the Fed decrease interest rates by 50+ bps after the March 2026 meeting?",
-        "usd_volume": 1223523.8278329994
+        "usd_volume": 1223523.827833
       },
       {
         "rank": 13,
         "market_id": "693291",
         "question": "Will The Greens win the most seats in the 2026 Baden-W\u00fcrttemberg parliamentary elections?",
-        "usd_volume": 948257.389878
+        "usd_volume": 948257.3898779998
       },
       {
         "rank": 14,
@@ -460,13 +460,13 @@
         "rank": 15,
         "market_id": "1198709",
         "question": null,
-        "usd_volume": 829930.2536549995
+        "usd_volume": 829930.2536550006
       },
       {
         "rank": 16,
         "market_id": "561829",
         "question": "Russia x Ukraine ceasefire by March 31, 2026?",
-        "usd_volume": 829068.0005860002
+        "usd_volume": 829068.0005859996
       },
       {
         "rank": 17,
@@ -478,49 +478,49 @@
         "rank": 18,
         "market_id": "703258",
         "question": "Will Jesus Christ return before 2027?",
-        "usd_volume": 735076.2266250002
+        "usd_volume": 735076.2266249991
       },
       {
         "rank": 19,
         "market_id": "553828",
         "question": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
-        "usd_volume": 719957.0994889997
+        "usd_volume": 719957.0994889998
       },
       {
         "rank": 20,
         "market_id": "666860",
         "question": "Trump out as President by March 31?",
-        "usd_volume": 692706.531079
+        "usd_volume": 692706.5310789996
       },
       {
         "rank": 21,
         "market_id": "559656",
         "question": "Will Wes Moore win the 2028 Democratic presidential nomination?",
-        "usd_volume": 687323.1257060003
+        "usd_volume": 687323.1257059999
       },
       {
         "rank": 22,
         "market_id": "677397",
         "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
-        "usd_volume": 655996.1437739998
+        "usd_volume": 655996.1437740006
       },
       {
         "rank": 23,
         "market_id": "701290",
         "question": "Will China invade Taiwan by March 31, 2026?",
-        "usd_volume": 628633.1226609997
+        "usd_volume": 628633.1226609998
       },
       {
         "rank": 24,
         "market_id": "663583",
         "question": "Will the Iranian regime fall before 2027?",
-        "usd_volume": 579711.5009850002
+        "usd_volume": 579711.5009849999
       },
       {
         "rank": 25,
         "market_id": "559652",
         "question": "Will Gavin Newsom win the 2028 Democratic presidential nomination?",
-        "usd_volume": 576384.9523010001
+        "usd_volume": 576384.9523009993
       },
       {
         "rank": 26,
@@ -532,25 +532,25 @@
         "rank": 27,
         "market_id": "693288",
         "question": "Will CDU win the most seats in the 2026 Baden-W\u00fcrttemberg parliamentary elections?",
-        "usd_volume": 558892.1787999999
+        "usd_volume": 558892.1788
       },
       {
         "rank": 28,
         "market_id": "568669",
         "question": "Will Adam Scott win the 2026 Masters tournament?",
-        "usd_volume": 543053.3248070001
+        "usd_volume": 543053.324807
       },
       {
         "rank": 29,
         "market_id": "564205",
         "question": "Will the Toronto Raptors win the NBA Eastern Conference Finals?",
-        "usd_volume": 542474.3134360003
+        "usd_volume": 542474.3134359998
       },
       {
         "rank": 30,
         "market_id": "566172",
         "question": "Will Bodo Glimt win the 2025\u201326 Champions League?",
-        "usd_volume": 532980.1402510006
+        "usd_volume": 532980.1402509982
       }
     ]
   },
@@ -561,37 +561,37 @@
         "rank": 1,
         "market_id": "1227361",
         "question": null,
-        "usd_volume": 13411689.182295006
+        "usd_volume": 13411689.182295
       },
       {
         "rank": 2,
         "market_id": "654414",
         "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
-        "usd_volume": 11954637.651405988
+        "usd_volume": 11954637.65140599
       },
       {
         "rank": 3,
         "market_id": "654415",
         "question": "Will the Fed increase interest rates by 25+ bps after the March 2026 meeting?",
-        "usd_volume": 3810468.598553991
+        "usd_volume": 3810468.59855402
       },
       {
         "rank": 4,
         "market_id": "958442",
         "question": null,
-        "usd_volume": 2569046.757817999
+        "usd_volume": 2569046.757818
       },
       {
         "rank": 5,
         "market_id": "654412",
         "question": "Will the Fed decrease interest rates by 50+ bps after the March 2026 meeting?",
-        "usd_volume": 1646649.4168720003
+        "usd_volume": 1646649.4168719996
       },
       {
         "rank": 6,
         "market_id": "1227362",
         "question": null,
-        "usd_volume": 1612760.037632
+        "usd_volume": 1612760.0376319997
       },
       {
         "rank": 7,
@@ -603,13 +603,13 @@
         "rank": 8,
         "market_id": "665307",
         "question": "Will Iran close the Strait of Hormuz before 2027?",
-        "usd_volume": 1504457.3818919999
+        "usd_volume": 1504457.381892
       },
       {
         "rank": 9,
         "market_id": "958443",
         "question": null,
-        "usd_volume": 1461735.616913998
+        "usd_volume": 1461735.6169140008
       },
       {
         "rank": 10,
@@ -621,7 +621,7 @@
         "rank": 11,
         "market_id": "564216",
         "question": "Will the Golden State Warriors win the NBA Western Conference Finals?",
-        "usd_volume": 1046192.1384720001
+        "usd_volume": 1046192.138472
       },
       {
         "rank": 12,
@@ -633,37 +633,37 @@
         "rank": 13,
         "market_id": "614012",
         "question": "Will Michael B. Jordan win Best Actor at the 98th Academy Awards?",
-        "usd_volume": 947738.5257070002
+        "usd_volume": 947738.5257070003
       },
       {
         "rank": 14,
         "market_id": "566172",
         "question": "Will Bodo Glimt win the 2025\u201326 Champions League?",
-        "usd_volume": 841037.4104110003
+        "usd_volume": 841037.4104110001
       },
       {
         "rank": 15,
         "market_id": "666860",
         "question": "Trump out as President by March 31?",
-        "usd_volume": 741312.1827340001
+        "usd_volume": 741312.182734
       },
       {
         "rank": 16,
         "market_id": "613835",
         "question": "Will One Battle After Another win Best Picture at the 98th Academy Awards?",
-        "usd_volume": 706346.8106539994
+        "usd_volume": 706346.8106539998
       },
       {
         "rank": 17,
         "market_id": "654413",
         "question": "Will the Fed decrease interest rates by 25 bps after the March 2026 meeting?",
-        "usd_volume": 663685.0276380023
+        "usd_volume": 663685.027638002
       },
       {
         "rank": 18,
         "market_id": "561237",
         "question": "Will Andy Beshear win the 2028 US Presidential Election?",
-        "usd_volume": 649749.5105420001
+        "usd_volume": 649749.510542
       },
       {
         "rank": 19,
@@ -681,13 +681,13 @@
         "rank": 21,
         "market_id": "559652",
         "question": "Will Gavin Newsom win the 2028 Democratic presidential nomination?",
-        "usd_volume": 610636.8491130003
+        "usd_volume": 610636.8491130007
       },
       {
         "rank": 22,
         "market_id": "1198709",
         "question": null,
-        "usd_volume": 571904.6139199998
+        "usd_volume": 571904.6139199997
       },
       {
         "rank": 23,
@@ -699,19 +699,19 @@
         "rank": 24,
         "market_id": "553828",
         "question": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
-        "usd_volume": 505558.38445200026
+        "usd_volume": 505558.3844520003
       },
       {
         "rank": 25,
         "market_id": "568634",
         "question": "Will Xander Schauffele win the 2026 Masters tournament?",
-        "usd_volume": 496584.04437300004
+        "usd_volume": 496584.044373
       },
       {
         "rank": 26,
         "market_id": "614008",
         "question": "Will Timoth\u00e9e Chalamet win Best Actor at the 98th Academy Awards?",
-        "usd_volume": 476366.6698999997
+        "usd_volume": 476366.6698999993
       },
       {
         "rank": 27,
@@ -723,19 +723,19 @@
         "rank": 28,
         "market_id": "561979",
         "question": "Will Ron DeSantis win the 2028 Republican presidential nomination?",
-        "usd_volume": 460416.6242560002
+        "usd_volume": 460416.6242560001
       },
       {
         "rank": 29,
         "market_id": "564205",
         "question": "Will the Toronto Raptors win the NBA Eastern Conference Finals?",
-        "usd_volume": 453506.5871999998
+        "usd_volume": 453506.5871999994
       },
       {
         "rank": 30,
         "market_id": "568640",
         "question": "Will Jordan Spieth win the 2026 Masters tournament?",
-        "usd_volume": 443354.25274599995
+        "usd_volume": 443354.2527459999
       }
     ]
   },
@@ -746,73 +746,73 @@
         "rank": 1,
         "market_id": "958442",
         "question": null,
-        "usd_volume": 4319407.219759997
+        "usd_volume": 4319407.219759996
       },
       {
         "rank": 2,
         "market_id": "654414",
         "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
-        "usd_volume": 3287129.8904359993
+        "usd_volume": 3287129.890435999
       },
       {
         "rank": 3,
         "market_id": "677397",
         "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
-        "usd_volume": 2356543.2336519985
+        "usd_volume": 2356543.2336519994
       },
       {
         "rank": 4,
         "market_id": "1162940",
         "question": null,
-        "usd_volume": 1986877.3748010003
+        "usd_volume": 1986877.374801
       },
       {
         "rank": 5,
         "market_id": "654413",
         "question": "Will the Fed decrease interest rates by 25 bps after the March 2026 meeting?",
-        "usd_volume": 1950279.166288999
+        "usd_volume": 1950279.1662890015
       },
       {
         "rank": 6,
         "market_id": "669662",
         "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
-        "usd_volume": 1192405.1760679998
+        "usd_volume": 1192405.1760680005
       },
       {
         "rank": 7,
         "market_id": "669663",
         "question": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
-        "usd_volume": 1045059.8903320002
+        "usd_volume": 1045059.8903320003
       },
       {
         "rank": 8,
         "market_id": "958443",
         "question": null,
-        "usd_volume": 1009439.1233560003
+        "usd_volume": 1009439.1233560004
       },
       {
         "rank": 9,
         "market_id": "1220190",
         "question": null,
-        "usd_volume": 992078.1766400003
+        "usd_volume": 992078.1766400005
       },
       {
         "rank": 10,
         "market_id": "666860",
         "question": "Trump out as President by March 31?",
-        "usd_volume": 990935.822861
+        "usd_volume": 990935.8228609995
       },
       {
         "rank": 11,
         "market_id": "561829",
         "question": "Russia x Ukraine ceasefire by March 31, 2026?",
-        "usd_volume": 760314.269114
+        "usd_volume": 760314.2691139998
       },
       {
         "rank": 12,
         "market_id": "553851",
         "question": "Will the Buffalo Sabres win the 2026 NHL Stanley Cup?",
-        "usd_volume": 730116.2874810003
+        "usd_volume": 730116.2874809998
       },
       {
         "rank": 13,
@@ -824,7 +824,7 @@
         "rank": 14,
         "market_id": "568666",
         "question": "Will Matt Fitzpatrick win the 2026 Masters tournament?",
-        "usd_volume": 672399.931261
+        "usd_volume": 672399.9312609998
       },
       {
         "rank": 15,
@@ -836,13 +836,13 @@
         "rank": 16,
         "market_id": "561996",
         "question": "Will Tucker Carlson win the 2028 Republican presidential nomination?",
-        "usd_volume": 640890.861471
+        "usd_volume": 640890.8614710001
       },
       {
         "rank": 17,
         "market_id": "566146",
         "question": "Will Atletico Madrid win the 2025\u201326 Champions League?",
-        "usd_volume": 626509.4068549998
+        "usd_volume": 626509.4068550002
       },
       {
         "rank": 18,
@@ -854,55 +854,55 @@
         "rank": 19,
         "market_id": "658949",
         "question": "Will Iowa State win the 2026 NCAA Tournament?",
-        "usd_volume": 624661.2487830003
+        "usd_volume": 624661.2487829998
       },
       {
         "rank": 20,
         "market_id": "559663",
         "question": "Will J.B. Pritzker win the 2028 Democratic presidential nomination?",
-        "usd_volume": 593895.4294550001
+        "usd_volume": 593895.4294549997
       },
       {
         "rank": 21,
         "market_id": "954518",
         "question": null,
-        "usd_volume": 593587.8898180003
+        "usd_volume": 593587.8898180001
       },
       {
         "rank": 22,
         "market_id": "669661",
         "question": "Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?",
-        "usd_volume": 589950.1921720001
+        "usd_volume": 589950.1921719997
       },
       {
         "rank": 23,
         "market_id": "604490",
         "question": "Will Trump visit China by March 31?",
-        "usd_volume": 574888.8730549999
+        "usd_volume": 574888.8730550001
       },
       {
         "rank": 24,
         "market_id": "954519",
         "question": null,
-        "usd_volume": 574057.3192309997
+        "usd_volume": 574057.3192310005
       },
       {
         "rank": 25,
         "market_id": "561241",
         "question": "Will JB Pritzker win the 2028 US Presidential Election?",
-        "usd_volume": 566408.9798359999
+        "usd_volume": 566408.9798359995
       },
       {
         "rank": 26,
         "market_id": "1198709",
         "question": null,
-        "usd_volume": 560910.6137369999
+        "usd_volume": 560910.613737
       },
       {
         "rank": 27,
         "market_id": "658945",
         "question": "Will Connecticut win the 2026 NCAA Tournament?",
-        "usd_volume": 531396.7870029999
+        "usd_volume": 531396.787003
       },
       {
         "rank": 28,
@@ -914,13 +914,13 @@
         "rank": 29,
         "market_id": "558963",
         "question": "Will Morocco win the 2026 FIFA World Cup?",
-        "usd_volume": 476852.5160510001
+        "usd_volume": 476852.5160509997
       },
       {
         "rank": 30,
         "market_id": "654415",
         "question": "Will the Fed increase interest rates by 25+ bps after the March 2026 meeting?",
-        "usd_volume": 416813.171108
+        "usd_volume": 416813.17110800004
       }
     ]
   },
@@ -931,55 +931,55 @@
         "rank": 1,
         "market_id": "677397",
         "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
-        "usd_volume": 48415483.13609103
+        "usd_volume": 48415483.13609102
       },
       {
         "rank": 2,
         "market_id": "1162940",
         "question": null,
-        "usd_volume": 9311347.01749095
+        "usd_volume": 9311347.017490963
       },
       {
         "rank": 3,
         "market_id": "958442",
         "question": null,
-        "usd_volume": 7470316.828559995
+        "usd_volume": 7470316.828559996
       },
       {
         "rank": 4,
         "market_id": "604490",
         "question": "Will Trump visit China by March 31?",
-        "usd_volume": 5258466.591608002
+        "usd_volume": 5258466.591608003
       },
       {
         "rank": 5,
         "market_id": "669662",
         "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
-        "usd_volume": 1825285.645483002
+        "usd_volume": 1825285.6454830016
       },
       {
         "rank": 6,
         "market_id": "706279",
         "question": "Will Trump visit China by April 30?",
-        "usd_volume": 1720364.4564810006
+        "usd_volume": 1720364.4564809988
       },
       {
         "rank": 7,
         "market_id": "666860",
         "question": "Trump out as President by March 31?",
-        "usd_volume": 1656534.2055900001
+        "usd_volume": 1656534.20559
       },
       {
         "rank": 8,
         "market_id": "669663",
         "question": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
-        "usd_volume": 1367222.4346219997
+        "usd_volume": 1367222.4346219995
       },
       {
         "rank": 9,
         "market_id": "561241",
         "question": "Will JB Pritzker win the 2028 US Presidential Election?",
-        "usd_volume": 1332239.704557003
+        "usd_volume": 1332239.7045570025
       },
       {
         "rank": 10,
@@ -991,31 +991,31 @@
         "rank": 11,
         "market_id": "958443",
         "question": null,
-        "usd_volume": 1156515.808632
+        "usd_volume": 1156515.8086319997
       },
       {
         "rank": 12,
         "market_id": "789953",
         "question": null,
-        "usd_volume": 1062004.635143999
+        "usd_volume": 1062004.6351439997
       },
       {
         "rank": 13,
         "market_id": "558938",
         "question": "Will Argentina win the 2026 FIFA World Cup?",
-        "usd_volume": 1027022.5021140012
+        "usd_volume": 1027022.5021140006
       },
       {
         "rank": 14,
         "market_id": "558935",
         "question": "Will England win the 2026 FIFA World Cup?",
-        "usd_volume": 982486.7472099978
+        "usd_volume": 982486.7472099973
       },
       {
         "rank": 15,
         "market_id": "658928",
         "question": "Will Purdue win the 2026 NCAA Tournament?",
-        "usd_volume": 938924.0891070003
+        "usd_volume": 938924.0891070005
       },
       {
         "rank": 16,
@@ -1027,37 +1027,37 @@
         "rank": 17,
         "market_id": "1168142",
         "question": null,
-        "usd_volume": 872459.591915
+        "usd_volume": 872459.5919149996
       },
       {
         "rank": 18,
         "market_id": "628955",
         "question": "Will Tom Steyer win the California Governor Election in 2026?",
-        "usd_volume": 867217.1569540001
+        "usd_volume": 867217.1569539999
       },
       {
         "rank": 19,
         "market_id": "567621",
         "question": "Will China invade Taiwan by end of 2026?",
-        "usd_volume": 866126.9449100008
+        "usd_volume": 866126.9449100003
       },
       {
         "rank": 20,
         "market_id": "561829",
         "question": "Russia x Ukraine ceasefire by March 31, 2026?",
-        "usd_volume": 842213.1974260003
+        "usd_volume": 842213.1974260004
       },
       {
         "rank": 21,
         "market_id": "601818",
         "question": "Will Tarcisio de Freitas win the 2026 Brazilian presidential election?",
-        "usd_volume": 841853.506094
+        "usd_volume": 841853.5060940003
       },
       {
         "rank": 22,
         "market_id": "687171",
         "question": "Will Yoo Jeong-bok win the 2026 Incheon mayoral election?",
-        "usd_volume": 823577.9718689999
+        "usd_volume": 823577.9718690002
       },
       {
         "rank": 23,
@@ -1069,7 +1069,7 @@
         "rank": 24,
         "market_id": "566146",
         "question": "Will Atletico Madrid win the 2025\u201326 Champions League?",
-        "usd_volume": 770925.0024460009
+        "usd_volume": 770925.0024460013
       },
       {
         "rank": 25,
@@ -1081,31 +1081,31 @@
         "rank": 26,
         "market_id": "676713",
         "question": "Will Alphabet be the largest company in the world by market cap on March 31?",
-        "usd_volume": 750290.1878300007
+        "usd_volume": 750290.1878299995
       },
       {
         "rank": 27,
         "market_id": "703257",
         "question": "Will the US confirm that aliens exist before 2027?",
-        "usd_volume": 708886.297207
+        "usd_volume": 708886.2972070003
       },
       {
         "rank": 28,
         "market_id": "561253",
         "question": "Will Tucker Carlson win the 2028 US Presidential Election?",
-        "usd_volume": 686201.4880210004
+        "usd_volume": 686201.4880210012
       },
       {
         "rank": 29,
         "market_id": "553830",
         "question": "Will the Tampa Bay Lightning win the 2026 NHL Stanley Cup?",
-        "usd_volume": 684512.2803340002
+        "usd_volume": 684512.2803340001
       },
       {
         "rank": 30,
         "market_id": "553882",
         "question": "Will the Charlotte Hornets win the 2026 NBA Finals?",
-        "usd_volume": 667974.679531
+        "usd_volume": 667974.6795310006
       }
     ]
   },
@@ -1116,19 +1116,19 @@
         "rank": 1,
         "market_id": "1162940",
         "question": null,
-        "usd_volume": 19447348.97021001
+        "usd_volume": 19447348.970209986
       },
       {
         "rank": 2,
         "market_id": "669662",
         "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
-        "usd_volume": 2780568.3959529996
+        "usd_volume": 2780568.3959530033
       },
       {
         "rank": 3,
         "market_id": "958443",
         "question": null,
-        "usd_volume": 2374599.2370430008
+        "usd_volume": 2374599.2370429994
       },
       {
         "rank": 4,
@@ -1140,61 +1140,61 @@
         "rank": 5,
         "market_id": "567621",
         "question": "Will China invade Taiwan by end of 2026?",
-        "usd_volume": 1663662.804893
+        "usd_volume": 1663662.8048930005
       },
       {
         "rank": 6,
         "market_id": "561230",
         "question": "Will Gavin Newsom win the 2028 US Presidential Election?",
-        "usd_volume": 1641312.8848500014
+        "usd_volume": 1641312.8848500028
       },
       {
         "rank": 7,
         "market_id": "958442",
         "question": null,
-        "usd_volume": 1576690.6104439995
+        "usd_volume": 1576690.610443999
       },
       {
         "rank": 8,
         "market_id": "561974",
         "question": "Will J.D. Vance win the 2028 Republican presidential nomination?",
-        "usd_volume": 1515205.0336099993
+        "usd_volume": 1515205.0336100003
       },
       {
         "rank": 9,
         "market_id": "559675",
         "question": "Will Jon Stewart win the 2028 Democratic presidential nomination?",
-        "usd_volume": 1297140.0585479978
+        "usd_volume": 1297140.058547998
       },
       {
         "rank": 10,
         "market_id": "558934",
         "question": "Will Spain win the 2026 FIFA World Cup?",
-        "usd_volume": 1262462.7792449961
+        "usd_volume": 1262462.7792449957
       },
       {
         "rank": 11,
         "market_id": "559653",
         "question": "Will Alexandria Ocasio-Cortez win the 2028 Democratic presidential nomination?",
-        "usd_volume": 1185159.2240140007
+        "usd_volume": 1185159.2240140005
       },
       {
         "rank": 12,
         "market_id": "559652",
         "question": "Will Gavin Newsom win the 2028 Democratic presidential nomination?",
-        "usd_volume": 1123474.9430479982
+        "usd_volume": 1123474.9430479987
       },
       {
         "rank": 13,
         "market_id": "567560",
         "question": "Will the next Prime Minister of Hungary be Viktor Orb\u00e1n?",
-        "usd_volume": 1068593.5089430008
+        "usd_volume": 1068593.5089429996
       },
       {
         "rank": 14,
         "market_id": "665374",
         "question": "Will the U.S. invade Iran before 2027?",
-        "usd_volume": 1048947.1956370007
+        "usd_volume": 1048947.1956370003
       },
       {
         "rank": 15,
@@ -1212,85 +1212,85 @@
         "rank": 17,
         "market_id": "566146",
         "question": "Will Atletico Madrid win the 2025\u201326 Champions League?",
-        "usd_volume": 1008439.092064
+        "usd_volume": 1008439.0920640001
       },
       {
         "rank": 18,
         "market_id": "558936",
         "question": "Will France win the 2026 FIFA World Cup?",
-        "usd_volume": 999929.3124190012
+        "usd_volume": 999929.3124190005
       },
       {
         "rank": 19,
         "market_id": "703257",
         "question": "Will the US confirm that aliens exist before 2027?",
-        "usd_volume": 977464.848067
+        "usd_volume": 977464.8480670002
       },
       {
         "rank": 20,
         "market_id": "561990",
         "question": "Will Elon Musk win the 2028 Republican presidential nomination?",
-        "usd_volume": 975202.9336420007
+        "usd_volume": 975202.9336420001
       },
       {
         "rank": 21,
         "market_id": "706279",
         "question": "Will Trump visit China by April 30?",
-        "usd_volume": 868381.827733
+        "usd_volume": 868381.8277329998
       },
       {
         "rank": 22,
         "market_id": "567561",
         "question": "Will the next Prime Minister of Hungary be P\u00e9ter Magyar?",
-        "usd_volume": 791484.5809230009
+        "usd_volume": 791484.5809230012
       },
       {
         "rank": 23,
         "market_id": "558935",
         "question": "Will England win the 2026 FIFA World Cup?",
-        "usd_volume": 729522.465378
+        "usd_volume": 729522.4653780002
       },
       {
         "rank": 24,
         "market_id": "553868",
         "question": "Will the Los Angeles Clippers win the 2026 NBA Finals?",
-        "usd_volume": 699047.8067139997
+        "usd_volume": 699047.8067139995
       },
       {
         "rank": 25,
         "market_id": "559694",
         "question": null,
-        "usd_volume": 674424.352459
+        "usd_volume": 674424.3524590001
       },
       {
         "rank": 26,
         "market_id": "669663",
         "question": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
-        "usd_volume": 652026.6677680007
+        "usd_volume": 652026.667768
       },
       {
         "rank": 27,
         "market_id": "559661",
         "question": "Will Jon Ossoff win the 2028 Democratic presidential nomination?",
-        "usd_volume": 611669.7229300003
+        "usd_volume": 611669.7229300002
       },
       {
         "rank": 28,
         "market_id": "559663",
         "question": "Will J.B. Pritzker win the 2028 Democratic presidential nomination?",
-        "usd_volume": 562663.9285370001
+        "usd_volume": 562663.9285370003
       },
       {
         "rank": 29,
         "market_id": "561976",
         "question": "Will Tulsi Gabbard win the 2028 Republican presidential nomination?",
-        "usd_volume": 561317.3145029997
+        "usd_volume": 561317.3145029998
       },
       {
         "rank": 30,
         "market_id": "663583",
         "question": "Will the Iranian regime fall before 2027?",
-        "usd_volume": 532749.2688840001
+        "usd_volume": 532749.2688839996
       }
     ]
   },
@@ -1301,49 +1301,49 @@
         "rank": 1,
         "market_id": "567560",
         "question": "Will the next Prime Minister of Hungary be Viktor Orb\u00e1n?",
-        "usd_volume": 4259477.229508995
+        "usd_volume": 4259477.229508991
       },
       {
         "rank": 2,
         "market_id": "669662",
         "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
-        "usd_volume": 3550867.346098998
+        "usd_volume": 3550867.3460989995
       },
       {
         "rank": 3,
         "market_id": "567561",
         "question": "Will the next Prime Minister of Hungary be P\u00e9ter Magyar?",
-        "usd_volume": 3173159.8578529935
+        "usd_volume": 3173159.857852993
       },
       {
         "rank": 4,
         "market_id": "665374",
         "question": "Will the U.S. invade Iran before 2027?",
-        "usd_volume": 2354356.524383993
+        "usd_volume": 2354356.5243839966
       },
       {
         "rank": 5,
         "market_id": "958443",
         "question": null,
-        "usd_volume": 2187914.0583350025
+        "usd_volume": 2187914.0583349993
       },
       {
         "rank": 6,
         "market_id": "553866",
         "question": "Will the San Antonio Spurs win the 2026 NBA Finals?",
-        "usd_volume": 1815483.718586001
+        "usd_volume": 1815483.7185860006
       },
       {
         "rank": 7,
         "market_id": "568630",
         "question": "Will Rory McIlroy win the 2026 Masters tournament?",
-        "usd_volume": 1489219.3704680009
+        "usd_volume": 1489219.3704680006
       },
       {
         "rank": 8,
         "market_id": "561230",
         "question": "Will Gavin Newsom win the 2028 US Presidential Election?",
-        "usd_volume": 1468982.3807179988
+        "usd_volume": 1468982.380718
       },
       {
         "rank": 9,
@@ -1355,25 +1355,25 @@
         "rank": 10,
         "market_id": "559652",
         "question": "Will Gavin Newsom win the 2028 Democratic presidential nomination?",
-        "usd_volume": 1348498.0547120012
+        "usd_volume": 1348498.0547119994
       },
       {
         "rank": 11,
         "market_id": "559694",
         "question": null,
-        "usd_volume": 1302829.930948
+        "usd_volume": 1302829.930947999
       },
       {
         "rank": 12,
         "market_id": "559653",
         "question": "Will Alexandria Ocasio-Cortez win the 2028 Democratic presidential nomination?",
-        "usd_volume": 1213457.5407550004
+        "usd_volume": 1213457.5407550007
       },
       {
         "rank": 13,
         "market_id": "566146",
         "question": "Will Atletico Madrid win the 2025\u201326 Champions League?",
-        "usd_volume": 1175892.133284
+        "usd_volume": 1175892.1332840014
       },
       {
         "rank": 14,
@@ -1385,37 +1385,37 @@
         "rank": 15,
         "market_id": "568629",
         "question": "Will Scottie Scheffler win the 2026 Masters tournament?",
-        "usd_volume": 1104912.9714120016
+        "usd_volume": 1104912.9714120005
       },
       {
         "rank": 16,
         "market_id": "706279",
         "question": "Will Trump visit China by April 30?",
-        "usd_volume": 1102358.293244
+        "usd_volume": 1102358.2932440003
       },
       {
         "rank": 17,
         "market_id": "561990",
         "question": "Will Elon Musk win the 2028 Republican presidential nomination?",
-        "usd_volume": 1051403.8718259993
+        "usd_volume": 1051403.871826
       },
       {
         "rank": 18,
         "market_id": "567621",
         "question": "Will China invade Taiwan by end of 2026?",
-        "usd_volume": 1046943.9685910007
+        "usd_volume": 1046943.9685910011
       },
       {
         "rank": 19,
         "market_id": "559660",
         "question": "Will Andy Beshear win the 2028 Democratic presidential nomination?",
-        "usd_volume": 1006275.5745850004
+        "usd_volume": 1006275.5745850005
       },
       {
         "rank": 20,
         "market_id": "561246",
         "question": "Will Ron DeSantis win the 2028 US Presidential Election?",
-        "usd_volume": 998131.2762130001
+        "usd_volume": 998131.2762130004
       },
       {
         "rank": 21,
@@ -1427,25 +1427,25 @@
         "rank": 22,
         "market_id": "948043",
         "question": null,
-        "usd_volume": 986231.5808000001
+        "usd_volume": 986231.580800001
       },
       {
         "rank": 23,
         "market_id": "558936",
         "question": "Will France win the 2026 FIFA World Cup?",
-        "usd_volume": 971741.9341600018
+        "usd_volume": 971741.9341600011
       },
       {
         "rank": 24,
         "market_id": "669663",
         "question": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
-        "usd_volume": 878295.5339630016
+        "usd_volume": 878295.5339630006
       },
       {
         "rank": 25,
         "market_id": "559657",
         "question": "Will Stephen A. Smith win the 2028 Democratic presidential nomination?",
-        "usd_volume": 847327.7342550001
+        "usd_volume": 847327.734255
       },
       {
         "rank": 26,
@@ -1457,25 +1457,25 @@
         "rank": 27,
         "market_id": "561974",
         "question": "Will J.D. Vance win the 2028 Republican presidential nomination?",
-        "usd_volume": 759967.5830650012
+        "usd_volume": 759967.5830650011
       },
       {
         "rank": 28,
         "market_id": "663583",
         "question": "Will the Iranian regime fall before 2027?",
-        "usd_volume": 755857.8235189996
+        "usd_volume": 755857.8235190001
       },
       {
         "rank": 29,
         "market_id": "561996",
         "question": "Will Tucker Carlson win the 2028 Republican presidential nomination?",
-        "usd_volume": 711115.0563459999
+        "usd_volume": 711115.056346
       },
       {
         "rank": 30,
         "market_id": "558949",
         "question": "Will Japan win the 2026 FIFA World Cup?",
-        "usd_volume": 704137.9769430012
+        "usd_volume": 704137.9769430013
       }
     ]
   },
@@ -1492,25 +1492,25 @@
         "rank": 2,
         "market_id": "567560",
         "question": "Will the next Prime Minister of Hungary be Viktor Orb\u00e1n?",
-        "usd_volume": 6354367.421017993
+        "usd_volume": 6354367.421017995
       },
       {
         "rank": 3,
         "market_id": "669662",
         "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
-        "usd_volume": 5051119.974299998
+        "usd_volume": 5051119.974300001
       },
       {
         "rank": 4,
         "market_id": "947289",
         "question": null,
-        "usd_volume": 2423299.6115630018
+        "usd_volume": 2423299.611562998
       },
       {
         "rank": 5,
         "market_id": "947268",
         "question": null,
-        "usd_volume": 2391545.0217260006
+        "usd_volume": 2391545.021726001
       },
       {
         "rank": 6,
@@ -1522,31 +1522,31 @@
         "rank": 7,
         "market_id": "665374",
         "question": "Will the U.S. invade Iran before 2027?",
-        "usd_volume": 1852696.774273002
+        "usd_volume": 1852696.7742730016
       },
       {
         "rank": 8,
         "market_id": "947269",
         "question": null,
-        "usd_volume": 1752688.657147
+        "usd_volume": 1752688.657146999
       },
       {
         "rank": 9,
         "market_id": "566146",
         "question": "Will Atletico Madrid win the 2025\u201326 Champions League?",
-        "usd_volume": 1628350.3249620004
+        "usd_volume": 1628350.324962
       },
       {
         "rank": 10,
         "market_id": "558936",
         "question": "Will France win the 2026 FIFA World Cup?",
-        "usd_volume": 1529261.5299159994
+        "usd_volume": 1529261.529916
       },
       {
         "rank": 11,
         "market_id": "958443",
         "question": null,
-        "usd_volume": 1420621.8263130002
+        "usd_volume": 1420621.8263129997
       },
       {
         "rank": 12,
@@ -1558,79 +1558,79 @@
         "rank": 13,
         "market_id": "1087519",
         "question": null,
-        "usd_volume": 1365049.3399870007
+        "usd_volume": 1365049.3399870002
       },
       {
         "rank": 14,
         "market_id": "1087516",
         "question": null,
-        "usd_volume": 1277617.7175929998
+        "usd_volume": 1277617.717593001
       },
       {
         "rank": 15,
         "market_id": "561234",
         "question": "Will Marco Rubio win the 2028 US Presidential Election?",
-        "usd_volume": 1088118.2923970008
+        "usd_volume": 1088118.292397001
       },
       {
         "rank": 16,
         "market_id": "553863",
         "question": "Will the Los Angeles Lakers win the 2026 NBA Finals?",
-        "usd_volume": 911428.253264
+        "usd_volume": 911428.2532640009
       },
       {
         "rank": 17,
         "market_id": "559652",
         "question": "Will Gavin Newsom win the 2028 Democratic presidential nomination?",
-        "usd_volume": 871397.8172890004
+        "usd_volume": 871397.817289001
       },
       {
         "rank": 18,
         "market_id": "567621",
         "question": "Will China invade Taiwan by end of 2026?",
-        "usd_volume": 848085.7745839998
+        "usd_volume": 848085.7745839999
       },
       {
         "rank": 19,
         "market_id": "561230",
         "question": "Will Gavin Newsom win the 2028 US Presidential Election?",
-        "usd_volume": 826928.8984709999
+        "usd_volume": 826928.8984709997
       },
       {
         "rank": 20,
         "market_id": "956590",
         "question": null,
-        "usd_volume": 726507.5457960005
+        "usd_volume": 726507.5457960004
       },
       {
         "rank": 21,
         "market_id": "558934",
         "question": "Will Spain win the 2026 FIFA World Cup?",
-        "usd_volume": 721297.8427370002
+        "usd_volume": 721297.8427369996
       },
       {
         "rank": 22,
         "market_id": "553871",
         "question": "Will the Detroit Pistons win the 2026 NBA Finals?",
-        "usd_volume": 657400.0801479998
+        "usd_volume": 657400.0801479993
       },
       {
         "rank": 23,
         "market_id": "948043",
         "question": null,
-        "usd_volume": 631216.720904
+        "usd_volume": 631216.7209039999
       },
       {
         "rank": 24,
         "market_id": "559658",
         "question": "Will Kamala Harris win the 2028 Democratic presidential nomination?",
-        "usd_volume": 619108.883405
+        "usd_volume": 619108.8834050002
       },
       {
         "rank": 25,
         "market_id": "553856",
         "question": "Will the Oklahoma City Thunder win the 2026 NBA Finals?",
-        "usd_volume": 562738.2933239999
+        "usd_volume": 562738.293324
       },
       {
         "rank": 26,
@@ -1642,25 +1642,25 @@
         "rank": 27,
         "market_id": "568668",
         "question": "Will Cameron Young win the 2026 Masters tournament?",
-        "usd_volume": 514294.56032900116
+        "usd_volume": 514294.5603290008
       },
       {
         "rank": 28,
         "market_id": "561996",
         "question": "Will Tucker Carlson win the 2028 Republican presidential nomination?",
-        "usd_volume": 506440.15561599995
+        "usd_volume": 506440.15561600024
       },
       {
         "rank": 29,
         "market_id": "663583",
         "question": "Will the Iranian regime fall before 2027?",
-        "usd_volume": 496959.0450369999
+        "usd_volume": 496959.04503699974
       },
       {
         "rank": 30,
         "market_id": "947288",
         "question": null,
-        "usd_volume": 496052.28238399967
+        "usd_volume": 496052.28238399926
       }
     ]
   },
@@ -1671,49 +1671,49 @@
         "rank": 1,
         "market_id": "669662",
         "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
-        "usd_volume": 5766229.069610003
+        "usd_volume": 5766229.06961
       },
       {
         "rank": 2,
         "market_id": "573655",
         "question": "Will Bitcoin hit $150k by June 30, 2026?",
-        "usd_volume": 3164181.9195620026
+        "usd_volume": 3164181.9195620017
       },
       {
         "rank": 3,
         "market_id": "669660",
         "question": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
-        "usd_volume": 2067330.3182060004
+        "usd_volume": 2067330.318206
       },
       {
         "rank": 4,
         "market_id": "665374",
         "question": "Will the U.S. invade Iran before 2027?",
-        "usd_volume": 1967006.0357589955
+        "usd_volume": 1967006.0357589982
       },
       {
         "rank": 5,
         "market_id": "947289",
         "question": null,
-        "usd_volume": 1710408.317843999
+        "usd_volume": 1710408.3178439997
       },
       {
         "rank": 6,
         "market_id": "553863",
         "question": "Will the Los Angeles Lakers win the 2026 NBA Finals?",
-        "usd_volume": 1421435.5612259991
+        "usd_volume": 1421435.561225996
       },
       {
         "rank": 7,
         "market_id": "553866",
         "question": "Will the San Antonio Spurs win the 2026 NBA Finals?",
-        "usd_volume": 1302546.0079100016
+        "usd_volume": 1302546.0079099997
       },
       {
         "rank": 8,
         "market_id": "1087519",
         "question": null,
-        "usd_volume": 1265867.099201
+        "usd_volume": 1265867.0992010005
       },
       {
         "rank": 9,
@@ -1725,67 +1725,67 @@
         "rank": 10,
         "market_id": "553859",
         "question": "Will the Minnesota Timberwolves win the 2026 NBA Finals?",
-        "usd_volume": 995252.9867080007
+        "usd_volume": 995252.9867079996
       },
       {
         "rank": 11,
         "market_id": "567621",
         "question": "Will China invade Taiwan by end of 2026?",
-        "usd_volume": 988500.1957730006
+        "usd_volume": 988500.1957730004
       },
       {
         "rank": 12,
         "market_id": "958443",
         "question": null,
-        "usd_volume": 978974.9893479999
+        "usd_volume": 978974.989348
       },
       {
         "rank": 13,
         "market_id": "553871",
         "question": "Will the Detroit Pistons win the 2026 NBA Finals?",
-        "usd_volume": 962090.0605490009
+        "usd_volume": 962090.0605490005
       },
       {
         "rank": 14,
         "market_id": "1087516",
         "question": null,
-        "usd_volume": 943826.5040050006
+        "usd_volume": 943826.5040050008
       },
       {
         "rank": 15,
         "market_id": "566146",
         "question": "Will Atletico Madrid win the 2025\u201326 Champions League?",
-        "usd_volume": 908703.4067890007
+        "usd_volume": 908703.4067890001
       },
       {
         "rank": 16,
         "market_id": "553857",
         "question": "Will the Cleveland Cavaliers win the 2026 NBA Finals?",
-        "usd_volume": 871703.9531360014
+        "usd_volume": 871703.9531360007
       },
       {
         "rank": 17,
         "market_id": "567561",
         "question": "Will the next Prime Minister of Hungary be P\u00e9ter Magyar?",
-        "usd_volume": 838291.5663999999
+        "usd_volume": 838291.5663999995
       },
       {
         "rank": 18,
         "market_id": "947268",
         "question": null,
-        "usd_volume": 808189.7123059994
+        "usd_volume": 808189.7123059991
       },
       {
         "rank": 19,
         "market_id": "558936",
         "question": "Will France win the 2026 FIFA World Cup?",
-        "usd_volume": 723891.142162001
+        "usd_volume": 723891.1421620017
       },
       {
         "rank": 20,
         "market_id": "558940",
         "question": "Will Portugal win the 2026 FIFA World Cup?",
-        "usd_volume": 693192.1050349999
+        "usd_volume": 693192.1050350001
       },
       {
         "rank": 21,
@@ -1797,55 +1797,55 @@
         "rank": 22,
         "market_id": "559661",
         "question": "Will Jon Ossoff win the 2028 Democratic presidential nomination?",
-        "usd_volume": 644170.4852830005
+        "usd_volume": 644170.4852830006
       },
       {
         "rank": 23,
         "market_id": "553858",
         "question": "Will the New York Knicks win the 2026 NBA Finals?",
-        "usd_volume": 581619.8324010011
+        "usd_volume": 581619.832401001
       },
       {
         "rank": 24,
         "market_id": "553860",
         "question": "Will the Houston Rockets win the 2026 NBA Finals?",
-        "usd_volume": 553035.7421819998
+        "usd_volume": 553035.7421819996
       },
       {
         "rank": 25,
         "market_id": "951182",
         "question": null,
-        "usd_volume": 545257.5429680009
+        "usd_volume": 545257.5429680006
       },
       {
         "rank": 26,
         "market_id": "553856",
         "question": "Will the Oklahoma City Thunder win the 2026 NBA Finals?",
-        "usd_volume": 488622.864527
+        "usd_volume": 488622.86452700064
       },
       {
         "rank": 27,
         "market_id": "703257",
         "question": "Will the US confirm that aliens exist before 2027?",
-        "usd_volume": 478372.08151999995
+        "usd_volume": 478372.0815200002
       },
       {
         "rank": 28,
         "market_id": "965261",
         "question": null,
-        "usd_volume": 460330.3492579999
+        "usd_volume": 460330.34925800003
       },
       {
         "rank": 29,
         "market_id": "553865",
         "question": "Will the Denver Nuggets win the 2026 NBA Finals?",
-        "usd_volume": 454408.58790899965
+        "usd_volume": 454408.5879089994
       },
       {
         "rank": 30,
         "market_id": "558934",
         "question": "Will Spain win the 2026 FIFA World Cup?",
-        "usd_volume": 406534.66715599986
+        "usd_volume": 406534.66715600004
       }
     ]
   },
@@ -1856,31 +1856,31 @@
         "rank": 1,
         "market_id": "669662",
         "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
-        "usd_volume": 12356736.184598003
+        "usd_volume": 12356736.184598006
       },
       {
         "rank": 2,
         "market_id": "553863",
         "question": "Will the Los Angeles Lakers win the 2026 NBA Finals?",
-        "usd_volume": 2314081.495605996
+        "usd_volume": 2314081.495606001
       },
       {
         "rank": 3,
         "market_id": "958443",
         "question": null,
-        "usd_volume": 1406173.1615860006
+        "usd_volume": 1406173.1615860008
       },
       {
         "rank": 4,
         "market_id": "558936",
         "question": "Will France win the 2026 FIFA World Cup?",
-        "usd_volume": 1235537.2115560002
+        "usd_volume": 1235537.2115559997
       },
       {
         "rank": 5,
         "market_id": "567621",
         "question": "Will China invade Taiwan by end of 2026?",
-        "usd_volume": 1232958.0847030007
+        "usd_volume": 1232958.0847030003
       },
       {
         "rank": 6,
@@ -1892,13 +1892,13 @@
         "rank": 7,
         "market_id": "665374",
         "question": "Will the U.S. invade Iran before 2027?",
-        "usd_volume": 1138960.421435
+        "usd_volume": 1138960.4214349997
       },
       {
         "rank": 8,
         "market_id": "553871",
         "question": "Will the Detroit Pistons win the 2026 NBA Finals?",
-        "usd_volume": 1093476.3254930011
+        "usd_volume": 1093476.3254930002
       },
       {
         "rank": 9,
@@ -1916,31 +1916,31 @@
         "rank": 11,
         "market_id": "553866",
         "question": "Will the San Antonio Spurs win the 2026 NBA Finals?",
-        "usd_volume": 897567.8313869999
+        "usd_volume": 897567.8313870005
       },
       {
         "rank": 12,
         "market_id": "965261",
         "question": null,
-        "usd_volume": 823389.0441899999
+        "usd_volume": 823389.04419
       },
       {
         "rank": 13,
         "market_id": "553865",
         "question": "Will the Denver Nuggets win the 2026 NBA Finals?",
-        "usd_volume": 791478.9775839997
+        "usd_volume": 791478.977584001
       },
       {
         "rank": 14,
         "market_id": "669663",
         "question": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
-        "usd_volume": 730238.6217290001
+        "usd_volume": 730238.6217289999
       },
       {
         "rank": 15,
         "market_id": "1299187",
         "question": null,
-        "usd_volume": 723228.7601220007
+        "usd_volume": 723228.7601220005
       },
       {
         "rank": 16,
@@ -1952,13 +1952,13 @@
         "rank": 17,
         "market_id": "947268",
         "question": null,
-        "usd_volume": 655922.8105630004
+        "usd_volume": 655922.8105630002
       },
       {
         "rank": 18,
         "market_id": "553858",
         "question": "Will the New York Knicks win the 2026 NBA Finals?",
-        "usd_volume": 638646.5079479999
+        "usd_volume": 638646.5079479993
       },
       {
         "rank": 19,
@@ -1970,7 +1970,7 @@
         "rank": 20,
         "market_id": "566140",
         "question": "Will Arsenal win the 2025\u201326 Champions League?",
-        "usd_volume": 619103.9803429999
+        "usd_volume": 619103.9803429996
       },
       {
         "rank": 21,
@@ -1982,55 +1982,55 @@
         "rank": 22,
         "market_id": "666614",
         "question": "MegaETH market cap (FDV) >$3B one day after launch?",
-        "usd_volume": 566372.813684
+        "usd_volume": 566372.8136839999
       },
       {
         "rank": 23,
         "market_id": "906974",
         "question": null,
-        "usd_volume": 557387.4843130001
+        "usd_volume": 557387.4843129998
       },
       {
         "rank": 24,
         "market_id": "553857",
         "question": "Will the Cleveland Cavaliers win the 2026 NBA Finals?",
-        "usd_volume": 550405.3405279996
+        "usd_volume": 550405.3405279993
       },
       {
         "rank": 25,
         "market_id": "1092482",
         "question": null,
-        "usd_volume": 548556.9043279999
+        "usd_volume": 548556.904328
       },
       {
         "rank": 26,
         "market_id": "669661",
         "question": "Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?",
-        "usd_volume": 534176.460479
+        "usd_volume": 534176.4604789999
       },
       {
         "rank": 27,
         "market_id": "558954",
         "question": "Will Tunisia win the 2026 FIFA World Cup?",
-        "usd_volume": 512591.99918900017
+        "usd_volume": 512591.9991890012
       },
       {
         "rank": 28,
         "market_id": "558960",
         "question": "Will Uzbekistan win the 2026 FIFA World Cup?",
-        "usd_volume": 511499.3670600001
+        "usd_volume": 511499.36706
       },
       {
         "rank": 29,
         "market_id": "1087519",
         "question": null,
-        "usd_volume": 502596.94913200027
+        "usd_volume": 502596.94913199986
       },
       {
         "rank": 30,
         "market_id": "559661",
         "question": "Will Jon Ossoff win the 2028 Democratic presidential nomination?",
-        "usd_volume": 501603.75603900006
+        "usd_volume": 501603.7560390001
       }
     ]
   },
@@ -2041,19 +2041,19 @@
         "rank": 1,
         "market_id": "665374",
         "question": "Will the U.S. invade Iran before 2027?",
-        "usd_volume": 3025743.4290839983
+        "usd_volume": 3025743.429083998
       },
       {
         "rank": 2,
         "market_id": "958443",
         "question": null,
-        "usd_volume": 1712066.0679739937
+        "usd_volume": 1712066.0679739933
       },
       {
         "rank": 3,
         "market_id": "553871",
         "question": "Will the Detroit Pistons win the 2026 NBA Finals?",
-        "usd_volume": 986485.2580539993
+        "usd_volume": 986485.2580540001
       },
       {
         "rank": 4,
@@ -2065,79 +2065,79 @@
         "rank": 5,
         "market_id": "567561",
         "question": "Will the next Prime Minister of Hungary be P\u00e9ter Magyar?",
-        "usd_volume": 678041.944187
+        "usd_volume": 678041.9441869997
       },
       {
         "rank": 6,
         "market_id": "951183",
         "question": null,
-        "usd_volume": 660768.0708930001
+        "usd_volume": 660768.0708930002
       },
       {
         "rank": 7,
         "market_id": "558936",
         "question": "Will France win the 2026 FIFA World Cup?",
-        "usd_volume": 617685.256519
+        "usd_volume": 617685.2565190003
       },
       {
         "rank": 8,
         "market_id": "663583",
         "question": "Will the Iranian regime fall before 2027?",
-        "usd_volume": 606519.4378010002
+        "usd_volume": 606519.4378010001
       },
       {
         "rank": 9,
         "market_id": "553863",
         "question": "Will the Los Angeles Lakers win the 2026 NBA Finals?",
-        "usd_volume": 521077.97325599974
+        "usd_volume": 521077.973256
       },
       {
         "rank": 10,
         "market_id": "1171663",
         "question": null,
-        "usd_volume": 516792.786456
+        "usd_volume": 516792.7864560003
       },
       {
         "rank": 11,
         "market_id": "703257",
         "question": "Will the US confirm that aliens exist before 2027?",
-        "usd_volume": 471069.44521999994
+        "usd_volume": 471069.4452200002
       },
       {
         "rank": 12,
         "market_id": "553856",
         "question": "Will the Oklahoma City Thunder win the 2026 NBA Finals?",
-        "usd_volume": 449419.15610899986
+        "usd_volume": 449419.1561089999
       },
       {
         "rank": 13,
         "market_id": "906974",
         "question": null,
-        "usd_volume": 412323.47719599993
+        "usd_volume": 412323.47719600005
       },
       {
         "rank": 14,
         "market_id": "692258",
         "question": "MicroStrategy sells any Bitcoin by June 30, 2026?",
-        "usd_volume": 409085.3865709998
+        "usd_volume": 409085.38657099986
       },
       {
         "rank": 15,
         "market_id": "566136",
         "question": "Will PSG win the 2025\u201326 Champions League?",
-        "usd_volume": 396770.4980979997
+        "usd_volume": 396770.49809799966
       },
       {
         "rank": 16,
         "market_id": "703258",
         "question": "Will Jesus Christ return before 2027?",
-        "usd_volume": 361712.0679089999
+        "usd_volume": 361712.06790899986
       },
       {
         "rank": 17,
         "market_id": "561229",
         "question": "Will JD Vance win the 2028 US Presidential Election?",
-        "usd_volume": 356278.6965769998
+        "usd_volume": 356278.696577
       },
       {
         "rank": 18,
@@ -2149,19 +2149,19 @@
         "rank": 19,
         "market_id": "906973",
         "question": null,
-        "usd_volume": 327878.2937579999
+        "usd_volume": 327878.293758
       },
       {
         "rank": 20,
         "market_id": "951182",
         "question": null,
-        "usd_volume": 324024.01742999995
+        "usd_volume": 324024.01743000007
       },
       {
         "rank": 21,
         "market_id": "1092482",
         "question": null,
-        "usd_volume": 299152.13414499996
+        "usd_volume": 299152.134145
       },
       {
         "rank": 22,
@@ -2173,49 +2173,49 @@
         "rank": 23,
         "market_id": "567687",
         "question": "Russia x Ukraine ceasefire by end of 2026?",
-        "usd_volume": 269858.66547400004
+        "usd_volume": 269858.665474
       },
       {
         "rank": 24,
         "market_id": "566142",
         "question": "Will Bayern Munich win the 2025\u201326 Champions League?",
-        "usd_volume": 266626.9892409999
+        "usd_volume": 266626.98924100003
       },
       {
         "rank": 25,
         "market_id": "898669",
         "question": null,
-        "usd_volume": 260669.26957799983
+        "usd_volume": 260669.26957799977
       },
       {
         "rank": 26,
         "market_id": "559651",
         "question": "Xi Jinping out before 2027?",
-        "usd_volume": 253031.47074199998
+        "usd_volume": 253031.470742
       },
       {
         "rank": 27,
         "market_id": "948956",
         "question": null,
-        "usd_volume": 248334.23664799993
+        "usd_volume": 248334.23664799996
       },
       {
         "rank": 28,
         "market_id": "553869",
         "question": "Will the Philadelphia 76ers win the 2026 NBA Finals?",
-        "usd_volume": 236990.15033799983
+        "usd_volume": 236990.15033799986
       },
       {
         "rank": 29,
         "market_id": "1090199",
         "question": null,
-        "usd_volume": 226986.4562019999
+        "usd_volume": 226986.45620199997
       },
       {
         "rank": 30,
         "market_id": "1003803",
         "question": null,
-        "usd_volume": 224131.61774499985
+        "usd_volume": 224131.61774499994
       }
     ]
   }
