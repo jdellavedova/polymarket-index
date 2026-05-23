@@ -1,6 +1,6 @@
 {
   "as_of_week": "2026-W20",
-  "generated_at": "2026-05-23T00:37:47+00:00",
+  "generated_at": "2026-05-23T01:55:07+00:00",
   "lede": "Top 6 markets by USD volume from the week of 2026-W20, annotated with per-market microstructure from the DV-PMI weekly indices.",
   "briefings": [
     {
@@ -54,7 +54,7 @@
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "69% (vs 73% Polymarket-wide)",
+          "value": "69% (in line with the 66% Polymarket-wide baseline)",
           "tone": "ok"
         },
         {
@@ -179,7 +179,7 @@
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "79% (vs 73% Polymarket-wide)",
+          "value": "79% (vs 66% Polymarket-wide)",
           "tone": "flat"
         },
         {
@@ -304,7 +304,7 @@
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "43% (vs 73% Polymarket-wide)",
+          "value": "43% (vs 66% Polymarket-wide)",
           "tone": "ok"
         },
         {
@@ -429,7 +429,7 @@
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "65% (vs 73% Polymarket-wide)",
+          "value": "65% (in line with the 66% Polymarket-wide baseline)",
           "tone": "ok"
         },
         {
@@ -554,7 +554,7 @@
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "50% (vs 73% Polymarket-wide)",
+          "value": "50% (vs 66% Polymarket-wide)",
           "tone": "ok"
         },
         {
@@ -679,7 +679,7 @@
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "75% (in line with the 73% Polymarket-wide baseline)",
+          "value": "75% (vs 66% Polymarket-wide)",
           "tone": "ok"
         },
         {
@@ -755,9 +755,9 @@
     }
   ],
   "global_context": {
-    "polymarket_wide_bot_share": 0.7280806919516314,
-    "polymarket_wide_volume_usd": 546426006.3432072,
-    "polymarket_wide_trades": 23839701,
+    "polymarket_wide_bot_share": 0.6616911190477625,
+    "polymarket_wide_volume_usd": 463125825.25939864,
+    "polymarket_wide_trades": 11954664,
     "calibration_alpha": 0.6639191266094694,
     "calibration_r2": 0.9867800262365879
   },

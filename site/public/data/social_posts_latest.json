@@ -1,9 +1,9 @@
 {
-  "as_of": "2026-05-11",
-  "generated_at": "2026-05-23T00:37:49+00:00",
+  "as_of": "2026-05-22",
+  "generated_at": "2026-05-23T01:55:07+00:00",
   "hand_edited": false,
-  "linkedin": "DV-PMI Weekly Update | Week of 2026-05-11\n\nPolymarket traders moved $546 million this week across 23.8M individual trades.\n\nKey numbers:\n  Bot share of counterparty events: 73%\n  Non-bot probability-weighting index (Prelec alpha): 0.722 (Kahneman-Tversky benchmark: 0.65)\n  Highest-volume market: \"Will the U.S. invade Iran before 2027?\" ($3 million)\n  On resolved trades: bots +$80K, active retail -$83K.\n\nCumulative since Nov 2022: bots $136 million, active retail -$82 million.\n\nThese indices are updated every Monday from on-chain Polymarket data (312 GB, 274 million resolved trades). Full methodology and downloads at https://jdellavedova.com\n\n#PredictionMarkets #Finance #Polymarket #BehavioralFinance",
-  "twitter": "Polymarket W20 update: $546 million traded, bots 73% of counterparty events. Cumulative since 2022: bots +$136M, retail -$82M.\n\nhttps://jdellavedova.com",
+  "linkedin": "DV-PMI Weekly Update | Week of 2026-05-22\n\nPolymarket traders moved $463 million this week across 12.0M individual trades.\n\nKey numbers:\n  Bot share of counterparty events: 66%\n  Non-bot probability-weighting index (Prelec alpha): 0.722 (Kahneman-Tversky benchmark: 0.65)\n  Highest-volume market: \"Will the U.S. invade Iran before 2027?\" ($3 million)\n  On resolved trades: bots +$80K, active retail -$83K.\n\nCumulative since Nov 2022: bots $136 million, active retail -$82 million.\n\nThese indices are updated every Monday from on-chain Polymarket data (312 GB, 274 million resolved trades). Full methodology and downloads at https://jdellavedova.com\n\n#PredictionMarkets #Finance #Polymarket #BehavioralFinance",
+  "twitter": "Polymarket W21 update: $463 million traded, bots 66% of counterparty events. Cumulative since 2022: bots +$136M, retail -$82M.\n\nhttps://jdellavedova.com",
   "twitter_note": "(152 chars incl. URL. Attach press/cumulative_pnl.png from the press kit.)",
   "suggested_image": "press/cumulative_pnl.png",
   "notes": "Set hand_edited to true and edit linkedin/twitter to preserve your edits across future pipeline runs (as long as as_of matches)."
