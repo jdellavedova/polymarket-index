@@ -1,6 +1,6 @@
 {
   "as_of_week": "2026-W20",
-  "generated_at": "2026-05-11T21:41:37+00:00",
+  "generated_at": "2026-05-23T00:37:47+00:00",
   "lede": "Top 6 markets by USD volume from the week of 2026-W20, annotated with per-market microstructure from the DV-PMI weekly indices.",
   "briefings": [
     {
@@ -9,12 +9,12 @@
       "question": "Will the U.S. invade Iran before 2027?",
       "market_id": "665374",
       "market_url": "https://polymarket.com/event/will-the-us-invade-iran-before-2027",
-      "volume_usd": 3025743.4290839983,
+      "volume_usd": 3025743.429083998,
       "n_trades": 9544,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "26% YES  \u25bc -3pp 7d",
+          "value": "28% YES  \u25b2 +2pp 7d",
           "tone": "flat"
         },
         {
@@ -29,27 +29,27 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$345K",
+          "value": "$455K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "234 days (2026-12-31)",
+          "value": "223 days (2026-12-31)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.26 ($4,009) / Ask 0.27 ($2,771)",
+          "value": "Bid 0.28 ($718) / Ask 0.29 ($149)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "1.0\u00a2 (377 bps)",
+          "value": "1.0\u00a2 (351 bps)",
           "tone": "warn"
         },
         {
           "label": "Depth within \u00b15% of mid",
-          "value": "$4,009 bid  /  $2,771 ask",
+          "value": "$718 bid  /  $149 ask",
           "tone": "flat"
         },
         {
@@ -71,56 +71,56 @@
       "depth_ladder": {
         "bids": [
           {
+            "price": 0.28,
+            "size": 2564.08,
+            "dollars": 717.9424
+          },
+          {
+            "price": 0.27,
+            "size": 3166.15,
+            "dollars": 854.8605000000001
+          },
+          {
             "price": 0.26,
-            "size": 15418.38,
-            "dollars": 4008.7788
+            "size": 4629.35,
+            "dollars": 1203.631
           },
           {
             "price": 0.25,
-            "size": 122504.46,
-            "dollars": 30626.115
+            "size": 10457.62,
+            "dollars": 2614.405
           },
           {
             "price": 0.24,
-            "size": 1158878.52,
-            "dollars": 278130.8448
-          },
-          {
-            "price": 0.23,
-            "size": 31992.54,
-            "dollars": 7358.284200000001
-          },
-          {
-            "price": 0.22,
-            "size": 27229.43,
-            "dollars": 5990.4746000000005
+            "size": 8542.65,
+            "dollars": 2050.236
           }
         ],
         "asks": [
           {
-            "price": 0.27,
-            "size": 10264.74,
-            "dollars": 2771.4798
-          },
-          {
-            "price": 0.28,
-            "size": 27171.06,
-            "dollars": 7607.896800000001
-          },
-          {
             "price": 0.29,
-            "size": 23241.38,
-            "dollars": 6740.0001999999995
+            "size": 514.97,
+            "dollars": 149.3413
           },
           {
             "price": 0.3,
-            "size": 25451.54,
-            "dollars": 7635.4619999999995
+            "size": 6867.04,
+            "dollars": 2060.112
           },
           {
             "price": 0.31,
-            "size": 5489.79,
-            "dollars": 1701.8349
+            "size": 7858.31,
+            "dollars": 2436.0761
+          },
+          {
+            "price": 0.32,
+            "size": 51427.72,
+            "dollars": 16456.8704
+          },
+          {
+            "price": 0.33,
+            "size": 102918.85,
+            "dollars": 33963.2205
           }
         ]
       },
@@ -134,12 +134,12 @@
       "question": "Will the Iranian regime fall by June 30?",
       "market_id": "958443",
       "market_url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30",
-      "volume_usd": 1712066.0679739937,
+      "volume_usd": 1712066.0679739933,
       "n_trades": 5635,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "6% YES  \u25bc -1pp 7d",
+          "value": "4% YES  \u25bc -1pp 7d",
           "tone": "flat"
         },
         {
@@ -154,27 +154,27 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$463K",
+          "value": "$647K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "50 days (2026-06-30)",
+          "value": "39 days (2026-06-30)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.05 ($14,269) / Ask 0.06 ($9,531)",
+          "value": "Bid 0.04 ($3) / Ask 0.04 ($1)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "1.0\u00a2 (1818 bps)",
+          "value": "0.3\u00a2 (706 bps)",
           "tone": "alert"
         },
         {
           "label": "Depth within \u00b15% of mid",
-          "value": "$0 bid  /  $0 ask",
+          "value": "$3 bid  /  $1 ask",
           "tone": "flat"
         },
         {
@@ -196,56 +196,56 @@
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.05,
-            "size": 285374.65,
-            "dollars": 14268.732500000002
+            "price": 0.041,
+            "size": 85.33,
+            "dollars": 3.49853
           },
           {
             "price": 0.04,
-            "size": 278173.99,
-            "dollars": 11126.9596
+            "size": 5940.1,
+            "dollars": 237.604
           },
           {
-            "price": 0.03,
-            "size": 173638.71,
-            "dollars": 5209.1613
+            "price": 0.039,
+            "size": 1620.0,
+            "dollars": 63.18
           },
           {
-            "price": 0.02,
-            "size": 556437.85,
-            "dollars": 11128.757
+            "price": 0.038,
+            "size": 191.0,
+            "dollars": 7.258
           },
           {
-            "price": 0.01,
-            "size": 1152876.13,
-            "dollars": 11528.761299999998
+            "price": 0.037,
+            "size": 2121.77,
+            "dollars": 78.50549
           }
         ],
         "asks": [
           {
-            "price": 0.06,
-            "size": 158843.63,
-            "dollars": 9530.6178
+            "price": 0.044,
+            "size": 18.02,
+            "dollars": 0.7928799999999999
           },
           {
-            "price": 0.07,
-            "size": 228107.32,
-            "dollars": 15967.512400000001
+            "price": 0.045,
+            "size": 437.16,
+            "dollars": 19.6722
           },
           {
-            "price": 0.08,
-            "size": 135090.58,
-            "dollars": 10807.2464
+            "price": 0.046,
+            "size": 215.72,
+            "dollars": 9.923119999999999
           },
           {
-            "price": 0.09,
-            "size": 49437.52,
-            "dollars": 4449.376799999999
+            "price": 0.047,
+            "size": 500.0,
+            "dollars": 23.5
           },
           {
-            "price": 0.1,
-            "size": 19643.99,
-            "dollars": 1964.3990000000003
+            "price": 0.048,
+            "size": 9987.73,
+            "dollars": 479.41104
           }
         ]
       },
@@ -254,157 +254,57 @@
       "research_label": "Research"
     },
     {
-      "rank": 3,
+      "rank": 7,
       "category": "Sports",
-      "question": "Will the Detroit Pistons win the 2026 NBA Finals?",
-      "market_id": "553871",
-      "market_url": "https://polymarket.com/event/will-the-detroit-pistons-win-the-2026-nba-finals",
-      "volume_usd": 986485.2580539993,
-      "n_trades": 5210,
+      "question": "Will France win the 2026 FIFA World Cup?",
+      "market_id": "558936",
+      "market_url": "https://polymarket.com/event/will-france-win-the-2026-fifa-world-cup",
+      "volume_usd": 617685.2565190003,
+      "n_trades": 3328,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "5% YES  \u25b2 +2pp 7d",
+          "value": "18% YES  \u2022 +0pp 7d",
           "tone": "flat"
         },
         {
           "label": "Weekly volume",
-          "value": "$986K",
+          "value": "$618K",
           "tone": "flat"
         },
         {
           "label": "Trades",
-          "value": "5,210",
+          "value": "3,328",
           "tone": "flat"
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$94K",
+          "value": "$300K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "51 days (2026-07-01)",
+          "value": "59 days (2026-07-20)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.05 ($2,409) / Ask 0.05 ($843)",
+          "value": "Bid 0.18 ($6,217) / Ask 0.18 ($22,400)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1\u00a2 (215 bps)",
-          "tone": "warn"
+          "value": "0.1\u00a2 (56 bps)",
+          "tone": "flat"
         },
         {
           "label": "Depth within \u00b15% of mid",
-          "value": "$2,491 bid  /  $2,470 ask",
+          "value": "$42,837 bid  /  $67,739 ask",
           "tone": "flat"
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "73% (in line with the 73% Polymarket-wide baseline)",
-          "tone": "ok"
-        },
-        {
-          "label": "Flagged wallets active",
-          "value": "5 of 6,292",
-          "tone": "alert"
-        },
-        {
-          "label": "Execution gap (retail vs bots)",
-          "value": "+0.60\u00a2 per share",
-          "tone": "alert"
-        }
-      ],
-      "depth_ladder": {
-        "bids": [
-          {
-            "price": 0.046,
-            "size": 52362.12,
-            "dollars": 2408.65752
-          },
-          {
-            "price": 0.045,
-            "size": 1826.12,
-            "dollars": 82.1754
-          },
-          {
-            "price": 0.044,
-            "size": 3252.26,
-            "dollars": 143.09944
-          },
-          {
-            "price": 0.043,
-            "size": 5000.57,
-            "dollars": 215.02450999999996
-          },
-          {
-            "price": 0.042,
-            "size": 237.62,
-            "dollars": 9.98004
-          }
-        ],
-        "asks": [
-          {
-            "price": 0.047,
-            "size": 17945.46,
-            "dollars": 843.43662
-          },
-          {
-            "price": 0.048,
-            "size": 33882.41,
-            "dollars": 1626.3556800000001
-          },
-          {
-            "price": 0.049,
-            "size": 537.8,
-            "dollars": 26.3522
-          },
-          {
-            "price": 0.05,
-            "size": 128.04,
-            "dollars": 6.402
-          },
-          {
-            "price": 0.051,
-            "size": 128.04,
-            "dollars": 6.530039999999999
-          }
-        ]
-      },
-      "news_angle": "Detroit entered the playoffs as the East's No. 1 seed (60-22) and swept past Orlando in the first round, ending an 11-game postseason home losing streak dating to 2008. Cade Cunningham is averaging 31 points on 55% three-point shooting; the Pistons lead Cleveland 2-0 in the second round.",
-      "research_link": "/research",
-      "research_label": "Research"
-    },
-    {
-      "rank": 4,
-      "category": "Politics",
-      "question": "Will Tamilaga Vettri Kazhagam (TVK) win the most seats in the 2026 Tamil Nadu Legislative Assembly election?",
-      "market_id": "1003805",
-      "market_url": "https://polymarket.com/event/will-tamilaga-vettri-kazhagam-(tvk)-win-the-most-seats-in-the-2026-tamil-nadu-legislative-assembly-election",
-      "volume_usd": 771984.2390699998,
-      "n_trades": 4933,
-      "annotations": [
-        {
-          "label": "Status",
-          "value": "Resolved (book closed)",
-          "tone": "ok"
-        },
-        {
-          "label": "Weekly volume",
-          "value": "$772K",
-          "tone": "flat"
-        },
-        {
-          "label": "Trades",
-          "value": "4,933",
-          "tone": "flat"
-        },
-        {
-          "label": "Algorithmic share (this market)",
-          "value": "52% (vs 73% Polymarket-wide)",
+          "value": "43% (vs 73% Polymarket-wide)",
           "tone": "ok"
         },
         {
@@ -414,109 +314,449 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+0.44\u00a2 per share",
+          "value": "-0.02\u00a2 per share",
+          "tone": "flat"
+        }
+      ],
+      "depth_ladder": {
+        "bids": [
+          {
+            "price": 0.178,
+            "size": 34925.94,
+            "dollars": 6216.81732
+          },
+          {
+            "price": 0.177,
+            "size": 82615.42,
+            "dollars": 14622.929339999999
+          },
+          {
+            "price": 0.176,
+            "size": 38832.49,
+            "dollars": 6834.518239999999
+          },
+          {
+            "price": 0.175,
+            "size": 41027.0,
+            "dollars": 7179.724999999999
+          },
+          {
+            "price": 0.174,
+            "size": 17267.0,
+            "dollars": 3004.4579999999996
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.179,
+            "size": 125136.95,
+            "dollars": 22399.514049999998
+          },
+          {
+            "price": 0.18,
+            "size": 207067.97,
+            "dollars": 37272.234599999996
+          },
+          {
+            "price": 0.181,
+            "size": 3363.33,
+            "dollars": 608.7627299999999
+          },
+          {
+            "price": 0.182,
+            "size": 5959.6,
+            "dollars": 1084.6472
+          },
+          {
+            "price": 0.183,
+            "size": 5549.45,
+            "dollars": 1015.5493499999999
+          }
+        ]
+      },
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "research_link": "/research",
+      "research_label": "Research"
+    },
+    {
+      "rank": 8,
+      "category": "Other",
+      "question": "Will the Iranian regime fall before 2027?",
+      "market_id": "663583",
+      "market_url": "https://polymarket.com/event/will-the-iranian-regime-fall-before-2027",
+      "volume_usd": 606519.4378010001,
+      "n_trades": 1759,
+      "annotations": [
+        {
+          "label": "Implied probability",
+          "value": "16% YES  \u25bc -2pp 7d",
+          "tone": "flat"
+        },
+        {
+          "label": "Weekly volume",
+          "value": "$607K",
+          "tone": "flat"
+        },
+        {
+          "label": "Trades",
+          "value": "1,759",
+          "tone": "flat"
+        },
+        {
+          "label": "24h volume (Gamma)",
+          "value": "$93K",
+          "tone": "flat"
+        },
+        {
+          "label": "Time to resolution",
+          "value": "223 days (2026-12-31)",
+          "tone": "flat"
+        },
+        {
+          "label": "Top of book (YES)",
+          "value": "Bid 0.16 ($1,401) / Ask 0.17 ($2,692)",
+          "tone": "flat"
+        },
+        {
+          "label": "Spread",
+          "value": "1.0\u00a2 (606 bps)",
+          "tone": "alert"
+        },
+        {
+          "label": "Depth within \u00b15% of mid",
+          "value": "$1,401 bid  /  $2,692 ask",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "65% (vs 73% Polymarket-wide)",
+          "tone": "ok"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "4 of 6,292",
           "tone": "warn"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "+0.62\u00a2 per share",
+          "tone": "alert"
         }
       ],
-      "depth_ladder": null,
-      "news_angle": "Results declared May 4 confirmed TVK as Tamil Nadu's largest party on its first electoral attempt, with roughly 35% of the vote ousting both the incumbent DMK and AIADMK. TVK fell 10 seats short of a majority, producing a hung assembly and ongoing coalition negotiations for government formation.",
+      "depth_ladder": {
+        "bids": [
+          {
+            "price": 0.16,
+            "size": 8754.61,
+            "dollars": 1400.7376000000002
+          },
+          {
+            "price": 0.15,
+            "size": 42432.58,
+            "dollars": 6364.887
+          },
+          {
+            "price": 0.14,
+            "size": 82794.95,
+            "dollars": 11591.293000000001
+          },
+          {
+            "price": 0.13,
+            "size": 12530.05,
+            "dollars": 1628.9065
+          },
+          {
+            "price": 0.12,
+            "size": 2004.17,
+            "dollars": 240.5004
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.17,
+            "size": 15833.63,
+            "dollars": 2691.7171
+          },
+          {
+            "price": 0.18,
+            "size": 18656.3,
+            "dollars": 3358.1339999999996
+          },
+          {
+            "price": 0.19,
+            "size": 34203.43,
+            "dollars": 6498.6517
+          },
+          {
+            "price": 0.2,
+            "size": 2199.17,
+            "dollars": 439.83400000000006
+          },
+          {
+            "price": 0.21,
+            "size": 19854.18,
+            "dollars": 4169.3778
+          }
+        ]
+      },
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
       "research_link": "/research",
       "research_label": "Research"
     },
     {
-      "rank": 5,
-      "category": "Politics",
-      "question": "Will the next Prime Minister of Hungary be P\u00e9ter Magyar?",
-      "market_id": "567561",
-      "market_url": "https://polymarket.com/event/will-the-next-prime-minister-of-hungary-be-p\u00e9ter-magyar",
-      "volume_usd": 678041.944187,
-      "n_trades": 990,
+      "rank": 11,
+      "category": "Other",
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "market_id": "703257",
+      "market_url": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027",
+      "volume_usd": 471069.4452200002,
+      "n_trades": 1768,
       "annotations": [
         {
-          "label": "Status",
-          "value": "Resolved (book closed)",
-          "tone": "ok"
+          "label": "Implied probability",
+          "value": "14% YES  \u25bc -2pp 7d",
+          "tone": "flat"
         },
         {
           "label": "Weekly volume",
-          "value": "$678K",
+          "value": "$471K",
           "tone": "flat"
         },
         {
           "label": "Trades",
-          "value": "990",
+          "value": "1,768",
+          "tone": "flat"
+        },
+        {
+          "label": "24h volume (Gamma)",
+          "value": "$31K",
+          "tone": "flat"
+        },
+        {
+          "label": "Time to resolution",
+          "value": "223 days (2026-12-31)",
+          "tone": "flat"
+        },
+        {
+          "label": "Top of book (YES)",
+          "value": "Bid 0.14 ($12,293) / Ask 0.15 ($3,570)",
+          "tone": "flat"
+        },
+        {
+          "label": "Spread",
+          "value": "1.0\u00a2 (690 bps)",
+          "tone": "alert"
+        },
+        {
+          "label": "Depth within \u00b15% of mid",
+          "value": "$12,293 bid  /  $3,570 ask",
           "tone": "flat"
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "61% (vs 73% Polymarket-wide)",
+          "value": "50% (vs 73% Polymarket-wide)",
           "tone": "ok"
         },
         {
           "label": "Flagged wallets active",
-          "value": "6 of 6,292",
-          "tone": "alert"
+          "value": "1 of 6,292",
+          "tone": "warn"
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.09\u00a2 per share",
+          "value": "-0.06\u00a2 per share",
           "tone": "flat"
         }
       ],
-      "depth_ladder": null,
-      "news_angle": "Magyar's TISZA party won Hungary's April 12 election with 53.6% of the vote and 138 of 199 seats, ending Viktor Orb\u00e1n's 16-year rule. Government formation proceedings were underway through the week, with Magyar's formal appointment as Prime Minister the remaining resolution condition.",
+      "depth_ladder": {
+        "bids": [
+          {
+            "price": 0.14,
+            "size": 87808.0,
+            "dollars": 12293.12
+          },
+          {
+            "price": 0.13,
+            "size": 320482.19,
+            "dollars": 41662.684700000005
+          },
+          {
+            "price": 0.12,
+            "size": 524439.42,
+            "dollars": 62932.7304
+          },
+          {
+            "price": 0.11,
+            "size": 335029.35,
+            "dollars": 36853.2285
+          },
+          {
+            "price": 0.1,
+            "size": 64526.99,
+            "dollars": 6452.6990000000005
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.15,
+            "size": 23800.14,
+            "dollars": 3570.0209999999997
+          },
+          {
+            "price": 0.16,
+            "size": 57660.52,
+            "dollars": 9225.6832
+          },
+          {
+            "price": 0.17,
+            "size": 197466.16,
+            "dollars": 33569.247200000005
+          },
+          {
+            "price": 0.18,
+            "size": 4579.41,
+            "dollars": 824.2937999999999
+          },
+          {
+            "price": 0.19,
+            "size": 63924.06,
+            "dollars": 12145.571399999999
+          }
+        ]
+      },
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
       "research_link": "/research",
       "research_label": "Research"
     },
     {
-      "rank": 6,
-      "category": "Politics",
-      "question": "Will the Bharatiya Janata Party (BJP) win the most seats in the 2026 West Bengal Legislative Assembly election?",
-      "market_id": "951183",
-      "market_url": "https://polymarket.com/event/will-the-bharatiya-janata-party-(bjp)-win-the-most-seats-in-the-2026-west-bengal-legislative-assembly-election",
-      "volume_usd": 660768.0708930001,
-      "n_trades": 4179,
+      "rank": 12,
+      "category": "Sports",
+      "question": "Will the Oklahoma City Thunder win the 2026 NBA Finals?",
+      "market_id": "553856",
+      "market_url": "https://polymarket.com/event/will-the-oklahoma-city-thunder-win-the-2026-nba-finals",
+      "volume_usd": 449419.1561089999,
+      "n_trades": 4839,
       "annotations": [
         {
-          "label": "Status",
-          "value": "Resolved (book closed)",
-          "tone": "ok"
+          "label": "Implied probability",
+          "value": "48% YES  \u25bc -14pp 7d",
+          "tone": "flat"
         },
         {
           "label": "Weekly volume",
-          "value": "$661K",
+          "value": "$449K",
           "tone": "flat"
         },
         {
           "label": "Trades",
-          "value": "4,179",
+          "value": "4,839",
+          "tone": "flat"
+        },
+        {
+          "label": "24h volume (Gamma)",
+          "value": "$106K",
+          "tone": "flat"
+        },
+        {
+          "label": "Time to resolution",
+          "value": "40 days (2026-07-01)",
+          "tone": "flat"
+        },
+        {
+          "label": "Top of book (YES)",
+          "value": "Bid 0.48 ($686) / Ask 0.49 ($7,016)",
+          "tone": "flat"
+        },
+        {
+          "label": "Spread",
+          "value": "1.0\u00a2 (206 bps)",
+          "tone": "warn"
+        },
+        {
+          "label": "Depth within \u00b15% of mid",
+          "value": "$1,002 bid  /  $34,565 ask",
           "tone": "flat"
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "53% (vs 73% Polymarket-wide)",
+          "value": "75% (in line with the 73% Polymarket-wide baseline)",
           "tone": "ok"
         },
         {
           "label": "Flagged wallets active",
-          "value": "5 of 6,292",
-          "tone": "alert"
+          "value": "2 of 6,292",
+          "tone": "warn"
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-4.02\u00a2 per share",
-          "tone": "flat"
+          "value": "+1.06\u00a2 per share",
+          "tone": "alert"
         }
       ],
-      "depth_ladder": null,
-      "news_angle": "BJP secured 206 of 294 seats in results declared May 4, ending TMC's 15-year hold on West Bengal; Mamata Banerjee lost her own Bhabanipur constituency to BJP's Suvendu Adhikari. The formal swearing-in of a BJP Chief Minister is the remaining step before full market resolution.",
+      "depth_ladder": {
+        "bids": [
+          {
+            "price": 0.48,
+            "size": 1429.48,
+            "dollars": 686.1504
+          },
+          {
+            "price": 0.47,
+            "size": 671.26,
+            "dollars": 315.49219999999997
+          },
+          {
+            "price": 0.46,
+            "size": 33.0,
+            "dollars": 15.180000000000001
+          },
+          {
+            "price": 0.45,
+            "size": 260.11,
+            "dollars": 117.04950000000001
+          },
+          {
+            "price": 0.44,
+            "size": 16045.5,
+            "dollars": 7060.02
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.49,
+            "size": 14318.32,
+            "dollars": 7015.9767999999995
+          },
+          {
+            "price": 0.5,
+            "size": 55098.82,
+            "dollars": 27549.41
+          },
+          {
+            "price": 0.51,
+            "size": 9975.21,
+            "dollars": 5087.357099999999
+          },
+          {
+            "price": 0.52,
+            "size": 6671.42,
+            "dollars": 3469.1384000000003
+          },
+          {
+            "price": 0.53,
+            "size": 877.0,
+            "dollars": 464.81
+          }
+        ]
+      },
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
       "research_link": "/research",
       "research_label": "Research"
     }
   ],
   "global_context": {
     "polymarket_wide_bot_share": 0.7280806919516314,
-    "polymarket_wide_volume_usd": 546426006.3432088,
+    "polymarket_wide_volume_usd": 546426006.3432072,
     "polymarket_wide_trades": 23839701,
     "calibration_alpha": 0.6639191266094694,
     "calibration_r2": 0.9867800262365879

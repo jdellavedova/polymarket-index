@@ -4,7 +4,7 @@
   "n_live": 6,
   "n_total": 8,
   "as_of": "2026-02-28",
-  "generated_at": "2026-05-12T15:24:06+00:00",
+  "generated_at": "2026-05-23T00:37:49+00:00",
   "cards": [
     {
       "slot": 1,
@@ -58,6 +58,16 @@
     },
     {
       "slot": 6,
+      "status": "live",
+      "name": "Concentration / Pump Risk",
+      "value": "median HHI 0.044",
+      "secondary": "0 markets with HHI >= 0.75 (0.0% of 229,771 eligible)",
+      "description": "Per-market Herfindahl-Hirschman Index of participation. High HHI is the precondition under which one trader can move the consensus price alone, not direct evidence that they did. The index flags structure, not intent. Threshold cutpoints map onto DOJ horizontal-merger guideline categories.",
+      "href": "/surveillance/concentration",
+      "pattern_consistent_with": "single-trader price control"
+    },
+    {
+      "slot": 7,
       "status": "coming_soon",
       "name": "Matched / Pre-Arranged Orders",
       "value": "in development",
@@ -67,7 +77,7 @@
       "pattern_consistent_with": "coordinated bilateral trading"
     },
     {
-      "slot": 7,
+      "slot": 8,
       "status": "coming_soon",
       "name": "Marking the Close",
       "value": "in development",
@@ -75,16 +85,6 @@
       "description": "Concentration of one-sided trading in the final hours before market resolution moving the settling price. Limited by minute-grain timestamps in on-chain data; intraday precision not possible.",
       "href": "/surveillance",
       "pattern_consistent_with": "settling-price manipulation"
-    },
-    {
-      "slot": 8,
-      "status": "live",
-      "name": "Concentration / Pump Risk",
-      "value": "median HHI 0.044",
-      "secondary": "0 markets with HHI >= 0.75 (0.0% of 229,771 eligible)",
-      "description": "Per-market Herfindahl-Hirschman Index of participation. High HHI is the precondition under which one trader can move the consensus price alone, not direct evidence that they did. The index flags structure, not intent. Threshold cutpoints map onto DOJ horizontal-merger guideline categories.",
-      "href": "/surveillance/concentration",
-      "pattern_consistent_with": "single-trader price control"
     }
   ],
   "infeasible_tests": [

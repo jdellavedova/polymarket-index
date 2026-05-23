@@ -15,7 +15,7 @@ THIS WEEK BY THE NUMBERS
 ------------------------------------------------------------
 THE STORY
 ------------------------------------------------------------
-Traders moved $546 million through Polymarket in the week of 2026-05-11, across 23.8 million individual trades, with 0 wallets placing their first-ever bet (below the recent trend). Algorithmic wallets accounted for 73% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 27%.
+Traders moved $546 million through Polymarket in the week of 2026-05-11, across 23.8 million individual trades. Algorithmic wallets accounted for 73% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 27%.
 
 The most-traded market was "Will the U.S. invade Iran before 2027?", pulling in $3 million of volume.
 
@@ -52,4 +52,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-05-11T21:41:38+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-05-23T00:37:49+00:00)

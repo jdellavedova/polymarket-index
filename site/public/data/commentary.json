@@ -1,10 +1,19 @@
 {
   "notes": [
     {
+      "date": "2026-05-11",
+      "tag": "MARKETS",
+      "title": "Week of 2026-05-11: Will the U.S. invade Iran before 2027?",
+      "body": "Polymarket traders moved $546 million this week across 23.8 million individual trades. Traders moved $546 million through Polymarket in the week of 2026-05-11, across 23.8 million individual trades. Algorithmic wallets accounted for 73% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 27%. The most-traded market was \"Will the U.S. invade Iran...",
+      "href": "/briefings",
+      "href_label": "See this week's briefings",
+      "auto_generated": true
+    },
+    {
       "date": "2026-05-03",
       "tag": "RESEARCH",
       "title": "Flagged wallets: mostly retail by count, almost entirely bots by dollars.",
-      "body": "Of 6,291 wallets flagged at p<0.01 by the orthogonality test, 62% are active retail, 21% are sophisticated, only 16% are algorithmic. But profitability tells the opposite story: 4,306 (68.4%) of the flagged set were profitable, generating $152.5M in aggregate. The 1,026 flagged bots captured $137.6M of that — 90% of all flagged-wallet gains flow to the algorithmic 16%, with mean PnL of $134K per bot vs $2.2K per retail wallet. The screen catches private information across every wallet class; the dollars accrue almost entirely to the algos who can act on it at scale.",
+      "body": "Of 6,291 wallets flagged at p<0.01 by the orthogonality test, 62% are active retail, 21% are sophisticated, only 16% are algorithmic. But profitability tells the opposite story: 4,306 (68.4%) of the flagged set were profitable, generating $152.5M in aggregate. The 1,026 flagged bots captured $137.6M of that \u2014 90% of all flagged-wallet gains flow to the algorithmic 16%, with mean PnL of $134K per bot vs $2.2K per retail wallet. The screen catches private information across every wallet class; the dollars accrue almost entirely to the algos who can act on it at scale.",
       "href": "/pii",
       "href_label": "See the screen"
     },
@@ -36,11 +45,11 @@
       "date": "2026-04-20",
       "tag": "RESEARCH",
       "title": "Paper 2 posted to SSRN",
-      "body": "\"Detecting Informed Trading in Prediction Markets: An Orthogonality Test\" — turns the theta-epsilon orthogonality from Paper 1 into a forensic detection signal. 6,291 of 483K wallets flagged at p<0.01.",
+      "body": "\"Detecting Informed Trading in Prediction Markets: An Orthogonality Test\" \u2014 turns the theta-epsilon orthogonality from Paper 1 into a forensic detection signal. 6,291 of 483K wallets flagged at p<0.01.",
       "href": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6567238",
       "href_label": "SSRN abstract 6567238"
     }
   ],
   "notes_url": "/notes",
-  "generated_at": "2026-05-03T00:00:00+00:00"
+  "generated_at": "2026-05-23T00:37:47+00:00"
 }

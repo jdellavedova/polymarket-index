@@ -105,7 +105,7 @@
     "cohens_kappa": 0.007,
     "note": "Near-zero concordance between structural (orthogonality) and heuristic (5-signal) approaches."
   },
-  "generated_at": "2026-05-21T09:28:36+00:00",
+  "generated_at": "2026-05-23T00:37:14+00:00",
   "sources": [
     "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage19_significant_wallets.csv",
     "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage19_summary_by_type.csv",
