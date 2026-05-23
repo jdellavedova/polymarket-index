@@ -1,14 +1,22 @@
 """Orchestrator — runs aggregations in order.
 
-Three modes:
-    python pipeline/run_all.py                 # default: weekly only (~6 min)
-    python pipeline/run_all.py --mode=weekly   # same as default
-    python pipeline/run_all.py --mode=full     # weekly + surveillance (~10 hrs)
+Four modes:
+    python pipeline/run_all.py                 # default: fast-weekly (~1 min)
+    python pipeline/run_all.py --mode=fast     # same as default, skips full-CSV scans
+    python pipeline/run_all.py --mode=weekly   # fast + heavy scans (weekly_activity,
+                                               # top_markets, market_microstructure,
+                                               # profit_split); can take hours on H: drive
+    python pipeline/run_all.py --mode=full     # weekly + surveillance (~10+ hrs)
     python pipeline/run_all.py --mode=surveillance-only
 
-The Sunday cron should call this without args. The surveillance aggregators
-scan the full 282 GB on-chain panel and take 1-3 hours each; run them on a
-monthly cadence or on demand via --mode=full.
+Sunday cron calls --mode=fast (default). Heavy-scan scripts run monthly or on demand
+via --mode=weekly. Surveillance runs monthly via --mode=full.
+
+Heavy-scan scripts (scan the 335 GB master CSV on H: drive; hours each):
+  - aggregate_weekly_activity  (5 full scans)
+  - aggregate_top_markets      (1 full scan + Gamma API)
+  - aggregate_market_microstructure (DuckDB scan)
+  - aggregate_profit_split     (incremental but still full-scan to find new rows)
 """
 from __future__ import annotations
 
@@ -21,22 +29,29 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-WEEKLY = [
+# Fast: reads pre-computed CSVs from paper4 pipeline; no master-CSV scan. ~1 min.
+FAST = [
     "aggregate_pwi",
     "aggregate_calibration",
     "aggregate_execution",
-    # weekly_activity must run before bot_share (bot_share reads its output)
-    "aggregate_weekly_activity",
-    "aggregate_bot_share",
+    "aggregate_bot_share",       # reads weekly_activity_history.csv (produced by HEAVY)
     "aggregate_price_gap",
     "aggregate_efficiency",
     "aggregate_pii",
+    "fetch_market_snapshot",     # API calls, reads top_markets_latest.json (from HEAVY)
+    "aggregate_cumulative_pnl",  # reads profit_split_history.csv (from HEAVY)
+]
+
+# Heavy: scan the 335 GB master CSV on H: drive. Hours each. Run monthly or on demand.
+# weekly_activity must run before bot_share; top_markets before fetch_market_snapshot.
+HEAVY = [
+    "aggregate_weekly_activity",
     "aggregate_top_markets",
     "aggregate_market_microstructure",
-    "fetch_market_snapshot",
     "aggregate_profit_split",
-    "aggregate_cumulative_pnl",
 ]
+
+WEEKLY = HEAVY + FAST  # legacy alias: full weekly with heavy scans
 
 # Surveillance suite: full-panel scans, 1-3 hours each. Run monthly or on demand.
 SURVEILLANCE = [
@@ -78,18 +93,20 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument(
         "--mode",
-        default="weekly",
-        choices=["weekly", "full", "surveillance-only"],
-        help="weekly (default, ~6min): skip surveillance. "
+        default="fast",
+        choices=["fast", "weekly", "full", "surveillance-only"],
+        help="fast (default, ~1min): no master-CSV scans, reads pre-computed CSVs. "
+             "weekly (~hours): fast + heavy master-CSV scans. "
              "full (~10hrs): weekly + surveillance. "
              "surveillance-only: just the slow surveillance aggregators.",
     )
     args = ap.parse_args()
 
-    if args.mode == "weekly":
-        _run(WEEKLY)
+    if args.mode in ("fast", "weekly"):
+        scripts = FAST if args.mode == "fast" else WEEKLY
+        _run(scripts)
         # Re-run the surveillance overview so it picks up any newly-refreshed
-        # PII numbers even on a weekly-only refresh. It only re-reads existing
+        # PII numbers even on a fast-only refresh. It only re-reads existing
         # JSONs and is cheap.
         _run(SURVEILLANCE_OVERVIEW)
         _run(PUBLISH)
