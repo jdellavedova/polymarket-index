@@ -17,18 +17,18 @@ THE STORY
 ------------------------------------------------------------
 Traders moved $463 million through Polymarket in the week of 2026-05-22, across 12.0 million individual trades. Algorithmic wallets accounted for 66% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 34%.
 
-The most-traded market was "Will the U.S. invade Iran before 2027?", pulling in $3 million of volume.
+The most-traded market was "Russia x Ukraine ceasefire by June 30, 2026?", pulling in $49 million of volume.
 
 The usual pattern held: algorithmic traders made $80K (+69 bps on volume) while retail traders lost $83K (-432 bps).
 
 ------------------------------------------------------------
 MOST-TRADED MARKETS THIS WEEK
 ------------------------------------------------------------
-  1. $3M  Will the U.S. invade Iran before 2027?
-  2. $2M  Will the Iranian regime fall by June 30?
-  3. $986K  Will the Detroit Pistons win the 2026 NBA Finals?
-  4. $772K  Will Tamilaga Vettri Kazhagam (TVK) win the most seats in the 2026 Tamil Nadu Legislative Assembly election?
-  5. $678K  Will the next Prime Minister of Hungary be Péter Magyar?
+  1. $49M  Russia x Ukraine ceasefire by June 30, 2026?
+  2. $1M  Russia x Ukraine ceasefire by end of 2026?
+  3. $1M  Will the Iranian regime fall by June 30?
+  4. $1M  Jeffrey Epstein foul play confirmed by December 31, 2026?
+  5. $967K  Will the Los Angeles Lakers win the NBA Western Conference Finals?
 
 ------------------------------------------------------------
 WHO MADE MONEY (resolved trades only)
@@ -52,4 +52,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-05-23T01:55:07+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-05-25T06:27:18+00:00)

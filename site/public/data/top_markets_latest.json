@@ -1,251 +1,309 @@
 {
-  "index_name": "Top Markets by Weekly Volume",
-  "short_name": "TopMarkets",
-  "as_of_week": "2026-W20",
-  "top_k": 30,
+  "as_of_week": "2026-W21",
+  "as_of_date": "2026-05-24",
+  "n_markets": 30,
   "markets": [
     {
       "rank": 1,
-      "market_id": "665374",
-      "question": "Will the U.S. invade Iran before 2027?",
+      "market_id": "1171663",
+      "question": "Russia x Ukraine ceasefire by June 30, 2026?",
       "category": "Geopolitics",
-      "usd_volume": 3025743.429083998,
-      "n_trades": 9544
+      "market_url": "https://polymarket.com/event/0xe546672750517f62c45a5a00067481981e62b9c20fa8220203232c9dc8fd2093",
+      "usd_volume": 48606441.48608,
+      "n_trades": 1830,
+      "week": "2026-W21"
     },
     {
       "rank": 2,
-      "market_id": "958443",
-      "question": "Will the Iranian regime fall by June 30?",
-      "category": "Other",
-      "usd_volume": 1712066.0679739933,
-      "n_trades": 5635
+      "market_id": "567687",
+      "question": "Russia x Ukraine ceasefire by end of 2026?",
+      "category": "Geopolitics",
+      "market_url": "https://polymarket.com/event/0xaeea5f917fc5746387b5f9c0a4263dba035dbb3f0ac6ad72bf92183d21e26739",
+      "usd_volume": 1449954.8686000002,
+      "n_trades": 417,
+      "week": "2026-W21"
     },
     {
       "rank": 3,
-      "market_id": "553871",
-      "question": "Will the Detroit Pistons win the 2026 NBA Finals?",
-      "category": "Sports",
-      "usd_volume": 986485.2580540001,
-      "n_trades": 5210
+      "market_id": "958443",
+      "question": "Will the Iranian regime fall by June 30?",
+      "category": "Other",
+      "market_url": "https://polymarket.com/event/0x9352c559e9648ab4cab236087b64ca85c5b7123a4c7d9d7d4efde4a39c18056f",
+      "usd_volume": 1066067.7576150005,
+      "n_trades": 2012,
+      "week": "2026-W21"
     },
     {
       "rank": 4,
-      "market_id": "1003805",
-      "question": "Will Tamilaga Vettri Kazhagam (TVK) win the most seats in the 2026 Tamil Nadu Legislative Assembly election?",
-      "category": "Politics",
-      "usd_volume": 771984.2390699998,
-      "n_trades": 4933
+      "market_id": "1057349",
+      "question": "Jeffrey Epstein foul play confirmed by December 31, 2026?",
+      "category": "Other",
+      "market_url": "https://polymarket.com/event/0x2fa7fc0460e9459d52c5864e8b5d64b4b984e2e39001e4b83c2c3e50949befe7",
+      "usd_volume": 1054532.9665759995,
+      "n_trades": 25472,
+      "week": "2026-W21"
     },
     {
       "rank": 5,
-      "market_id": "567561",
-      "question": "Will the next Prime Minister of Hungary be P\u00e9ter Magyar?",
-      "category": "Politics",
-      "usd_volume": 678041.9441869997,
-      "n_trades": 990
+      "market_id": "564213",
+      "question": "Will the Los Angeles Lakers win the NBA Western Conference Finals?",
+      "category": "Sports",
+      "market_url": "https://polymarket.com/event/0x87c696852b80f378ae877a928f2cc62c0ea1a68f0a398ca58d9cdfe853d2d521",
+      "usd_volume": 966731.6445760009,
+      "n_trades": 23887,
+      "week": "2026-W21"
     },
     {
       "rank": 6,
-      "market_id": "951183",
-      "question": "Will the Bharatiya Janata Party (BJP) win the most seats in the 2026 West Bengal Legislative Assembly election?",
-      "category": "Politics",
-      "usd_volume": 660768.0708930002,
-      "n_trades": 4179
+      "market_id": "665374",
+      "question": "Will the U.S. invade Iran before 2027?",
+      "category": "Geopolitics",
+      "market_url": "https://polymarket.com/event/0x5db999fad322cea2914535aae5517060c3f80ad6d8c0231cde2124a434d16846",
+      "usd_volume": 766214.2085809998,
+      "n_trades": 4727,
+      "week": "2026-W21"
     },
     {
       "rank": 7,
       "market_id": "558936",
       "question": "Will France win the 2026 FIFA World Cup?",
       "category": "Sports",
-      "usd_volume": 617685.2565190003,
-      "n_trades": 3328
+      "market_url": "https://polymarket.com/event/0x9b6fef249040fd17e9c107955b37ac2c3e923509b6b0ff01cc463a331ddeb894",
+      "usd_volume": 643346.6084110006,
+      "n_trades": 5919,
+      "week": "2026-W21"
     },
     {
       "rank": 8,
-      "market_id": "663583",
-      "question": "Will the Iranian regime fall before 2027?",
-      "category": "Other",
-      "usd_volume": 606519.4378010001,
-      "n_trades": 1759
-    },
-    {
-      "rank": 9,
-      "market_id": "553863",
-      "question": "Will the Los Angeles Lakers win the 2026 NBA Finals?",
-      "category": "Sports",
-      "usd_volume": 521077.973256,
-      "n_trades": 12502
-    },
-    {
-      "rank": 10,
-      "market_id": "1171663",
-      "question": "Russia x Ukraine ceasefire by June 30, 2026?",
-      "category": "Geopolitics",
-      "usd_volume": 516792.7864560003,
-      "n_trades": 2017
-    },
-    {
-      "rank": 11,
-      "market_id": "703257",
-      "question": "Will the US confirm that aliens exist before 2027?",
-      "category": "Other",
-      "usd_volume": 471069.4452200002,
-      "n_trades": 1768
-    },
-    {
-      "rank": 12,
-      "market_id": "553856",
-      "question": "Will the Oklahoma City Thunder win the 2026 NBA Finals?",
-      "category": "Sports",
-      "usd_volume": 449419.1561089999,
-      "n_trades": 4839
-    },
-    {
-      "rank": 13,
       "market_id": "906974",
       "question": "Will there be no change in Fed interest rates after the June 2026 meeting?",
       "category": "Macro",
-      "usd_volume": 412323.47719600005,
-      "n_trades": 2264
+      "market_url": "https://polymarket.com/event/0xde04b189b3f19eaccda02529a3ea67abfc46bff5c0c8fc42d8a2d0ed7b8f0d41",
+      "usd_volume": 629441.569476,
+      "n_trades": 6593,
+      "week": "2026-W21"
+    },
+    {
+      "rank": 9,
+      "market_id": "1066556",
+      "question": "Lai Ching-te impeached by June 30?",
+      "category": "Politics",
+      "market_url": "https://polymarket.com/event/0x52a7c03aa0e50655b5defb3d8e48685bd72a4955d82703a8e89a1d5255f4a216",
+      "usd_volume": 583154.472183,
+      "n_trades": 141,
+      "week": "2026-W21"
+    },
+    {
+      "rank": 10,
+      "market_id": "703257",
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "category": "Other",
+      "market_url": "https://polymarket.com/event/0x747dc809fb79e1b05be09c42d6179459a58de2ef3e40f02484a4e1260f741f75",
+      "usd_volume": 517791.867668,
+      "n_trades": 2159,
+      "week": "2026-W21"
+    },
+    {
+      "rank": 11,
+      "market_id": "1107582",
+      "question": "US strike on Cuba by December 31?",
+      "category": "Geopolitics",
+      "market_url": "https://polymarket.com/event/0x3de0f3d7d7efb40cde68e814d40a0b232832083653c8e78260eb999baa967de0",
+      "usd_volume": 464212.50402699993,
+      "n_trades": 690,
+      "week": "2026-W21"
+    },
+    {
+      "rank": 12,
+      "market_id": "560317",
+      "question": "Putin out as President of Russia by December 31, 2026?",
+      "category": "Geopolitics",
+      "market_url": "https://polymarket.com/event/0x6bd56627aa21311850825edb27e53434a0e17a4f782be0086bc07f71eee00d0d",
+      "usd_volume": 431944.709437,
+      "n_trades": 819,
+      "week": "2026-W21"
+    },
+    {
+      "rank": 13,
+      "market_id": "597967",
+      "question": "Starmer out by June 30, 2026?",
+      "category": "Other",
+      "market_url": "https://polymarket.com/event/0xbee2cd40473495f713c69b9dfbce9fc2837fa4011568222c83c83bb773e35053",
+      "usd_volume": 428978.0713439999,
+      "n_trades": 6289,
+      "week": "2026-W21"
     },
     {
       "rank": 14,
-      "market_id": "692258",
-      "question": "MicroStrategy sells any Bitcoin by June 30, 2026?",
-      "category": "Crypto",
-      "usd_volume": 409085.38657099986,
-      "n_trades": 2853
+      "market_id": "956370",
+      "question": "Xi Jinping out by June 30?",
+      "category": "Other",
+      "market_url": "https://polymarket.com/event/0x4ba35ccd015e3899f323b7b0bcb38ecab3a3c0fafc397666e690ba301fbeff30",
+      "usd_volume": 421127.60120200005,
+      "n_trades": 2119,
+      "week": "2026-W21"
     },
     {
       "rank": 15,
-      "market_id": "566136",
-      "question": "Will PSG win the 2025\u201326 Champions League?",
-      "category": "Sports",
-      "usd_volume": 396770.49809799966,
-      "n_trades": 4314
-    },
-    {
-      "rank": 16,
-      "market_id": "703258",
-      "question": "Will Jesus Christ return before 2027?",
-      "category": "Other",
-      "usd_volume": 361712.06790899986,
-      "n_trades": 6033
-    },
-    {
-      "rank": 17,
-      "market_id": "561229",
-      "question": "Will JD Vance win the 2028 US Presidential Election?",
-      "category": "Politics",
-      "usd_volume": 356278.696577,
-      "n_trades": 1902
-    },
-    {
-      "rank": 18,
-      "market_id": "566140",
-      "question": "Will Arsenal win the 2025\u201326 Champions League?",
-      "category": "Sports",
-      "usd_volume": 347649.70131899987,
-      "n_trades": 3010
-    },
-    {
-      "rank": 19,
       "market_id": "906973",
       "question": "Will the Fed decrease interest rates by 25 bps after the June 2026 meeting?",
       "category": "Macro",
-      "usd_volume": 327878.293758,
-      "n_trades": 3486
+      "market_url": "https://polymarket.com/event/0xdde06286a7b9464d344f410ab0b3d2ebc6469904e72c27fd982f65fdbf78768d",
+      "usd_volume": 399019.5448040001,
+      "n_trades": 7360,
+      "week": "2026-W21"
+    },
+    {
+      "rank": 16,
+      "market_id": "974661",
+      "question": "Bill Clinton divorce by June 30?",
+      "category": "Other",
+      "market_url": "https://polymarket.com/event/0xcecd1388983a8e8afebab7d3f9e226f894f74e1b03c5579e8c4afa7e6b0ab9f3",
+      "usd_volume": 350341.0033749999,
+      "n_trades": 804,
+      "week": "2026-W21"
+    },
+    {
+      "rank": 17,
+      "market_id": "553856",
+      "question": "Will the Oklahoma City Thunder win the 2026 NBA Finals?",
+      "category": "Sports",
+      "market_url": "https://polymarket.com/event/0x22e7b5e35423e76842dd3a5e1a21d13793811080d5e7b2896d0c001bd5e97d54",
+      "usd_volume": 313926.9822799996,
+      "n_trades": 3203,
+      "week": "2026-W21"
+    },
+    {
+      "rank": 18,
+      "market_id": "666655",
+      "question": "Starmer out by December 31, 2026?",
+      "category": "Other",
+      "market_url": "https://polymarket.com/event/0x2bde6486e7067f48ee21344d8b5c1af458732536eb4d080932c88c3a7c2d2126",
+      "usd_volume": 310993.317351,
+      "n_trades": 3590,
+      "week": "2026-W21"
+    },
+    {
+      "rank": 19,
+      "market_id": "994894",
+      "question": "Greece x Turkey military engagement by June 30?",
+      "category": "Geopolitics",
+      "market_url": "https://polymarket.com/event/0x707ab64115b0ca83b65bc5137aaa947a11f56885ed82ffcedc3c5b70e1210151",
+      "usd_volume": 309483.99155599996,
+      "n_trades": 421,
+      "week": "2026-W21"
     },
     {
       "rank": 20,
-      "market_id": "951182",
-      "question": "Will the All India Trinamool Congress (AITC) win the most seats in the 2026 West Bengal Legislative Assembly election?",
-      "category": "Politics",
-      "usd_volume": 324024.01743000007,
-      "n_trades": 3565
+      "market_id": "558934",
+      "question": "Will Spain win the 2026 FIFA World Cup?",
+      "category": "Sports",
+      "market_url": "https://polymarket.com/event/0x7976b8dbacf9077eb1453a62bcefd6ab2df199acd28aad276ff0d920d6992892",
+      "usd_volume": 285188.0554550003,
+      "n_trades": 3233,
+      "week": "2026-W21"
     },
     {
       "rank": 21,
       "market_id": "1092482",
       "question": "Jerome Powell out as Fed Chair by May 14, 2026?",
       "category": "Macro",
-      "usd_volume": 299152.134145,
-      "n_trades": 2456
+      "market_url": "https://polymarket.com/event/0xa1b91b95e0941fafb86b8e55f5f8051bf5620f5b03d8547dfb1cf81e10abf077",
+      "usd_volume": 282953.601005,
+      "n_trades": 1237,
+      "week": "2026-W21"
     },
     {
       "rank": 22,
-      "market_id": "567621",
-      "question": "Will China invade Taiwan by end of 2026?",
+      "market_id": "1107307",
+      "question": "US strike on Colombia by December 31?",
       "category": "Geopolitics",
-      "usd_volume": 290841.3468069999,
-      "n_trades": 2618
+      "market_url": "https://polymarket.com/event/0xc6e54956b79ddf6f8640df06eea9ffb1f5e558907b2a9031aa00cefeb5f3ab22",
+      "usd_volume": 268343.0181,
+      "n_trades": 403,
+      "week": "2026-W21"
     },
     {
       "rank": 23,
-      "market_id": "567687",
-      "question": "Russia x Ukraine ceasefire by end of 2026?",
-      "category": "Geopolitics",
-      "usd_volume": 269858.665474,
-      "n_trades": 1284
+      "market_id": "566187",
+      "question": "Will Arsenal win the 2025\u201326 English Premier League?",
+      "category": "Sports",
+      "market_url": "https://polymarket.com/event/0xcba24842ceac7a40d2a8b9adde1f4407999b6505193b9fd68156ae76fbffa706",
+      "usd_volume": 265039.0540999999,
+      "n_trades": 1669,
+      "week": "2026-W21"
     },
     {
       "rank": 24,
-      "market_id": "566142",
-      "question": "Will Bayern Munich win the 2025\u201326 Champions League?",
+      "market_id": "553859",
+      "question": "Will the Minnesota Timberwolves win the 2026 NBA Finals?",
       "category": "Sports",
-      "usd_volume": 266626.98924100003,
-      "n_trades": 3690
+      "market_url": "https://polymarket.com/event/0x649ad05a2868343271fe82ea692031d567ca1af652e3529788933157e94aa088",
+      "usd_volume": 252346.66394299982,
+      "n_trades": 8415,
+      "week": "2026-W21"
     },
     {
       "rank": 25,
-      "market_id": "898669",
-      "question": "Will Cadillac be the 2026 F1 Constructors' Champion?",
-      "category": "Sports",
-      "usd_volume": 260669.26957799977,
-      "n_trades": 8769
+      "market_id": "567621",
+      "question": "Will China invade Taiwan by end of 2026?",
+      "category": "Geopolitics",
+      "market_url": "https://polymarket.com/event/0xd9fb1184af0064e5e34b129f5b79afa5a17b7e32f2953ab05efed82315fee6d4",
+      "usd_volume": 237006.52851899943,
+      "n_trades": 3510,
+      "week": "2026-W21"
     },
     {
       "rank": 26,
-      "market_id": "559651",
-      "question": "Xi Jinping out before 2027?",
+      "market_id": "842019",
+      "question": "Will Greece win Eurovision 2026?",
       "category": "Other",
-      "usd_volume": 253031.470742,
-      "n_trades": 817
+      "market_url": "https://polymarket.com/event/0x7382a5e41b0fec7ba5fd4d62191fc1cf4504d3768970c46d4c9185615c416872",
+      "usd_volume": 234711.74870399994,
+      "n_trades": 3930,
+      "week": "2026-W21"
     },
     {
       "rank": 27,
-      "market_id": "948956",
-      "question": "Bitcoin all time high by June 30, 2026?",
-      "category": "Crypto",
-      "usd_volume": 248334.23664799996,
-      "n_trades": 698
+      "market_id": "663583",
+      "question": "Will the Iranian regime fall before 2027?",
+      "category": "Other",
+      "market_url": "https://polymarket.com/event/0xbb4d51e6364066d92eb6f9b8413dd7193de70966736044463b205834805a1f3b",
+      "usd_volume": 234581.32654499996,
+      "n_trades": 782,
+      "week": "2026-W21"
     },
     {
       "rank": 28,
-      "market_id": "553869",
-      "question": "Will the Philadelphia 76ers win the 2026 NBA Finals?",
-      "category": "Sports",
-      "usd_volume": 236990.15033799986,
-      "n_trades": 7441
+      "market_id": "692258",
+      "question": "MicroStrategy sells any Bitcoin by June 30, 2026?",
+      "category": "Crypto",
+      "market_url": "https://polymarket.com/event/0x8e7a03cb1970e2ad6533b01892403516b6b3f5b5fa90ed7d104c28b27e40ba00",
+      "usd_volume": 234134.50450600006,
+      "n_trades": 2581,
+      "week": "2026-W21"
     },
     {
       "rank": 29,
-      "market_id": "1090199",
-      "question": "Will Reza Pahlavi enter Iran by June 30?",
-      "category": "Geopolitics",
-      "usd_volume": 226986.45620199997,
-      "n_trades": 1530
+      "market_id": "553858",
+      "question": "Will the New York Knicks win the 2026 NBA Finals?",
+      "category": "Sports",
+      "market_url": "https://polymarket.com/event/0x713641f745d71f6ec61f906237ffca3c8583f251e49384429a63ceb0ccdb2d37",
+      "usd_volume": 221764.707823,
+      "n_trades": 2791,
+      "week": "2026-W21"
     },
     {
       "rank": 30,
-      "market_id": "1003803",
-      "question": "Will the Dravida Munnetra Kazhagam (DMK) win the most seats in the 2026 Tamil Nadu Legislative Assembly election?",
-      "category": "Politics",
-      "usd_volume": 224131.61774499994,
-      "n_trades": 3121
+      "market_id": "842015",
+      "question": "Will Finland win Eurovision 2026?",
+      "category": "Other",
+      "market_url": "https://polymarket.com/event/0xc6ddb19f848ac363330d0a690cfe6818d4c51e837161a41d42675eda27767ed0",
+      "usd_volume": 207456.02684399975,
+      "n_trades": 4336,
+      "week": "2026-W21"
     }
   ],
-  "generated_at": "2026-05-21T09:32:41+00:00",
-  "source": "J:/Research/10. Prediction/data/blockchain/processed_trades.csv",
-  "notes": "Top 5 resolved-trade markets by USD volume in the most recent complete week. Market questions come from polymarket_markets.csv (static snapshot); new markets not in that file will appear with question=null."
+  "generated_at": "2026-05-25T06:26:31+00:00",
+  "note": "Derived from delta CSV through 2026-05-24; full-history sort pending next heavy scan."
 }
