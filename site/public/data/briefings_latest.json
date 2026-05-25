@@ -14,7 +14,7 @@
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "28% YES  \u25b2 +2pp 7d",
+          "value": "28% YES  ▲ +2pp 7d",
           "tone": "flat"
         },
         {
@@ -44,11 +44,11 @@
         },
         {
           "label": "Spread",
-          "value": "1.0\u00a2 (351 bps)",
+          "value": "1.0¢ (351 bps)",
           "tone": "warn"
         },
         {
-          "label": "Depth within \u00b15% of mid",
+          "label": "Depth within ±5% of mid",
           "value": "$718 bid  /  $149 ask",
           "tone": "flat"
         },
@@ -64,7 +64,7 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+1.97\u00a2 per share",
+          "value": "+1.97¢ per share",
           "tone": "alert"
         }
       ],
@@ -139,7 +139,7 @@
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "4% YES  \u25bc -1pp 7d",
+          "value": "4% YES  ▼ -1pp 7d",
           "tone": "flat"
         },
         {
@@ -169,11 +169,11 @@
         },
         {
           "label": "Spread",
-          "value": "0.3\u00a2 (706 bps)",
+          "value": "0.3¢ (706 bps)",
           "tone": "alert"
         },
         {
-          "label": "Depth within \u00b15% of mid",
+          "label": "Depth within ±5% of mid",
           "value": "$3 bid  /  $1 ask",
           "tone": "flat"
         },
@@ -189,7 +189,7 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.45\u00a2 per share",
+          "value": "-0.45¢ per share",
           "tone": "flat"
         }
       ],
@@ -264,7 +264,7 @@
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "18% YES  \u2022 +0pp 7d",
+          "value": "18% YES  • +0pp 7d",
           "tone": "flat"
         },
         {
@@ -294,11 +294,11 @@
         },
         {
           "label": "Spread",
-          "value": "0.1\u00a2 (56 bps)",
+          "value": "0.1¢ (56 bps)",
           "tone": "flat"
         },
         {
-          "label": "Depth within \u00b15% of mid",
+          "label": "Depth within ±5% of mid",
           "value": "$42,837 bid  /  $67,739 ask",
           "tone": "flat"
         },
@@ -314,7 +314,7 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.02\u00a2 per share",
+          "value": "-0.02¢ per share",
           "tone": "flat"
         }
       ],
@@ -374,7 +374,7 @@
           }
         ]
       },
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "news_angle": "France World Cup (18%, stable): The 2026 FIFA World Cup kicks off in North America in June with France the tournament favorite at 18%, a sliver ahead of Spain (17%). The tight spread reflects a genuinely open field; Mbappe squad depth and recent form keep France atop a market with over \\.2 billion in total volume and six weeks until the opening match.",
       "research_link": "/research",
       "research_label": "Research"
     },
@@ -389,7 +389,7 @@
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "16% YES  \u25bc -2pp 7d",
+          "value": "16% YES  ▼ -2pp 7d",
           "tone": "flat"
         },
         {
@@ -419,11 +419,11 @@
         },
         {
           "label": "Spread",
-          "value": "1.0\u00a2 (606 bps)",
+          "value": "1.0¢ (606 bps)",
           "tone": "alert"
         },
         {
-          "label": "Depth within \u00b15% of mid",
+          "label": "Depth within ±5% of mid",
           "value": "$1,401 bid  /  $2,692 ask",
           "tone": "flat"
         },
@@ -439,7 +439,7 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+0.62\u00a2 per share",
+          "value": "+0.62¢ per share",
           "tone": "alert"
         }
       ],
@@ -499,7 +499,7 @@
           }
         ]
       },
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "news_angle": "Iran regime fall before 2027 (16%, -2pp): US-Iran diplomatic talks produced a draft one-page MOU in May, reducing near-term regime-change risk. The year-end contract retreated to 16% as traders price in ceasefire momentum; at its March peak the contract traded at 35%. Loyal security forces and adaptive economic measures have so far absorbed external pressure and internal dissent without fracturing the government.",
       "research_link": "/research",
       "research_label": "Research"
     },
@@ -514,7 +514,7 @@
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "14% YES  \u25bc -2pp 7d",
+          "value": "14% YES  ▼ -2pp 7d",
           "tone": "flat"
         },
         {
@@ -544,11 +544,11 @@
         },
         {
           "label": "Spread",
-          "value": "1.0\u00a2 (690 bps)",
+          "value": "1.0¢ (690 bps)",
           "tone": "alert"
         },
         {
-          "label": "Depth within \u00b15% of mid",
+          "label": "Depth within ±5% of mid",
           "value": "$12,293 bid  /  $3,570 ask",
           "tone": "flat"
         },
@@ -564,7 +564,7 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.06\u00a2 per share",
+          "value": "-0.06¢ per share",
           "tone": "flat"
         }
       ],
@@ -624,7 +624,7 @@
           }
         ]
       },
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "news_angle": "US alien disclosure before 2027 (14%, -2pp): Trump's executive order directing federal agencies to release UAP files briefly pushed this market to 24% earlier in 2026; it has since retreated to 14% as no definitive statement has materialized. Resolution requires a Cabinet-level or above official public statement by December 31, 2026. The \\.6M in total volume reflects genuine speculative depth on a contract that has never been close to resolving YES.",
       "research_link": "/research",
       "research_label": "Research"
     },
@@ -639,7 +639,7 @@
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "48% YES  \u25bc -14pp 7d",
+          "value": "48% YES  ▼ -14pp 7d",
           "tone": "flat"
         },
         {
@@ -669,11 +669,11 @@
         },
         {
           "label": "Spread",
-          "value": "1.0\u00a2 (206 bps)",
+          "value": "1.0¢ (206 bps)",
           "tone": "warn"
         },
         {
-          "label": "Depth within \u00b15% of mid",
+          "label": "Depth within ±5% of mid",
           "value": "$1,002 bid  /  $34,565 ask",
           "tone": "flat"
         },
@@ -689,7 +689,7 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+1.06\u00a2 per share",
+          "value": "+1.06¢ per share",
           "tone": "alert"
         }
       ],
@@ -749,7 +749,7 @@
           }
         ]
       },
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "news_angle": "OKC Thunder NBA Finals (48%, -14pp this week): The defending champions suffered the sharpest single-week move in this briefing after the Western Conference Finals against the San Antonio Spurs tightened. Oklahoma City won the 2025 NBA championship and entered these playoffs as the -195 favorite, but the Spurs now sit at 32% and the series is live. The Knicks hold the remaining 17% for an Eastern Conference representative.",
       "research_link": "/research",
       "research_label": "Research"
     }
