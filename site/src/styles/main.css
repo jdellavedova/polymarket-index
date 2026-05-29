@@ -898,8 +898,8 @@ footer.site-foot .disclaimer {
 .tm-legend {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-top: 12px;
+  gap: 12px;
+  margin-top: 10px;
   font-family: var(--sans);
   font-size: 11px;
   color: var(--muted);
@@ -909,49 +909,28 @@ footer.site-foot .disclaimer {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 600;
+  white-space: nowrap;
 }
-.tm-leg-right {
-  margin-left: auto;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  text-transform: none;
-  font-size: 12px;
-  font-family: var(--serif);
-  font-style: italic;
-  color: var(--text);
-}
-.tm-leg-grad-wrap {
+.tm-leg-cats {
   display: flex;
-  flex-direction: column;
-  gap: 3px;
-  flex: 1;
-  max-width: 320px;
+  flex-wrap: wrap;
+  gap: 6px;
 }
-.tm-leg-grad {
+.tm-leg-cat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--text);
+  white-space: nowrap;
+}
+.tm-leg-swatch {
+  display: inline-block;
+  width: 10px;
   height: 10px;
   border-radius: 2px;
-  /* Match the cell palette: teal -> slate -> amber, pivot at 87% (left of midpoint) */
-  background: linear-gradient(
-    to right,
-    rgb(31, 100, 112) 0%,
-    rgb(44, 62, 84) 87%,
-    rgb(122, 74, 32) 100%
-  );
-  border: 1px solid var(--border);
-}
-.tm-leg-ticks {
-  display: flex;
-  justify-content: space-between;
-  font-family: var(--mono);
-  font-size: 10px;
-}
-.tm-leg-baseline {
-  /* The middle tick is positioned at 87%, not 50%; nudge it so its label
-     points to the actual gradient baseline. */
-  position: relative;
-  left: 37%;
-  font-style: italic;
-  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.15);
+  flex-shrink: 0;
 }
 
 /* ===== Inline charts on the homepage ===== */

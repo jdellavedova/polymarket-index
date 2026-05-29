@@ -133,28 +133,44 @@ function squarify(items: { value: number }[], x: number, y: number, w: number, h
 const items = markets.map(m => ({ value: m.usd_volume }));
 const rects = squarify(items, 0, 0, W, H);
 
-/** Diverging palette pivoted at the Polymarket-wide baseline (~87% bot share).
- *  Cells BELOW baseline (retail-engaged, "interesting") render in cool teal.
- *  Cells AT baseline render in neutral slate-blue.
- *  Cells ABOVE baseline (very bot-dominated) render in warm amber/brown.
- *  All three endpoints have ~similar luminance (~22-30%) so white text
- *  carries 4.5:1+ contrast across the whole palette. */
-const BASELINE = 0.87;
-function lerp(a: number, b: number, t: number) { return Math.round(a + (b - a) * t); }
-function rgb(r: number, g: number, b: number) { return `rgb(${r}, ${g}, ${b})`; }
-function colorFromBotShare(bs: number | null) {
-  if (bs == null) return rgb(46, 56, 72); // neutral fallback for missing data
-  const t = Math.max(0, Math.min(1, bs));
-  // Three keystops: cool teal #1f6470 -> neutral slate #2c3e54 -> warm amber #7a4a20
-  if (t <= BASELINE) {
-    // 0 -> 0.87 mapped to teal -> slate (a in [0,1])
-    const a = t / BASELINE;
-    return rgb(lerp(0x1f, 0x2c, a), lerp(0x64, 0x3e, a), lerp(0x70, 0x54, a));
-  } else {
-    // 0.87 -> 1.0 mapped to slate -> amber (a in [0,1])
-    const a = (t - BASELINE) / (1 - BASELINE);
-    return rgb(lerp(0x2c, 0x7a, a), lerp(0x3e, 0x4a, a), lerp(0x54, 0x20, a));
-  }
+/** Category colour palette — dark enough for 4.5:1 white-text contrast.
+ *  Each entry covers a family of category strings (matched case-insensitively). */
+const CAT_PALETTE: { keys: string[]; color: string; label: string }[] = [
+  { keys: ["politi", "election", "govern", "vote", "congress", "senate", "president"],
+    color: "#1a3d6b", label: "Politics" },
+  { keys: ["crypto", "bitcoin", "ethereum", "btc", "eth", "defi", "token", "blockchain"],
+    color: "#7a3a10", label: "Crypto" },
+  { keys: ["sport", "nfl", "nba", "mlb", "nhl", "soccer", "football", "basketball", "tennis", "golf"],
+    color: "#1a5230", label: "Sports" },
+  { keys: ["econ", "financ", "fed", "rate", "gdp", "market", "stock", "trade"],
+    color: "#1a4840", label: "Finance" },
+  { keys: ["tech", "ai", "scien", "space", "climat", "energy"],
+    color: "#3a1a6b", label: "Science / Tech" },
+  { keys: ["entertain", "award", "oscar", "music", "film", "tv", "celebrity"],
+    color: "#5c1a3a", label: "Entertainment" },
+  { keys: ["world", "geopolit", "war", "iran", "russia", "china", "taiwan", "israel", "ukraine"],
+    color: "#1a2a5c", label: "World Affairs" },
+  { keys: ["health", "medic", "drug", "fda", "disease"],
+    color: "#1a4a2a", label: "Health" },
+];
+const CAT_DEFAULT = "#2e3848";
+
+function colorFromCategory(cat: string | null): string {
+  if (!cat) return CAT_DEFAULT;
+  const lc = cat.toLowerCase();
+  const match = CAT_PALETTE.find(p => p.keys.some(k => lc.includes(k)));
+  return match ? match.color : CAT_DEFAULT;
+}
+
+// Build legend entries: only categories that appear in this week's data
+const seenLabels = new Set<string>();
+const legendEntries: { label: string; color: string }[] = [];
+for (const m of markets) {
+  const lc = (m.category ?? "").toLowerCase();
+  const match = CAT_PALETTE.find(p => p.keys.some(k => lc.includes(k)));
+  const label = match ? match.label : "Other";
+  const color = match ? match.color : CAT_DEFAULT;
+  if (!seenLabels.has(label)) { seenLabels.add(label); legendEntries.push({ label, color }); }
 }
 
 function fmtVol(v: number) {
@@ -201,13 +217,13 @@ function wrap(s: string | null, charsLine: number, maxLines: number): string[] {
   <figcaption class="tm-caption">
     <span class="tm-title">Top {markets.length} Polymarket markets, week of {top.as_of_week}</span>
     <span class="tm-sub">
-      Rectangle area = weekly USD volume. Color = algorithmic share for that market (lighter = more bot-mediated, darker = more retail-engaged). Hover for full market name.
+      Rectangle area = weekly USD volume. Color = market category. Hover for full market name.
     </span>
   </figcaption>
   <svg viewBox={`0 0 ${W} ${H}`} class="tm-svg" preserveAspectRatio="none" aria-label="Top markets heatmap">
     {rects.map((r, i) => {
       const m = markets[i];
-      const col = colorFromBotShare(m.bot_share);
+      const col = colorFromCategory(m.category);
       const tooMini = r.w < 56 || r.h < 36;
       // Tier the typography by cell area (Finviz-style: bigger cell = bigger text)
       const area = r.w * r.h;
@@ -268,15 +284,14 @@ function wrap(s: string | null, charsLine: number, maxLines: number): string[] {
     })}
   </svg>
   <div class="tm-legend">
-    <span class="tm-leg-label">Color = algorithmic share</span>
-    <div class="tm-leg-grad-wrap">
-      <span class="tm-leg-grad"></span>
-      <div class="tm-leg-ticks">
-        <span>0%</span>
-        <span class="tm-leg-baseline">87% baseline</span>
-        <span>100%</span>
-      </div>
+    <span class="tm-leg-label">Color = category</span>
+    <div class="tm-leg-cats">
+      {legendEntries.map(e => (
+        <span class="tm-leg-cat">
+          <span class="tm-leg-swatch" style={`background:${e.color};`}></span>
+          {e.label}
+        </span>
+      ))}
     </div>
-    <span class="tm-leg-label tm-leg-right">Cool = retail-engaged · Warm = bot-dominant</span>
   </div>
 </figure>
