@@ -222,33 +222,34 @@ function wrap(s: string | null, charsLine: number, maxLines: number): string[] {
     {rects.map((r, i) => {
       const m = markets[i];
       const { color: col } = resolveCategory(m.category);
-      const tooMini = r.w < 56 || r.h < 36;
-      // Tier the typography by cell area (Finviz-style: bigger cell = bigger text)
+      const tooMini = r.w < 60 || r.h < 38;
       const area = r.w * r.h;
-      const isHero = area >= 60000;       // ~ top 1-2 cells
-      const isLarge = area >= 22000;
-      const qFontPx = isHero ? 16 : (isLarge ? 13 : 11);
-      const oddsFontPx = isHero ? 22 : (isLarge ? 17 : 14);
-      // Inner width with 8px padding each side
+      const isHero = area >= 60000;
+      const isLarge = area >= 20000;
+      // Font sizes
+      const qFontPx = isHero ? 14 : (isLarge ? 12 : 11);
+      const oddsFontPx = isHero ? 20 : (isLarge ? 15 : 13);
+      // Conservative char-per-line: 0.65× em avoids pixel-clipping on wide glyphs
       const innerW = r.w - 16;
-      const charsLine = Math.max(4, Math.floor(innerW / (qFontPx * 0.55)));
-      const maxQLines = isHero ? 3 : (isLarge ? 2 : 1);
+      const charsLine = Math.max(4, Math.floor(innerW / (qFontPx * 0.65)));
+      // Hero gets 2 question lines; everyone else gets 1
+      const maxQLines = isHero ? 2 : 1;
       const qLines = m.question ? wrap(m.question, charsLine, maxQLines) : [];
       const showQuestion = !tooMini && qLines.length > 0;
-      const qBlockH = qLines.length * (qFontPx + 3);
-      const showOdds = !tooMini && r.h >= 56 && m.yes_price != null;
-      const showVol = !tooMini && r.h >= 78;
-      const showBot = !tooMini && r.h >= 100 && m.bot_share != null;
+      const qBlockH = qLines.length * (qFontPx + 4);
+      // Height guards: each row needs ~18px; stack: question + odds + vol
+      const showOdds = !tooMini && m.yes_price != null && r.h >= qBlockH + oddsFontPx + 18;
+      const showVol  = showOdds && r.h >= qBlockH + oddsFontPx + 36;
       return (
         <svg x={r.x} y={r.y} width={r.w} height={r.h} overflow="hidden" class="tm-cell">
-          <title>{`${m.question ?? "Market #" + m.market_id}\nVolume: ${fmtVol(m.usd_volume)}  ·  Trades: ${m.n_trades.toLocaleString()}\nImplied: ${m.yes_price != null ? (m.yes_price*100).toFixed(0)+"% YES" : "n/a"}\nAlgorithmic share: ${m.bot_share != null ? (m.bot_share*100).toFixed(0)+"%" : "n/a"}\nFlagged wallets: ${m.flagged ?? "n/a"}\nCategory: ${m.category ?? "n/a"}`}</title>
+          <title>{`${m.question ?? "Market #" + m.market_id}\nVolume: ${fmtVol(m.usd_volume)}  ·  Trades: ${m.n_trades.toLocaleString()}\nImplied: ${m.yes_price != null ? (m.yes_price*100).toFixed(0)+"% YES" : "n/a"}\nAlgorithmic share: ${m.bot_share != null ? (m.bot_share*100).toFixed(0)+"%" : "n/a"}\nCategory: ${m.category ?? "n/a"}`}</title>
           <rect x={0} y={0} width={r.w} height={r.h} fill={col} class="tm-rect" />
-          {tooMini ? null : (
+          {!tooMini && (
             <g>
               {showQuestion && qLines.map((line, li) => (
                 <text
                   x={8}
-                  y={8 + (li + 1) * (qFontPx + 2)}
+                  y={10 + (li + 1) * (qFontPx + 3)}
                   class="tm-q"
                   style={`font-size:${qFontPx}px;`}
                 >
@@ -258,7 +259,7 @@ function wrap(s: string | null, charsLine: number, maxLines: number): string[] {
               {showOdds && (
                 <text
                   x={8}
-                  y={14 + qBlockH + oddsFontPx}
+                  y={10 + qBlockH + oddsFontPx + 4}
                   class="tm-v"
                   style={`font-size:${oddsFontPx}px;`}
                 >
@@ -266,13 +267,8 @@ function wrap(s: string | null, charsLine: number, maxLines: number): string[] {
                 </text>
               )}
               {showVol && (
-                <text x={8} y={18 + qBlockH + oddsFontPx + 18} class="tm-vol">
+                <text x={8} y={10 + qBlockH + oddsFontPx + 22} class="tm-vol">
                   {fmtVol(m.usd_volume)} vol
-                </text>
-              )}
-              {showBot && (
-                <text x={8} y={22 + qBlockH + oddsFontPx + 36} class="tm-bot">
-                  {(m.bot_share! * 100).toFixed(0)}% algo
                 </text>
               )}
             </g>
