@@ -133,43 +133,41 @@ function squarify(items: { value: number }[], x: number, y: number, w: number, h
 const items = markets.map(m => ({ value: m.usd_volume }));
 const rects = squarify(items, 0, 0, W, H);
 
-/** Category colour palette — dark enough for 4.5:1 white-text contrast.
- *  Each entry covers a family of category strings (matched case-insensitively). */
-const CAT_PALETTE: { keys: string[]; color: string; label: string }[] = [
-  { keys: ["politi", "election", "govern", "vote", "congress", "senate", "president"],
-    color: "#1a3d6b", label: "Politics" },
-  { keys: ["crypto", "bitcoin", "ethereum", "btc", "eth", "defi", "token", "blockchain"],
-    color: "#7a3a10", label: "Crypto" },
-  { keys: ["sport", "nfl", "nba", "mlb", "nhl", "soccer", "football", "basketball", "tennis", "golf"],
-    color: "#1a5230", label: "Sports" },
-  { keys: ["econ", "financ", "fed", "rate", "gdp", "market", "stock", "trade"],
-    color: "#1a4840", label: "Finance" },
-  { keys: ["tech", "ai", "scien", "space", "climat", "energy"],
-    color: "#3a1a6b", label: "Science / Tech" },
-  { keys: ["entertain", "award", "oscar", "music", "film", "tv", "celebrity"],
-    color: "#5c1a3a", label: "Entertainment" },
-  { keys: ["world", "geopolit", "war", "iran", "russia", "china", "taiwan", "israel", "ukraine"],
-    color: "#1a2a5c", label: "World Affairs" },
-  { keys: ["health", "medic", "drug", "fda", "disease"],
-    color: "#1a4a2a", label: "Health" },
-];
-const CAT_DEFAULT = "#2e3848";
+/** Category → colour map. Keys are exact strings from the pipeline's categorize.py.
+ *  Colors are vivid enough to be clearly distinct at a glance. */
+const CAT_MAP: Record<string, { color: string; label: string }> = {
+  "Geopolitics":   { color: "#1a5fb4", label: "Geopolitics" },
+  "Politics":      { color: "#813d9c", label: "Politics" },
+  "Sports":        { color: "#2e7d32", label: "Sports" },
+  "Macro":         { color: "#00695c", label: "Macro / Finance" },
+  "Finance":       { color: "#00695c", label: "Macro / Finance" },
+  "Economics":     { color: "#00695c", label: "Macro / Finance" },
+  "Crypto":        { color: "#bf360c", label: "Crypto" },
+  "Science":       { color: "#4527a0", label: "Science / Tech" },
+  "Technology":    { color: "#4527a0", label: "Science / Tech" },
+  "Entertainment": { color: "#ad1457", label: "Entertainment" },
+  "Health":        { color: "#00695c", label: "Health" },
+  "Other":         { color: "#4e342e", label: "Other" },
+};
+const CAT_DEFAULT_COLOR = "#37474f";
+const CAT_DEFAULT_LABEL = "Other";
 
-function colorFromCategory(cat: string | null): string {
-  if (!cat) return CAT_DEFAULT;
+function resolveCategory(cat: string | null): { color: string; label: string } {
+  if (!cat) return { color: CAT_DEFAULT_COLOR, label: CAT_DEFAULT_LABEL };
+  if (CAT_MAP[cat]) return CAT_MAP[cat];
+  // fuzzy fallback for unexpected strings
   const lc = cat.toLowerCase();
-  const match = CAT_PALETTE.find(p => p.keys.some(k => lc.includes(k)));
-  return match ? match.color : CAT_DEFAULT;
+  for (const [k, v] of Object.entries(CAT_MAP)) {
+    if (lc.includes(k.toLowerCase())) return v;
+  }
+  return { color: CAT_DEFAULT_COLOR, label: cat };
 }
 
-// Build legend entries: only categories that appear in this week's data
+// Build legend: only categories present this week, in order of first appearance
 const seenLabels = new Set<string>();
 const legendEntries: { label: string; color: string }[] = [];
 for (const m of markets) {
-  const lc = (m.category ?? "").toLowerCase();
-  const match = CAT_PALETTE.find(p => p.keys.some(k => lc.includes(k)));
-  const label = match ? match.label : "Other";
-  const color = match ? match.color : CAT_DEFAULT;
+  const { color, label } = resolveCategory(m.category);
   if (!seenLabels.has(label)) { seenLabels.add(label); legendEntries.push({ label, color }); }
 }
 
@@ -223,7 +221,7 @@ function wrap(s: string | null, charsLine: number, maxLines: number): string[] {
   <svg viewBox={`0 0 ${W} ${H}`} class="tm-svg" preserveAspectRatio="none" aria-label="Top markets heatmap">
     {rects.map((r, i) => {
       const m = markets[i];
-      const col = colorFromCategory(m.category);
+      const { color: col } = resolveCategory(m.category);
       const tooMini = r.w < 56 || r.h < 36;
       // Tier the typography by cell area (Finviz-style: bigger cell = bigger text)
       const area = r.w * r.h;
