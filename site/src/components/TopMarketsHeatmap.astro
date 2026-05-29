@@ -240,15 +240,15 @@ function wrap(s: string | null, charsLine: number, maxLines: number): string[] {
       const showVol = !tooMini && r.h >= 78;
       const showBot = !tooMini && r.h >= 100 && m.bot_share != null;
       return (
-        <g class="tm-cell">
+        <svg x={r.x} y={r.y} width={r.w} height={r.h} overflow="hidden" class="tm-cell">
           <title>{`${m.question ?? "Market #" + m.market_id}\nVolume: ${fmtVol(m.usd_volume)}  ·  Trades: ${m.n_trades.toLocaleString()}\nImplied: ${m.yes_price != null ? (m.yes_price*100).toFixed(0)+"% YES" : "n/a"}\nAlgorithmic share: ${m.bot_share != null ? (m.bot_share*100).toFixed(0)+"%" : "n/a"}\nFlagged wallets: ${m.flagged ?? "n/a"}\nCategory: ${m.category ?? "n/a"}`}</title>
-          <rect x={r.x} y={r.y} width={r.w} height={r.h} fill={col} class="tm-rect" />
+          <rect x={0} y={0} width={r.w} height={r.h} fill={col} class="tm-rect" />
           {tooMini ? null : (
             <g>
               {showQuestion && qLines.map((line, li) => (
                 <text
-                  x={r.x + 8}
-                  y={r.y + 8 + (li + 1) * (qFontPx + 2)}
+                  x={8}
+                  y={8 + (li + 1) * (qFontPx + 2)}
                   class="tm-q"
                   style={`font-size:${qFontPx}px;`}
                 >
@@ -257,8 +257,8 @@ function wrap(s: string | null, charsLine: number, maxLines: number): string[] {
               ))}
               {showOdds && (
                 <text
-                  x={r.x + 8}
-                  y={r.y + 14 + qBlockH + oddsFontPx}
+                  x={8}
+                  y={14 + qBlockH + oddsFontPx}
                   class="tm-v"
                   style={`font-size:${oddsFontPx}px;`}
                 >
@@ -266,18 +266,18 @@ function wrap(s: string | null, charsLine: number, maxLines: number): string[] {
                 </text>
               )}
               {showVol && (
-                <text x={r.x + 8} y={r.y + 18 + qBlockH + oddsFontPx + 18} class="tm-vol">
+                <text x={8} y={18 + qBlockH + oddsFontPx + 18} class="tm-vol">
                   {fmtVol(m.usd_volume)} vol
                 </text>
               )}
               {showBot && (
-                <text x={r.x + 8} y={r.y + 22 + qBlockH + oddsFontPx + 36} class="tm-bot">
+                <text x={8} y={22 + qBlockH + oddsFontPx + 36} class="tm-bot">
                   {(m.bot_share! * 100).toFixed(0)}% algo
                 </text>
               )}
             </g>
           )}
-        </g>
+        </svg>
       );
     })}
   </svg>
