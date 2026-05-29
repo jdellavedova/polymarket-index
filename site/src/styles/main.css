@@ -2128,6 +2128,13 @@ footer.site-foot .disclaimer {
   filter: grayscale(0) opacity(1);
   transform: translateY(-1px);
 }
+.mi-logo-jpmorgan {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+}
+.mi-logo-jpmorgan:hover { color: #003087; }
 .mi-logo-bloomberg {
   font-family: "Times New Roman", Georgia, serif;
   font-style: italic;
@@ -2178,6 +2185,7 @@ footer.site-foot .disclaimer {
 .mi-foot a { font-weight: 600; }
 @media (max-width: 720px) {
   .mi-row { gap: 22px 28px; }
+  .mi-logo-jpmorgan { font-size: 15px; }
   .mi-logo-bloomberg, .mi-logo-cnbc { font-size: 18px; }
   .mi-logo-yahoo, .mi-logo-benzinga { font-size: 16px; }
   .mi-logo-famag { font-size: 14px; }
