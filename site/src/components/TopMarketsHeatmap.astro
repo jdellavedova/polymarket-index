@@ -246,15 +246,15 @@ function wrap(s: string | null, charsLine: number, maxLines: number): string[] {
           <title>{`${m.question ?? "Market #" + m.market_id}\nVolume: ${fmtVol(m.usd_volume)}  ·  Trades: ${m.n_trades.toLocaleString()}\nImplied: ${m.yes_price != null ? (m.yes_price*100).toFixed(0)+"% YES" : "n/a"}\nAlgorithmic share: ${m.bot_share != null ? (m.bot_share*100).toFixed(0)+"%" : "n/a"}\nCategory: ${m.category ?? "n/a"}`}</title>
           <rect x={0} y={0} width={r.w} height={r.h} fill={col} class="tm-rect" />
           {showQ && (
-            <text x={8} y={qY} class="tm-q" style={`font-size:${qFontPx}px;`}>{qLabel}</text>
+            <text x={8} y={qY} font-size={qFontPx} class="tm-q">{qLabel}</text>
           )}
           {showPrice && (
-            <text x={8} y={priceY} class="tm-v" style={`font-size:${priceFontPx}px;`}>
+            <text x={8} y={priceY} font-size={priceFontPx} class="tm-v">
               {(m.yes_price! * 100).toFixed(0)}% YES
             </text>
           )}
           {showVol && (
-            <text x={8} y={volY} class="tm-vol">{fmtVol(m.usd_volume)} vol</text>
+            <text x={8} y={volY} font-size={11} class="tm-vol">{fmtVol(m.usd_volume)} vol</text>
           )}
         </svg>
       );
