@@ -21,7 +21,7 @@
   },
   "n_weeks_history": 181,
   "first_date": "2022-11-21",
-  "generated_at": "2026-05-23T01:55:07+00:00",
+  "generated_at": "2026-06-02T00:51:19+00:00",
   "source": "C:\\Users\\joshd\\Dev\\polymarket-index\\site\\public\\data\\weekly_activity_history.csv",
   "methodology": "Shares are fraction of actual resolved trades per week attributed to each wallet-type class (not Prelec-fit-included trades). Wallet-type assignment is static per wallet based on the full trade history thresholds defined in Paper 1."
 }

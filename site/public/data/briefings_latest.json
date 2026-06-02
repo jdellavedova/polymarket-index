@@ -1,6 +1,6 @@
 {
   "as_of_week": "2026-W21",
-  "generated_at": "2026-05-25T06:27:18+00:00",
+  "generated_at": "2026-06-02T00:51:51+00:00",
   "lede": "Top 6 markets by USD volume from the week of 2026-W21, annotated with per-market microstructure from the DV-PMI weekly indices.",
   "briefings": [
     {
@@ -14,7 +14,7 @@
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "3% YES  ▼ -3pp 7d",
+          "value": "2% YES  \u25bc -1pp 7d",
           "tone": "flat"
         },
         {
@@ -29,27 +29,27 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$382K",
+          "value": "$809K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "37 days (2026-06-30)",
+          "value": "29 days (2026-06-30)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.03 ($49) / Ask 0.03 ($278)",
+          "value": "Bid 0.02 ($67) / Ask 0.02 ($199)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1¢ (377 bps)",
+          "value": "0.1\u00a2 (488 bps)",
           "tone": "warn"
         },
         {
-          "label": "Depth within ±5% of mid",
-          "value": "$49 bid  /  $278 ask",
+          "label": "Depth within \u00b15% of mid",
+          "value": "$67 bid  /  $199 ask",
           "tone": "flat"
         },
         {
@@ -64,63 +64,63 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.45¢ per share",
+          "value": "-0.45\u00a2 per share",
           "tone": "flat"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.026,
-            "size": 1871.75,
-            "dollars": 48.665499999999994
+            "price": 0.02,
+            "size": 3353.19,
+            "dollars": 67.0638
           },
           {
-            "price": 0.025,
-            "size": 5684.41,
-            "dollars": 142.11025
+            "price": 0.019,
+            "size": 1081.33,
+            "dollars": 20.54527
           },
           {
-            "price": 0.024,
-            "size": 42817.62,
-            "dollars": 1027.6228800000001
+            "price": 0.018,
+            "size": 1877.72,
+            "dollars": 33.79896
           },
           {
-            "price": 0.023,
-            "size": 14789.28,
-            "dollars": 340.15344
+            "price": 0.017,
+            "size": 19393.03,
+            "dollars": 329.68151
           },
           {
-            "price": 0.022,
-            "size": 3262.37,
-            "dollars": 71.77214
+            "price": 0.016,
+            "size": 22283.21,
+            "dollars": 356.53136
           }
         ],
         "asks": [
           {
-            "price": 0.027,
-            "size": 10306.32,
-            "dollars": 278.27064
+            "price": 0.021,
+            "size": 9455.34,
+            "dollars": 198.56214000000003
           },
           {
-            "price": 0.028,
-            "size": 7476.98,
-            "dollars": 209.35544
+            "price": 0.022,
+            "size": 1573.45,
+            "dollars": 34.615899999999996
           },
           {
-            "price": 0.029,
-            "size": 11367.0,
-            "dollars": 329.64300000000003
+            "price": 0.023,
+            "size": 1227.11,
+            "dollars": 28.223529999999997
           },
           {
-            "price": 0.03,
-            "size": 3005.0,
-            "dollars": 90.14999999999999
+            "price": 0.024,
+            "size": 3280.49,
+            "dollars": 78.73176
           },
           {
-            "price": 0.031,
-            "size": 17679.0,
-            "dollars": 548.049
+            "price": 0.025,
+            "size": 19540.99,
+            "dollars": 488.52475000000004
           }
         ]
       },
@@ -139,7 +139,7 @@
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "7% YES",
+          "value": "7% YES  \u2022 -0pp 7d",
           "tone": "flat"
         },
         {
@@ -154,22 +154,22 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$54",
+          "value": "$112",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.07 ($15) / Ask 0.07 ($36)",
+          "value": "Bid 0.07 ($7) / Ask 0.07 ($8)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1¢ (138 bps)",
-          "tone": "flat"
+          "value": "0.3\u00a2 (444 bps)",
+          "tone": "warn"
         },
         {
-          "label": "Depth within ±5% of mid",
-          "value": "$26 bid  /  $37 ask",
+          "label": "Depth within \u00b15% of mid",
+          "value": "$7 bid  /  $59 ask",
           "tone": "flat"
         },
         {
@@ -181,56 +181,56 @@
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.072,
-            "size": 207.55,
-            "dollars": 14.9436
+            "price": 0.066,
+            "size": 101.0,
+            "dollars": 6.666
           },
           {
-            "price": 0.071,
-            "size": 64.89,
-            "dollars": 4.607189999999999
+            "price": 0.065,
+            "size": 1.48,
+            "dollars": 0.09620000000000001
           },
           {
-            "price": 0.07,
-            "size": 87.73,
-            "dollars": 6.141100000000001
+            "price": 0.06,
+            "size": 3200.0,
+            "dollars": 192.0
           },
           {
-            "price": 0.069,
-            "size": 5.5,
-            "dollars": 0.37950000000000006
+            "price": 0.055,
+            "size": 200.0,
+            "dollars": 11.0
           },
           {
-            "price": 0.068,
-            "size": 48.5,
-            "dollars": 3.298
+            "price": 0.051,
+            "size": 1222.68,
+            "dollars": 62.35668
           }
         ],
         "asks": [
           {
-            "price": 0.073,
-            "size": 497.55,
-            "dollars": 36.321149999999996
+            "price": 0.069,
+            "size": 115.3,
+            "dollars": 7.9557
           },
           {
-            "price": 0.074,
-            "size": 5.5,
-            "dollars": 0.407
+            "price": 0.07,
+            "size": 730.24,
+            "dollars": 51.116800000000005
           },
           {
             "price": 0.078,
-            "size": 533.0,
-            "dollars": 41.574
-          },
-          {
-            "price": 0.079,
-            "size": 4049.96,
-            "dollars": 319.94684
+            "size": 219.98,
+            "dollars": 17.15844
           },
           {
             "price": 0.08,
-            "size": 17.36,
-            "dollars": 1.3888
+            "size": 217.46,
+            "dollars": 17.396800000000002
+          },
+          {
+            "price": 0.081,
+            "size": 3291.75,
+            "dollars": 266.63175
           }
         ]
       },
@@ -249,7 +249,7 @@
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "18% YES  ▼ -8pp 7d",
+          "value": "16% YES  \u25bc -2pp 7d",
           "tone": "flat"
         },
         {
@@ -264,27 +264,27 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$189K",
+          "value": "$264K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "221 days (2026-12-31)",
+          "value": "213 days (2026-12-31)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.18 ($2,603) / Ask 0.19 ($655)",
+          "value": "Bid 0.16 ($4,467) / Ask 0.17 ($3,949)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "1.0¢ (541 bps)",
+          "value": "1.0\u00a2 (606 bps)",
           "tone": "alert"
         },
         {
-          "label": "Depth within ±5% of mid",
-          "value": "$2,603 bid  /  $655 ask",
+          "label": "Depth within \u00b15% of mid",
+          "value": "$4,467 bid  /  $3,949 ask",
           "tone": "flat"
         },
         {
@@ -299,63 +299,63 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+1.97¢ per share",
+          "value": "+1.97\u00a2 per share",
           "tone": "alert"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.18,
-            "size": 14459.62,
-            "dollars": 2602.7316
-          },
-          {
-            "price": 0.17,
-            "size": 42982.03,
-            "dollars": 7306.9451
-          },
-          {
             "price": 0.16,
-            "size": 132099.83,
-            "dollars": 21135.9728
+            "size": 27918.54,
+            "dollars": 4466.9664
           },
           {
             "price": 0.15,
-            "size": 50410.99,
-            "dollars": 7561.648499999999
+            "size": 83577.26,
+            "dollars": 12536.588999999998
           },
           {
             "price": 0.14,
-            "size": 17959.47,
-            "dollars": 2514.3258000000005
+            "size": 143942.13,
+            "dollars": 20151.898200000003
+          },
+          {
+            "price": 0.13,
+            "size": 15807.94,
+            "dollars": 2055.0322
+          },
+          {
+            "price": 0.12,
+            "size": 19966.99,
+            "dollars": 2396.0388000000003
           }
         ],
         "asks": [
           {
+            "price": 0.17,
+            "size": 23232.12,
+            "dollars": 3949.4604
+          },
+          {
+            "price": 0.18,
+            "size": 94767.73,
+            "dollars": 17058.1914
+          },
+          {
             "price": 0.19,
-            "size": 3449.4,
-            "dollars": 655.3860000000001
+            "size": 49057.58,
+            "dollars": 9320.940200000001
           },
           {
             "price": 0.2,
-            "size": 14407.05,
-            "dollars": 2881.41
+            "size": 34322.8,
+            "dollars": 6864.560000000001
           },
           {
             "price": 0.21,
-            "size": 72554.81,
-            "dollars": 15236.5101
-          },
-          {
-            "price": 0.22,
-            "size": 7907.42,
-            "dollars": 1739.6324
-          },
-          {
-            "price": 0.23,
-            "size": 690.0,
-            "dollars": 158.70000000000002
+            "size": 1313.73,
+            "dollars": 275.8833
           }
         ]
       },
@@ -374,7 +374,7 @@
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "18% YES  • -0pp 7d",
+          "value": "17% YES  \u2022 -0pp 7d",
           "tone": "flat"
         },
         {
@@ -389,27 +389,27 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$281K",
+          "value": "$654K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "57 days (2026-07-20)",
+          "value": "49 days (2026-07-20)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.17 ($21,987) / Ask 0.18 ($21,602)",
+          "value": "Bid 0.17 ($155,953) / Ask 0.17 ($54,883)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1¢ (57 bps)",
+          "value": "0.1\u00a2 (59 bps)",
           "tone": "flat"
         },
         {
-          "label": "Depth within ±5% of mid",
-          "value": "$34,013 bid  /  $83,741 ask",
+          "label": "Depth within \u00b15% of mid",
+          "value": "$187,988 bid  /  $91,165 ask",
           "tone": "flat"
         },
         {
@@ -424,63 +424,63 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.02¢ per share",
+          "value": "-0.02\u00a2 per share",
           "tone": "flat"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.175,
-            "size": 125641.6,
-            "dollars": 21987.28
+            "price": 0.17,
+            "size": 917369.45,
+            "dollars": 155952.8065
           },
           {
-            "price": 0.174,
-            "size": 11964.37,
-            "dollars": 2081.80038
+            "price": 0.169,
+            "size": 3152.57,
+            "dollars": 532.7843300000001
           },
           {
-            "price": 0.173,
-            "size": 12165.95,
-            "dollars": 2104.70935
+            "price": 0.168,
+            "size": 1578.24,
+            "dollars": 265.14432
           },
           {
-            "price": 0.172,
-            "size": 11127.0,
-            "dollars": 1913.8439999999998
+            "price": 0.167,
+            "size": 6068.0,
+            "dollars": 1013.3560000000001
           },
           {
-            "price": 0.171,
-            "size": 1766.97,
-            "dollars": 302.15187000000003
+            "price": 0.166,
+            "size": 25296.02,
+            "dollars": 4199.13932
           }
         ],
         "asks": [
           {
-            "price": 0.176,
-            "size": 122740.23,
-            "dollars": 21602.280479999998
+            "price": 0.171,
+            "size": 320953.6,
+            "dollars": 54883.0656
           },
           {
-            "price": 0.177,
-            "size": 258091.25,
-            "dollars": 45682.151249999995
+            "price": 0.172,
+            "size": 45350.03,
+            "dollars": 7800.2051599999995
           },
           {
-            "price": 0.178,
-            "size": 66063.62,
-            "dollars": 11759.324359999999
+            "price": 0.173,
+            "size": 789.55,
+            "dollars": 136.59214999999998
           },
           {
-            "price": 0.179,
-            "size": 1835.79,
-            "dollars": 328.60641
+            "price": 0.174,
+            "size": 2000.0,
+            "dollars": 348.0
           },
           {
-            "price": 0.18,
-            "size": 620.0,
-            "dollars": 111.6
+            "price": 0.175,
+            "size": 40302.06,
+            "dollars": 7052.860499999999
           }
         ]
       },
@@ -499,7 +499,7 @@
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "98% YES  ▲ +1pp 7d",
+          "value": "98% YES  \u25b2 +1pp 7d",
           "tone": "flat"
         },
         {
@@ -514,27 +514,27 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$242K",
+          "value": "$347K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "24 days (2026-06-17)",
+          "value": "16 days (2026-06-17)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.97 ($1,428) / Ask 0.98 ($7,055)",
+          "value": "Bid 0.98 ($5,799) / Ask 0.98 ($63,616)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1¢ (10 bps)",
+          "value": "0.1\u00a2 (10 bps)",
           "tone": "flat"
         },
         {
-          "label": "Depth within ±5% of mid",
-          "value": "$811,476 bid  /  $6,717,377 ask",
+          "label": "Depth within \u00b15% of mid",
+          "value": "$288,066 bid  /  $6,355,181 ask",
           "tone": "flat"
         },
         {
@@ -549,63 +549,63 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+0.38¢ per share",
+          "value": "+0.38\u00a2 per share",
           "tone": "warn"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.975,
-            "size": 1464.65,
-            "dollars": 1428.03375
+            "price": 0.983,
+            "size": 5899.06,
+            "dollars": 5798.77598
           },
           {
-            "price": 0.974,
-            "size": 6336.98,
-            "dollars": 6172.218519999999
+            "price": 0.982,
+            "size": 65447.02,
+            "dollars": 64268.97364
           },
           {
-            "price": 0.973,
-            "size": 75059.54,
-            "dollars": 73032.93242
+            "price": 0.981,
+            "size": 56855.49,
+            "dollars": 55775.235689999994
           },
           {
-            "price": 0.972,
-            "size": 205216.25,
-            "dollars": 199470.195
+            "price": 0.98,
+            "size": 10648.27,
+            "dollars": 10435.3046
           },
           {
-            "price": 0.971,
-            "size": 157179.0,
-            "dollars": 152620.809
+            "price": 0.979,
+            "size": 7928.21,
+            "dollars": 7761.71759
           }
         ],
         "asks": [
           {
-            "price": 0.976,
-            "size": 7228.86,
-            "dollars": 7055.367359999999
+            "price": 0.984,
+            "size": 64650.87,
+            "dollars": 63616.45608
           },
           {
-            "price": 0.977,
-            "size": 34857.71,
-            "dollars": 34055.98267
+            "price": 0.985,
+            "size": 45328.03,
+            "dollars": 44648.10955
           },
           {
-            "price": 0.978,
-            "size": 25709.47,
-            "dollars": 25143.861660000002
+            "price": 0.986,
+            "size": 71145.47,
+            "dollars": 70149.43342
           },
           {
-            "price": 0.979,
-            "size": 29082.14,
-            "dollars": 28471.41506
+            "price": 0.987,
+            "size": 7087.0,
+            "dollars": 6994.869
           },
           {
-            "price": 0.98,
-            "size": 57112.24,
-            "dollars": 55969.9952
+            "price": 0.988,
+            "size": 5454.76,
+            "dollars": 5389.30288
           }
         ]
       },
@@ -624,7 +624,7 @@
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "2% YES",
+          "value": "2% YES  \u2022 -0pp 7d",
           "tone": "flat"
         },
         {
@@ -639,27 +639,27 @@
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$128",
+          "value": "$459",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "37 days (2026-06-30)",
+          "value": "29 days (2026-06-30)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.02 ($0) / Ask 0.02 ($3)",
+          "value": "Bid 0.02 ($1) / Ask 0.02 ($26)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1¢ (513 bps)",
+          "value": "0.1\u00a2 (606 bps)",
           "tone": "alert"
         },
         {
-          "label": "Depth within ±5% of mid",
-          "value": "$0 bid  /  $3 ask",
+          "label": "Depth within \u00b15% of mid",
+          "value": "$1 bid  /  $26 ask",
           "tone": "flat"
         },
         {
@@ -671,60 +671,60 @@
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.019,
-            "size": 5.0,
-            "dollars": 0.095
-          },
-          {
-            "price": 0.018,
-            "size": 46.9,
-            "dollars": 0.8442
-          },
-          {
-            "price": 0.017,
-            "size": 415.29,
-            "dollars": 7.0599300000000005
-          },
-          {
             "price": 0.016,
-            "size": 200.0,
-            "dollars": 3.2
+            "size": 82.0,
+            "dollars": 1.312
           },
           {
             "price": 0.015,
-            "size": 1142.86,
-            "dollars": 17.142899999999997
+            "size": 82.1,
+            "dollars": 1.2314999999999998
+          },
+          {
+            "price": 0.014,
+            "size": 59.0,
+            "dollars": 0.8260000000000001
+          },
+          {
+            "price": 0.012,
+            "size": 311.0,
+            "dollars": 3.732
+          },
+          {
+            "price": 0.011,
+            "size": 100.0,
+            "dollars": 1.0999999999999999
           }
         ],
         "asks": [
           {
+            "price": 0.017,
+            "size": 1519.1,
+            "dollars": 25.8247
+          },
+          {
+            "price": 0.018,
+            "size": 100.0,
+            "dollars": 1.7999999999999998
+          },
+          {
             "price": 0.02,
-            "size": 170.45,
-            "dollars": 3.409
+            "size": 200.0,
+            "dollars": 4.0
+          },
+          {
+            "price": 0.021,
+            "size": 62.21,
+            "dollars": 1.30641
           },
           {
             "price": 0.022,
-            "size": 420.0,
-            "dollars": 9.24
-          },
-          {
-            "price": 0.03,
-            "size": 116.63,
-            "dollars": 3.4989
-          },
-          {
-            "price": 0.034,
-            "size": 500.0,
-            "dollars": 17.0
-          },
-          {
-            "price": 0.036,
-            "size": 390.0,
-            "dollars": 14.04
+            "size": 200.0,
+            "dollars": 4.3999999999999995
           }
         ]
       },
-      "news_angle": "Taiwan's opposition-controlled Legislative Yuan advanced impeachment proceedings against President Lai Ching-te in May, citing constitutional overreach in budget vetoes — driving a spike in trading volume. At 2% with fewer than 40 days to the June 30 deadline, markets price this as a tail risk: the DPP retains enough allied votes to block the two-thirds supermajority required for a successful impeachment in the current session.",
+      "news_angle": "Taiwan's opposition-controlled Legislative Yuan advanced impeachment proceedings against President Lai Ching-te in May, citing constitutional overreach in budget vetoes \u2014 driving a spike in trading volume. At 2% with fewer than 40 days to the June 30 deadline, markets price this as a tail risk: the DPP retains enough allied votes to block the two-thirds supermajority required for a successful impeachment in the current session.",
       "research_link": "/research",
       "research_label": "Research"
     }
