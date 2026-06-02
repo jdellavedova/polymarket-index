@@ -1152,6 +1152,49 @@ footer.site-foot .disclaimer {
 }
 .re-source a { font-weight: 600; }
 
+/* Stat strip — four big numbers after the hero */
+.stat-strip {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 24px 0 36px;
+}
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 12px;
+  border-right: 1px solid var(--border);
+  gap: 4px;
+}
+.stat-item:last-child { border-right: none; }
+.stat-n {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.stat-n.stat-pos { color: #1a7a3c; }
+.stat-n.stat-neg { color: #b91c1c; }
+.stat-l {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .stat-strip { flex-wrap: wrap; }
+  .stat-item { flex: 1 1 45%; border-right: none; border-bottom: 1px solid var(--border); }
+  .stat-item:last-child { border-bottom: none; }
+  .stat-n { font-size: 22px; }
+}
+
 /* Findings header + grid */
 .re-findings-h,
 .bf-section-h,

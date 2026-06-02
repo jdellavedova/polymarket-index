@@ -7,6 +7,7 @@ import MentionedIn from "../components/redesign/MentionedIn.astro";
 import AuthorTile from "../components/redesign/AuthorTile.astro";
 import RecentCommentary from "../components/redesign/RecentCommentary.astro";
 import EmailSignup from "../components/EmailSignup.astro";
+import TopMarketsHeatmap from "../components/TopMarketsHeatmap.astro";
 
 import botShare from "../../public/data/bot_share_timeseries.json";
 import pwi from "../../public/data/pwi_timeseries.json";
@@ -119,13 +120,32 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
     </div>
   </section>
 
-  <h2 class="re-findings-h">Paper 1 · Who profits</h2>
-  <p class="re-findings-sub">Algorithmic wallets, retail traders, and the execution gap that separates them. <a href="/research">Read the paper →</a></p>
+  <div class="stat-strip">
+    <div class="stat-item">
+      <span class="stat-n">671M</span>
+      <span class="stat-l">trades analyzed</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n stat-pos">+$133M</span>
+      <span class="stat-l">bot profits, cumulative</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n stat-neg">−$79M</span>
+      <span class="stat-l">retail losses, cumulative</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n">1.95M</span>
+      <span class="stat-l">wallets tracked</span>
+    </div>
+  </div>
+
+  <h2 class="re-findings-h">Who makes money — and why</h2>
+  <p class="re-findings-sub">Retail traders pick winners more often than bots. They still lose. The gap is timing, not information. <a href="/research">Read the paper →</a></p>
   <div class="re-findings-grid re-findings-pair">
     <FindingCard
-      label="ALGORITHMIC SHARE (13-WEEK MA)"
+      label="ALGORITHMIC SHARE OF TRADING"
       headline={`${botShareNow.toFixed(0)}%`}
-      claim={`Algorithmic wallets accounted for ${botShareNow.toFixed(0)}% of all counterparty events (13-week moving average). The share has climbed from near zero in late 2022.`}
+      claim={`Algorithmic wallets account for ${botShareNow.toFixed(0)}% of all trades (13-week moving average), up from near zero in late 2022. They earn the only positive aggregate return despite below-coin-flip directional accuracy.`}
       sparklineData={botShareSpark}
       href="/bot-share"
     />
@@ -137,46 +157,44 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
     />
   </div>
 
-  <h2 class="re-findings-h">Paper 2 · Detecting informed trading</h2>
-  <p class="re-findings-sub">A wallet-level orthogonality test for private information. <a href="/research">Read the paper →</a></p>
+  <TopMarketsHeatmap />
+
+  <h2 class="re-findings-h">Detecting unusual activity</h2>
+  <p class="re-findings-sub">Some wallets are accurate too often, in the right markets, to be luck. <a href="/pii">See the full analysis →</a></p>
   <div class="re-findings-grid re-findings-pair">
     <FindingCard
-      label="WALLETS FLAGGED (CUMULATIVE)"
+      label="WALLETS WITH SUSPICIOUS ACCURACY"
       headline={`${pii.headline.total_flagged_p_lt_01.toLocaleString()}`}
-      claim={`Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets tested, ${pii.headline.total_flagged_p_lt_01.toLocaleString()} (${(pii.headline.flag_rate*100).toFixed(2)}%) show accuracy too high, too often, to be luck (p<0.01).`}
+      claim={`Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets tested, ${pii.headline.total_flagged_p_lt_01.toLocaleString()} (${(pii.headline.flag_rate*100).toFixed(2)}%) show a pattern of accuracy that is statistically unlikely to be chance. Election and policy markets have the highest rates.`}
       href="/pii"
     />
     <FindingCard
-      label="FLAG RATE BY MNPI CATEGORY"
+      label="FLAG RATE BY MARKET TYPE"
       headline={`${(Math.max(...pii.mnpi_taxonomy.map(m => m.flag_rate_01))*100).toFixed(2)}%`}
-      claim="Action and Vote markets (where humans control outcomes) show the highest flag rates; Stochastic markets (crypto prices) the lowest. The ordering matches the theoretical prediction."
+      claim="Markets where humans control outcomes — votes, policy decisions, award ceremonies — show the highest suspicious-accuracy rates. Crypto price markets show the lowest. The ordering matches theoretical predictions about private information."
       barData={insiderBars}
       href="/pii"
     />
   </div>
 
-  <p class="re-findings-sub" style="margin-top:24px;">
-    PII is one of six live <strong><a href="/surveillance">DV-PMI Surveillance Indices</a></strong>:
-    informed trading, insider timing, adverse selection, resolution surprise, wash trading (Tier 1
-    structural test, with network-cluster methods of Sirolly et al 2025 referenced), and concentration /
-    pump risk. The full suite, with FINRA rule citations and Daubert-mapped methodology, is on the
-    surveillance page.
+  <p class="re-findings-sub" style="margin-top:8px;">
+    Six live <a href="/surveillance"><strong>DV-PMI Surveillance Indices</strong></a> cover the full market integrity picture: informed trading, insider timing, adverse selection, resolution surprise, wash trading, and concentration risk.
   </p>
 
-  <h2 class="re-findings-h">Paper 4 · Probability weighting (with A. Grant)</h2>
-  <p class="re-findings-sub">A model-free measurement of probability weighting from on-chain trades. <a href="/research">Read the paper →</a></p>
+  <h2 class="re-findings-h">How traders price uncertainty</h2>
+  <p class="re-findings-sub">Human traders systematically overestimate long shots and underestimate near-certainties — even in liquid prediction markets. <a href="/calibration">See the calibration data →</a></p>
   <div class="re-findings-grid re-findings-pair">
     <FindingCard
-      label="PROBABILITY WEIGHTING"
+      label="PROBABILITY WEIGHTING INDEX"
       headline={`α = ${calibration.prelec_alpha.toFixed(3)}`}
-      claim="Non-bot traders overweight long shots and underweight near-certain outcomes. The fitted Prelec parameter matches Kahneman-Tversky's experimental 0.65."
+      claim={`Traders overweight low-probability outcomes and underweight high-probability ones. The current Prelec parameter of ${calibration.prelec_alpha.toFixed(3)} is near the classic Kahneman-Tversky experimental value of 0.65 — a behavioral pattern this liquid market has not arbitraged away.`}
       sparklineData={pwiSpark}
       href="/calibration"
     />
     <FindingCard
-      label="CALIBRATION CURVE"
+      label="MARKET CALIBRATION"
       headline={`R² = ${calibration.prelec_r2.toFixed(3)}`}
-      claim="Realized win rates plotted against market prices. The dashed line is rational pricing; dots above-left and below-right show the longshot bias."
+      claim="How well do Polymarket prices predict actual outcomes? Realized win rates match prices closely overall, but long shots win less often than priced and near-certainties win more."
       scatterData={calibScatter}
       href="/calibration"
     />
