@@ -123,19 +123,19 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
   <div class="stat-strip">
     <div class="stat-item">
       <span class="stat-n">671M</span>
-      <span class="stat-l">trades analyzed</span>
+      <span class="stat-l">on-chain records</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n">222M</span>
+      <span class="stat-l">resolved trades (study sample)</span>
     </div>
     <div class="stat-item">
       <span class="stat-n stat-pos">+$133M</span>
-      <span class="stat-l">bot profits, cumulative</span>
+      <span class="stat-l">bot profits (study sample)</span>
     </div>
     <div class="stat-item">
       <span class="stat-n stat-neg">−$79M</span>
-      <span class="stat-l">retail losses, cumulative</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-n">1.95M</span>
-      <span class="stat-l">wallets tracked</span>
+      <span class="stat-l">retail losses (study sample)</span>
     </div>
   </div>
 
@@ -165,7 +165,7 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
     <FindingCard
       label="WALLETS WITH SUSPICIOUS ACCURACY"
       headline={`${pii.headline.total_flagged_p_lt_01.toLocaleString()}`}
-      claim={`Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets tested, ${pii.headline.total_flagged_p_lt_01.toLocaleString()} (${(pii.headline.flag_rate*100).toFixed(2)}%) show a pattern of accuracy that is statistically unlikely to be chance. Election and policy markets have the highest rates.`}
+      claim={`Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets tested, ${pii.headline.total_flagged_p_lt_01.toLocaleString()} (${(pii.headline.flag_rate*100).toFixed(2)}%) show a pattern of accuracy that is statistically unlikely to be chance. Election and policy markets have the highest rates. (Live count, updated weekly; the SSRN paper reports the fixed study-period figures.)`}
       href="/pii"
     />
     <FindingCard
