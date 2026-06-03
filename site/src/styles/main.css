@@ -1126,14 +1126,6 @@ footer.site-foot .disclaimer {
   /* No max-width — title spans the full container so the page reads
      left-to-right rather than hugging a narrow center column. */
 }
-.re-hook {
-  font-family: var(--serif);
-  font-size: 21px;
-  font-weight: 600;
-  line-height: 1.35;
-  color: var(--founders);
-  margin: 0 0 14px;
-}
 .re-lede {
   font-family: var(--serif);
   font-size: 19px;
@@ -1183,7 +1175,7 @@ footer.site-foot .disclaimer {
   font-size: 28px;
   font-weight: 700;
   line-height: 1;
-  color: var(--text);
+  color: var(--ink);
   letter-spacing: -0.02em;
 }
 .stat-n.stat-pos { color: #1a7a3c; }
@@ -1202,16 +1194,6 @@ footer.site-foot .disclaimer {
   .stat-item:last-child { border-bottom: none; }
   .stat-n { font-size: 22px; }
 }
-
-/* Treemap explore link */
-.heatmap-cta {
-  text-align: right;
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--muted);
-  margin: -4px 0 32px;
-}
-.heatmap-cta a { color: var(--link); font-weight: 600; }
 
 /* Findings header + grid */
 .re-findings-h,
