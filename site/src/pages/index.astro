@@ -99,7 +99,24 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
 <Base title="Della Vedova Prediction Market Indices" description={desc} wide={true}>
   <HeroEssay />
 
-  <AuthorTile />
+  <div class="stat-strip">
+    <div class="stat-item">
+      <span class="stat-n">671M</span>
+      <span class="stat-l">trades analyzed</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n stat-pos">+$133M</span>
+      <span class="stat-l">bot profits, cumulative</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n stat-neg">−$79M</span>
+      <span class="stat-l">retail losses, cumulative</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n">1.95M</span>
+      <span class="stat-l">wallets tracked</span>
+    </div>
+  </div>
 
   <section class="tw-briefings">
     <div class="tw-head">
@@ -120,25 +137,6 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
     </div>
   </section>
 
-  <div class="stat-strip">
-    <div class="stat-item">
-      <span class="stat-n">671M</span>
-      <span class="stat-l">trades analyzed</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-n stat-pos">+$133M</span>
-      <span class="stat-l">bot profits, cumulative</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-n stat-neg">−$79M</span>
-      <span class="stat-l">retail losses, cumulative</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-n">1.95M</span>
-      <span class="stat-l">wallets tracked</span>
-    </div>
-  </div>
-
   <h2 class="re-findings-h">Who makes money — and why</h2>
   <p class="re-findings-sub">Retail traders pick winners more often than bots. They still lose. The gap is timing, not information. <a href="/research">Read the paper →</a></p>
   <div class="re-findings-grid re-findings-pair">
@@ -157,7 +155,19 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
     />
   </div>
 
+  <a class="featured-video" href="https://www.cnbc.com/video/2026/05/01/finance-professor-josh-della-vedova-talks-new-report-bots-are-outperforming-traders-in-prediction-markets.html" target="_blank" rel="noopener">
+    <div class="fv-left">
+      <div class="fv-label">▶ Featured video · CNBC · May 1, 2026</div>
+      <div class="fv-headline">"Finance Professor Josh Della Vedova talks new report bots are outperforming traders in prediction markets"</div>
+      <div class="fv-cta">Watch on CNBC.com →</div>
+    </div>
+    <div class="fv-right">
+      <div class="fv-cnbc">CNBC</div>
+    </div>
+  </a>
+
   <TopMarketsHeatmap />
+  <p class="heatmap-cta"><a href="/briefings">Explore all {topMarkets.markets.length} markets this week →</a></p>
 
   <h2 class="re-findings-h">Detecting unusual activity</h2>
   <p class="re-findings-sub">Some wallets are accurate too often, in the right markets, to be luck. <a href="/pii">See the full analysis →</a></p>
@@ -200,22 +210,13 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
     />
   </div>
 
+  <EmailSignup />
+
   <RecentCommentary />
 
-  <a class="featured-video" href="https://www.cnbc.com/video/2026/05/01/finance-professor-josh-della-vedova-talks-new-report-bots-are-outperforming-traders-in-prediction-markets.html" target="_blank" rel="noopener">
-    <div class="fv-left">
-      <div class="fv-label">▶ Featured video · CNBC · May 1, 2026</div>
-      <div class="fv-headline">"Finance Professor Josh Della Vedova talks new report bots are outperforming traders in prediction markets"</div>
-      <div class="fv-cta">Watch on CNBC.com →</div>
-    </div>
-    <div class="fv-right">
-      <div class="fv-cnbc">CNBC</div>
-    </div>
-  </a>
+  <AuthorTile />
 
   <MentionedIn />
-
-  <EmailSignup />
 
   <AuthorityStrip />
 </Base>
