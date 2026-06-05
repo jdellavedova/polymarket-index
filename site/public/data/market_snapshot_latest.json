@@ -1,6 +1,6 @@
 {
   "as_of_week": "2026-W21",
-  "generated_at": "2026-06-02T00:51:51+00:00",
+  "generated_at": "2026-06-05T00:59:06+00:00",
   "markets": [
     {
       "market_id": "1171663",
@@ -21,7 +21,7 @@
       "volume_total_num": 60668118.31172506,
       "volume_24hr": null,
       "end_date_iso": "2026-06-30",
-      "fetched_at": "2026-06-02T00:51:20+00:00",
+      "fetched_at": "2026-06-05T00:58:33+00:00",
       "yes_book": {},
       "rank": 1,
       "category": "Geopolitics",
@@ -49,7 +49,7 @@
       "volume_total_num": 14502613.985482976,
       "volume_24hr": null,
       "end_date_iso": "2026-12-31",
-      "fetched_at": "2026-06-02T00:51:21+00:00",
+      "fetched_at": "2026-06-05T00:58:34+00:00",
       "yes_book": {},
       "rank": 2,
       "category": "Geopolitics",
@@ -61,135 +61,135 @@
     {
       "market_id": "958443",
       "question": "Will the Iranian regime fall by June 30?",
-      "yes_price": 0.0205,
+      "yes_price": 0.0235,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.0205,
-        0.9795
+        0.0235,
+        0.9765
       ],
       "yes_token_id": "38397507750621893057346880033441136112987238933685677349709401910643842844855",
       "end_date": "2026-06-30T00:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 46617358.50625702,
-      "volume_24hr": 809138.8747269999,
+      "volume_total_num": 48369981.55705915,
+      "volume_24hr": 625752.203249,
       "end_date_iso": "2026-06-30",
-      "fetched_at": "2026-06-02T00:51:21+00:00",
+      "fetched_at": "2026-06-05T00:58:36+00:00",
       "yes_book": {
-        "n_bid_levels": 20,
-        "n_ask_levels": 131,
+        "n_bid_levels": 23,
+        "n_ask_levels": 136,
         "top5_bids": [
           {
+            "price": 0.023,
+            "size": 7718.46,
+            "dollars": 177.52458
+          },
+          {
+            "price": 0.022,
+            "size": 17425.85,
+            "dollars": 383.36869999999993
+          },
+          {
+            "price": 0.021,
+            "size": 64125.68,
+            "dollars": 1346.63928
+          },
+          {
             "price": 0.02,
-            "size": 3353.19,
-            "dollars": 67.0638
+            "size": 13118.0,
+            "dollars": 262.36
           },
           {
             "price": 0.019,
-            "size": 1081.33,
-            "dollars": 20.54527
-          },
-          {
-            "price": 0.018,
-            "size": 1877.72,
-            "dollars": 33.79896
-          },
-          {
-            "price": 0.017,
-            "size": 19393.03,
-            "dollars": 329.68151
-          },
-          {
-            "price": 0.016,
-            "size": 22283.21,
-            "dollars": 356.53136
+            "size": 11037.42,
+            "dollars": 209.71098
           }
         ],
         "top5_asks": [
           {
-            "price": 0.021,
-            "size": 9455.34,
-            "dollars": 198.56214000000003
-          },
-          {
-            "price": 0.022,
-            "size": 1573.45,
-            "dollars": 34.615899999999996
-          },
-          {
-            "price": 0.023,
-            "size": 1227.11,
-            "dollars": 28.223529999999997
-          },
-          {
             "price": 0.024,
-            "size": 3280.49,
-            "dollars": 78.73176
+            "size": 3687.89,
+            "dollars": 88.50936
           },
           {
             "price": 0.025,
-            "size": 19540.99,
-            "dollars": 488.52475000000004
+            "size": 6945.38,
+            "dollars": 173.6345
+          },
+          {
+            "price": 0.026,
+            "size": 3892.35,
+            "dollars": 101.2011
+          },
+          {
+            "price": 0.027,
+            "size": 30156.79,
+            "dollars": 814.23333
+          },
+          {
+            "price": 0.028,
+            "size": 14935.0,
+            "dollars": 418.18
           }
         ],
-        "top_bid_price": 0.02,
-        "top_bid_dollars": 67.0638,
-        "top_ask_price": 0.021,
-        "top_ask_dollars": 198.56214000000003,
-        "mid": 0.0205,
+        "top_bid_price": 0.023,
+        "top_bid_dollars": 177.52458,
+        "top_ask_price": 0.024,
+        "top_ask_dollars": 88.50936,
+        "mid": 0.0235,
         "spread_cents": 0.10000000000000009,
-        "spread_bps": 487.8048780487809,
-        "depth_5pct_bid_dollars": 67.0638,
-        "depth_5pct_ask_dollars": 198.56214000000003
+        "spread_bps": 425.53191489361745,
+        "depth_5pct_bid_dollars": 177.52458,
+        "depth_5pct_ask_dollars": 88.50936
       },
       "rank": 3,
       "category": "Other",
       "weekly_volume_usd": 1066067.7576150005,
       "weekly_trades": 2012,
       "yes_price_7d_ago": 0.0265,
-      "yes_price_change_pp": -0.5999999999999999
+      "yes_price_change_pp": -0.29999999999999993
     },
     {
       "market_id": "1057349",
       "question": "Jeffrey Epstein foul play confirmed by December 31, 2026?",
-      "yes_price": 0.0675,
+      "yes_price": 0.064,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.0675,
-        0.9325
+        0.064,
+        0.936
       ],
       "yes_token_id": "69162030465037941268862284627658886205173465981805919620559686624259677735192",
       "end_date": "2025-12-31T00:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 2764930.1657790015,
-      "volume_24hr": 112.188715,
+      "volume_total_num": 2765497.436844001,
+      "volume_24hr": 30.376812000000005,
       "end_date_iso": "2025-12-31",
-      "fetched_at": "2026-06-02T00:51:23+00:00",
+      "fetched_at": "2026-06-05T00:58:37+00:00",
       "yes_book": {
         "n_bid_levels": 22,
-        "n_ask_levels": 49,
+        "n_ask_levels": 53,
         "top5_bids": [
           {
-            "price": 0.066,
-            "size": 101.0,
-            "dollars": 6.666
+            "price": 0.062,
+            "size": 14.4,
+            "dollars": 0.8928
           },
           {
-            "price": 0.065,
-            "size": 1.48,
-            "dollars": 0.09620000000000001
+            "price": 0.061,
+            "size": 18.0,
+            "dollars": 1.0979999999999999
           },
           {
             "price": 0.06,
-            "size": 3200.0,
-            "dollars": 192.0
+            "size": 3221.66,
+            "dollars": 193.2996
           },
           {
             "price": 0.055,
@@ -204,47 +204,47 @@
         ],
         "top5_asks": [
           {
+            "price": 0.067,
+            "size": 14.4,
+            "dollars": 0.9648000000000001
+          },
+          {
+            "price": 0.068,
+            "size": 1079.31,
+            "dollars": 73.39308
+          },
+          {
             "price": 0.069,
-            "size": 115.3,
-            "dollars": 7.9557
+            "size": 330.0,
+            "dollars": 22.770000000000003
           },
           {
             "price": 0.07,
-            "size": 730.24,
-            "dollars": 51.116800000000005
+            "size": 680.24,
+            "dollars": 47.616800000000005
           },
           {
-            "price": 0.078,
-            "size": 219.98,
-            "dollars": 17.15844
-          },
-          {
-            "price": 0.08,
-            "size": 217.46,
-            "dollars": 17.396800000000002
-          },
-          {
-            "price": 0.081,
-            "size": 3291.75,
-            "dollars": 266.63175
+            "price": 0.074,
+            "size": 200.1,
+            "dollars": 14.8074
           }
         ],
-        "top_bid_price": 0.066,
-        "top_bid_dollars": 6.666,
-        "top_ask_price": 0.069,
-        "top_ask_dollars": 7.9557,
-        "mid": 0.0675,
-        "spread_cents": 0.30000000000000027,
-        "spread_bps": 444.4444444444448,
-        "depth_5pct_bid_dollars": 6.7622,
-        "depth_5pct_ask_dollars": 59.072500000000005
+        "top_bid_price": 0.062,
+        "top_bid_dollars": 0.8928,
+        "top_ask_price": 0.067,
+        "top_ask_dollars": 0.9648000000000001,
+        "mid": 0.0645,
+        "spread_cents": 0.5000000000000004,
+        "spread_bps": 775.193798449613,
+        "depth_5pct_bid_dollars": 0.8928,
+        "depth_5pct_ask_dollars": 0.9648000000000001
       },
       "rank": 4,
       "category": "Other",
       "weekly_volume_usd": 1054532.9665759995,
       "weekly_trades": 25472,
       "yes_price_7d_ago": 0.0725,
-      "yes_price_change_pp": -0.49999999999999906
+      "yes_price_change_pp": -0.8499999999999994
     },
     {
       "market_id": "564213",
@@ -265,7 +265,7 @@
       "volume_total_num": 3758413.5352749177,
       "volume_24hr": null,
       "end_date_iso": "2026-06-16",
-      "fetched_at": "2026-06-02T00:51:24+00:00",
+      "fetched_at": "2026-06-05T00:58:38+00:00",
       "yes_book": {},
       "rank": 5,
       "category": "Sports",
@@ -277,382 +277,6 @@
     {
       "market_id": "665374",
       "question": "Will the U.S. invade Iran before 2027?",
-      "yes_price": 0.165,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.165,
-        0.835
-      ],
-      "yes_token_id": "55115078421062885512539156303747803058407616201213034911037320915726138659123",
-      "end_date": "2026-12-31T00:00:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 33555888.36447147,
-      "volume_24hr": 263538.17530500126,
-      "end_date_iso": "2026-12-31",
-      "fetched_at": "2026-06-02T00:51:25+00:00",
-      "yes_book": {
-        "n_bid_levels": 16,
-        "n_ask_levels": 80,
-        "top5_bids": [
-          {
-            "price": 0.16,
-            "size": 27918.54,
-            "dollars": 4466.9664
-          },
-          {
-            "price": 0.15,
-            "size": 83577.26,
-            "dollars": 12536.588999999998
-          },
-          {
-            "price": 0.14,
-            "size": 143942.13,
-            "dollars": 20151.898200000003
-          },
-          {
-            "price": 0.13,
-            "size": 15807.94,
-            "dollars": 2055.0322
-          },
-          {
-            "price": 0.12,
-            "size": 19966.99,
-            "dollars": 2396.0388000000003
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.17,
-            "size": 23232.12,
-            "dollars": 3949.4604
-          },
-          {
-            "price": 0.18,
-            "size": 94767.73,
-            "dollars": 17058.1914
-          },
-          {
-            "price": 0.19,
-            "size": 49057.58,
-            "dollars": 9320.940200000001
-          },
-          {
-            "price": 0.2,
-            "size": 34322.8,
-            "dollars": 6864.560000000001
-          },
-          {
-            "price": 0.21,
-            "size": 1313.73,
-            "dollars": 275.8833
-          }
-        ],
-        "top_bid_price": 0.16,
-        "top_bid_dollars": 4466.9664,
-        "top_ask_price": 0.17,
-        "top_ask_dollars": 3949.4604,
-        "mid": 0.165,
-        "spread_cents": 1.0000000000000009,
-        "spread_bps": 606.0606060606066,
-        "depth_5pct_bid_dollars": 4466.9664,
-        "depth_5pct_ask_dollars": 3949.4604
-      },
-      "rank": 6,
-      "category": "Geopolitics",
-      "weekly_volume_usd": 766214.2085809998,
-      "weekly_trades": 4727,
-      "yes_price_7d_ago": 0.185,
-      "yes_price_change_pp": -1.9999999999999991
-    },
-    {
-      "market_id": "558936",
-      "question": "Will France win the 2026 FIFA World Cup?",
-      "yes_price": 0.1705,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.1705,
-        0.8295
-      ],
-      "yes_token_id": "108233603819467706476318984012158651931658302669301887462181073562758483842092",
-      "end_date": "2026-07-20T00:00:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 33726493.903206185,
-      "volume_24hr": 653807.2871219987,
-      "end_date_iso": "2026-07-20",
-      "fetched_at": "2026-06-02T00:51:26+00:00",
-      "yes_book": {
-        "n_bid_levels": 95,
-        "n_ask_levels": 131,
-        "top5_bids": [
-          {
-            "price": 0.17,
-            "size": 917369.45,
-            "dollars": 155952.8065
-          },
-          {
-            "price": 0.169,
-            "size": 3152.57,
-            "dollars": 532.7843300000001
-          },
-          {
-            "price": 0.168,
-            "size": 1578.24,
-            "dollars": 265.14432
-          },
-          {
-            "price": 0.167,
-            "size": 6068.0,
-            "dollars": 1013.3560000000001
-          },
-          {
-            "price": 0.166,
-            "size": 25296.02,
-            "dollars": 4199.13932
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.171,
-            "size": 320953.6,
-            "dollars": 54883.0656
-          },
-          {
-            "price": 0.172,
-            "size": 45350.03,
-            "dollars": 7800.2051599999995
-          },
-          {
-            "price": 0.173,
-            "size": 789.55,
-            "dollars": 136.59214999999998
-          },
-          {
-            "price": 0.174,
-            "size": 2000.0,
-            "dollars": 348.0
-          },
-          {
-            "price": 0.175,
-            "size": 40302.06,
-            "dollars": 7052.860499999999
-          }
-        ],
-        "top_bid_price": 0.17,
-        "top_bid_dollars": 155952.8065,
-        "top_ask_price": 0.171,
-        "top_ask_dollars": 54883.0656,
-        "mid": 0.1705,
-        "spread_cents": 0.10000000000000009,
-        "spread_bps": 58.65102639296193,
-        "depth_5pct_bid_dollars": 187987.89511,
-        "depth_5pct_ask_dollars": 91165.28334
-      },
-      "rank": 7,
-      "category": "Sports",
-      "weekly_volume_usd": 643346.6084110006,
-      "weekly_trades": 5919,
-      "yes_price_7d_ago": 0.1755,
-      "yes_price_change_pp": -0.49999999999999767
-    },
-    {
-      "market_id": "906974",
-      "question": "Will there be no change in Fed interest rates after the June 2026 meeting?",
-      "yes_price": 0.9835,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.9835,
-        0.0165
-      ],
-      "yes_token_id": "30767812841387255642892182147223249245545002662653079696958384408588201824258",
-      "end_date": "2026-06-17T00:00:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 9073549.411281852,
-      "volume_24hr": 346690.9442730018,
-      "end_date_iso": "2026-06-17",
-      "fetched_at": "2026-06-02T00:51:27+00:00",
-      "yes_book": {
-        "n_bid_levels": 105,
-        "n_ask_levels": 16,
-        "top5_bids": [
-          {
-            "price": 0.983,
-            "size": 5899.06,
-            "dollars": 5798.77598
-          },
-          {
-            "price": 0.982,
-            "size": 65447.02,
-            "dollars": 64268.97364
-          },
-          {
-            "price": 0.981,
-            "size": 56855.49,
-            "dollars": 55775.235689999994
-          },
-          {
-            "price": 0.98,
-            "size": 10648.27,
-            "dollars": 10435.3046
-          },
-          {
-            "price": 0.979,
-            "size": 7928.21,
-            "dollars": 7761.71759
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.984,
-            "size": 64650.87,
-            "dollars": 63616.45608
-          },
-          {
-            "price": 0.985,
-            "size": 45328.03,
-            "dollars": 44648.10955
-          },
-          {
-            "price": 0.986,
-            "size": 71145.47,
-            "dollars": 70149.43342
-          },
-          {
-            "price": 0.987,
-            "size": 7087.0,
-            "dollars": 6994.869
-          },
-          {
-            "price": 0.988,
-            "size": 5454.76,
-            "dollars": 5389.30288
-          }
-        ],
-        "top_bid_price": 0.983,
-        "top_bid_dollars": 5798.77598,
-        "top_ask_price": 0.984,
-        "top_ask_dollars": 63616.45608,
-        "mid": 0.9835,
-        "spread_cents": 0.10000000000000009,
-        "spread_bps": 10.167768174885621,
-        "depth_5pct_bid_dollars": 288065.93234,
-        "depth_5pct_ask_dollars": 6355181.153949999
-      },
-      "rank": 8,
-      "category": "Macro",
-      "weekly_volume_usd": 629441.569476,
-      "weekly_trades": 6593,
-      "yes_price_7d_ago": 0.9755,
-      "yes_price_change_pp": 0.8000000000000007
-    },
-    {
-      "market_id": "1066556",
-      "question": "Lai Ching-te impeached by June 30?",
-      "yes_price": 0.0165,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.0165,
-        0.9835
-      ],
-      "yes_token_id": "41423065300198414333652186196829372672155925109974332571318217095813945849522",
-      "end_date": "2026-06-30T00:00:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 1340899.2341969984,
-      "volume_24hr": 458.53808100000003,
-      "end_date_iso": "2026-06-30",
-      "fetched_at": "2026-06-02T00:51:28+00:00",
-      "yes_book": {
-        "n_bid_levels": 15,
-        "n_ask_levels": 51,
-        "top5_bids": [
-          {
-            "price": 0.016,
-            "size": 82.0,
-            "dollars": 1.312
-          },
-          {
-            "price": 0.015,
-            "size": 82.1,
-            "dollars": 1.2314999999999998
-          },
-          {
-            "price": 0.014,
-            "size": 59.0,
-            "dollars": 0.8260000000000001
-          },
-          {
-            "price": 0.012,
-            "size": 311.0,
-            "dollars": 3.732
-          },
-          {
-            "price": 0.011,
-            "size": 100.0,
-            "dollars": 1.0999999999999999
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.017,
-            "size": 1519.1,
-            "dollars": 25.8247
-          },
-          {
-            "price": 0.018,
-            "size": 100.0,
-            "dollars": 1.7999999999999998
-          },
-          {
-            "price": 0.02,
-            "size": 200.0,
-            "dollars": 4.0
-          },
-          {
-            "price": 0.021,
-            "size": 62.21,
-            "dollars": 1.30641
-          },
-          {
-            "price": 0.022,
-            "size": 200.0,
-            "dollars": 4.3999999999999995
-          }
-        ],
-        "top_bid_price": 0.016,
-        "top_bid_dollars": 1.312,
-        "top_ask_price": 0.017,
-        "top_ask_dollars": 25.8247,
-        "mid": 0.0165,
-        "spread_cents": 0.10000000000000009,
-        "spread_bps": 606.0606060606066,
-        "depth_5pct_bid_dollars": 1.312,
-        "depth_5pct_ask_dollars": 25.8247
-      },
-      "rank": 9,
-      "category": "Politics",
-      "weekly_volume_usd": 583154.472183,
-      "weekly_trades": 141,
-      "yes_price_7d_ago": 0.0195,
-      "yes_price_change_pp": -0.29999999999999993
-    },
-    {
-      "market_id": "703257",
-      "question": "Will the US confirm that aliens exist before 2027?",
       "yes_price": 0.155,
       "outcomes": [
         "Yes",
@@ -662,181 +286,557 @@
         0.155,
         0.845
       ],
-      "yes_token_id": "107505882767731489358349912513945399560393482969656700824895970500493757150417",
+      "yes_token_id": "55115078421062885512539156303747803058407616201213034911037320915726138659123",
       "end_date": "2026-12-31T00:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 30741678.520764593,
-      "volume_24hr": 30869.973656000016,
+      "volume_total_num": 33817132.1337146,
+      "volume_24hr": 52312.418784999994,
       "end_date_iso": "2026-12-31",
-      "fetched_at": "2026-06-02T00:51:29+00:00",
+      "fetched_at": "2026-06-05T00:58:39+00:00",
       "yes_book": {
         "n_bid_levels": 15,
-        "n_ask_levels": 58,
+        "n_ask_levels": 80,
         "top5_bids": [
           {
             "price": 0.15,
-            "size": 148964.0,
-            "dollars": 22344.6
+            "size": 47466.09,
+            "dollars": 7119.9135
           },
           {
             "price": 0.14,
-            "size": 173481.09,
-            "dollars": 24287.352600000002
+            "size": 86866.73,
+            "dollars": 12161.342200000001
           },
           {
             "price": 0.13,
-            "size": 1136805.6,
-            "dollars": 147784.728
+            "size": 114113.03,
+            "dollars": 14834.6939
           },
           {
             "price": 0.12,
-            "size": 93079.49,
-            "dollars": 11169.5388
+            "size": 11410.85,
+            "dollars": 1369.302
           },
           {
             "price": 0.11,
-            "size": 303726.55,
-            "dollars": 33409.9205
+            "size": 23269.24,
+            "dollars": 2559.6164000000003
           }
         ],
         "top5_asks": [
           {
             "price": 0.16,
-            "size": 160314.57,
-            "dollars": 25650.3312
+            "size": 1474.79,
+            "dollars": 235.9664
           },
           {
             "price": 0.17,
-            "size": 125592.31,
-            "dollars": 21350.6927
+            "size": 57734.09,
+            "dollars": 9814.7953
           },
           {
             "price": 0.18,
-            "size": 54949.54,
-            "dollars": 9890.9172
+            "size": 76509.91,
+            "dollars": 13771.7838
           },
           {
             "price": 0.19,
-            "size": 63600.57,
-            "dollars": 12084.1083
+            "size": 18282.03,
+            "dollars": 3473.5856999999996
           },
           {
             "price": 0.2,
-            "size": 128902.66,
-            "dollars": 25780.532000000003
+            "size": 16882.0,
+            "dollars": 3376.4
           }
         ],
         "top_bid_price": 0.15,
-        "top_bid_dollars": 22344.6,
+        "top_bid_dollars": 7119.9135,
         "top_ask_price": 0.16,
-        "top_ask_dollars": 25650.3312,
+        "top_ask_dollars": 235.9664,
         "mid": 0.155,
         "spread_cents": 1.0000000000000009,
         "spread_bps": 645.1612903225812,
-        "depth_5pct_bid_dollars": 22344.6,
-        "depth_5pct_ask_dollars": 25650.3312
+        "depth_5pct_bid_dollars": 7119.9135,
+        "depth_5pct_ask_dollars": 235.9664
+      },
+      "rank": 6,
+      "category": "Geopolitics",
+      "weekly_volume_usd": 766214.2085809998,
+      "weekly_trades": 4727,
+      "yes_price_7d_ago": 0.185,
+      "yes_price_change_pp": -3.0
+    },
+    {
+      "market_id": "558936",
+      "question": "Will France win the 2026 FIFA World Cup?",
+      "yes_price": 0.1645,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.1645,
+        0.8355
+      ],
+      "yes_token_id": "108233603819467706476318984012158651931658302669301887462181073562758483842092",
+      "end_date": "2026-07-20T00:00:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 36380148.995840356,
+      "volume_24hr": 787153.8148950005,
+      "end_date_iso": "2026-07-20",
+      "fetched_at": "2026-06-05T00:58:40+00:00",
+      "yes_book": {
+        "n_bid_levels": 97,
+        "n_ask_levels": 145,
+        "top5_bids": [
+          {
+            "price": 0.164,
+            "size": 31193.04,
+            "dollars": 5115.658560000001
+          },
+          {
+            "price": 0.163,
+            "size": 106745.22,
+            "dollars": 17399.47086
+          },
+          {
+            "price": 0.162,
+            "size": 18926.16,
+            "dollars": 3066.03792
+          },
+          {
+            "price": 0.161,
+            "size": 2052.0,
+            "dollars": 330.372
+          },
+          {
+            "price": 0.16,
+            "size": 8958.23,
+            "dollars": 1433.3168
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.165,
+            "size": 181286.33,
+            "dollars": 29912.24445
+          },
+          {
+            "price": 0.166,
+            "size": 63455.42,
+            "dollars": 10533.59972
+          },
+          {
+            "price": 0.167,
+            "size": 14142.21,
+            "dollars": 2361.74907
+          },
+          {
+            "price": 0.168,
+            "size": 18852.94,
+            "dollars": 3167.29392
+          },
+          {
+            "price": 0.169,
+            "size": 2107.97,
+            "dollars": 356.24692999999996
+          }
+        ],
+        "top_bid_price": 0.164,
+        "top_bid_dollars": 5115.658560000001,
+        "top_ask_price": 0.165,
+        "top_ask_dollars": 29912.24445,
+        "mid": 0.1645,
+        "spread_cents": 0.10000000000000009,
+        "spread_bps": 60.79027355623106,
+        "depth_5pct_bid_dollars": 32258.670660000003,
+        "depth_5pct_ask_dollars": 58867.45389
+      },
+      "rank": 7,
+      "category": "Sports",
+      "weekly_volume_usd": 643346.6084110006,
+      "weekly_trades": 5919,
+      "yes_price_7d_ago": 0.1755,
+      "yes_price_change_pp": -1.0999999999999983
+    },
+    {
+      "market_id": "906974",
+      "question": "Will there be no change in Fed interest rates after the June 2026 meeting?",
+      "yes_price": 0.9825,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.9825,
+        0.0175
+      ],
+      "yes_token_id": "30767812841387255642892182147223249245545002662653079696958384408588201824258",
+      "end_date": "2026-06-17T00:00:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 9892489.38878497,
+      "volume_24hr": 247343.27283600008,
+      "end_date_iso": "2026-06-17",
+      "fetched_at": "2026-06-05T00:58:41+00:00",
+      "yes_book": {
+        "n_bid_levels": 96,
+        "n_ask_levels": 17,
+        "top5_bids": [
+          {
+            "price": 0.982,
+            "size": 55620.57,
+            "dollars": 54619.39974
+          },
+          {
+            "price": 0.981,
+            "size": 73448.39,
+            "dollars": 72052.87058999999
+          },
+          {
+            "price": 0.98,
+            "size": 79780.39,
+            "dollars": 78184.7822
+          },
+          {
+            "price": 0.979,
+            "size": 7519.63,
+            "dollars": 7361.71777
+          },
+          {
+            "price": 0.978,
+            "size": 10572.0,
+            "dollars": 10339.416
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.983,
+            "size": 12133.84,
+            "dollars": 11927.56472
+          },
+          {
+            "price": 0.984,
+            "size": 15703.49,
+            "dollars": 15452.23416
+          },
+          {
+            "price": 0.985,
+            "size": 15260.53,
+            "dollars": 15031.62205
+          },
+          {
+            "price": 0.986,
+            "size": 15946.52,
+            "dollars": 15723.26872
+          },
+          {
+            "price": 0.987,
+            "size": 14087.03,
+            "dollars": 13903.89861
+          }
+        ],
+        "top_bid_price": 0.982,
+        "top_bid_dollars": 54619.39974,
+        "top_ask_price": 0.983,
+        "top_ask_dollars": 11927.56472,
+        "mid": 0.9824999999999999,
+        "spread_cents": 0.10000000000000009,
+        "spread_bps": 10.178117048346067,
+        "depth_5pct_bid_dollars": 284592.29683,
+        "depth_5pct_ask_dollars": 6011239.49787
+      },
+      "rank": 8,
+      "category": "Macro",
+      "weekly_volume_usd": 629441.569476,
+      "weekly_trades": 6593,
+      "yes_price_7d_ago": 0.9755,
+      "yes_price_change_pp": 0.7000000000000006
+    },
+    {
+      "market_id": "1066556",
+      "question": "Lai Ching-te impeached by June 30?",
+      "yes_price": 0.0075,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.0075,
+        0.9925
+      ],
+      "yes_token_id": "41423065300198414333652186196829372672155925109974332571318217095813945849522",
+      "end_date": "2026-06-30T00:00:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 1342191.8591969984,
+      "volume_24hr": 302.946638,
+      "end_date_iso": "2026-06-30",
+      "fetched_at": "2026-06-05T00:58:42+00:00",
+      "yes_book": {
+        "n_bid_levels": 6,
+        "n_ask_levels": 52,
+        "top5_bids": [
+          {
+            "price": 0.008,
+            "size": 31.0,
+            "dollars": 0.248
+          },
+          {
+            "price": 0.006,
+            "size": 38.89,
+            "dollars": 0.23334000000000002
+          },
+          {
+            "price": 0.004,
+            "size": 251.92,
+            "dollars": 1.00768
+          },
+          {
+            "price": 0.003,
+            "size": 2666.0,
+            "dollars": 7.998
+          },
+          {
+            "price": 0.002,
+            "size": 5303.0,
+            "dollars": 10.606
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.009,
+            "size": 48.19,
+            "dollars": 0.43370999999999993
+          },
+          {
+            "price": 0.011,
+            "size": 51.75,
+            "dollars": 0.5692499999999999
+          },
+          {
+            "price": 0.013,
+            "size": 40.13,
+            "dollars": 0.52169
+          },
+          {
+            "price": 0.014,
+            "size": 85.05,
+            "dollars": 1.1907
+          },
+          {
+            "price": 0.015,
+            "size": 100.0,
+            "dollars": 1.5
+          }
+        ],
+        "top_bid_price": 0.008,
+        "top_bid_dollars": 0.248,
+        "top_ask_price": 0.009,
+        "top_ask_dollars": 0.43370999999999993,
+        "mid": 0.0085,
+        "spread_cents": 0.09999999999999992,
+        "spread_bps": 1176.470588235293,
+        "depth_5pct_bid_dollars": 0,
+        "depth_5pct_ask_dollars": 0
+      },
+      "rank": 9,
+      "category": "Politics",
+      "weekly_volume_usd": 583154.472183,
+      "weekly_trades": 141,
+      "yes_price_7d_ago": 0.0195,
+      "yes_price_change_pp": -1.2
+    },
+    {
+      "market_id": "703257",
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "yes_price": 0.145,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.145,
+        0.855
+      ],
+      "yes_token_id": "107505882767731489358349912513945399560393482969656700824895970500493757150417",
+      "end_date": "2026-12-31T00:00:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 31219126.818813566,
+      "volume_24hr": 233646.08212700003,
+      "end_date_iso": "2026-12-31",
+      "fetched_at": "2026-06-05T00:58:43+00:00",
+      "yes_book": {
+        "n_bid_levels": 14,
+        "n_ask_levels": 60,
+        "top5_bids": [
+          {
+            "price": 0.14,
+            "size": 54808.19,
+            "dollars": 7673.146600000001
+          },
+          {
+            "price": 0.13,
+            "size": 386602.3,
+            "dollars": 50258.299
+          },
+          {
+            "price": 0.12,
+            "size": 933719.01,
+            "dollars": 112046.2812
+          },
+          {
+            "price": 0.11,
+            "size": 302501.54,
+            "dollars": 33275.1694
+          },
+          {
+            "price": 0.1,
+            "size": 79425.21,
+            "dollars": 7942.521000000001
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.15,
+            "size": 929368.42,
+            "dollars": 139405.263
+          },
+          {
+            "price": 0.16,
+            "size": 144918.82,
+            "dollars": 23187.0112
+          },
+          {
+            "price": 0.17,
+            "size": 107426.68,
+            "dollars": 18262.5356
+          },
+          {
+            "price": 0.18,
+            "size": 104537.99,
+            "dollars": 18816.838200000002
+          },
+          {
+            "price": 0.19,
+            "size": 128793.14,
+            "dollars": 24470.6966
+          }
+        ],
+        "top_bid_price": 0.14,
+        "top_bid_dollars": 7673.146600000001,
+        "top_ask_price": 0.15,
+        "top_ask_dollars": 139405.263,
+        "mid": 0.14500000000000002,
+        "spread_cents": 0.9999999999999981,
+        "spread_bps": 689.6551724137917,
+        "depth_5pct_bid_dollars": 7673.146600000001,
+        "depth_5pct_ask_dollars": 139405.263
       },
       "rank": 10,
       "category": "Other",
       "weekly_volume_usd": 517791.867668,
       "weekly_trades": 2159,
       "yes_price_7d_ago": 0.155,
-      "yes_price_change_pp": 0.0
+      "yes_price_change_pp": -1.0000000000000009
     },
     {
       "market_id": "1107582",
       "question": "US strike on Cuba by December 31?",
-      "yes_price": 0.525,
+      "yes_price": 0.445,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.525,
-        0.475
+        0.445,
+        0.555
       ],
       "yes_token_id": "91347242536105459969213788769929618447748782724898414007495579710952664644740",
       "end_date": "2026-12-31T00:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 3009117.6588310017,
-      "volume_24hr": 28122.274793,
+      "volume_total_num": 3303688.1842990024,
+      "volume_24hr": 69202.81757800002,
       "end_date_iso": "2026-12-31",
-      "fetched_at": "2026-06-02T00:51:30+00:00",
+      "fetched_at": "2026-06-05T00:58:44+00:00",
       "yes_book": {
-        "n_bid_levels": 52,
-        "n_ask_levels": 45,
+        "n_bid_levels": 43,
+        "n_ask_levels": 55,
         "top5_bids": [
           {
-            "price": 0.53,
-            "size": 352.0,
-            "dollars": 186.56
+            "price": 0.44,
+            "size": 612.0,
+            "dollars": 269.28000000000003
           },
           {
-            "price": 0.52,
-            "size": 1130.43,
-            "dollars": 587.8236
+            "price": 0.43,
+            "size": 3545.49,
+            "dollars": 1524.5606999999998
           },
           {
-            "price": 0.51,
-            "size": 3980.88,
-            "dollars": 2030.2488
+            "price": 0.42,
+            "size": 4987.15,
+            "dollars": 2094.6029999999996
           },
           {
-            "price": 0.5,
-            "size": 7309.56,
-            "dollars": 3654.78
+            "price": 0.41,
+            "size": 6269.33,
+            "dollars": 2570.4253
           },
           {
-            "price": 0.49,
-            "size": 2945.45,
-            "dollars": 1443.2704999999999
+            "price": 0.4,
+            "size": 2857.14,
+            "dollars": 1142.856
           }
         ],
         "top5_asks": [
           {
-            "price": 0.54,
-            "size": 2639.71,
-            "dollars": 1425.4434
+            "price": 0.45,
+            "size": 779.89,
+            "dollars": 350.9505
           },
           {
-            "price": 0.55,
-            "size": 6855.32,
-            "dollars": 3770.426
+            "price": 0.46,
+            "size": 2293.39,
+            "dollars": 1054.9594
           },
           {
-            "price": 0.56,
-            "size": 13775.07,
-            "dollars": 7714.0392
+            "price": 0.47,
+            "size": 9440.53,
+            "dollars": 4437.0491
           },
           {
-            "price": 0.57,
-            "size": 3119.07,
-            "dollars": 1777.8699
+            "price": 0.48,
+            "size": 2602.62,
+            "dollars": 1249.2576
           },
           {
-            "price": 0.59,
-            "size": 32.0,
-            "dollars": 18.88
+            "price": 0.49,
+            "size": 5123.32,
+            "dollars": 2510.4267999999997
           }
         ],
-        "top_bid_price": 0.53,
-        "top_bid_dollars": 186.56,
-        "top_ask_price": 0.54,
-        "top_ask_dollars": 1425.4434,
-        "mid": 0.535,
+        "top_bid_price": 0.44,
+        "top_bid_dollars": 269.28000000000003,
+        "top_ask_price": 0.45,
+        "top_ask_dollars": 350.9505,
+        "mid": 0.445,
         "spread_cents": 1.0000000000000009,
-        "spread_bps": 186.91588785046744,
-        "depth_5pct_bid_dollars": 2804.6324,
-        "depth_5pct_ask_dollars": 12909.9086
+        "spread_bps": 224.71910112359572,
+        "depth_5pct_bid_dollars": 1793.8406999999997,
+        "depth_5pct_ask_dollars": 1405.9098999999999
       },
       "rank": 11,
       "category": "Geopolitics",
       "weekly_volume_usd": 464212.50402699993,
       "weekly_trades": 690,
       "yes_price_7d_ago": 0.475,
-      "yes_price_change_pp": 5.000000000000004
+      "yes_price_change_pp": -2.9999999999999973
     },
     {
       "market_id": "560317",
@@ -854,71 +854,71 @@
       "end_date": "2026-12-31T18:30:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 6753808.355983989,
-      "volume_24hr": 204303.414316,
+      "volume_total_num": 6894672.349695989,
+      "volume_24hr": 84482.80876599999,
       "end_date_iso": "2026-12-31",
-      "fetched_at": "2026-06-02T00:51:31+00:00",
+      "fetched_at": "2026-06-05T00:58:45+00:00",
       "yes_book": {
         "n_bid_levels": 8,
-        "n_ask_levels": 54,
+        "n_ask_levels": 52,
         "top5_bids": [
           {
             "price": 0.08,
-            "size": 207776.11,
-            "dollars": 16622.088799999998
+            "size": 248470.35,
+            "dollars": 19877.628
           },
           {
             "price": 0.07,
-            "size": 816587.08,
-            "dollars": 57161.0956
+            "size": 1011222.72,
+            "dollars": 70785.5904
           },
           {
             "price": 0.06,
-            "size": 144388.29,
-            "dollars": 8663.2974
+            "size": 151585.79,
+            "dollars": 9095.1474
           },
           {
             "price": 0.05,
-            "size": 44577.64,
-            "dollars": 2228.882
+            "size": 49911.85,
+            "dollars": 2495.5925
           },
           {
             "price": 0.04,
-            "size": 5552.43,
-            "dollars": 222.09720000000002
+            "size": 17142.45,
+            "dollars": 685.6980000000001
           }
         ],
         "top5_asks": [
           {
             "price": 0.09,
-            "size": 226416.97,
-            "dollars": 20377.527299999998
+            "size": 145657.98,
+            "dollars": 13109.218200000001
           },
           {
             "price": 0.1,
-            "size": 150439.02,
-            "dollars": 15043.902
+            "size": 154492.06,
+            "dollars": 15449.206
           },
           {
             "price": 0.11,
-            "size": 96962.09,
-            "dollars": 10665.829899999999
+            "size": 98398.89,
+            "dollars": 10823.8779
           },
           {
             "price": 0.12,
-            "size": 14099.0,
-            "dollars": 1691.8799999999999
+            "size": 13999.0,
+            "dollars": 1679.8799999999999
           },
           {
             "price": 0.13,
-            "size": 1899.0,
-            "dollars": 246.87
+            "size": 1449.0,
+            "dollars": 188.37
           }
         ],
         "top_bid_price": 0.08,
-        "top_bid_dollars": 16622.088799999998,
+        "top_bid_dollars": 19877.628,
         "top_ask_price": 0.09,
-        "top_ask_dollars": 20377.527299999998,
+        "top_ask_dollars": 13109.218200000001,
         "mid": 0.08499999999999999,
         "spread_cents": 0.9999999999999996,
         "spread_bps": 1176.4705882352937,
@@ -935,178 +935,178 @@
     {
       "market_id": "597967",
       "question": "Starmer out by June 30, 2026?",
-      "yes_price": 0.14,
+      "yes_price": 0.125,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.14,
-        0.86
+        0.125,
+        0.875
       ],
       "yes_token_id": "34554555827438551101000555305203609600029621153428996114009350892614396532498",
       "end_date": "2026-06-30T12:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 5052536.800292009,
-      "volume_24hr": 67548.060842,
+      "volume_total_num": 5223600.637004009,
+      "volume_24hr": 63055.03978100001,
       "end_date_iso": "2026-06-30",
-      "fetched_at": "2026-06-02T00:51:32+00:00",
+      "fetched_at": "2026-06-05T00:58:46+00:00",
       "yes_book": {
-        "n_bid_levels": 13,
-        "n_ask_levels": 70,
+        "n_bid_levels": 12,
+        "n_ask_levels": 72,
         "top5_bids": [
           {
-            "price": 0.13,
-            "size": 9031.14,
-            "dollars": 1174.0482
-          },
-          {
             "price": 0.12,
-            "size": 6766.77,
-            "dollars": 812.0124000000001
+            "size": 10504.09,
+            "dollars": 1260.4908
           },
           {
             "price": 0.11,
-            "size": 5216.57,
-            "dollars": 573.8226999999999
+            "size": 29190.36,
+            "dollars": 3210.9396
           },
           {
             "price": 0.1,
-            "size": 5317.15,
-            "dollars": 531.715
+            "size": 31696.94,
+            "dollars": 3169.694
           },
           {
             "price": 0.09,
-            "size": 4221.0,
-            "dollars": 379.89
+            "size": 4682.44,
+            "dollars": 421.41959999999995
+          },
+          {
+            "price": 0.08,
+            "size": 3886.91,
+            "dollars": 310.95279999999997
           }
         ],
         "top5_asks": [
           {
+            "price": 0.13,
+            "size": 10259.35,
+            "dollars": 1333.7155
+          },
+          {
+            "price": 0.14,
+            "size": 5224.57,
+            "dollars": 731.4398
+          },
+          {
             "price": 0.15,
-            "size": 24043.98,
-            "dollars": 3606.5969999999998
+            "size": 4949.49,
+            "dollars": 742.4235
           },
           {
             "price": 0.16,
-            "size": 11710.02,
-            "dollars": 1873.6032
+            "size": 3436.4,
+            "dollars": 549.8240000000001
           },
           {
             "price": 0.17,
-            "size": 1480.45,
-            "dollars": 251.67650000000003
-          },
-          {
-            "price": 0.18,
-            "size": 1000.0,
-            "dollars": 180.0
-          },
-          {
-            "price": 0.19,
-            "size": 90.0,
-            "dollars": 17.1
+            "size": 301.39,
+            "dollars": 51.2363
           }
         ],
-        "top_bid_price": 0.13,
-        "top_bid_dollars": 1174.0482,
-        "top_ask_price": 0.15,
-        "top_ask_dollars": 3606.5969999999998,
-        "mid": 0.14,
-        "spread_cents": 1.9999999999999991,
-        "spread_bps": 1428.5714285714278,
-        "depth_5pct_bid_dollars": 0,
-        "depth_5pct_ask_dollars": 0
+        "top_bid_price": 0.12,
+        "top_bid_dollars": 1260.4908,
+        "top_ask_price": 0.13,
+        "top_ask_dollars": 1333.7155,
+        "mid": 0.125,
+        "spread_cents": 1.0000000000000009,
+        "spread_bps": 800.0000000000007,
+        "depth_5pct_bid_dollars": 1260.4908,
+        "depth_5pct_ask_dollars": 1333.7155
       },
       "rank": 13,
       "category": "Other",
       "weekly_volume_usd": 428978.0713439999,
       "weekly_trades": 6289,
       "yes_price_7d_ago": 0.275,
-      "yes_price_change_pp": -13.5
+      "yes_price_change_pp": -15.000000000000002
     },
     {
       "market_id": "956370",
       "question": "Xi Jinping out by June 30?",
-      "yes_price": 0.009,
+      "yes_price": 0.0085,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.009,
-        0.991
+        0.0085,
+        0.9915
       ],
       "yes_token_id": "31883462749119556388086799399919753637232555218950340228250860473714993542724",
       "end_date": "2026-06-30T00:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 3167103.889438015,
-      "volume_24hr": 8814.97855000001,
+      "volume_total_num": 3214352.3281050087,
+      "volume_24hr": 12132.247779000005,
       "end_date_iso": "2026-06-30",
-      "fetched_at": "2026-06-02T00:51:33+00:00",
+      "fetched_at": "2026-06-05T00:58:47+00:00",
       "yes_book": {
-        "n_bid_levels": 6,
-        "n_ask_levels": 71,
+        "n_bid_levels": 7,
+        "n_ask_levels": 81,
         "top5_bids": [
           {
             "price": 0.007,
-            "size": 1537.71,
-            "dollars": 10.76397
+            "size": 1925.69,
+            "dollars": 13.479830000000002
           },
           {
             "price": 0.006,
-            "size": 5572.73,
-            "dollars": 33.43638
+            "size": 4224.73,
+            "dollars": 25.34838
+          },
+          {
+            "price": 0.005,
+            "size": 810.0,
+            "dollars": 4.05
           },
           {
             "price": 0.004,
-            "size": 11035.0,
-            "dollars": 44.14
+            "size": 10215.39,
+            "dollars": 40.86156
           },
           {
             "price": 0.003,
-            "size": 23661.57,
-            "dollars": 70.98471
-          },
-          {
-            "price": 0.002,
-            "size": 33763.46,
-            "dollars": 67.52692
+            "size": 23773.18,
+            "dollars": 71.31954
           }
         ],
         "top5_asks": [
           {
             "price": 0.009,
-            "size": 587.88,
-            "dollars": 5.29092
+            "size": 12.39,
+            "dollars": 0.11151
           },
           {
             "price": 0.01,
-            "size": 9077.1,
-            "dollars": 90.771
+            "size": 1765.64,
+            "dollars": 17.6564
           },
           {
             "price": 0.011,
-            "size": 1938.0,
-            "dollars": 21.317999999999998
+            "size": 6464.16,
+            "dollars": 71.10575999999999
           },
           {
             "price": 0.012,
-            "size": 1010.12,
-            "dollars": 12.12144
+            "size": 10.12,
+            "dollars": 0.12143999999999999
           },
           {
             "price": 0.013,
-            "size": 2500.0,
-            "dollars": 32.5
+            "size": 1010.0,
+            "dollars": 13.129999999999999
           }
         ],
         "top_bid_price": 0.007,
-        "top_bid_dollars": 10.76397,
+        "top_bid_dollars": 13.479830000000002,
         "top_ask_price": 0.009,
-        "top_ask_dollars": 5.29092,
+        "top_ask_dollars": 0.11151,
         "mid": 0.008,
         "spread_cents": 0.19999999999999993,
         "spread_bps": 2499.999999999999,
@@ -1118,7 +1118,7 @@
       "weekly_volume_usd": 421127.60120200005,
       "weekly_trades": 2119,
       "yes_price_7d_ago": 0.0095,
-      "yes_price_change_pp": -0.050000000000000044
+      "yes_price_change_pp": -0.09999999999999992
     },
     {
       "market_id": "906973",
@@ -1136,55 +1136,55 @@
       "end_date": "2026-06-17T00:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 9743739.258793896,
-      "volume_24hr": 310680.44315199996,
+      "volume_total_num": 10566081.007819913,
+      "volume_24hr": 299579.9652239998,
       "end_date_iso": "2026-06-17",
-      "fetched_at": "2026-06-02T00:51:34+00:00",
+      "fetched_at": "2026-06-05T00:58:48+00:00",
       "yes_book": {
         "n_bid_levels": 8,
-        "n_ask_levels": 94,
+        "n_ask_levels": 90,
         "top5_bids": [
           {
             "price": 0.008,
-            "size": 32937.34,
-            "dollars": 263.49872
+            "size": 10578.99,
+            "dollars": 84.63192
           },
           {
             "price": 0.007,
-            "size": 11507.7,
-            "dollars": 80.55390000000001
+            "size": 68474.04,
+            "dollars": 479.31827999999996
           },
           {
             "price": 0.006,
-            "size": 72555.34,
-            "dollars": 435.33204
+            "size": 96796.81,
+            "dollars": 580.78086
           },
           {
             "price": 0.005,
-            "size": 110084.0,
-            "dollars": 550.42
+            "size": 189880.6,
+            "dollars": 949.403
           },
           {
             "price": 0.004,
-            "size": 483646.18,
-            "dollars": 1934.58472
+            "size": 234779.18,
+            "dollars": 939.11672
           }
         ],
         "top5_asks": [
           {
             "price": 0.009,
-            "size": 9305.31,
-            "dollars": 83.74779
+            "size": 30107.62,
+            "dollars": 270.96858
           },
           {
             "price": 0.01,
-            "size": 22506.55,
-            "dollars": 225.0655
+            "size": 69961.14,
+            "dollars": 699.6114
           },
           {
             "price": 0.011,
-            "size": 20078.03,
-            "dollars": 220.85832999999997
+            "size": 18593.56,
+            "dollars": 204.52916
           },
           {
             "price": 0.012,
@@ -1198,9 +1198,9 @@
           }
         ],
         "top_bid_price": 0.008,
-        "top_bid_dollars": 263.49872,
+        "top_bid_dollars": 84.63192,
         "top_ask_price": 0.009,
-        "top_ask_dollars": 83.74779,
+        "top_ask_dollars": 270.96858,
         "mid": 0.0085,
         "spread_cents": 0.09999999999999992,
         "spread_bps": 1176.470588235293,
@@ -1217,96 +1217,96 @@
     {
       "market_id": "974661",
       "question": "Bill Clinton divorce by June 30?",
-      "yes_price": 0.014,
+      "yes_price": 0.0105,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.014,
-        0.986
+        0.0105,
+        0.9895
       ],
       "yes_token_id": "51215099240906444332845543637844003484972219591326150507538792559604103405767",
       "end_date": "2026-06-30T00:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 678458.7082159995,
-      "volume_24hr": 1673.7151250000002,
+      "volume_total_num": 680464.8628949997,
+      "volume_24hr": 1343.8017579999998,
       "end_date_iso": "2026-06-30",
-      "fetched_at": "2026-06-02T00:51:35+00:00",
+      "fetched_at": "2026-06-05T00:58:50+00:00",
       "yes_book": {
-        "n_bid_levels": 12,
-        "n_ask_levels": 68,
+        "n_bid_levels": 9,
+        "n_ask_levels": 67,
         "top5_bids": [
           {
-            "price": 0.012,
-            "size": 594.77,
-            "dollars": 7.13724
-          },
-          {
-            "price": 0.011,
-            "size": 582.94,
-            "dollars": 6.41234
-          },
-          {
             "price": 0.01,
-            "size": 335.99,
-            "dollars": 3.3599
-          },
-          {
-            "price": 0.009,
-            "size": 425.55,
-            "dollars": 3.8299499999999997
+            "size": 104.73,
+            "dollars": 1.0473000000000001
           },
           {
             "price": 0.008,
-            "size": 875.0,
-            "dollars": 7.0
+            "size": 507.5,
+            "dollars": 4.0600000000000005
+          },
+          {
+            "price": 0.007,
+            "size": 572.85,
+            "dollars": 4.00995
+          },
+          {
+            "price": 0.006,
+            "size": 1334.0,
+            "dollars": 8.004
+          },
+          {
+            "price": 0.005,
+            "size": 2447.52,
+            "dollars": 12.2376
           }
         ],
         "top5_asks": [
           {
-            "price": 0.016,
-            "size": 187.42,
-            "dollars": 2.99872
+            "price": 0.011,
+            "size": 1022.04,
+            "dollars": 11.242439999999998
           },
           {
-            "price": 0.017,
-            "size": 495.03,
-            "dollars": 8.41551
+            "price": 0.012,
+            "size": 771.0,
+            "dollars": 9.252
           },
           {
-            "price": 0.018,
-            "size": 593.0,
-            "dollars": 10.674
+            "price": 0.014,
+            "size": 200.0,
+            "dollars": 2.8000000000000003
+          },
+          {
+            "price": 0.019,
+            "size": 2010.0,
+            "dollars": 38.19
           },
           {
             "price": 0.02,
-            "size": 2239.57,
-            "dollars": 44.7914
-          },
-          {
-            "price": 0.021,
-            "size": 771.28,
-            "dollars": 16.19688
+            "size": 1769.01,
+            "dollars": 35.3802
           }
         ],
-        "top_bid_price": 0.012,
-        "top_bid_dollars": 7.13724,
-        "top_ask_price": 0.016,
-        "top_ask_dollars": 2.99872,
-        "mid": 0.014,
-        "spread_cents": 0.4,
-        "spread_bps": 2857.142857142857,
-        "depth_5pct_bid_dollars": 0,
-        "depth_5pct_ask_dollars": 0
+        "top_bid_price": 0.01,
+        "top_bid_dollars": 1.0473000000000001,
+        "top_ask_price": 0.011,
+        "top_ask_dollars": 11.242439999999998,
+        "mid": 0.010499999999999999,
+        "spread_cents": 0.09999999999999992,
+        "spread_bps": 952.3809523809516,
+        "depth_5pct_bid_dollars": 1.0473000000000001,
+        "depth_5pct_ask_dollars": 11.242439999999998
       },
       "rank": 16,
       "category": "Other",
       "weekly_volume_usd": 350341.0033749999,
       "weekly_trades": 804,
       "yes_price_7d_ago": 0.0205,
-      "yes_price_change_pp": -0.65
+      "yes_price_change_pp": -1.0
     },
     {
       "market_id": "553856",
@@ -1327,7 +1327,7 @@
       "volume_total_num": 15151786.681256065,
       "volume_24hr": null,
       "end_date_iso": "2026-07-01",
-      "fetched_at": "2026-06-02T00:51:36+00:00",
+      "fetched_at": "2026-06-05T00:58:51+00:00",
       "yes_book": {},
       "rank": 17,
       "category": "Sports",
@@ -1339,284 +1339,284 @@
     {
       "market_id": "666655",
       "question": "Starmer out by December 31, 2026?",
-      "yes_price": 0.745,
+      "yes_price": 0.725,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.745,
-        0.255
+        0.725,
+        0.275
       ],
       "yes_token_id": "42498579290170525937803365597001189493798686141769429176410526295573824619073",
       "end_date": "2026-12-31T12:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 2867790.464566981,
-      "volume_24hr": 6668.72335,
+      "volume_total_num": 2922197.604127979,
+      "volume_24hr": 17285.830530000003,
       "end_date_iso": "2026-12-31",
-      "fetched_at": "2026-06-02T00:51:38+00:00",
+      "fetched_at": "2026-06-05T00:58:52+00:00",
       "yes_book": {
-        "n_bid_levels": 63,
-        "n_ask_levels": 24,
+        "n_bid_levels": 57,
+        "n_ask_levels": 26,
         "top5_bids": [
           {
-            "price": 0.74,
-            "size": 1642.36,
-            "dollars": 1215.3464
-          },
-          {
-            "price": 0.73,
-            "size": 3101.32,
-            "dollars": 2263.9636
-          },
-          {
             "price": 0.72,
-            "size": 1823.86,
-            "dollars": 1313.1791999999998
+            "size": 6807.96,
+            "dollars": 4901.7312
           },
           {
             "price": 0.71,
-            "size": 5276.17,
-            "dollars": 3746.0807
+            "size": 4949.2,
+            "dollars": 3513.932
           },
           {
             "price": 0.7,
-            "size": 8553.8,
-            "dollars": 5987.659999999999
+            "size": 4267.97,
+            "dollars": 2987.579
+          },
+          {
+            "price": 0.69,
+            "size": 2638.9,
+            "dollars": 1820.841
+          },
+          {
+            "price": 0.68,
+            "size": 3052.29,
+            "dollars": 2075.5572
           }
         ],
         "top5_asks": [
           {
+            "price": 0.73,
+            "size": 7088.63,
+            "dollars": 5174.6999
+          },
+          {
+            "price": 0.74,
+            "size": 5718.71,
+            "dollars": 4231.8454
+          },
+          {
             "price": 0.75,
-            "size": 13007.13,
-            "dollars": 9755.3475
+            "size": 4815.17,
+            "dollars": 3611.3775
           },
           {
             "price": 0.76,
-            "size": 5436.47,
-            "dollars": 4131.7172
+            "size": 1200.0,
+            "dollars": 912.0
           },
           {
             "price": 0.77,
-            "size": 2395.0,
-            "dollars": 1844.15
-          },
-          {
-            "price": 0.78,
-            "size": 600.0,
-            "dollars": 468.0
-          },
-          {
-            "price": 0.79,
-            "size": 15.0,
-            "dollars": 11.850000000000001
+            "size": 73.42,
+            "dollars": 56.5334
           }
         ],
-        "top_bid_price": 0.74,
-        "top_bid_dollars": 1215.3464,
-        "top_ask_price": 0.75,
-        "top_ask_dollars": 9755.3475,
-        "mid": 0.745,
+        "top_bid_price": 0.72,
+        "top_bid_dollars": 4901.7312,
+        "top_ask_price": 0.73,
+        "top_ask_dollars": 5174.6999,
+        "mid": 0.725,
         "spread_cents": 1.0000000000000009,
-        "spread_bps": 134.2281879194632,
-        "depth_5pct_bid_dollars": 8538.5699,
-        "depth_5pct_ask_dollars": 16199.2147
+        "spread_bps": 137.93103448275875,
+        "depth_5pct_bid_dollars": 13224.083200000001,
+        "depth_5pct_ask_dollars": 13929.9228
       },
       "rank": 18,
       "category": "Other",
       "weekly_volume_usd": 310993.317351,
       "weekly_trades": 3590,
       "yes_price_7d_ago": 0.715,
-      "yes_price_change_pp": 3.0000000000000027
+      "yes_price_change_pp": 1.0000000000000009
     },
     {
       "market_id": "994894",
       "question": "Greece x Turkey military engagement by June 30?",
-      "yes_price": 0.0135,
+      "yes_price": 0.018,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.0135,
-        0.9865
+        0.018,
+        0.982
       ],
       "yes_token_id": "112716095478573688614552520674907154024762970545392203808286586040914264110986",
       "end_date": "2026-06-30T00:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 1186455.423209004,
-      "volume_24hr": 2680.217529,
+      "volume_total_num": 1191409.3992710048,
+      "volume_24hr": 287.299011,
       "end_date_iso": "2026-06-30",
-      "fetched_at": "2026-06-02T00:51:39+00:00",
+      "fetched_at": "2026-06-05T00:58:53+00:00",
       "yes_book": {
-        "n_bid_levels": 8,
-        "n_ask_levels": 79,
+        "n_bid_levels": 13,
+        "n_ask_levels": 77,
         "top5_bids": [
           {
-            "price": 0.013,
-            "size": 183.2,
-            "dollars": 2.3815999999999997
+            "price": 0.015,
+            "size": 20.0,
+            "dollars": 0.3
           },
           {
-            "price": 0.012,
-            "size": 332.5,
-            "dollars": 3.99
+            "price": 0.014,
+            "size": 127.47,
+            "dollars": 1.78458
+          },
+          {
+            "price": 0.013,
+            "size": 264.31,
+            "dollars": 3.4360299999999997
+          },
+          {
+            "price": 0.011,
+            "size": 200.0,
+            "dollars": 2.1999999999999997
           },
           {
             "price": 0.01,
-            "size": 177.86,
-            "dollars": 1.7786000000000002
-          },
-          {
-            "price": 0.006,
-            "size": 1533.23,
-            "dollars": 9.19938
-          },
-          {
-            "price": 0.005,
-            "size": 2699.99,
-            "dollars": 13.499949999999998
+            "size": 433.86,
+            "dollars": 4.3386000000000005
           }
         ],
         "top5_asks": [
           {
-            "price": 0.014,
-            "size": 1615.95,
-            "dollars": 22.6233
+            "price": 0.021,
+            "size": 41.07,
+            "dollars": 0.8624700000000001
           },
           {
-            "price": 0.018,
-            "size": 7.55,
-            "dollars": 0.1359
+            "price": 0.023,
+            "size": 40.5,
+            "dollars": 0.9315
           },
           {
-            "price": 0.028,
-            "size": 45.45,
-            "dollars": 1.2726000000000002
+            "price": 0.024,
+            "size": 274.36,
+            "dollars": 6.58464
           },
           {
-            "price": 0.036,
-            "size": 175.0,
-            "dollars": 6.3
+            "price": 0.026,
+            "size": 200.0,
+            "dollars": 5.2
           },
           {
-            "price": 0.037,
-            "size": 433.6,
-            "dollars": 16.0432
+            "price": 0.03,
+            "size": 6.0,
+            "dollars": 0.18
           }
         ],
-        "top_bid_price": 0.013,
-        "top_bid_dollars": 2.3815999999999997,
-        "top_ask_price": 0.014,
-        "top_ask_dollars": 22.6233,
-        "mid": 0.0135,
-        "spread_cents": 0.10000000000000009,
-        "spread_bps": 740.7407407407414,
-        "depth_5pct_bid_dollars": 2.3815999999999997,
-        "depth_5pct_ask_dollars": 22.6233
+        "top_bid_price": 0.015,
+        "top_bid_dollars": 0.3,
+        "top_ask_price": 0.021,
+        "top_ask_dollars": 0.8624700000000001,
+        "mid": 0.018000000000000002,
+        "spread_cents": 0.6000000000000002,
+        "spread_bps": 3333.3333333333335,
+        "depth_5pct_bid_dollars": 0,
+        "depth_5pct_ask_dollars": 0
       },
       "rank": 19,
       "category": "Geopolitics",
       "weekly_volume_usd": 309483.99155599996,
       "weekly_trades": 421,
       "yes_price_7d_ago": 0.0415,
-      "yes_price_change_pp": -2.8000000000000003
+      "yes_price_change_pp": -2.3500000000000005
     },
     {
       "market_id": "558934",
       "question": "Will Spain win the 2026 FIFA World Cup?",
-      "yes_price": 0.1675,
+      "yes_price": 0.1595,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.1675,
-        0.8325
+        0.1595,
+        0.8405
       ],
       "yes_token_id": "4394372887385518214471608448209527405727552777602031099972143344338178308080",
       "end_date": "2026-07-20T00:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 27373449.513601385,
-      "volume_24hr": 543601.805637002,
+      "volume_total_num": 29365515.75185063,
+      "volume_24hr": 569753.49781,
       "end_date_iso": "2026-07-20",
-      "fetched_at": "2026-06-02T00:51:40+00:00",
+      "fetched_at": "2026-06-05T00:58:54+00:00",
       "yes_book": {
-        "n_bid_levels": 86,
-        "n_ask_levels": 132,
+        "n_bid_levels": 87,
+        "n_ask_levels": 166,
         "top5_bids": [
           {
-            "price": 0.165,
-            "size": 44675.45,
-            "dollars": 7371.44925
+            "price": 0.159,
+            "size": 181278.03,
+            "dollars": 28823.20677
           },
           {
-            "price": 0.164,
-            "size": 28669.34,
-            "dollars": 4701.7717600000005
+            "price": 0.158,
+            "size": 284583.0,
+            "dollars": 44964.114
           },
           {
-            "price": 0.163,
-            "size": 10786.95,
-            "dollars": 1758.2728500000003
+            "price": 0.157,
+            "size": 183990.0,
+            "dollars": 28886.43
           },
           {
-            "price": 0.162,
-            "size": 4718.99,
-            "dollars": 764.47638
+            "price": 0.156,
+            "size": 159999.08,
+            "dollars": 24959.85648
           },
           {
-            "price": 0.161,
-            "size": 3659.0,
-            "dollars": 589.099
+            "price": 0.155,
+            "size": 28613.16,
+            "dollars": 4435.0398
           }
         ],
         "top5_asks": [
           {
-            "price": 0.166,
-            "size": 9089.4,
-            "dollars": 1508.8404
+            "price": 0.16,
+            "size": 372573.3,
+            "dollars": 59611.728
           },
           {
-            "price": 0.167,
-            "size": 19456.56,
-            "dollars": 3249.2455200000004
+            "price": 0.161,
+            "size": 4530.03,
+            "dollars": 729.33483
           },
           {
-            "price": 0.168,
-            "size": 213149.09,
-            "dollars": 35809.04712
+            "price": 0.162,
+            "size": 2000.0,
+            "dollars": 324.0
           },
           {
-            "price": 0.169,
-            "size": 2717.84,
-            "dollars": 459.31496000000004
+            "price": 0.163,
+            "size": 3417.4,
+            "dollars": 557.0362
           },
           {
-            "price": 0.17,
-            "size": 45424.37,
-            "dollars": 7722.142900000001
+            "price": 0.164,
+            "size": 100559.65,
+            "dollars": 16491.7826
           }
         ],
-        "top_bid_price": 0.165,
-        "top_bid_dollars": 7371.44925,
-        "top_ask_price": 0.166,
-        "top_ask_dollars": 1508.8404,
-        "mid": 0.1655,
+        "top_bid_price": 0.159,
+        "top_bid_dollars": 28823.20677,
+        "top_ask_price": 0.16,
+        "top_ask_dollars": 59611.728,
+        "mid": 0.1595,
         "spread_cents": 0.10000000000000009,
-        "spread_bps": 60.42296072507558,
-        "depth_5pct_bid_dollars": 18507.236820000002,
-        "depth_5pct_ask_dollars": 58796.66848
+        "spread_bps": 62.69592476489034,
+        "depth_5pct_bid_dollars": 144917.70051,
+        "depth_5pct_ask_dollars": 107143.13644
       },
       "rank": 20,
       "category": "Sports",
       "weekly_volume_usd": 285188.0554550003,
       "weekly_trades": 3233,
       "yes_price_7d_ago": 0.1735,
-      "yes_price_change_pp": -0.5999999999999978
+      "yes_price_change_pp": -1.3999999999999986
     },
     {
       "market_id": "1092482",
@@ -1637,7 +1637,7 @@
       "volume_total_num": 3133197.559704,
       "volume_24hr": null,
       "end_date_iso": "2026-05-14",
-      "fetched_at": "2026-06-02T00:51:41+00:00",
+      "fetched_at": "2026-06-05T00:58:55+00:00",
       "yes_book": {},
       "rank": 21,
       "category": "Macro",
@@ -1649,73 +1649,73 @@
     {
       "market_id": "1107307",
       "question": "US strike on Colombia by December 31?",
-      "yes_price": 0.175,
+      "yes_price": 0.185,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.175,
-        0.825
+        0.185,
+        0.815
       ],
       "yes_token_id": "74636610772409469817718475200152067076720965641263785464662938420699072982790",
       "end_date": "2026-01-31T00:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 1010022.587025999,
-      "volume_24hr": 6067.916179999998,
+      "volume_total_num": 1010834.0862469991,
+      "volume_24hr": 274.591127,
       "end_date_iso": "2026-01-31",
-      "fetched_at": "2026-06-02T00:51:42+00:00",
+      "fetched_at": "2026-06-05T00:58:56+00:00",
       "yes_book": {
-        "n_bid_levels": 16,
-        "n_ask_levels": 37,
+        "n_bid_levels": 17,
+        "n_ask_levels": 38,
         "top5_bids": [
           {
+            "price": 0.18,
+            "size": 31.14,
+            "dollars": 5.6052
+          },
+          {
             "price": 0.17,
-            "size": 3294.57,
-            "dollars": 560.0769
+            "size": 4879.83,
+            "dollars": 829.5711
           },
           {
             "price": 0.16,
-            "size": 2467.29,
-            "dollars": 394.7664
+            "size": 2973.29,
+            "dollars": 475.7264
           },
           {
             "price": 0.15,
-            "size": 3473.86,
-            "dollars": 521.079
+            "size": 3224.86,
+            "dollars": 483.729
           },
           {
             "price": 0.14,
-            "size": 3938.89,
-            "dollars": 551.4446
-          },
-          {
-            "price": 0.13,
-            "size": 6154.63,
-            "dollars": 800.1019
+            "size": 4042.0,
+            "dollars": 565.8800000000001
           }
         ],
         "top5_asks": [
           {
-            "price": 0.18,
-            "size": 184.33,
-            "dollars": 33.1794
-          },
-          {
             "price": 0.19,
-            "size": 465.99,
-            "dollars": 88.5381
+            "size": 104.71,
+            "dollars": 19.8949
           },
           {
             "price": 0.2,
-            "size": 264.55,
-            "dollars": 52.910000000000004
+            "size": 236.98,
+            "dollars": 47.396
           },
           {
             "price": 0.21,
-            "size": 116.08,
-            "dollars": 24.3768
+            "size": 174.07,
+            "dollars": 36.5547
+          },
+          {
+            "price": 0.22,
+            "size": 20.0,
+            "dollars": 4.4
           },
           {
             "price": 0.24,
@@ -1723,22 +1723,22 @@
             "dollars": 2.4
           }
         ],
-        "top_bid_price": 0.17,
-        "top_bid_dollars": 560.0769,
-        "top_ask_price": 0.18,
-        "top_ask_dollars": 33.1794,
-        "mid": 0.175,
-        "spread_cents": 0.9999999999999981,
-        "spread_bps": 571.4285714285704,
-        "depth_5pct_bid_dollars": 560.0769,
-        "depth_5pct_ask_dollars": 33.1794
+        "top_bid_price": 0.18,
+        "top_bid_dollars": 5.6052,
+        "top_ask_price": 0.19,
+        "top_ask_dollars": 19.8949,
+        "mid": 0.185,
+        "spread_cents": 1.0000000000000009,
+        "spread_bps": 540.5405405405411,
+        "depth_5pct_bid_dollars": 5.6052,
+        "depth_5pct_ask_dollars": 19.8949
       },
       "rank": 22,
       "category": "Geopolitics",
       "weekly_volume_usd": 268343.0181,
       "weekly_trades": 403,
       "yes_price_7d_ago": 0.205,
-      "yes_price_change_pp": -3.0
+      "yes_price_change_pp": -1.9999999999999991
     },
     {
       "market_id": "566187",
@@ -1759,7 +1759,7 @@
       "volume_total_num": 12340533.59949487,
       "volume_24hr": null,
       "end_date_iso": "2026-05-27",
-      "fetched_at": "2026-06-02T00:51:43+00:00",
+      "fetched_at": "2026-06-05T00:58:57+00:00",
       "yes_book": {},
       "rank": 23,
       "category": "Sports",
@@ -1787,7 +1787,7 @@
       "volume_total_num": 17929080.31429684,
       "volume_24hr": null,
       "end_date_iso": "2026-07-01",
-      "fetched_at": "2026-06-02T00:51:44+00:00",
+      "fetched_at": "2026-06-05T00:58:58+00:00",
       "yes_book": {},
       "rank": 24,
       "category": "Sports",
@@ -1799,96 +1799,96 @@
     {
       "market_id": "567621",
       "question": "Will China invade Taiwan by end of 2026?",
-      "yes_price": 0.0655,
+      "yes_price": 0.0625,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.0655,
-        0.9345
+        0.0625,
+        0.9375
       ],
       "yes_token_id": "94559586571241563470235664821564670251180951772614764383113614156422396181162",
       "end_date": "2026-12-31T00:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 31698349.501016706,
-      "volume_24hr": 166248.02473800085,
+      "volume_total_num": 32040716.117037844,
+      "volume_24hr": 101772.92030000009,
       "end_date_iso": "2026-12-31",
-      "fetched_at": "2026-06-02T00:51:45+00:00",
+      "fetched_at": "2026-06-05T00:58:59+00:00",
       "yes_book": {
-        "n_bid_levels": 58,
-        "n_ask_levels": 156,
+        "n_bid_levels": 56,
+        "n_ask_levels": 158,
         "top5_bids": [
           {
-            "price": 0.065,
-            "size": 36434.82,
-            "dollars": 2368.2633
-          },
-          {
-            "price": 0.064,
-            "size": 9113.22,
-            "dollars": 583.24608
-          },
-          {
-            "price": 0.063,
-            "size": 19290.99,
-            "dollars": 1215.33237
-          },
-          {
             "price": 0.062,
-            "size": 4223.09,
-            "dollars": 261.83158000000003
+            "size": 8605.84,
+            "dollars": 533.56208
           },
           {
             "price": 0.061,
-            "size": 13528.88,
-            "dollars": 825.26168
+            "size": 8182.27,
+            "dollars": 499.11847
+          },
+          {
+            "price": 0.06,
+            "size": 269554.19,
+            "dollars": 16173.2514
+          },
+          {
+            "price": 0.059,
+            "size": 26698.67,
+            "dollars": 1575.2215299999998
+          },
+          {
+            "price": 0.058,
+            "size": 1950.48,
+            "dollars": 113.12784
           }
         ],
         "top5_asks": [
           {
+            "price": 0.063,
+            "size": 17023.38,
+            "dollars": 1072.47294
+          },
+          {
+            "price": 0.064,
+            "size": 223858.33,
+            "dollars": 14326.93312
+          },
+          {
+            "price": 0.065,
+            "size": 9563.85,
+            "dollars": 621.65025
+          },
+          {
             "price": 0.066,
-            "size": 789.78,
-            "dollars": 52.12548
+            "size": 12488.11,
+            "dollars": 824.2152600000001
           },
           {
             "price": 0.067,
-            "size": 82640.21,
-            "dollars": 5536.894070000001
-          },
-          {
-            "price": 0.068,
-            "size": 236806.81,
-            "dollars": 16102.863080000001
-          },
-          {
-            "price": 0.069,
-            "size": 88192.1,
-            "dollars": 6085.254900000001
-          },
-          {
-            "price": 0.07,
-            "size": 88281.96,
-            "dollars": 6179.737200000001
+            "size": 14112.66,
+            "dollars": 945.54822
           }
         ],
-        "top_bid_price": 0.065,
-        "top_bid_dollars": 2368.2633,
-        "top_ask_price": 0.066,
-        "top_ask_dollars": 52.12548,
-        "mid": 0.0655,
+        "top_bid_price": 0.062,
+        "top_bid_dollars": 533.56208,
+        "top_ask_price": 0.063,
+        "top_ask_dollars": 1072.47294,
+        "mid": 0.0625,
         "spread_cents": 0.10000000000000009,
-        "spread_bps": 152.67175572519096,
-        "depth_5pct_bid_dollars": 4166.8417500000005,
-        "depth_5pct_ask_dollars": 21691.882630000004
+        "spread_bps": 160.00000000000014,
+        "depth_5pct_bid_dollars": 17205.93195,
+        "depth_5pct_ask_dollars": 16021.05631
       },
       "rank": 25,
       "category": "Geopolitics",
       "weekly_volume_usd": 237006.52851899943,
       "weekly_trades": 3510,
       "yes_price_7d_ago": 0.0745,
-      "yes_price_change_pp": -0.8999999999999995
+      "yes_price_change_pp": -1.1999999999999997
     },
     {
       "market_id": "842019",
@@ -1909,7 +1909,7 @@
       "volume_total_num": 4876393.435678006,
       "volume_24hr": null,
       "end_date_iso": "2026-05-16",
-      "fetched_at": "2026-06-02T00:51:46+00:00",
+      "fetched_at": "2026-06-05T00:59:00+00:00",
       "yes_book": {},
       "rank": 26,
       "category": "Other",
@@ -1921,96 +1921,96 @@
     {
       "market_id": "663583",
       "question": "Will the Iranian regime fall before 2027?",
-      "yes_price": 0.125,
+      "yes_price": 0.135,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.125,
-        0.875
+        0.135,
+        0.865
       ],
       "yes_token_id": "10991849228756847439673778874175365458450913336396982752046655649803657501964",
       "end_date": "2026-12-31T00:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 19205983.070916325,
-      "volume_24hr": 55128.877973999995,
+      "volume_total_num": 19326017.034050282,
+      "volume_24hr": 40363.62928000001,
       "end_date_iso": "2026-12-31",
-      "fetched_at": "2026-06-02T00:51:47+00:00",
+      "fetched_at": "2026-06-05T00:59:02+00:00",
       "yes_book": {
-        "n_bid_levels": 12,
+        "n_bid_levels": 13,
         "n_ask_levels": 78,
         "top5_bids": [
           {
+            "price": 0.13,
+            "size": 24556.47,
+            "dollars": 3192.3411
+          },
+          {
             "price": 0.12,
-            "size": 70073.44,
-            "dollars": 8408.8128
+            "size": 42493.96,
+            "dollars": 5099.2752
           },
           {
             "price": 0.11,
-            "size": 75721.74,
-            "dollars": 8329.3914
+            "size": 72994.82,
+            "dollars": 8029.430200000001
           },
           {
             "price": 0.1,
-            "size": 130937.74,
-            "dollars": 13093.774000000001
+            "size": 68343.37,
+            "dollars": 6834.3369999999995
           },
           {
             "price": 0.09,
-            "size": 49089.96,
-            "dollars": 4418.096399999999
-          },
-          {
-            "price": 0.08,
-            "size": 11673.72,
-            "dollars": 933.8976
+            "size": 50033.96,
+            "dollars": 4503.0563999999995
           }
         ],
         "top5_asks": [
           {
-            "price": 0.13,
-            "size": 7936.36,
-            "dollars": 1031.7268
-          },
-          {
             "price": 0.14,
-            "size": 6095.58,
-            "dollars": 853.3812
+            "size": 36604.19,
+            "dollars": 5124.5866000000005
           },
           {
             "price": 0.15,
-            "size": 10340.42,
-            "dollars": 1551.0629999999999
+            "size": 13108.03,
+            "dollars": 1966.2045
           },
           {
             "price": 0.16,
-            "size": 12196.9,
-            "dollars": 1951.504
+            "size": 51213.79,
+            "dollars": 8194.206400000001
           },
           {
             "price": 0.17,
-            "size": 5098.0,
-            "dollars": 866.6600000000001
+            "size": 3445.0,
+            "dollars": 585.6500000000001
+          },
+          {
+            "price": 0.18,
+            "size": 3734.12,
+            "dollars": 672.1415999999999
           }
         ],
-        "top_bid_price": 0.12,
-        "top_bid_dollars": 8408.8128,
-        "top_ask_price": 0.13,
-        "top_ask_dollars": 1031.7268,
-        "mid": 0.125,
+        "top_bid_price": 0.13,
+        "top_bid_dollars": 3192.3411,
+        "top_ask_price": 0.14,
+        "top_ask_dollars": 5124.5866000000005,
+        "mid": 0.135,
         "spread_cents": 1.0000000000000009,
-        "spread_bps": 800.0000000000007,
-        "depth_5pct_bid_dollars": 8408.8128,
-        "depth_5pct_ask_dollars": 1031.7268
+        "spread_bps": 740.7407407407414,
+        "depth_5pct_bid_dollars": 3192.3411,
+        "depth_5pct_ask_dollars": 5124.5866000000005
       },
       "rank": 27,
       "category": "Other",
       "weekly_volume_usd": 234581.32654499996,
       "weekly_trades": 782,
       "yes_price_7d_ago": 0.13,
-      "yes_price_change_pp": -0.5000000000000004
+      "yes_price_change_pp": 0.5000000000000004
     },
     {
       "market_id": "692258",
@@ -2029,9 +2029,9 @@
       "active": true,
       "closed": true,
       "volume_total_num": 8418661.007786024,
-      "volume_24hr": 2500928.8951879996,
+      "volume_24hr": null,
       "end_date_iso": "2026-07-01",
-      "fetched_at": "2026-06-02T00:51:48+00:00",
+      "fetched_at": "2026-06-05T00:59:03+00:00",
       "yes_book": {},
       "rank": 28,
       "category": "Crypto",
@@ -2043,96 +2043,96 @@
     {
       "market_id": "553858",
       "question": "Will the New York Knicks win the 2026 NBA Finals?",
-      "yes_price": 0.3575,
+      "yes_price": 0.5355,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.3575,
-        0.6425
+        0.5355,
+        0.4645
       ],
       "yes_token_id": "20257190540739490630509657713144742134547949967093643458458133445357169845406",
       "end_date": "2026-07-01T00:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 19468673.72458646,
-      "volume_24hr": 365163.6916789998,
+      "volume_total_num": 21584052.024457492,
+      "volume_24hr": 756453.4802329991,
       "end_date_iso": "2026-07-01",
-      "fetched_at": "2026-06-02T00:51:49+00:00",
+      "fetched_at": "2026-06-05T00:59:04+00:00",
       "yes_book": {
-        "n_bid_levels": 149,
-        "n_ask_levels": 110,
+        "n_bid_levels": 144,
+        "n_ask_levels": 84,
         "top5_bids": [
           {
-            "price": 0.357,
-            "size": 61342.92,
-            "dollars": 21899.42244
+            "price": 0.535,
+            "size": 5991.5,
+            "dollars": 3205.4525000000003
           },
           {
-            "price": 0.356,
-            "size": 28968.56,
-            "dollars": 10312.80736
+            "price": 0.534,
+            "size": 3130.1,
+            "dollars": 1671.4734
           },
           {
-            "price": 0.355,
-            "size": 23658.06,
-            "dollars": 8398.6113
+            "price": 0.533,
+            "size": 411.33,
+            "dollars": 219.23889
           },
           {
-            "price": 0.354,
-            "size": 15575.0,
-            "dollars": 5513.549999999999
+            "price": 0.532,
+            "size": 20000.0,
+            "dollars": 10640.0
           },
           {
-            "price": 0.353,
-            "size": 15575.0,
-            "dollars": 5497.974999999999
+            "price": 0.531,
+            "size": 20.0,
+            "dollars": 10.620000000000001
           }
         ],
         "top5_asks": [
           {
-            "price": 0.358,
-            "size": 44076.85,
-            "dollars": 15779.512299999999
+            "price": 0.536,
+            "size": 18136.2,
+            "dollars": 9721.003200000001
           },
           {
-            "price": 0.359,
-            "size": 75251.97,
-            "dollars": 27015.45723
+            "price": 0.537,
+            "size": 35.0,
+            "dollars": 18.795
           },
           {
-            "price": 0.36,
-            "size": 8554.12,
-            "dollars": 3079.4832
+            "price": 0.54,
+            "size": 1341.0,
+            "dollars": 724.1400000000001
           },
           {
-            "price": 0.361,
-            "size": 11188.09,
-            "dollars": 4038.90049
+            "price": 0.542,
+            "size": 2257.03,
+            "dollars": 1223.3102600000002
           },
           {
-            "price": 0.362,
-            "size": 18791.04,
-            "dollars": 6802.35648
+            "price": 0.543,
+            "size": 1425.0,
+            "dollars": 773.7750000000001
           }
         ],
-        "top_bid_price": 0.357,
-        "top_bid_dollars": 21899.42244,
-        "top_ask_price": 0.358,
-        "top_ask_dollars": 15779.512299999999,
-        "mid": 0.3575,
+        "top_bid_price": 0.535,
+        "top_bid_dollars": 3205.4525000000003,
+        "top_ask_price": 0.536,
+        "top_ask_dollars": 9721.003200000001,
+        "mid": 0.5355000000000001,
         "spread_cents": 0.10000000000000009,
-        "spread_bps": 27.972027972028,
-        "depth_5pct_bid_dollars": 85244.65213,
-        "depth_5pct_ask_dollars": 88487.39884
+        "spread_bps": 18.67413632119516,
+        "depth_5pct_bid_dollars": 25854.4648,
+        "depth_5pct_ask_dollars": 47580.692050000005
       },
       "rank": 29,
       "category": "Sports",
       "weekly_volume_usd": 221764.707823,
       "weekly_trades": 2791,
       "yes_price_7d_ago": 0.2525,
-      "yes_price_change_pp": 10.499999999999998
+      "yes_price_change_pp": 28.299999999999997
     },
     {
       "market_id": "842015",
@@ -2153,7 +2153,7 @@
       "volume_total_num": 6594936.095275031,
       "volume_24hr": null,
       "end_date_iso": "2026-05-16",
-      "fetched_at": "2026-06-02T00:51:50+00:00",
+      "fetched_at": "2026-06-05T00:59:05+00:00",
       "yes_book": {},
       "rank": 30,
       "category": "Other",

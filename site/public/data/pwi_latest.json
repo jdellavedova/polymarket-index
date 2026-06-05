@@ -24,6 +24,6 @@
   "n_weeks_history": 160,
   "first_date": "2023-02-27",
   "bot_exclusion_note": "Bot wallets are excluded (trades_per_day > 50 OR n_trades > 1000) so the index reflects human probability weighting only.",
-  "generated_at": "2026-06-02T00:51:19+00:00",
+  "generated_at": "2026-06-05T00:58:33+00:00",
   "source": "H:\\Research\\10. Prediction\\data\\blockchain\\paper4\\weekly_alpha_by_type.csv"
 }

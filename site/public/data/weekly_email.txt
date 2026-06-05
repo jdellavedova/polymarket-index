@@ -52,4 +52,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-06-02T00:51:52+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-06-05T00:59:07+00:00)
