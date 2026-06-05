@@ -26,7 +26,7 @@ from config import DATA_OUT, require_source
 def main() -> None:
     src = require_source("weekly_alpha_by_type")
     df = pd.read_csv(src)
-    df["date"] = pd.to_datetime(df["date"])
+    df["date"] = pd.to_datetime(df["date"], format="mixed").dt.normalize()
     df = drop_partial_weeks(df)
     df = df.sort_values(["date", "wallet_type"]).reset_index(drop=True)
 

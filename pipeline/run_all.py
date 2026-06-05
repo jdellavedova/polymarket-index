@@ -30,7 +30,10 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 # Fast: reads pre-computed CSVs from paper4 pipeline; no master-CSV scan. ~1 min.
+# refresh_paper4_sources runs first: CLOB resolution map refresh (incremental,
+# ~5 s for a normal week) + paper4 Prelec fits for any new weeks in the latest delta.
 FAST = [
+    "refresh_paper4_sources",
     "aggregate_pwi",
     "aggregate_calibration",
     "aggregate_execution",

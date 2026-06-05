@@ -3,27 +3,27 @@
   "short_name": "PWI",
   "definition": "Trade-count-weighted non-bot Prelec alpha, weekly",
   "interpretation": "alpha = 1 is rational pricing; alpha below 1 is the classical inverse-S weighting (tails over-weighted); alpha above 1 means tails under-weighted.",
-  "as_of": "2026-04-20",
-  "value": 0.7222836543873418,
-  "ma4w": 0.6259624891820924,
-  "ma13w": 0.7051813636779828,
-  "ma52w": 0.7950907041737285,
-  "z52w": -0.5603396653945738,
+  "as_of": "2026-05-25",
+  "value": 0.9579022805665438,
+  "ma4w": 0.7208752984299074,
+  "ma13w": 0.7100352639235801,
+  "ma52w": 0.7996161924527129,
+  "z52w": 1.204173274335117,
   "components": {
-    "weighted_mean_cal_error": 0.044786217875824416,
-    "weighted_longshot_fraction": 0.5040368433022515
+    "weighted_mean_cal_error": 0.018071015754888745,
+    "weighted_longshot_fraction": 0.2548483888844905
   },
-  "n_trades_nonbot_week": 17588,
+  "n_trades_nonbot_week": 1263100,
   "rolling": {
-    "mean_52w": 0.7950907041737284,
-    "sd_52w": 0.12993377817563223,
+    "mean_52w": 0.7996161924527126,
+    "sd_52w": 0.13144793318987089,
     "min_52w": 0.5337872617277855,
     "max_52w": 1.0338284697112667,
     "n_obs_52w": 52
   },
-  "n_weeks_history": 160,
+  "n_weeks_history": 161,
   "first_date": "2023-02-27",
   "bot_exclusion_note": "Bot wallets are excluded (trades_per_day > 50 OR n_trades > 1000) so the index reflects human probability weighting only.",
-  "generated_at": "2026-06-05T00:58:33+00:00",
+  "generated_at": "2026-06-05T17:19:42+00:00",
   "source": "H:\\Research\\10. Prediction\\data\\blockchain\\paper4\\weekly_alpha_by_type.csv"
 }

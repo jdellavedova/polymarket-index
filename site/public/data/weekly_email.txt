@@ -10,7 +10,7 @@ THIS WEEK BY THE NUMBERS
   Total trades            12.0M
   New participants        0
   Bot share of trades     66.2%
-  Non-bot Prelec alpha    0.722 (Kahneman-Tversky: 0.65)
+  Non-bot Prelec alpha    0.958 (Kahneman-Tversky: 0.65)
 
 ------------------------------------------------------------
 THE STORY
@@ -52,4 +52,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-06-05T00:59:07+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-06-05T17:20:18+00:00)
