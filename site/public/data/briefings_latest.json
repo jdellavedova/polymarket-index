@@ -1,16 +1,56 @@
 {
-  "as_of_week": "2026-W21",
-  "generated_at": "2026-06-05T22:28:48+00:00",
-  "lede": "Top 6 markets by USD volume from the week of 2026-W21, annotated with per-market microstructure from the DV-PMI weekly indices.",
+  "as_of_week": "2026-W25",
+  "generated_at": "2026-06-07T02:09:56+00:00",
+  "lede": "Top 6 markets by USD volume from the week of 2026-W25, annotated with per-market microstructure from the DV-PMI weekly indices.",
   "briefings": [
+    {
+      "rank": 1,
+      "category": "Politics",
+      "question": "Will Oh Se-hoon win the 2026 Seoul Mayoral Election",
+      "market_id": "678929",
+      "market_url": "https://polymarket.com/event/will-oh-se-hoon-win-the-2026-seoul-mayoral-election",
+      "volume_usd": 2739227.867739999,
+      "n_trades": 10347,
+      "annotations": [
+        {
+          "label": "Weekly volume",
+          "value": "$2.7M",
+          "tone": "flat"
+        },
+        {
+          "label": "Trades",
+          "value": "10,347",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "44% (vs 61% Polymarket-wide)",
+          "tone": "ok"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "5 of 6,292",
+          "tone": "alert"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "-3.55\u00a2 per share",
+          "tone": "flat"
+        }
+      ],
+      "depth_ladder": null,
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "research_link": "/research",
+      "research_label": "Research"
+    },
     {
       "rank": 3,
       "category": "Other",
       "question": "Will the Iranian regime fall by June 30?",
       "market_id": "958443",
       "market_url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30",
-      "volume_usd": 1066067.7576150005,
-      "n_trades": 2012,
+      "volume_usd": 2195974.3271349994,
+      "n_trades": 23214,
       "annotations": [
         {
           "label": "Implied probability",
@@ -19,12 +59,12 @@
         },
         {
           "label": "Weekly volume",
-          "value": "$1.1M",
+          "value": "$2.2M",
           "tone": "flat"
         },
         {
           "label": "Trades",
-          "value": "2,012",
+          "value": "23,214",
           "tone": "flat"
         },
         {
@@ -34,7 +74,7 @@
         },
         {
           "label": "Time to resolution",
-          "value": "25 days (2026-06-30)",
+          "value": "24 days (2026-06-30)",
           "tone": "flat"
         },
         {
@@ -54,17 +94,17 @@
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "79% (vs 66% Polymarket-wide)",
-          "tone": "flat"
+          "value": "46% (vs 61% Polymarket-wide)",
+          "tone": "ok"
         },
         {
           "label": "Flagged wallets active",
-          "value": "2 of 6,292",
-          "tone": "warn"
+          "value": "7 of 6,292",
+          "tone": "alert"
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.45\u00a2 per share",
+          "value": "+0.12\u00a2 per share",
           "tone": "flat"
         }
       ],
@@ -130,166 +170,151 @@
     },
     {
       "rank": 4,
-      "category": "Other",
-      "question": "Jeffrey Epstein foul play confirmed by December 31, 2026?",
-      "market_id": "1057349",
-      "market_url": "https://polymarket.com/event/jeffrey-epstein-foul-play-confirmed-by-december-31-2026",
-      "volume_usd": 1054532.9665759995,
-      "n_trades": 25472,
+      "category": "Sports",
+      "question": "Will the New York Knicks win the 2026 NBA Finals?",
+      "market_id": "553858",
+      "market_url": "https://polymarket.com/event/will-the-new-york-knicks-win-the-2026-nba-finals",
+      "volume_usd": 1747854.736499,
+      "n_trades": 12227,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "6% YES  \u25bc -1pp 7d",
+          "value": "52% YES  \u25b2 +27pp 7d",
           "tone": "flat"
         },
         {
           "label": "Weekly volume",
-          "value": "$1.1M",
+          "value": "$1.7M",
           "tone": "flat"
         },
         {
           "label": "Trades",
-          "value": "25,472",
+          "value": "12,227",
           "tone": "flat"
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$317",
+          "value": "$383K",
+          "tone": "flat"
+        },
+        {
+          "label": "Time to resolution",
+          "value": "25 days (2026-07-01)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.06 ($2) / Ask 0.07 ($1)",
+          "value": "Bid 0.52 ($12,685) / Ask 0.52 ($22,729)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.6\u00a2 (938 bps)",
-          "tone": "alert"
-        },
-        {
-          "label": "Depth within \u00b15% of mid",
-          "value": "$2 bid  /  $1 ask",
+          "value": "0.1\u00a2 (19 bps)",
           "tone": "flat"
         },
         {
-          "label": "Algorithmic share (Polymarket-wide)",
-          "value": "66%",
-          "tone": "warn"
+          "label": "Depth within \u00b15% of mid",
+          "value": "$81,444 bid  /  $93,107 ask",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "49% (vs 61% Polymarket-wide)",
+          "tone": "ok"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "13 of 6,292",
+          "tone": "alert"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "-0.35\u00a2 per share",
+          "tone": "flat"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.061,
-            "size": 28.3,
-            "dollars": 1.7263
+            "price": 0.523,
+            "size": 24253.89,
+            "dollars": 12684.78447
           },
           {
-            "price": 0.06,
-            "size": 3220.01,
-            "dollars": 193.2006
+            "price": 0.522,
+            "size": 80.21,
+            "dollars": 41.86962
           },
           {
-            "price": 0.055,
-            "size": 200.0,
-            "dollars": 11.0
+            "price": 0.52,
+            "size": 40.0,
+            "dollars": 20.8
           },
           {
-            "price": 0.051,
-            "size": 1222.68,
-            "dollars": 62.35668
+            "price": 0.519,
+            "size": 5.0,
+            "dollars": 2.595
           },
           {
-            "price": 0.05,
-            "size": 200.0,
-            "dollars": 10.0
+            "price": 0.516,
+            "size": 5.0,
+            "dollars": 2.58
           }
         ],
         "asks": [
           {
-            "price": 0.067,
-            "size": 13.5,
-            "dollars": 0.9045000000000001
+            "price": 0.524,
+            "size": 43375.61,
+            "dollars": 22728.81964
           },
           {
-            "price": 0.068,
-            "size": 880.85,
-            "dollars": 59.897800000000004
+            "price": 0.525,
+            "size": 6611.62,
+            "dollars": 3471.1005
           },
           {
-            "price": 0.069,
-            "size": 330.0,
-            "dollars": 22.770000000000003
+            "price": 0.526,
+            "size": 5533.9,
+            "dollars": 2910.8314
           },
           {
-            "price": 0.07,
-            "size": 680.24,
-            "dollars": 47.616800000000005
+            "price": 0.527,
+            "size": 1159.0,
+            "dollars": 610.793
           },
           {
-            "price": 0.074,
-            "size": 200.1,
-            "dollars": 14.8074
+            "price": 0.528,
+            "size": 1151.03,
+            "dollars": 607.74384
           }
         ]
       },
-      "news_angle": "A congressional push in May 2026 to release unredacted Epstein documents and formally reopen the investigation into his 2019 prison death drove a new surge of volume. At 7%, traders assign meaningful tail-risk probability to a formal DOJ or congressional declaration overturning the official suicide ruling, though no new forensic evidence has emerged and the official medical examiner's finding remains unchanged.",
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
       "research_link": "/research",
       "research_label": "Research"
     },
     {
-      "rank": 6,
-      "category": "Geopolitics",
-      "question": "Will the U.S. invade Iran before 2027?",
-      "market_id": "665374",
-      "market_url": "https://polymarket.com/event/will-the-us-invade-iran-before-2027",
-      "volume_usd": 766214.2085809998,
-      "n_trades": 4727,
+      "rank": 5,
+      "category": "Sports",
+      "question": "Will the San Antonio Spurs win the 2026 NBA Finals?",
+      "market_id": "553866",
+      "market_url": "https://polymarket.com/event/will-the-san-antonio-spurs-win-the-2026-nba-finals",
+      "volume_usd": 1716262.9876610008,
+      "n_trades": 15960,
       "annotations": [
         {
-          "label": "Implied probability",
-          "value": "16% YES  \u25bc -2pp 7d",
-          "tone": "flat"
-        },
-        {
           "label": "Weekly volume",
-          "value": "$766K",
+          "value": "$1.7M",
           "tone": "flat"
         },
         {
           "label": "Trades",
-          "value": "4,727",
-          "tone": "flat"
-        },
-        {
-          "label": "24h volume (Gamma)",
-          "value": "$128K",
-          "tone": "flat"
-        },
-        {
-          "label": "Time to resolution",
-          "value": "209 days (2026-12-31)",
-          "tone": "flat"
-        },
-        {
-          "label": "Top of book (YES)",
-          "value": "Bid 0.16 ($3,636) / Ask 0.17 ($7,005)",
-          "tone": "flat"
-        },
-        {
-          "label": "Spread",
-          "value": "1.0\u00a2 (606 bps)",
-          "tone": "alert"
-        },
-        {
-          "label": "Depth within \u00b15% of mid",
-          "value": "$3,636 bid  /  $7,005 ask",
+          "value": "15,960",
           "tone": "flat"
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "69% (in line with the 66% Polymarket-wide baseline)",
+          "value": "52% (vs 61% Polymarket-wide)",
           "tone": "ok"
         },
         {
@@ -299,247 +324,77 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+1.97\u00a2 per share",
-          "tone": "alert"
+          "value": "-0.89\u00a2 per share",
+          "tone": "flat"
         }
       ],
-      "depth_ladder": {
-        "bids": [
-          {
-            "price": 0.16,
-            "size": 22728.11,
-            "dollars": 3636.4976
-          },
-          {
-            "price": 0.15,
-            "size": 63910.45,
-            "dollars": 9586.5675
-          },
-          {
-            "price": 0.14,
-            "size": 122696.96,
-            "dollars": 17177.5744
-          },
-          {
-            "price": 0.13,
-            "size": 11929.0,
-            "dollars": 1550.77
-          },
-          {
-            "price": 0.12,
-            "size": 7611.43,
-            "dollars": 913.3716000000001
-          }
-        ],
-        "asks": [
-          {
-            "price": 0.17,
-            "size": 41204.84,
-            "dollars": 7004.8228
-          },
-          {
-            "price": 0.18,
-            "size": 52669.93,
-            "dollars": 9480.5874
-          },
-          {
-            "price": 0.19,
-            "size": 31720.14,
-            "dollars": 6026.8266
-          },
-          {
-            "price": 0.2,
-            "size": 17332.0,
-            "dollars": 3466.4
-          },
-          {
-            "price": 0.21,
-            "size": 948.72,
-            "dollars": 199.2312
-          }
-        ]
-      },
-      "news_angle": "Negotiators reported being closest to a deal since the war began, with US and Iranian officials circulating a one-page MOU that would declare an end to hostilities and open a 30-day window for nuclear and Strait of Hormuz talks. The invasion probability fell 9pp on the week as traders priced in diplomatic momentum.",
+      "depth_ladder": null,
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "research_link": "/research",
+      "research_label": "Research"
+    },
+    {
+      "rank": 6,
+      "category": "Politics",
+      "question": "Will Spencer Pratt win the 2026 Los Angeles mayoral election?",
+      "market_id": "629035",
+      "market_url": "https://polymarket.com/event/will-spencer-pratt-win-the-2026-los-angeles-mayoral-election",
+      "volume_usd": 1173085.8966580008,
+      "n_trades": 5238,
+      "annotations": [
+        {
+          "label": "Weekly volume",
+          "value": "$1.2M",
+          "tone": "flat"
+        },
+        {
+          "label": "Trades",
+          "value": "5,238",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "57% (vs 61% Polymarket-wide)",
+          "tone": "ok"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "6 of 6,292",
+          "tone": "alert"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "-2.01\u00a2 per share",
+          "tone": "flat"
+        }
+      ],
+      "depth_ladder": null,
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
       "research_link": "/research",
       "research_label": "Research"
     },
     {
       "rank": 7,
-      "category": "Sports",
-      "question": "Will France win the 2026 FIFA World Cup?",
-      "market_id": "558936",
-      "market_url": "https://polymarket.com/event/will-france-win-the-2026-fifa-world-cup",
-      "volume_usd": 643346.6084110006,
-      "n_trades": 5919,
+      "category": "Politics",
+      "question": "Will Chong Won-oh win the 2026 Seoul Mayoral Election",
+      "market_id": "678937",
+      "market_url": "https://polymarket.com/event/will-chong-won-oh-win-the-2026-seoul-mayoral-election",
+      "volume_usd": 1100164.879586999,
+      "n_trades": 8555,
       "annotations": [
         {
-          "label": "Implied probability",
-          "value": "16% YES  \u25bc -2pp 7d",
-          "tone": "flat"
-        },
-        {
           "label": "Weekly volume",
-          "value": "$643K",
+          "value": "$1.1M",
           "tone": "flat"
         },
         {
           "label": "Trades",
-          "value": "5,919",
-          "tone": "flat"
-        },
-        {
-          "label": "24h volume (Gamma)",
-          "value": "$761K",
-          "tone": "flat"
-        },
-        {
-          "label": "Time to resolution",
-          "value": "45 days (2026-07-20)",
-          "tone": "flat"
-        },
-        {
-          "label": "Top of book (YES)",
-          "value": "Bid 0.16 ($9,830) / Ask 0.16 ($22,013)",
-          "tone": "flat"
-        },
-        {
-          "label": "Spread",
-          "value": "0.1\u00a2 (63 bps)",
-          "tone": "flat"
-        },
-        {
-          "label": "Depth within \u00b15% of mid",
-          "value": "$16,011 bid  /  $41,162 ask",
+          "value": "8,555",
           "tone": "flat"
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "43% (vs 66% Polymarket-wide)",
-          "tone": "ok"
-        },
-        {
-          "label": "Flagged wallets active",
-          "value": "0 of 6,292",
-          "tone": "ok"
-        },
-        {
-          "label": "Execution gap (retail vs bots)",
-          "value": "-0.02\u00a2 per share",
-          "tone": "flat"
-        }
-      ],
-      "depth_ladder": {
-        "bids": [
-          {
-            "price": 0.159,
-            "size": 61822.04,
-            "dollars": 9829.70436
-          },
-          {
-            "price": 0.158,
-            "size": 5907.66,
-            "dollars": 933.41028
-          },
-          {
-            "price": 0.157,
-            "size": 1507.0,
-            "dollars": 236.599
-          },
-          {
-            "price": 0.156,
-            "size": 12357.0,
-            "dollars": 1927.692
-          },
-          {
-            "price": 0.155,
-            "size": 1126.92,
-            "dollars": 174.67260000000002
-          }
-        ],
-        "asks": [
-          {
-            "price": 0.16,
-            "size": 137579.16,
-            "dollars": 22012.6656
-          },
-          {
-            "price": 0.161,
-            "size": 2127.9,
-            "dollars": 342.5919
-          },
-          {
-            "price": 0.162,
-            "size": 2320.73,
-            "dollars": 375.95826
-          },
-          {
-            "price": 0.163,
-            "size": 221.99,
-            "dollars": 36.18437
-          },
-          {
-            "price": 0.164,
-            "size": 342.21,
-            "dollars": 56.12244
-          }
-        ]
-      },
-      "news_angle": "France World Cup (18%, stable): The 2026 FIFA World Cup kicks off in North America in June with France the tournament favorite at 18%, a sliver ahead of Spain (17%). The tight spread reflects a genuinely open field; Mbappe squad depth and recent form keep France atop a market with over \\.2 billion in total volume and six weeks until the opening match.",
-      "research_link": "/research",
-      "research_label": "Research"
-    },
-    {
-      "rank": 8,
-      "category": "Macro",
-      "question": "Will there be no change in Fed interest rates after the June 2026 meeting?",
-      "market_id": "906974",
-      "market_url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-june-2026-meeting",
-      "volume_usd": 629441.569476,
-      "n_trades": 6593,
-      "annotations": [
-        {
-          "label": "Implied probability",
-          "value": "99% YES  \u25b2 +1pp 7d",
-          "tone": "flat"
-        },
-        {
-          "label": "Weekly volume",
-          "value": "$629K",
-          "tone": "flat"
-        },
-        {
-          "label": "Trades",
-          "value": "6,593",
-          "tone": "flat"
-        },
-        {
-          "label": "24h volume (Gamma)",
-          "value": "$438K",
-          "tone": "flat"
-        },
-        {
-          "label": "Time to resolution",
-          "value": "12 days (2026-06-17)",
-          "tone": "flat"
-        },
-        {
-          "label": "Top of book (YES)",
-          "value": "Bid 0.99 ($222,932) / Ask 0.99 ($107,839)",
-          "tone": "flat"
-        },
-        {
-          "label": "Spread",
-          "value": "0.1\u00a2 (10 bps)",
-          "tone": "flat"
-        },
-        {
-          "label": "Depth within \u00b15% of mid",
-          "value": "$1,354,198 bid  /  $6,267,167 ask",
-          "tone": "flat"
-        },
-        {
-          "label": "Algorithmic share (this market)",
-          "value": "44% (vs 66% Polymarket-wide)",
+          "value": "52% (vs 61% Polymarket-wide)",
           "tone": "ok"
         },
         {
@@ -549,190 +404,20 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+0.38\u00a2 per share",
-          "tone": "warn"
-        }
-      ],
-      "depth_ladder": {
-        "bids": [
-          {
-            "price": 0.986,
-            "size": 226097.34,
-            "dollars": 222931.97724
-          },
-          {
-            "price": 0.985,
-            "size": 222385.12,
-            "dollars": 219049.3432
-          },
-          {
-            "price": 0.984,
-            "size": 185881.0,
-            "dollars": 182906.904
-          },
-          {
-            "price": 0.983,
-            "size": 315977.47,
-            "dollars": 310605.85300999996
-          },
-          {
-            "price": 0.982,
-            "size": 160900.0,
-            "dollars": 158003.8
-          }
-        ],
-        "asks": [
-          {
-            "price": 0.987,
-            "size": 109259.73,
-            "dollars": 107839.35351
-          },
-          {
-            "price": 0.988,
-            "size": 61229.09,
-            "dollars": 60494.340919999995
-          },
-          {
-            "price": 0.989,
-            "size": 32582.35,
-            "dollars": 32223.94415
-          },
-          {
-            "price": 0.99,
-            "size": 51596.24,
-            "dollars": 51080.277599999994
-          },
-          {
-            "price": 0.991,
-            "size": 62705.03,
-            "dollars": 62140.68473
-          }
-        ]
-      },
-      "news_angle": "The June FOMC meeting is fully priced as a hold at 98% YES; Fed officials' recent guidance and sticky services inflation leave no credible case for a near-term cut. Volume here is largely arbitrage flow locking in the near-certain outcome. The live debate has shifted to September, where cut probability sits around 65-70% on longer-dated contracts.",
-      "research_link": "/research",
-      "research_label": "Research"
-    },
-    {
-      "rank": 9,
-      "category": "Politics",
-      "question": "Lai Ching-te impeached by June 30?",
-      "market_id": "1066556",
-      "market_url": "https://polymarket.com/event/lai-ching-te-impeached-by-june-30",
-      "volume_usd": 583154.472183,
-      "n_trades": 141,
-      "annotations": [
-        {
-          "label": "Implied probability",
-          "value": "1% YES  \u25bc -1pp 7d",
-          "tone": "flat"
-        },
-        {
-          "label": "Weekly volume",
-          "value": "$583K",
-          "tone": "flat"
-        },
-        {
-          "label": "Trades",
-          "value": "141",
-          "tone": "flat"
-        },
-        {
-          "label": "24h volume (Gamma)",
-          "value": "$69",
-          "tone": "flat"
-        },
-        {
-          "label": "Time to resolution",
-          "value": "25 days (2026-06-30)",
-          "tone": "flat"
-        },
-        {
-          "label": "Top of book (YES)",
-          "value": "Bid 0.01 ($0) / Ask 0.01 ($1)",
-          "tone": "flat"
-        },
-        {
-          "label": "Spread",
-          "value": "0.6\u00a2 (6000 bps)",
+          "value": "+3.48\u00a2 per share",
           "tone": "alert"
-        },
-        {
-          "label": "Depth within \u00b15% of mid",
-          "value": "$0 bid  /  $0 ask",
-          "tone": "flat"
-        },
-        {
-          "label": "Algorithmic share (Polymarket-wide)",
-          "value": "66%",
-          "tone": "warn"
         }
       ],
-      "depth_ladder": {
-        "bids": [
-          {
-            "price": 0.007,
-            "size": 11.9,
-            "dollars": 0.0833
-          },
-          {
-            "price": 0.006,
-            "size": 95.36,
-            "dollars": 0.57216
-          },
-          {
-            "price": 0.005,
-            "size": 213.58,
-            "dollars": 1.0679
-          },
-          {
-            "price": 0.004,
-            "size": 1051.92,
-            "dollars": 4.207680000000001
-          },
-          {
-            "price": 0.003,
-            "size": 2333.0,
-            "dollars": 6.9990000000000006
-          }
-        ],
-        "asks": [
-          {
-            "price": 0.013,
-            "size": 67.75,
-            "dollars": 0.8807499999999999
-          },
-          {
-            "price": 0.016,
-            "size": 5.99,
-            "dollars": 0.09584000000000001
-          },
-          {
-            "price": 0.017,
-            "size": 179.75,
-            "dollars": 3.05575
-          },
-          {
-            "price": 0.018,
-            "size": 334.25,
-            "dollars": 6.0165
-          },
-          {
-            "price": 0.021,
-            "size": 52.0,
-            "dollars": 1.092
-          }
-        ]
-      },
-      "news_angle": "Taiwan's opposition-controlled Legislative Yuan advanced impeachment proceedings against President Lai Ching-te in May, citing constitutional overreach in budget vetoes \u2014 driving a spike in trading volume. At 2% with fewer than 40 days to the June 30 deadline, markets price this as a tail risk: the DPP retains enough allied votes to block the two-thirds supermajority required for a successful impeachment in the current session.",
+      "depth_ladder": null,
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
       "research_link": "/research",
       "research_label": "Research"
     }
   ],
   "global_context": {
-    "polymarket_wide_bot_share": 0.6616911190477625,
-    "polymarket_wide_volume_usd": 463125825.25939864,
-    "polymarket_wide_trades": 11954664,
+    "polymarket_wide_bot_share": 0.6056185341609348,
+    "polymarket_wide_volume_usd": 644559824.1639574,
+    "polymarket_wide_trades": 20559010,
     "calibration_alpha": 0.6639191266094694,
     "calibration_r2": 0.9867800262365879
   },

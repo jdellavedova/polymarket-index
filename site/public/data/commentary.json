@@ -1,6 +1,15 @@
 {
   "notes": [
     {
+      "date": "2026-06-15",
+      "tag": "POLITICS",
+      "title": "Week of 2026-06-15: Will Oh Se-hoon win the 2026 Seoul Mayoral Election",
+      "body": "Polymarket traders moved $645 million this week, above the 52-week trend, on 20.6 million individual trades. Traders moved $645 million through Polymarket in the week of 2026-06-15, across 20.6 million individual trades. Algorithmic wallets accounted for 61% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 39%. The most-traded market was \"Will...",
+      "href": "/briefings",
+      "href_label": "See this week's briefings",
+      "auto_generated": true
+    },
+    {
       "date": "2026-05-22",
       "tag": "MARKETS",
       "title": "Week of 2026-05-22: Russia x Ukraine ceasefire by June 30, 2026?",
@@ -60,5 +69,5 @@
     }
   ],
   "notes_url": "/notes",
-  "generated_at": "2026-06-05T22:28:48+00:00"
+  "generated_at": "2026-06-07T02:09:56+00:00"
 }

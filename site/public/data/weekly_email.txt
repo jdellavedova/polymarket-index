@@ -1,43 +1,44 @@
-DV-PMI WEEKLY DIGEST / Week of 2026-05-22
+DV-PMI WEEKLY DIGEST / Week of 2026-06-15
 ============================================================
 
-Polymarket traders moved $463 million this week across 12.0 million individual trades.
+Polymarket traders moved $645 million this week, above the 52-week trend, on 20.6 million individual trades.
 
 ------------------------------------------------------------
 THIS WEEK BY THE NUMBERS
 ------------------------------------------------------------
-  Total USD volume        $463M
-  Total trades            12.0M
+  Total USD volume        $645M
+  Total trades            20.6M
   New participants        0
-  Bot share of trades     66.2%
+  Bot share of trades     60.6%
   Non-bot Prelec alpha    1.017 (Kahneman-Tversky: 0.65)
 
 ------------------------------------------------------------
 THE STORY
 ------------------------------------------------------------
-Traders moved $463 million through Polymarket in the week of 2026-05-22, across 12.0 million individual trades. Algorithmic wallets accounted for 66% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 34%.
+Traders moved $645 million through Polymarket in the week of 2026-06-15, across 20.6 million individual trades. Algorithmic wallets accounted for 61% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 39%.
 
-The most-traded market was "Russia x Ukraine ceasefire by June 30, 2026?", pulling in $49 million of volume.
+The most-traded market was "Will Oh Se-hoon win the 2026 Seoul Mayoral Election?", pulling in $3 million of volume.
 
-The usual pattern held: algorithmic traders made $80K (+69 bps on volume) while retail traders lost $83K (-432 bps).
+Both sides made money this week. Bots collected $6 million (+98 bps); retail collected $88K (+10 bps).
 
 ------------------------------------------------------------
 MOST-TRADED MARKETS THIS WEEK
 ------------------------------------------------------------
-  1. $49M  Russia x Ukraine ceasefire by June 30, 2026?
-  2. $1M  Russia x Ukraine ceasefire by end of 2026?
-  3. $1M  Will the Iranian regime fall by June 30?
-  4. $1M  Jeffrey Epstein foul play confirmed by December 31, 2026?
-  5. $967K  Will the Los Angeles Lakers win the NBA Western Conference Finals?
+  1. $3M  Will Oh Se-hoon win the 2026 Seoul Mayoral Election
+  2. $3M  MicroStrategy sells any Bitcoin by June 30, 2026?
+  3. $2M  Will the Iranian regime fall by June 30?
+  4. $2M  Will the New York Knicks win the 2026 NBA Finals?
+  5. $2M  Will the San Antonio Spurs win the 2026 NBA Finals?
 
 ------------------------------------------------------------
 WHO MADE MONEY (resolved trades only)
 ------------------------------------------------------------
-  Active Retail         -$83K   (-432 bps on volume)
-  Bot                    $80K   (+69 bps on volume)
-  Casual                 -$3K   (-212 bps on volume)
-  One-Shot               -$1K   (-462 bps on volume)
-  Sophisticated           $7K   (+35 bps on volume)
+  Active Retail          $88K   (+10 bps on volume)
+  Bot                     $6M   (+98 bps on volume)
+  Casual                -$59K   (-76 bps on volume)
+  One-Shot              -$54K   (-214 bps on volume)
+  Sophisticated        -$147K   (-59 bps on volume)
+  unclassified           -$6M   (-252 bps on volume)
 
 ------------------------------------------------------------
 INSIDER-TRADING FLAG COUNT (to date)
@@ -52,4 +53,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-06-05T22:28:49+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-06-07T02:09:57+00:00)
