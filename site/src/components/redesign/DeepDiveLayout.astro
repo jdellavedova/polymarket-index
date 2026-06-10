@@ -44,11 +44,15 @@ export interface Props {
 const { title, description, eyebrow, lede, asOf, citeKey, citeTitle, citePath } = Astro.props;
 const year = new Date().getFullYear();
 const desc = description ?? lede;
+const crumbs = [
+  { name: "Home", path: "/" },
+  ...(citePath.startsWith("surveillance/")
+    ? [{ name: "Surveillance", path: "/surveillance" }]
+    : []),
+  { name: citeTitle, path: `/${citePath}` },
+];
 const deepDiveJsonLd = graph(
-  breadcrumbs([
-    { name: "Home", path: "/" },
-    { name: citeTitle, path: `/${citePath}` },
-  ]),
+  breadcrumbs(crumbs),
   dataset({
     name: citeTitle,
     description: desc,
@@ -58,6 +62,13 @@ const deepDiveJsonLd = graph(
 ---
 <Base title={title} description={desc} ogType="article" wide={true}>
   <JsonLd data={deepDiveJsonLd} />
+  <nav class="crumbs" aria-label="Breadcrumb">
+    {crumbs.map((c, i) => (
+      i < crumbs.length - 1
+        ? <><a href={c.path}>{c.name}</a><span class="crumbs-sep" aria-hidden="true">›</span></>
+        : <span aria-current="page">{c.name}</span>
+    ))}
+  </nav>
   <section class="dd-hero">
     <div class="dd-hero-text">
       <p class="dd-eyebrow">{eyebrow}</p>

@@ -43,6 +43,26 @@ const {
   if (smoothField) {
     marks.push(Plot.lineY(data, { x: xField, y: smoothField, stroke: cPrimary, strokeWidth: 2.2 }));
   }
+  // Hover tooltip: nearest week on the x axis, weekly + smoothed values.
+  const tipField = smoothField || yField;
+  const card = css.getPropertyValue("--card").trim() || "#11243d";
+  marks.push(
+    Plot.ruleX(data, Plot.pointerX({ x: xField, stroke: cText, strokeOpacity: 0.25 })),
+    Plot.tip(data, Plot.pointerX({
+      x: xField,
+      y: tipField,
+      fill: card,
+      stroke: cGrid,
+      fontSize: 12,
+      title: (d) => {
+        const date = d[xField] instanceof Date ? d[xField].toISOString().slice(0, 10) : d[xField];
+        const lines = [`week of ${date}`];
+        if (d[yField] != null) lines.push(`weekly: ${Number(d[yField]).toFixed(3)}`);
+        if (smoothField && d[smoothField] != null) lines.push(`13w MA: ${Number(d[smoothField]).toFixed(3)}`);
+        return lines.join("\n");
+      },
+    })),
+  );
   const el = document.getElementById(containerId);
   el.replaceChildren(
     Plot.plot({

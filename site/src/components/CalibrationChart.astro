@@ -56,6 +56,18 @@ const {
           stroke: cPrimary,
           strokeOpacity: 0.4,
         }),
+        Plot.tip(data.bins, Plot.pointer({
+          x: "price_bin_center",
+          y: "realized_win_rate",
+          fill: css.getPropertyValue("--card").trim() || "#11243d",
+          stroke: cGrid,
+          fontSize: 12,
+          title: (d) => [
+            `price ${(d.price_bin_center * 100).toFixed(0)}¢`,
+            `realized win rate ${(d.realized_win_rate * 100).toFixed(1)}%`,
+            `${(d.n_trades ?? 0).toLocaleString()} trades`,
+          ].join("\n"),
+        })),
       ],
     })
   );

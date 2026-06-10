@@ -3187,3 +3187,18 @@ a.rs-card:hover {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Breadcrumbs on deep-dive pages */
+.crumbs {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+.crumbs a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.crumbs a:hover { color: var(--founders); }
+.crumbs-sep { margin: 0 7px; opacity: 0.6; }
+.crumbs [aria-current="page"] { color: var(--text); }
