@@ -28,6 +28,8 @@
  *   </DeepDiveLayout>
  */
 import Base from "../../layouts/Base.astro";
+import JsonLd from "../JsonLd.astro";
+import { breadcrumbs, dataset, graph } from "../../lib/schema";
 
 export interface Props {
   title: string;
@@ -42,8 +44,20 @@ export interface Props {
 const { title, description, eyebrow, lede, asOf, citeKey, citeTitle, citePath } = Astro.props;
 const year = new Date().getFullYear();
 const desc = description ?? lede;
+const deepDiveJsonLd = graph(
+  breadcrumbs([
+    { name: "Home", path: "/" },
+    { name: citeTitle, path: `/${citePath}` },
+  ]),
+  dataset({
+    name: citeTitle,
+    description: desc,
+    path: `/${citePath}`,
+  }),
+);
 ---
-<Base title={title} description={desc} wide={true}>
+<Base title={title} description={desc} ogType="article" wide={true}>
+  <JsonLd data={deepDiveJsonLd} />
   <section class="dd-hero">
     <div class="dd-hero-text">
       <p class="dd-eyebrow">{eyebrow}</p>

@@ -1,16 +1,37 @@
 ---
 import "../styles/main.css";
+import { ViewTransitions } from "astro:transitions";
+import JsonLd from "../components/JsonLd.astro";
+import { WEBSITE } from "../lib/schema";
+
+const NAV = [
+  { href: "/", label: "Indices" },
+  { href: "/briefings", label: "Briefings" },
+  { href: "/surveillance", label: "Surveillance" },
+  { href: "/research", label: "Research" },
+  { href: "/methodology", label: "Methodology" },
+  { href: "/data", label: "Data" },
+  { href: "/press", label: "Press" },
+  { href: "/expert-witness", label: "Consulting" },
+  { href: "/about", label: "About" },
+];
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+function isCurrent(href: string): boolean {
+  return href === "/" ? currentPath === "/" : currentPath.startsWith(href);
+}
 
 export interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  ogType?: string;
   wide?: boolean;
 }
 const {
   title,
   description,
   ogImage = "/og.png",
+  ogType = "website",
   wide = false,
 } = Astro.props;
 const year = new Date().getFullYear();
@@ -29,15 +50,29 @@ const desc = description ?? "Weekly behavioral and microstructure indices from 6
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={desc} />
+  <meta name="author" content="Joshua Della Vedova" />
+  <meta name="theme-color" content="#0a1420" />
   <title>{title}</title>
   <link rel="canonical" href={canonical} />
+
+  <!-- Fonts (moved from a CSS @import to cut one serial round-trip) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Sofia+Sans:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
 
   <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={desc} />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content={ogType} />
   <meta property="og:url" content={canonical} />
   <meta property="og:image" content={fullOgUrl} />
+  {ogImage === "/og.png" && (
+    <>
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Della Vedova Prediction Market Indices dashboard summary" />
+    </>
+  )}
   <meta property="og:site_name" content="Della Vedova Prediction Market Indices" />
 
   <!-- Twitter -->
@@ -48,30 +83,28 @@ const desc = description ?? "Weekly behavioral and microstructure indices from 6
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+  <JsonLd data={WEBSITE} />
+  <ViewTransitions />
+
   <!-- Cloudflare Web Analytics. Replace CF_BEACON_TOKEN with the token from
        Cloudflare dashboard -> Web Analytics -> Add a site -> jdellavedova.com.
        Free, cookieless, privacy-friendly; gives per-page views and referrers. -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6e095a5b51a64c9ba2926b31262432d3"}'></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-head">
     <div class="inner">
       <a class="brand" href="/">Joshua Della Vedova</a>
-      <nav>
-        <a href="/">Indices</a>
-        <a href="/briefings">Briefings</a>
-        <a href="/surveillance">Surveillance</a>
-        <a href="/research">Research</a>
-        <a href="/methodology">Methodology</a>
-        <a href="/data">Data</a>
-        <a href="/press">Press</a>
-        <a href="/expert-witness">Consulting</a>
-        <a href="/about">About</a>
+      <nav aria-label="Primary">
+        {NAV.map((item) => (
+          <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>{item.label}</a>
+        ))}
       </nav>
     </div>
   </header>
 
-  <main class={wide ? "container container-wide" : "container"}>
+  <main id="main" class={wide ? "container container-wide" : "container"}>
     <slot />
   </main>
 
@@ -88,5 +121,21 @@ const desc = description ?? "Weekly behavioral and microstructure indices from 6
       security, or derivative. Past patterns do not predict future outcomes.
     </div>
   </footer>
+
+  <!-- Scroll-reveal: the hidden state is applied by JS only, so content is
+       always visible for no-JS users, crawlers, and reduced-motion users. -->
+  <script is:inline data-astro-rerun>
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const els = document.querySelectorAll(".re-card,.ds-card,.rs-card,.pk-card,.briefing,.stat-item,.pr-quote-card");
+      const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); }
+      }), { rootMargin: "0px 0px -8% 0px" });
+      els.forEach((el) => {
+        if (el.getBoundingClientRect().top < innerHeight) return; // skip above-the-fold
+        el.classList.add("will-reveal");
+        io.observe(el);
+      });
+    }
+  </script>
 </body>
 </html>

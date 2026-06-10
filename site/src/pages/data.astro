@@ -2,6 +2,8 @@
 import Base from "../layouts/Base.astro";
 import DatasetCard from "../components/redesign/DatasetCard.astro";
 import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
+import JsonLd from "../components/JsonLd.astro";
+import { dataset, graph, PERSON_REF } from "../lib/schema";
 
 import botShare from "../../public/data/bot_share_timeseries.json";
 import pwi from "../../public/data/pwi_timeseries.json";
@@ -31,11 +33,158 @@ function fmtRows(n: number): string {
   if (n >= 1e3) return (n / 1e3).toFixed(0) + "K";
   return n.toString();
 }
+
+// Card definitions. JSON-LD Dataset entities below are derived from these same
+// arrays, so the cards and the structured data cannot drift apart.
+const historyDatasets = [
+  {
+    label: "Algorithmic share",
+    title: "bot_share_history.csv",
+    meta: `${botSpark.length} weeks · weekly + 13/52w MAs · z-score`,
+    description: "Share of weekly Polymarket counterparty events (maker + taker) attributed to algorithmic wallets.",
+    csvHref: "/data/bot_share_history.csv",
+    jsonHref: "/data/bot_share_latest.json",
+    pageHref: "/bot-share",
+    sparklineData: botSpark,
+  },
+  {
+    label: "Probability weighting",
+    title: "pwi_history.csv",
+    meta: `${pwiSpark.length} weeks · trade-weighted non-bot Prelec α`,
+    description: "Weekly Prelec α from the calibration curve. α = 1 is rational pricing; α < 1 is the classical inverse-S weighting.",
+    csvHref: "/data/pwi_history.csv",
+    jsonHref: "/data/pwi_latest.json",
+    pageHref: "/pwi",
+    sparklineData: pwiSpark,
+  },
+  {
+    label: "Execution edge",
+    title: "execution_history.csv",
+    meta: `${execSpark.length} weeks · alpha gap (bot − retail)`,
+    description: "Bot-minus-retail Prelec α gap. Positive means bots weight tails more heavily — the behavioral signature of execution-quality divergence.",
+    csvHref: "/data/execution_history.csv",
+    jsonHref: "/data/execution_latest.json",
+    pageHref: "/execution",
+    sparklineData: execSpark,
+  },
+  {
+    label: "Market efficiency",
+    title: "efficiency_history.csv",
+    meta: `${effSpark.length} weeks · R² of active-retail Prelec fit`,
+    description: "How cleanly the Prelec model explains each week's calibration gap. Higher = stable behavioral signature; lower = idiosyncratic shocks.",
+    csvHref: "/data/efficiency_history.csv",
+    jsonHref: "/data/efficiency_latest.json",
+    pageHref: "/efficiency",
+    sparklineData: effSpark,
+  },
+  {
+    label: "Longshot pricing gap",
+    title: "price_gap_history.csv",
+    meta: `${pgSpark.length} weeks · realized minus 5%`,
+    description: "Realized win rate of trades at prices < 10% minus the band midpoint. Positive = longshots underpriced.",
+    csvHref: "/data/price_gap_history.csv",
+    jsonHref: "/data/price_gap_latest.json",
+    pageHref: "/price-gap",
+    sparklineData: pgSpark,
+  },
+  {
+    label: "Cumulative P&L",
+    title: "cumulative_pnl_history.csv",
+    meta: `${cumBotSpark.length} weeks · running sum by wallet type`,
+    description: `Cumulative resolved P&L per wallet type since 2022. Bots end at +$${(cumulative.endpoints.bot/1e6).toFixed(0)}M; active retail at −$${Math.abs(cumulative.endpoints.active_retail/1e6).toFixed(0)}M.`,
+    csvHref: "/data/cumulative_pnl_history.csv",
+    jsonHref: "/data/cumulative_pnl_history.json",
+    pageHref: "/research",
+    sparklineData: cumBotSpark,
+  },
+];
+
+const snapshotDatasets = [
+  {
+    label: "Calibration curve",
+    title: "calibration_snapshot.csv",
+    meta: `${calibration.bins?.length ?? 20} bins · pooled non-bot trades`,
+    description: `20 price bins × realized win rate × CI bounds × n_trades. Prelec α = ${calibration.prelec_alpha.toFixed(3)}, R² = ${calibration.prelec_r2.toFixed(3)}.`,
+    csvHref: "/data/calibration_snapshot.csv",
+    jsonHref: "/data/calibration_latest.json",
+    pageHref: "/calibration",
+  },
+  {
+    label: "Insider screen (PII)",
+    title: "pii_snapshot.csv",
+    meta: `${pii.headline.total_wallets_tested.toLocaleString()} wallets tested · ${pii.headline.total_flagged_p_lt_01.toLocaleString()} flagged`,
+    description: "Per-wallet flagged status, MNPI category breakdowns, multiple-testing survivors. The Paper-2 forensic dataset.",
+    csvHref: "/data/pii_snapshot.csv",
+    jsonHref: "/data/pii_latest.json",
+    pageHref: "/pii",
+  },
+  {
+    label: "Top markets (live)",
+    title: "top_markets_latest.json",
+    meta: "30 markets · weekly USD volume · per-market microstructure",
+    description: "Top 30 markets by USD volume with bot share, flagged-wallet count, execution gap, and live odds via the briefings.",
+    csvHref: "/data/top_markets_history.csv",
+    jsonHref: "/data/top_markets_latest.json",
+    pageHref: "/briefings",
+  },
+  {
+    label: "Market microstructure",
+    title: "market_microstructure_latest.json",
+    meta: "30 markets · per-market bot share + flagged + exec gap",
+    description: "Per-(market, token, wallet_type) volume, average price, and execution-gap calculations for the briefings cards.",
+    csvHref: "/data/market_microstructure_latest.json",
+    jsonHref: "/data/market_microstructure_latest.json",
+    pageHref: "/briefings",
+  },
+];
+
+// JSON-LD: DataCatalog + one Dataset per file, derived from the arrays above.
+const temporalCoverage = `${(botShare as any[])[0].date}/..`;
+const catalogDatasets = [
+  dataset({
+    name: "polymarket_indices_weekly.csv (master panel)",
+    description: "All DV-PMI indices merged into a single date-indexed weekly panel. Canonical citation file.",
+    path: "/data",
+    csvHref: "/data/polymarket_indices_weekly.csv",
+    temporalCoverage,
+  }),
+  ...historyDatasets.map((d) =>
+    dataset({
+      name: d.title,
+      description: d.description,
+      path: d.pageHref,
+      csvHref: d.csvHref,
+      jsonHref: d.jsonHref,
+      temporalCoverage,
+    })
+  ),
+  ...snapshotDatasets.map((d) =>
+    dataset({
+      name: d.title,
+      description: d.description,
+      path: d.pageHref,
+      csvHref: d.csvHref,
+      jsonHref: d.jsonHref,
+    })
+  ),
+];
+const dataJsonLd = graph(
+  {
+    "@type": "DataCatalog",
+    name: "Della Vedova Prediction Market Indices",
+    url: "https://jdellavedova.com/data",
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    creator: PERSON_REF,
+    dataset: catalogDatasets,
+  },
+);
 ---
 <Base
   title="Data Downloads · DV-PMI"
   description="Full historical panels for every index in the Della Vedova Prediction Market Indices. CSV + JSON, refreshed weekly, CC BY 4.0."
   wide={true}>
+
+  <JsonLd data={dataJsonLd} />
 
   <section class="dd-hero">
     <div class="dd-hero-text">
@@ -76,108 +225,35 @@ function fmtRows(n: number): string {
   <p class="bf-section-sub">Each card shows the smoothed (13-week MA) sparkline. Click "Index page" to see the full deep-dive.</p>
 
   <div class="ds-grid">
-    <DatasetCard
-      label="Algorithmic share"
-      title="bot_share_history.csv"
-      meta={`${botSpark.length} weeks · weekly + 13/52w MAs · z-score`}
-      description="Share of weekly Polymarket counterparty events (maker + taker) attributed to algorithmic wallets."
-      csvHref="/data/bot_share_history.csv"
-      jsonHref="/data/bot_share_latest.json"
-      pageHref="/bot-share"
-      sparklineData={botSpark}
-    />
-    <DatasetCard
-      label="Probability weighting"
-      title="pwi_history.csv"
-      meta={`${pwiSpark.length} weeks · trade-weighted non-bot Prelec α`}
-      description="Weekly Prelec α from the calibration curve. α = 1 is rational pricing; α < 1 is the classical inverse-S weighting."
-      csvHref="/data/pwi_history.csv"
-      jsonHref="/data/pwi_latest.json"
-      pageHref="/pwi"
-      sparklineData={pwiSpark}
-    />
-    <DatasetCard
-      label="Execution edge"
-      title="execution_history.csv"
-      meta={`${execSpark.length} weeks · alpha gap (bot − retail)`}
-      description="Bot-minus-retail Prelec α gap. Positive means bots weight tails more heavily — the behavioral signature of execution-quality divergence."
-      csvHref="/data/execution_history.csv"
-      jsonHref="/data/execution_latest.json"
-      pageHref="/execution"
-      sparklineData={execSpark}
-    />
-    <DatasetCard
-      label="Market efficiency"
-      title="efficiency_history.csv"
-      meta={`${effSpark.length} weeks · R² of active-retail Prelec fit`}
-      description="How cleanly the Prelec model explains each week's calibration gap. Higher = stable behavioral signature; lower = idiosyncratic shocks."
-      csvHref="/data/efficiency_history.csv"
-      jsonHref="/data/efficiency_latest.json"
-      pageHref="/efficiency"
-      sparklineData={effSpark}
-    />
-    <DatasetCard
-      label="Longshot pricing gap"
-      title="price_gap_history.csv"
-      meta={`${pgSpark.length} weeks · realized minus 5%`}
-      description="Realized win rate of trades at prices < 10% minus the band midpoint. Positive = longshots underpriced."
-      csvHref="/data/price_gap_history.csv"
-      jsonHref="/data/price_gap_latest.json"
-      pageHref="/price-gap"
-      sparklineData={pgSpark}
-    />
-    <DatasetCard
-      label="Cumulative P&L"
-      title="cumulative_pnl_history.csv"
-      meta={`${cumBotSpark.length} weeks · running sum by wallet type`}
-      description={`Cumulative resolved P&L per wallet type since 2022. Bots end at +$${(cumulative.endpoints.bot/1e6).toFixed(0)}M; active retail at −$${Math.abs(cumulative.endpoints.active_retail/1e6).toFixed(0)}M.`}
-      csvHref="/data/cumulative_pnl_history.csv"
-      jsonHref="/data/cumulative_pnl_history.json"
-      pageHref="/research"
-      sparklineData={cumBotSpark}
-    />
+    {historyDatasets.map((d) => (
+      <DatasetCard
+        label={d.label}
+        title={d.title}
+        meta={d.meta}
+        description={d.description}
+        csvHref={d.csvHref}
+        jsonHref={d.jsonHref}
+        pageHref={d.pageHref}
+        sparklineData={d.sparklineData}
+      />
+    ))}
   </div>
 
   <h2 class="bf-section-h">Snapshots</h2>
   <p class="bf-section-sub">Cumulative aggregations across the entire 671M-trade panel. No time-series component.</p>
 
   <div class="ds-grid">
-    <DatasetCard
-      label="Calibration curve"
-      title="calibration_snapshot.csv"
-      meta={`${calibration.bins?.length ?? 20} bins · pooled non-bot trades`}
-      description={`20 price bins × realized win rate × CI bounds × n_trades. Prelec α = ${calibration.prelec_alpha.toFixed(3)}, R² = ${calibration.prelec_r2.toFixed(3)}.`}
-      csvHref="/data/calibration_snapshot.csv"
-      jsonHref="/data/calibration_latest.json"
-      pageHref="/calibration"
-    />
-    <DatasetCard
-      label="Insider screen (PII)"
-      title="pii_snapshot.csv"
-      meta={`${pii.headline.total_wallets_tested.toLocaleString()} wallets tested · ${pii.headline.total_flagged_p_lt_01.toLocaleString()} flagged`}
-      description="Per-wallet flagged status, MNPI category breakdowns, multiple-testing survivors. The Paper-2 forensic dataset."
-      csvHref="/data/pii_snapshot.csv"
-      jsonHref="/data/pii_latest.json"
-      pageHref="/pii"
-    />
-    <DatasetCard
-      label="Top markets (live)"
-      title="top_markets_latest.json"
-      meta="30 markets · weekly USD volume · per-market microstructure"
-      description="Top 30 markets by USD volume with bot share, flagged-wallet count, execution gap, and live odds via the briefings."
-      csvHref="/data/top_markets_history.csv"
-      jsonHref="/data/top_markets_latest.json"
-      pageHref="/briefings"
-    />
-    <DatasetCard
-      label="Market microstructure"
-      title="market_microstructure_latest.json"
-      meta="30 markets · per-market bot share + flagged + exec gap"
-      description="Per-(market, token, wallet_type) volume, average price, and execution-gap calculations for the briefings cards."
-      csvHref="/data/market_microstructure_latest.json"
-      jsonHref="/data/market_microstructure_latest.json"
-      pageHref="/briefings"
-    />
+    {snapshotDatasets.map((d) => (
+      <DatasetCard
+        label={d.label}
+        title={d.title}
+        meta={d.meta}
+        description={d.description}
+        csvHref={d.csvHref}
+        jsonHref={d.jsonHref}
+        pageHref={d.pageHref}
+      />
+    ))}
   </div>
 
   <h2 class="bf-section-h">Read the data</h2>

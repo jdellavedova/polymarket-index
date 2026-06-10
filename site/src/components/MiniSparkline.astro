@@ -16,8 +16,8 @@ const {
   containerId = "spark-" + Math.random().toString(36).slice(2, 9),
 } = Astro.props;
 ---
-<div class="spark" id={containerId} style={`min-height:${height}px`}></div>
-<script type="module" define:vars={{ dataUrl, yField, height, width, stroke, containerId }}>
+<div class="spark" id={containerId} style={`min-height:${height}px`} aria-hidden="true"></div>
+<script type="module" data-astro-rerun define:vars={{ dataUrl, yField, height, width, stroke, containerId }}>
   import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/+esm";
   try {
     const css = getComputedStyle(document.documentElement);

@@ -10,8 +10,8 @@ const {
   containerId = "calib-" + Math.random().toString(36).slice(2, 9),
 } = Astro.props;
 ---
-<div class="chart" id={containerId} style={`min-height:${height}px`}></div>
-<script type="module" define:vars={{ dataUrl, height, containerId }}>
+<div class="chart" id={containerId} style={`min-height:${height}px`} role="img" aria-label="Calibration scatter: realized win rate against market price across 20 price bins, with the fitted Prelec curve and the 45-degree rational-pricing line"></div>
+<script type="module" data-astro-rerun define:vars={{ dataUrl, height, containerId }}>
   import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/+esm";
   const css = getComputedStyle(document.documentElement);
   const cPrimary = css.getPropertyValue("--chart-primary").trim() || "#75bee9";

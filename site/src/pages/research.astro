@@ -1,6 +1,8 @@
 ---
 import Base from "../layouts/Base.astro";
 import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
+import JsonLd from "../components/JsonLd.astro";
+import { graph, scholarlyArticle } from "../lib/schema";
 
 const SSRN_AUTHOR = "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2583491";
 const SCHOLAR = "https://scholar.google.com/citations?user=6KY3PLwAAAAJ&hl=en";
@@ -114,11 +116,26 @@ const otherWorking = [
     href: SSRN_AUTHOR,
   },
 ];
+
+// JSON-LD derived from the same arrays the cards render from.
+const researchJsonLd = graph(
+  ...[...programPapers, ...peerReviewed, ...otherWorking].map((p: any) =>
+    scholarlyArticle({
+      title: p.title,
+      authors: p.authors,
+      venue: p.venue,
+      summary: p.summary,
+      href: p.href,
+    })
+  )
+);
 ---
 <Base
   title="Research: Joshua Della Vedova"
   description="Published and working research on prediction markets, microstructure, and behavioral finance."
   wide={true}>
+
+  <JsonLd data={researchJsonLd} />
 
   <section class="re-hero">
     <div class="re-hero-text">

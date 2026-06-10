@@ -1,11 +1,19 @@
 ---
 import Base from "../layouts/Base.astro";
 import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
+import JsonLd from "../components/JsonLd.astro";
+import { PERSON } from "../lib/schema";
+import { Image } from "astro:assets";
+// src/assets copy is optimized by astro:assets; the public/headshot.jpg copy
+// stays as the stable URL referenced by the Person JSON-LD.
+import headshot from "../assets/headshot.jpg";
 ---
 <Base
   title="About: Joshua Della Vedova"
   description="About Joshua Della Vedova, Associate Professor of Finance, Knauss School of Business, University of San Diego."
   wide={true}>
+
+  <JsonLd data={PERSON} />
 
   <section class="dd-hero">
     <div class="dd-hero-text">
@@ -26,7 +34,14 @@ import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
     </div>
     <div class="dd-hero-chart">
       <figure class="ab-headshot">
-        <img src="/headshot.jpg" alt="Joshua Della Vedova, Associate Professor of Finance, University of San Diego" />
+        <Image
+          src={headshot}
+          alt="Joshua Della Vedova, Associate Professor of Finance, University of San Diego"
+          width={480}
+          densities={[1, 2]}
+          format="webp"
+          loading="eager"
+        />
         <figcaption>Knauss School of Business · 5998 Alcala Park · San Diego CA 92110</figcaption>
       </figure>
     </div>
@@ -83,8 +98,10 @@ import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
       <li>2022: American Finance Association Annual Meeting</li>
     </ul>
 
+    <!-- CV section hidden until the PDF exists; restore with the real href.
     <h2 class="bf-section-h">CV</h2>
-    <p><a href="#">CV (PDF) (link to be added)</a></p>
+    <p><a href="/cv.pdf">CV (PDF)</a></p>
+    -->
   </article>
 
   <AuthorityStrip />

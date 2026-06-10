@@ -1,8 +1,9 @@
 /* Palette inspired by the University of San Diego brand
    Founders Blue #003b70, Immaculata Blue #0074c8, Torero Blue #75bee9
    Sagebrush (accent up) #6aa14a, Poppy (accent down) #f2650d
-   Typography: Spectral (body serif) + Sofia Sans (headings), per USD brand */
-@import url("https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Sofia+Sans:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+   Typography: Spectral (body serif) + Sofia Sans (headings), per USD brand.
+   Fonts are loaded via <link> in Base.astro (preconnect + stylesheet) to avoid
+   the serial HTML -> CSS -> font-CSS fetch chain a CSS @import creates. */
 
 :root {
   color-scheme: dark;
@@ -503,8 +504,10 @@ header.site-head nav a {
   color: var(--muted);
   text-decoration: none;
   margin-left: 18px;
+  transition: color 0.12s ease;
 }
 header.site-head nav a:hover { color: var(--founders); }
+header.site-head nav a[aria-current="page"] { color: var(--founders); }
 
 h1 {
   font-family: var(--sans);
@@ -632,9 +635,13 @@ footer.site-foot .disclaimer {
   padding: 14px;
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.12s ease;
+  transition: border-color 0.12s ease, transform 0.12s ease, box-shadow 0.12s ease;
 }
-.dd-card:hover { border-color: var(--founders); }
+.dd-card:hover {
+  border-color: var(--founders);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
 .dd-label {
   font-family: var(--sans);
   font-size: 10px;
@@ -3119,3 +3126,64 @@ a.rs-card:hover {
   .re-lede { font-size: 17px; }
 }
 
+
+/* ===== Polish pass (June 2026): a11y + subtle motion ===== */
+
+/* Skip link: visually hidden until keyboard-focused */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  z-index: 100;
+  padding: 8px 14px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--founders);
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: var(--sans);
+  font-size: 15px;
+  transition: top 0.12s ease;
+}
+.skip-link:focus { top: 12px; }
+
+/* Visible keyboard focus, theme-consistent */
+:focus-visible {
+  outline: 2px solid var(--founders);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Scroll-reveal: .will-reveal is added by JS only (Base.astro), so content
+   stays visible for no-JS users, crawlers, and reduced-motion users. */
+.will-reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.will-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Fade-in when Observable Plot inserts its SVG client-side */
+.chart > svg { animation: chart-in 0.4s ease; }
+@keyframes chart-in { from { opacity: 0; } }
+
+/* View Transitions: Astro 4 does not disable its fallback fade automatically */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) { animation: none !important; }
+  [data-astro-transition-fallback] { animation: none !important; }
+}
+
+/* Blanket reduced-motion guard: covers reveals, hover lifts, chart fade-in,
+   and the pre-existing status-pulse */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

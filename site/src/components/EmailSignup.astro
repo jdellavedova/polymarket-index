@@ -18,7 +18,7 @@ const { formspreeEndpoint = "https://formspree.io/f/mzdyjdqe" } = Astro.props;
     action={formspreeEndpoint}
     method="POST"
   >
-    <input type="email" name="email" placeholder="your.email@example.com" required />
+    <input type="email" name="email" aria-label="Email address" placeholder="your.email@example.com" required />
     <input type="hidden" name="_subject" value="DV-PMI weekly subscribe" />
     <input type="hidden" name="intent" value="subscribe_weekly" />
     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />

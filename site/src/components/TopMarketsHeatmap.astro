@@ -222,7 +222,9 @@ function wrap(s: string | null, charsLine: number, maxLines: number): string[] {
       Rectangle area = weekly USD volume. Color = market category. Hover for full market name.
     </span>
   </figcaption>
-  <svg viewBox={`0 0 ${W} ${H}`} class="tm-svg" preserveAspectRatio="none" aria-label="Top markets heatmap">
+  <svg viewBox={`0 0 ${W} ${H}`} class="tm-svg" preserveAspectRatio="none" role="img" aria-label="Top markets heatmap">
+    <title>Top Polymarket markets by weekly volume</title>
+    <desc>Treemap of the top 30 markets this week. Cell area is proportional to USD volume; cell color encodes market category.</desc>
     {rects.map((r, i) => {
       const m = markets[i];
       const { color: col } = resolveCategory(m.category);

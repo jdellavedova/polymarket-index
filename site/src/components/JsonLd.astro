@@ -1,0 +1,5 @@
+---
+/** Emits a JSON-LD <script> block. set:html prevents Astro from escaping quotes. */
+const { data } = Astro.props;
+---
+<script type="application/ld+json" set:html={JSON.stringify(data)} />

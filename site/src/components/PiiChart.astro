@@ -10,8 +10,8 @@ const {
   containerId = "pii-" + Math.random().toString(36).slice(2, 9),
 } = Astro.props;
 ---
-<div class="chart" id={containerId} style={`min-height:${height}px`}></div>
-<script type="module" define:vars={{ dataUrl, height, containerId }}>
+<div class="chart" id={containerId} style={`min-height:${height}px`} role="img" aria-label="Bar chart of wallet flag rates by MNPI category: vote, action, performance, and stochastic"></div>
+<script type="module" data-astro-rerun define:vars={{ dataUrl, height, containerId }}>
   import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/+esm";
   const css = getComputedStyle(document.documentElement);
   const cPrimary = css.getPropertyValue("--chart-primary").trim() || "#75bee9";

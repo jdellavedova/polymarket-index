@@ -8,6 +8,7 @@ export interface Props {
   height?: number;
   zeroLine?: boolean;
   containerId?: string;
+  ariaLabel?: string;
 }
 const {
   dataUrl,
@@ -18,10 +19,11 @@ const {
   height = 280,
   zeroLine = false,
   containerId = "chart-" + Math.random().toString(36).slice(2, 9),
+  ariaLabel = yLabel ? `Weekly time series chart of ${yLabel}` : "Weekly time series chart",
 } = Astro.props;
 ---
-<div class="chart" id={containerId} style={`min-height:${height}px`}></div>
-<script type="module" define:vars={{ dataUrl, xField, yField, smoothField, yLabel, height, zeroLine, containerId }}>
+<div class="chart" id={containerId} style={`min-height:${height}px`} role="img" aria-label={ariaLabel}></div>
+<script type="module" data-astro-rerun define:vars={{ dataUrl, xField, yField, smoothField, yLabel, height, zeroLine, containerId }}>
   import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/+esm";
   const root = document.documentElement;
   const css = getComputedStyle(root);

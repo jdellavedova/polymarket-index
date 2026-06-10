@@ -100,7 +100,9 @@ const retailEnd = retailSeries[lastIdx];
       Zero-sum market: bot gains and retail losses balance to within fees and the smaller wallet types.
     </span>
   </figcaption>
-  <svg viewBox={`0 0 ${W} ${H}`} class="cp-svg" aria-label="Cumulative P&L since 2022">
+  <svg viewBox={`0 0 ${W} ${H}`} class="cp-svg" role="img" aria-label="Cumulative P&L since 2022">
+    <title>Cumulative resolved profit and loss by wallet type since 2022</title>
+    <desc>Line chart of running-sum P&L per wallet type. Bots accumulate positive P&L; active retail accumulates losses.</desc>
     {yTicks.map(t => (
       <g>
         <line x1={ML} x2={W - MR} y1={y(t)} y2={y(t)} class={t === 0 ? "cp-zero" : "cp-grid"} />

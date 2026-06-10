@@ -1,6 +1,8 @@
 ---
 import Base from "../../layouts/Base.astro";
 import AuthorityStrip from "../../components/redesign/AuthorityStrip.astro";
+import JsonLd from "../../components/JsonLd.astro";
+import { breadcrumbs } from "../../lib/schema";
 
 import overview from "../../../public/data/surveillance_overview_latest.json";
 
@@ -13,6 +15,11 @@ const infeasible = overview.infeasible_tests as any[];
   title="DV-PMI Surveillance Indices"
   description="Eight market-integrity tests on the 671M-trade Polymarket on-chain panel. Patterns reported are statistical, not legal conclusions."
   wide={true}>
+
+  <JsonLd data={breadcrumbs([
+    { name: "Home", path: "/" },
+    { name: "Surveillance", path: "/surveillance" },
+  ])} />
 
   <section class="re-hero">
     <div class="re-hero-text">
