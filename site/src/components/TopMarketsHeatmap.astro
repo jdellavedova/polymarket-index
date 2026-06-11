@@ -235,25 +235,31 @@ function wrap(s: string | null, charsLine: number, maxLines: number): string[] {
       // Font sizes
       const qFontPx    = isHero ? 13 : (isLarge ? 12 : 11);
       const priceFontPx = isHero ? 20 : (isLarge ? 15 : 13);
-      // Single truncated question label — 0.7× em is conservative for proportional fonts
+      // Wrap the question over as many lines as the cell can hold,
+      // reserving room for the price + volume rows when present.
       const innerW  = r.w - 16;
-      const maxChars = Math.max(5, Math.floor(innerW / (qFontPx * 0.7)));
-      const qLabel  = truncate(m.question, maxChars);
-      // Absolute y baselines (no accumulation)
-      const qY     = 8 + qFontPx;
-      const priceY = qY + 6 + priceFontPx;
-      const volY   = priceY + 16;
+      const charsLine = Math.max(5, Math.floor(innerW / (qFontPx * 0.6)));
+      const lineH = qFontPx + 3;
+      const priceReserve = m.yes_price != null ? priceFontPx + 6 + 16 + 4 : 4;
+      const linesFit = Math.floor((r.h - 8 - priceReserve - qFontPx) / lineH) + 1;
+      const maxLines = Math.max(1, Math.min(isHero ? 5 : (isLarge ? 4 : 3), linesFit));
+      const qLines = wrap(m.question, charsLine, maxLines);
+      // Absolute y baselines
+      const qY      = 8 + qFontPx;
+      const qBottom = qY + (qLines.length - 1) * lineH;
+      const priceY  = qBottom + 6 + priceFontPx;
+      const volY    = priceY + 16;
       // Show each row only when it fits (4 px bottom margin)
-      const showQ     = !tooMini && !!qLabel;
+      const showQ     = !tooMini && qLines.length > 0;
       const showPrice = !tooMini && m.yes_price != null && r.h >= priceY + 4;
       const showVol   = showPrice && r.h >= volY + 4;
       return (
         <svg x={r.x} y={r.y} width={r.w} height={r.h} overflow="hidden" class="tm-cell">
           <title>{`${m.question ?? "Market #" + m.market_id}\nVolume: ${fmtVol(m.usd_volume)}  ·  Trades: ${m.n_trades.toLocaleString()}\nImplied: ${m.yes_price != null ? (m.yes_price*100).toFixed(0)+"% YES" : "n/a"}\nAlgorithmic share: ${m.bot_share != null ? (m.bot_share*100).toFixed(0)+"%" : "n/a"}\nCategory: ${m.category ?? "n/a"}`}</title>
           <rect x={0} y={0} width={r.w} height={r.h} fill={col} class="tm-rect" />
-          {showQ && (
-            <text x={8} y={qY} font-size={qFontPx} class="tm-q">{qLabel}</text>
-          )}
+          {showQ && qLines.map((line, li) => (
+            <text x={8} y={qY + li * lineH} font-size={qFontPx} class="tm-q">{line}</text>
+          ))}
           {showPrice && (
             <text x={8} y={priceY} font-size={priceFontPx} class="tm-v">
               {(m.yes_price! * 100).toFixed(0)}% YES
