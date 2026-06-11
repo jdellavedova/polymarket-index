@@ -64,73 +64,62 @@ const markets: Market[] = (top.markets as any[]).map(m => ({
 const W = 880;
 const H = 520;
 
-/** Squarified treemap (Bruls/Huijsmans/van Wijk 2000) with simplified slicing.
- *  Returns rectangles in the same order as the input items array. */
+/** Squarified treemap (Bruls/Huijsmans/van Wijk 2000), iterative.
+ *  Returns rectangles in the same order as the input items array.
+ *  Each laid row consumes exactly its strip of the remaining rectangle, and
+ *  the final item takes the exact remainder, so no division can hit 0/0. */
 function squarify(items: { value: number }[], x: number, y: number, w: number, h: number) {
+  const n = items.length;
   const total = items.reduce((s, it) => s + it.value, 0);
-  if (total <= 0) return items.map(() => ({ x, y, w: 0, h: 0 }));
+  if (total <= 0 || w <= 0 || h <= 0) return items.map(() => ({ x, y, w: 0, h: 0 }));
 
-  const result: { x: number; y: number; w: number; h: number }[] = new Array(items.length);
+  const result: { x: number; y: number; w: number; h: number }[] = new Array(n);
+  // Normalize values to pixel areas
+  let areas = items.map(it => (it.value * w * h) / total);
+  let idx = items.map((_, i) => i);
+  let rx = x, ry = y, rw = w, rh = h;
 
-  function worst(row: number[], length: number) {
-    const sum = row.reduce((s, v) => s + v, 0);
-    const max = Math.max(...row);
-    const min = Math.min(...row);
-    return Math.max((length * length * max) / (sum * sum), (sum * sum) / (length * length * min));
-  }
-
-  function layoutRow(row: number[], rowIdx: number[], cx: number, cy: number, cw: number, ch: number, horizontal: boolean) {
-    const sum = row.reduce((s, v) => s + v, 0);
-    const total = horizontal ? ch : cw;
-    const thick = sum / total;
+  while (idx.length > 0) {
+    // Last item takes the exact remainder
+    if (idx.length === 1) {
+      result[idx[0]] = { x: rx, y: ry, w: Math.max(rw, 0), h: Math.max(rh, 0) };
+      break;
+    }
+    // Lay the next row along the shorter side of the remaining rectangle
+    const len = Math.max(Math.min(rw, rh), 1e-9);
+    const worst = (row: number[]) => {
+      const s = row.reduce((a, b) => a + b, 0);
+      const mx = Math.max(...row);
+      const mn = Math.min(...row);
+      if (mn <= 0 || s <= 0) return Infinity;
+      return Math.max((len * len * mx) / (s * s), (s * s) / (len * len * mn));
+    };
+    // Grow the row while the worst aspect ratio keeps improving
+    let row = [areas[0]];
+    let k = 1;
+    while (k < idx.length) {
+      const cand = [...row, areas[k]];
+      if (worst(cand) <= worst(row)) { row.push(areas[k]); k++; } else break;
+    }
+    // Emit the row as a strip of thickness sum/len along the shorter side
+    const s = row.reduce((a, b) => a + b, 0);
+    const thick = s / len;
+    const vertical = rw >= rh; // strip stands at the left edge, cells stack down
     let off = 0;
-    for (let k = 0; k < row.length; k++) {
-      const seg = row[k] / thick;
-      if (horizontal) {
-        result[rowIdx[k]] = { x: cx, y: cy + off, w: thick, h: seg };
+    for (let j = 0; j < row.length; j++) {
+      const seg = row[j] / thick;
+      if (vertical) {
+        result[idx[j]] = { x: rx, y: ry + off, w: thick, h: seg };
       } else {
-        result[rowIdx[k]] = { x: cx + off, y: cy, w: seg, h: thick };
+        result[idx[j]] = { x: rx + off, y: ry, w: seg, h: thick };
       }
       off += seg;
     }
-    if (horizontal) return { x: cx + thick, y: cy, w: cw - thick, h: ch };
-    return { x: cx, y: cy + thick, w: cw, h: ch - thick };
+    if (vertical) { rx += thick; rw = Math.max(rw - thick, 0); }
+    else          { ry += thick; rh = Math.max(rh - thick, 0); }
+    idx = idx.slice(row.length);
+    areas = areas.slice(row.length);
   }
-
-  function recurse(itemsLeft: number[], idxLeft: number[], cx: number, cy: number, cw: number, ch: number) {
-    if (itemsLeft.length > 0) {
-      const horizontal = ch < cw;
-      const length = horizontal ? ch : cw;
-      const sum = itemsLeft.reduce((s, v) => s + v, 0);
-      const scale = (cw * ch) / sum;
-      const scaled = itemsLeft.map(v => v * scale);
-
-      let row: number[] = [];
-      let rowIdx: number[] = [];
-      let i = 0;
-      let done = false;
-      while (i < scaled.length && !done) {
-        const rowTry = [...row, scaled[i]];
-        if (row.length === 0 || worst(rowTry, length) <= worst(row, length)) {
-          row.push(scaled[i]);
-          rowIdx.push(idxLeft[i]);
-          i++;
-        } else {
-          const next = layoutRow(row, rowIdx, cx, cy, cw, ch, horizontal);
-          const nextCx = next.x; const nextCy = next.y; const nextCw = next.w; const nextCh = next.h;
-          const nextSum = scaled.slice(i).reduce((s, v) => s + v, 0);
-          const nextScale = (nextCw * nextCh) / Math.max(nextSum, 1e-9);
-          recurse(itemsLeft.slice(i).map(v => v * nextScale / scale), idxLeft.slice(i), nextCx, nextCy, nextCw, nextCh);
-          done = true;
-        }
-      }
-      if (!done) {
-        layoutRow(row, rowIdx, cx, cy, cw, ch, horizontal);
-      }
-    }
-  }
-
-  recurse(items.map(it => it.value), items.map((_, i) => i), x, y, w, h);
   return result;
 }
 
@@ -138,22 +127,23 @@ const items = markets.map(m => ({ value: m.usd_volume }));
 const rects = squarify(items, 0, 0, W, H);
 
 /** Category → colour map. Keys are exact strings from the pipeline's categorize.py.
- *  Colors are vivid enough to be clearly distinct at a glance. */
+ *  Desaturated tones tuned to the navy theme: distinct at a glance without
+ *  fighting the page palette, and all readable under white labels. */
 const CAT_MAP: Record<string, { color: string; label: string }> = {
-  "Geopolitics":   { color: "#1a5fb4", label: "Geopolitics" },
-  "Politics":      { color: "#813d9c", label: "Politics" },
-  "Sports":        { color: "#2e7d32", label: "Sports" },
-  "Macro":         { color: "#00695c", label: "Macro / Finance" },
-  "Finance":       { color: "#00695c", label: "Macro / Finance" },
-  "Economics":     { color: "#00695c", label: "Macro / Finance" },
-  "Crypto":        { color: "#bf360c", label: "Crypto" },
-  "Science":       { color: "#4527a0", label: "Science / Tech" },
-  "Technology":    { color: "#4527a0", label: "Science / Tech" },
-  "Entertainment": { color: "#ad1457", label: "Entertainment" },
-  "Health":        { color: "#00695c", label: "Health" },
-  "Other":         { color: "#4e342e", label: "Other" },
+  "Geopolitics":   { color: "#34548c", label: "Geopolitics" },
+  "Politics":      { color: "#5e4f96", label: "Politics" },
+  "Sports":        { color: "#2f7d62", label: "Sports" },
+  "Macro":         { color: "#1f6e7e", label: "Macro / Finance" },
+  "Finance":       { color: "#1f6e7e", label: "Macro / Finance" },
+  "Economics":     { color: "#1f6e7e", label: "Macro / Finance" },
+  "Crypto":        { color: "#a05c2e", label: "Crypto" },
+  "Science":       { color: "#5d7fb8", label: "Science / Tech" },
+  "Technology":    { color: "#5d7fb8", label: "Science / Tech" },
+  "Entertainment": { color: "#96527c", label: "Entertainment" },
+  "Health":        { color: "#3a7d6a", label: "Health" },
+  "Other":         { color: "#46556b", label: "Other" },
 };
-const CAT_DEFAULT_COLOR = "#37474f";
+const CAT_DEFAULT_COLOR = "#3c4a5e";
 const CAT_DEFAULT_LABEL = "Other";
 
 function resolveCategory(cat: string | null): { color: string; label: string } {
@@ -228,45 +218,51 @@ function wrap(s: string | null, charsLine: number, maxLines: number): string[] {
     {rects.map((r, i) => {
       const m = markets[i];
       const { color: col } = resolveCategory(m.category);
-      const tooMini = r.w < 55 || r.h < 36;
+      // Only truly unreadable slivers get no text; small cells drop to a
+      // tiny tier (9px question, 10px odds) instead of going blank.
+      const tooMini = r.w < 32 || r.h < 22;
       const area = r.w * r.h;
       const isHero  = area >= 60000;
       const isLarge = area >= 18000;
+      const isTiny  = !isHero && !isLarge && (r.w < 80 || r.h < 64);
       // Font sizes
-      const qFontPx    = isHero ? 13 : (isLarge ? 12 : 11);
-      const priceFontPx = isHero ? 20 : (isLarge ? 15 : 13);
+      const qFontPx     = isHero ? 13 : (isLarge ? 12 : (isTiny ? 9 : 11));
+      const priceFontPx = isHero ? 20 : (isLarge ? 15 : (isTiny ? 10 : 13));
+      const volFontPx   = isTiny ? 9 : 11;
+      const pad         = isTiny ? 4 : 8;
+      const volGap      = isTiny ? 11 : 16;
       // Wrap the question over as many lines as the cell can hold,
       // reserving room for the price + volume rows when present.
-      const innerW  = r.w - 16;
+      const innerW  = r.w - pad * 2;
       const charsLine = Math.max(5, Math.floor(innerW / (qFontPx * 0.6)));
-      const lineH = qFontPx + 3;
-      const priceReserve = m.yes_price != null ? priceFontPx + 6 + 16 + 4 : 4;
-      const linesFit = Math.floor((r.h - 8 - priceReserve - qFontPx) / lineH) + 1;
+      const lineH = qFontPx + (isTiny ? 2 : 3);
+      const priceReserve = m.yes_price != null ? priceFontPx + 5 + volGap + 3 : 3;
+      const linesFit = Math.floor((r.h - pad - priceReserve - qFontPx) / lineH) + 1;
       const maxLines = Math.max(1, Math.min(isHero ? 5 : (isLarge ? 4 : 3), linesFit));
       const qLines = wrap(m.question, charsLine, maxLines);
       // Absolute y baselines
-      const qY      = 8 + qFontPx;
+      const qY      = pad + qFontPx;
       const qBottom = qY + (qLines.length - 1) * lineH;
-      const priceY  = qBottom + 6 + priceFontPx;
-      const volY    = priceY + 16;
-      // Show each row only when it fits (4 px bottom margin)
+      const priceY  = qBottom + 5 + priceFontPx;
+      const volY    = priceY + volGap;
+      // Show each row only when it fits (3 px bottom margin)
       const showQ     = !tooMini && qLines.length > 0;
-      const showPrice = !tooMini && m.yes_price != null && r.h >= priceY + 4;
-      const showVol   = showPrice && r.h >= volY + 4;
+      const showPrice = !tooMini && m.yes_price != null && r.h >= priceY + 3;
+      const showVol   = showPrice && r.h >= volY + 3;
       return (
         <svg x={r.x} y={r.y} width={r.w} height={r.h} overflow="hidden" class="tm-cell">
           <title>{`${m.question ?? "Market #" + m.market_id}\nVolume: ${fmtVol(m.usd_volume)}  ·  Trades: ${m.n_trades.toLocaleString()}\nImplied: ${m.yes_price != null ? (m.yes_price*100).toFixed(0)+"% YES" : "n/a"}\nAlgorithmic share: ${m.bot_share != null ? (m.bot_share*100).toFixed(0)+"%" : "n/a"}\nCategory: ${m.category ?? "n/a"}`}</title>
           <rect x={0} y={0} width={r.w} height={r.h} fill={col} class="tm-rect" />
           {showQ && qLines.map((line, li) => (
-            <text x={8} y={qY + li * lineH} font-size={qFontPx} class="tm-q">{line}</text>
+            <text x={pad} y={qY + li * lineH} font-size={qFontPx} class="tm-q">{line}</text>
           ))}
           {showPrice && (
-            <text x={8} y={priceY} font-size={priceFontPx} class="tm-v">
+            <text x={pad} y={priceY} font-size={priceFontPx} class="tm-v">
               {(m.yes_price! * 100).toFixed(0)}% YES
             </text>
           )}
           {showVol && (
-            <text x={8} y={volY} font-size={11} class="tm-vol">{fmtVol(m.usd_volume)} vol</text>
+            <text x={pad} y={volY} font-size={volFontPx} class="tm-vol">{fmtVol(m.usd_volume)} vol</text>
           )}
         </svg>
       );
