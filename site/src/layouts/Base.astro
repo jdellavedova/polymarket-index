@@ -126,10 +126,17 @@ const desc = description ?? "Weekly behavioral and microstructure indices from 6
        always visible for no-JS users, crawlers, and reduced-motion users. -->
   <script is:inline data-astro-rerun>
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      const els = document.querySelectorAll(".re-card,.ds-card,.rs-card,.pk-card,.briefing,.stat-item,.pr-quote-card");
-      const io = new IntersectionObserver((entries) => entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); }
-      }), { rootMargin: "0px 0px -8% 0px" });
+      const els = document.querySelectorAll(".re-card,.ds-card,.rs-card,.pk-card,.briefing,.stat-item,.pr-quote-card,.tw-pill,.dd-card");
+      const io = new IntersectionObserver((entries) => {
+        // Stagger elements that arrive in the same frame so grids cascade.
+        let i = 0;
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          e.target.style.transitionDelay = Math.min(i++ * 70, 280) + "ms";
+          e.target.classList.add("is-visible");
+          io.unobserve(e.target);
+        });
+      }, { rootMargin: "0px 0px -8% 0px" });
       els.forEach((el) => {
         if (el.getBoundingClientRect().top < innerHeight) return; // skip above-the-fold
         el.classList.add("will-reveal");
