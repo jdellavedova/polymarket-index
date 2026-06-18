@@ -159,21 +159,21 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
 
   <TopMarketsHeatmap />
 
-  <h2 class="re-findings-h">Detecting unusual activity</h2>
-  <p class="re-findings-sub">Some wallets are accurate too often, in the right markets, to be luck. <a href="/pii">See the full analysis →</a></p>
+  <h2 class="re-findings-h">Detecting informed trading</h2>
+  <p class="re-findings-sub">A per-event test separates episodic private information from sustained skill. Zero false positives on a real-data placebo. <a href="/surveillance">See all six surveillance indices →</a></p>
   <div class="re-findings-grid re-findings-pair">
     <FindingCard
-      label="WALLETS WITH SUSPICIOUS ACCURACY"
+      label="ACCURACY OUTLIERS"
       headline={`${pii.headline.total_flagged_p_lt_01.toLocaleString()}`}
-      claim={`Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets tested, ${pii.headline.total_flagged_p_lt_01.toLocaleString()} (${(pii.headline.flag_rate*100).toFixed(2)}%) show a pattern of accuracy that is statistically unlikely to be chance. Election and policy markets have the highest rates. (Live count, updated weekly; the SSRN paper reports the fixed study-period figures.)`}
-      href="/pii"
+      claim={`Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets tested, ${pii.headline.total_flagged_p_lt_01.toLocaleString()} (${(pii.headline.flag_rate*100).toFixed(2)}%) show anomalous long-run accuracy — statistically unlikely to be random. The per-event detection test then asks whether specific events are consistent with informed trading.`}
+      href="/surveillance"
     />
     <FindingCard
-      label="FLAG RATE BY MARKET TYPE"
+      label="ANOMALOUS ACCURACY BY MARKET TYPE"
       headline={`${(Math.max(...pii.mnpi_taxonomy.map(m => m.flag_rate_01))*100).toFixed(2)}%`}
-      claim="Markets where humans control outcomes — votes, policy decisions, award ceremonies — show the highest suspicious-accuracy rates. Crypto price markets show the lowest. The ordering matches theoretical predictions about private information."
+      claim="Markets where humans control outcomes — votes, policy decisions, award ceremonies — show the highest rates of anomalous accuracy. Crypto price markets show the lowest. The ordering matches theoretical predictions about where private information is most likely."
       barData={insiderBars}
-      href="/pii"
+      href="/surveillance"
     />
   </div>
 
