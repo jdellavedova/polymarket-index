@@ -10,7 +10,7 @@
       "topic": "Informed trading detection in prediction markets",
       "quote": "About one in a hundred Polymarket wallets show trading signatures consistent with private information. The flag rate is three times higher in markets where humans control the outcome, such as elections and awards, than in markets driven by aggregate forces, such as crypto prices.",
       "context": "From Paper 2: 6,032 of 450,048 wallets flagged at p < 0.01; flag rate is 2.79% in vote-category markets, 1.20% in stochastic markets.",
-      "citation_line": "Joshua Della Vedova, Associate Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets: An Orthogonality Test,' SSRN abstract 6567238."
+      "citation_line": "Joshua Della Vedova, Associate Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets: One Event at a Time,' SSRN abstract 6567238."
     },
     {
       "topic": "Human traders and probability weighting",
