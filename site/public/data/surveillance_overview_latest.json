@@ -12,7 +12,7 @@
       "name": "Informed Trading (PII)",
       "value": "6,292 flagged",
       "secondary": "of 483,234 tested (1.30%)",
-      "description": "Wallets whose accuracy cannot be explained by price-following alone. Binomial orthogonality test at p<0.01 with Holm-Bonferroni and Benjamini-Hochberg corrections.",
+      "description": "Wallets showing anomalous long-run accuracy — statistically unlikely to be random at p<0.01, Holm-Bonferroni and BH-FDR corrected. Detects sustained accuracy patterns. The per-event joint-accuracy test from Paper 2 then identifies episodic informed trading event by event.",
       "href": "/pii",
       "pattern_consistent_with": "private information advantage"
     },
