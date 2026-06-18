@@ -26,12 +26,12 @@ const programPapers = [
   },
   {
     n: "Paper 2",
-    title: "Detecting Informed Trading in Prediction Markets: An Orthogonality Test",
+    title: "Detecting Informed Trading in Prediction Markets: One Event at a Time",
     authors: "Della Vedova, J. (2026)",
-    venue: "Working paper · Posted to SSRN April 2026",
+    venue: "Working paper · Under review at JFQA · Revised June 2026",
     status: "",
     statusTone: "",
-    summary: "The theta-epsilon orthogonality from Paper 1 becomes a forensic detection signal. We flag wallets whose accuracy is too high, too often, to be explained by the price-following null (one-sided binomial z-test, p < 0.01). 6,292 of 483,234 wallets are flagged (1.30%); 806 survive Holm-Bonferroni. Aggregate gains by flagged wallets are approximately $150M, mostly absorbed by algorithmic market makers. Near-zero flag-set concordance with the heuristic screen of Mitts and Ofir (2026): the two approaches identify different populations. Designed to map cleanly onto the four Rule 702 factors for use in expert testimony.",
+    summary: "Trader-aggregated statistics cannot identify episodic informed trading: pooled averages dilute the signal, and the best-episode rule inflates with activity at the extreme-value rate. Identification requires the trader-event unit. We construct a per-event joint-accuracy test with multiplicity correction across a trader's events and calibrate its false-positive rate on a real-data placebo class where episodic private information is implausible — the corrected test yields zero discoveries at every threshold. Applied to the full Polymarket history (237 million resolved trades), the test shows statistical patterns consistent with informed trading for the trader charged in CFTC v. Spagnuolo (2026), where every trader-aggregated statistic does not.",
     href: SSRN_PAPER2,
     hrefLabel: "SSRN abstract 6567238",
   },
@@ -142,7 +142,7 @@ const researchJsonLd = graph(
       <p class="dd-eyebrow">DV-PMI · Research program</p>
       <h1 class="re-h1">Research</h1>
       <p class="re-lede">
-        Three working papers form the basis for the DV-PMI dashboard. Paper 1 establishes that trading skill in prediction markets is two-dimensional and that execution, not forecasting, determines who profits. Paper 2 turns the same orthogonality into a forensic test for informed trading. Paper 4 (with Andrew Grant) extracts probability weighting from on-chain trades. Earlier peer-reviewed work spans behavioral finance, microstructure, and momentum.
+        Three working papers form the basis for the DV-PMI dashboard. Paper 1 establishes that trading skill in prediction markets is two-dimensional and that execution, not forecasting, determines who profits. Paper 2 builds an event-level detection test for episodic informed trading, calibrated on a real-data placebo and validated against a public enforcement action. Paper 4 (with Andrew Grant) extracts probability weighting from on-chain trades. Earlier peer-reviewed work spans behavioral finance, microstructure, and momentum.
       </p>
       <p class="dd-stamp">
         Full abstracts on <a href={SSRN_AUTHOR}>SSRN</a> &middot; citations on <a href={SCHOLAR}>Google Scholar</a>
