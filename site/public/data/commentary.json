@@ -31,7 +31,7 @@
       "date": "2026-05-03",
       "tag": "RESEARCH",
       "title": "Flagged wallets: mostly retail by count, almost entirely bots by dollars.",
-      "body": "Of 6,291 wallets flagged at p<0.01 by the orthogonality test, 62% are active retail, 21% are sophisticated, only 16% are algorithmic. But profitability tells the opposite story: 4,306 (68.4%) of the flagged set were profitable, generating $152.5M in aggregate. The 1,026 flagged bots captured $137.6M of that \u2014 90% of all flagged-wallet gains flow to the algorithmic 16%, with mean PnL of $134K per bot vs $2.2K per retail wallet. The screen catches private information across every wallet class; the dollars accrue almost entirely to the algos who can act on it at scale.",
+      "body": "Of 6,291 wallets flagged at p<0.01 by the wallet-level detection test, 62% are active retail, 21% are sophisticated, only 16% are algorithmic. But profitability tells the opposite story: 4,306 (68.4%) of the flagged set were profitable, generating $152.5M in aggregate. The 1,026 flagged bots captured $137.6M of that \u2014 90% of all flagged-wallet gains flow to the algorithmic 16%, with mean PnL of $134K per bot vs $2.2K per retail wallet. The wallet-level screen finds statistical patterns consistent with informed trading across every wallet class; the dollars accrue almost entirely to the algos who can act on it at scale.",
       "href": "/pii",
       "href_label": "See the screen"
     },
@@ -60,10 +60,18 @@
       "href_label": "Read the methodology"
     },
     {
+      "date": "2026-06-18",
+      "tag": "RESEARCH",
+      "title": "Paper 2 revised: per-event detection test, CFTC case validation.",
+      "body": "Revised version of Paper 2 posted to SSRN under a new title: \"Detecting Informed Trading in Prediction Markets: One Event at a Time.\" The revision replaces the wallet-level screen with a per-event joint-accuracy test, multiplicity-corrected across a trader's events. Calibrated on a real-data placebo where episodic private information is implausible \u2014 the corrected test yields zero discoveries at every threshold. Applied to the trader charged in CFTC v. Spagnuolo (2026), the test shows statistical patterns consistent with informed trading where every trader-aggregated statistic does not.",
+      "href": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6567238",
+      "href_label": "SSRN abstract 6567238"
+    },
+    {
       "date": "2026-04-20",
       "tag": "RESEARCH",
       "title": "Paper 2 posted to SSRN",
-      "body": "\"Detecting Informed Trading in Prediction Markets: An Orthogonality Test\" \u2014 turns the theta-epsilon orthogonality from Paper 1 into a forensic detection signal. 6,292 of 483K wallets flagged at p<0.01.",
+      "body": "\"Detecting Informed Trading in Prediction Markets\" posted to SSRN (abstract_id 6567238). Uses the theta-epsilon framework from Paper 1 as a detection signal. 6,292 of 483K wallets show statistical patterns consistent with informed trading at p<0.01.",
       "href": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6567238",
       "href_label": "SSRN abstract 6567238"
     }
