@@ -8,7 +8,7 @@
  */
 import data from "../../../public/data/commentary.json";
 
-const notes = (data.notes || []).slice(0, 4);
+const notes = (data.notes || []).filter((n: any) => n.tag === "PRESS").slice(0, 4);
 
 function fmtDate(s: string): string {
   const d = new Date(s + "T00:00:00Z");
@@ -18,8 +18,8 @@ function fmtDate(s: string): string {
 <section class="rc-stream">
   <div class="rc-head">
     <div>
-      <div class="rc-eyebrow">Recent commentary</div>
-      <div class="rc-sub">Press appearances, dashboard updates, and research-program notes between weekly refreshes</div>
+      <div class="rc-eyebrow">Press mentions</div>
+      <div class="rc-sub">Recent coverage of the research in news and media</div>
     </div>
   </div>
   <ol class="rc-list">
