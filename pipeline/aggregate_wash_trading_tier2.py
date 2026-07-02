@@ -28,9 +28,9 @@ import time
 import duckdb
 
 from common import utc_now, write_json
-from config import DATA_OUT
+from config import DATA_OUT, trades_source
 
-TRADES = "H:/Research/10. Prediction/data/blockchain/processed_trades.csv"
+TRADES_SRC = trades_source()
 
 # Thresholds to report. Each pair (churn, min_vol, min_trips) becomes a row in
 # the result table. Strictest threshold is the headline.
@@ -43,7 +43,7 @@ THRESHOLDS = [
 
 def main() -> None:
     t0 = time.time()
-    print(f"[{time.strftime('%H:%M:%S')}] Wash Tier 2: scanning {TRADES} ...")
+    print(f"[{time.strftime('%H:%M:%S')}] Wash Tier 2: scanning {TRADES_SRC} ...")
 
     con = duckdb.connect()
     con.execute("PRAGMA memory_limit='14GB'")
@@ -76,7 +76,7 @@ def main() -> None:
                 CASE WHEN UPPER(maker_side) = 'SELL' THEN CAST(usdc_amount AS DOUBLE) ELSE 0 END AS sell_vol,
                 CASE WHEN UPPER(maker_side) = 'BUY'  THEN 1 ELSE 0 END AS n_buy,
                 CASE WHEN UPPER(maker_side) = 'SELL' THEN 1 ELSE 0 END AS n_sell
-            FROM read_csv_auto('{TRADES}', sample_size=-1)
+            FROM {TRADES_SRC}
             UNION ALL
             -- Taker side (opposite direction)
             SELECT
@@ -86,7 +86,7 @@ def main() -> None:
                 CASE WHEN UPPER(maker_side) = 'BUY'  THEN CAST(usdc_amount AS DOUBLE) ELSE 0 END AS sell_vol,
                 CASE WHEN UPPER(maker_side) = 'SELL' THEN 1 ELSE 0 END AS n_buy,
                 CASE WHEN UPPER(maker_side) = 'BUY'  THEN 1 ELSE 0 END AS n_sell
-            FROM read_csv_auto('{TRADES}', sample_size=-1)
+            FROM {TRADES_SRC}
         )
         GROUP BY wallet, token_id
         HAVING SUM(buy_vol) > 0 AND SUM(sell_vol) > 0
@@ -195,7 +195,7 @@ def main() -> None:
             CAST(strftime(CAST(date AS DATE), '%Y') AS INTEGER) AS year,
             COUNT(*) AS n_trades_by_flagged,
             SUM(CAST(usdc_amount AS DOUBLE)) AS vol_by_flagged
-        FROM read_csv_auto('{TRADES}', sample_size=-1)
+        FROM {TRADES_SRC}
         WHERE LOWER(maker_address) IN (SELECT wallet FROM flagged_wallets)
            OR LOWER(taker_address) IN (SELECT wallet FROM flagged_wallets)
         GROUP BY year

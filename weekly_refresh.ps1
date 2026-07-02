@@ -1,14 +1,26 @@
-# Weekly Dashboard Refresh
-# Runs overnight: delta pull -> process -> append -> paper4 rebuild -> dashboard -> deploy
-# Total: ~4-6 hours
+# Weekly Dashboard Refresh — THE canonical orchestrator (all others archived
+# in _archive_orchestrators\). Scheduled via Windows Task Scheduler, Sunday.
+#
+# Flow: pull new blocks -> process delta -> append to master (dedup-guarded,
+#       parquet mirror) -> run_all --mode=weekly -> git push -> cleanup
+#
+# Incremental by construction:
+#  - pull_polygon_delta_fast.py resumes from the HIGHEST checkpoint_block_delta_*.json
+#    (no manual seeding; the old May-9 seeding block that forced re-downloads is gone)
+#  - append_delta_to_master.py skips rows at/below master_frontier.json, so a
+#    re-pulled window can never double-append
+#  - run_all --mode=weekly includes the heavy scans (~30-40 min on CSV, ~5 min
+#    once trades_parquet/ is built), so nothing on the site goes stale
+#
+# Steady-state runtime: ~1.5 h. First run after a gap: add ~20 min per backlog week.
 
 $ErrorActionPreference = "Stop"
 $LOG      = "C:\Users\joshd\Dev\polymarket-index\refresh.log"
 $DATA     = "H:\Research\10. Prediction\data\blockchain"
-$PAPER4   = "$DATA\paper4"
 $REPO     = "C:\Users\joshd\Dev\polymarket-index"
 
-# Use UTC date to match Python's datetime.now(timezone.utc) in pull_polygon_delta_fast.py
+# Capture the UTC date tag ONCE and pass it to every step, so a run that
+# crosses UTC midnight still processes/appends the files the pull created.
 $date_tag   = (Get-Date -AsUTC -Format "yyyyMMdd")
 $week_label = (Get-Date -AsUTC -Format "yyyy-MM-dd")
 
@@ -37,9 +49,10 @@ Log "=========================================="
 Log "WEEKLY REFRESH $week_label"
 Log "=========================================="
 
-# Load Alchemy key from .env
-if (Test-Path "$DATA\.env") {
-    Get-Content "$DATA\.env" | ForEach-Object {
+# Load Alchemy key from the repo .env (the pull script also self-loads it,
+# this just makes it explicit in the environment for any child process)
+if (Test-Path "$REPO\.env") {
+    Get-Content "$REPO\.env" | ForEach-Object {
         if ($_ -match "^ALCHEMY_API_KEY=(.+)$") {
             $env:ALCHEMY_API_KEY = $Matches[1].Trim()
             Log "Alchemy key loaded"
@@ -47,39 +60,45 @@ if (Test-Path "$DATA\.env") {
     }
 }
 
-# ---- PHASE 1: Blockchain delta -----------------------------------------------
-
-# Seed today's checkpoint from May 9 so pull resumes from block 86,609,906
-$today_ckpt = "$DATA\checkpoint_block_delta_$date_tag.json"
-$may9_ckpt  = "$DATA\checkpoint_block_delta_20260509.json"
-if (-not (Test-Path $today_ckpt)) {
-    Copy-Item $may9_ckpt $today_ckpt
-    Log "Checkpoint seeded from 20260509 (block 86609906)"
-}
+# ---- PHASE 1: Blockchain delta (pull auto-resumes from max checkpoint) -------
 
 Run "Pull delta events"   { python "$DATA\pull_polygon_delta_fast.py" }
-Run "Process delta"       { python "$DATA\process_delta.py" }
-Run "Append to master"    { python "$DATA\append_delta_to_master.py" }
-Run "Expand resolutions"  { python "$DATA\expand_resolutions.py" }
+Run "Process delta"       { python "$DATA\process_delta.py" $date_tag }
+Run "Append to master"    { python "$DATA\append_delta_to_master.py" $date_tag }
 
-# ---- PHASE 2: Rebuild paper4 source CSVs ------------------------------------
-
-Run "feasibility_calibration"   { python "$PAPER4\feasibility_calibration.py" }
-Run "composition_decomposition" { python "$PAPER4\composition_decomposition.py" --force }
-
-# ---- PHASE 3: Dashboard pipeline --------------------------------------------
+# ---- PHASE 2: Dashboard pipeline (weekly = fast + heavy; paper4 sources ------
+# refresh incrementally inside run_all via refresh_paper4_sources) ------------
 
 Set-Location $REPO
-Run "pipeline/run_all.py" { python pipeline/run_all.py }
+Run "pipeline/run_all.py --mode=weekly" { python pipeline\run_all.py --mode=weekly }
 
-# ---- PHASE 4: Deploy --------------------------------------------------------
+# ---- PHASE 3: Deploy ----------------------------------------------------------
 
 Log "START: git commit + push"
-git add -A
-$msg = "weekly refresh $week_label"
-git commit -m $msg
-git push
-Log "DONE:  deployed to GitHub Pages"
+git add site/public/data
+git diff --cached --quiet
+if ($LASTEXITCODE -ne 0) {
+    git commit -m "weekly refresh $week_label"
+    git push
+    Log "DONE:  deployed to GitHub Pages"
+} else {
+    Log "DONE:  no data changes to commit"
+}
+
+# ---- PHASE 4: Cleanup (raw deltas are ~40 GB/week; keep only this run's) ------
+
+Get-ChildItem "$DATA\raw_events_delta_*.csv" | Where-Object {
+    $_.Name -ne "raw_events_delta_$date_tag.csv"
+} | ForEach-Object {
+    Log "Cleanup: deleting $($_.Name) ($([math]::Round($_.Length/1GB,1)) GB)"
+    Remove-Item $_.FullName -Force -Confirm:$false
+}
+# Keep the two most recent processed deltas (current + previous cycle)
+Get-ChildItem "$DATA\processed_trades_delta_*.csv" | Sort-Object Name -Descending |
+    Select-Object -Skip 2 | ForEach-Object {
+    Log "Cleanup: deleting $($_.Name) ($([math]::Round($_.Length/1GB,1)) GB)"
+    Remove-Item $_.FullName -Force -Confirm:$false
+}
 
 Log "=========================================="
 Log "ALL DONE $week_label"

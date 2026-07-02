@@ -27,9 +27,9 @@ import duckdb
 import pandas as pd
 
 from common import utc_now, write_json
-from config import DATA_OUT
+from config import DATA_OUT, trades_source
 
-TRADES = "H:/Research/10. Prediction/data/blockchain/processed_trades.csv"
+TRADES_SRC = trades_source()
 WALLETS = "H:/Research/10. Prediction/data/blockchain/wallet_statistics.csv"
 FLAGGED = "G:/My Drive/1. Research/1. Polymarket/2. Insider/output/stage19_significant_wallets.csv"
 
@@ -98,7 +98,7 @@ def main() -> None:
             LOWER(taker_address) AS taker,
             CAST(price AS DOUBLE) AS price,
             CAST(usdc_amount AS DOUBLE) AS usdc
-        FROM read_csv_auto('{TRADES}', all_varchar=TRUE, parallel=TRUE)
+        FROM {TRADES_SRC}
         WHERE market_id IN ({in_list})
           AND CAST(date AS DATE) >= DATE '{week_start}'
           AND CAST(date AS DATE) < DATE '{week_end}'

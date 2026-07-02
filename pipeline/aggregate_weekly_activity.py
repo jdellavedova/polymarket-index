@@ -26,9 +26,9 @@ import duckdb
 import pandas as pd
 
 from common import add_rolling_stats, summary_stats, utc_now, write_json
-from config import DATA_OUT
+from config import DATA_OUT, trades_source
 
-TRADES = "H:/Research/10. Prediction/data/blockchain/processed_trades.csv"
+TRADES_SRC = trades_source()
 WALLETS = "H:/Research/10. Prediction/data/blockchain/wallet_statistics.csv"
 FLAGGED = "G:/My Drive/1. Research/1. Polymarket/2. Insider/output/stage19_significant_wallets.csv"
 
@@ -66,7 +66,7 @@ def main() -> None:
             strftime(CAST(date AS DATE), '%G-W%V') AS week,
             COUNT(*) AS total_trades,
             SUM(CAST(usdc_amount AS DOUBLE)) AS total_usd_volume
-        FROM read_csv_auto('{TRADES}', all_varchar=TRUE, parallel=TRUE)
+        FROM {TRADES_SRC}
         GROUP BY 1
     """)
 
@@ -79,12 +79,12 @@ def main() -> None:
             SELECT strftime(CAST(date AS DATE), '%G-W%V') AS week,
                    LOWER(maker_address) AS wallet,
                    CAST(usdc_amount AS DOUBLE) AS vol
-            FROM read_csv_auto('{TRADES}', all_varchar=TRUE, parallel=TRUE)
+            FROM {TRADES_SRC}
             UNION ALL
             SELECT strftime(CAST(date AS DATE), '%G-W%V') AS week,
                    LOWER(taker_address) AS wallet,
                    CAST(usdc_amount AS DOUBLE) AS vol
-            FROM read_csv_auto('{TRADES}', all_varchar=TRUE, parallel=TRUE)
+            FROM {TRADES_SRC}
         )
         SELECT
             s.week,
@@ -103,11 +103,11 @@ def main() -> None:
         WITH sides AS (
             SELECT strftime(CAST(date AS DATE), '%G-W%V') AS week,
                    LOWER(maker_address) AS wallet
-            FROM read_csv_auto('{TRADES}', all_varchar=TRUE, parallel=TRUE)
+            FROM {TRADES_SRC}
             UNION
             SELECT strftime(CAST(date AS DATE), '%G-W%V') AS week,
                    LOWER(taker_address) AS wallet
-            FROM read_csv_auto('{TRADES}', all_varchar=TRUE, parallel=TRUE)
+            FROM {TRADES_SRC}
         )
         SELECT
             s.week,
@@ -224,7 +224,7 @@ def main() -> None:
             "flagged_active_this_week is the count of Paper 2-flagged wallets that participated."
         ),
         "generated_at": utc_now(),
-        "source": TRADES,
+        "source": TRADES_SRC,
     }
     write_json(DATA_OUT / "weekly_activity_latest.json", payload)
 

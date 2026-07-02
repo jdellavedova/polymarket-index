@@ -22,9 +22,9 @@ import duckdb
 import pandas as pd
 
 from common import utc_now, write_json
-from config import DATA_OUT
+from config import DATA_OUT, trades_source
 
-TRADES = "H:/Research/10. Prediction/data/blockchain/processed_trades.csv"
+TRADES_SRC = trades_source()
 TOKEN_OUTCOME = "H:/Research/10. Prediction/data/blockchain/token_outcome_map.pkl"
 MARKET_WINNER = "H:/Research/10. Prediction/data/blockchain/market_winner_map.pkl"
 FLAGGED = "G:/My Drive/1. Research/1. Polymarket/2. Insider/output/stage19_significant_wallets.csv"
@@ -74,9 +74,9 @@ def main() -> None:
                 ELSE -1
             END * CASE side WHEN 'maker' THEN 1 ELSE -1 END AS sign
         FROM (
-            SELECT 'maker' AS side, * FROM read_csv_auto('{TRADES}', all_varchar=TRUE, parallel=TRUE)
+            SELECT 'maker' AS side, * FROM {TRADES_SRC}
             UNION ALL
-            SELECT 'taker' AS side, * FROM read_csv_auto('{TRADES}', all_varchar=TRUE, parallel=TRUE)
+            SELECT 'taker' AS side, * FROM {TRADES_SRC}
         ) t
         WHERE LOWER(CASE side WHEN 'maker' THEN t.maker_address ELSE t.taker_address END)
               IN (SELECT wallet FROM flagged)

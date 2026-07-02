@@ -7,12 +7,12 @@ where there is no change in ownership. Tier 1 catches the simplest case (one
 wallet on both sides). Tiers 2 (round-trip within window) and 3 (cluster-wash
 across linked wallets) are forthcoming.
 
-Single pass through the 282GB processed_trades.csv via duckdb. Pre-filter to
-self-matched rows (population ~900 / 712M = 0.0001%), then aggregate the small
-filtered set.
+Two passes through the master trade panel via duckdb (partitioned parquet when
+built, else the ~360GB CSV on H:). Pre-filter to self-matched rows
+(population ~900 / 712M = 0.0001%), then aggregate the small filtered set.
 
 Reads:
-  J:/Research/10. Prediction/data/blockchain/processed_trades.csv
+  config.trades_source() — H:/.../trades_parquet/ or processed_trades.csv
 
 Writes:
   site/public/data/surveillance_wash_latest.json
@@ -26,14 +26,14 @@ import duckdb
 import pandas as pd
 
 from common import utc_now, write_json
-from config import DATA_OUT
+from config import DATA_OUT, trades_source
 
-TRADES = "H:/Research/10. Prediction/data/blockchain/processed_trades.csv"
+TRADES_SRC = trades_source()
 
 
 def main() -> None:
     t0 = time.time()
-    print(f"[{time.strftime('%H:%M:%S')}] Wash trading Tier 1: scanning {TRADES} ...")
+    print(f"[{time.strftime('%H:%M:%S')}] Wash trading Tier 1: scanning {TRADES_SRC} ...")
 
     con = duckdb.connect()
     con.execute("PRAGMA memory_limit='12GB'")
@@ -53,7 +53,7 @@ def main() -> None:
                      THEN 1 ELSE 0 END),
             SUM(CASE WHEN LOWER(maker_address) = LOWER(taker_address)
                      THEN CAST(usdc_amount AS DOUBLE) ELSE 0 END)
-        FROM read_csv_auto('{TRADES}', sample_size=-1)
+        FROM {TRADES_SRC}
     """).fetchone()
     print(f"[{time.strftime('%H:%M:%S')}] Pass 1 done. n_trades={n_trades:,}, "
           f"n_self_matched={n_self_matched_global:,} ({(time.time()-t0)/60:.1f} min)")
@@ -69,7 +69,7 @@ def main() -> None:
             market_id,
             LOWER(maker_address) AS wallet,
             CAST(usdc_amount AS DOUBLE) AS vol
-        FROM read_csv_auto('{TRADES}', sample_size=-1)
+        FROM {TRADES_SRC}
         WHERE LOWER(maker_address) = LOWER(taker_address)
     """)
 

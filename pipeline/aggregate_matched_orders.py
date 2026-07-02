@@ -31,9 +31,9 @@ import time
 import duckdb
 
 from common import utc_now, write_json
-from config import DATA_OUT
+from config import DATA_OUT, trades_source
 
-TRADES = "H:/Research/10. Prediction/data/blockchain/processed_trades.csv"
+TRADES_SRC = trades_source()
 
 # Persistence threshold: minimum number of trades the same pair must have
 # against each other to be considered. Single coincidental matches in big
@@ -53,7 +53,7 @@ THRESHOLDS = [
 
 def main() -> None:
     t0 = time.time()
-    print(f"[{time.strftime('%H:%M:%S')}] Matched orders / Tier 3: scanning {TRADES} ...")
+    print(f"[{time.strftime('%H:%M:%S')}] Matched orders / Tier 3: scanning {TRADES_SRC} ...")
 
     con = duckdb.connect()
     con.execute("PRAGMA memory_limit='14GB'")
@@ -74,7 +74,7 @@ def main() -> None:
             SUM(CAST(usdc_amount AS DOUBLE)) AS total_volume,
             MIN(CAST(date AS DATE)) AS first_trade_date,
             MAX(CAST(date AS DATE)) AS last_trade_date
-        FROM read_csv_auto('{TRADES}', sample_size=-1)
+        FROM {TRADES_SRC}
         WHERE LOWER(maker_address) != LOWER(taker_address)
         GROUP BY wallet_a, wallet_b
         HAVING COUNT(*) >= {MIN_TRADES_PER_PAIR}

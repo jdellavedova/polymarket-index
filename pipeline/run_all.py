@@ -1,22 +1,27 @@
 """Orchestrator — runs aggregations in order.
 
 Four modes:
-    python pipeline/run_all.py                 # default: fast-weekly (~1 min)
-    python pipeline/run_all.py --mode=fast     # same as default, skips full-CSV scans
+    python pipeline/run_all.py                 # default: fast (~1 min)
+    python pipeline/run_all.py --mode=fast     # same as default, skips master scans
     python pipeline/run_all.py --mode=weekly   # fast + heavy scans (weekly_activity,
                                                # top_markets, market_microstructure,
-                                               # profit_split); can take hours on H: drive
-    python pipeline/run_all.py --mode=full     # weekly + surveillance (~10+ hrs)
+                                               # profit_split); ~30-40 min on the CSV
+                                               # master, ~5 min once trades_parquet/
+                                               # is built (tools/convert_to_parquet.py)
+    python pipeline/run_all.py --mode=full     # weekly + surveillance (hours)
     python pipeline/run_all.py --mode=surveillance-only
 
-Sunday cron calls --mode=fast (default). Heavy-scan scripts run monthly or on demand
-via --mode=weekly. Surveillance runs monthly via --mode=full.
+The Sunday refresh (weekly_refresh.ps1) calls --mode=weekly so the heavy
+outputs never go stale. Surveillance runs monthly via --mode=full.
 
-Heavy-scan scripts (scan the 335 GB master CSV on H: drive; hours each):
-  - aggregate_weekly_activity  (5 full scans)
-  - aggregate_top_markets      (1 full scan + Gamma API)
-  - aggregate_market_microstructure (DuckDB scan)
-  - aggregate_profit_split     (incremental but still full-scan to find new rows)
+Heavy-scan scripts (scan the master trade panel via config.trades_source()):
+  - aggregate_weekly_activity  (5 scans; ~20 min CSV, ~2 min parquet)
+  - aggregate_top_markets      (1 scan + Gamma API; ~3 min CSV)
+  - aggregate_market_microstructure (1 filtered scan; ~5-10 min CSV)
+  - aggregate_profit_split     (pandas incremental over the CSV; ~5 min)
+
+Fast mode consumes HEAVY outputs (weekly_activity_history.csv, top_markets,
+profit_split); a staleness warning fires if those are >8 days old.
 """
 from __future__ import annotations
 
@@ -92,6 +97,27 @@ def _run(scripts: list[str]) -> None:
         print(f"  done in {time.time() - start:.2f}s")
 
 
+def _warn_if_heavy_outputs_stale(max_age_days: float = 8.0) -> None:
+    """Fast mode restamps HEAVY outputs without recomputing them. If those
+    files are old, the site silently publishes stale numbers as fresh — warn
+    loudly instead of letting that drift."""
+    from config import DATA_OUT
+    heavy_outputs = [
+        DATA_OUT / "weekly_activity_history.csv",
+        DATA_OUT / "top_markets_latest.json",
+        DATA_OUT / "profit_split_history.csv",
+    ]
+    now = time.time()
+    for p in heavy_outputs:
+        if not p.exists():
+            print(f"!!! STALENESS: {p.name} missing — run --mode=weekly")
+            continue
+        age_days = (now - p.stat().st_mtime) / 86400
+        if age_days > max_age_days:
+            print(f"!!! STALENESS: {p.name} is {age_days:.1f} days old — "
+                  f"fast mode will republish it as fresh. Run --mode=weekly.")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument(
@@ -106,6 +132,8 @@ def main() -> None:
     args = ap.parse_args()
 
     if args.mode in ("fast", "weekly"):
+        if args.mode == "fast":
+            _warn_if_heavy_outputs_stale()
         scripts = FAST if args.mode == "fast" else WEEKLY
         _run(scripts)
         # Re-run the surveillance overview so it picks up any newly-refreshed

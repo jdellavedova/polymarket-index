@@ -27,9 +27,9 @@ import time
 import duckdb
 
 from common import utc_now, write_json
-from config import DATA_OUT
+from config import DATA_OUT, trades_source
 
-TRADES = "H:/Research/10. Prediction/data/blockchain/processed_trades.csv"
+TRADES_SRC = trades_source()
 
 # HHI thresholds. The 0.25 / 0.50 / 0.75 cutpoints map roughly onto the
 # DOJ horizontal-merger guidelines (unconcentrated / moderately / highly).
@@ -42,7 +42,7 @@ MIN_TRADES = 20
 
 def main() -> None:
     t0 = time.time()
-    print(f"[{time.strftime('%H:%M:%S')}] Concentration: scanning {TRADES} ...")
+    print(f"[{time.strftime('%H:%M:%S')}] Concentration: scanning {TRADES_SRC} ...")
 
     con = duckdb.connect()
     con.execute("PRAGMA memory_limit='14GB'")
@@ -56,10 +56,10 @@ def main() -> None:
         SELECT market_id, wallet, COUNT(*) AS n_participations
         FROM (
             SELECT market_id, LOWER(maker_address) AS wallet
-            FROM read_csv_auto('{TRADES}', sample_size=-1)
+            FROM {TRADES_SRC}
             UNION ALL
             SELECT market_id, LOWER(taker_address) AS wallet
-            FROM read_csv_auto('{TRADES}', sample_size=-1)
+            FROM {TRADES_SRC}
         )
         GROUP BY market_id, wallet
     """)

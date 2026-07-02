@@ -16,6 +16,24 @@ BLOCKCHAIN = Path("H:/Research/10. Prediction/data/blockchain")
 PAPER4 = BLOCKCHAIN / "paper4"
 INSIDER_OUT = Path("G:/My Drive/1. Research/1. Polymarket/2. Insider/output")
 
+TRADES_CSV = BLOCKCHAIN / "processed_trades.csv"
+TRADES_PARQUET_DIR = BLOCKCHAIN / "trades_parquet"
+
+
+def trades_source() -> str:
+    """DuckDB FROM-expression for the master trade panel.
+
+    Prefers the partitioned Parquet store (built once by
+    tools/convert_to_parquet.py, kept current by append_delta_to_master.py on
+    H:), which scans in minutes instead of the ~20+ min per pass the 360 GB
+    CSV takes. Falls back to the CSV if parquet hasn't been built yet. Both
+    expose identical all-VARCHAR columns, so queries are source-agnostic.
+    """
+    if TRADES_PARQUET_DIR.exists() and any(TRADES_PARQUET_DIR.rglob("*.parquet")):
+        return (f"read_parquet('{TRADES_PARQUET_DIR.as_posix()}/**/*.parquet', "
+                f"hive_partitioning=1)")
+    return f"read_csv_auto('{TRADES_CSV.as_posix()}', all_varchar=TRUE, parallel=TRUE)"
+
 SOURCES = {
     "weekly_pwi": PAPER4 / "weekly_pwi.csv",
     "calibration_nonbot": PAPER4 / "calibration_nonbot_market.csv",

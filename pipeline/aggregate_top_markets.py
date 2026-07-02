@@ -18,7 +18,7 @@ import pandas as pd
 import requests
 
 from common import utc_now, write_json
-from config import DATA_OUT
+from config import DATA_OUT, trades_source
 from categorize import categorize as _categorize_question
 
 GAMMA_MARKET_ENDPOINT = "https://gamma-api.polymarket.com/markets/{mid}"
@@ -40,8 +40,8 @@ def fetch_missing_question(market_id: str) -> dict | None:
     except Exception:
         return None
 
-TRADES = "H:/Research/10. Prediction/data/blockchain/processed_trades.csv"
-MARKETS = "J:/Research/10. Prediction/data/polymarket_markets.csv"
+TRADES_SRC = trades_source()
+MARKETS = "H:/Research/10. Prediction/data/polymarket_markets.csv"
 N_WEEKS_HISTORY = 12  # limit history written to JSON to keep payload small
 TOP_K = 30  # latest week shows top 30 (powers the homepage heatmap); history keeps top 5
 
@@ -63,7 +63,7 @@ def main() -> None:
             market_id,
             SUM(CAST(usdc_amount AS DOUBLE)) AS usd_volume,
             COUNT(*) AS n_trades
-        FROM read_csv_auto('{TRADES}', all_varchar=TRUE, parallel=TRUE)
+        FROM {TRADES_SRC}
         WHERE market_id IS NOT NULL AND market_id != ''
         GROUP BY 1, 2
     """)
