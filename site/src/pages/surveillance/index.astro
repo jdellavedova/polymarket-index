@@ -26,8 +26,7 @@ const infeasible = overview.infeasible_tests as any[];
       <p class="dd-eyebrow">DV-PMI &middot; Market integrity</p>
       <h1 class="re-h1">Surveillance Indices</h1>
       <p class="re-lede">
-        {overview.subtitle} Of the eight indices we publish, <strong>{overview.n_live} are live</strong> and four are
-        in development. Three classic FINRA tests (spoofing, layering, quote stuffing) require order-book and
+        {overview.subtitle} Of the eight indices we publish, <strong>{overview.n_live} are live</strong> and <strong>{stubCards.length} are in development</strong>. Three classic FINRA tests (spoofing, layering, quote stuffing) require order-book and
         cancellation data that the on-chain trade record does not contain; we list them below the live indices
         rather than approximate them.
       </p>

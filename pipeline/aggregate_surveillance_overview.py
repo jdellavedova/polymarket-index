@@ -210,7 +210,7 @@ def main() -> None:
     payload = {
         "title": "DV-PMI Surveillance Indices",
         "subtitle": (
-            "Eight market-integrity tests on the 670M-trade Polymarket on-chain "
+            "Eight market-integrity tests on the 671M-trade Polymarket on-chain "
             "panel. Patterns reported are statistical, not legal conclusions."
         ),
         "n_live": n_live,

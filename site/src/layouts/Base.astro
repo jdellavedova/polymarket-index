@@ -42,7 +42,7 @@ nextSunday.setDate(today.getDate() + daysUntilSunday);
 const nextRefresh = nextSunday.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 const fullOgUrl = new URL(ogImage, Astro.site ?? "https://jdellavedova.com").toString();
 const canonical = Astro.url.href;
-const desc = description ?? "Weekly behavioral and microstructure indices from 640M on-chain Polymarket trades. By Joshua Della Vedova, University of San Diego.";
+const desc = description ?? "Weekly behavioral and microstructure indices from 671M on-chain Polymarket trades. By Joshua Della Vedova, University of San Diego.";
 ---
 <!doctype html>
 <html lang="en">

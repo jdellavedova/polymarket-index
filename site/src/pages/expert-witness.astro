@@ -1,6 +1,11 @@
 ---
 import Base from "../layouts/Base.astro";
 import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
+import overview from "../../public/data/surveillance_overview_latest.json";
+
+const liveCount = (overview.cards as any[]).filter((c: any) => c.status === "live").length;
+const wipCount  = (overview.cards as any[]).filter((c: any) => c.status === "coming_soon").length;
+const liveNames = (overview.cards as any[]).filter((c: any) => c.status === "live").map((c: any) => c.name);
 ---
 <Base
   title="Consulting and expert testimony · DV-PMI"
@@ -39,7 +44,7 @@ import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
   <article class="md-body">
     <h2 class="bf-section-h">Areas of expertise</h2>
     <ul>
-      <li>Informed-trading detection in prediction markets (microstructure-grounded, Daubert-ready)</li>
+      <li>Informed-trading detection in prediction markets (microstructure-grounded, mapped onto the four Daubert Rule 702 factors below)</li>
       <li>Reference-price formation, disposition effects, retail behavior</li>
       <li>Execution quality and maker-taker dynamics (theta-epsilon decomposition)</li>
       <li>Prediction-market regulatory surveillance and market-design review</li>
@@ -61,12 +66,11 @@ import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
     <h2 class="bf-section-h">Surveillance suite</h2>
     <p>
       Eight market-integrity tests are published on the <a href="/surveillance">DV-PMI Surveillance Indices</a>
-      page. Four are live as of the most recent release (informed trading, insider timing, adverse selection,
-      resolution surprise); four are in development (wash trading, matched orders, marking the close,
-      concentration). Each index is reported as a pattern consistent with the named conduct rather than a legal
-      conclusion, and each maps onto the Rule 702 factors below. Three classic FINRA tests (spoofing, layering,
-      quote stuffing) require order-book and cancellation data that the on-chain trade record does not contain;
-      they are listed on the surveillance page as not feasible rather than approximated.
+      page. As of the most recent release, <strong>{liveCount} are live</strong> ({liveNames.join(", ")})
+      and {wipCount} are in development. Each index is reported as a pattern consistent with the named conduct
+      rather than a legal conclusion, and each maps onto the Rule 702 factors below. Three classic FINRA tests
+      (spoofing, layering, quote stuffing) require order-book and cancellation data that the on-chain trade
+      record does not contain; they are listed on the surveillance page as not feasible rather than approximated.
     </p>
 
     <h2 class="bf-section-h">Methodology and Daubert mapping</h2>
@@ -83,7 +87,7 @@ import AuthorityStrip from "../components/redesign/AuthorityStrip.astro";
       </tr>
       <tr>
         <td>Peer review</td>
-        <td>Documented in working papers and the published record; reproducible pipelines and pre-registered methodology log.</td>
+        <td>Documented in working papers and the published record; reproducible pipelines and versioned methodology changelog (every construction change dated and documented).</td>
       </tr>
       <tr>
         <td>General acceptance</td>

@@ -145,7 +145,7 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
     <FindingCard
       label="ALGORITHMIC SHARE OF TRADING"
       headline={`${botShareNow.toFixed(0)}%`}
-      claim={`Algorithmic wallets account for ${botShareNow.toFixed(0)}% of all trades (13-week moving average), up from near zero in late 2022. They earn the only positive aggregate return despite below-coin-flip directional accuracy.`}
+      claim={`Algorithmic wallets account for ${botShareNow.toFixed(0)}% of all trades (13-week moving average), up from near zero in late 2022. They earn the only positive aggregate return despite coin-flip directional accuracy (49.9%).`}
       sparklineData={botShareSpark}
       href="/bot-share"
     />
@@ -171,7 +171,7 @@ const desc = "Weekly research dataset of 671M Polymarket trades. Lede + chart + 
     <FindingCard
       label="ANOMALOUS ACCURACY BY MARKET TYPE"
       headline={`${(Math.max(...pii.mnpi_taxonomy.map(m => m.flag_rate_01))*100).toFixed(2)}%`}
-      claim="Markets where humans control outcomes — votes, policy decisions, award ceremonies — show the highest rates of anomalous accuracy. Crypto price markets show the lowest. The ordering matches theoretical predictions about where private information is most likely."
+      claim="Vote markets (elections, awards, political decisions) show the highest rate of anomalous accuracy at 2.79%, roughly three times the rate in other categories. This is consistent with theory: private information is most available where few decision-makers control the outcome."
       barData={insiderBars}
       href="/surveillance"
     />

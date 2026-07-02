@@ -177,19 +177,19 @@ const indexLinks = [
 
     <h3 class="md-h3">Probability Weighting Index (PWI)</h3>
     <p>
-      Composite z-score of two weekly moments computed from the non-bot trade subset:
+      Each week, a one-parameter Prelec weighting function
+      <code>w(p) = exp(−(−log p)<sup>α</sup>)</code> is fit by trade-count-weighted nonlinear least squares
+      separately to each non-bot wallet class (active retail, sophisticated, casual, one-shot). The PWI is
+      the trade-count-weighted mean of the fitted <code>α</code> values across those classes. Bots
+      (<code>trades_per_day &gt; 50</code> OR <code>n_trades &gt; 1000</code>) are excluded so the index
+      reflects human probability weighting rather than algorithmic liquidity provision.
     </p>
-    <ul>
-      <li><strong>Mean calibration error</strong>: <code>|trade_price − realized_outcome|</code> averaged across
-        all resolved trades that week, with <code>realized_outcome</code> ∈ {0,1}.</li>
-      <li><strong>Longshot fraction</strong>: <code>(trades at price &lt; 0.10) / (total trades)</code> that week.</li>
-    </ul>
     <p>
-      Each moment is z-scored against its own 52-week rolling distribution (mean / SD). The PWI is the equal-
-      weighted sum of the two z-scores. Reported as the <strong>raw value</strong>, plus 4-, 13-, and 52-week
-      moving averages, plus the headline 52-week rolling z-score. A PWI z-score of +1 is one standard deviation
-      of <em>elevated</em> probability distortion versus the prior year. Sample-size floor: ≥ 1,000 non-bot
-      trades that week, otherwise the value is suppressed.
+      Interpretation: <code>α = 1.0</code> corresponds to rational pricing with no probability distortion.
+      Values below 1 are the classical inverse-S weighting (small probabilities over-weighted, mid-range
+      under-weighted) documented in Tversky and Kahneman (1992). Reported as the <strong>weekly value</strong>,
+      plus 4-, 13-, and 52-week moving averages, plus the headline 52-week rolling z-score. Sample-size floor:
+      ≥ 1,000 non-bot trades that week; per-class fits requiring fewer than 200 trades are suppressed.
     </p>
 
     <h3 class="md-h3">Market Calibration Curve</h3>
@@ -247,9 +247,10 @@ const indexLinks = [
       Sub-populations are split by the <strong>MNPI taxonomy</strong>: Vote (elections, awards, political
       decisions), Action (military, regulatory, decision-driven outcomes), Performance (sports, individual
       performance), Stochastic (crypto prices, weather, aggregate forces). Categories are assigned by a
-      rules-and-LLM pipeline validated against hand-coded markets. The flag-rate ordering Action &gt; Vote
-      &gt; Performance &gt; Stochastic confirms the theoretical prediction that markets where humans control
-      outcomes carry stronger informational signatures.
+      rules-and-LLM pipeline validated against hand-coded markets. Vote markets (small groups of humans
+      control outcomes, e.g., elections and award decisions) show by far the highest flag rate (2.79%),
+      roughly three times the rate in other categories. This elevated rate is consistent with the theoretical
+      prediction that private information is most available where few decision-makers control the outcome.
     </p>
 
     <h3 class="md-h3">Algorithmic Share of Participation</h3>

@@ -20,7 +20,7 @@ const MNPI_LABEL: Record<string, string> = {
 };
 function mnpiLabel(k: string) { return MNPI_LABEL[k] ?? k; }
 
-const lede = `Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets tested, ${pii.headline.total_flagged_p_lt_01.toLocaleString()} were flagged at the one-percent significance threshold (flag rate ${pct(pii.headline.flag_rate, 2)}). ${pii.headline.holm_bonferroni_survivors} wallets survive the Holm-Bonferroni family-wise correction; ${pii.headline.bh_fdr_survivors} survive the Benjamini-Hochberg FDR procedure. The flag rate ordering across MNPI categories — Action highest, Stochastic lowest — confirms the theoretical prediction that markets where humans can know outcomes in advance show stronger informational signatures.`;
+const lede = `Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets tested, ${pii.headline.total_flagged_p_lt_01.toLocaleString()} were flagged at the one-percent significance threshold (flag rate ${pct(pii.headline.flag_rate, 2)}). ${pii.headline.holm_bonferroni_survivors} wallets survive the Holm-Bonferroni family-wise correction; ${pii.headline.bh_fdr_survivors} survive the Benjamini-Hochberg FDR procedure. Vote markets (elections, award decisions, political outcomes) show the highest flag rate at 2.79%, roughly three times the rate in other categories, consistent with theory: private information is most available where few decision-makers control the outcome.`;
 ---
 <DeepDiveLayout
   title="Private Information Index (PII)"
@@ -82,7 +82,9 @@ const lede = `Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets t
     by mechanically following the price signal. A one-sided binomial z-test at threshold z &gt; 2.326 (p &lt; 0.01)
     flags wallets whose accuracy cannot be explained by price-following alone. The theta-epsilon orthogonality
     violation (a positive correlation between accuracy and execution at the wallet level, not present in the
-    population-level orthogonality established in Paper 1) distinguishes informed traders from lucky ones.
+    population-level orthogonality established in Paper 1) flags statistical patterns consistent with informed
+    trading; it bounds the rate of anomalous accuracy in the population and does not identify specific individuals
+    as informed traders.
     MNPI-category assignment uses a rules-and-LLM pipeline validated against hand-coded markets
     (vote, action, performance, stochastic).
   </p>
