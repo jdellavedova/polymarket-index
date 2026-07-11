@@ -1,11 +1,11 @@
-"""Surveillance Index: Matched / Pre-Arranged Orders (Tier 3 cluster wash).
+﻿"""Surveillance Index: Matched / Pre-Arranged Orders (Tier 3 cluster wash).
 
 For each unordered pair of distinct wallets (a, b), count how often they
 ended up on opposite sides of the same Polymarket match, across how many
 markets, and at what total volume. Persistent counterparty pairs (many
 matches together over a long period and across many markets) are the
 signature that distinguishes coordinated wash trading from inventory
-rotation by an unrelated market maker — the same MM rotates against
+rotation by an unrelated market maker â€” the same MM rotates against
 *everyone* (so no single counterparty dominates its activity), while a
 linked-wallet wash pair trades primarily against each other.
 
@@ -239,7 +239,7 @@ def main() -> None:
             "3b) is the natural next iteration.",
         ],
         "generated_at": utc_now(),
-        "source": TRADES,
+        "source": TRADES_SRC,
         "min_trades_per_pair": MIN_TRADES_PER_PAIR,
         "wallclock_seconds": int(time.time() - t0),
     }

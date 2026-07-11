@@ -1,4 +1,4 @@
-"""Surveillance Index: Wash Trading (Tier 1 — Self-matched trades).
+﻿"""Surveillance Index: Wash Trading (Tier 1 â€” Self-matched trades).
 
 A single Polymarket match is "self-matched" when the maker and taker addresses
 are the same wallet. This is the direct economic analog of a wash trade under
@@ -12,7 +12,7 @@ built, else the ~360GB CSV on H:). Pre-filter to self-matched rows
 (population ~900 / 712M = 0.0001%), then aggregate the small filtered set.
 
 Reads:
-  config.trades_source() — H:/.../trades_parquet/ or processed_trades.csv
+  config.trades_source() â€” H:/.../trades_parquet/ or processed_trades.csv
 
 Writes:
   site/public/data/surveillance_wash_latest.json
@@ -162,16 +162,16 @@ def main() -> None:
         ).to_dict(orient="records"),
         "tiers_forthcoming": [
             {
-                "name": "Tier 2 — Round-trip wash",
+                "name": "Tier 2 â€” Round-trip wash",
                 "description": "Single wallet buys and sells the same outcome token within a short window, netting to zero or near-zero exposure while contributing to volume.",
             },
             {
-                "name": "Tier 3 — Cluster wash (linked wallets)",
+                "name": "Tier 3 â€” Cluster wash (linked wallets)",
                 "description": "Repeated wallet-pair counterparties trading the same outcome in tight time windows with offsetting net exposure.",
             },
         ],
         "generated_at": utc_now(),
-        "source": TRADES,
+        "source": TRADES_SRC,
         "wallclock_seconds": int(time.time() - t0),
     }
     write_json(DATA_OUT / "surveillance_wash_latest.json", payload)

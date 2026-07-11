@@ -27,12 +27,19 @@ from __future__ import annotations
 
 import argparse
 import importlib
+import json
 import sys
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+
+# Journal for crash-resume: records completed scripts for the current run so a
+# rerun after a mid-run failure skips work already done. Keyed to the master
+# frontier timestamp, so new data invalidates the journal automatically.
+STATE_FILE = HERE / ".run_state.json"
 
 # Fast: reads pre-computed CSVs from paper4 pipeline; no master-CSV scan. ~1 min.
 # refresh_paper4_sources runs first: CLOB resolution map refresh (incremental,
@@ -76,6 +83,8 @@ SURVEILLANCE = [
 SURVEILLANCE_OVERVIEW = ["aggregate_surveillance_overview"]
 
 # Publishing artifacts: master table, narrative, briefings, OG image, press kit, email.
+# build_media_scan finds NEW press coverage and queues it in media_review.txt
+# (private, gitignored); nothing is auto-published to the site.
 PUBLISH = [
     "build_master_table",
     "build_weekly_narrative",
@@ -83,18 +92,105 @@ PUBLISH = [
     "build_briefings",
     "build_og_image",
     "build_press_kit",
+    "build_media_scan",
     "build_email_digest",
     "build_social_posts",
 ]
 
 
-def _run(scripts: list[str]) -> None:
+def _run(scripts: list[str], journal: dict | None = None) -> None:
     for name in scripts:
+        if journal is not None and name in journal["completed"]:
+            print(f"=== {name} === SKIPPED (completed earlier this run, resume)")
+            continue
         start = time.time()
         print(f"=== {name} ===")
         mod = importlib.import_module(name)
         mod.main()
         print(f"  done in {time.time() - start:.2f}s")
+        if journal is not None:
+            journal["completed"].append(name)
+            _save_journal(journal)
+
+
+def _smoke_import(scripts: list[str]) -> None:
+    """Import every module in the plan BEFORE any long scan starts, so a
+    module-level defect (bad import, renamed constant) fails in seconds
+    instead of 40 minutes into a heavy pass."""
+    print(f"Smoke-importing {len(scripts)} modules ...")
+    for name in scripts:
+        importlib.import_module(name)
+    print("  all imports OK")
+    _check_undefined_names(scripts)
+
+
+def _check_undefined_names(scripts: list[str]) -> None:
+    """Static undefined-name check on every planned script. Import alone
+    misses NameErrors hiding inside function bodies (the July 2026 TRADES
+    bug crashed 40 minutes into a heavy scan); pyflakes catches those in
+    seconds. Only 'undefined name' findings are fatal; style noise passes."""
+    try:
+        import io
+        from pyflakes.api import checkPath
+        from pyflakes.reporter import Reporter
+    except ImportError:
+        print("  (pyflakes not installed - skipping undefined-name check)")
+        return
+    findings = []
+    for name in scripts:
+        path = HERE / f"{name}.py"
+        if not path.exists():
+            continue
+        out, err = io.StringIO(), io.StringIO()
+        checkPath(str(path), Reporter(out, err))
+        findings += [ln for ln in out.getvalue().splitlines() if "undefined name" in ln]
+    if findings:
+        for f in findings:
+            print(f"!!! {f}")
+        raise SystemExit(
+            f"ABORT: {len(findings)} undefined-name defect(s) found before any scan started."
+        )
+    print("  no undefined names")
+
+
+def _run_key(mode: str) -> str:
+    """Identity of 'the same run': mode + master frontier stamp. A new append
+    changes the stamp, which invalidates any stale journal."""
+    try:
+        from config import BLOCKCHAIN
+        frontier = json.loads((BLOCKCHAIN / "master_frontier.json").read_text())
+        stamp = frontier.get("updated_at", "no-stamp")
+    except Exception:
+        stamp = "no-frontier"
+    return f"{mode}:{stamp}"
+
+
+def _load_journal(run_key: str) -> dict:
+    try:
+        state = json.loads(STATE_FILE.read_text())
+        if state.get("run_key") == run_key and isinstance(state.get("completed"), list):
+            done = state["completed"]
+            if done:
+                print(f"RESUME: journal matches this run; skipping {len(done)} "
+                      f"completed step(s): {', '.join(done)}")
+            return {"run_key": run_key, "completed": done}
+    except FileNotFoundError:
+        pass
+    except Exception as e:
+        print(f"WARNING: unreadable {STATE_FILE.name} ({e}) — starting fresh.")
+    return {"run_key": run_key, "completed": []}
+
+
+def _save_journal(journal: dict) -> None:
+    payload = dict(journal, updated_at=datetime.now(timezone.utc).isoformat())
+    STATE_FILE.write_text(json.dumps(payload, indent=2))
+
+
+def _clear_journal() -> None:
+    try:
+        STATE_FILE.unlink()
+    except FileNotFoundError:
+        pass
 
 
 def _warn_if_heavy_outputs_stale(max_age_days: float = 8.0) -> None:
@@ -129,26 +225,38 @@ def main() -> None:
              "full (~10hrs): weekly + surveillance. "
              "surveillance-only: just the slow surveillance aggregators.",
     )
+    ap.add_argument(
+        "--fresh",
+        action="store_true",
+        help="Ignore any resume journal and rerun every step from scratch.",
+    )
     args = ap.parse_args()
 
-    if args.mode in ("fast", "weekly"):
-        if args.mode == "fast":
-            _warn_if_heavy_outputs_stale()
-        scripts = FAST if args.mode == "fast" else WEEKLY
-        _run(scripts)
-        # Re-run the surveillance overview so it picks up any newly-refreshed
-        # PII numbers even on a fast-only refresh. It only re-reads existing
-        # JSONs and is cheap.
-        _run(SURVEILLANCE_OVERVIEW)
-        _run(PUBLISH)
+    if args.mode == "fast":
+        plan = FAST + SURVEILLANCE_OVERVIEW + PUBLISH
+    elif args.mode == "weekly":
+        plan = WEEKLY + SURVEILLANCE_OVERVIEW + PUBLISH
     elif args.mode == "full":
-        _run(WEEKLY)
-        _run(SURVEILLANCE)
-        _run(SURVEILLANCE_OVERVIEW)
-        _run(PUBLISH)
-    elif args.mode == "surveillance-only":
-        _run(SURVEILLANCE)
-        _run(SURVEILLANCE_OVERVIEW)
+        plan = WEEKLY + SURVEILLANCE + SURVEILLANCE_OVERVIEW + PUBLISH
+    else:  # surveillance-only
+        plan = SURVEILLANCE + SURVEILLANCE_OVERVIEW
+
+    # Fail-fast gate: catch module-level defects before any heavy scan.
+    _smoke_import(plan)
+
+    if args.mode == "fast":
+        _warn_if_heavy_outputs_stale()
+
+    # Crash-resume journal for the long modes only; fast is ~1 min, not worth it.
+    journal = None
+    if args.mode in ("weekly", "full", "surveillance-only"):
+        if args.fresh:
+            _clear_journal()
+        journal = _load_journal(_run_key(args.mode))
+
+    _run(plan, journal)
+    if journal is not None:
+        _clear_journal()
 
 
 if __name__ == "__main__":

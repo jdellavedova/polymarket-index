@@ -1,4 +1,4 @@
-"""Surveillance Index: Wash Trading (Tier 2 — Round-trip wash).
+﻿"""Surveillance Index: Wash Trading (Tier 2 â€” Round-trip wash).
 
 A single wallet's activity in a single token is "round-trip wash" candidate
 when the wallet both buys and sells the token, the two sides are approximately
@@ -205,7 +205,7 @@ def main() -> None:
     print(f"[{time.strftime('%H:%M:%S')}] Aggregations done ({(time.time()-t0)/60:.1f} min)")
 
     payload = {
-        "index_name": "Wash Trading (Tier 2 — Round-trip)",
+        "index_name": "Wash Trading (Tier 2 â€” Round-trip)",
         "short_name": "Wash T2",
         "as_of": utc_now()[:10],
         "snapshot_note": (
@@ -260,7 +260,7 @@ def main() -> None:
             "available for download under the methodology page's usage notice.",
         ],
         "generated_at": utc_now(),
-        "source": TRADES,
+        "source": TRADES_SRC,
         "wallclock_seconds": int(time.time() - t0),
     }
     write_json(DATA_OUT / "surveillance_wash_tier2_latest.json", payload)

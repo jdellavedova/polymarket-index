@@ -163,7 +163,7 @@ def main() -> None:
         "top_k": TOP_K,
         "markets": markets_list,
         "generated_at": utc_now(),
-        "source": TRADES,
+        "source": TRADES_SRC,
         "notes": (
             "Top 5 resolved-trade markets by USD volume in the most recent complete week. "
             "Market questions come from polymarket_markets.csv (static snapshot); new markets "

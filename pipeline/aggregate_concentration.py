@@ -1,4 +1,4 @@
-"""Surveillance Index: Concentration / Pump Risk (Herfindahl-Hirschman Index).
+﻿"""Surveillance Index: Concentration / Pump Risk (Herfindahl-Hirschman Index).
 
 For each market, compute the HHI of participation across wallets:
    HHI = sum_i (s_i^2)
@@ -228,7 +228,7 @@ def main() -> None:
             "trades. A volume-weighted variant is a candidate v2 refinement.",
         ],
         "generated_at": utc_now(),
-        "source": TRADES,
+        "source": TRADES_SRC,
         "wallclock_seconds": int(time.time() - t0),
     }
     write_json(DATA_OUT / "surveillance_concentration_latest.json", payload)

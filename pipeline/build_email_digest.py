@@ -9,11 +9,19 @@ Also prints a ready-to-send block with subject line and a suggested preview text
 This script is intentionally ESP-agnostic: the user will paste the HTML into
 their chosen provider weekly (or the harness can later wire in Mailchimp's
 `campaigns/send` API, Buttondown's POST /emails, etc.).
+
+Structure (July 2026 redesign): a recurring digest lives on CHANGE, not levels.
+Every headline number carries a week-over-week delta; the five indices appear
+as a scoreboard ranked by how extended each is versus its own 52-week history;
+the surveillance section leads with the number that moves weekly (flagged
+wallets active this week) rather than the static to-date counts.
 """
 from __future__ import annotations
 
 import json
 from pathlib import Path
+
+import pandas as pd
 
 from common import utc_now
 from config import DATA_OUT
@@ -46,10 +54,77 @@ def _compact_trades(n: int) -> str:
     return f"{int(n):,}"
 
 
+def _pct_delta(cur: float, prev: float) -> str | None:
+    """'+12.4%' style week-over-week change; None when not computable."""
+    if prev is None or prev == 0 or cur is None:
+        return None
+    return f"{(cur - prev) / abs(prev) * 100:+.1f}%"
+
+
+def _pp_delta(cur: float, prev: float) -> str | None:
+    """Percentage-point change for share-type metrics."""
+    if prev is None or cur is None:
+        return None
+    return f"{(cur - prev) * 100:+.1f}pp"
+
+
+def _wow_from_history() -> dict:
+    """Prior-week levels from weekly_activity_history.csv (last two rows)."""
+    try:
+        h = pd.read_csv(DATA_OUT / "weekly_activity_history.csv")
+        if len(h) < 2:
+            return {}
+        prev = h.iloc[-2]
+        return {
+            "total_usd_volume": float(prev["total_usd_volume"]),
+            "total_trades": float(prev["total_trades"]),
+            "active_wallets": float(prev["active_wallets"]),
+            "share_bot": float(prev["share_bot"]),
+            "flagged_active": float(prev.get("flagged_active", float("nan"))),
+        }
+    except Exception:
+        return {}
+
+
+# The five weekly indices that carry ma4w/z52w context. Display value formats
+# differ per index, so each entry carries its own formatter.
+INDEX_FILES = [
+    ("pwi_latest.json", "Probability Weighting (non-bot alpha)", "{:.3f}"),
+    ("execution_latest.json", "Execution Gap (bot vs retail)", "{:+.3f}"),
+    ("bot_share_latest.json", "Bot Share of Volume", "{:.1%}"),
+    ("price_gap_latest.json", "Longshot/Favorite Gap", "{:+.3f}"),
+    ("efficiency_latest.json", "Market Efficiency (Prelec R2)", "{:.3f}"),
+]
+
+
+def _index_scoreboard() -> list[dict]:
+    """One row per index: value, 4-week average, z-score vs 52 weeks.
+    Sorted by |z52w| descending, so the most extended index leads."""
+    rows = []
+    for fname, label, fmt in INDEX_FILES:
+        try:
+            j = _read(fname)
+            val = j.get("value")
+            z = j.get("z52w")
+            ma4 = j.get("ma4w")
+            if val is None:
+                continue
+            rows.append({
+                "label": label,
+                "value_str": fmt.format(val),
+                "ma4_str": fmt.format(ma4) if ma4 is not None else "n/a",
+                "z": z if z is not None else 0.0,
+                "z_str": f"{z:+.2f}" if z is not None else "n/a",
+            })
+        except Exception:
+            continue
+    rows.sort(key=lambda r: abs(r["z"]), reverse=True)
+    return rows
+
+
 def main() -> None:
     narrative = _read("weekly_narrative.json")
     activity = _read("weekly_activity_latest.json")
-    pwi = _read("pwi_latest.json")
     pii = _read("pii_latest.json")
     top = _read("top_markets_latest.json")
     try:
@@ -58,6 +133,23 @@ def main() -> None:
         profit = None
 
     as_of = narrative.get("as_of", activity.get("as_of", "recent"))
+    prev = _wow_from_history()
+    board = _index_scoreboard()
+
+    vol = activity["total_usd_volume"]
+    trades = activity["total_trades"]
+    wallets = activity.get("active_wallets")
+    bot_share = activity["by_type_share"]["bot"]
+    flagged_now = activity.get("flagged_active_this_week")
+    hl = pii["headline"]
+
+    d_vol = _pct_delta(vol, prev.get("total_usd_volume"))
+    d_trades = _pct_delta(trades, prev.get("total_trades"))
+    d_wallets = _pct_delta(wallets, prev.get("active_wallets")) if wallets else None
+    d_bot = _pp_delta(bot_share, prev.get("share_bot"))
+
+    def with_delta(level: str, delta: str | None) -> str:
+        return f"{level}  ({delta} WoW)" if delta else level
 
     # ---- Plain-text digest ----
     lines = []
@@ -67,14 +159,21 @@ def main() -> None:
     lines.append(narrative.get("headline_quote", "").strip('"'))
     lines.append("")
     lines.append("-" * 60)
-    lines.append("THIS WEEK BY THE NUMBERS")
+    lines.append("THIS WEEK VS LAST")
     lines.append("-" * 60)
-    lines.append(f"  Total USD volume        {_usd(activity['total_usd_volume'])}")
-    lines.append(f"  Total trades            {_compact_trades(activity['total_trades'])}")
-    lines.append(f"  New participants        {activity['new_wallets']:,}")
-    lines.append(f"  Bot share of trades     {activity['by_type_share']['bot']*100:.1f}%")
-    lines.append(f"  Non-bot Prelec alpha    {pwi['value']:.3f} (Kahneman-Tversky: 0.65)")
+    lines.append(f"  Total USD volume        {with_delta(_usd(vol), d_vol)}")
+    lines.append(f"  Total trades            {with_delta(_compact_trades(trades), d_trades)}")
+    if wallets:
+        lines.append(f"  Active wallets          {with_delta(f'{wallets:,}', d_wallets)}")
+    lines.append(f"  Bot share of trades     {with_delta(f'{bot_share*100:.1f}%', d_bot)}")
     lines.append("")
+    if board:
+        lines.append("-" * 60)
+        lines.append("INDEX SCOREBOARD (ranked by stretch vs own 52-week history)")
+        lines.append("-" * 60)
+        for r in board:
+            lines.append(f"  {r['label']:<38s} {r['value_str']:>8s}   4w avg {r['ma4_str']:>8s}   z {r['z_str']}")
+        lines.append("")
     lines.append("-" * 60)
     lines.append("THE STORY")
     lines.append("-" * 60)
@@ -86,7 +185,8 @@ def main() -> None:
     lines.append("-" * 60)
     for m in (top.get("markets") or [])[:5]:
         q = m.get("question") or f"(new market #{m['market_id']})"
-        lines.append(f"  {m['rank']}. {_usd(m['usd_volume'])}  {q}")
+        cat = f" [{m['category']}]" if m.get("category") else ""
+        lines.append(f"  {m['rank']}. {_usd(m['usd_volume'])}  {q}{cat}")
     lines.append("")
     lines.append("-" * 60)
     lines.append("WHO MADE MONEY (resolved trades only)")
@@ -107,12 +207,13 @@ def main() -> None:
         lines.append("  profit-split not available this week")
     lines.append("")
     lines.append("-" * 60)
-    lines.append("INSIDER-TRADING FLAG COUNT (to date)")
+    lines.append("SURVEILLANCE")
     lines.append("-" * 60)
-    hl = pii["headline"]
-    lines.append(f"  Wallets flagged as likely informed:   {hl['total_flagged_p_lt_01']:,}")
-    lines.append(f"  Out of wallets tested:                {hl['total_wallets_tested']:,} ({hl['flag_rate']*100:.2f}%)")
+    if flagged_now is not None:
+        lines.append(f"  Flagged wallets active this week:     {flagged_now:,} of {hl['total_flagged_p_lt_01']:,} flagged")
+    lines.append(f"  Wallets flagged as likely informed:   {hl['total_flagged_p_lt_01']:,} of {hl['total_wallets_tested']:,} tested ({hl['flag_rate']*100:.2f}%)")
     lines.append(f"  After strict statistical correction:  {hl['holm_bonferroni_survivors']:,}")
+    lines.append("  Flags mark patterns consistent with informed trading, not proof of it.")
     lines.append("")
     lines.append("=" * 60)
     lines.append(f"Full dashboard: {SITE_URL}")
@@ -127,13 +228,39 @@ def main() -> None:
     def esc(s: str) -> str:
         return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
 
-    bot_share_pct = activity["by_type_share"]["bot"] * 100
+    def stat_row(label: str, level: str, delta: str | None) -> str:
+        delta_html = (
+            f" <span style='color:#5a687a;font-size:13px;'>({esc(delta)} WoW)</span>"
+            if delta else ""
+        )
+        return f"""            <tr>
+              <td style="padding:6px 0;font-family:Georgia,serif;color:#5a687a;width:52%;">{esc(label)}</td>
+              <td style="padding:6px 0;font-family:'Courier New',monospace;color:#0a1420;text-align:right;"><strong>{esc(level)}</strong>{delta_html}</td>
+            </tr>"""
+
+    stat_rows = [stat_row("Total USD volume", _usd(vol), d_vol),
+                 stat_row("Total trades", _compact_trades(trades), d_trades)]
+    if wallets:
+        stat_rows.append(stat_row("Active wallets", f"{wallets:,}", d_wallets))
+    stat_rows.append(stat_row("Bot share of trades", f"{bot_share*100:.1f}%", d_bot))
+
+    board_rows = []
+    for i, r in enumerate(board):
+        weight = "bold" if i == 0 else "normal"
+        board_rows.append(f"""      <tr>
+        <td style="padding:4px 12px 4px 0;font-family:Georgia,serif;color:#0a1420;font-weight:{weight};">{esc(r['label'])}</td>
+        <td style="padding:4px 8px;font-family:'Courier New',monospace;color:#0a1420;text-align:right;white-space:nowrap;font-weight:{weight};">{esc(r['value_str'])}</td>
+        <td style="padding:4px 8px;font-family:'Courier New',monospace;color:#5a687a;text-align:right;white-space:nowrap;">4w {esc(r['ma4_str'])}</td>
+        <td style="padding:4px 0;font-family:'Courier New',monospace;color:#5a687a;text-align:right;white-space:nowrap;">z {esc(r['z_str'])}</td>
+      </tr>""")
+
     top_rows = []
     for m in (top.get("markets") or [])[:5]:
         q = esc(m.get("question") or f"(new market #{m['market_id']})")
+        cat = f" <span style='color:#8a8575;font-size:12px;'>[{esc(m['category'])}]</span>" if m.get("category") else ""
         top_rows.append(f"""      <tr>
         <td style="padding:6px 12px 6px 0;vertical-align:top;color:#5a687a;font-family:Georgia,serif;">{m['rank']}.</td>
-        <td style="padding:6px 0;vertical-align:top;font-family:Georgia,serif;"><strong style="color:#0a1420;">{_usd(m['usd_volume'])}</strong> &middot; <span style="color:#0a1420;">{q}</span></td>
+        <td style="padding:6px 0;vertical-align:top;font-family:Georgia,serif;"><strong style="color:#0a1420;">{_usd(m['usd_volume'])}</strong> &middot; <span style="color:#0a1420;">{q}</span>{cat}</td>
       </tr>""")
 
     profit_rows = []
@@ -161,7 +288,23 @@ def main() -> None:
     )
 
     headline_q = narrative.get("headline_quote", "").strip('"')
-    hl = pii["headline"]
+
+    flagged_line = ""
+    if flagged_now is not None:
+        flagged_line = (
+            f"<strong>{flagged_now:,}</strong> of the {hl['total_flagged_p_lt_01']:,} flagged wallets "
+            f"traded this week. "
+        )
+
+    scoreboard_block = ""
+    if board_rows:
+        scoreboard_block = f"""        <tr><td style="padding:14px 28px 4px 28px;">
+          <div style="font-family:'Segoe UI',Helvetica,sans-serif;font-size:11px;letter-spacing:0.09em;color:#0074c8;text-transform:uppercase;margin-bottom:8px;">Index scoreboard &middot; ranked by stretch vs 52-week history</div>
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+{chr(10).join(board_rows)}
+          </table>
+        </td></tr>
+"""
 
     html = f"""<!doctype html>
 <html>
@@ -179,30 +322,13 @@ def main() -> None:
         </td></tr>
 
         <tr><td style="padding:14px 28px 6px 28px;">
+          <div style="font-family:'Segoe UI',Helvetica,sans-serif;font-size:11px;letter-spacing:0.09em;color:#0074c8;text-transform:uppercase;margin-bottom:8px;">This week vs last</div>
           <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-            <tr>
-              <td style="padding:6px 0;font-family:Georgia,serif;color:#5a687a;width:55%;">Total USD volume</td>
-              <td style="padding:6px 0;font-family:'Courier New',monospace;color:#0a1420;text-align:right;"><strong>{_usd(activity['total_usd_volume'])}</strong></td>
-            </tr>
-            <tr>
-              <td style="padding:6px 0;font-family:Georgia,serif;color:#5a687a;">Total trades</td>
-              <td style="padding:6px 0;font-family:'Courier New',monospace;color:#0a1420;text-align:right;">{_compact_trades(activity['total_trades'])}</td>
-            </tr>
-            <tr>
-              <td style="padding:6px 0;font-family:Georgia,serif;color:#5a687a;">New participants</td>
-              <td style="padding:6px 0;font-family:'Courier New',monospace;color:#0a1420;text-align:right;">{activity['new_wallets']:,}</td>
-            </tr>
-            <tr>
-              <td style="padding:6px 0;font-family:Georgia,serif;color:#5a687a;">Bot share of trades</td>
-              <td style="padding:6px 0;font-family:'Courier New',monospace;color:#0a1420;text-align:right;">{bot_share_pct:.1f}%</td>
-            </tr>
-            <tr>
-              <td style="padding:6px 0;font-family:Georgia,serif;color:#5a687a;">Non-bot Prelec &alpha;</td>
-              <td style="padding:6px 0;font-family:'Courier New',monospace;color:#0a1420;text-align:right;">{pwi['value']:.3f} <span style='color:#5a687a;'>(K-T: 0.65)</span></td>
-            </tr>
+{chr(10).join(stat_rows)}
           </table>
         </td></tr>
 
+{scoreboard_block}
         <tr><td style="padding:18px 28px 4px 28px;">
           <div style="font-family:'Segoe UI',Helvetica,sans-serif;font-size:11px;letter-spacing:0.09em;color:#0074c8;text-transform:uppercase;margin-bottom:8px;">The story</div>
           {sentences_html}
@@ -223,9 +349,9 @@ def main() -> None:
         </td></tr>
 
         <tr><td style="padding:18px 28px 4px 28px;">
-          <div style="font-family:'Segoe UI',Helvetica,sans-serif;font-size:11px;letter-spacing:0.09em;color:#0074c8;text-transform:uppercase;margin-bottom:8px;">Insider-trading flags (to date)</div>
+          <div style="font-family:'Segoe UI',Helvetica,sans-serif;font-size:11px;letter-spacing:0.09em;color:#0074c8;text-transform:uppercase;margin-bottom:8px;">Surveillance</div>
           <p style="margin:0;font-family:Georgia,serif;color:#0a1420;line-height:1.5;">
-            <strong>{hl['total_flagged_p_lt_01']:,}</strong> of {hl['total_wallets_tested']:,} tested wallets flagged as likely informed ({hl['flag_rate']*100:.2f}%). {hl['holm_bonferroni_survivors']:,} survive strict statistical correction.
+            {flagged_line}<strong>{hl['total_flagged_p_lt_01']:,}</strong> of {hl['total_wallets_tested']:,} tested wallets show patterns consistent with informed trading ({hl['flag_rate']*100:.2f}%); {hl['holm_bonferroni_survivors']:,} survive strict statistical correction.
           </p>
         </td></tr>
 
@@ -254,7 +380,8 @@ def main() -> None:
     html_out.write_text(html, encoding="utf-8")
     txt_out.write_text(plain, encoding="utf-8")
 
-    subject = f"DV-PMI / Week of {as_of} / {_usd(activity['total_usd_volume'])} volume"
+    subj_delta = f" ({d_vol} WoW)" if d_vol else ""
+    subject = f"DV-PMI / Week of {as_of} / {_usd(vol)} volume{subj_delta}"
     preview = headline_q[:120]
     print(f"Email digest written:")
     print(f"  HTML:    {html_out}")

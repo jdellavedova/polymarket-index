@@ -36,3 +36,11 @@ pipeline/cache/
 
 # profit_split derived cache (regeneratable from master CSV)
 pipeline/profit_split/cache/
+
+# refresh orchestration state (machine-local)
+refresh_status.json
+refresh.lock
+pipeline/.run_state.json
+fresh_debug_log.txt
+pipeline/media_scan_state.json
+media_review.txt
