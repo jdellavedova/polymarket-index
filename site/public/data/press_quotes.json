@@ -4,7 +4,7 @@
       "topic": "Algorithmic dominance of Polymarket volume",
       "quote": "Bots now capture nearly every dollar of volume on Polymarket, up from about half two years ago. The retail trader's share of the market is vanishing.",
       "context": "From Paper 1 and the weekly Bot Share of Volume index: bots execute 94% of weekly trades in recent weeks.",
-      "citation_line": "Joshua Della Vedova, Associate Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Who Profits from Prediction Markets? Execution, not Information.'"
+      "citation_line": "Joshua Della Vedova, Associate Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Who Profits from Prediction? Execution, not Information.'"
     },
     {
       "topic": "Informed trading detection in prediction markets",
@@ -28,7 +28,7 @@
       "topic": "Two-dimensional trading skill",
       "quote": "Trading skill in prediction markets is two-dimensional. Forecasting accuracy and execution quality are different capacities drawing on different resources, and they are nearly uncorrelated at the trader level. Execution, not forecasting, is what determines who profits.",
       "context": "From Paper 1. Bots achieve coin-flip forecasting accuracy (49.9%) yet earn positive returns via execution; active retail achieves 51.3% accuracy but loses money due to poor execution.",
-      "citation_line": "Joshua Della Vedova, Associate Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Who Profits from Prediction Markets? Execution, not Information.'"
+      "citation_line": "Joshua Della Vedova, Associate Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Who Profits from Prediction? Execution, not Information.'"
     }
   ],
   "media_mentions": [

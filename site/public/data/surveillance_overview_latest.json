@@ -4,7 +4,7 @@
   "n_live": 6,
   "n_total": 8,
   "as_of": "2026-02-28",
-  "generated_at": "2026-06-05T22:28:48+00:00",
+  "generated_at": "2026-07-11T22:00:33+00:00",
   "cards": [
     {
       "slot": 1,
@@ -12,7 +12,7 @@
       "name": "Informed Trading (PII)",
       "value": "6,292 flagged",
       "secondary": "of 483,234 tested (1.30%)",
-      "description": "Wallets showing anomalous long-run accuracy — statistically unlikely to be random at p<0.01, Holm-Bonferroni and BH-FDR corrected. Detects sustained accuracy patterns. The per-event joint-accuracy test from Paper 2 then identifies episodic informed trading event by event.",
+      "description": "Wallets whose accuracy cannot be explained by price-following alone. Binomial orthogonality test at p<0.01 with Holm-Bonferroni and Benjamini-Hochberg corrections.",
       "href": "/pii",
       "pattern_consistent_with": "private information advantage"
     },

@@ -1,51 +1,59 @@
-DV-PMI WEEKLY DIGEST / Week of 2026-06-15
+DV-PMI WEEKLY DIGEST / Week of 2026-06-29
 ============================================================
 
-Polymarket traders moved $645 million this week, above the 52-week trend, on 20.6 million individual trades.
+Polymarket traders moved $731 million this week, above the 52-week trend, on 16.4 million individual trades.
 
 ------------------------------------------------------------
-THIS WEEK BY THE NUMBERS
+THIS WEEK VS LAST
 ------------------------------------------------------------
-  Total USD volume        $645M
-  Total trades            20.6M
-  New participants        0
-  Bot share of trades     60.6%
-  Non-bot Prelec alpha    1.017 (Kahneman-Tversky: 0.65)
+  Total USD volume        $731M  (-33.9% WoW)
+  Total trades            16.4M  (-40.6% WoW)
+  Active wallets          236,622  (-25.3% WoW)
+  Bot share of trades     92.3%  (+0.1pp WoW)
+
+------------------------------------------------------------
+INDEX SCOREBOARD (ranked by stretch vs own 52-week history)
+------------------------------------------------------------
+  Longshot/Favorite Gap                    +0.013   4w avg   +0.011   z +1.98
+  Probability Weighting (non-bot alpha)     1.032   4w avg    1.051   z +1.16
+  Execution Gap (bot vs retail)            -0.037   4w avg   -0.039   z -0.97
+  Market Efficiency (Prelec R2)             0.994   4w avg    0.993   z +0.85
+  Bot Share of Volume                       92.3%   4w avg    92.3%   z +0.68
 
 ------------------------------------------------------------
 THE STORY
 ------------------------------------------------------------
-Traders moved $645 million through Polymarket in the week of 2026-06-15, across 20.6 million individual trades. Algorithmic wallets accounted for 61% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 39%.
+Traders moved $731 million through Polymarket in the week of 2026-06-29, across 16.4 million individual trades. with 35,423 wallets placing their first-ever bet (above the recent trend). Algorithmic wallets accounted for 92% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 8%.
 
-The most-traded market was "Will Oh Se-hoon win the 2026 Seoul Mayoral Election?", pulling in $3 million of volume.
+The most-traded market was "Will France win the 2026 FIFA World Cup?", pulling in $5 million of volume. Politics dominated the week's attention.
 
-Both sides made money this week. Bots collected $6 million (+98 bps); retail collected $88K (+10 bps).
+An unusual reversal: retail traders outperformed bots this week. Active retail earned $2 million (+247 bps on volume) while algorithms lost $3 million (-27 bps). Weeks like this are rare (bots are typically on top by the execution channel).
 
 ------------------------------------------------------------
 MOST-TRADED MARKETS THIS WEEK
 ------------------------------------------------------------
-  1. $3M  Will Oh Se-hoon win the 2026 Seoul Mayoral Election
-  2. $3M  MicroStrategy sells any Bitcoin by June 30, 2026?
-  3. $2M  Will the Iranian regime fall by June 30?
-  4. $2M  Will the New York Knicks win the 2026 NBA Finals?
-  5. $2M  Will the San Antonio Spurs win the 2026 NBA Finals?
+  1. $5M  Will France win the 2026 FIFA World Cup? [Sports]
+  2. $4M  Aleksandar Vučić out as Serbian President by June 30, 2026? [Politics]
+  3. $3M  Putin out as President of Russia by end of 2026? [Geopolitics]
+  4. $3M  Will Argentina win the 2026 FIFA World Cup? [Sports]
+  5. $3M  Will Portugal win the 2026 FIFA World Cup? [Sports]
 
 ------------------------------------------------------------
 WHO MADE MONEY (resolved trades only)
 ------------------------------------------------------------
-  Active Retail          $88K   (+10 bps on volume)
-  Bot                     $6M   (+98 bps on volume)
-  Casual                -$59K   (-76 bps on volume)
-  One-Shot              -$54K   (-214 bps on volume)
-  Sophisticated        -$147K   (-59 bps on volume)
-  unclassified           -$6M   (-252 bps on volume)
+  Active Retail           $2M   (+247 bps on volume)
+  Bot                    -$3M   (-27 bps on volume)
+  Casual                $112K   (+260 bps on volume)
+  One-Shot              -$11K   (-410 bps on volume)
+  Sophisticated         $575K   (+276 bps on volume)
 
 ------------------------------------------------------------
-INSIDER-TRADING FLAG COUNT (to date)
+SURVEILLANCE
 ------------------------------------------------------------
-  Wallets flagged as likely informed:   6,292
-  Out of wallets tested:                483,234 (1.30%)
+  Flagged wallets active this week:     409 of 6,292 flagged
+  Wallets flagged as likely informed:   6,292 of 483,234 tested (1.30%)
   After strict statistical correction:  806
+  Flags mark patterns consistent with informed trading, not proof of it.
 
 ============================================================
 Full dashboard: https://jdellavedova.com
@@ -53,4 +61,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-06-07T02:09:57+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-07-11T22:00:38+00:00)

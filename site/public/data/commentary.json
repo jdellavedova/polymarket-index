@@ -1,6 +1,15 @@
 {
   "notes": [
     {
+      "date": "2026-06-29",
+      "tag": "SPORTS",
+      "title": "Week of 2026-06-29: Will France win the 2026 FIFA World Cup?",
+      "body": "Polymarket traders moved $731 million this week, above the 52-week trend, on 16.4 million individual trades. Traders moved $731 million through Polymarket in the week of 2026-06-29, across 16.4 million individual trades. with 35,423 wallets placing their first-ever bet (above the recent trend). Algorithmic wallets accounted for 92% of weekly counterparty events (both maker and taker sides...",
+      "href": "/briefings",
+      "href_label": "See this week's briefings",
+      "auto_generated": true
+    },
+    {
       "date": "2026-06-17",
       "tag": "PRESS",
       "title": "Bloomberg: Polymarket bets on Iran deal fuel fresh insider-trading fears",
@@ -63,7 +72,7 @@
       "date": "2026-04-26",
       "tag": "DASHBOARD",
       "title": "Dashboard live at jdellavedova.com",
-      "body": "Public weekly release of the Della Vedova Prediction Market Indices (DV-PMI). 7 indices + per-market briefings + downloadable CSV histories, refreshed every Sunday from 671M on-chain Polymarket trades.",
+      "body": "Public weekly release of the Della Vedova Prediction Market Indices (DV-PMI). 7 indices + per-market briefings + downloadable CSV histories, refreshed every Sunday from 671M on-chain Polymarket records.",
       "href": "/methodology",
       "href_label": "Read the methodology"
     },
@@ -85,5 +94,5 @@
     }
   ],
   "notes_url": "/notes",
-  "generated_at": "2026-06-07T02:09:56+00:00"
+  "generated_at": "2026-07-11T22:00:33+00:00"
 }
