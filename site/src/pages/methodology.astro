@@ -37,8 +37,9 @@ const indexLinks = [
 
     <h2 class="bf-section-h">Data sources</h2>
     <p>
-      All indices derive from the universe of resolved Polymarket trades on the Polygon blockchain,
-      November 2022 to present (<strong>671M trades across 1.98M wallets</strong> as of the latest snapshot).
+      All indices derive from the Polymarket on-chain trade record on the Polygon blockchain,
+      November 2022 to present (<strong>671M raw on-chain records across 1.98M wallets</strong> as of the
+      latest snapshot, which deduplicate and resolve to <strong>222M resolved trades</strong>).
       Of these, the subset with resolved markets enters the Prelec, calibration, and P&amp;L aggregations
       (~<strong>465K non-bot trades</strong> in the calibration pool, ~<strong>483K wallets tested</strong>
       in the insider screen). Trades are deduplicated against the Paradigm events index and joined against
@@ -92,7 +93,7 @@ const indexLinks = [
           <rect x="400" y="40" width="180" height="64" rx="6" />
           <text x="490" y="62" class="mf-title">processed_trades.csv</text>
           <text x="490" y="80" class="mf-sub">~295 GB master panel</text>
-          <text x="490" y="96" class="mf-sub">671M trades since Nov 2022</text>
+          <text x="490" y="96" class="mf-sub">671M on-chain records since Nov 2022</text>
         </g>
         <line x1="580" y1="72" x2="620" y2="72" class="mf-arrow" marker-end="url(#arrow)" />
 
@@ -285,7 +286,7 @@ Execution      = S × (v − P) × Q     ← did the trade get a better price th
 Identity:        Directional + Execution = Total P&L (per trade, exact)</pre>
     <p>
       The aggregator runs <strong>incrementally</strong>: <code>profit_split/build_fair_prices.py</code>
-      computes the per-(market, token) buy-side VWAP across the full 671M-trade panel as a one-time backfill
+      computes the per-(market, token) buy-side VWAP across the full 671M-record panel as a one-time backfill
       (~25 min), and <code>profit_split/update_weekly.py</code> extends the cache as new trades arrive
       (~1-3 min per Sunday). The cache lives at <code>cache/fair_prices.parquet</code> with columns
       <code>{`{market_id, token_id, pv_sum, v_sum, fair_price, last_block}`}</code>.
