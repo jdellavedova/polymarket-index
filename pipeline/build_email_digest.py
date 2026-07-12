@@ -209,11 +209,14 @@ def main() -> None:
     lines.append("-" * 60)
     lines.append("SURVEILLANCE")
     lines.append("-" * 60)
+    ed_surv = pii.get("event_detection", {}).get("survivors", {})
+    if ed_surv:
+        lines.append(f"  Event-level informed-trading test:    {ed_surv['at_5pct_dependence_adjusted']} trader-event pairs survive at 5% (0 on placebo)")
     if flagged_now is not None:
-        lines.append(f"  Flagged wallets active this week:     {flagged_now:,} of {hl['total_flagged_p_lt_01']:,} flagged")
-    lines.append(f"  Wallets flagged as likely informed:   {hl['total_flagged_p_lt_01']:,} of {hl['total_wallets_tested']:,} tested ({hl['flag_rate']*100:.2f}%)")
+        lines.append(f"  Accuracy-outlier wallets active this week: {flagged_now:,} of {hl['total_flagged_p_lt_01']:,}")
+    lines.append(f"  Sustained-accuracy outliers (skill screen): {hl['total_flagged_p_lt_01']:,} of {hl['total_wallets_tested']:,} tested ({hl['flag_rate']*100:.2f}%)")
     lines.append(f"  After strict statistical correction:  {hl['holm_bonferroni_survivors']:,}")
-    lines.append("  Flags mark patterns consistent with informed trading, not proof of it.")
+    lines.append("  Flags mark statistical patterns, not proof; the wallet-level screen measures sustained skill, not information.")
     lines.append("")
     lines.append("=" * 60)
     lines.append(f"Full dashboard: {SITE_URL}")
@@ -351,7 +354,7 @@ def main() -> None:
         <tr><td style="padding:18px 28px 4px 28px;">
           <div style="font-family:'Segoe UI',Helvetica,sans-serif;font-size:11px;letter-spacing:0.09em;color:#0074c8;text-transform:uppercase;margin-bottom:8px;">Surveillance</div>
           <p style="margin:0;font-family:Georgia,serif;color:#0a1420;line-height:1.5;">
-            {flagged_line}<strong>{hl['total_flagged_p_lt_01']:,}</strong> of {hl['total_wallets_tested']:,} tested wallets show patterns consistent with informed trading ({hl['flag_rate']*100:.2f}%); {hl['holm_bonferroni_survivors']:,} survive strict statistical correction.
+            {f"<strong>{ed_surv['at_5pct_dependence_adjusted']}</strong> trader-event pairs survive the per-event informed-trading test at the 5% level (zero on the placebo class). " if ed_surv else ""}{flagged_line}<strong>{hl['total_flagged_p_lt_01']:,}</strong> of {hl['total_wallets_tested']:,} tested wallets show sustained excess accuracy ({hl['flag_rate']*100:.2f}%), a skill signature rather than evidence of informed trading; {hl['holm_bonferroni_survivors']:,} survive strict statistical correction.
           </p>
         </td></tr>
 

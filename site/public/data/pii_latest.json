@@ -1,115 +1,109 @@
 {
   "index_name": "Private Information Index",
   "short_name": "PII",
-  "snapshot_note": "Cumulative snapshot; weekly time series requires trade-timestamp join (v1.1)",
-  "as_of": "2026-02-28",
-  "source_paper": "Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets'",
+  "snapshot_note": "Cumulative snapshot; refreshed when the paper pipeline reruns",
+  "as_of": "2026-07-03",
+  "source_paper": "Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets: One Event at a Time', SSRN 6567238 (revised June 2026)",
+  "event_detection": {
+    "unit": "trader-event pair (wallet x multi-market event)",
+    "method": "Per-event joint-accuracy test against the price-implied null (each position's success probability is its own transaction-time price), Holm-corrected across the events each trader contests, mutually-exclusive (neg-risk) events excluded, and a beta-binomial dependence adjustment at intraclass correlation rho = 0.18.",
+    "sample": {
+      "testable_pairs": 4657827,
+      "traders": 1020455,
+      "events": 27361,
+      "provenance": "paper Section 3 (not derivable from committed stage outputs)"
+    },
+    "funnel": {
+      "raw_flags_p_lt_01": 1008,
+      "excluded_mutually_exclusive": 751,
+      "defensible": 257,
+      "distinct_question_core": 112,
+      "single_game_multi_bet": 77,
+      "cumulative_threshold_ladders": 68
+    },
+    "survivors": {
+      "at_5pct_dependence_adjusted": 11,
+      "at_1pct_dependence_adjusted": 0,
+      "adjusted_p_min": 0.031,
+      "adjusted_p_max": 0.048,
+      "icc_rho": 0.18,
+      "by_archetype": [
+        {
+          "archetype": "speech-content",
+          "n": 7
+        },
+        {
+          "archetype": "document-or-decision",
+          "n": 3
+        },
+        {
+          "archetype": "enumeration",
+          "n": 1
+        }
+      ],
+      "note": "All survivors are all-correct records on disclosure events; reported by archetype only, matching the paper's anonymization."
+    },
+    "placebo": {
+      "class": "stochastic (asset-price-direction markets)",
+      "pairs": 597146,
+      "corrected_discoveries": 0,
+      "provenance": "paper Section 5"
+    },
+    "core_profits": {
+      "pairs_covered": 74,
+      "total_usd": 501167,
+      "median_usd_per_pair": 778,
+      "provenance": "paper Table 8"
+    },
+    "forward_test": "The statistic flags the trader charged in CFTC v. Spagnuolo at the five percent level under the estimated within-event dependence; it was first run sixteen days before the complaint. Flags mark statistical patterns consistent with informed trading, not legal determinations."
+  },
+  "sustained_skill": {
+    "reclassification_note": "This wallet-level pooled excess-accuracy screen was the April 2026 draft's detector. The June 2026 revision reclassifies it: a statistic that averages a trader's record measures sustained skill and is asymptotically blind to episodic information. It is published here as a skill-persistence monitor, not an informed-trading detector.",
+    "total_wallets_tested": 705883,
+    "total_flagged_p_lt_01": 10485,
+    "flag_rate": 0.014853736384074981,
+    "holm_bonferroni_survivors": 1558,
+    "bh_fdr_survivors": 4700,
+    "by_wallet_type": [
+      {
+        "wallet_type": "bot",
+        "n_wallets": 143084,
+        "n_significant_01": 2832,
+        "pct_significant_01": 1.979256939979313,
+        "mean_excess_accuracy": -0.3725016203167147,
+        "flag_rate": 0.01979256939979313
+      },
+      {
+        "wallet_type": "sophisticated",
+        "n_wallets": 92713,
+        "n_significant_01": 1620,
+        "pct_significant_01": 1.74732777496144,
+        "mean_excess_accuracy": -0.3567585696370978,
+        "flag_rate": 0.0174732777496144
+      },
+      {
+        "wallet_type": "active_retail",
+        "n_wallets": 470086,
+        "n_significant_01": 6033,
+        "pct_significant_01": 1.283382189641895,
+        "mean_excess_accuracy": -0.3620306832013602,
+        "flag_rate": 0.012833821896418953
+      }
+    ],
+    "data_note": "July 2026 rerun on the corrected master (trades through 2026-07-03; wallets with at least 10 resolved trades)."
+  },
   "headline": {
-    "total_wallets_tested": 483234,
-    "total_flagged_p_lt_01": 6292,
-    "flag_rate": 0.01302060699371319,
-    "holm_bonferroni_survivors": 806,
-    "bh_fdr_survivors": 2492
+    "total_wallets_tested": 705883,
+    "total_flagged_p_lt_01": 10485,
+    "flag_rate": 0.014853736384074981,
+    "holm_bonferroni_survivors": 1558,
+    "bh_fdr_survivors": 4700
   },
-  "mnpi_taxonomy": [
-    {
-      "mnpi_type": "vote",
-      "n_wallets_tested": 90797,
-      "n_flagged_01": 2534,
-      "flag_rate_01": 0.0279084110708503,
-      "z_above_1pct": 54.23444584872853
-    },
-    {
-      "mnpi_type": "action",
-      "n_wallets_tested": 78548,
-      "n_flagged_01": 755,
-      "flag_rate_01": 0.0096119570199113,
-      "z_above_1pct": -1.0930242556986256
-    },
-    {
-      "mnpi_type": "performance",
-      "n_wallets_tested": 157755,
-      "n_flagged_01": 1598,
-      "flag_rate_01": 0.0101296313904472,
-      "z_above_1pct": 0.5174687747028562
-    },
-    {
-      "mnpi_type": "stochastic",
-      "n_wallets_tested": 134972,
-      "n_flagged_01": 1613,
-      "flag_rate_01": 0.0119506267966689,
-      "z_above_1pct": 7.202419788571609
-    }
-  ],
-  "by_wallet_type": [
-    {
-      "wallet_type": "bot",
-      "n_wallets": 64385,
-      "n_significant_01": 1026,
-      "pct_significant_01": 1.5935388677486992,
-      "mean_excess_accuracy": -0.4531082191982071,
-      "flag_rate": 0.015935388677486992
-    },
-    {
-      "wallet_type": "sophisticated",
-      "n_wallets": 64954,
-      "n_significant_01": 1353,
-      "pct_significant_01": 2.0830125935277275,
-      "mean_excess_accuracy": -0.3631727379991407,
-      "flag_rate": 0.020830125935277274
-    },
-    {
-      "wallet_type": "active_retail",
-      "n_wallets": 353895,
-      "n_significant_01": 3913,
-      "pct_significant_01": 1.105695192076746,
-      "mean_excess_accuracy": -0.3733688074227401,
-      "flag_rate": 0.01105695192076746
-    }
-  ],
-  "by_raw_category": [
-    {
-      "category": "politics",
-      "n_wallets_tested": 90797,
-      "n_significant_01": 2534,
-      "frac_significant_01": 0.0279084110708503
-    },
-    {
-      "category": "sports",
-      "n_wallets_tested": 157755,
-      "n_significant_01": 1598,
-      "frac_significant_01": 0.0101296313904472
-    },
-    {
-      "category": "crypto",
-      "n_wallets_tested": 134972,
-      "n_significant_01": 1613,
-      "frac_significant_01": 0.0119506267966689
-    },
-    {
-      "category": "business",
-      "n_wallets_tested": 78548,
-      "n_significant_01": 755,
-      "frac_significant_01": 0.0096119570199113
-    },
-    {
-      "category": "other",
-      "n_wallets_tested": 89761,
-      "n_significant_01": 2034,
-      "frac_significant_01": 0.0226601753545526
-    }
-  ],
-  "vs_mitts_ofir": {
-    "their_flag_rate": 0.38,
-    "our_flag_rate": 0.01302060699371319,
-    "cohens_kappa": 0.007,
-    "note": "Near-zero concordance between structural (orthogonality) and heuristic (5-signal) approaches."
-  },
-  "generated_at": "2026-07-11T21:59:59+00:00",
+  "generated_at": "2026-07-12T16:04:07+00:00",
   "sources": [
+    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage68_conditioned_flags.csv",
+    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage68_investigatable_clean_core.csv",
     "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage19_significant_wallets.csv",
-    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage19_summary_by_type.csv",
-    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage22_mnpi_placebo.csv",
-    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage22_significant_by_category.csv"
+    "G:\\My Drive\\1. Research\\1. Polymarket\\2. Insider\\output\\stage19_summary_by_type.csv"
   ]
 }

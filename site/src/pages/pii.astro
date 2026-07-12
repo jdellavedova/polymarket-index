@@ -1,6 +1,5 @@
 ---
 import DeepDiveLayout from "../components/redesign/DeepDiveLayout.astro";
-import PiiChart from "../components/PiiChart.astro";
 import pii from "../../public/data/pii_latest.json";
 
 function pct(n, d = 2) { return (n === null || n === undefined || Number.isNaN(n)) ? "n/a" : (n * 100).toFixed(d) + "%"; }
@@ -12,19 +11,26 @@ const WALLET_LABEL: Record<string, string> = {
   one_shot: "One-Shot",
 };
 function walletLabel(k: string) { return WALLET_LABEL[k] ?? k; }
-const MNPI_LABEL: Record<string, string> = {
-  vote: "Vote",
-  action: "Action",
-  performance: "Performance",
-  stochastic: "Stochastic",
-};
-function mnpiLabel(k: string) { return MNPI_LABEL[k] ?? k; }
 
-const lede = `Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets tested, ${pii.headline.total_flagged_p_lt_01.toLocaleString()} were flagged at the one-percent significance threshold (flag rate ${pct(pii.headline.flag_rate, 2)}). ${pii.headline.holm_bonferroni_survivors} wallets survive the Holm-Bonferroni family-wise correction; ${pii.headline.bh_fdr_survivors} survive the Benjamini-Hochberg FDR procedure. Vote markets (elections, award decisions, political outcomes) show the highest flag rate at 2.79%, roughly three times the rate in other categories, consistent with theory: private information is most available where few decision-makers control the outcome.`;
+const ed = pii.event_detection;
+const sk = pii.sustained_skill;
+const f = ed.funnel;
+const sv = ed.survivors;
+
+const funnelRows = [
+  { label: "Raw flags (p < 0.01, independence null)", n: f.raw_flags_p_lt_01 },
+  { label: "Excluded: mutually exclusive (neg-risk) events", n: f.excluded_mutually_exclusive },
+  { label: "Defensible (independence admissible)", n: f.defensible },
+  { label: "Distinct-question core", n: f.distinct_question_core },
+  { label: `Survive dependence adjustment (5% level, ρ = ${sv.icc_rho})`, n: sv.at_5pct_dependence_adjusted },
+];
+const fMax = f.raw_flags_p_lt_01;
+
+const lede = `Across ${ed.sample.testable_pairs.toLocaleString()} testable trader-event pairs (${ed.sample.traders.toLocaleString()} traders, ${ed.sample.events.toLocaleString()} multi-market events), the per-event joint-accuracy test produces ${f.raw_flags_p_lt_01.toLocaleString()} raw flags. Excluding mutually exclusive events and dependent bet structures leaves a distinct-question core of ${f.distinct_question_core} trader-event pairs, of which ${sv.at_5pct_dependence_adjusted} survive the within-event dependence adjustment at the five percent level and ${sv.at_1pct_dependence_adjusted} at one percent. On a placebo class where episodic private information is implausible, the corrected test yields zero discoveries.`;
 ---
 <DeepDiveLayout
   title="Private Information Index (PII)"
-  description="Wallet-level signatures of private information in Polymarket trading."
+  description="Per-event detection of trading patterns consistent with episodic private information on Polymarket, aligned with Della Vedova (2026), 'One Event at a Time'."
   eyebrow="DV-PMI · Insider screen"
   lede={lede}
   citeKey="dellavedova2026pii"
@@ -32,29 +38,77 @@ const lede = `Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets t
   citePath="pii">
 
   <Fragment slot="chart">
-    <PiiChart dataUrl="/data/pii_latest.json" />
+    <div role="img" aria-label="Detection funnel from raw flags to dependence-adjusted survivors">
+      {funnelRows.map(r => (
+        <div style="margin:6px 0;">
+          <div style="font-family:Georgia,serif;font-size:13px;color:var(--muted);">{r.label}</div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style={`height:16px;background:var(--accent);opacity:0.85;width:${Math.max(0.6, (r.n / fMax) * 100)}%;`}></div>
+            <span class="mono" style="font-size:13px;">{r.n.toLocaleString()}</span>
+          </div>
+        </div>
+      ))}
+    </div>
   </Fragment>
   <Fragment slot="caption">
-    Categories ordered by a priori MNPI risk: vote markets (elections, awards) are the highest-risk category because outcomes are determined by discrete human decisions; stochastic markets (crypto prices) are the lowest-risk because outcomes are aggregate and leak-resistant.
+    The detection funnel. Each stage removes a source of false positives: platform-defined mutually exclusive
+    (neg-risk) events, dependent bet structures (single-game multi-bets, cumulative threshold ladders), and
+    residual within-event correlation (beta-binomial adjustment at intraclass correlation {sv.icc_rho},
+    estimated from the data).
   </Fragment>
 
-  <h2>Flag rate by MNPI taxonomy</h2>
+  <h2>What this index measures</h2>
+  <p>
+    Detecting informed trading requires separating transient information from persistent skill, and the
+    separation cannot be made at the trader level: pooled averages dilute episodic information, and the
+    best-episode statistic inflates mechanically with activity. The test therefore operates at the
+    trader-event unit. For each trader and each multi-market event where the trader took positions in at
+    least two component markets, the joint probability of the observed directional accuracy is evaluated
+    against the price-implied null: a trader with no information does no better than the price she paid.
+    Multiplicity is controlled across the events each trader contests (Holm within trader).
+  </p>
+
+  <h2>Survivors by disclosure archetype</h2>
   <table>
-    <tr><th>MNPI category</th><th>Wallets tested</th><th>Flagged (p &lt; 0.01)</th><th>Flag rate</th></tr>
-    {pii.mnpi_taxonomy.map(m => (
+    <tr><th>Archetype</th><th>Pairs</th></tr>
+    {sv.by_archetype.map(a => (
       <tr>
-        <td>{mnpiLabel(m.mnpi_type)}</td>
-        <td class="mono">{m.n_wallets_tested.toLocaleString()}</td>
-        <td class="mono">{m.n_flagged_01.toLocaleString()}</td>
-        <td class="mono">{pct(m.flag_rate_01, 2)}</td>
+        <td>{a.archetype}</td>
+        <td class="mono">{a.n}</td>
       </tr>
     ))}
+    <tr><th>Total (5% level)</th><th class="mono">{sv.at_5pct_dependence_adjusted}</th></tr>
   </table>
+  <p>
+    All survivors are all-correct records on disclosure events (adjusted p-values {sv.adjusted_p_min} to
+    {sv.adjusted_p_max}). They are reported by archetype only; the dashboard names no wallets. Flags mark
+    statistical patterns consistent with informed trading, not legal determinations. Net directional profit
+    across the {ed.core_profits.pairs_covered} core pairs with position coverage is
+    ${ed.core_profits.total_usd.toLocaleString()} (median ${ed.core_profits.median_usd_per_pair} per pair).
+  </p>
 
-  <h2>By wallet class</h2>
+  <h2>Placebo calibration</h2>
+  <p>
+    The false-positive rate is calibrated on a real-data placebo: {ed.placebo.pairs.toLocaleString()} testable
+    pairs in asset-price-direction markets, where episodic private information about the fundamental is
+    implausible. The corrected test yields {ed.placebo.corrected_discoveries} discoveries on the placebo at
+    every threshold examined. An uncorrected best-episode rule, by contrast, flags active traders at a rate
+    that rises mechanically with how many events they trade.
+  </p>
+
+  <h2>Forward test</h2>
+  <p>
+    {ed.forward_test} The wallet mapping is the author's inference from public on-chain data, not a fact
+    stated in the complaint.
+  </p>
+
+  <h2>Sustained-skill monitor (reclassified wallet-level screen)</h2>
+  <p>
+    {sk.reclassification_note}
+  </p>
   <table>
-    <tr><th>Wallet class</th><th>Wallets</th><th>Flagged</th><th>Flag rate</th></tr>
-    {pii.by_wallet_type.map(t => (
+    <tr><th>Wallet class</th><th>Wallets tested</th><th>Flagged (p &lt; 0.01)</th><th>Flag rate</th></tr>
+    {sk.by_wallet_type.map(t => (
       <tr>
         <td>{walletLabel(t.wallet_type)}</td>
         <td class="mono">{t.n_wallets.toLocaleString()}</td>
@@ -62,42 +116,30 @@ const lede = `Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets t
         <td class="mono">{pct(t.flag_rate, 2)}</td>
       </tr>
     ))}
+    <tr><th>Total</th><th class="mono">{sk.total_wallets_tested.toLocaleString()}</th><th class="mono">{sk.total_flagged_p_lt_01.toLocaleString()}</th><th class="mono">{pct(sk.flag_rate, 2)}</th></tr>
   </table>
-
-  <h2>Comparison with Mitts and Ofir (2026)</h2>
   <p>
-    The concurrent paper by Mitts and Ofir uses a five-signal heuristic (cross-sectional bet size, within-trader
-    bet size, profitability, pre-event timing, directional concentration) to flag suspicious wallet-market pairs.
-    Applied to the same sample, their approach flags roughly <strong>{pct(pii.vs_mitts_ofir.their_flag_rate, 1)}</strong>
-    of wallets; our microstructure-grounded orthogonality test flags <strong>{pct(pii.vs_mitts_ofir.our_flag_rate, 2)}</strong>.
-    Cohen's kappa between the two flag sets is <strong>{pii.vs_mitts_ofir.cohens_kappa.toFixed(3)}</strong>.
-    Near-zero concordance indicates the two approaches identify different populations: ours isolates wallets with
-    the structural signature of information (accuracy and execution coupled to a common signal); theirs isolates
-    wallets with large, winning, concentrated bets near event resolution.
+    Of the {sk.total_flagged_p_lt_01.toLocaleString()} wallets with sustained excess accuracy at the
+    one-percent threshold, {sk.holm_bonferroni_survivors.toLocaleString()} survive the Holm-Bonferroni
+    family-wise correction and {sk.bh_fdr_survivors.toLocaleString()} survive the Benjamini-Hochberg FDR
+    procedure. {sk.data_note}
   </p>
 
   <h2>Methodology</h2>
   <p>
-    For each wallet, excess accuracy is defined as accuracy minus max(price, 1 - price), the accuracy achievable
-    by mechanically following the price signal. A one-sided binomial z-test at threshold z &gt; 2.326 (p &lt; 0.01)
-    flags wallets whose accuracy cannot be explained by price-following alone. The theta-epsilon orthogonality
-    violation (a positive correlation between accuracy and execution at the wallet level, not present in the
-    population-level orthogonality established in Paper 1) flags statistical patterns consistent with informed
-    trading; it bounds the rate of anomalous accuracy in the population and does not identify specific individuals
-    as informed traders.
-    MNPI-category assignment uses a rules-and-LLM pipeline validated against hand-coded markets
-    (vote, action, performance, stochastic).
-  </p>
-  <p>
-    Weekly time series for PII is a future release item; it requires a separate pipeline joining the flagged
-    wallet set with per-wallet trade timestamps across the 671M-row on-chain panel.
+    {ed.method} Event groupings and the mutually-exclusive attribute come from the platform's own market
+    metadata; disclosure archetypes are assigned by a rules-and-language-model classification validated
+    against hand-coded markets. Full construction, proofs, and robustness are in the source paper.
   </p>
 
   <h2>Source paper</h2>
   <p>
     <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6567238">
-      Della Vedova, J. (2026). Detecting Informed Trading in Prediction Markets: One Event at a Time. SSRN.
+      Della Vedova, J. (2026). Detecting Informed Trading in Prediction Markets: One Event at a Time. SSRN 6567238, revised June 2026.
     </a>
+    The companion paper, <a href="/research">Picking Winners and Losing Money: The Two Dimensions of Trading
+    Skill</a>, establishes the accuracy-execution orthogonality that this paper inverts into an
+    identification problem.
   </p>
 
   <h2>Related surveillance indices</h2>

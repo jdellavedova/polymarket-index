@@ -50,10 +50,11 @@ WHO MADE MONEY (resolved trades only)
 ------------------------------------------------------------
 SURVEILLANCE
 ------------------------------------------------------------
-  Flagged wallets active this week:     409 of 6,292 flagged
-  Wallets flagged as likely informed:   6,292 of 483,234 tested (1.30%)
-  After strict statistical correction:  806
-  Flags mark patterns consistent with informed trading, not proof of it.
+  Event-level informed-trading test:    11 trader-event pairs survive at 5% (0 on placebo)
+  Accuracy-outlier wallets active this week: 409 of 10,485
+  Sustained-accuracy outliers (skill screen): 10,485 of 705,883 tested (1.49%)
+  After strict statistical correction:  1,558
+  Flags mark statistical patterns, not proof; the wallet-level screen measures sustained skill, not information.
 
 ============================================================
 Full dashboard: https://jdellavedova.com
@@ -61,4 +62,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-07-11T22:00:38+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-07-12T16:10:31+00:00)

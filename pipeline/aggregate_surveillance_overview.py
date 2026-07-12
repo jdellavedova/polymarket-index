@@ -44,19 +44,34 @@ def main() -> None:
 
     # --- Live cards (1-4) ---
     if pii:
+        ed = pii.get("event_detection", {})
+        surv = ed.get("survivors", {})
+        funnel = ed.get("funnel", {})
+        if surv:
+            value = f"{surv['at_5pct_dependence_adjusted']} trader-event pairs"
+            secondary = (f"survive dependence adjustment at 5% "
+                         f"(of {_fmt_int(funnel.get('raw_flags_p_lt_01', 0))} raw flags; "
+                         f"0 on placebo)")
+            description = (
+                "Per-event joint-accuracy test at the trader-event unit "
+                "(One Event at a Time, June 2026): Holm-corrected within trader, "
+                "mutually-exclusive events excluded, beta-binomial dependence "
+                "adjustment. Wallet-level accuracy outliers are reported "
+                "separately as a sustained-skill monitor."
+            )
+        else:  # fallback for a stale payload
+            value = f"{_fmt_int(pii['headline']['total_flagged_p_lt_01'])} flagged"
+            secondary = f"of {_fmt_int(pii['headline']['total_wallets_tested'])} tested ({_fmt_pct(pii['headline']['flag_rate'], 2)})"
+            description = "Wallet-level excess-accuracy screen."
         cards.append({
             "slot": 1,
             "status": "live",
             "name": "Informed Trading (PII)",
-            "value": f"{_fmt_int(pii['headline']['total_flagged_p_lt_01'])} flagged",
-            "secondary": f"of {_fmt_int(pii['headline']['total_wallets_tested'])} tested ({_fmt_pct(pii['headline']['flag_rate'], 2)})",
-            "description": (
-                "Wallets whose accuracy cannot be explained by price-following alone. "
-                "Binomial orthogonality test at p<0.01 with Holm-Bonferroni and "
-                "Benjamini-Hochberg corrections."
-            ),
+            "value": value,
+            "secondary": secondary,
+            "description": description,
             "href": "/pii",
-            "pattern_consistent_with": "private information advantage",
+            "pattern_consistent_with": "episodic private information",
         })
 
     if timing:

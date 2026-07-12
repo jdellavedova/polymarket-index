@@ -3,18 +3,18 @@
   "subtitle": "Eight market-integrity tests on the 671M-trade Polymarket on-chain panel. Patterns reported are statistical, not legal conclusions.",
   "n_live": 6,
   "n_total": 8,
-  "as_of": "2026-02-28",
-  "generated_at": "2026-07-11T22:00:33+00:00",
+  "as_of": "2026-07-03",
+  "generated_at": "2026-07-12T16:10:31+00:00",
   "cards": [
     {
       "slot": 1,
       "status": "live",
       "name": "Informed Trading (PII)",
-      "value": "6,292 flagged",
-      "secondary": "of 483,234 tested (1.30%)",
-      "description": "Wallets whose accuracy cannot be explained by price-following alone. Binomial orthogonality test at p<0.01 with Holm-Bonferroni and Benjamini-Hochberg corrections.",
+      "value": "11 trader-event pairs",
+      "secondary": "survive dependence adjustment at 5% (of 1,008 raw flags; 0 on placebo)",
+      "description": "Per-event joint-accuracy test at the trader-event unit (One Event at a Time, June 2026): Holm-corrected within trader, mutually-exclusive events excluded, beta-binomial dependence adjustment. Wallet-level accuracy outliers are reported separately as a sustained-skill monitor.",
       "href": "/pii",
-      "pattern_consistent_with": "private information advantage"
+      "pattern_consistent_with": "episodic private information"
     },
     {
       "slot": 2,

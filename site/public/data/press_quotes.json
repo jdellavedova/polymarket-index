@@ -8,9 +8,9 @@
     },
     {
       "topic": "Informed trading detection in prediction markets",
-      "quote": "About one in a hundred Polymarket wallets show trading signatures consistent with private information. The flag rate is three times higher in markets where humans control the outcome, such as elections and awards, than in markets driven by aggregate forces, such as crypto prices.",
-      "context": "From Paper 2: 6,032 of 450,048 wallets flagged at p < 0.01; flag rate is 2.79% in vote-category markets, 1.20% in stochastic markets.",
-      "citation_line": "Joshua Della Vedova, Associate Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets: One Event at a Time,' SSRN abstract 6567238."
+      "quote": "Most of what looks like insider trading in prediction markets is just skill. Tested trader by trader, about one wallet in a hundred beats the market persistently; that is a skill signature, not evidence of inside information. Tested event by event, with every statistical correction applied, the entire history of Polymarket yields eleven trader-event pairs whose patterns are consistent with episodic private information, and on markets where inside information is implausible the test finds none at all.",
+      "context": "From Paper 2 (June 2026 revision): 4,657,827 testable trader-event pairs across 1,020,455 traders; 1,008 raw flags reduce to a 112-pair distinct-question core; 11 survive the within-event dependence adjustment at the 5% level (0 at 1%); zero corrected discoveries on the 597,146-pair placebo class.",
+      "citation_line": "Joshua Della Vedova, Associate Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets: One Event at a Time,' SSRN abstract 6567238, revised June 2026."
     },
     {
       "topic": "Human traders and probability weighting",
@@ -19,10 +19,10 @@
       "citation_line": "Joshua Della Vedova, Associate Professor of Finance, University of San Diego. Source: Della Vedova and Grant (2026, in progress), 'Probability Weighting from Prediction Markets.'"
     },
     {
-      "topic": "Welfare and retail losses",
-      "quote": "Information asymmetry in prediction markets imposes real costs on uninformed traders. Approximately $150 million in profits flowed to wallets trading on private information; most of that was absorbed by automated market makers and passed through to retail as wider spreads.",
-      "context": "From Paper 2. Welfare interpretation is bounded: the market is zero-sum by construction, so transfer estimates are lower bounds under current fee structures.",
-      "citation_line": "Joshua Della Vedova, Associate Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets,' SSRN abstract 6567238."
+      "topic": "How much money does informed trading actually make?",
+      "quote": "The headline-grabbing number is not the right one. The defensible core of informed trading we can identify on Polymarket earned about half a million dollars, concentrated in a handful of disclosure events. The bigger market-integrity finding is what the corrected test rules out: on markets where inside information is implausible, it finds nothing at all.",
+      "context": "From Paper 2 (June 2026 revision), Table 8: net directional profit across the 74 distinct-question core pairs with position coverage is $501,167 (median $778 per pair; the largest single case accounts for 55%).",
+      "citation_line": "Joshua Della Vedova, Associate Professor of Finance, University of San Diego. Source: Della Vedova (2026), 'Detecting Informed Trading in Prediction Markets: One Event at a Time,' SSRN abstract 6567238, revised June 2026."
     },
     {
       "topic": "Two-dimensional trading skill",

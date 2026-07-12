@@ -231,27 +231,36 @@ const indexLinks = [
 
     <h3 class="md-h3">Private Information Index (PII)</h3>
     <p>
-      Wallet-level forensic test from <a href="/research">Paper 2</a>. For each wallet with ≥ 10 resolved trades:
+      Forensic test from <a href="/research">Paper 2</a> (&ldquo;Detecting Informed Trading in Prediction
+      Markets: One Event at a Time,&rdquo; revised June 2026). The paper shows the separation of information
+      from skill cannot be made at the trader level: pooled averages dilute episodic information, and the
+      best-episode statistic inflates with activity. Detection therefore runs at the
+      <strong>trader-event unit</strong>:
     </p>
     <ol>
-      <li><strong>Excess accuracy</strong>: <code>accuracy − max(p̄, 1 − p̄)</code>, where <code>p̄</code> is the
-        wallet&rsquo;s volume-weighted average entry price. The subtrahend is the accuracy a price-following
-        strategy would achieve mechanically.</li>
-      <li><strong>One-sided binomial z-test</strong> with the per-trade success probability set to
-        <code>max(p̄, 1 − p̄)</code>.</li>
-      <li><strong>Flag</strong> at <code>z &gt; 2.326</code> (one-sided p &lt; 0.01) <em>and</em> excess accuracy
-        positive. Latest snapshot: <strong>6,292 of 483,234 wallets flagged (1.30%)</strong>.</li>
-      <li><strong>Multiple-testing corrections</strong>: Holm-Bonferroni family-wise (806 survivors) and
-        Benjamini-Hochberg false-discovery-rate (2,492 survivors). Both are reported alongside the raw flag count.</li>
+      <li><strong>Testable pair</strong>: a trader and a multi-market event where the trader took positions
+        in at least two component markets (4,657,827 pairs across 1,020,455 traders).</li>
+      <li><strong>Per-event joint-accuracy test</strong> against the price-implied null: each position&rsquo;s
+        success probability under the null is its own transaction-time price. The one-sided p-value is the
+        probability of being correct on at least as many component markets as observed.</li>
+      <li><strong>Multiplicity control within trader</strong>: Holm across the events each trader contests
+        (family-wise), Benjamini-Hochberg for the false-discovery-rate variant.</li>
+      <li><strong>Dependence conditioning</strong>: platform-defined mutually exclusive (neg-risk) events are
+        excluded outright; dependent bet structures (single-game multi-bets, cumulative threshold ladders)
+        are partitioned out; residual within-event correlation is absorbed by a beta-binomial adjustment at
+        the estimated intraclass correlation (0.18, 95% CI [0.10, 0.27]).</li>
+      <li><strong>Calibration</strong>: on a real-data placebo class (asset-price-direction markets, 597,146
+        pairs) the corrected test yields <strong>zero discoveries</strong> at every threshold examined.</li>
     </ol>
     <p>
-      Sub-populations are split by the <strong>MNPI taxonomy</strong>: Vote (elections, awards, political
-      decisions), Action (military, regulatory, decision-driven outcomes), Performance (sports, individual
-      performance), Stochastic (crypto prices, weather, aggregate forces). Categories are assigned by a
-      rules-and-LLM pipeline validated against hand-coded markets. Vote markets (small groups of humans
-      control outcomes, e.g., elections and award decisions) show by far the highest flag rate (2.79%),
-      roughly three times the rate in other categories. This elevated rate is consistent with the theoretical
-      prediction that private information is most available where few decision-makers control the outcome.
+      Latest snapshot: <strong>1,008 raw flags &rarr; 112 distinct-question core &rarr; 11 trader-event pairs
+      survive at the 5% level (0 at 1%)</strong>, all all-correct records on disclosure events, reported by
+      archetype only. The wallet-level excess-accuracy screen from the April 2026 draft (currently
+      <strong>10,485 of 705,883 wallets at p &lt; 0.01</strong>; 1,558 Holm survivors; 4,700 BH-FDR) remains
+      published as a <em>sustained-skill monitor</em>: the June revision shows that statistic measures
+      persistent skill, not episodic information. Event-class labels (vote, action, performance, stochastic)
+      are assigned by a rules-and-LLM pipeline validated against hand-coded markets; the stochastic class
+      serves as the placebo.
     </p>
 
     <h3 class="md-h3">Algorithmic Share of Participation</h3>

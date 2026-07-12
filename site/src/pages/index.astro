@@ -30,15 +30,15 @@ const botShareNow = botShare[botShare.length - 1].bot_share_ma13w * 100;
 // --- Card 2: Probability weighting (PWI) ---
 const pwiSpark = (pwi as any[]).filter(p => p.value != null).map(p => p.value);
 
-// --- Card 3: Insider screen (MNPI flag rates by category) ---
-const mnpiOrder = ["vote", "action", "performance", "stochastic"];
-const mnpiLabels: Record<string, string> = {
-  vote: "Vote", action: "Action", performance: "Performance", stochastic: "Stochastic",
-};
-const insiderBars = pii.mnpi_taxonomy
-  .slice()
-  .sort((a: any, b: any) => mnpiOrder.indexOf(a.mnpi_type) - mnpiOrder.indexOf(b.mnpi_type))
-  .map((m: any) => ({ label: mnpiLabels[m.mnpi_type] ?? m.mnpi_type, value: m.flag_rate_01 }));
+// --- Card 3: Insider screen (event-detection funnel, One Event at a Time) ---
+const edFunnel = (pii as any).event_detection.funnel;
+const edSurv = (pii as any).event_detection.survivors;
+const funnelBars = [
+  { label: "Raw flags", value: edFunnel.raw_flags_p_lt_01 },
+  { label: "Defensible", value: edFunnel.defensible },
+  { label: "Core", value: edFunnel.distinct_question_core },
+  { label: "Survive 5%", value: edSurv.at_5pct_dependence_adjusted },
+];
 
 // --- Card 4: Execution edge ---
 // Use the 13-week MA of the alpha-gap (smoother than weekly noise). Fall back
@@ -163,17 +163,17 @@ const desc = "Weekly research dataset of 671M on-chain Polymarket records (222M 
   <p class="re-findings-sub">A per-event test separates episodic private information from sustained skill. Zero false positives on a real-data placebo. <a href="/surveillance">See all six surveillance indices →</a></p>
   <div class="re-findings-grid re-findings-pair">
     <FindingCard
-      label="ACCURACY OUTLIERS"
+      label="SUSTAINED-ACCURACY OUTLIERS (SKILL, NOT NECESSARILY INFORMATION)"
       headline={`${pii.headline.total_flagged_p_lt_01.toLocaleString()}`}
-      claim={`Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets tested, ${pii.headline.total_flagged_p_lt_01.toLocaleString()} (${(pii.headline.flag_rate*100).toFixed(2)}%) show anomalous long-run accuracy — statistically unlikely to be random. The per-event detection test then asks whether specific events are consistent with informed trading.`}
-      href="/surveillance"
+      claim={`Of ${pii.headline.total_wallets_tested.toLocaleString()} wallets tested, ${pii.headline.total_flagged_p_lt_01.toLocaleString()} (${(pii.headline.flag_rate*100).toFixed(2)}%) show anomalous long-run accuracy. The June 2026 paper shows this wallet-level statistic measures sustained skill; episodic information requires the per-event test.`}
+      href="/pii"
     />
     <FindingCard
-      label="ANOMALOUS ACCURACY BY MARKET TYPE"
-      headline={`${(Math.max(...pii.mnpi_taxonomy.map(m => m.flag_rate_01))*100).toFixed(2)}%`}
-      claim="Vote markets (elections, awards, political decisions) show the highest rate of anomalous accuracy at 2.79%, roughly three times the rate in other categories. This is consistent with theory: private information is most available where few decision-makers control the outcome."
-      barData={insiderBars}
-      href="/surveillance"
+      label="PER-EVENT DETECTION FUNNEL"
+      headline={`${edSurv.at_5pct_dependence_adjusted}`}
+      claim={`From ${edFunnel.raw_flags_p_lt_01.toLocaleString()} raw event-level flags, excluding mutually exclusive and dependent bet structures leaves a ${edFunnel.distinct_question_core}-pair core; ${edSurv.at_5pct_dependence_adjusted} trader-event pairs survive the dependence adjustment at the 5% level. Zero discoveries on the placebo class.`}
+      barData={funnelBars}
+      href="/pii"
     />
   </div>
 
