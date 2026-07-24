@@ -53,6 +53,13 @@
       "format": "Quoted expert commentary (Kaitlyn Tiffany, staff writer). Recommendations cited: excess-accuracy screening, bet-size limits in riggable markets, no single-source resolution."
     },
     {
+      "date": "2026-07-02",
+      "outlet": "CNBC",
+      "headline": "Prediction markets mostly have thinly traded contracts — quotes Della Vedova; analysis cross-checked against his 222 million-trade on-chain dataset",
+      "url": "https://www.cnbc.com/2026/07/02/prediction-markets-mostly-have-thinly-traded-contracts-.html",
+      "format": "Reported data analysis (Ananya Chetia). Quoted on bot behavior across market sizes; over 80% of volume in sub-$10,000 markets comes from bots."
+    },
+    {
       "date": "2026-05-26",
       "outlet": "J.P. Morgan Private Bank",
       "headline": "Eye on the Market: 'Predation in Prediction Markets' — cites Della Vedova research on execution vs. accuracy and insider trading detection",
