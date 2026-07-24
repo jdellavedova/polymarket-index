@@ -1,6 +1,22 @@
 {
   "notes": [
     {
+      "date": "2026-07-23",
+      "tag": "PRESS",
+      "title": "Bloomberg Businessweek's Big Take quotes Della Vedova on where insider trading concentrates",
+      "body": "Denitsa Tsekova and Leonardo Nicoletti analyze 34,000 Polymarket trades flagged as potential insider activity: roughly $200 million in flagged volume from January through June 2026, driven by bets on military action in Iran and Venezuela. Winnings were heavily concentrated, with the top 1% of profitable wallets capturing more than half the money; 57% of those wallets were created less than 24 hours before trading. The piece quotes our assessment of where private-information trading concentrates: elections, committee decisions, award shows, ballot measures, and government votes, the markets where a small group knows the outcome first. Their category-level findings match that ordering; financial and economic markets showed the least flagged activity.",
+      "href": "https://www.bloomberg.com/graphics/2026-polymarket-traders-who-knew-the-future/",
+      "href_label": "Read the Big Take"
+    },
+    {
+      "date": "2026-07-23",
+      "tag": "PRESS",
+      "title": "The Atlantic quotes Della Vedova on 'outsider trading' after the Paris hair-dryer incident",
+      "body": "Kaitlyn Tiffany's July 20 piece examines a new class of prediction-market conduct: winning a bet by changing the world instead of forecasting it. In April a Météo-France sensor near Charles de Gaulle jumped 4 degrees Celsius in twelve minutes; a wallet positioned above the 21-degree strike against an 18-degree consensus collected roughly $20,000, and Météo-France filed a criminal complaint. Polymarket changed its data source but let the winnings stand; France ordered internet providers to block the site on July 16. The article quotes our recommendations: screen for excess accuracy (a wallet betting one song hits No. 1 while betting no on every rival shows confidence the market's prices cannot explain, whether it comes from an inside line or rigged streams), limit bet sizes where results are cheap to rig, and never resolve a market from a single number at a single source. The trader who rigs the sensor never out-forecasts anyone; the same trade-record footprint our insider-timing and resolution-surprise indices flag gives them away.",
+      "href": "https://www.theatlantic.com/technology/2026/07/prediction-market-outsider-trading/687975/",
+      "href_label": "Read the article"
+    },
+    {
       "date": "2026-06-29",
       "tag": "SPORTS",
       "title": "Week of 2026-06-29: Will France win the 2026 FIFA World Cup?",

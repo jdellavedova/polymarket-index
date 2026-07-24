@@ -1,6 +1,12 @@
 {
   "quotes": [
     {
+      "topic": "Oracle tampering ('outsider trading') in prediction markets",
+      "quote": "Whether the confidence comes from an inside line or a rigged sensor, it shows up the same way: accuracy the market's own prices cannot explain. Screening for excess accuracy catches both. And no market should resolve from a single number at a single source.",
+      "context": "From The Atlantic (July 20, 2026), on the Paris 'hair-dryer incident': the excess-accuracy method built for insider detection also flags traders who alter outcomes rather than forecast them.",
+      "citation_line": "Joshua Della Vedova, Associate Professor of Finance, University of San Diego. Source: The Atlantic, 'The ‘Hair-Dryer Incident’ Is Just the Start' (July 20, 2026)."
+    },
+    {
       "topic": "Algorithmic dominance of Polymarket volume",
       "quote": "Bots now capture nearly every dollar of volume on Polymarket, up from about half two years ago. The retail trader's share of the market is vanishing.",
       "context": "From Paper 1 and the weekly Bot Share of Volume index: bots execute 94% of weekly trades in recent weeks.",
@@ -32,6 +38,20 @@
     }
   ],
   "media_mentions": [
+    {
+      "date": "2026-07-20",
+      "outlet": "Bloomberg Businessweek",
+      "headline": "The Big Take: Prediction Markets Are Minting a New Type of Insider Trader — quotes Della Vedova on where private-information trading concentrates",
+      "url": "https://www.bloomberg.com/graphics/2026-polymarket-traders-who-knew-the-future/",
+      "format": "Quoted expert commentary (Denitsa Tsekova and Leonardo Nicoletti; August 2026 issue). Credits the method for categorizing informed trading; category ordering (vote/committee markets highest, financial markets lowest) consistent with the paper's MNPI taxonomy."
+    },
+    {
+      "date": "2026-07-20",
+      "outlet": "The Atlantic",
+      "headline": "The 'Hair-Dryer Incident' Is Just the Start — quotes Della Vedova on detecting and designing against 'outsider trading' in prediction markets",
+      "url": "https://www.theatlantic.com/technology/2026/07/prediction-market-outsider-trading/687975/",
+      "format": "Quoted expert commentary (Kaitlyn Tiffany, staff writer). Recommendations cited: excess-accuracy screening, bet-size limits in riggable markets, no single-source resolution."
+    },
     {
       "date": "2026-05-26",
       "outlet": "J.P. Morgan Private Bank",
@@ -129,6 +149,13 @@
       "headline": "Debunking the Polymarket Dream",
       "url": "https://fglancszpigel.medium.com/debunking-the-polymarket-dream-d67ba3922e4b",
       "format": "Independent research analysis"
+    },
+    {
+      "date": "2026-06-17",
+      "outlet": "Bloomberg",
+      "headline": "Polymarket Bets on Iran Deal Fuel Fresh Insider-Trading Fears",
+      "url": "https://www.bloomberg.com/graphics/2026-polymarket-bets-iran-war-insider-trading/",
+      "format": "Graphics feature"
     }
   ],
   "speaking": [],

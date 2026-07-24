@@ -2044,6 +2044,14 @@ footer.site-foot .disclaimer {
   letter-spacing: -0.01em;
 }
 .mi-logo-bloomberg:hover { color: #ff8800; }
+.mi-logo-atlantic {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 21px;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+.mi-logo-atlantic:hover { color: #d02222; }
 .mi-logo-cnbc {
   font-family: var(--sans);
   font-weight: 800;
@@ -2088,6 +2096,7 @@ footer.site-foot .disclaimer {
   .mi-row { gap: 22px 28px; }
   .mi-logo-jpmorgan { font-size: 15px; }
   .mi-logo-bloomberg, .mi-logo-cnbc { font-size: 18px; }
+  .mi-logo-atlantic { font-size: 17px; }
   .mi-logo-yahoo, .mi-logo-benzinga { font-size: 16px; }
   .mi-logo-famag { font-size: 14px; }
 }

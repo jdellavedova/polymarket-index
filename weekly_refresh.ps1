@@ -114,6 +114,32 @@ if (Test-Path $frontierFile) {
     }
 }
 
+# 4. Orphaned-delta guard: if any pull checkpoint is AHEAD of the master
+#    frontier, a previous run pulled blocks that were never appended (its
+#    process/append step died). The next pull would resume past them and
+#    leave a permanent hole in the master — exactly the silent July 3-13
+#    2026 gap. Refuse to proceed until the orphaned delta is processed and
+#    appended (see CLAUDE.md "MASTER DATE REPAIR" / July 23 backfill notes).
+if (Test-Path $frontierFile) {
+    try {
+        $frontierBlock = (Get-Content $frontierFile -Raw | ConvertFrom-Json).last_block
+        $maxCkpt = 0; $maxCkptFile = ""
+        Get-ChildItem "$DATA\checkpoint_block_delta_*.json" | ForEach-Object {
+            $b = (Get-Content $_.FullName -Raw | ConvertFrom-Json).last_block
+            if ($b -gt $maxCkpt) { $maxCkpt = $b; $maxCkptFile = $_.Name }
+        }
+        if ($maxCkpt -gt $frontierBlock) {
+            Log "ERROR: checkpoint $maxCkptFile (block $maxCkpt) is ahead of the master frontier (block $frontierBlock)."
+            Log "ERROR: a pulled delta was never appended - the master has a hole. Process + append that delta before refreshing."
+            Set-Status "orphaned-delta guard" "failed"
+            Remove-Item $LOCK -Force -Confirm:$false -ErrorAction SilentlyContinue
+            exit 1
+        }
+    } catch {
+        Log "WARNING: orphaned-delta guard could not run ($($_.Exception.Message)) - proceeding."
+    }
+}
+
 function Run($label, $scriptBlock) {
     Log "START: $label"
     Set-Status $label "running"
@@ -157,7 +183,14 @@ if (-not $skipPull) {
 # a rerun after a crash skips the stages that already completed. --------------
 
 Set-Location $REPO
-Run "pipeline/run_all.py --mode=weekly" { python pipeline\run_all.py --mode=weekly }
+# Capture run_all's full output: a scheduled run has no console, so without
+# this a failure leaves no traceback anywhere (the July 20 2026 failure took
+# two 3-hour reruns to diagnose). Native stderr merges via 2>&1; $LASTEXITCODE
+# still reflects python's exit code through the pipeline.
+Run "pipeline/run_all.py --mode=weekly" {
+    python pipeline\run_all.py --mode=weekly 2>&1 |
+        Tee-Object -FilePath "$REPO\run_all_last.log"
+}
 
 # ---- PHASE 3: Deploy ----------------------------------------------------------
 
