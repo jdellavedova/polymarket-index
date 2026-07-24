@@ -30,8 +30,17 @@ def trades_source() -> str:
     expose identical all-VARCHAR columns, so queries are source-agnostic.
     """
     if TRADES_PARQUET_DIR.exists() and any(TRADES_PARQUET_DIR.rglob("*.parquet")):
-        return (f"read_parquet('{TRADES_PARQUET_DIR.as_posix()}/**/*.parquet', "
-                f"hive_partitioning=1)")
+        # A _mirror_pending_* marker means append_delta_to_master.py crashed
+        # mid-mirror: the CSV has rows the parquet store is missing. Fall back
+        # to the (slower but complete) CSV until the mirror is repaired.
+        pending = sorted(p.name for p in TRADES_PARQUET_DIR.glob("_mirror_pending_*"))
+        if pending:
+            print(f"WARNING: incomplete parquet mirror ({', '.join(pending)}) — "
+                  f"falling back to the master CSV. Re-run the parquet mirror "
+                  f"for those deltas, then delete the marker(s).")
+        else:
+            return (f"read_parquet('{TRADES_PARQUET_DIR.as_posix()}/**/*.parquet', "
+                    f"hive_partitioning=1)")
     return f"read_csv_auto('{TRADES_CSV.as_posix()}', all_varchar=TRUE, parallel=TRUE)"
 
 SOURCES = {
