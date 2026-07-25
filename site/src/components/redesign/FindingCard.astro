@@ -21,9 +21,11 @@ export interface Props {
   href: string;
   sparklineData?: number[];
   barData?: BarPoint[];
+  /** How to print bar values: raw counts (default) or fractions as percents. */
+  barFormat?: "count" | "percent";
   scatterData?: ScatterPoint[];
 }
-const { label, headline, claim, href, sparklineData, barData, scatterData } = Astro.props;
+const { label, headline, claim, href, sparklineData, barData, barFormat = "count", scatterData } = Astro.props;
 const hasViz = !!(sparklineData || barData || scatterData);
 
 function sparklinePath(data: number[], w = 140, h = 40, pad = 2): string {
@@ -76,7 +78,7 @@ const maxBar = barData ? Math.max(...barData.map(b => b.value), 0) : 0;
           <span class="re-bar-track">
             <span class="re-bar-fill" style={`width:${maxBar > 0 ? (b.value / maxBar) * 100 : 0}%;`}></span>
           </span>
-          <span class="re-bar-value">{(b.value * 100).toFixed(2)}%</span>
+          <span class="re-bar-value">{barFormat === "percent" ? `${(b.value * 100).toFixed(2)}%` : b.value.toLocaleString()}</span>
         </div>
       ))}
     </div>
