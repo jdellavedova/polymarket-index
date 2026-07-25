@@ -156,6 +156,10 @@ Log "=========================================="
 Log "WEEKLY REFRESH $week_label"
 Log "=========================================="
 
+# Unbuffered python stdout: without this, block-buffering holds progress lines
+# back from the Tee/log until process exit, making long runs unobservable.
+$env:PYTHONUNBUFFERED = "1"
+
 # Load Alchemy key from the repo .env (the pull script also self-loads it,
 # this just makes it explicit in the environment for any child process)
 if (Test-Path "$REPO\.env") {
