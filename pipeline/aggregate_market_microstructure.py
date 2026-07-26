@@ -66,7 +66,7 @@ def main() -> None:
     print(f"[{time.strftime('%H:%M:%S')}] Microstructure: scanning {len(top_market_ids)} markets for week {week} ({week_start} -> {week_end}) ...")
 
     con = duckdb.connect(":memory:")
-    con.execute("PRAGMA memory_limit='12GB'")
+    con.execute("PRAGMA memory_limit='40GB'")
     con.execute("PRAGMA threads=8")
     tune_duckdb(con)
 

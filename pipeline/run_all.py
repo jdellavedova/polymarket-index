@@ -106,7 +106,16 @@ def _run(scripts: list[str], journal: dict | None = None) -> None:
         start = time.time()
         print(f"=== {name} ===")
         mod = importlib.import_module(name)
-        mod.main()
+        try:
+            mod.main()
+        except Exception:
+            # Print the traceback to STDOUT before re-raising: PowerShell
+            # wraps native stderr in NativeCommandError records and truncates
+            # it, which cost two blind multi-hour reruns in July 2026.
+            import traceback
+            print(f"!!! {name} FAILED:")
+            traceback.print_exc(file=sys.stdout)
+            raise
         print(f"  done in {time.time() - start:.2f}s")
         if journal is not None:
             journal["completed"].append(name)

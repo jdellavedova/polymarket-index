@@ -51,7 +51,7 @@ def main() -> None:
     print(f"[{time.strftime('%H:%M:%S')}] Aggregating top markets by weekly USD volume ...")
 
     con = duckdb.connect(":memory:")
-    con.execute("PRAGMA memory_limit='16GB'")
+    con.execute("PRAGMA memory_limit='40GB'")
     con.execute("PRAGMA threads=8")
     tune_duckdb(con)
 
