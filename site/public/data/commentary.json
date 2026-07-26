@@ -1,6 +1,15 @@
 {
   "notes": [
     {
+      "date": "2026-07-13",
+      "tag": "SPORTS",
+      "title": "Week of 2026-07-13: Will Spain win the 2026 FIFA World Cup?",
+      "body": "Polymarket traders moved $869 million this week, above the 52-week trend, on 24.1 million individual trades. Traders moved $869 million through Polymarket in the week of 2026-07-13, across 24.1 million individual trades. with 24,788 wallets placing their first-ever bet. Algorithmic wallets accounted for 80% of weekly counterparty events (both maker and taker sides counted); everyone else split...",
+      "href": "/briefings",
+      "href_label": "See this week's briefings",
+      "auto_generated": true
+    },
+    {
       "date": "2026-07-23",
       "tag": "PRESS",
       "title": "Bloomberg Businessweek's Big Take quotes Della Vedova on where insider trading concentrates",
@@ -12,7 +21,7 @@
       "date": "2026-07-23",
       "tag": "PRESS",
       "title": "The Atlantic quotes Della Vedova on 'outsider trading' after the Paris hair-dryer incident",
-      "body": "Kaitlyn Tiffany's July 20 piece examines a new class of prediction-market conduct: winning a bet by changing the world instead of forecasting it. In April a Météo-France sensor near Charles de Gaulle jumped 4 degrees Celsius in twelve minutes; a wallet positioned above the 21-degree strike against an 18-degree consensus collected roughly $20,000, and Météo-France filed a criminal complaint. Polymarket changed its data source but let the winnings stand; France ordered internet providers to block the site on July 16. The article quotes our recommendations: screen for excess accuracy (a wallet betting one song hits No. 1 while betting no on every rival shows confidence the market's prices cannot explain, whether it comes from an inside line or rigged streams), limit bet sizes where results are cheap to rig, and never resolve a market from a single number at a single source. The trader who rigs the sensor never out-forecasts anyone; the same trade-record footprint our insider-timing and resolution-surprise indices flag gives them away.",
+      "body": "Kaitlyn Tiffany's July 20 piece examines a new class of prediction-market conduct: winning a bet by changing the world instead of forecasting it. In April a M\u00e9t\u00e9o-France sensor near Charles de Gaulle jumped 4 degrees Celsius in twelve minutes; a wallet positioned above the 21-degree strike against an 18-degree consensus collected roughly $20,000, and M\u00e9t\u00e9o-France filed a criminal complaint. Polymarket changed its data source but let the winnings stand; France ordered internet providers to block the site on July 16. The article quotes our recommendations: screen for excess accuracy (a wallet betting one song hits No. 1 while betting no on every rival shows confidence the market's prices cannot explain, whether it comes from an inside line or rigged streams), limit bet sizes where results are cheap to rig, and never resolve a market from a single number at a single source. The trader who rigs the sensor never out-forecasts anyone; the same trade-record footprint our insider-timing and resolution-surprise indices flag gives them away.",
       "href": "https://www.theatlantic.com/technology/2026/07/prediction-market-outsider-trading/687975/",
       "href_label": "Read the article"
     },
@@ -64,7 +73,7 @@
       "date": "2026-05-03",
       "tag": "RESEARCH",
       "title": "Flagged wallets: mostly retail by count, almost entirely bots by dollars.",
-      "body": "Of 6,291 wallets flagged at p<0.01 by the wallet-level detection test, 62% are active retail, 21% are sophisticated, only 16% are algorithmic. But profitability tells the opposite story: 4,306 (68.4%) of the flagged set were profitable, generating $152.5M in aggregate. The 1,026 flagged bots captured $137.6M of that — 90% of all flagged-wallet gains flow to the algorithmic 16%, with mean PnL of $134K per bot vs $2.2K per retail wallet. The wallet-level screen finds statistical patterns consistent with informed trading across every wallet class; the dollars accrue almost entirely to the algos who can act on it at scale.",
+      "body": "Of 6,291 wallets flagged at p<0.01 by the wallet-level detection test, 62% are active retail, 21% are sophisticated, only 16% are algorithmic. But profitability tells the opposite story: 4,306 (68.4%) of the flagged set were profitable, generating $152.5M in aggregate. The 1,026 flagged bots captured $137.6M of that \u2014 90% of all flagged-wallet gains flow to the algorithmic 16%, with mean PnL of $134K per bot vs $2.2K per retail wallet. The wallet-level screen finds statistical patterns consistent with informed trading across every wallet class; the dollars accrue almost entirely to the algos who can act on it at scale.",
       "href": "/pii",
       "href_label": "See the screen"
     },
@@ -96,7 +105,7 @@
       "date": "2026-06-18",
       "tag": "RESEARCH",
       "title": "Paper 2 revised: per-event detection test, CFTC case validation.",
-      "body": "Revised version of Paper 2 posted to SSRN under a new title: \"Detecting Informed Trading in Prediction Markets: One Event at a Time.\" The revision replaces the wallet-level screen with a per-event joint-accuracy test, multiplicity-corrected across a trader's events. Calibrated on a real-data placebo where episodic private information is implausible — the corrected test yields zero discoveries at every threshold. Applied to the trader charged in CFTC v. Spagnuolo (2026), the test shows statistical patterns consistent with informed trading where every trader-aggregated statistic does not.",
+      "body": "Revised version of Paper 2 posted to SSRN under a new title: \"Detecting Informed Trading in Prediction Markets: One Event at a Time.\" The revision replaces the wallet-level screen with a per-event joint-accuracy test, multiplicity-corrected across a trader's events. Calibrated on a real-data placebo where episodic private information is implausible \u2014 the corrected test yields zero discoveries at every threshold. Applied to the trader charged in CFTC v. Spagnuolo (2026), the test shows statistical patterns consistent with informed trading where every trader-aggregated statistic does not.",
       "href": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6567238",
       "href_label": "SSRN abstract 6567238"
     },
@@ -110,5 +119,5 @@
     }
   ],
   "notes_url": "/notes",
-  "generated_at": "2026-07-11T22:00:33+00:00"
+  "generated_at": "2026-07-26T21:04:53+00:00"
 }

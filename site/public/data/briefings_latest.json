@@ -1,126 +1,126 @@
 {
-  "as_of_week": "2026-W27",
-  "generated_at": "2026-07-11T22:00:33+00:00",
-  "lede": "Top 6 markets by USD volume from the week of 2026-W27, annotated with per-market microstructure from the DV-PMI weekly indices.",
+  "as_of_week": "2026-W29",
+  "generated_at": "2026-07-26T21:04:53+00:00",
+  "lede": "Top 6 markets by USD volume from the week of 2026-W29, annotated with per-market microstructure from the DV-PMI weekly indices.",
   "briefings": [
     {
-      "rank": 1,
-      "category": "Sports",
-      "question": "Will France win the 2026 FIFA World Cup?",
-      "market_id": "558936",
-      "market_url": "https://polymarket.com/event/will-france-win-the-2026-fifa-world-cup",
-      "volume_usd": 4524642.76167997,
-      "n_trades": 27337,
+      "rank": 5,
+      "category": "Geopolitics",
+      "question": "Will the U.S. invade Iran before 2027?",
+      "market_id": "665374",
+      "market_url": "https://polymarket.com/event/will-the-us-invade-iran-before-2027",
+      "volume_usd": 2307201.5742579983,
+      "n_trades": 7612,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "38% YES  \u25b2 +22pp 7d",
+          "value": "20% YES  \u25b2 +4pp 7d",
           "tone": "flat"
         },
         {
           "label": "Weekly volume",
-          "value": "$4.5M",
+          "value": "$2.3M",
           "tone": "flat"
         },
         {
           "label": "Trades",
-          "value": "27,337",
+          "value": "7,612",
           "tone": "flat"
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$1.9M",
+          "value": "$886K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "9 days (2026-07-20)",
+          "value": "158 days (2026-12-31)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.38 ($9,606) / Ask 0.38 ($1,633)",
+          "value": "Bid 0.20 ($11,980) / Ask 0.21 ($5,263)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1\u00a2 (26 bps)",
-          "tone": "flat"
+          "value": "1.0\u00a2 (488 bps)",
+          "tone": "warn"
         },
         {
           "label": "Depth within \u00b15% of mid",
-          "value": "$62,583 bid  /  $64,969 ask",
+          "value": "$11,980 bid  /  $5,263 ask",
           "tone": "flat"
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "73% (vs 92% Polymarket-wide)",
+          "value": "75% (vs 80% Polymarket-wide)",
           "tone": "ok"
         },
         {
           "label": "Flagged wallets active",
-          "value": "16 of 6,292",
+          "value": "9 of 10,485",
           "tone": "alert"
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "+0.92\u00a2 per share",
-          "tone": "alert"
+          "value": "-0.61\u00a2 per share",
+          "tone": "flat"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.382,
-            "size": 25145.62,
-            "dollars": 9605.626839999999
+            "price": 0.2,
+            "size": 59898.27,
+            "dollars": 11979.654
           },
           {
-            "price": 0.381,
-            "size": 18169.64,
-            "dollars": 6922.63284
+            "price": 0.19,
+            "size": 1065165.78,
+            "dollars": 202381.4982
           },
           {
-            "price": 0.38,
-            "size": 2404.89,
-            "dollars": 913.8582
+            "price": 0.18,
+            "size": 771369.81,
+            "dollars": 138846.5658
           },
           {
-            "price": 0.379,
-            "size": 210.0,
-            "dollars": 79.59
+            "price": 0.17,
+            "size": 31160.33,
+            "dollars": 5297.2561000000005
           },
           {
-            "price": 0.378,
-            "size": 632.0,
-            "dollars": 238.89600000000002
+            "price": 0.16,
+            "size": 131729.46,
+            "dollars": 21076.7136
           }
         ],
         "asks": [
           {
-            "price": 0.383,
-            "size": 4264.57,
-            "dollars": 1633.3303099999998
+            "price": 0.21,
+            "size": 25061.76,
+            "dollars": 5262.969599999999
           },
           {
-            "price": 0.384,
-            "size": 5114.74,
-            "dollars": 1964.06016
+            "price": 0.22,
+            "size": 18201.9,
+            "dollars": 4004.418
           },
           {
-            "price": 0.385,
-            "size": 112143.94,
-            "dollars": 43175.416900000004
+            "price": 0.23,
+            "size": 24490.36,
+            "dollars": 5632.7828
           },
           {
-            "price": 0.386,
-            "size": 850.87,
-            "dollars": 328.43582000000004
+            "price": 0.24,
+            "size": 23795.67,
+            "dollars": 5710.960799999999
           },
           {
-            "price": 0.387,
-            "size": 200.0,
-            "dollars": 77.4
+            "price": 0.25,
+            "size": 18694.79,
+            "dollars": 4673.6975
           }
         ]
       },
@@ -129,42 +129,292 @@
       "research_label": "Research"
     },
     {
-      "rank": 3,
-      "category": "Geopolitics",
-      "question": "Putin out as President of Russia by end of 2026?",
-      "market_id": "560317",
-      "market_url": "https://polymarket.com/event/putin-out-as-president-of-russia-by-end-of-2026",
-      "volume_usd": 2737275.719155001,
-      "n_trades": 3160,
+      "rank": 6,
+      "category": "Sports",
+      "question": "Will Lando Norris be the 2026 F1 Drivers' Champion?",
+      "market_id": "898409",
+      "market_url": "https://polymarket.com/event/will-lando-norris-be-the-2026-f1-drivers-champion",
+      "volume_usd": 962494.9686929991,
+      "n_trades": 6104,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "8% YES  \u2022 +0pp 7d",
+          "value": "3% YES",
           "tone": "flat"
         },
         {
           "label": "Weekly volume",
-          "value": "$2.7M",
+          "value": "$962K",
           "tone": "flat"
         },
         {
           "label": "Trades",
-          "value": "3,160",
+          "value": "6,104",
           "tone": "flat"
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$21K",
+          "value": "$25K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "173 days (2026-12-31)",
+          "value": "133 days (2026-12-06)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.08 ($30,337) / Ask 0.09 ($2,342)",
+          "value": "Bid 0.03 ($2) / Ask 0.03 ($35)",
+          "tone": "flat"
+        },
+        {
+          "label": "Spread",
+          "value": "0.1\u00a2 (317 bps)",
+          "tone": "warn"
+        },
+        {
+          "label": "Depth within \u00b15% of mid",
+          "value": "$5 bid  /  $174 ask",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "76% (vs 80% Polymarket-wide)",
+          "tone": "flat"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "3 of 10,485",
+          "tone": "warn"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "+0.73\u00a2 per share",
+          "tone": "alert"
+        }
+      ],
+      "depth_ladder": {
+        "bids": [
+          {
+            "price": 0.031,
+            "size": 77.4,
+            "dollars": 2.3994
+          },
+          {
+            "price": 0.03,
+            "size": 97.55,
+            "dollars": 2.9265
+          },
+          {
+            "price": 0.029,
+            "size": 97.41,
+            "dollars": 2.82489
+          },
+          {
+            "price": 0.028,
+            "size": 100.0,
+            "dollars": 2.8000000000000003
+          },
+          {
+            "price": 0.027,
+            "size": 539.99,
+            "dollars": 14.57973
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.032,
+            "size": 1101.06,
+            "dollars": 35.23392
+          },
+          {
+            "price": 0.033,
+            "size": 4215.37,
+            "dollars": 139.10721
+          },
+          {
+            "price": 0.034,
+            "size": 630.6,
+            "dollars": 21.440400000000004
+          },
+          {
+            "price": 0.035,
+            "size": 113.0,
+            "dollars": 3.9550000000000005
+          },
+          {
+            "price": 0.036,
+            "size": 32.51,
+            "dollars": 1.1703599999999998
+          }
+        ]
+      },
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "research_link": "/research",
+      "research_label": "Research"
+    },
+    {
+      "rank": 7,
+      "category": "Sports",
+      "question": "Will Max Verstappen be the 2026 F1 Drivers' Champion?",
+      "market_id": "898413",
+      "market_url": "https://polymarket.com/event/will-max-verstappen-be-the-2026-f1-drivers-champion",
+      "volume_usd": 907944.0837649985,
+      "n_trades": 5999,
+      "annotations": [
+        {
+          "label": "Implied probability",
+          "value": "2% YES",
+          "tone": "flat"
+        },
+        {
+          "label": "Weekly volume",
+          "value": "$908K",
+          "tone": "flat"
+        },
+        {
+          "label": "Trades",
+          "value": "5,999",
+          "tone": "flat"
+        },
+        {
+          "label": "24h volume (Gamma)",
+          "value": "$15K",
+          "tone": "flat"
+        },
+        {
+          "label": "Time to resolution",
+          "value": "133 days (2026-12-06)",
+          "tone": "flat"
+        },
+        {
+          "label": "Top of book (YES)",
+          "value": "Bid 0.02 ($12) / Ask 0.02 ($13)",
+          "tone": "flat"
+        },
+        {
+          "label": "Spread",
+          "value": "0.2\u00a2 (1111 bps)",
+          "tone": "alert"
+        },
+        {
+          "label": "Depth within \u00b15% of mid",
+          "value": "$0 bid  /  $0 ask",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "76% (vs 80% Polymarket-wide)",
+          "tone": "flat"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "4 of 10,485",
+          "tone": "warn"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "+0.83\u00a2 per share",
+          "tone": "alert"
+        }
+      ],
+      "depth_ladder": {
+        "bids": [
+          {
+            "price": 0.017,
+            "size": 699.88,
+            "dollars": 11.897960000000001
+          },
+          {
+            "price": 0.016,
+            "size": 6.0,
+            "dollars": 0.096
+          },
+          {
+            "price": 0.015,
+            "size": 1111.0,
+            "dollars": 16.665
+          },
+          {
+            "price": 0.014,
+            "size": 4872.48,
+            "dollars": 68.21472
+          },
+          {
+            "price": 0.013,
+            "size": 6.0,
+            "dollars": 0.078
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.019,
+            "size": 685.0,
+            "dollars": 13.014999999999999
+          },
+          {
+            "price": 0.02,
+            "size": 2633.06,
+            "dollars": 52.6612
+          },
+          {
+            "price": 0.021,
+            "size": 1129.0,
+            "dollars": 23.709000000000003
+          },
+          {
+            "price": 0.022,
+            "size": 1129.0,
+            "dollars": 24.837999999999997
+          },
+          {
+            "price": 0.023,
+            "size": 1374.1,
+            "dollars": 31.6043
+          }
+        ]
+      },
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "research_link": "/research",
+      "research_label": "Research"
+    },
+    {
+      "rank": 8,
+      "category": "Other",
+      "question": "Will the Iranian regime fall before 2027?",
+      "market_id": "663583",
+      "market_url": "https://polymarket.com/event/will-the-iranian-regime-fall-before-2027",
+      "volume_usd": 708620.848439,
+      "n_trades": 5163,
+      "annotations": [
+        {
+          "label": "Implied probability",
+          "value": "8% YES  \u25bc -4pp 7d",
+          "tone": "flat"
+        },
+        {
+          "label": "Weekly volume",
+          "value": "$709K",
+          "tone": "flat"
+        },
+        {
+          "label": "Trades",
+          "value": "5,163",
+          "tone": "flat"
+        },
+        {
+          "label": "24h volume (Gamma)",
+          "value": "$53K",
+          "tone": "flat"
+        },
+        {
+          "label": "Time to resolution",
+          "value": "158 days (2026-12-31)",
+          "tone": "flat"
+        },
+        {
+          "label": "Top of book (YES)",
+          "value": "Bid 0.08 ($13,212) / Ask 0.09 ($4,244)",
           "tone": "flat"
         },
         {
@@ -179,198 +429,73 @@
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "71% (vs 92% Polymarket-wide)",
+          "value": "58% (vs 80% Polymarket-wide)",
           "tone": "ok"
         },
         {
           "label": "Flagged wallets active",
-          "value": "3 of 6,292",
+          "value": "2 of 10,485",
           "tone": "warn"
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.03\u00a2 per share",
-          "tone": "flat"
+          "value": "+0.26\u00a2 per share",
+          "tone": "warn"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
             "price": 0.08,
-            "size": 379208.72,
-            "dollars": 30336.6976
+            "size": 165153.58,
+            "dollars": 13212.286399999999
           },
           {
             "price": 0.07,
-            "size": 1542926.98,
-            "dollars": 108004.8886
+            "size": 158758.02,
+            "dollars": 11113.0614
           },
           {
             "price": 0.06,
-            "size": 502452.22,
-            "dollars": 30147.133199999997
+            "size": 506144.3,
+            "dollars": 30368.658
           },
           {
             "price": 0.05,
-            "size": 84760.83,
-            "dollars": 4238.0415
+            "size": 179051.35,
+            "dollars": 8952.567500000001
           },
           {
             "price": 0.04,
-            "size": 24810.47,
-            "dollars": 992.4188
+            "size": 43772.6,
+            "dollars": 1750.904
           }
         ],
         "asks": [
           {
             "price": 0.09,
-            "size": 26019.02,
-            "dollars": 2341.7118
+            "size": 47153.54,
+            "dollars": 4243.8186
           },
           {
             "price": 0.1,
-            "size": 893838.76,
-            "dollars": 89383.876
+            "size": 193882.93,
+            "dollars": 19388.293
           },
           {
             "price": 0.11,
-            "size": 232050.74,
-            "dollars": 25525.5814
+            "size": 338617.28,
+            "dollars": 37247.9008
           },
           {
             "price": 0.12,
-            "size": 60768.26,
-            "dollars": 7292.1912
+            "size": 56353.53,
+            "dollars": 6762.423599999999
           },
           {
             "price": 0.13,
-            "size": 25264.22,
-            "dollars": 3284.3486000000003
-          }
-        ]
-      },
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
-      "research_link": "/research",
-      "research_label": "Research"
-    },
-    {
-      "rank": 4,
-      "category": "Sports",
-      "question": "Will Argentina win the 2026 FIFA World Cup?",
-      "market_id": "558938",
-      "market_url": "https://polymarket.com/event/will-argentina-win-the-2026-fifa-world-cup",
-      "volume_usd": 2611725.062462987,
-      "n_trades": 16696,
-      "annotations": [
-        {
-          "label": "Implied probability",
-          "value": "17% YES",
-          "tone": "flat"
-        },
-        {
-          "label": "Weekly volume",
-          "value": "$2.6M",
-          "tone": "flat"
-        },
-        {
-          "label": "Trades",
-          "value": "16,696",
-          "tone": "flat"
-        },
-        {
-          "label": "24h volume (Gamma)",
-          "value": "$1.4M",
-          "tone": "flat"
-        },
-        {
-          "label": "Time to resolution",
-          "value": "9 days (2026-07-20)",
-          "tone": "flat"
-        },
-        {
-          "label": "Top of book (YES)",
-          "value": "Bid 0.17 ($253) / Ask 0.17 ($3,152)",
-          "tone": "flat"
-        },
-        {
-          "label": "Spread",
-          "value": "0.2\u00a2 (116 bps)",
-          "tone": "flat"
-        },
-        {
-          "label": "Depth within \u00b15% of mid",
-          "value": "$27,466 bid  /  $16,326 ask",
-          "tone": "flat"
-        },
-        {
-          "label": "Algorithmic share (this market)",
-          "value": "75% (vs 92% Polymarket-wide)",
-          "tone": "flat"
-        },
-        {
-          "label": "Flagged wallets active",
-          "value": "13 of 6,292",
-          "tone": "alert"
-        },
-        {
-          "label": "Execution gap (retail vs bots)",
-          "value": "-0.13\u00a2 per share",
-          "tone": "flat"
-        }
-      ],
-      "depth_ladder": {
-        "bids": [
-          {
-            "price": 0.172,
-            "size": 1470.08,
-            "dollars": 252.85375999999997
-          },
-          {
-            "price": 0.171,
-            "size": 51956.99,
-            "dollars": 8884.64529
-          },
-          {
-            "price": 0.17,
-            "size": 69175.07,
-            "dollars": 11759.761900000001
-          },
-          {
-            "price": 0.169,
-            "size": 3315.0,
-            "dollars": 560.235
-          },
-          {
-            "price": 0.168,
-            "size": 3470.15,
-            "dollars": 582.9852000000001
-          }
-        ],
-        "asks": [
-          {
-            "price": 0.174,
-            "size": 18115.86,
-            "dollars": 3152.15964
-          },
-          {
-            "price": 0.175,
-            "size": 13050.08,
-            "dollars": 2283.7639999999997
-          },
-          {
-            "price": 0.176,
-            "size": 21030.66,
-            "dollars": 3701.39616
-          },
-          {
-            "price": 0.177,
-            "size": 20305.83,
-            "dollars": 3594.13191
-          },
-          {
-            "price": 0.178,
-            "size": 2120.82,
-            "dollars": 377.50596
+            "size": 8419.37,
+            "dollars": 1094.5181000000002
           }
         ]
       },
@@ -381,121 +506,116 @@
     {
       "rank": 9,
       "category": "Sports",
-      "question": "Will Spain win the 2026 FIFA World Cup?",
-      "market_id": "558934",
-      "market_url": "https://polymarket.com/event/will-spain-win-the-2026-fifa-world-cup",
-      "volume_usd": 1630581.726735001,
-      "n_trades": 12148,
+      "question": "Will Oscar Piastri be the 2026 F1 Drivers' Champion?",
+      "market_id": "898410",
+      "market_url": "https://polymarket.com/event/will-oscar-piastri-be-the-2026-f1-drivers-champion",
+      "volume_usd": 503469.74331199995,
+      "n_trades": 4360,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "21% YES  \u25b2 +5pp 7d",
+          "value": "0% YES",
           "tone": "flat"
         },
         {
           "label": "Weekly volume",
-          "value": "$1.6M",
+          "value": "$503K",
           "tone": "flat"
         },
         {
           "label": "Trades",
-          "value": "12,148",
+          "value": "4,360",
           "tone": "flat"
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$1.8M",
+          "value": "$56K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "9 days (2026-07-20)",
+          "value": "133 days (2026-12-06)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.21 ($2,810) / Ask 0.21 ($61,986)",
+          "value": "Bid 0.00 ($71) / Ask 0.01 ($61)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1\u00a2 (48 bps)",
-          "tone": "flat"
+          "value": "0.1\u00a2 (2222 bps)",
+          "tone": "alert"
         },
         {
           "label": "Depth within \u00b15% of mid",
-          "value": "$30,415 bid  /  $134,792 ask",
+          "value": "$0 bid  /  $0 ask",
           "tone": "flat"
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "78% (vs 92% Polymarket-wide)",
+          "value": "85% (vs 80% Polymarket-wide)",
           "tone": "flat"
         },
         {
           "label": "Flagged wallets active",
-          "value": "8 of 6,292",
-          "tone": "alert"
+          "value": "1 of 10,485",
+          "tone": "warn"
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.03\u00a2 per share",
-          "tone": "flat"
+          "value": "+0.95\u00a2 per share",
+          "tone": "alert"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.209,
-            "size": 13447.29,
-            "dollars": 2810.48361
+            "price": 0.004,
+            "size": 17671.39,
+            "dollars": 70.68556
           },
           {
-            "price": 0.208,
-            "size": 240.38,
-            "dollars": 49.999039999999994
+            "price": 0.003,
+            "size": 228033.98,
+            "dollars": 684.10194
           },
           {
-            "price": 0.207,
-            "size": 789.54,
-            "dollars": 163.43478
+            "price": 0.002,
+            "size": 1014709.94,
+            "dollars": 2029.41988
           },
           {
-            "price": 0.206,
-            "size": 21604.56,
-            "dollars": 4450.53936
-          },
-          {
-            "price": 0.205,
-            "size": 107149.37,
-            "dollars": 21965.62085
+            "price": 0.001,
+            "size": 456826.4,
+            "dollars": 456.82640000000004
           }
         ],
         "asks": [
           {
-            "price": 0.21,
-            "size": 295173.77,
-            "dollars": 61986.4917
+            "price": 0.005,
+            "size": 12225.34,
+            "dollars": 61.1267
           },
           {
-            "price": 0.211,
-            "size": 189550.44,
-            "dollars": 39995.14284
+            "price": 0.006,
+            "size": 2523.44,
+            "dollars": 15.140640000000001
           },
           {
-            "price": 0.212,
-            "size": 9587.22,
-            "dollars": 2032.4906399999998
+            "price": 0.007,
+            "size": 8307.21,
+            "dollars": 58.15047
           },
           {
-            "price": 0.213,
-            "size": 50.0,
-            "dollars": 10.65
+            "price": 0.008,
+            "size": 6350.94,
+            "dollars": 50.80752
           },
           {
-            "price": 0.214,
-            "size": 50650.0,
-            "dollars": 10839.1
+            "price": 0.009,
+            "size": 7568.02,
+            "dollars": 68.11218
           }
         ]
       },
@@ -506,246 +626,121 @@
     {
       "rank": 10,
       "category": "Sports",
-      "question": "Will England win the 2026 FIFA World Cup?",
-      "market_id": "558935",
-      "market_url": "https://polymarket.com/event/will-england-win-the-2026-fifa-world-cup",
-      "volume_usd": 1442867.4038900002,
-      "n_trades": 10788,
+      "question": "Will Charles Leclerc be the 2026 F1 Drivers' Champion?",
+      "market_id": "898415",
+      "market_url": "https://polymarket.com/event/will-charles-leclerc-be-the-2026-f1-drivers-champion",
+      "volume_usd": 388575.2084379996,
+      "n_trades": 3366,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "15% YES",
+          "value": "3% YES",
           "tone": "flat"
         },
         {
           "label": "Weekly volume",
-          "value": "$1.4M",
+          "value": "$389K",
           "tone": "flat"
         },
         {
           "label": "Trades",
-          "value": "10,788",
+          "value": "3,366",
           "tone": "flat"
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$2.5M",
+          "value": "$14K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "9 days (2026-07-20)",
+          "value": "133 days (2026-12-06)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.14 ($19) / Ask 0.15 ($1,585)",
+          "value": "Bid 0.03 ($55) / Ask 0.03 ($24)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.1\u00a2 (69 bps)",
-          "tone": "flat"
+          "value": "0.1\u00a2 (339 bps)",
+          "tone": "warn"
         },
         {
           "label": "Depth within \u00b15% of mid",
-          "value": "$43 bid  /  $4,218 ask",
+          "value": "$55 bid  /  $24 ask",
           "tone": "flat"
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "73% (vs 92% Polymarket-wide)",
-          "tone": "ok"
+          "value": "78% (in line with the 80% Polymarket-wide baseline)",
+          "tone": "flat"
         },
         {
           "label": "Flagged wallets active",
-          "value": "9 of 6,292",
-          "tone": "alert"
+          "value": "3 of 10,485",
+          "tone": "warn"
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.33\u00a2 per share",
+          "value": "+0.16\u00a2 per share",
           "tone": "flat"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.145,
-            "size": 130.0,
-            "dollars": 18.849999999999998
+            "price": 0.029,
+            "size": 1904.19,
+            "dollars": 55.22151
           },
           {
-            "price": 0.139,
-            "size": 176.0,
-            "dollars": 24.464000000000002
+            "price": 0.028,
+            "size": 961.59,
+            "dollars": 26.92452
           },
           {
-            "price": 0.138,
-            "size": 8763.05,
-            "dollars": 1209.3009
+            "price": 0.027,
+            "size": 100.0,
+            "dollars": 2.7
           },
           {
-            "price": 0.137,
-            "size": 4326.0,
-            "dollars": 592.662
+            "price": 0.026,
+            "size": 100.0,
+            "dollars": 2.6
           },
           {
-            "price": 0.136,
-            "size": 3115.0,
-            "dollars": 423.64000000000004
+            "price": 0.025,
+            "size": 100.0,
+            "dollars": 2.5
           }
         ],
         "asks": [
           {
-            "price": 0.146,
-            "size": 10858.02,
-            "dollars": 1585.27092
+            "price": 0.03,
+            "size": 804.18,
+            "dollars": 24.1254
           },
           {
-            "price": 0.147,
-            "size": 2826.47,
-            "dollars": 415.49108999999993
+            "price": 0.031,
+            "size": 1671.46,
+            "dollars": 51.81526
           },
           {
-            "price": 0.148,
-            "size": 2352.0,
-            "dollars": 348.096
+            "price": 0.032,
+            "size": 921.21,
+            "dollars": 29.478720000000003
           },
           {
-            "price": 0.149,
-            "size": 3115.0,
-            "dollars": 464.135
+            "price": 0.033,
+            "size": 1594.0,
+            "dollars": 52.602000000000004
           },
           {
-            "price": 0.15,
-            "size": 3075.0,
-            "dollars": 461.25
-          }
-        ]
-      },
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
-      "research_link": "/research",
-      "research_label": "Research"
-    },
-    {
-      "rank": 22,
-      "category": "Sports",
-      "question": "Will Norway win the 2026 FIFA World Cup?",
-      "market_id": "558951",
-      "market_url": "https://polymarket.com/event/will-norway-win-the-2026-fifa-world-cup",
-      "volume_usd": 483379.4536180001,
-      "n_trades": 9426,
-      "annotations": [
-        {
-          "label": "Implied probability",
-          "value": "5% YES",
-          "tone": "flat"
-        },
-        {
-          "label": "Weekly volume",
-          "value": "$483K",
-          "tone": "flat"
-        },
-        {
-          "label": "Trades",
-          "value": "9,426",
-          "tone": "flat"
-        },
-        {
-          "label": "24h volume (Gamma)",
-          "value": "$4.9M",
-          "tone": "flat"
-        },
-        {
-          "label": "Time to resolution",
-          "value": "9 days (2026-07-20)",
-          "tone": "flat"
-        },
-        {
-          "label": "Top of book (YES)",
-          "value": "Bid 0.05 ($536) / Ask 0.05 ($338)",
-          "tone": "flat"
-        },
-        {
-          "label": "Spread",
-          "value": "0.2\u00a2 (385 bps)",
-          "tone": "warn"
-        },
-        {
-          "label": "Depth within \u00b15% of mid",
-          "value": "$781 bid  /  $732 ask",
-          "tone": "flat"
-        },
-        {
-          "label": "Algorithmic share (this market)",
-          "value": "83% (vs 92% Polymarket-wide)",
-          "tone": "flat"
-        },
-        {
-          "label": "Flagged wallets active",
-          "value": "3 of 6,292",
-          "tone": "warn"
-        },
-        {
-          "label": "Execution gap (retail vs bots)",
-          "value": "-0.05\u00a2 per share",
-          "tone": "flat"
-        }
-      ],
-      "depth_ladder": {
-        "bids": [
-          {
-            "price": 0.051,
-            "size": 10514.13,
-            "dollars": 536.2206299999999
-          },
-          {
-            "price": 0.05,
-            "size": 4892.26,
-            "dollars": 244.61300000000003
-          },
-          {
-            "price": 0.049,
-            "size": 1525.0,
-            "dollars": 74.72500000000001
-          },
-          {
-            "price": 0.048,
-            "size": 225.0,
-            "dollars": 10.8
-          },
-          {
-            "price": 0.047,
-            "size": 4144.0,
-            "dollars": 194.768
-          }
-        ],
-        "asks": [
-          {
-            "price": 0.053,
-            "size": 6373.06,
-            "dollars": 337.77218
-          },
-          {
-            "price": 0.054,
-            "size": 7298.11,
-            "dollars": 394.09794
-          },
-          {
-            "price": 0.055,
-            "size": 3115.0,
-            "dollars": 171.325
-          },
-          {
-            "price": 0.056,
-            "size": 4226.0,
-            "dollars": 236.656
-          },
-          {
-            "price": 0.057,
-            "size": 3136.98,
-            "dollars": 178.80786
+            "price": 0.034,
+            "size": 1594.0,
+            "dollars": 54.196000000000005
           }
         ]
       },
@@ -755,9 +750,9 @@
     }
   ],
   "global_context": {
-    "polymarket_wide_bot_share": 0.9231451077648625,
-    "polymarket_wide_volume_usd": 730691776.6482633,
-    "polymarket_wide_trades": 16359414,
+    "polymarket_wide_bot_share": 0.8019016219895269,
+    "polymarket_wide_volume_usd": 868866364.8533688,
+    "polymarket_wide_trades": 24083756,
     "calibration_alpha": 0.6639191266094694,
     "calibration_r2": 0.9867800262365879
   },
