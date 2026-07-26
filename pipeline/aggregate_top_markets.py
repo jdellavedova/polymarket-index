@@ -10,6 +10,7 @@ Outputs:
 from __future__ import annotations
 
 import json
+import os
 import time
 from pathlib import Path
 
@@ -55,8 +56,28 @@ def main() -> None:
     con.execute("PRAGMA threads=8")
     tune_duckdb(con)
 
+    # INCREMENTAL (July 2026): settled weeks never change, so scan only the
+    # trailing weeks and splice onto the existing history. Full scan only when
+    # history is absent or TM_FULL_REBUILD=1.
+    history_csv = DATA_OUT / "top_markets_history.csv"
+    prior_hist = None
+    where = "market_id IS NOT NULL AND market_id != ''"
+    full_rebuild = os.environ.get("TM_FULL_REBUILD") == "1" or not history_csv.exists()
+    if not full_rebuild:
+        prior_hist = pd.read_csv(history_csv, dtype={"market_id": str})
+        last_week = prior_hist["week"].max()
+        last_monday = pd.to_datetime(last_week + "-1", format="%G-W%V-%u")
+        cutoff_week = (last_monday - pd.Timedelta(weeks=4)).strftime("%G-W%V")
+        if "read_parquet" in TRADES_SRC:
+            where += f" AND part_week >= '{cutoff_week}'"
+        else:
+            where += f" AND strftime(CAST(date AS DATE), '%G-W%V') >= '{cutoff_week}'"
+        prior_hist = prior_hist[prior_hist["week"] < cutoff_week]
+        print(f"INCREMENTAL: history through {last_week}; recomputing weeks >= {cutoff_week}")
+    else:
+        print("FULL REBUILD: scanning the entire master")
+
     # Weekly USD volume per market. usdc_amount is in dollars.
-    print(f"[{time.strftime('%H:%M:%S')}] Streaming processed_trades.csv (one full pass) ...")
     con.execute(f"""
         CREATE TEMP TABLE weekly_market_vol AS
         SELECT
@@ -65,11 +86,13 @@ def main() -> None:
             SUM(CAST(usdc_amount AS DOUBLE)) AS usd_volume,
             COUNT(*) AS n_trades
         FROM {TRADES_SRC}
-        WHERE market_id IS NOT NULL AND market_id != ''
+        WHERE {where}
         GROUP BY 1, 2
     """)
 
-    # Partial-week filter: drop latest week if its total volume is < 30% of prior 4wk median
+    # Partial-week filter: drop latest week if its total volume is < 30% of
+    # prior 4wk median. In incremental mode the scanned window supplies its
+    # own 4-week context because the cutoff reaches 4 weeks back.
     weekly_total = con.execute("""
         SELECT week, SUM(usd_volume) AS week_vol
         FROM weekly_market_vol
@@ -123,8 +146,13 @@ def main() -> None:
     if drop_weeks:
         top_full = top_full[~top_full["week"].isin(drop_weeks)].reset_index(drop=True)
 
+    # Splice recomputed trailing weeks onto the kept prior history
+    if prior_hist is not None and len(prior_hist):
+        top_full = pd.concat(
+            [prior_hist[top_full.columns], top_full], ignore_index=True
+        ).sort_values(["week", "rnk"]).reset_index(drop=True)
+
     # Full history CSV
-    history_csv = DATA_OUT / "top_markets_history.csv"
     top_full.to_csv(history_csv, index=False)
     n_weeks = top_full["week"].nunique()
     print(f"  wrote {len(top_full)} rows across {n_weeks} weeks -> {history_csv.name}")

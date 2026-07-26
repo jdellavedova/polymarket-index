@@ -103,6 +103,7 @@ def main() -> None:
         WHERE market_id IN ({in_list})
           AND CAST(date AS DATE) >= DATE '{week_start}'
           AND CAST(date AS DATE) < DATE '{week_end}'
+          {f"AND part_week = '{week}'" if "read_parquet" in TRADES_SRC else ""}
     """)
     n_rows = con.execute("SELECT COUNT(*) FROM w_trades").fetchone()[0]
     print(f"  scanned to {n_rows:,} trades for latest-week top markets ({(time.time()-t0)/60:.1f} min)")
