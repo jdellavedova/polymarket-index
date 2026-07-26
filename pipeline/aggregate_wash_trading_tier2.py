@@ -28,7 +28,7 @@ import time
 import duckdb
 
 from common import utc_now, write_json
-from config import DATA_OUT, trades_source
+from config import DATA_OUT, trades_source, tune_duckdb
 
 TRADES_SRC = trades_source()
 
@@ -48,6 +48,7 @@ def main() -> None:
     con = duckdb.connect()
     con.execute("PRAGMA memory_limit='14GB'")
     con.execute("PRAGMA threads=8")
+    tune_duckdb(con)
 
     # One pass through the file, expanding each trade row into two
     # (wallet, side) records (one for the maker, one for the taker) and

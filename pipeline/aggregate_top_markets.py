@@ -18,7 +18,7 @@ import pandas as pd
 import requests
 
 from common import utc_now, write_json
-from config import DATA_OUT, trades_source
+from config import DATA_OUT, trades_source, tune_duckdb
 from categorize import categorize as _categorize_question
 
 GAMMA_MARKET_ENDPOINT = "https://gamma-api.polymarket.com/markets/{mid}"
@@ -53,6 +53,7 @@ def main() -> None:
     con = duckdb.connect(":memory:")
     con.execute("PRAGMA memory_limit='16GB'")
     con.execute("PRAGMA threads=8")
+    tune_duckdb(con)
 
     # Weekly USD volume per market. usdc_amount is in dollars.
     print(f"[{time.strftime('%H:%M:%S')}] Streaming processed_trades.csv (one full pass) ...")

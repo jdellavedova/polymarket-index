@@ -22,7 +22,7 @@ import duckdb
 import pandas as pd
 
 from common import utc_now, write_json
-from config import DATA_OUT, trades_source
+from config import DATA_OUT, trades_source, tune_duckdb
 
 TRADES_SRC = trades_source()
 TOKEN_OUTCOME = "H:/Research/10. Prediction/data/blockchain/token_outcome_map.pkl"
@@ -58,6 +58,7 @@ def main() -> None:
     con = duckdb.connect(":memory:")
     con.execute("PRAGMA memory_limit='12GB'")
     con.execute("PRAGMA threads=8")
+    tune_duckdb(con)
     con.register("flagged", flagged_df[["wallet", "wallet_type"]])
     con.register("outcomes", outcome_df)
 

@@ -26,7 +26,7 @@ import duckdb
 import pandas as pd
 
 from common import add_rolling_stats, summary_stats, utc_now, write_json
-from config import DATA_OUT, trades_source
+from config import DATA_OUT, trades_source, tune_duckdb
 
 TRADES_SRC = trades_source()
 WALLETS = "H:/Research/10. Prediction/data/blockchain/wallet_statistics.csv"
@@ -40,6 +40,7 @@ def main() -> None:
     con = duckdb.connect(":memory:")
     con.execute("PRAGMA memory_limit='16GB'")
     con.execute("PRAGMA threads=8")
+    tune_duckdb(con)
 
     print(f"[{time.strftime('%H:%M:%S')}] Loading wallet types + flagged set ...")
     con.execute(f"""

@@ -26,7 +26,7 @@ import duckdb
 import pandas as pd
 
 from common import utc_now, write_json
-from config import DATA_OUT, trades_source
+from config import DATA_OUT, trades_source, tune_duckdb
 
 TRADES_SRC = trades_source()
 
@@ -38,6 +38,7 @@ def main() -> None:
     con = duckdb.connect()
     con.execute("PRAGMA memory_limit='12GB'")
     con.execute("PRAGMA threads=8")
+    tune_duckdb(con)
 
     # Two scans of the 282GB file are unavoidable: one to capture global
     # denominators (n_trades, total_volume), one to materialize the small

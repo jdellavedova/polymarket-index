@@ -18,6 +18,22 @@ INSIDER_OUT = Path("G:/My Drive/1. Research/1. Polymarket/2. Insider/output")
 
 TRADES_CSV = BLOCKCHAIN / "processed_trades.csv"
 TRADES_PARQUET_DIR = BLOCKCHAIN / "trades_parquet"
+DUCKDB_TMP = BLOCKCHAIN / "duckdb_tmp"
+
+
+def tune_duckdb(con) -> None:
+    """Let heavy scans spill to disk instead of raising Out of Memory.
+
+    Call right after the memory_limit/threads PRAGMAs. Without a
+    temp_directory an in-memory DuckDB connection cannot spill, so any
+    aggregation whose hash tables outgrow the memory limit dies (the
+    July 25 2026 weekly_activity OOM after the master crossed 1B rows).
+    preserve_insertion_order=false frees DuckDB from buffering scan output
+    in order; every consumer here aggregates or sorts explicitly.
+    """
+    DUCKDB_TMP.mkdir(exist_ok=True)
+    con.execute(f"SET temp_directory='{DUCKDB_TMP.as_posix()}'")
+    con.execute("SET preserve_insertion_order=false")
 
 
 def trades_source() -> str:

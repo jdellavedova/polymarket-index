@@ -27,7 +27,7 @@ import time
 import duckdb
 
 from common import utc_now, write_json
-from config import DATA_OUT, trades_source
+from config import DATA_OUT, trades_source, tune_duckdb
 
 TRADES_SRC = trades_source()
 
@@ -47,6 +47,7 @@ def main() -> None:
     con = duckdb.connect()
     con.execute("PRAGMA memory_limit='14GB'")
     con.execute("PRAGMA threads=8")
+    tune_duckdb(con)
 
     # Single pass: compute per-(market, wallet) participation counts via
     # UNION ALL of maker and taker sides. Group up to per-market HHI.

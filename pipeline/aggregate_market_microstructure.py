@@ -27,7 +27,7 @@ import duckdb
 import pandas as pd
 
 from common import utc_now, write_json
-from config import DATA_OUT, trades_source
+from config import DATA_OUT, trades_source, tune_duckdb
 
 TRADES_SRC = trades_source()
 WALLETS = "H:/Research/10. Prediction/data/blockchain/wallet_statistics.csv"
@@ -68,6 +68,7 @@ def main() -> None:
     con = duckdb.connect(":memory:")
     con.execute("PRAGMA memory_limit='12GB'")
     con.execute("PRAGMA threads=8")
+    tune_duckdb(con)
 
     # Wallet type lookup. wallet_type is one of {bot, sophisticated, active_retail,
     # casual, one_shot}. Lowercase the address to match processed_trades.
