@@ -27,12 +27,13 @@ import time
 from collections import defaultdict
 from pathlib import Path
 
+import duckdb
 import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from common import utc_now, write_json
-from config import DATA_OUT
+from config import DATA_OUT, trades_source, tune_duckdb
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace', line_buffering=True)
 
@@ -89,15 +90,40 @@ def main() -> None:
     del wallet_df
     gc.collect()
 
-    log(f"Streaming master CSV; filtering to blockNumber > {last_block:,} ...")
-    usecols = ["blockNumber", "date", "maker_address", "taker_address",
-               "token_id", "maker_side", "usdc_amount", "token_amount", "price"]
-    dtypes = {
-        "blockNumber": "int64", "date": "string",
-        "maker_address": "string", "taker_address": "string",
-        "token_id": "string", "maker_side": "string",
-        "usdc_amount": "float64", "token_amount": "float64", "price": "float64",
-    }
+    # DuckDB over the parquet store (or the CSV fallback): parquet row-group
+    # statistics skip every row group at/below the block cutoff, so this reads
+    # only the new data. The old pandas reader streamed the entire 430 GB CSV
+    # to find the same rows (~3 h of IO per weekly run, July 2026).
+    trades_src = trades_source()
+    log(f"Scanning {'parquet store' if 'read_parquet' in trades_src else 'master CSV'}; "
+        f"filtering to blockNumber > {last_block:,} ...")
+    con = duckdb.connect(":memory:")
+    con.execute("PRAGMA memory_limit='40GB'")
+    con.execute("PRAGMA threads=8")
+    tune_duckdb(con)
+    reader = con.execute(f"""
+        SELECT CAST(blockNumber AS BIGINT) AS blockNumber,
+               CAST(date AS VARCHAR) AS date,
+               CAST(maker_address AS VARCHAR) AS maker_address,
+               CAST(taker_address AS VARCHAR) AS taker_address,
+               CAST(token_id AS VARCHAR) AS token_id,
+               CAST(maker_side AS VARCHAR) AS maker_side,
+               CAST(usdc_amount AS DOUBLE) AS usdc_amount,
+               CAST(token_amount AS DOUBLE) AS token_amount,
+               CAST(price AS DOUBLE) AS price
+        FROM {trades_src}
+        WHERE CAST(blockNumber AS BIGINT) > {last_block}
+    """).fetch_record_batch(CHUNK_SIZE)
+
+    def _chunks():
+        while True:
+            try:
+                batch = reader.read_next_batch()
+            except StopIteration:
+                return
+            df = batch.to_pandas()
+            if len(df):
+                yield df
 
     new_max_block = last_block
     agg: dict[tuple[str, str], dict[str, float]] = defaultdict(lambda: {
@@ -106,13 +132,7 @@ def main() -> None:
     })
     n_new = 0
 
-    for chunk_idx, chunk in enumerate(
-        pd.read_csv(TRADES, chunksize=CHUNK_SIZE, usecols=usecols, dtype=dtypes,
-                    low_memory=False, encoding_errors='replace')
-    ):
-        chunk = chunk[chunk["blockNumber"] > last_block]
-        if chunk.empty:
-            continue
+    for chunk_idx, chunk in enumerate(_chunks()):
         n_new += len(chunk)
         new_max_block = max(new_max_block, int(chunk["blockNumber"].max()))
 
@@ -192,7 +212,7 @@ def main() -> None:
         del weeks, maker_types, taker_types, maker_df, taker_df, sides, chunk_agg
         gc.collect()
 
-        log(f"  chunk {chunk_idx+1}: +{len(chunk) if False else n_new:,} new trades cumulative")
+        log(f"  chunk {chunk_idx+1}: {n_new:,} new trades cumulative")
 
     if n_new == 0:
         log("No new trades since last update; nothing to do.")
@@ -284,7 +304,7 @@ def main() -> None:
             "in basis points (x10000)."
         ),
         "generated_at": utc_now(),
-        "source": str(TRADES),
+        "source": trades_src,
     }
     write_json(DATA_OUT / "profit_split_latest.json", payload)
 
