@@ -1,23 +1,78 @@
 {
   "index_name": "Profit Split",
   "short_name": "ProfitSplit",
-  "as_of_week": "2026-W29",
-  "as_of": "2026-07-13",
+  "as_of_week": "2026-W30",
+  "as_of": "2026-07-20",
   "benchmark": "per-(market_id, token_id) buy-side VWAP (Paper 1 main analysis benchmark)",
   "by_type": {
     "active_retail": {
-      "n_trades": 2,
-      "usd_volume": 5.0,
-      "accuracy": 0.5,
-      "pnl": 0.0,
-      "directional": 0.0,
-      "execution": 0.0,
-      "pnl_roi_bps": 0.0,
-      "directional_roi_bps": 0.0,
-      "execution_roi_bps": 0.0
+      "n_trades": 738479,
+      "usd_volume": 14991154.319116998,
+      "accuracy": 0.46760224838200964,
+      "pnl": -507870.75308,
+      "directional": 320870.37194630655,
+      "execution": -828741.1250263066,
+      "pnl_roi_bps": -338.780284872629,
+      "directional_roi_bps": 214.03980315053303,
+      "execution_roi_bps": -552.8200880231622
+    },
+    "bot": {
+      "n_trades": 10423492,
+      "usd_volume": 235222384.812648,
+      "accuracy": 0.5103187958972855,
+      "pnl": 10043.658622999967,
+      "directional": -1190894.1165952582,
+      "execution": 1200937.7752182584,
+      "pnl_roi_bps": 0.42698566426828927,
+      "directional_roi_bps": -50.62843477009181,
+      "execution_roi_bps": 51.0554204343601
+    },
+    "casual": {
+      "n_trades": 75889,
+      "usd_volume": 1097479.738163,
+      "accuracy": 0.43846526616973425,
+      "pnl": 27651.636541,
+      "directional": 87164.56247945497,
+      "execution": -59512.925938454966,
+      "pnl_roi_bps": 251.95578177401507,
+      "directional_roi_bps": 794.2247993147835,
+      "execution_roi_bps": -542.2690175407683
+    },
+    "one_shot": {
+      "n_trades": 17944,
+      "usd_volume": 233338.843795,
+      "accuracy": 0.4191086177818166,
+      "pnl": -5020.478740999998,
+      "directional": 9460.357466658746,
+      "execution": -14480.836207658744,
+      "pnl_roi_bps": -215.15829337916594,
+      "directional_roi_bps": 405.434316584261,
+      "execution_roi_bps": -620.592609963427
+    },
+    "sophisticated": {
+      "n_trades": 59012,
+      "usd_volume": 3698878.747907,
+      "accuracy": 0.4026416699977937,
+      "pnl": -59255.711620999995,
+      "directional": 41370.813737389646,
+      "execution": -100626.52535838966,
+      "pnl_roi_bps": -160.1991188668449,
+      "directional_roi_bps": 111.84690431066225,
+      "execution_roi_bps": -272.0460231775072
+    },
+    "unclassified": {
+      "n_trades": 2254310,
+      "usd_volume": 36972315.074934,
+      "accuracy": 0.45658032211972716,
+      "pnl": 534451.6482780001,
+      "directional": 732028.0109654483,
+      "execution": -197576.3626874484,
+      "pnl_roi_bps": 144.5545531013665,
+      "directional_roi_bps": 197.99355530801995,
+      "execution_roi_bps": -53.439002206653434
     }
   },
   "methodology": "Fair-price benchmark: per-(market_id, token_id) volume-weighted average price across BUY-side trades only (Paper 1 main analysis). P&L attributed to BOTH maker AND taker with mirror signs so dollar totals sum to zero across all wallet types per week. Bps fields are ROI = pnl / usd_volume in basis points (x10000).",
-  "generated_at": "2026-07-26T20:54:55+00:00",
+  "generated_at": "2026-07-27T18:48:55+00:00",
   "source": "read_parquet('H:/Research/10. Prediction/data/blockchain/trades_parquet/**/*.parquet', hive_partitioning=1)"
 }

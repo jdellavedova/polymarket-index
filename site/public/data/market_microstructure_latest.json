@@ -1,6 +1,6 @@
 {
   "as_of_week": "2026-W29",
-  "generated_at": "2026-07-26T16:02:01+00:00",
+  "generated_at": "2026-07-27T16:15:42+00:00",
   "markets": [
     {
       "market_id": "558934",
@@ -8,19 +8,19 @@
       "question": "Will Spain win the 2026 FIFA World Cup?",
       "category": "Sports",
       "n_trades": 62979,
-      "usd_volume": 22097328.886850066,
+      "usd_volume": 22097328.886850152,
       "bot_share_participation": 0.6278759586528843,
       "flagged_wallets_active": 66,
-      "execution_gap_retail_minus_bot": 0.026177028281856102,
-      "avg_price_bot": 0.6313042747197978,
-      "avg_price_retail": 0.657481303001654,
+      "execution_gap_retail_minus_bot": 0.026177028281850735,
+      "avg_price_bot": 0.6313042747197993,
+      "avg_price_retail": 0.6574813030016501,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
-        "sophisticated": 4907,
+        "one_shot": 568,
         "active_retail": 21764,
         "casual": 3550,
         "unknown": 16083,
-        "one_shot": 568,
+        "sophisticated": 4907,
         "bot": 79086
       }
     },
@@ -30,20 +30,20 @@
       "question": "Will Argentina win the 2026 FIFA World Cup?",
       "category": "Sports",
       "n_trades": 82284,
-      "usd_volume": 16511909.409374136,
+      "usd_volume": 16511909.409374315,
       "bot_share_participation": 0.6414430508968937,
       "flagged_wallets_active": 44,
-      "execution_gap_retail_minus_bot": -0.01992598274386829,
-      "avg_price_bot": 0.5164061283724234,
-      "avg_price_retail": 0.4964801456285552,
+      "execution_gap_retail_minus_bot": -0.019925982743865183,
+      "avg_price_bot": 0.5164061283724208,
+      "avg_price_retail": 0.4964801456285557,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
-        "sophisticated": 6041,
-        "bot": 105561,
-        "one_shot": 548,
         "active_retail": 27425,
         "casual": 4891,
-        "unknown": 20102
+        "unknown": 20102,
+        "one_shot": 548,
+        "bot": 105561,
+        "sophisticated": 6041
       }
     },
     {
@@ -52,19 +52,19 @@
       "question": "Will France win the 2026 FIFA World Cup?",
       "category": "Sports",
       "n_trades": 21112,
-      "usd_volume": 3107148.749460995,
+      "usd_volume": 3107148.7494609943,
       "bot_share_participation": 0.6471438044713906,
       "flagged_wallets_active": 30,
-      "execution_gap_retail_minus_bot": 0.00034255857307854867,
-      "avg_price_bot": 0.4939143244463986,
-      "avg_price_retail": 0.4942568830194771,
+      "execution_gap_retail_minus_bot": 0.0003425585730775708,
+      "avg_price_bot": 0.4939143244463981,
+      "avg_price_retail": 0.4942568830194757,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
-        "sophisticated": 2376,
+        "bot": 27325,
         "active_retail": 8354,
         "casual": 1081,
         "unknown": 2970,
-        "bot": 27325,
+        "sophisticated": 2376,
         "one_shot": 118
       }
     },
@@ -74,19 +74,19 @@
       "question": "Will England win the 2026 FIFA World Cup?",
       "category": "Sports",
       "n_trades": 17826,
-      "usd_volume": 3016148.537530997,
+      "usd_volume": 3016148.5375309926,
       "bot_share_participation": 0.6500056097834623,
       "flagged_wallets_active": 26,
-      "execution_gap_retail_minus_bot": 0.005421534339378409,
-      "avg_price_bot": 0.47080782669791077,
-      "avg_price_retail": 0.47622936103728913,
+      "execution_gap_retail_minus_bot": 0.005421534339378316,
+      "avg_price_bot": 0.4708078266979104,
+      "avg_price_retail": 0.47622936103728875,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
-        "sophisticated": 2253,
+        "one_shot": 92,
         "active_retail": 6893,
         "casual": 987,
         "unknown": 2253,
-        "one_shot": 92,
+        "sophisticated": 2253,
         "bot": 23174
       }
     },
@@ -99,17 +99,17 @@
       "usd_volume": 2307201.5742579983,
       "bot_share_participation": 0.7494088281660536,
       "flagged_wallets_active": 9,
-      "execution_gap_retail_minus_bot": -0.006133186658044911,
-      "avg_price_bot": 0.682941777672563,
-      "avg_price_retail": 0.6768085910145181,
+      "execution_gap_retail_minus_bot": -0.006133186658045971,
+      "avg_price_bot": 0.6829417776725644,
+      "avg_price_retail": 0.6768085910145183,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
-        "sophisticated": 525,
-        "bot": 11409,
-        "one_shot": 12,
         "active_retail": 1649,
+        "unknown": 1519,
         "casual": 110,
-        "unknown": 1519
+        "one_shot": 12,
+        "bot": 11409,
+        "sophisticated": 525
       }
     },
     {
@@ -118,19 +118,19 @@
       "question": "Will Lando Norris be the 2026 F1 Drivers' Champion?",
       "category": "Sports",
       "n_trades": 6104,
-      "usd_volume": 962494.9686929991,
+      "usd_volume": 962494.9686929975,
       "bot_share_participation": 0.7593381389252949,
       "flagged_wallets_active": 3,
-      "execution_gap_retail_minus_bot": 0.007271182131884614,
-      "avg_price_bot": 0.9009389877960976,
-      "avg_price_retail": 0.9082101699279823,
+      "execution_gap_retail_minus_bot": 0.007271182131888324,
+      "avg_price_bot": 0.9009389877960942,
+      "avg_price_retail": 0.9082101699279825,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
-        "sophisticated": 35,
+        "bot": 9270,
         "active_retail": 1714,
         "unknown": 1182,
         "casual": 7,
-        "bot": 9270
+        "sophisticated": 35
       }
     },
     {
@@ -139,19 +139,19 @@
       "question": "Will Max Verstappen be the 2026 F1 Drivers' Champion?",
       "category": "Sports",
       "n_trades": 5999,
-      "usd_volume": 907944.0837649985,
+      "usd_volume": 907944.0837649994,
       "bot_share_participation": 0.7610435072512085,
       "flagged_wallets_active": 4,
-      "execution_gap_retail_minus_bot": 0.00829112418829514,
-      "avg_price_bot": 0.8989297277961135,
-      "avg_price_retail": 0.9072208519844085,
+      "execution_gap_retail_minus_bot": 0.008291124188297732,
+      "avg_price_bot": 0.8989297277961132,
+      "avg_price_retail": 0.9072208519844109,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
-        "sophisticated": 101,
+        "bot": 9131,
         "active_retail": 1170,
         "unknown": 1590,
         "casual": 6,
-        "bot": 9131
+        "sophisticated": 101
       }
     },
     {
@@ -160,20 +160,20 @@
       "question": "Will the Iranian regime fall before 2027?",
       "category": "Other",
       "n_trades": 5163,
-      "usd_volume": 708620.848439,
+      "usd_volume": 708620.8484390001,
       "bot_share_participation": 0.5815417392988572,
       "flagged_wallets_active": 2,
-      "execution_gap_retail_minus_bot": 0.002550355642856328,
+      "execution_gap_retail_minus_bot": 0.002550355642856772,
       "avg_price_bot": 0.8976313895187008,
-      "avg_price_retail": 0.9001817451615571,
+      "avg_price_retail": 0.9001817451615575,
       "n_tokens_compared": 1,
       "n_participations_by_type": {
+        "sophisticated": 679,
+        "one_shot": 6,
+        "bot": 6005,
         "active_retail": 3370,
         "unknown": 250,
-        "casual": 16,
-        "bot": 6005,
-        "one_shot": 6,
-        "sophisticated": 679
+        "casual": 16
       }
     },
     {
@@ -185,13 +185,13 @@
       "usd_volume": 503469.74331199995,
       "bot_share_participation": 0.8543577981651376,
       "flagged_wallets_active": 1,
-      "execution_gap_retail_minus_bot": 0.009496422320268372,
-      "avg_price_bot": 0.9694813148229935,
+      "execution_gap_retail_minus_bot": 0.00949642232026815,
+      "avg_price_bot": 0.9694813148229937,
       "avg_price_retail": 0.9789777371432619,
       "n_tokens_compared": 1,
       "n_participations_by_type": {
-        "unknown": 315,
         "active_retail": 878,
+        "unknown": 315,
         "casual": 6,
         "bot": 7450,
         "sophisticated": 71
@@ -203,19 +203,19 @@
       "question": "Will Charles Leclerc be the 2026 F1 Drivers' Champion?",
       "category": "Sports",
       "n_trades": 3366,
-      "usd_volume": 388575.2084379996,
+      "usd_volume": 388575.20843799965,
       "bot_share_participation": 0.7783719548425431,
       "flagged_wallets_active": 3,
-      "execution_gap_retail_minus_bot": 0.001619691362236701,
-      "avg_price_bot": 0.9447183737409467,
-      "avg_price_retail": 0.9463380651031834,
+      "execution_gap_retail_minus_bot": 0.001619691362236272,
+      "avg_price_bot": 0.9447183737409459,
+      "avg_price_retail": 0.9463380651031822,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
-        "sophisticated": 101,
-        "active_retail": 1162,
-        "unknown": 216,
-        "casual": 10,
         "one_shot": 3,
+        "active_retail": 1162,
+        "casual": 10,
+        "unknown": 216,
+        "sophisticated": 101,
         "bot": 5240
       }
     },
@@ -225,19 +225,19 @@
       "question": "Will China invade Taiwan by end of 2026?",
       "category": "Geopolitics",
       "n_trades": 13656,
-      "usd_volume": 345430.7536230028,
+      "usd_volume": 345430.75362300157,
       "bot_share_participation": 0.7193175161101347,
       "flagged_wallets_active": 2,
-      "execution_gap_retail_minus_bot": 8.839361232504395e-05,
-      "avg_price_bot": 0.9615296882056332,
-      "avg_price_retail": 0.9616180818179583,
+      "execution_gap_retail_minus_bot": 8.839361234380672e-05,
+      "avg_price_bot": 0.9615296882056159,
+      "avg_price_retail": 0.9616180818179598,
       "n_tokens_compared": 1,
       "n_participations_by_type": {
         "active_retail": 5381,
         "casual": 842,
         "unknown": 270,
-        "one_shot": 5,
         "bot": 19646,
+        "one_shot": 5,
         "sophisticated": 1168
       }
     },
@@ -247,19 +247,19 @@
       "question": "Will Europe win the 2026 FIFA World Cup?",
       "category": "Sports",
       "n_trades": 2639,
-      "usd_volume": 266524.54507899994,
+      "usd_volume": 266524.545079,
       "bot_share_participation": 0.7254641909814323,
       "flagged_wallets_active": 5,
-      "execution_gap_retail_minus_bot": -0.03634641660916672,
-      "avg_price_bot": 0.7307813288537645,
-      "avg_price_retail": 0.6944349122445976,
+      "execution_gap_retail_minus_bot": -0.036346416609165544,
+      "avg_price_bot": 0.7307813288537632,
+      "avg_price_retail": 0.6944349122445977,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
-        "sophisticated": 158,
+        "bot": 3829,
         "active_retail": 857,
         "casual": 126,
         "unknown": 271,
-        "bot": 3829,
+        "sophisticated": 158,
         "one_shot": 37
       }
     },
@@ -269,20 +269,20 @@
       "question": "Will Harry Kane win the 2026 Ballon d'Or?",
       "category": "Other",
       "n_trades": 4307,
-      "usd_volume": 235681.28917399983,
+      "usd_volume": 235681.28917399992,
       "bot_share_participation": 0.6598560482934758,
       "flagged_wallets_active": 1,
-      "execution_gap_retail_minus_bot": -0.022029519876995942,
-      "avg_price_bot": 0.6357364681651765,
-      "avg_price_retail": 0.6137069482881805,
+      "execution_gap_retail_minus_bot": -0.022029519876996223,
+      "avg_price_bot": 0.6357364681651768,
+      "avg_price_retail": 0.6137069482881806,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
-        "active_retail": 1698,
-        "unknown": 616,
-        "casual": 87,
-        "bot": 5684,
+        "sophisticated": 504,
         "one_shot": 25,
-        "sophisticated": 504
+        "bot": 5684,
+        "active_retail": 1698,
+        "casual": 87,
+        "unknown": 616
       }
     },
     {
@@ -291,17 +291,17 @@
       "question": "Will the US confirm that aliens exist before 2027?",
       "category": "Other",
       "n_trades": 1417,
-      "usd_volume": 233300.873757,
+      "usd_volume": 233300.87375700002,
       "bot_share_participation": 0.49611856033874385,
       "flagged_wallets_active": 3,
-      "execution_gap_retail_minus_bot": -0.0024768237340159205,
-      "avg_price_bot": 0.9354088593076313,
-      "avg_price_retail": 0.9329320355736154,
+      "execution_gap_retail_minus_bot": -0.0024768237340155874,
+      "avg_price_bot": 0.9354088593076312,
+      "avg_price_retail": 0.9329320355736156,
       "n_tokens_compared": 1,
       "n_participations_by_type": {
         "sophisticated": 292,
-        "one_shot": 5,
         "bot": 1406,
+        "one_shot": 5,
         "active_retail": 946,
         "unknown": 90,
         "casual": 95
@@ -313,20 +313,20 @@
       "question": "Will Lamine Yamal win the 2026 Ballon d'Or?",
       "category": "Other",
       "n_trades": 3722,
-      "usd_volume": 200577.99235999997,
+      "usd_volume": 200577.99236000003,
       "bot_share_participation": 0.6385008060182698,
       "flagged_wallets_active": 0,
-      "execution_gap_retail_minus_bot": 0.024764492429535746,
-      "avg_price_bot": 0.5374875922631629,
-      "avg_price_retail": 0.5622520846926986,
+      "execution_gap_retail_minus_bot": 0.02476449242953549,
+      "avg_price_bot": 0.537487592263163,
+      "avg_price_retail": 0.5622520846926985,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
         "one_shot": 15,
-        "bot": 4753,
-        "casual": 85,
+        "sophisticated": 437,
         "active_retail": 1379,
         "unknown": 775,
-        "sophisticated": 437
+        "casual": 85,
+        "bot": 4753
       }
     },
     {
@@ -338,17 +338,17 @@
       "usd_volume": 196504.417411,
       "bot_share_participation": 0.7102649006622517,
       "flagged_wallets_active": 4,
-      "execution_gap_retail_minus_bot": 0.02338868835246341,
-      "avg_price_bot": 0.5073402300409242,
-      "avg_price_retail": 0.5307289183933876,
+      "execution_gap_retail_minus_bot": 0.023388688352463133,
+      "avg_price_bot": 0.5073402300409245,
+      "avg_price_retail": 0.5307289183933875,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
-        "sophisticated": 192,
-        "bot": 1716,
-        "one_shot": 18,
-        "casual": 44,
         "active_retail": 347,
-        "unknown": 99
+        "casual": 44,
+        "unknown": 99,
+        "one_shot": 18,
+        "bot": 1716,
+        "sophisticated": 192
       }
     },
     {
@@ -360,17 +360,17 @@
       "usd_volume": 185039.564464,
       "bot_share_participation": 0.5955334987593052,
       "flagged_wallets_active": 1,
-      "execution_gap_retail_minus_bot": 0.00011739814068692504,
-      "avg_price_bot": 0.7810588655183667,
-      "avg_price_retail": 0.7811762636590537,
+      "execution_gap_retail_minus_bot": 0.00011739814068654221,
+      "avg_price_bot": 0.7810588655183665,
+      "avg_price_retail": 0.781176263659053,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
+        "sophisticated": 151,
+        "one_shot": 7,
+        "bot": 960,
         "active_retail": 321,
         "unknown": 148,
-        "casual": 25,
-        "bot": 960,
-        "one_shot": 7,
-        "sophisticated": 151
+        "casual": 25
       }
     },
     {
@@ -382,16 +382,16 @@
       "usd_volume": 154656.13145299998,
       "bot_share_participation": 0.4880418535127055,
       "flagged_wallets_active": 2,
-      "execution_gap_retail_minus_bot": 0.0017437147847490044,
-      "avg_price_bot": 0.4977043132665761,
-      "avg_price_retail": 0.4994480280513251,
+      "execution_gap_retail_minus_bot": 0.0017437147847489936,
+      "avg_price_bot": 0.4977043132665762,
+      "avg_price_retail": 0.49944802805132515,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
-        "sophisticated": 570,
-        "active_retail": 891,
-        "casual": 93,
-        "unknown": 478,
         "bot": 1959,
+        "active_retail": 891,
+        "unknown": 478,
+        "casual": 93,
+        "sophisticated": 570,
         "one_shot": 23
       }
     },
@@ -401,20 +401,20 @@
       "question": "Will Trump acquire Greenland before 2027?",
       "category": "Politics",
       "n_trades": 8585,
-      "usd_volume": 131018.75659700033,
+      "usd_volume": 131018.75659700023,
       "bot_share_participation": 0.8836924868957484,
       "flagged_wallets_active": 8,
-      "execution_gap_retail_minus_bot": 0.0012872374827570532,
-      "avg_price_bot": 0.9571849894081426,
-      "avg_price_retail": 0.9584722268908996,
+      "execution_gap_retail_minus_bot": 0.0012872374827536115,
+      "avg_price_bot": 0.9571849894081476,
+      "avg_price_retail": 0.9584722268909012,
       "n_tokens_compared": 1,
       "n_participations_by_type": {
+        "sophisticated": 307,
+        "one_shot": 6,
+        "bot": 15173,
         "active_retail": 1127,
         "unknown": 543,
-        "casual": 14,
-        "bot": 15173,
-        "one_shot": 6,
-        "sophisticated": 307
+        "casual": 14
       }
     },
     {
@@ -423,20 +423,20 @@
       "question": "Trump out as President before 2027?",
       "category": "Politics",
       "n_trades": 710,
-      "usd_volume": 114748.34216200002,
+      "usd_volume": 114748.342162,
       "bot_share_participation": 0.6323943661971831,
       "flagged_wallets_active": 7,
-      "execution_gap_retail_minus_bot": -0.00406541860463272,
-      "avg_price_bot": 0.9261933662947832,
+      "execution_gap_retail_minus_bot": -0.004065418604633386,
+      "avg_price_bot": 0.926193366294784,
       "avg_price_retail": 0.9221279476901506,
       "n_tokens_compared": 1,
       "n_participations_by_type": {
         "bot": 898,
-        "one_shot": 6,
+        "sophisticated": 104,
         "active_retail": 312,
         "unknown": 92,
         "casual": 8,
-        "sophisticated": 104
+        "one_shot": 6
       }
     },
     {
@@ -448,16 +448,16 @@
       "usd_volume": 111157.24857699999,
       "bot_share_participation": 0.6548672566371682,
       "flagged_wallets_active": 1,
-      "execution_gap_retail_minus_bot": 0.025254422190064463,
-      "avg_price_bot": 0.7415536098575882,
-      "avg_price_retail": 0.7668080320476526,
+      "execution_gap_retail_minus_bot": 0.02525442219006491,
+      "avg_price_bot": 0.7415536098575879,
+      "avg_price_retail": 0.7668080320476528,
       "n_tokens_compared": 1,
       "n_participations_by_type": {
-        "sophisticated": 137,
-        "bot": 740,
         "active_retail": 165,
         "unknown": 85,
-        "casual": 3
+        "casual": 3,
+        "bot": 740,
+        "sophisticated": 137
       }
     },
     {
@@ -469,17 +469,17 @@
       "usd_volume": 111138.96155699997,
       "bot_share_participation": 0.6614084507042254,
       "flagged_wallets_active": 0,
-      "execution_gap_retail_minus_bot": 0.009163842069784059,
+      "execution_gap_retail_minus_bot": 0.009163842069784427,
       "avg_price_bot": 0.513952344534508,
-      "avg_price_retail": 0.523116186604292,
+      "avg_price_retail": 0.5231161866042924,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
-        "active_retail": 743,
-        "unknown": 132,
-        "casual": 7,
-        "bot": 2348,
+        "sophisticated": 319,
         "one_shot": 1,
-        "sophisticated": 319
+        "bot": 2348,
+        "active_retail": 743,
+        "casual": 7,
+        "unknown": 132
       }
     },
     {
@@ -488,20 +488,20 @@
       "question": "Will Russia capture Kostyantynivka by December 31, 2026?",
       "category": "Geopolitics",
       "n_trades": 822,
-      "usd_volume": 106279.49507,
+      "usd_volume": 106279.49507000002,
       "bot_share_participation": 0.7250608272506083,
       "flagged_wallets_active": 0,
-      "execution_gap_retail_minus_bot": 0.0020251927827018407,
-      "avg_price_bot": 0.9066104405705041,
-      "avg_price_retail": 0.9086356333532059,
+      "execution_gap_retail_minus_bot": 0.002025192782701841,
+      "avg_price_bot": 0.9066104405705044,
+      "avg_price_retail": 0.9086356333532063,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
         "bot": 1192,
-        "one_shot": 18,
+        "sophisticated": 93,
         "active_retail": 298,
         "unknown": 42,
         "casual": 1,
-        "sophisticated": 93
+        "one_shot": 18
       }
     },
     {
@@ -510,20 +510,20 @@
       "question": "Will Bitcoin dip to $55,000 by December 31, 2026?",
       "category": "Crypto",
       "n_trades": 774,
-      "usd_volume": 105620.48054100003,
+      "usd_volume": 105620.48054099998,
       "bot_share_participation": 0.6744186046511628,
       "flagged_wallets_active": 0,
-      "execution_gap_retail_minus_bot": -0.011051598083936217,
-      "avg_price_bot": 0.4860769247297109,
-      "avg_price_retail": 0.47502532664577474,
+      "execution_gap_retail_minus_bot": -0.011051598083936059,
+      "avg_price_bot": 0.48607692472971065,
+      "avg_price_retail": 0.47502532664577457,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
         "one_shot": 1,
-        "bot": 1044,
+        "sophisticated": 105,
         "active_retail": 212,
         "unknown": 175,
         "casual": 11,
-        "sophisticated": 105
+        "bot": 1044
       }
     },
     {
@@ -532,17 +532,17 @@
       "question": "China x Philippines military clash before 2027?",
       "category": "Geopolitics",
       "n_trades": 1009,
-      "usd_volume": 102050.57763400004,
+      "usd_volume": 102050.57763400007,
       "bot_share_participation": 0.6605550049554014,
       "flagged_wallets_active": 2,
-      "execution_gap_retail_minus_bot": -0.0030131378588574846,
-      "avg_price_bot": 0.8894730193142216,
-      "avg_price_retail": 0.886459881455364,
+      "execution_gap_retail_minus_bot": -0.003013137858856152,
+      "avg_price_bot": 0.8894730193142161,
+      "avg_price_retail": 0.8864598814553599,
       "n_tokens_compared": 1,
       "n_participations_by_type": {
         "sophisticated": 40,
-        "one_shot": 1,
         "bot": 1333,
+        "one_shot": 1,
         "active_retail": 466,
         "unknown": 175,
         "casual": 3
@@ -557,17 +557,17 @@
       "usd_volume": 100936.36701399997,
       "bot_share_participation": 0.7637554585152838,
       "flagged_wallets_active": 0,
-      "execution_gap_retail_minus_bot": 0.004165515518992603,
-      "avg_price_bot": 0.5764183067032912,
-      "avg_price_retail": 0.5805838222222838,
+      "execution_gap_retail_minus_bot": 0.004165515518991866,
+      "avg_price_bot": 0.5764183067032917,
+      "avg_price_retail": 0.5805838222222837,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
         "bot": 1749,
-        "one_shot": 10,
+        "sophisticated": 79,
         "active_retail": 305,
         "unknown": 115,
         "casual": 32,
-        "sophisticated": 79
+        "one_shot": 10
       }
     },
     {
@@ -576,20 +576,20 @@
       "question": "Will Kylian Mbapp\u00e9 win the 2026 Ballon d'Or?",
       "category": "Other",
       "n_trades": 1908,
-      "usd_volume": 93371.44605999999,
+      "usd_volume": 93371.44606000002,
       "bot_share_participation": 0.7366352201257862,
       "flagged_wallets_active": 0,
-      "execution_gap_retail_minus_bot": -0.001614381074943167,
-      "avg_price_bot": 0.8399099234512801,
-      "avg_price_retail": 0.8382955423763371,
+      "execution_gap_retail_minus_bot": -0.001614381074942567,
+      "avg_price_bot": 0.8399099234512797,
+      "avg_price_retail": 0.8382955423763372,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
         "bot": 2811,
-        "one_shot": 8,
+        "sophisticated": 161,
         "active_retail": 533,
         "unknown": 223,
         "casual": 80,
-        "sophisticated": 161
+        "one_shot": 8
       }
     },
     {
@@ -598,12 +598,12 @@
       "question": "Xi Jinping out before 2027?",
       "category": "Other",
       "n_trades": 709,
-      "usd_volume": 88103.072505,
+      "usd_volume": 88103.07250499999,
       "bot_share_participation": 0.4125528913963329,
       "flagged_wallets_active": 4,
-      "execution_gap_retail_minus_bot": 0.0005602239284164812,
-      "avg_price_bot": 0.9498033180114913,
-      "avg_price_retail": 0.9503635419399078,
+      "execution_gap_retail_minus_bot": 0.0005602239284151489,
+      "avg_price_bot": 0.9498033180114916,
+      "avg_price_retail": 0.9503635419399068,
       "n_tokens_compared": 1,
       "n_participations_by_type": {
         "active_retail": 460,
@@ -619,19 +619,19 @@
       "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
       "category": "Politics",
       "n_trades": 502,
-      "usd_volume": 86986.26816999998,
+      "usd_volume": 86986.26817,
       "bot_share_participation": 0.701195219123506,
       "flagged_wallets_active": 0,
-      "execution_gap_retail_minus_bot": -0.0009438657406705132,
-      "avg_price_bot": 0.8408515853467605,
-      "avg_price_retail": 0.83990771960609,
+      "execution_gap_retail_minus_bot": -0.000943865740669958,
+      "avg_price_bot": 0.8408515853467597,
+      "avg_price_retail": 0.8399077196060898,
       "n_tokens_compared": 1,
       "n_participations_by_type": {
         "bot": 704,
+        "sophisticated": 79,
         "active_retail": 164,
         "unknown": 45,
-        "casual": 12,
-        "sophisticated": 79
+        "casual": 12
       }
     },
     {
@@ -640,19 +640,19 @@
       "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
       "category": "Geopolitics",
       "n_trades": 1472,
-      "usd_volume": 82668.16063099999,
+      "usd_volume": 82668.160631,
       "bot_share_participation": 0.5489130434782609,
       "flagged_wallets_active": 1,
-      "execution_gap_retail_minus_bot": 6.403269379107496e-05,
-      "avg_price_bot": 0.5306954421309227,
-      "avg_price_retail": 0.5307594748247136,
+      "execution_gap_retail_minus_bot": 6.403269379154005e-05,
+      "avg_price_bot": 0.5306954421309226,
+      "avg_price_retail": 0.5307594748247141,
       "n_tokens_compared": 2,
       "n_participations_by_type": {
-        "sophisticated": 204,
-        "casual": 71,
-        "active_retail": 544,
-        "unknown": 499,
         "bot": 1616,
+        "active_retail": 544,
+        "casual": 71,
+        "unknown": 499,
+        "sophisticated": 204,
         "one_shot": 10
       }
     }

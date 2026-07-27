@@ -1,6 +1,15 @@
 {
   "notes": [
     {
+      "date": "2026-07-20",
+      "tag": "SPORTS",
+      "title": "Week of 2026-07-20: Will Spain win the 2026 FIFA World Cup?",
+      "body": "Polymarket traders moved $499 million this week across 21.5 million individual trades. Traders moved $499 million through Polymarket in the week of 2026-07-20, across 21.5 million individual trades. with 29,993 wallets placing their first-ever bet. Algorithmic wallets accounted for 78% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 22%. The...",
+      "href": "/briefings",
+      "href_label": "See this week's briefings",
+      "auto_generated": true
+    },
+    {
       "date": "2026-07-13",
       "tag": "SPORTS",
       "title": "Week of 2026-07-13: Will Spain win the 2026 FIFA World Cup?",
@@ -119,5 +128,5 @@
     }
   ],
   "notes_url": "/notes",
-  "generated_at": "2026-07-26T21:04:53+00:00"
+  "generated_at": "2026-07-27T18:55:55+00:00"
 }
