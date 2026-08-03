@@ -1,42 +1,42 @@
 {
   "index_name": "Execution Edge Monitor",
   "short_name": "Execution",
-  "as_of": "2026-06-22",
+  "as_of": "2026-07-27",
   "description": "Bot vs active-retail Prelec alpha gap (behavioral execution proxy)",
-  "value": -0.03720901926192355,
-  "ma4w": -0.03899372316659144,
-  "ma13w": 0.035398990879930696,
-  "ma52w": 0.07413674130627325,
-  "z52w": -0.9721742621196897,
+  "value": 0.02709156395477441,
+  "ma4w": -0.019177929120528514,
+  "ma13w": 0.03264766636668175,
+  "ma52w": 0.07057696008524955,
+  "z52w": -0.3847441929329188,
   "per_type_alpha": {
     "bot": {
-      "alpha": 0.9943383130269888
+      "alpha": 0.9831515116212668
     },
     "active_retail": {
-      "alpha": 1.0315473322889124
+      "alpha": 0.9560599476664924
     },
     "sophisticated": {
-      "alpha": 1.0493843976673891
+      "alpha": 1.0301210009060435
     },
     "casual": {
-      "alpha": 0.8116747188048845
+      "alpha": 1.090159787143908
     },
     "one_shot": {
-      "alpha": null
+      "alpha": 1.1525858866248118
     }
   },
-  "r2_bot": 0.9983715992697532,
-  "r2_active_retail": 0.9940448679106044,
-  "n_trades_week": 22294613,
+  "r2_bot": 0.9988972225191564,
+  "r2_active_retail": 0.9906288036518056,
+  "n_trades_week": 10963260,
   "rolling": {
-    "mean_52w": 0.07413674130627326,
-    "sd_52w": 0.11453271795678098,
+    "mean_52w": 0.07057696008524955,
+    "sd_52w": 0.11302417795830552,
     "min_52w": -0.18001886600512318,
     "max_52w": 0.32136221742279647,
     "n_obs_52w": 52
   },
-  "n_weeks_history": 180,
+  "n_weeks_history": 181,
   "first_date": "2023-01-16",
-  "generated_at": "2026-07-27T18:54:06+00:00",
+  "generated_at": "2026-08-03T15:08:25+00:00",
   "source": "H:\\Research\\10. Prediction\\data\\blockchain\\paper4\\weekly_alpha_by_type.csv"
 }

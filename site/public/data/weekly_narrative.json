@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-07-20",
-  "generated_at": "2026-07-27T18:55:55+00:00",
+  "as_of": "2026-07-27",
+  "generated_at": "2026-08-03T15:08:50+00:00",
   "sentences": [
-    "Traders moved $499 million through Polymarket in the week of 2026-07-20, across 21.5 million individual trades. with 29,993 wallets placing their first-ever bet. Algorithmic wallets accounted for 78% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 22%.",
+    "Traders moved $530 million through Polymarket in the week of 2026-07-27, across 20.5 million individual trades. with 24,371 wallets placing their first-ever bet. Algorithmic wallets accounted for 76% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 24%.",
     "The most-traded market was \"Will Spain win the 2026 FIFA World Cup?\", pulling in $22 million of volume.",
-    "The usual pattern held: algorithmic traders made $10K (+0 bps on volume) while retail traders lost $508K (-339 bps)."
+    "Both sides lost money on resolved trades this week. Bots dropped $5K (-95 bps); retail dropped $477 (-245 bps). Much of the activity was in markets that have not yet resolved."
   ],
-  "headline_quote": "Polymarket traders moved $499 million this week across 21.5 million individual trades.",
+  "headline_quote": "Polymarket traders moved $530 million this week across 20.5 million individual trades.",
   "author": "Joshua Della Vedova, University of San Diego",
   "attribution_short": "Della Vedova (2026), Della Vedova Prediction Market Indices",
   "hand_edited": false,

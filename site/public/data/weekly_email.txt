@@ -1,33 +1,33 @@
-DV-PMI WEEKLY DIGEST / Week of 2026-07-20
+DV-PMI WEEKLY DIGEST / Week of 2026-07-27
 ============================================================
 
-Polymarket traders moved $499 million this week across 21.5 million individual trades.
+Polymarket traders moved $530 million this week across 20.5 million individual trades.
 
 ------------------------------------------------------------
 THIS WEEK VS LAST
 ------------------------------------------------------------
-  Total USD volume        $499M  (-42.6% WoW)
-  Total trades            21.5M  (-10.6% WoW)
-  Active wallets          196,576  (-27.1% WoW)
-  Bot share of trades     77.8%  (-2.3pp WoW)
+  Total USD volume        $530M  (+6.1% WoW)
+  Total trades            20.5M  (-4.6% WoW)
+  Active wallets          169,646  (-13.7% WoW)
+  Bot share of trades     76.3%  (-1.5pp WoW)
 
 ------------------------------------------------------------
 INDEX SCOREBOARD (ranked by stretch vs own 52-week history)
 ------------------------------------------------------------
-  Longshot/Favorite Gap                    +0.013   4w avg   +0.011   z +1.98
-  Bot Share of Volume                       77.8%   4w avg    83.4%   z -1.60
-  Probability Weighting (non-bot alpha)     1.032   4w avg    1.051   z +1.16
-  Execution Gap (bot vs retail)            -0.037   4w avg   -0.039   z -0.97
-  Market Efficiency (Prelec R2)             0.994   4w avg    0.993   z +0.85
+  Longshot/Favorite Gap                    +0.025   4w avg   +0.013   z +2.55
+  Bot Share of Volume                       76.3%   4w avg    79.8%   z -1.84
+  Market Efficiency (Prelec R2)             0.991   4w avg    0.993   z +0.66
+  Probability Weighting (non-bot alpha)     0.972   4w avg    1.011   z +0.64
+  Execution Gap (bot vs retail)            +0.027   4w avg   -0.019   z -0.38
 
 ------------------------------------------------------------
 THE STORY
 ------------------------------------------------------------
-Traders moved $499 million through Polymarket in the week of 2026-07-20, across 21.5 million individual trades. with 29,993 wallets placing their first-ever bet. Algorithmic wallets accounted for 78% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 22%.
+Traders moved $530 million through Polymarket in the week of 2026-07-27, across 20.5 million individual trades. with 24,371 wallets placing their first-ever bet. Algorithmic wallets accounted for 76% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 24%.
 
 The most-traded market was "Will Spain win the 2026 FIFA World Cup?", pulling in $22 million of volume.
 
-The usual pattern held: algorithmic traders made $10K (+0 bps on volume) while retail traders lost $508K (-339 bps).
+Both sides lost money on resolved trades this week. Bots dropped $5K (-95 bps); retail dropped $477 (-245 bps). Much of the activity was in markets that have not yet resolved.
 
 ------------------------------------------------------------
 MOST-TRADED MARKETS THIS WEEK
@@ -41,18 +41,18 @@ MOST-TRADED MARKETS THIS WEEK
 ------------------------------------------------------------
 WHO MADE MONEY (resolved trades only)
 ------------------------------------------------------------
-  Active Retail        -$508K   (-339 bps on volume)
-  Bot                    $10K   (+0 bps on volume)
-  Casual                 $28K   (+252 bps on volume)
-  One-Shot               -$5K   (-215 bps on volume)
-  Sophisticated         -$59K   (-160 bps on volume)
-  unclassified          $534K   (+145 bps on volume)
+  Active Retail         -$477   (-245 bps on volume)
+  Bot                    -$5K   (-95 bps on volume)
+  Casual                 -$33   (-1179 bps on volume)
+  One-Shot                -$1   (-3049 bps on volume)
+  Sophisticated          -$4K   (-9546 bps on volume)
+  unclassified           $10K   (+921 bps on volume)
 
 ------------------------------------------------------------
 SURVEILLANCE
 ------------------------------------------------------------
   Event-level informed-trading test:    11 trader-event pairs survive at 5% (0 on placebo)
-  Accuracy-outlier wallets active this week: 672 of 10,485
+  Accuracy-outlier wallets active this week: 703 of 10,485
   Sustained-accuracy outliers (skill screen): 10,485 of 705,883 tested (1.49%)
   After strict statistical correction:  1,558
   Flags mark statistical patterns, not proof; the wallet-level screen measures sustained skill, not information.
@@ -63,4 +63,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-07-27T18:56:01+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-08-03T15:08:55+00:00)
