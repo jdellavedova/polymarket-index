@@ -1,251 +1,251 @@
 {
   "index_name": "Top Markets by Weekly Volume",
   "short_name": "TopMarkets",
-  "as_of_week": "2026-W29",
+  "as_of_week": "2026-W32",
   "top_k": 30,
   "markets": [
     {
       "rank": 1,
-      "market_id": "558934",
-      "question": "Will Spain win the 2026 FIFA World Cup?",
-      "category": "Sports",
-      "usd_volume": 22097328.886850085,
-      "n_trades": 62979
-    },
-    {
-      "rank": 2,
-      "market_id": "558938",
-      "question": "Will Argentina win the 2026 FIFA World Cup?",
-      "category": "Sports",
-      "usd_volume": 16511909.409374267,
-      "n_trades": 82284
-    },
-    {
-      "rank": 3,
-      "market_id": "558936",
-      "question": "Will France win the 2026 FIFA World Cup?",
-      "category": "Sports",
-      "usd_volume": 3107148.749460992,
-      "n_trades": 21112
-    },
-    {
-      "rank": 4,
-      "market_id": "558935",
-      "question": "Will England win the 2026 FIFA World Cup?",
-      "category": "Sports",
-      "usd_volume": 3016148.537530997,
-      "n_trades": 17826
-    },
-    {
-      "rank": 5,
       "market_id": "665374",
       "question": "Will the U.S. invade Iran before 2027?",
       "category": "Geopolitics",
-      "usd_volume": 2307201.5742579987,
-      "n_trades": 7612
+      "usd_volume": 1765323.5938020027,
+      "n_trades": 5418
     },
     {
-      "rank": 6,
-      "market_id": "898409",
-      "question": "Will Lando Norris be the 2026 F1 Drivers' Champion?",
-      "category": "Sports",
-      "usd_volume": 962494.9686929982,
-      "n_trades": 6104
+      "rank": 2,
+      "market_id": "599305",
+      "question": "Will Abdul El-Sayed win the 2026 Michigan Democratic Primary?",
+      "category": "Politics",
+      "usd_volume": 857887.9385509999,
+      "n_trades": 3157
     },
     {
-      "rank": 7,
-      "market_id": "898413",
-      "question": "Will Max Verstappen be the 2026 F1 Drivers' Champion?",
-      "category": "Sports",
-      "usd_volume": 907944.0837649995,
-      "n_trades": 5999
-    },
-    {
-      "rank": 8,
+      "rank": 3,
       "market_id": "663583",
       "question": "Will the Iranian regime fall before 2027?",
       "category": "Other",
-      "usd_volume": 708620.8484389997,
-      "n_trades": 5163
+      "usd_volume": 645342.2262670001,
+      "n_trades": 767
     },
     {
-      "rank": 9,
-      "market_id": "898410",
-      "question": "Will Oscar Piastri be the 2026 F1 Drivers' Champion?",
-      "category": "Sports",
-      "usd_volume": 503469.7433120003,
-      "n_trades": 4360
-    },
-    {
-      "rank": 10,
-      "market_id": "898415",
-      "question": "Will Charles Leclerc be the 2026 F1 Drivers' Champion?",
-      "category": "Sports",
-      "usd_volume": 388575.20843800006,
-      "n_trades": 3366
-    },
-    {
-      "rank": 11,
-      "market_id": "567621",
-      "question": "Will China invade Taiwan by end of 2026?",
-      "category": "Geopolitics",
-      "usd_volume": 345430.7536229986,
-      "n_trades": 13656
-    },
-    {
-      "rank": 12,
-      "market_id": "840929",
-      "question": "Will Europe win the 2026 FIFA World Cup?",
-      "category": "Sports",
-      "usd_volume": 266524.54507899994,
-      "n_trades": 2639
-    },
-    {
-      "rank": 13,
-      "market_id": "608547",
-      "question": "Will Harry Kane win the 2026 Ballon d'Or?",
-      "category": "Other",
-      "usd_volume": 235681.28917399992,
-      "n_trades": 4307
-    },
-    {
-      "rank": 14,
-      "market_id": "703257",
-      "question": "Will the US confirm that aliens exist before 2027?",
-      "category": "Other",
-      "usd_volume": 233300.873757,
-      "n_trades": 1417
-    },
-    {
-      "rank": 15,
-      "market_id": "608545",
-      "question": "Will Lamine Yamal win the 2026 Ballon d'Or?",
-      "category": "Other",
-      "usd_volume": 200577.99235999995,
-      "n_trades": 3722
-    },
-    {
-      "rank": 16,
-      "market_id": "908713",
-      "question": "Fed rate hike in 2026?",
-      "category": "Macro",
-      "usd_volume": 196504.41741100003,
-      "n_trades": 1208
-    },
-    {
-      "rank": 17,
-      "market_id": "560317",
-      "question": "Putin out as President of Russia by end of 2026?",
-      "category": "Geopolitics",
-      "usd_volume": 185039.56446400002,
-      "n_trades": 806
-    },
-    {
-      "rank": 18,
+      "rank": 4,
       "market_id": "1163699",
       "question": "Clarity Act signed into law in 2026?",
       "category": "Other",
-      "usd_volume": 154656.13145299998,
-      "n_trades": 2007
+      "usd_volume": 627721.584369,
+      "n_trades": 3484
     },
     {
-      "rank": 19,
-      "market_id": "997488",
-      "question": "Will Trump acquire Greenland before 2027?",
+      "rank": 5,
+      "market_id": "599304",
+      "question": "Will Haley Stevens win the 2026 Michigan Democratic Primary?",
       "category": "Politics",
-      "usd_volume": 131018.75659700061,
-      "n_trades": 8585
+      "usd_volume": 484110.47088699974,
+      "n_trades": 3235
     },
     {
-      "rank": 20,
-      "market_id": "666861",
-      "question": "Trump out as President before 2027?",
-      "category": "Politics",
-      "usd_volume": 114748.34216199999,
-      "n_trades": 710
-    },
-    {
-      "rank": 21,
-      "market_id": "701502",
-      "question": "Will Bitcoin dip to $45,000 by December 31, 2026?",
-      "category": "Crypto",
-      "usd_volume": 111157.24857699999,
-      "n_trades": 565
-    },
-    {
-      "rank": 22,
-      "market_id": "616902",
-      "question": "Will no Fed rate cuts happen in 2026?",
+      "rank": 6,
+      "market_id": "908713",
+      "question": "Fed rate hike in 2026?",
       "category": "Macro",
-      "usd_volume": 111138.96155699992,
-      "n_trades": 1775
+      "usd_volume": 398780.9762729999,
+      "n_trades": 1481
     },
     {
-      "rank": 23,
-      "market_id": "677366",
-      "question": "Will Russia capture Kostyantynivka by December 31, 2026?",
-      "category": "Geopolitics",
-      "usd_volume": 106279.49507,
-      "n_trades": 822
-    },
-    {
-      "rank": 24,
-      "market_id": "701501",
-      "question": "Will Bitcoin dip to $55,000 by December 31, 2026?",
-      "category": "Crypto",
-      "usd_volume": 105620.480541,
-      "n_trades": 774
-    },
-    {
-      "rank": 25,
-      "market_id": "677408",
-      "question": "China x Philippines military clash before 2027?",
-      "category": "Geopolitics",
-      "usd_volume": 102050.5776340001,
-      "n_trades": 1009
-    },
-    {
-      "rank": 26,
-      "market_id": "601819",
-      "question": "Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
+      "rank": 7,
+      "market_id": "601825",
+      "question": "Will Renan Santos win the 2026 Brazilian presidential election?",
       "category": "Politics",
-      "usd_volume": 100936.36701399999,
-      "n_trades": 1145
+      "usd_volume": 325698.2541409997,
+      "n_trades": 2722
     },
     {
-      "rank": 27,
-      "market_id": "608540",
-      "question": "Will Kylian Mbapp\u00e9 win the 2026 Ballon d'Or?",
-      "category": "Other",
-      "usd_volume": 93371.44606000003,
-      "n_trades": 1908
+      "rank": 8,
+      "market_id": "704475",
+      "question": "Will James Fishback be the Republican nominee for Florida Governor?",
+      "category": "Politics",
+      "usd_volume": 260418.14685699999,
+      "n_trades": 772
     },
     {
-      "rank": 28,
+      "rank": 9,
+      "market_id": "973278",
+      "question": "Will Donavan McKinney be the Democratic Nominee for MI-13?",
+      "category": "Politics",
+      "usd_volume": 254815.950882,
+      "n_trades": 2193
+    },
+    {
+      "rank": 10,
       "market_id": "559651",
       "question": "Xi Jinping out before 2027?",
       "category": "Other",
-      "usd_volume": 88103.07250499999,
-      "n_trades": 709
+      "usd_volume": 227432.79335100006,
+      "n_trades": 1746
     },
     {
-      "rank": 29,
+      "rank": 11,
+      "market_id": "973277",
+      "question": "Will Shri Thanedar be the Democratic Nominee for MI-13?",
+      "category": "Politics",
+      "usd_volume": 213120.77868300022,
+      "n_trades": 1627
+    },
+    {
+      "rank": 12,
+      "market_id": "608547",
+      "question": "Will Harry Kane win the 2026 Ballon d'Or?",
+      "category": "Other",
+      "usd_volume": 200950.94748,
+      "n_trades": 2025
+    },
+    {
+      "rank": 13,
+      "market_id": "601819",
+      "question": "Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
+      "category": "Politics",
+      "usd_volume": 164067.84893200008,
+      "n_trades": 4610
+    },
+    {
+      "rank": 14,
+      "market_id": "1130012",
+      "question": "Will United Russia (ER) gain the most seats in the next Russian parliamentary election?",
+      "category": "Geopolitics",
+      "usd_volume": 154473.730879,
+      "n_trades": 2238
+    },
+    {
+      "rank": 15,
+      "market_id": "567621",
+      "question": "Will China invade Taiwan by end of 2026?",
+      "category": "Geopolitics",
+      "usd_volume": 152894.01542,
+      "n_trades": 1986
+    },
+    {
+      "rank": 16,
+      "market_id": "616902",
+      "question": "Will no Fed rate cuts happen in 2026?",
+      "category": "Macro",
+      "usd_volume": 150068.4436109999,
+      "n_trades": 1593
+    },
+    {
+      "rank": 17,
       "market_id": "562802",
       "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
       "category": "Politics",
-      "usd_volume": 86986.26817000001,
-      "n_trades": 502
+      "usd_volume": 148661.34347599995,
+      "n_trades": 617
+    },
+    {
+      "rank": 18,
+      "market_id": "704474",
+      "question": "Will Byron Donalds be the Republican nominee for Florida Governor?",
+      "category": "Politics",
+      "usd_volume": 134230.590516,
+      "n_trades": 519
+    },
+    {
+      "rank": 19,
+      "market_id": "561974",
+      "question": "Will J.D. Vance win the 2028 Republican presidential nomination?",
+      "category": "Politics",
+      "usd_volume": 123649.569941,
+      "n_trades": 1220
+    },
+    {
+      "rank": 20,
+      "market_id": "601826",
+      "question": "Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
+      "category": "Politics",
+      "usd_volume": 120076.87244199995,
+      "n_trades": 2944
+    },
+    {
+      "rank": 21,
+      "market_id": "560317",
+      "question": "Putin out as President of Russia by end of 2026?",
+      "category": "Geopolitics",
+      "usd_volume": 106432.265912,
+      "n_trades": 467
+    },
+    {
+      "rank": 22,
+      "market_id": "1144471",
+      "question": "Will Satoshi move any Bitcoin in 2026?",
+      "category": "Crypto",
+      "usd_volume": 95681.49464000002,
+      "n_trades": 622
+    },
+    {
+      "rank": 23,
+      "market_id": "703257",
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "category": "Other",
+      "usd_volume": 88613.69477,
+      "n_trades": 384
+    },
+    {
+      "rank": 24,
+      "market_id": "616903",
+      "question": "Will 1 Fed rate cut happen in 2026?",
+      "category": "Macro",
+      "usd_volume": 77859.32932699998,
+      "n_trades": 1230
+    },
+    {
+      "rank": 25,
+      "market_id": "562828",
+      "question": "2026 Balance of Power: D Senate, D House",
+      "category": "Politics",
+      "usd_volume": 66334.08078299998,
+      "n_trades": 1316
+    },
+    {
+      "rank": 26,
+      "market_id": "1107582",
+      "question": "US strike on Cuba by December 31?",
+      "category": "Geopolitics",
+      "usd_volume": 65040.685512,
+      "n_trades": 437
+    },
+    {
+      "rank": 27,
+      "market_id": "703258",
+      "question": "Will Jesus Christ return before 2027?",
+      "category": "Other",
+      "usd_volume": 63131.53722599994,
+      "n_trades": 1462
+    },
+    {
+      "rank": 28,
+      "market_id": "997488",
+      "question": "Will Trump acquire Greenland before 2027?",
+      "category": "Politics",
+      "usd_volume": 61797.9802170001,
+      "n_trades": 1278
+    },
+    {
+      "rank": 29,
+      "market_id": "687642",
+      "question": "China x Japan military clash before 2027?",
+      "category": "Geopolitics",
+      "usd_volume": 61260.57511199999,
+      "n_trades": 215
     },
     {
       "rank": 30,
-      "market_id": "682705",
-      "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
-      "category": "Geopolitics",
-      "usd_volume": 82668.16063099999,
-      "n_trades": 1472
+      "market_id": "616904",
+      "question": "Will 2 Fed rate cuts happen in 2026?",
+      "category": "Macro",
+      "usd_volume": 60339.21531100001,
+      "n_trades": 1513
     }
   ],
-  "generated_at": "2026-08-03T14:35:15+00:00",
+  "generated_at": "2026-08-10T17:48:20+00:00",
   "source": "read_parquet('H:/Research/10. Prediction/data/blockchain/trades_parquet/**/*.parquet', hive_partitioning=1)",
   "notes": "Top 5 resolved-trade markets by USD volume in the most recent complete week. Market questions come from polymarket_markets.csv (static snapshot); new markets not in that file will appear with question=null."
 }
