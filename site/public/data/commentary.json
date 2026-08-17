@@ -1,6 +1,15 @@
 {
   "notes": [
     {
+      "date": "2026-08-10",
+      "tag": "POLITICS",
+      "title": "Week of 2026-08-10: Will Francesca Hong win the 2026 Wisconsin Governor Democratic primary election?",
+      "body": "Polymarket traders moved $522 million this week, with the biggest action on \"Will Francesca Hong win the 2026 Wisconsin Governor Democratic primary election?\". Traders moved $522 million through Polymarket in the week of 2026-08-10, across 18.5 million individual trades. Algorithmic wallets accounted for 71% of weekly counterparty events (both maker and taker sides counted); everyone else split...",
+      "href": "/briefings",
+      "href_label": "See this week's briefings",
+      "auto_generated": true
+    },
+    {
       "date": "2026-08-03",
       "tag": "MARKETS",
       "title": "Week of 2026-08-03: Will the U.S. invade Iran before 2027?",
@@ -146,5 +155,5 @@
     }
   ],
   "notes_url": "/notes",
-  "generated_at": "2026-08-10T18:33:08+00:00"
+  "generated_at": "2026-08-17T17:43:15+00:00"
 }
