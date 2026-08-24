@@ -1,6 +1,15 @@
 {
   "notes": [
     {
+      "date": "2026-08-17",
+      "tag": "MARKETS",
+      "title": "Week of 2026-08-17: Will James Fishback be the Republican nominee for Florida Governor?",
+      "body": "Polymarket traders moved $580 million this week across 20.4 million individual trades. Traders moved $580 million through Polymarket in the week of 2026-08-17, across 20.4 million individual trades. Algorithmic wallets accounted for 70% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 30%. The most-traded market was \"Will James Fishback be the...",
+      "href": "/briefings",
+      "href_label": "See this week's briefings",
+      "auto_generated": true
+    },
+    {
       "date": "2026-08-10",
       "tag": "POLITICS",
       "title": "Week of 2026-08-10: Will Francesca Hong win the 2026 Wisconsin Governor Democratic primary election?",
@@ -155,5 +164,5 @@
     }
   ],
   "notes_url": "/notes",
-  "generated_at": "2026-08-17T17:43:15+00:00"
+  "generated_at": "2026-08-24T17:56:58+00:00"
 }

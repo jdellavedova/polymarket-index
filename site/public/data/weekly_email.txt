@@ -1,58 +1,58 @@
-DV-PMI WEEKLY DIGEST / Week of 2026-08-10
+DV-PMI WEEKLY DIGEST / Week of 2026-08-17
 ============================================================
 
-Polymarket traders moved $522 million this week, with the biggest action on "Will Francesca Hong win the 2026 Wisconsin Governor Democratic primary election?".
+Polymarket traders moved $580 million this week across 20.4 million individual trades.
 
 ------------------------------------------------------------
 THIS WEEK VS LAST
 ------------------------------------------------------------
-  Total USD volume        $522M  (+14.0% WoW)
-  Total trades            18.5M  (-4.8% WoW)
-  Active wallets          133,538  (-15.8% WoW)
-  Bot share of trades     71.3%  (-0.8pp WoW)
+  Total USD volume        $580M  (+11.1% WoW)
+  Total trades            20.4M  (+10.2% WoW)
+  Active wallets          133,371  (-0.1% WoW)
+  Bot share of trades     70.2%  (-1.0pp WoW)
 
 ------------------------------------------------------------
 INDEX SCOREBOARD (ranked by stretch vs own 52-week history)
 ------------------------------------------------------------
-  Bot Share of Volume                       71.3%   4w avg    74.4%   z -2.48
-  Longshot/Favorite Gap                    +0.024   4w avg   +0.020   z +2.29
-  Market Efficiency (Prelec R2)             0.997   4w avg    0.994   z +0.93
-  Probability Weighting (non-bot alpha)     1.010   4w avg    0.994   z +0.91
-  Execution Gap (bot vs retail)            -0.014   4w avg   +0.002   z -0.70
+  Bot Share of Volume                       70.2%   4w avg    72.5%   z -2.54
+  Longshot/Favorite Gap                    +0.026   4w avg   +0.024   z +2.26
+  Market Efficiency (Prelec R2)             0.997   4w avg    0.994   z +0.88
+  Probability Weighting (non-bot alpha)     0.987   4w avg    0.982   z +0.68
+  Execution Gap (bot vs retail)            -0.011   4w avg   +0.008   z -0.64
 
 ------------------------------------------------------------
 THE STORY
 ------------------------------------------------------------
-Traders moved $522 million through Polymarket in the week of 2026-08-10, across 18.5 million individual trades. Algorithmic wallets accounted for 71% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 29%.
+Traders moved $580 million through Polymarket in the week of 2026-08-17, across 20.4 million individual trades. Algorithmic wallets accounted for 70% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 30%.
 
-The most-traded market was "Will Francesca Hong win the 2026 Wisconsin Governor Democratic primary election?", pulling in $673K of volume.
+The most-traded market was "Will James Fishback be the Republican nominee for Florida Governor?", pulling in $3 million of volume.
 
-An unusual reversal: retail traders outperformed bots this week. Active retail earned $20K (+116 bps on volume) while algorithms lost $37K (-13 bps). Weeks like this are rare (bots are typically on top by the execution channel).
+An unusual reversal: retail traders outperformed bots this week. Active retail earned $3K (+332 bps on volume) while algorithms lost $1K (-9 bps). Weeks like this are rare (bots are typically on top by the execution channel).
 
 ------------------------------------------------------------
 MOST-TRADED MARKETS THIS WEEK
 ------------------------------------------------------------
-  1. $673K  Will Francesca Hong win the 2026 Wisconsin Governor Democratic primary election? [Politics]
-  2. $532K  Clarity Act signed into law in 2026? [Other]
-  3. $519K  Will the U.S. invade Iran before 2027? [Geopolitics]
-  4. $466K  Will James Fishback be the Republican nominee for Florida Governor? [Politics]
-  5. $406K  Will David Crowley win the 2026 Wisconsin Governor Democratic primary election? [Politics]
+  1. $3M  Will James Fishback be the Republican nominee for Florida Governor? [Politics]
+  2. $705K  Will Byron Donalds be the Republican nominee for Florida Governor? [Politics]
+  3. $533K  Will Renan Santos win the 2026 Brazilian presidential election? [Politics]
+  4. $457K  Will United Russia (ER) gain the most seats in the next Russian parliamentary election? [Geopolitics]
+  5. $439K  Will the U.S. invade Iran before 2027? [Geopolitics]
 
 ------------------------------------------------------------
 WHO MADE MONEY (resolved trades only)
 ------------------------------------------------------------
-  Active Retail          $20K   (+116 bps on volume)
-  Bot                   -$37K   (-13 bps on volume)
-  Casual                 -$2K   (-152 bps on volume)
-  One-Shot               -$45   (-53 bps on volume)
-  Sophisticated          -$6K   (-260 bps on volume)
-  unclassified           $25K   (+53 bps on volume)
+  Active Retail           $3K   (+332 bps on volume)
+  Bot                    -$1K   (-9 bps on volume)
+  Casual                -$239   (-406 bps on volume)
+  One-Shot               $203   (+809 bps on volume)
+  Sophisticated          $108   (+877 bps on volume)
+  unclassified           -$2K   (-52 bps on volume)
 
 ------------------------------------------------------------
 SURVEILLANCE
 ------------------------------------------------------------
   Event-level informed-trading test:    11 trader-event pairs survive at 5% (0 on placebo)
-  Accuracy-outlier wallets active this week: 586 of 10,485
+  Accuracy-outlier wallets active this week: 503 of 10,485
   Sustained-accuracy outliers (skill screen): 10,485 of 705,883 tested (1.49%)
   After strict statistical correction:  1,558
   Flags mark statistical patterns, not proof; the wallet-level screen measures sustained skill, not information.
@@ -63,4 +63,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-08-17T17:43:20+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-08-24T17:57:03+00:00)

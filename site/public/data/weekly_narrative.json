@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-08-10",
-  "generated_at": "2026-08-17T17:43:15+00:00",
+  "as_of": "2026-08-17",
+  "generated_at": "2026-08-24T17:56:58+00:00",
   "sentences": [
-    "Traders moved $522 million through Polymarket in the week of 2026-08-10, across 18.5 million individual trades. Algorithmic wallets accounted for 71% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 29%.",
-    "The most-traded market was \"Will Francesca Hong win the 2026 Wisconsin Governor Democratic primary election?\", pulling in $673K of volume.",
-    "An unusual reversal: retail traders outperformed bots this week. Active retail earned $20K (+116 bps on volume) while algorithms lost $37K (-13 bps). Weeks like this are rare (bots are typically on top by the execution channel)."
+    "Traders moved $580 million through Polymarket in the week of 2026-08-17, across 20.4 million individual trades. Algorithmic wallets accounted for 70% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 30%.",
+    "The most-traded market was \"Will James Fishback be the Republican nominee for Florida Governor?\", pulling in $3 million of volume.",
+    "An unusual reversal: retail traders outperformed bots this week. Active retail earned $3K (+332 bps on volume) while algorithms lost $1K (-9 bps). Weeks like this are rare (bots are typically on top by the execution channel)."
   ],
-  "headline_quote": "Polymarket traders moved $522 million this week, with the biggest action on \"Will Francesca Hong win the 2026 Wisconsin Governor Democratic primary election?\".",
+  "headline_quote": "Polymarket traders moved $580 million this week across 20.4 million individual trades.",
   "author": "Joshua Della Vedova, University of San Diego",
   "attribution_short": "Della Vedova (2026), Della Vedova Prediction Market Indices",
   "hand_edited": false,
