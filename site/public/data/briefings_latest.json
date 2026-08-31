@@ -1,60 +1,185 @@
 {
-  "as_of_week": "2026-W34",
-  "generated_at": "2026-08-24T17:56:58+00:00",
-  "lede": "Top 6 markets by USD volume from the week of 2026-W34, annotated with per-market microstructure from the DV-PMI weekly indices.",
+  "as_of_week": "2026-W35",
+  "generated_at": "2026-08-31T16:32:24+00:00",
+  "lede": "Top 6 markets by USD volume from the week of 2026-W35, annotated with per-market microstructure from the DV-PMI weekly indices.",
   "briefings": [
     {
-      "rank": 3,
-      "category": "Politics",
-      "question": "Will Renan Santos win the 2026 Brazilian presidential election?",
-      "market_id": "601825",
-      "market_url": "https://polymarket.com/event/will-renan-santos-win-the-2026-brazilian-presidential-election",
-      "volume_usd": 532605.7576329999,
-      "n_trades": 4825,
+      "rank": 1,
+      "category": "Geopolitics",
+      "question": "Will the U.S. invade Iran before 2027?",
+      "market_id": "665374",
+      "market_url": "https://polymarket.com/event/will-the-us-invade-iran-before-2027",
+      "volume_usd": 1867739.3774469995,
+      "n_trades": 2938,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "3% YES  \u25bc -1pp 7d",
+          "value": "16% YES  \u25bc -1pp 7d",
           "tone": "flat"
         },
         {
           "label": "Weekly volume",
-          "value": "$533K",
+          "value": "$1.9M",
           "tone": "flat"
         },
         {
           "label": "Trades",
-          "value": "4,825",
+          "value": "2,938",
           "tone": "flat"
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$209K",
+          "value": "$744K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "41 days (2026-10-04)",
+          "value": "123 days (2027-01-01)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.03 ($212) / Ask 0.04 ($20)",
+          "value": "Bid 0.15 ($21,177) / Ask 0.16 ($22,376)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "0.3\u00a2 (896 bps)",
+          "value": "1.0\u00a2 (645 bps)",
           "tone": "alert"
         },
         {
           "label": "Depth within \u00b15% of mid",
-          "value": "$212 bid  /  $20 ask",
+          "value": "$21,177 bid  /  $22,376 ask",
           "tone": "flat"
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "60% (vs 70% Polymarket-wide)",
+          "value": "71% (vs 67% Polymarket-wide)",
+          "tone": "ok"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "2 of 10,485",
+          "tone": "warn"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "-0.12\u00a2 per share",
+          "tone": "flat"
+        }
+      ],
+      "depth_ladder": {
+        "bids": [
+          {
+            "price": 0.15,
+            "size": 141177.19,
+            "dollars": 21176.5785
+          },
+          {
+            "price": 0.14,
+            "size": 87705.37,
+            "dollars": 12278.7518
+          },
+          {
+            "price": 0.13,
+            "size": 336870.66,
+            "dollars": 43793.1858
+          },
+          {
+            "price": 0.12,
+            "size": 79903.53,
+            "dollars": 9588.4236
+          },
+          {
+            "price": 0.11,
+            "size": 533452.48,
+            "dollars": 58679.7728
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.16,
+            "size": 139847.52,
+            "dollars": 22375.603199999998
+          },
+          {
+            "price": 0.17,
+            "size": 195401.68,
+            "dollars": 33218.2856
+          },
+          {
+            "price": 0.18,
+            "size": 183837.86,
+            "dollars": 33090.81479999999
+          },
+          {
+            "price": 0.19,
+            "size": 31939.09,
+            "dollars": 6068.4271
+          },
+          {
+            "price": 0.2,
+            "size": 6529.73,
+            "dollars": 1305.946
+          }
+        ]
+      },
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "research_link": "/research",
+      "research_label": "Research"
+    },
+    {
+      "rank": 2,
+      "category": "Other",
+      "question": "Clarity Act signed into law in 2026?",
+      "market_id": "1163699",
+      "market_url": "https://polymarket.com/event/clarity-act-signed-into-law-in-2026",
+      "volume_usd": 764630.9099519997,
+      "n_trades": 2361,
+      "annotations": [
+        {
+          "label": "Implied probability",
+          "value": "12% YES  \u25bc -5pp 7d",
+          "tone": "flat"
+        },
+        {
+          "label": "Weekly volume",
+          "value": "$765K",
+          "tone": "flat"
+        },
+        {
+          "label": "Trades",
+          "value": "2,361",
+          "tone": "flat"
+        },
+        {
+          "label": "24h volume (Gamma)",
+          "value": "$80K",
+          "tone": "flat"
+        },
+        {
+          "label": "Time to resolution",
+          "value": "123 days (2027-01-01)",
+          "tone": "flat"
+        },
+        {
+          "label": "Top of book (YES)",
+          "value": "Bid 0.12 ($5,921) / Ask 0.13 ($805)",
+          "tone": "flat"
+        },
+        {
+          "label": "Spread",
+          "value": "1.0\u00a2 (800 bps)",
+          "tone": "alert"
+        },
+        {
+          "label": "Depth within \u00b15% of mid",
+          "value": "$5,921 bid  /  $805 ask",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "62% (vs 67% Polymarket-wide)",
           "tone": "ok"
         },
         {
@@ -64,63 +189,188 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.14\u00a2 per share",
+          "value": "-0.40\u00a2 per share",
           "tone": "flat"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.032,
-            "size": 6617.61,
-            "dollars": 211.76352
+            "price": 0.12,
+            "size": 49343.12,
+            "dollars": 5921.1744
           },
           {
-            "price": 0.031,
-            "size": 13584.42,
-            "dollars": 421.11702
+            "price": 0.11,
+            "size": 14925.85,
+            "dollars": 1641.8435
           },
           {
-            "price": 0.03,
-            "size": 14089.71,
-            "dollars": 422.69129999999996
+            "price": 0.1,
+            "size": 19830.06,
+            "dollars": 1983.0060000000003
           },
           {
-            "price": 0.029,
-            "size": 6605.88,
-            "dollars": 191.57052000000002
+            "price": 0.09,
+            "size": 6295.86,
+            "dollars": 566.6274
           },
           {
-            "price": 0.028,
-            "size": 37936.56,
-            "dollars": 1062.22368
+            "price": 0.08,
+            "size": 10914.0,
+            "dollars": 873.12
           }
         ],
         "asks": [
           {
-            "price": 0.035,
-            "size": 568.13,
-            "dollars": 19.88455
+            "price": 0.13,
+            "size": 6191.65,
+            "dollars": 804.9145
           },
           {
-            "price": 0.036,
-            "size": 93.81,
-            "dollars": 3.37716
+            "price": 0.14,
+            "size": 18468.15,
+            "dollars": 2585.5410000000006
           },
           {
-            "price": 0.037,
-            "size": 455.26,
-            "dollars": 16.84462
+            "price": 0.15,
+            "size": 34526.61,
+            "dollars": 5178.9915
           },
           {
-            "price": 0.038,
-            "size": 8455.53,
-            "dollars": 321.31014
+            "price": 0.16,
+            "size": 24851.99,
+            "dollars": 3976.3184000000006
           },
           {
-            "price": 0.039,
-            "size": 19656.37,
-            "dollars": 766.59843
+            "price": 0.17,
+            "size": 12772.6,
+            "dollars": 2171.342
+          }
+        ]
+      },
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "research_link": "/research",
+      "research_label": "Research"
+    },
+    {
+      "rank": 3,
+      "category": "Politics",
+      "question": "Will Renan Santos win the 2026 Brazilian presidential election?",
+      "market_id": "601825",
+      "market_url": "https://polymarket.com/event/will-renan-santos-win-the-2026-brazilian-presidential-election",
+      "volume_usd": 548712.6658359999,
+      "n_trades": 4475,
+      "annotations": [
+        {
+          "label": "Implied probability",
+          "value": "2% YES  \u25bc -2pp 7d",
+          "tone": "flat"
+        },
+        {
+          "label": "Weekly volume",
+          "value": "$549K",
+          "tone": "flat"
+        },
+        {
+          "label": "Trades",
+          "value": "4,475",
+          "tone": "flat"
+        },
+        {
+          "label": "24h volume (Gamma)",
+          "value": "$77K",
+          "tone": "flat"
+        },
+        {
+          "label": "Time to resolution",
+          "value": "34 days (2026-10-04)",
+          "tone": "flat"
+        },
+        {
+          "label": "Top of book (YES)",
+          "value": "Bid 0.02 ($57) / Ask 0.02 ($20)",
+          "tone": "flat"
+        },
+        {
+          "label": "Spread",
+          "value": "0.2\u00a2 (1111 bps)",
+          "tone": "alert"
+        },
+        {
+          "label": "Depth within \u00b15% of mid",
+          "value": "$0 bid  /  $0 ask",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "59% (vs 67% Polymarket-wide)",
+          "tone": "ok"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "3 of 10,485",
+          "tone": "warn"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "+0.19\u00a2 per share",
+          "tone": "flat"
+        }
+      ],
+      "depth_ladder": {
+        "bids": [
+          {
+            "price": 0.017,
+            "size": 3334.64,
+            "dollars": 56.688880000000005
+          },
+          {
+            "price": 0.016,
+            "size": 11752.27,
+            "dollars": 188.03632000000002
+          },
+          {
+            "price": 0.015,
+            "size": 20110.11,
+            "dollars": 301.65165
+          },
+          {
+            "price": 0.014,
+            "size": 25000.0,
+            "dollars": 350.0
+          },
+          {
+            "price": 0.013,
+            "size": 36059.99,
+            "dollars": 468.77986999999996
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.019,
+            "size": 1026.46,
+            "dollars": 19.50274
+          },
+          {
+            "price": 0.02,
+            "size": 33939.17,
+            "dollars": 678.7834
+          },
+          {
+            "price": 0.022,
+            "size": 35.0,
+            "dollars": 0.7699999999999999
+          },
+          {
+            "price": 0.023,
+            "size": 2249.99,
+            "dollars": 51.74976999999999
+          },
+          {
+            "price": 0.024,
+            "size": 10600.0,
+            "dollars": 254.4
           }
         ]
       },
@@ -134,177 +384,52 @@
       "question": "Will United Russia (ER) gain the most seats in the next Russian parliamentary election?",
       "market_id": "1130012",
       "market_url": "https://polymarket.com/event/will-united-russia-(er)-gain-the-most-seats-in-the-next-russian-parliamentary-election",
-      "volume_usd": 457407.3887879998,
-      "n_trades": 2952,
+      "volume_usd": 418663.5549960001,
+      "n_trades": 1961,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "72% YES  \u25b2 +2pp 7d",
+          "value": "68% YES  \u25bc -5pp 7d",
           "tone": "flat"
         },
         {
           "label": "Weekly volume",
-          "value": "$457K",
+          "value": "$419K",
           "tone": "flat"
         },
         {
           "label": "Trades",
-          "value": "2,952",
+          "value": "1,961",
           "tone": "flat"
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$62K",
+          "value": "$382K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "37 days (2026-09-30)",
+          "value": "30 days (2026-09-30)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.72 ($13,990) / Ask 0.73 ($16,540)",
+          "value": "Bid 0.67 ($5,821) / Ask 0.68 ($2,449)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "1.0\u00a2 (138 bps)",
+          "value": "1.0\u00a2 (148 bps)",
           "tone": "flat"
         },
         {
           "label": "Depth within \u00b15% of mid",
-          "value": "$92,703 bid  /  $144,872 ask",
+          "value": "$27,322 bid  /  $25,034 ask",
           "tone": "flat"
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "62% (vs 70% Polymarket-wide)",
-          "tone": "ok"
-        },
-        {
-          "label": "Flagged wallets active",
-          "value": "2 of 10,485",
-          "tone": "warn"
-        },
-        {
-          "label": "Execution gap (retail vs bots)",
-          "value": "-1.27\u00a2 per share",
-          "tone": "flat"
-        }
-      ],
-      "depth_ladder": {
-        "bids": [
-          {
-            "price": 0.72,
-            "size": 19430.79,
-            "dollars": 13990.1688
-          },
-          {
-            "price": 0.71,
-            "size": 91288.5,
-            "dollars": 64814.835
-          },
-          {
-            "price": 0.7,
-            "size": 6011.55,
-            "dollars": 4208.085
-          },
-          {
-            "price": 0.69,
-            "size": 14043.15,
-            "dollars": 9689.7735
-          },
-          {
-            "price": 0.68,
-            "size": 14813.79,
-            "dollars": 10073.3772
-          }
-        ],
-        "asks": [
-          {
-            "price": 0.73,
-            "size": 22657.32,
-            "dollars": 16539.8436
-          },
-          {
-            "price": 0.74,
-            "size": 46520.79,
-            "dollars": 34425.3846
-          },
-          {
-            "price": 0.75,
-            "size": 54282.28,
-            "dollars": 40711.71
-          },
-          {
-            "price": 0.76,
-            "size": 69993.0,
-            "dollars": 53194.68
-          },
-          {
-            "price": 0.77,
-            "size": 20702.57,
-            "dollars": 15940.9789
-          }
-        ]
-      },
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
-      "research_link": "/research",
-      "research_label": "Research"
-    },
-    {
-      "rank": 5,
-      "category": "Geopolitics",
-      "question": "Will the U.S. invade Iran before 2027?",
-      "market_id": "665374",
-      "market_url": "https://polymarket.com/event/will-the-us-invade-iran-before-2027",
-      "volume_usd": 438555.67888999986,
-      "n_trades": 2022,
-      "annotations": [
-        {
-          "label": "Implied probability",
-          "value": "16% YES  \u2022 +0pp 7d",
-          "tone": "flat"
-        },
-        {
-          "label": "Weekly volume",
-          "value": "$439K",
-          "tone": "flat"
-        },
-        {
-          "label": "Trades",
-          "value": "2,022",
-          "tone": "flat"
-        },
-        {
-          "label": "24h volume (Gamma)",
-          "value": "$234K",
-          "tone": "flat"
-        },
-        {
-          "label": "Time to resolution",
-          "value": "129 days (2026-12-31)",
-          "tone": "flat"
-        },
-        {
-          "label": "Top of book (YES)",
-          "value": "Bid 0.16 ($21,141) / Ask 0.17 ($2,419)",
-          "tone": "flat"
-        },
-        {
-          "label": "Spread",
-          "value": "1.0\u00a2 (606 bps)",
-          "tone": "alert"
-        },
-        {
-          "label": "Depth within \u00b15% of mid",
-          "value": "$21,141 bid  /  $2,419 ask",
-          "tone": "flat"
-        },
-        {
-          "label": "Algorithmic share (this market)",
-          "value": "60% (vs 70% Polymarket-wide)",
+          "value": "55% (vs 67% Polymarket-wide)",
           "tone": "ok"
         },
         {
@@ -314,63 +439,188 @@
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-0.29\u00a2 per share",
+          "value": "-0.53\u00a2 per share",
           "tone": "flat"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.16,
-            "size": 132130.26,
-            "dollars": 21140.841600000003
+            "price": 0.67,
+            "size": 8688.16,
+            "dollars": 5821.0672
           },
           {
-            "price": 0.15,
-            "size": 690962.14,
-            "dollars": 103644.321
+            "price": 0.66,
+            "size": 14486.61,
+            "dollars": 9561.162600000001
           },
           {
-            "price": 0.14,
-            "size": 338238.66,
-            "dollars": 47353.4124
+            "price": 0.65,
+            "size": 18369.62,
+            "dollars": 11940.253
           },
           {
-            "price": 0.13,
-            "size": 28942.09,
-            "dollars": 3762.4717
+            "price": 0.64,
+            "size": 39480.0,
+            "dollars": 25267.2
           },
           {
-            "price": 0.12,
-            "size": 46890.21,
-            "dollars": 5626.825199999999
+            "price": 0.63,
+            "size": 26293.99,
+            "dollars": 16565.2137
           }
         ],
         "asks": [
           {
-            "price": 0.17,
-            "size": 14230.24,
-            "dollars": 2419.1408
+            "price": 0.68,
+            "size": 3601.6,
+            "dollars": 2449.088
           },
           {
-            "price": 0.18,
-            "size": 199183.64,
-            "dollars": 35853.0552
+            "price": 0.69,
+            "size": 12430.58,
+            "dollars": 8577.100199999999
           },
           {
-            "price": 0.19,
-            "size": 86611.54,
-            "dollars": 16456.1926
+            "price": 0.7,
+            "size": 20011.06,
+            "dollars": 14007.742
           },
           {
-            "price": 0.2,
-            "size": 31463.2,
-            "dollars": 6292.64
+            "price": 0.71,
+            "size": 2680.0,
+            "dollars": 1902.8
           },
           {
-            "price": 0.21,
-            "size": 6954.94,
-            "dollars": 1460.5374
+            "price": 0.72,
+            "size": 32431.07,
+            "dollars": 23350.3704
+          }
+        ]
+      },
+      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
+      "research_link": "/research",
+      "research_label": "Research"
+    },
+    {
+      "rank": 5,
+      "category": "Other",
+      "question": "Will the Iranian regime fall before 2027?",
+      "market_id": "663583",
+      "market_url": "https://polymarket.com/event/will-the-iranian-regime-fall-before-2027",
+      "volume_usd": 418568.84365200007,
+      "n_trades": 599,
+      "annotations": [
+        {
+          "label": "Implied probability",
+          "value": "6% YES  \u2022 +0pp 7d",
+          "tone": "flat"
+        },
+        {
+          "label": "Weekly volume",
+          "value": "$419K",
+          "tone": "flat"
+        },
+        {
+          "label": "Trades",
+          "value": "599",
+          "tone": "flat"
+        },
+        {
+          "label": "24h volume (Gamma)",
+          "value": "$39K",
+          "tone": "flat"
+        },
+        {
+          "label": "Time to resolution",
+          "value": "123 days (2027-01-01)",
+          "tone": "flat"
+        },
+        {
+          "label": "Top of book (YES)",
+          "value": "Bid 0.06 ($42,853) / Ask 0.07 ($112)",
+          "tone": "flat"
+        },
+        {
+          "label": "Spread",
+          "value": "1.0\u00a2 (1538 bps)",
+          "tone": "alert"
+        },
+        {
+          "label": "Depth within \u00b15% of mid",
+          "value": "$0 bid  /  $0 ask",
+          "tone": "flat"
+        },
+        {
+          "label": "Algorithmic share (this market)",
+          "value": "75% (vs 67% Polymarket-wide)",
+          "tone": "flat"
+        },
+        {
+          "label": "Flagged wallets active",
+          "value": "2 of 10,485",
+          "tone": "warn"
+        },
+        {
+          "label": "Execution gap (retail vs bots)",
+          "value": "-0.20\u00a2 per share",
+          "tone": "flat"
+        }
+      ],
+      "depth_ladder": {
+        "bids": [
+          {
+            "price": 0.06,
+            "size": 714218.45,
+            "dollars": 42853.106999999996
+          },
+          {
+            "price": 0.05,
+            "size": 300701.46,
+            "dollars": 15035.073000000002
+          },
+          {
+            "price": 0.04,
+            "size": 474887.06,
+            "dollars": 18995.4824
+          },
+          {
+            "price": 0.03,
+            "size": 241115.98,
+            "dollars": 7233.4794
+          },
+          {
+            "price": 0.02,
+            "size": 59857.04,
+            "dollars": 1197.1408000000001
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.07,
+            "size": 1599.85,
+            "dollars": 111.9895
+          },
+          {
+            "price": 0.08,
+            "size": 181705.15,
+            "dollars": 14536.412
+          },
+          {
+            "price": 0.09,
+            "size": 173430.17,
+            "dollars": 15608.7153
+          },
+          {
+            "price": 0.1,
+            "size": 10449.62,
+            "dollars": 1044.9620000000002
+          },
+          {
+            "price": 0.11,
+            "size": 31155.82,
+            "dollars": 3427.1402
           }
         ]
       },
@@ -380,367 +630,122 @@
     },
     {
       "rank": 6,
-      "category": "Crypto",
-      "question": "Will Ethereum dip to $1,000 by December 31, 2026?",
-      "market_id": "701553",
-      "market_url": "https://polymarket.com/event/will-ethereum-dip-to-1000-by-december-31-2026",
-      "volume_usd": 383139.308982,
-      "n_trades": 289,
+      "category": "Politics",
+      "question": "Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
+      "market_id": "601819",
+      "market_url": "https://polymarket.com/event/will-luiz-in\u00e1cio-lula-da-silva-win-the-2026-brazilian-presidential-election",
+      "volume_usd": 330376.87112499995,
+      "n_trades": 1910,
       "annotations": [
         {
           "label": "Implied probability",
-          "value": "6% YES",
+          "value": "56% YES  \u25bc -7pp 7d",
           "tone": "flat"
         },
         {
           "label": "Weekly volume",
-          "value": "$383K",
+          "value": "$330K",
           "tone": "flat"
         },
         {
           "label": "Trades",
-          "value": "289",
+          "value": "1,910",
           "tone": "flat"
         },
         {
           "label": "24h volume (Gamma)",
-          "value": "$6K",
+          "value": "$31K",
           "tone": "flat"
         },
         {
           "label": "Time to resolution",
-          "value": "130 days (2027-01-01)",
+          "value": "34 days (2026-10-04)",
           "tone": "flat"
         },
         {
           "label": "Top of book (YES)",
-          "value": "Bid 0.05 ($13,897) / Ask 0.07 ($2,239)",
+          "value": "Bid 0.55 ($20,326) / Ask 0.56 ($18,204)",
           "tone": "flat"
         },
         {
           "label": "Spread",
-          "value": "2.0\u00a2 (3333 bps)",
-          "tone": "alert"
+          "value": "1.0\u00a2 (180 bps)",
+          "tone": "flat"
         },
         {
           "label": "Depth within \u00b15% of mid",
-          "value": "$0 bid  /  $0 ask",
+          "value": "$136,298 bid  /  $63,238 ask",
           "tone": "flat"
         },
         {
           "label": "Algorithmic share (this market)",
-          "value": "66% (vs 70% Polymarket-wide)",
+          "value": "66% (in line with the 67% Polymarket-wide baseline)",
           "tone": "ok"
         },
         {
           "label": "Flagged wallets active",
-          "value": "1 of 10,485",
+          "value": "3 of 10,485",
           "tone": "warn"
         },
         {
           "label": "Execution gap (retail vs bots)",
-          "value": "-5.20\u00a2 per share",
+          "value": "-0.67\u00a2 per share",
           "tone": "flat"
         }
       ],
       "depth_ladder": {
         "bids": [
           {
-            "price": 0.05,
-            "size": 277946.72,
-            "dollars": 13897.336
+            "price": 0.55,
+            "size": 36956.08,
+            "dollars": 20325.844
           },
           {
-            "price": 0.04,
-            "size": 22904.63,
-            "dollars": 916.1852
+            "price": 0.54,
+            "size": 87438.16,
+            "dollars": 47216.606400000004
           },
           {
-            "price": 0.03,
-            "size": 3688.3,
-            "dollars": 110.649
+            "price": 0.53,
+            "size": 129727.44,
+            "dollars": 68755.5432
           },
           {
-            "price": 0.02,
-            "size": 9415.0,
-            "dollars": 188.3
+            "price": 0.52,
+            "size": 12300.78,
+            "dollars": 6396.405600000001
           },
           {
-            "price": 0.01,
-            "size": 226849.98,
-            "dollars": 2268.4998
+            "price": 0.51,
+            "size": 18286.06,
+            "dollars": 9325.8906
           }
         ],
         "asks": [
           {
-            "price": 0.07,
-            "size": 31979.33,
-            "dollars": 2238.5531000000005
+            "price": 0.56,
+            "size": 32506.91,
+            "dollars": 18203.8696
           },
           {
-            "price": 0.08,
-            "size": 10571.75,
-            "dollars": 845.74
+            "price": 0.57,
+            "size": 35560.24,
+            "dollars": 20269.336799999997
           },
           {
-            "price": 0.09,
-            "size": 23099.24,
-            "dollars": 2078.9316
+            "price": 0.58,
+            "size": 42698.49,
+            "dollars": 24765.1242
           },
           {
-            "price": 0.1,
-            "size": 6451.03,
-            "dollars": 645.1030000000001
+            "price": 0.59,
+            "size": 11011.63,
+            "dollars": 6496.8616999999995
           },
           {
-            "price": 0.11,
-            "size": 325.37,
-            "dollars": 35.7907
-          }
-        ]
-      },
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
-      "research_link": "/research",
-      "research_label": "Research"
-    },
-    {
-      "rank": 7,
-      "category": "Crypto",
-      "question": "Will Ethereum dip to $800 by December 31, 2026?",
-      "market_id": "701554",
-      "market_url": "https://polymarket.com/event/will-ethereum-dip-to-800-by-december-31-2026",
-      "volume_usd": 380471.88215200003,
-      "n_trades": 185,
-      "annotations": [
-        {
-          "label": "Implied probability",
-          "value": "4% YES",
-          "tone": "flat"
-        },
-        {
-          "label": "Weekly volume",
-          "value": "$380K",
-          "tone": "flat"
-        },
-        {
-          "label": "Trades",
-          "value": "185",
-          "tone": "flat"
-        },
-        {
-          "label": "24h volume (Gamma)",
-          "value": "$1K",
-          "tone": "flat"
-        },
-        {
-          "label": "Time to resolution",
-          "value": "130 days (2027-01-01)",
-          "tone": "flat"
-        },
-        {
-          "label": "Top of book (YES)",
-          "value": "Bid 0.04 ($160) / Ask 0.05 ($24)",
-          "tone": "flat"
-        },
-        {
-          "label": "Spread",
-          "value": "1.0\u00a2 (2222 bps)",
-          "tone": "alert"
-        },
-        {
-          "label": "Depth within \u00b15% of mid",
-          "value": "$0 bid  /  $0 ask",
-          "tone": "flat"
-        },
-        {
-          "label": "Algorithmic share (this market)",
-          "value": "66% (vs 70% Polymarket-wide)",
-          "tone": "ok"
-        },
-        {
-          "label": "Flagged wallets active",
-          "value": "1 of 10,485",
-          "tone": "warn"
-        },
-        {
-          "label": "Execution gap (retail vs bots)",
-          "value": "-1.63\u00a2 per share",
-          "tone": "flat"
-        }
-      ],
-      "depth_ladder": {
-        "bids": [
-          {
-            "price": 0.04,
-            "size": 4009.51,
-            "dollars": 160.3804
-          },
-          {
-            "price": 0.03,
-            "size": 4182.0,
-            "dollars": 125.46
-          },
-          {
-            "price": 0.02,
-            "size": 1600.0,
-            "dollars": 32.0
-          },
-          {
-            "price": 0.01,
-            "size": 3289.96,
-            "dollars": 32.8996
-          }
-        ],
-        "asks": [
-          {
-            "price": 0.05,
-            "size": 488.92,
-            "dollars": 24.446
-          },
-          {
-            "price": 0.06,
-            "size": 2816.67,
-            "dollars": 169.0002
-          },
-          {
-            "price": 0.07,
-            "size": 7555.81,
-            "dollars": 528.9067000000001
-          },
-          {
-            "price": 0.08,
-            "size": 9024.45,
-            "dollars": 721.956
-          },
-          {
-            "price": 0.09,
-            "size": 8930.99,
-            "dollars": 803.7891
-          }
-        ]
-      },
-      "news_angle": "(EDITORIAL: 1-2 sentences on the news context here)",
-      "research_link": "/research",
-      "research_label": "Research"
-    },
-    {
-      "rank": 9,
-      "category": "Other",
-      "question": "Xi Jinping out before 2027?",
-      "market_id": "559651",
-      "market_url": "https://polymarket.com/event/xi-jinping-out-before-2027",
-      "volume_usd": 350894.2440980004,
-      "n_trades": 1392,
-      "annotations": [
-        {
-          "label": "Implied probability",
-          "value": "5% YES  \u2022 +0pp 7d",
-          "tone": "flat"
-        },
-        {
-          "label": "Weekly volume",
-          "value": "$351K",
-          "tone": "flat"
-        },
-        {
-          "label": "Trades",
-          "value": "1,392",
-          "tone": "flat"
-        },
-        {
-          "label": "24h volume (Gamma)",
-          "value": "$51K",
-          "tone": "flat"
-        },
-        {
-          "label": "Time to resolution",
-          "value": "129 days (2026-12-31)",
-          "tone": "flat"
-        },
-        {
-          "label": "Top of book (YES)",
-          "value": "Bid 0.05 ($407) / Ask 0.05 ($131)",
-          "tone": "flat"
-        },
-        {
-          "label": "Spread",
-          "value": "0.1\u00a2 (206 bps)",
-          "tone": "warn"
-        },
-        {
-          "label": "Depth within \u00b15% of mid",
-          "value": "$636 bid  /  $388 ask",
-          "tone": "flat"
-        },
-        {
-          "label": "Algorithmic share (this market)",
-          "value": "52% (vs 70% Polymarket-wide)",
-          "tone": "ok"
-        },
-        {
-          "label": "Flagged wallets active",
-          "value": "6 of 10,485",
-          "tone": "alert"
-        },
-        {
-          "label": "Execution gap (retail vs bots)",
-          "value": "+0.59\u00a2 per share",
-          "tone": "alert"
-        }
-      ],
-      "depth_ladder": {
-        "bids": [
-          {
-            "price": 0.048,
-            "size": 8470.28,
-            "dollars": 406.57344000000006
-          },
-          {
-            "price": 0.047,
-            "size": 4880.01,
-            "dollars": 229.36047000000002
-          },
-          {
-            "price": 0.046,
-            "size": 2581.0,
-            "dollars": 118.726
-          },
-          {
-            "price": 0.045,
-            "size": 12272.78,
-            "dollars": 552.2751000000001
-          },
-          {
-            "price": 0.044,
-            "size": 4871.1,
-            "dollars": 214.32840000000002
-          }
-        ],
-        "asks": [
-          {
-            "price": 0.049,
-            "size": 2681.53,
-            "dollars": 131.39497
-          },
-          {
-            "price": 0.05,
-            "size": 5129.85,
-            "dollars": 256.4925
-          },
-          {
-            "price": 0.051,
-            "size": 2909.31,
-            "dollars": 148.37481
-          },
-          {
-            "price": 0.052,
-            "size": 2002.0,
-            "dollars": 104.104
-          },
-          {
-            "price": 0.053,
-            "size": 1521.0,
-            "dollars": 80.613
+            "price": 0.6,
+            "size": 5915.94,
+            "dollars": 3549.564
           }
         ]
       },
@@ -750,9 +755,9 @@
     }
   ],
   "global_context": {
-    "polymarket_wide_bot_share": 0.7021538292853741,
-    "polymarket_wide_volume_usd": 580133981.8496214,
-    "polymarket_wide_trades": 20393074,
+    "polymarket_wide_bot_share": 0.669613549617805,
+    "polymarket_wide_volume_usd": 524700814.8866408,
+    "polymarket_wide_trades": 18503902,
     "calibration_alpha": 0.6639191266094694,
     "calibration_r2": 0.9867800262365879
   },

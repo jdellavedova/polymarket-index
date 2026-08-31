@@ -1,29 +1,29 @@
 {
   "index_name": "Longshot / Favorite Price Gap",
   "short_name": "PriceGap",
-  "as_of": "2026-08-17",
-  "week": "2026-W34",
+  "as_of": "2026-08-24",
+  "week": "2026-W35",
   "description": "Realized win rate in the longshot band minus the band midpoint (5%). Positive = longshots underpriced; negative = favorite-longshot bias (longshots overpriced).",
-  "value": 0.026324999528749393,
-  "ma4w": 0.02364717301388732,
-  "ma13w": 0.006509363393002889,
-  "ma52w": -0.010406409828062357,
-  "z52w": 2.2604368276841678,
+  "value": 0.019492658882226496,
+  "ma4w": 0.022383977782757445,
+  "ma13w": 0.008444509610632634,
+  "ma52w": -0.009519282952030595,
+  "z52w": 1.7475400796328053,
   "components": {
-    "longshot_winrate": 0.0763249995287494,
-    "longshot_fraction": 0.2452659273135913,
+    "longshot_winrate": 0.0694926588822265,
+    "longshot_fraction": 0.24243509867685,
     "band_midpoint": 0.05
   },
-  "n_trades_week": 3244458,
+  "n_trades_week": 3293731,
   "rolling": {
-    "mean_52w": -0.010406409828062358,
-    "sd_52w": 0.016249695150491388,
+    "mean_52w": -0.009519282952030599,
+    "sd_52w": 0.01660158881183026,
     "min_52w": -0.0345651730468485,
     "max_52w": 0.026324999528749393,
     "n_obs_52w": 52
   },
-  "n_weeks_history": 179,
+  "n_weeks_history": 180,
   "notes": "Favorite-side gap (top price bin) is a v1.1 item.",
-  "generated_at": "2026-08-24T17:56:33+00:00",
+  "generated_at": "2026-08-31T16:31:58+00:00",
   "source": "H:\\Research\\10. Prediction\\data\\blockchain\\paper4\\weekly_pwi.csv"
 }

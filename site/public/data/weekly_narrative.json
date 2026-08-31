@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-08-17",
-  "generated_at": "2026-08-24T17:56:58+00:00",
+  "as_of": "2026-08-24",
+  "generated_at": "2026-08-31T16:32:23+00:00",
   "sentences": [
-    "Traders moved $580 million through Polymarket in the week of 2026-08-17, across 20.4 million individual trades. Algorithmic wallets accounted for 70% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 30%.",
-    "The most-traded market was \"Will James Fishback be the Republican nominee for Florida Governor?\", pulling in $3 million of volume.",
-    "An unusual reversal: retail traders outperformed bots this week. Active retail earned $3K (+332 bps on volume) while algorithms lost $1K (-9 bps). Weeks like this are rare (bots are typically on top by the execution channel)."
+    "Traders moved $525 million through Polymarket in the week of 2026-08-24, across 18.5 million individual trades. Algorithmic wallets accounted for 67% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 33%.",
+    "The most-traded market was \"Will the U.S. invade Iran before 2027?\", pulling in $2 million of volume.",
+    "The usual pattern held: algorithmic traders made $39K (+124 bps on volume) while retail traders lost $9K (-516 bps)."
   ],
-  "headline_quote": "Polymarket traders moved $580 million this week across 20.4 million individual trades.",
+  "headline_quote": "Polymarket traders moved $525 million this week across 18.5 million individual trades.",
   "author": "Joshua Della Vedova, University of San Diego",
   "attribution_short": "Della Vedova (2026), Della Vedova Prediction Market Indices",
   "hand_edited": false,

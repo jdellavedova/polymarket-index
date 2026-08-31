@@ -1,29 +1,29 @@
 {
   "index_name": "Market Efficiency Trend",
   "short_name": "Efficiency",
-  "as_of": "2026-08-17",
+  "as_of": "2026-08-24",
   "description": "R-squared of the weekly one-parameter Prelec fit to active retail trades.",
-  "value": 0.9966605356842588,
-  "ma4w": 0.9942625426343292,
-  "ma13w": 0.9916828295878244,
-  "ma52w": 0.9794399691902631,
-  "z52w": 0.8806353217737535,
+  "value": 0.995380354475591,
+  "ma4w": 0.9954504303402756,
+  "ma13w": 0.9920397268337436,
+  "ma52w": 0.9810768626083676,
+  "z52w": 0.8387716531360648,
   "per_type_r2": {
-    "bot": 0.9993387054257088,
-    "active_retail": 0.9966605356842588,
-    "sophisticated": 0.9924337136331456,
-    "casual": 0.9884656138943948,
-    "one_shot": 0.9908736882094976
+    "bot": 0.9986268800750332,
+    "active_retail": 0.995380354475591,
+    "sophisticated": 0.9802344703514562,
+    "casual": 0.9917551037789172,
+    "one_shot": 0.9904069781506022
   },
   "rolling": {
-    "mean_52w": 0.9794399691902631,
-    "sd_52w": 0.019554707911684576,
-    "min_52w": 0.910261896734156,
+    "mean_52w": 0.9810768626083676,
+    "sd_52w": 0.017052903270809244,
+    "min_52w": 0.9223031086287968,
     "max_52w": 0.997085124618622,
     "n_obs_52w": 52
   },
-  "n_weeks_history": 184,
+  "n_weeks_history": 185,
   "first_date": "2023-01-16",
-  "generated_at": "2026-08-24T17:56:33+00:00",
+  "generated_at": "2026-08-31T16:31:58+00:00",
   "source": "H:\\Research\\10. Prediction\\data\\blockchain\\paper4\\weekly_alpha_by_type.csv"
 }

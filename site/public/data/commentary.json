@@ -1,6 +1,15 @@
 {
   "notes": [
     {
+      "date": "2026-08-24",
+      "tag": "MARKETS",
+      "title": "Week of 2026-08-24: Will the U.S. invade Iran before 2027?",
+      "body": "Polymarket traders moved $525 million this week across 18.5 million individual trades. Traders moved $525 million through Polymarket in the week of 2026-08-24, across 18.5 million individual trades. Algorithmic wallets accounted for 67% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 33%. The most-traded market was \"Will the U.S. invade Iran...",
+      "href": "/briefings",
+      "href_label": "See this week's briefings",
+      "auto_generated": true
+    },
+    {
       "date": "2026-08-17",
       "tag": "MARKETS",
       "title": "Week of 2026-08-17: Will James Fishback be the Republican nominee for Florida Governor?",
@@ -164,5 +173,5 @@
     }
   ],
   "notes_url": "/notes",
-  "generated_at": "2026-08-24T17:56:58+00:00"
+  "generated_at": "2026-08-31T16:32:24+00:00"
 }

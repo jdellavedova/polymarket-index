@@ -1,251 +1,251 @@
 {
   "index_name": "Top Markets by Weekly Volume",
   "short_name": "TopMarkets",
-  "as_of_week": "2026-W34",
+  "as_of_week": "2026-W35",
   "top_k": 30,
   "markets": [
     {
       "rank": 1,
-      "market_id": "704475",
-      "question": "Will James Fishback be the Republican nominee for Florida Governor?",
-      "category": "Politics",
-      "usd_volume": 3172070.378371,
-      "n_trades": 3602
+      "market_id": "665374",
+      "question": "Will the U.S. invade Iran before 2027?",
+      "category": "Geopolitics",
+      "usd_volume": 1867739.3774469995,
+      "n_trades": 2938
     },
     {
       "rank": 2,
-      "market_id": "704474",
-      "question": "Will Byron Donalds be the Republican nominee for Florida Governor?",
-      "category": "Politics",
-      "usd_volume": 705331.411512,
-      "n_trades": 2765
+      "market_id": "1163699",
+      "question": "Clarity Act signed into law in 2026?",
+      "category": "Other",
+      "usd_volume": 764630.9099519997,
+      "n_trades": 2361
     },
     {
       "rank": 3,
       "market_id": "601825",
       "question": "Will Renan Santos win the 2026 Brazilian presidential election?",
       "category": "Politics",
-      "usd_volume": 532605.7576329999,
-      "n_trades": 4825
+      "usd_volume": 548712.6658359999,
+      "n_trades": 4475
     },
     {
       "rank": 4,
       "market_id": "1130012",
       "question": "Will United Russia (ER) gain the most seats in the next Russian parliamentary election?",
       "category": "Geopolitics",
-      "usd_volume": 457407.3887879998,
-      "n_trades": 2952
+      "usd_volume": 418663.5549960001,
+      "n_trades": 1961
     },
     {
       "rank": 5,
-      "market_id": "665374",
-      "question": "Will the U.S. invade Iran before 2027?",
-      "category": "Geopolitics",
-      "usd_volume": 438555.67888999986,
-      "n_trades": 2022
+      "market_id": "663583",
+      "question": "Will the Iranian regime fall before 2027?",
+      "category": "Other",
+      "usd_volume": 418568.84365200007,
+      "n_trades": 599
     },
     {
       "rank": 6,
-      "market_id": "701553",
-      "question": "Will Ethereum dip to $1,000 by December 31, 2026?",
-      "category": "Crypto",
-      "usd_volume": 383139.308982,
-      "n_trades": 289
-    },
-    {
-      "rank": 7,
-      "market_id": "701554",
-      "question": "Will Ethereum dip to $800 by December 31, 2026?",
-      "category": "Crypto",
-      "usd_volume": 380471.88215200003,
-      "n_trades": 185
-    },
-    {
-      "rank": 8,
-      "market_id": "677366",
-      "question": "Will Russia capture Kostyantynivka by December 31, 2026?",
-      "category": "Geopolitics",
-      "usd_volume": 365802.9771409986,
-      "n_trades": 897
-    },
-    {
-      "rank": 9,
-      "market_id": "559651",
-      "question": "Xi Jinping out before 2027?",
-      "category": "Other",
-      "usd_volume": 350894.2440980004,
-      "n_trades": 1392
-    },
-    {
-      "rank": 10,
-      "market_id": "560317",
-      "question": "Putin out as President of Russia by end of 2026?",
-      "category": "Geopolitics",
-      "usd_volume": 323723.597874,
-      "n_trades": 500
-    },
-    {
-      "rank": 11,
-      "market_id": "1163699",
-      "question": "Clarity Act signed into law in 2026?",
-      "category": "Other",
-      "usd_volume": 316813.672398,
-      "n_trades": 2134
-    },
-    {
-      "rank": 12,
-      "market_id": "701502",
-      "question": "Will Bitcoin dip to $45,000 by December 31, 2026?",
-      "category": "Crypto",
-      "usd_volume": 270559.79985,
-      "n_trades": 1067
-    },
-    {
-      "rank": 13,
       "market_id": "601819",
       "question": "Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
       "category": "Politics",
-      "usd_volume": 253980.15123200015,
-      "n_trades": 3051
+      "usd_volume": 330376.87112499995,
+      "n_trades": 1910
     },
     {
-      "rank": 14,
-      "market_id": "701501",
-      "question": "Will Bitcoin dip to $55,000 by December 31, 2026?",
-      "category": "Crypto",
-      "usd_volume": 238074.94065700003,
-      "n_trades": 1135
-    },
-    {
-      "rank": 15,
-      "market_id": "567621",
-      "question": "Will China invade Taiwan by end of 2026?",
-      "category": "Geopolitics",
-      "usd_volume": 232396.59183699999,
-      "n_trades": 1456
-    },
-    {
-      "rank": 16,
-      "market_id": "666861",
-      "question": "Trump out as President before 2027?",
-      "category": "Politics",
-      "usd_volume": 227039.57449899995,
-      "n_trades": 683
-    },
-    {
-      "rank": 17,
-      "market_id": "561243",
-      "question": "Will Donald Trump win the 2028 US Presidential Election?",
-      "category": "Politics",
-      "usd_volume": 205128.98957300003,
-      "n_trades": 916
-    },
-    {
-      "rank": 18,
+      "rank": 7,
       "market_id": "601826",
       "question": "Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
       "category": "Politics",
-      "usd_volume": 193057.98970999976,
-      "n_trades": 3652
+      "usd_volume": 257950.47181199992,
+      "n_trades": 2463
     },
     {
-      "rank": 19,
-      "market_id": "703257",
-      "question": "Will the US confirm that aliens exist before 2027?",
-      "category": "Other",
-      "usd_volume": 187856.421116,
-      "n_trades": 697
-    },
-    {
-      "rank": 20,
-      "market_id": "701494",
-      "question": "Will Bitcoin reach $120,000 by December 31, 2026?",
-      "category": "Crypto",
-      "usd_volume": 180871.81880300003,
-      "n_trades": 539
-    },
-    {
-      "rank": 21,
-      "market_id": "908713",
-      "question": "Fed rate hike in 2026?",
-      "category": "Macro",
-      "usd_volume": 175499.81805099995,
-      "n_trades": 1044
-    },
-    {
-      "rank": 22,
-      "market_id": "701552",
-      "question": "Will Ethereum dip to $1,500 by December 31, 2026?",
-      "category": "Crypto",
-      "usd_volume": 170672.15926400002,
-      "n_trades": 1511
-    },
-    {
-      "rank": 23,
-      "market_id": "1090496",
-      "question": "NATO x Russia military clash by December 31, 2026?",
+      "rank": 8,
+      "market_id": "567621",
+      "question": "Will China invade Taiwan by end of 2026?",
       "category": "Geopolitics",
-      "usd_volume": 160654.86577099992,
-      "n_trades": 3023
+      "usd_volume": 247592.56717400008,
+      "n_trades": 1260
     },
     {
-      "rank": 24,
+      "rank": 9,
+      "market_id": "703258",
+      "question": "Will Jesus Christ return before 2027?",
+      "category": "Other",
+      "usd_volume": 194534.15304399998,
+      "n_trades": 1773
+    },
+    {
+      "rank": 10,
+      "market_id": "559651",
+      "question": "Xi Jinping out before 2027?",
+      "category": "Other",
+      "usd_volume": 186251.284296,
+      "n_trades": 1087
+    },
+    {
+      "rank": 11,
       "market_id": "1088472",
       "question": "Will Carlos Alcaraz win the 2026 Men's US Open?",
       "category": "Other",
-      "usd_volume": 160096.81862900002,
-      "n_trades": 1003
+      "usd_volume": 185263.50959099998,
+      "n_trades": 824
     },
     {
-      "rank": 25,
-      "market_id": "701496",
-      "question": "Will Bitcoin reach $100,000 by December 31, 2026?",
-      "category": "Crypto",
-      "usd_volume": 154439.70855899996,
-      "n_trades": 804
+      "rank": 12,
+      "market_id": "560317",
+      "question": "Putin out as President of Russia by end of 2026?",
+      "category": "Geopolitics",
+      "usd_volume": 173759.10621500007,
+      "n_trades": 403
     },
     {
-      "rank": 26,
-      "market_id": "559653",
-      "question": "Will Alexandria Ocasio-Cortez win the 2028 Democratic presidential nomination?",
+      "rank": 13,
+      "market_id": "562831",
+      "question": "2026 Balance of Power: R Senate, R House",
       "category": "Politics",
-      "usd_volume": 150408.84461200002,
-      "n_trades": 1432
+      "usd_volume": 159680.12877399998,
+      "n_trades": 517
     },
     {
-      "rank": 27,
+      "rank": 14,
+      "market_id": "616902",
+      "question": "Will no Fed rate cuts happen in 2026?",
+      "category": "Macro",
+      "usd_volume": 140863.94991999993,
+      "n_trades": 1025
+    },
+    {
+      "rank": 15,
+      "market_id": "908713",
+      "question": "Fed rate hike in 2026?",
+      "category": "Macro",
+      "usd_volume": 132945.81226200002,
+      "n_trades": 836
+    },
+    {
+      "rank": 16,
       "market_id": "682705",
       "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
       "category": "Geopolitics",
-      "usd_volume": 140266.77622600016,
-      "n_trades": 815
+      "usd_volume": 129218.22705300002,
+      "n_trades": 1240
     },
     {
-      "rank": 28,
-      "market_id": "637910",
-      "question": "Will Mitch McConnell step down from the Senate before his term ends?",
+      "rank": 17,
+      "market_id": "1088473",
+      "question": "Will Novak Djokovic win the 2026 Men's US Open?",
+      "category": "Other",
+      "usd_volume": 128722.29141600001,
+      "n_trades": 832
+    },
+    {
+      "rank": 18,
+      "market_id": "701496",
+      "question": "Will Bitcoin reach $100,000 by December 31, 2026?",
+      "category": "Crypto",
+      "usd_volume": 128536.60772600002,
+      "n_trades": 583
+    },
+    {
+      "rank": 19,
+      "market_id": "825091",
+      "question": "Will Genter Drummond win the 2026 Oklahoma Governor Republican primary election?",
       "category": "Politics",
-      "usd_volume": 129635.48224199997,
-      "n_trades": 437
+      "usd_volume": 127498.941914,
+      "n_trades": 2248
     },
     {
-      "rank": 29,
+      "rank": 20,
+      "market_id": "825094",
+      "question": "Will Mike Mazzei win the 2026 Oklahoma Governor Republican primary election?",
+      "category": "Politics",
+      "usd_volume": 112997.95529700002,
+      "n_trades": 1476
+    },
+    {
+      "rank": 21,
+      "market_id": "561229",
+      "question": "Will JD Vance win the 2028 US Presidential Election?",
+      "category": "Politics",
+      "usd_volume": 104868.15051400004,
+      "n_trades": 795
+    },
+    {
+      "rank": 22,
+      "market_id": "701502",
+      "question": "Will Bitcoin dip to $45,000 by December 31, 2026?",
+      "category": "Crypto",
+      "usd_volume": 102366.16828099998,
+      "n_trades": 806
+    },
+    {
+      "rank": 23,
+      "market_id": "703257",
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "category": "Other",
+      "usd_volume": 99920.56506400004,
+      "n_trades": 1031
+    },
+    {
+      "rank": 24,
       "market_id": "608547",
       "question": "Will Harry Kane win the 2026 Ballon d'Or?",
       "category": "Other",
-      "usd_volume": 127102.99668199995,
-      "n_trades": 1656
+      "usd_volume": 78492.84711899998,
+      "n_trades": 1228
+    },
+    {
+      "rank": 25,
+      "market_id": "1130016",
+      "question": "Will New People (NL) gain the most seats in the next Russian parliamentary election?",
+      "category": "Politics",
+      "usd_volume": 73734.24453200003,
+      "n_trades": 1325
+    },
+    {
+      "rank": 26,
+      "market_id": "1088479",
+      "question": "Will Joao Fonseca win the 2026 Men's US Open?",
+      "category": "Other",
+      "usd_volume": 66894.067725,
+      "n_trades": 107
+    },
+    {
+      "rank": 27,
+      "market_id": "701501",
+      "question": "Will Bitcoin dip to $55,000 by December 31, 2026?",
+      "category": "Crypto",
+      "usd_volume": 66474.94731899998,
+      "n_trades": 578
+    },
+    {
+      "rank": 28,
+      "market_id": "920401",
+      "question": "Will Apple release a foldable iPhone before 2027?",
+      "category": "Business",
+      "usd_volume": 64281.254284,
+      "n_trades": 918
+    },
+    {
+      "rank": 29,
+      "market_id": "1088475",
+      "question": "Will Alexander Zverev win the 2026 Men's US Open?",
+      "category": "Other",
+      "usd_volume": 64069.461608,
+      "n_trades": 465
     },
     {
       "rank": 30,
-      "market_id": "562802",
-      "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
-      "category": "Politics",
-      "usd_volume": 122965.93497500001,
-      "n_trades": 1220
+      "market_id": "701494",
+      "question": "Will Bitcoin reach $120,000 by December 31, 2026?",
+      "category": "Crypto",
+      "usd_volume": 64049.897804,
+      "n_trades": 293
     }
   ],
-  "generated_at": "2026-08-24T17:08:11+00:00",
+  "generated_at": "2026-08-31T15:48:55+00:00",
   "source": "read_parquet('H:/Research/10. Prediction/data/blockchain/trades_parquet/**/*.parquet', hive_partitioning=1)",
   "notes": "Top 5 resolved-trade markets by USD volume in the most recent complete week. Market questions come from polymarket_markets.csv (static snapshot); new markets not in that file will appear with question=null."
 }
