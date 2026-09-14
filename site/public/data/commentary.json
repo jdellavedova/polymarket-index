@@ -1,6 +1,15 @@
 {
   "notes": [
     {
+      "date": "2026-09-07",
+      "tag": "MARKETS",
+      "title": "Week of 2026-09-07: Will Alexander Zverev win the 2026 Men's US Open?",
+      "body": "Polymarket traders moved $516 million this week across 16.7 million individual trades. Traders moved $516 million through Polymarket in the week of 2026-09-07, across 16.7 million individual trades. Algorithmic wallets accounted for 65% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 35%. The most-traded market was \"Will Alexander Zverev win...",
+      "href": "/briefings",
+      "href_label": "See this week's briefings",
+      "auto_generated": true
+    },
+    {
       "date": "2026-08-31",
       "tag": "MARKETS",
       "title": "Week of 2026-08-31: Will the U.S. invade Iran before 2027?",
@@ -182,5 +191,5 @@
     }
   ],
   "notes_url": "/notes",
-  "generated_at": "2026-09-07T16:50:31+00:00"
+  "generated_at": "2026-09-14T17:03:28+00:00"
 }

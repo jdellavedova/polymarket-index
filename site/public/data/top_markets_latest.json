@@ -1,251 +1,251 @@
 {
   "index_name": "Top Markets by Weekly Volume",
   "short_name": "TopMarkets",
-  "as_of_week": "2026-W36",
+  "as_of_week": "2026-W37",
   "top_k": 30,
   "markets": [
     {
       "rank": 1,
-      "market_id": "665374",
-      "question": "Will the U.S. invade Iran before 2027?",
-      "category": "Geopolitics",
-      "usd_volume": 891776.156131,
-      "n_trades": 2963
+      "market_id": "1088475",
+      "question": "Will Alexander Zverev win the 2026 Men's US Open?",
+      "category": "Other",
+      "usd_volume": 837151.8885000004,
+      "n_trades": 5561
     },
     {
       "rank": 2,
-      "market_id": "1163699",
-      "question": "Clarity Act signed into law in 2026?",
-      "category": "Other",
-      "usd_volume": 550250.268219,
-      "n_trades": 1706
+      "market_id": "560317",
+      "question": "Putin out as President of Russia by end of 2026?",
+      "category": "Geopolitics",
+      "usd_volume": 739126.5162690002,
+      "n_trades": 947
     },
     {
       "rank": 3,
-      "market_id": "1088472",
-      "question": "Will Carlos Alcaraz win the 2026 Men's US Open?",
-      "category": "Other",
-      "usd_volume": 485929.2932799997,
-      "n_trades": 4045
+      "market_id": "1193094",
+      "question": "Will Magdalena Andersson be the next Prime Minister of Sweden?",
+      "category": "Politics",
+      "usd_volume": 587939.1501919997,
+      "n_trades": 6037
     },
     {
       "rank": 4,
-      "market_id": "601825",
-      "question": "Will Renan Santos win the 2026 Brazilian presidential election?",
-      "category": "Politics",
-      "usd_volume": 453443.195344,
-      "n_trades": 2834
+      "market_id": "1163699",
+      "question": "Clarity Act signed into law in 2026?",
+      "category": "Other",
+      "usd_volume": 549334.926644,
+      "n_trades": 2857
     },
     {
       "rank": 5,
-      "market_id": "567621",
-      "question": "Will China invade Taiwan by end of 2026?",
-      "category": "Geopolitics",
-      "usd_volume": 441031.243927,
-      "n_trades": 893
+      "market_id": "601819",
+      "question": "Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
+      "category": "Politics",
+      "usd_volume": 543135.647439,
+      "n_trades": 2955
     },
     {
       "rank": 6,
-      "market_id": "1130012",
-      "question": "Will United Russia (ER) gain the most seats in the next Russian parliamentary election?",
+      "market_id": "665374",
+      "question": "Will the U.S. invade Iran before 2027?",
       "category": "Geopolitics",
-      "usd_volume": 390124.33072499995,
-      "n_trades": 2430
+      "usd_volume": 520810.8454100004,
+      "n_trades": 2961
     },
     {
       "rank": 7,
-      "market_id": "908713",
-      "question": "Fed rate hike in 2026?",
-      "category": "Macro",
-      "usd_volume": 253920.41506499998,
-      "n_trades": 1471
+      "market_id": "1088476",
+      "question": "Will Ben Shelton win the 2026 Men's US Open?",
+      "category": "Other",
+      "usd_volume": 414579.99916100013,
+      "n_trades": 5451
     },
     {
       "rank": 8,
-      "market_id": "663583",
-      "question": "Will the Iranian regime fall before 2027?",
-      "category": "Other",
-      "usd_volume": 227937.87255999987,
-      "n_trades": 805
+      "market_id": "1193093",
+      "question": "Will Ulf Kristersson be the next Prime Minister of Sweden?",
+      "category": "Politics",
+      "usd_volume": 407266.4293609999,
+      "n_trades": 4921
     },
     {
       "rank": 9,
       "market_id": "601826",
       "question": "Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
       "category": "Politics",
-      "usd_volume": 215605.75309700012,
-      "n_trades": 2087
+      "usd_volume": 392750.1820779999,
+      "n_trades": 3410
     },
     {
       "rank": 10,
-      "market_id": "701502",
-      "question": "Will Bitcoin dip to $45,000 by December 31, 2026?",
-      "category": "Crypto",
-      "usd_volume": 185882.131137,
-      "n_trades": 491
+      "market_id": "1130012",
+      "question": "Will United Russia (ER) gain the most seats in the next Russian parliamentary election?",
+      "category": "Geopolitics",
+      "usd_volume": 366901.28700199997,
+      "n_trades": 3148
     },
     {
       "rank": 11,
-      "market_id": "701503",
-      "question": "Will Bitcoin dip to $35,000 by December 31, 2026?",
-      "category": "Crypto",
-      "usd_volume": 182521.974743,
-      "n_trades": 207
+      "market_id": "601825",
+      "question": "Will Renan Santos win the 2026 Brazilian presidential election?",
+      "category": "Politics",
+      "usd_volume": 340217.892421,
+      "n_trades": 1833
     },
     {
       "rank": 12,
-      "market_id": "666861",
-      "question": "Trump out as President before 2027?",
-      "category": "Politics",
-      "usd_volume": 174920.518511,
-      "n_trades": 483
+      "market_id": "567621",
+      "question": "Will China invade Taiwan by end of 2026?",
+      "category": "Geopolitics",
+      "usd_volume": 301438.40957200003,
+      "n_trades": 1297
     },
     {
       "rank": 13,
-      "market_id": "601819",
-      "question": "Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
-      "category": "Politics",
-      "usd_volume": 174234.35083699998,
-      "n_trades": 1213
+      "market_id": "1088472",
+      "question": "Will Carlos Alcaraz win the 2026 Men's US Open?",
+      "category": "Other",
+      "usd_volume": 301074.42284300004,
+      "n_trades": 3064
     },
     {
       "rank": 14,
-      "market_id": "1088475",
-      "question": "Will Alexander Zverev win the 2026 Men's US Open?",
+      "market_id": "1088656",
+      "question": "Will Elena Rybakina win the 2026 Women\u2019s US Open?",
       "category": "Other",
-      "usd_volume": 166512.06684500002,
-      "n_trades": 1901
+      "usd_volume": 266489.9817769999,
+      "n_trades": 2658
     },
     {
       "rank": 15,
-      "market_id": "703257",
-      "question": "Will the US confirm that aliens exist before 2027?",
-      "category": "Other",
-      "usd_volume": 137637.46706800006,
-      "n_trades": 759
+      "market_id": "908713",
+      "question": "Fed rate hike in 2026?",
+      "category": "Macro",
+      "usd_volume": 243474.26804999996,
+      "n_trades": 1574
     },
     {
       "rank": 16,
-      "market_id": "616902",
-      "question": "Will no Fed rate cuts happen in 2026?",
-      "category": "Macro",
-      "usd_volume": 130256.97206300001,
-      "n_trades": 1485
+      "market_id": "562802",
+      "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
+      "category": "Politics",
+      "usd_volume": 226993.379082,
+      "n_trades": 892
     },
     {
       "rank": 17,
-      "market_id": "1088478",
-      "question": "Will Daniil Medvedev win the 2026 Men's US Open?",
+      "market_id": "1088652",
+      "question": "Will Aryna Sabalenka win the 2026 Women\u2019s US Open?",
       "category": "Other",
-      "usd_volume": 119167.17950500001,
-      "n_trades": 1975
+      "usd_volume": 221608.48985399993,
+      "n_trades": 2894
     },
     {
       "rank": 18,
-      "market_id": "559651",
-      "question": "Xi Jinping out before 2027?",
-      "category": "Other",
-      "usd_volume": 115028.40503299999,
-      "n_trades": 841
+      "market_id": "562803",
+      "question": "Will the Republican Party control the House after the 2026 Midterm elections?",
+      "category": "Politics",
+      "usd_volume": 210885.97373,
+      "n_trades": 484
     },
     {
       "rank": 19,
-      "market_id": "1130016",
-      "question": "Will New People (NL) gain the most seats in the next Russian parliamentary election?",
-      "category": "Politics",
-      "usd_volume": 110540.69546100004,
-      "n_trades": 1610
+      "market_id": "703257",
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "category": "Other",
+      "usd_volume": 208370.92409600003,
+      "n_trades": 1168
     },
     {
       "rank": 20,
-      "market_id": "561229",
-      "question": "Will JD Vance win the 2028 US Presidential Election?",
+      "market_id": "665513",
+      "question": "Friedrich Merz out as Chancellor of Germany before 2027?",
       "category": "Politics",
-      "usd_volume": 104711.64683199995,
-      "n_trades": 689
+      "usd_volume": 202497.00736599992,
+      "n_trades": 999
     },
     {
       "rank": 21,
       "market_id": "562831",
       "question": "2026 Balance of Power: R Senate, R House",
       "category": "Politics",
-      "usd_volume": 94709.32788699999,
-      "n_trades": 606
+      "usd_volume": 168286.50690500002,
+      "n_trades": 637
     },
     {
       "rank": 22,
-      "market_id": "665513",
-      "question": "Friedrich Merz out as Chancellor of Germany before 2027?",
-      "category": "Politics",
-      "usd_volume": 90061.38046299998,
-      "n_trades": 440
-    },
-    {
-      "rank": 23,
-      "market_id": "898412",
-      "question": "Will Kimi Antonelli be the 2026 F1 Drivers' Champion?",
-      "category": "Sports",
-      "usd_volume": 87754.35952000003,
-      "n_trades": 1054
-    },
-    {
-      "rank": 24,
-      "market_id": "701496",
-      "question": "Will Bitcoin reach $100,000 by December 31, 2026?",
-      "category": "Crypto",
-      "usd_volume": 84886.034316,
-      "n_trades": 383
-    },
-    {
-      "rank": 25,
-      "market_id": "616903",
-      "question": "Will 1 Fed rate cut happen in 2026?",
-      "category": "Macro",
-      "usd_volume": 82037.551794,
-      "n_trades": 1139
-    },
-    {
-      "rank": 26,
-      "market_id": "1193094",
-      "question": "Will Magdalena Andersson be the next Prime Minister of Sweden?",
-      "category": "Politics",
-      "usd_volume": 81147.53641100001,
-      "n_trades": 1457
-    },
-    {
-      "rank": 27,
-      "market_id": "676829",
-      "question": "Will GPT-6 be released by December 31, 2026?",
-      "category": "Other",
-      "usd_volume": 79069.02371899999,
-      "n_trades": 892
-    },
-    {
-      "rank": 28,
       "market_id": "682705",
       "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
       "category": "Geopolitics",
-      "usd_volume": 77024.770013,
-      "n_trades": 732
+      "usd_volume": 151700.932403,
+      "n_trades": 947
+    },
+    {
+      "rank": 23,
+      "market_id": "663583",
+      "question": "Will the Iranian regime fall before 2027?",
+      "category": "Other",
+      "usd_volume": 142952.671601,
+      "n_trades": 848
+    },
+    {
+      "rank": 24,
+      "market_id": "666861",
+      "question": "Trump out as President before 2027?",
+      "category": "Politics",
+      "usd_volume": 141096.327302,
+      "n_trades": 366
+    },
+    {
+      "rank": 25,
+      "market_id": "1130016",
+      "question": "Will New People (NL) gain the most seats in the next Russian parliamentary election?",
+      "category": "Politics",
+      "usd_volume": 135953.05711199998,
+      "n_trades": 2380
+    },
+    {
+      "rank": 26,
+      "market_id": "1088659",
+      "question": "Will Qinwen Zheng win the 2026 Women\u2019s US Open?",
+      "category": "Other",
+      "usd_volume": 124906.374784,
+      "n_trades": 1105
+    },
+    {
+      "rank": 27,
+      "market_id": "608540",
+      "question": "Will Kylian Mbapp\u00e9 win the 2026 Ballon d'Or?",
+      "category": "Other",
+      "usd_volume": 119827.17793699997,
+      "n_trades": 3659
+    },
+    {
+      "rank": 28,
+      "market_id": "811719",
+      "question": "Will the Swedish Social Democratic Party (S) win the most seats in the 2026 Swedish parliamentary election?",
+      "category": "Politics",
+      "usd_volume": 119677.56924099998,
+      "n_trades": 677
     },
     {
       "rank": 29,
-      "market_id": "1088476",
-      "question": "Will Ben Shelton win the 2026 Men's US Open?",
-      "category": "Other",
-      "usd_volume": 73760.57414200001,
-      "n_trades": 1850
+      "market_id": "701502",
+      "question": "Will Bitcoin dip to $45,000 by December 31, 2026?",
+      "category": "Crypto",
+      "usd_volume": 105567.48569600002,
+      "n_trades": 364
     },
     {
       "rank": 30,
-      "market_id": "1088477",
-      "question": "Will Taylor Fritz win the 2026 Men's US Open?",
-      "category": "Other",
-      "usd_volume": 71043.936424,
-      "n_trades": 1194
+      "market_id": "561234",
+      "question": "Will Marco Rubio win the 2028 US Presidential Election?",
+      "category": "Politics",
+      "usd_volume": 101053.73277999999,
+      "n_trades": 698
     }
   ],
-  "generated_at": "2026-09-07T16:04:53+00:00",
+  "generated_at": "2026-09-14T16:27:54+00:00",
   "source": "read_parquet('H:/Research/10. Prediction/data/blockchain/trades_parquet/**/*.parquet', hive_partitioning=1)",
   "notes": "Top 5 resolved-trade markets by USD volume in the most recent complete week. Market questions come from polymarket_markets.csv (static snapshot); new markets not in that file will appear with question=null."
 }
