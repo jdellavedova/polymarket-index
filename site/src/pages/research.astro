@@ -64,11 +64,26 @@ const peerReviewed = [
     summary: "Cross-sectional momentum is conventionally attributed to slow-moving institutional capital. Using investor-class flow data we show the opposite: households are the trend-followers buying recent winners, while institutions are the contrarians providing liquidity to those flows. The role reversal helps reconcile competing behavioral and intermediary-based explanations for the momentum premium.",
   },
   {
-    title: "Financial Uncertainty and the Cross Section of Cryptocurrency Returns",
+    title: "Financial Uncertainty and the Cross-Section of Cryptocurrency Returns",
     authors: "Colak, G., Della Vedova, J., Foley, S., and Mai, S. T.",
-    venue: "Journal of Banking and Finance (forthcoming)",
+    venue: "Journal of Banking and Finance (2026), 188, 107717",
     rank: "ABS 3 · ABDC A*",
     summary: "We identify financial uncertainty — the unforecastable component of multiple financial indicators — as the primary driver of cryptocurrency return premia. Coins with greater exposure to financial uncertainty earn higher subsequent returns; this premium is distinct from macro, real, and policy uncertainty, and is not captured by VIX alone. Portfolio analysis yields a financial uncertainty premium of approximately 21% per year.",
+  },
+  {
+    title: "The 52-Week High Liquidity Mirage: How Behavioral Convergence Impairs Price Discovery",
+    authors: "Della Vedova, J., Gao, M., Grant, A. R., Westerholm, P. J., and Bliss, B. A.",
+    venue: "Journal of Banking and Finance (forthcoming)",
+    rank: "ABS 3 · ABDC A*",
+    summary: "Do trading patterns at the 52-week high reflect investor disagreement or behavioral convergence? Using StockTwits sentiment, TAQ microstructure data, and machine-learning informed trading measures for S&P 500 stocks, we document agreement rather than disagreement. Belief dispersion falls while both retail and institutional investors reduce trading and shift toward selling. Anchoring to the 52-week high generates a liquidity mirage: effective spreads narrow and depth increases even as informed-trading intensity declines. Apparent liquidity masks weaker information incorporation, and stocks underperform momentum benchmarks by 20 to 30 basis points over five days.",
+  },
+  {
+    title: "The 1% Problem: LLM Orchestration for Rare Event Detection in Manufacturing Supply Chains",
+    authors: "Dang, J., Della Vedova, J., and Yang, Y.",
+    venue: "International Journal of Production Economics (2026), 300, 110119",
+    rank: "ABS 3 · ABDC A",
+    href: "https://doi.org/10.1016/j.ijpe.2026.110119",
+    summary: "Manufacturing quality failures occur at around 1% prevalence yet carry outsized operational consequences. Extreme class imbalance defeats traditional statistical methods, and machine learning deployment requires expertise many organizations lack. We position large language models as orchestration agents that guide feature engineering, clustering, ensemble modeling, and SHAP-to-action translation while keeping every computation deterministic, as regulated environments require. On 622,924 aerospace manufacturing transactions, F1 scores improve by 5 to 18 percentage points across quality escapes, component defects, and delivery delays, and the gains hold across three locally deployable open-weight LLMs.",
   },
   {
     title: "Equity Borrowing Constraints and the Informed Trading Strategies of Short Sellers",
@@ -92,20 +107,6 @@ const otherWorking = [
     authors: "Della Vedova, J. (2026)",
     venue: "Working paper",
     summary: "The disposition effect requires a reference price to classify a position as a gain or a loss, and for multi-purchase positions the literature defaults to the volume-weighted average price (VWAP). Using population-level data on household investors, we show the relevant reference depends on how the position was built: investors who buy below their running cost anchor on the last purchase price, while investors who buy above anchor on the VWAP, consistent with Thaler's hedonic editing. The correction reverses two canonical findings: VWAP masks a 249-basis-point welfare cost, and experienced investors retain rather than shed their bias.",
-    href: SSRN_AUTHOR,
-  },
-  {
-    title: "When Everyone Agrees: How the 52 Week High Creates a Liquidity Barrier",
-    authors: "Della Vedova, J., Gao, M., Grant, A. R., Westerholm, P. J., and Bliss, B. A.",
-    venue: "Journal of Banking and Finance, R&R (1st round)",
-    summary: "How does investor agreement at the 52-week high affect market quality? Using social media sentiment, intraday TAQ data, and investor-class order flows for all S&P 500 stocks, we document consensus: both retail and institutional investors predominantly sell at the 52-week high. The consensus tightens spreads by 15 basis points and increases sell-side liquidity by 16%, while informed trading falls by 30%. The high creates a liquidity barrier that reduces subsequent five-day returns by 30 basis points, challenging the conventional wisdom that high liquidity universally improves market quality.",
-    href: SSRN_AUTHOR,
-  },
-  {
-    title: "The 0.1% Problem: How Multi-Stage LLM Pipelines Can Transform Rare Event Detection in Manufacturing",
-    authors: "Della Vedova, J., Dang, J., and Yang, Y.",
-    venue: "International Journal of Production Economics, R&R (2nd round)",
-    summary: "Manufacturing firms face substantial losses from rare supplier quality failures, yet lack accessible tools to predict them. We develop a four-stage AI pipeline that integrates large language models into machine learning workflows, automating feature engineering from raw supplier data, unsupervised risk segmentation, ensemble model configuration for imbalanced prediction, and interpretability analysis with actionable recommendations. Validation on 622,924 aerospace transactions with class imbalance up to 139:1 shows significant improvements in F1, ROC-AUC, and PR-AUC over manual approaches, enabling organizations without data science expertise to deploy predictive supplier risk detection.",
     href: SSRN_AUTHOR,
   },
   {
@@ -177,6 +178,7 @@ const researchJsonLd = graph(
         <div class="rs-card-title">{p.title}</div>
         <div class="rs-card-meta">{p.authors} &middot; {p.venue}</div>
         {p.summary && <p class="rs-card-summary">{p.summary}</p>}
+        {p.href && <a class="rs-card-link" href={p.href}>DOI &rarr;</a>}
       </article>
     ))}
   </div>
