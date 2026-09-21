@@ -73,6 +73,13 @@
       "format": "Quoted expert commentary (Kaitlyn Tiffany, staff writer). Recommendations cited: excess-accuracy screening, bet-size limits in riggable markets, no single-source resolution."
     },
     {
+      "date": "2026-07-14",
+      "outlet": "GamingToday",
+      "headline": "Prediction Markets Are Booming. Most of Their Markets Are Still Empty.",
+      "url": "https://www.gamingtoday.com/news/prediction-markets-booming-most-markets-are-empty/",
+      "format": "Reported (John Cole Dileva; indexed by Google News as 'Prediction Markets Hit Record Volume, But Still Face Liquidity Gap'). Cites Della Vedova's bot classification and bot profits across market sizes, via the CNBC analysis."
+    },
+    {
       "date": "2026-07-03",
       "outlet": "BeInCrypto",
       "headline": "45,000 Polymarket Markets Recorded Zero Trading Volume, CNBC Analysis Shows",
@@ -85,6 +92,13 @@
       "headline": "Prediction markets mostly have thinly traded contracts — quotes Della Vedova; analysis cross-checked against his 222 million-trade on-chain dataset",
       "url": "https://www.cnbc.com/2026/07/02/prediction-markets-mostly-have-thinly-traded-contracts-.html",
       "format": "Reported data analysis (Ananya Chetia). Quoted on bot behavior across market sizes; over 80% of volume in sub-$10,000 markets comes from bots."
+    },
+    {
+      "date": "2026-07-02",
+      "outlet": "Briefs Finance",
+      "headline": "70% of Polymarket Markets See Under $10,000 in Volume",
+      "url": "https://www.briefs.co/news/most-polymarket-markets-see-under-10000-in-volume/",
+      "format": "Reported pickup of the CNBC analysis (Nate Gregory). Quotes Della Vedova on bot profits in thin and deep markets."
     },
     {
       "date": "2026-06-17",
