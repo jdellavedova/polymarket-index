@@ -1,58 +1,58 @@
-DV-PMI WEEKLY DIGEST / Week of 2026-09-07
+DV-PMI WEEKLY DIGEST / Week of 2026-09-14
 ============================================================
 
-Polymarket traders moved $516 million this week across 16.7 million individual trades.
+Polymarket traders moved $541 million this week, with the biggest action on "Will United Russia (ER) gain the most seats in the next Russian parliamentary election?".
 
 ------------------------------------------------------------
 THIS WEEK VS LAST
 ------------------------------------------------------------
-  Total USD volume        $516M  (+9.7% WoW)
-  Total trades            16.7M  (-1.5% WoW)
-  Active wallets          121,388  (-6.4% WoW)
-  Bot share of trades     64.8%  (-1.7pp WoW)
+  Total USD volume        $541M  (+4.8% WoW)
+  Total trades            16.0M  (-4.3% WoW)
+  Active wallets          120,607  (-0.6% WoW)
+  Bot share of trades     63.4%  (-1.4pp WoW)
 
 ------------------------------------------------------------
 INDEX SCOREBOARD (ranked by stretch vs own 52-week history)
 ------------------------------------------------------------
-  Bot Share of Volume                       64.8%   4w avg    67.1%   z -2.58
-  Longshot/Favorite Gap                    +0.013   4w avg   +0.021   z +1.21
-  Market Efficiency (Prelec R2)             0.991   4w avg    0.994   z +0.54
-  Execution Gap (bot vs retail)            +0.068   4w avg   +0.019   z +0.20
-  Probability Weighting (non-bot alpha)     0.915   4w avg    0.970   z -0.07
+  Bot Share of Volume                       63.4%   4w avg    65.4%   z -2.54
+  Longshot/Favorite Gap                    +0.023   4w avg   +0.020   z +1.71
+  Market Efficiency (Prelec R2)             0.995   4w avg    0.994   z +0.76
+  Probability Weighting (non-bot alpha)     0.963   4w avg    0.964   z +0.36
+  Execution Gap (bot vs retail)            +0.039   4w avg   +0.031   z -0.06
 
 ------------------------------------------------------------
 THE STORY
 ------------------------------------------------------------
-Traders moved $516 million through Polymarket in the week of 2026-09-07, across 16.7 million individual trades. Algorithmic wallets accounted for 65% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 35%.
+Traders moved $541 million through Polymarket in the week of 2026-09-14, across 16.0 million individual trades. Algorithmic wallets accounted for 63% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 37%.
 
-The most-traded market was "Will Alexander Zverev win the 2026 Men's US Open?", pulling in $837K of volume. Politics dominated the week's attention.
+The most-traded market was "Will United Russia (ER) gain the most seats in the next Russian parliamentary election?", pulling in $7 million of volume. Politics dominated the week's attention.
 
-The usual pattern held: algorithmic traders made $14K (+94 bps on volume) while retail traders lost $10K (-939 bps).
+Both sides made money this week. Bots collected $8K (+100 bps); retail collected $76 (+25 bps).
 
 ------------------------------------------------------------
 MOST-TRADED MARKETS THIS WEEK
 ------------------------------------------------------------
-  1. $837K  Will Alexander Zverev win the 2026 Men's US Open? [Other]
-  2. $739K  Putin out as President of Russia by end of 2026? [Geopolitics]
-  3. $588K  Will Magdalena Andersson be the next Prime Minister of Sweden? [Politics]
-  4. $549K  Clarity Act signed into law in 2026? [Other]
-  5. $543K  Will Luiz Inácio Lula da Silva win the 2026 Brazilian presidential election? [Politics]
+  1. $7M  Will United Russia (ER) gain the most seats in the next Russian parliamentary election? [Geopolitics]
+  2. $3M  Clarity Act signed into law in 2026? [Other]
+  3. $1M  Will New People (NL) gain the most seats in the next Russian parliamentary election? [Politics]
+  4. $992K  Will the U.S. invade Iran before 2027? [Geopolitics]
+  5. $822K  Will China invade Taiwan by end of 2026? [Geopolitics]
 
 ------------------------------------------------------------
 WHO MADE MONEY (resolved trades only)
 ------------------------------------------------------------
-  Active Retail         -$10K   (-939 bps on volume)
-  Bot                    $14K   (+94 bps on volume)
-  Casual                 $149   (+245 bps on volume)
-  One-Shot               $123   (+634 bps on volume)
-  Sophisticated          $287   (+641 bps on volume)
-  unclassified           -$4K   (-81 bps on volume)
+  Active Retail           $76   (+25 bps on volume)
+  Bot                     $8K   (+100 bps on volume)
+  Casual                 -$1K   (-2200 bps on volume)
+  One-Shot              -$108   (-777 bps on volume)
+  Sophisticated         -$306   (-2235 bps on volume)
+  unclassified           -$6K   (-152 bps on volume)
 
 ------------------------------------------------------------
 SURVEILLANCE
 ------------------------------------------------------------
   Event-level informed-trading test:    11 trader-event pairs survive at 5% (0 on placebo)
-  Accuracy-outlier wallets active this week: 565 of 10,485
+  Accuracy-outlier wallets active this week: 457 of 10,485
   Sustained-accuracy outliers (skill screen): 10,485 of 705,883 tested (1.49%)
   After strict statistical correction:  1,558
   Flags mark statistical patterns, not proof; the wallet-level screen measures sustained skill, not information.
@@ -63,4 +63,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-09-14T17:03:33+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-09-21T21:08:09+00:00)
