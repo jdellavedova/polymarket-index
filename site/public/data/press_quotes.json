@@ -1,6 +1,12 @@
 {
   "quotes": [
     {
+      "topic": "Wildfire contracts and traders who cause the outcome",
+      "quote": "This would be a form of fraud. And because with these prediction markets, who’s trading is known, if you make a bet and light a fire, we can find out who did that.",
+      "context": "From Times of San Diego (August 16, 2026), on nine senators asking the CFTC to restrict wildfire contracts. The markets most exposed to a trader causing the outcome are small, because few counterparties will take the other side, which limits the money to be made.",
+      "citation_line": "Joshua Della Vedova, Associate Professor of Finance, University of San Diego. Source: Times of San Diego, ‘You can’t predict fire. But you can trade on it’ (August 16, 2026)."
+    },
+    {
       "topic": "Oracle tampering ('outsider trading') in prediction markets",
       "quote": "Whether the confidence comes from an inside line or a rigged sensor, it shows up the same way: accuracy the market's own prices cannot explain. Screening for excess accuracy catches both. And no market should resolve from a single number at a single source.",
       "context": "From The Atlantic (July 20, 2026), on the Paris 'hair-dryer incident': the excess-accuracy method built for insider detection also flags traders who alter outcomes rather than forecast them.",
@@ -39,6 +45,20 @@
   ],
   "media_mentions": [
     {
+      "date": "2026-08-18",
+      "outlet": "Stocktonia",
+      "headline": "'You can’t predict fire. But you can trade on it': California senators warn bets could encourage arson",
+      "url": "https://stocktonia.org/news/environment/2026/08/18/prediction-market-senators-wildfires-arson/",
+      "format": "Syndicated (Times of San Diego)"
+    },
+    {
+      "date": "2026-08-16",
+      "outlet": "Times of San Diego",
+      "headline": "'You can’t predict fire. But you can trade on it' – Senators warn prediction market activity on wildfires could encourage arson",
+      "url": "https://timesofsandiego.com/politics/2026/08/16/prediction-market-senators-wildfires-arson/",
+      "format": "Quoted expert commentary (Alysa Horton). On the senators' letter to the CFTC about wildfire contracts: markets where a trader could cause the outcome are small because few counterparties will take the other side, and on-chain trading records make such trades traceable."
+    },
+    {
       "date": "2026-07-20",
       "outlet": "Bloomberg Businessweek",
       "headline": "The Big Take: Prediction Markets Are Minting a New Type of Insider Trader — quotes Della Vedova on where private-information trading concentrates",
@@ -53,11 +73,25 @@
       "format": "Quoted expert commentary (Kaitlyn Tiffany, staff writer). Recommendations cited: excess-accuracy screening, bet-size limits in riggable markets, no single-source resolution."
     },
     {
+      "date": "2026-07-03",
+      "outlet": "BeInCrypto",
+      "headline": "45,000 Polymarket Markets Recorded Zero Trading Volume, CNBC Analysis Shows",
+      "url": "https://beincrypto.com/polymarket-closed-markets-low-volume-cnbc/",
+      "format": "Reported pickup of the CNBC analysis (Kamina Bashir; carried by Yahoo Finance). Quotes Della Vedova on bot volume in sub-$10,000 markets."
+    },
+    {
       "date": "2026-07-02",
       "outlet": "CNBC",
       "headline": "Prediction markets mostly have thinly traded contracts — quotes Della Vedova; analysis cross-checked against his 222 million-trade on-chain dataset",
       "url": "https://www.cnbc.com/2026/07/02/prediction-markets-mostly-have-thinly-traded-contracts-.html",
       "format": "Reported data analysis (Ananya Chetia). Quoted on bot behavior across market sizes; over 80% of volume in sub-$10,000 markets comes from bots."
+    },
+    {
+      "date": "2026-06-17",
+      "outlet": "Bloomberg",
+      "headline": "Polymarket Bets on Iran Deal Fuel Fresh Insider-Trading Fears",
+      "url": "https://www.bloomberg.com/graphics/2026-polymarket-bets-iran-war-insider-trading/",
+      "format": "Graphics feature"
     },
     {
       "date": "2026-05-26",
@@ -67,13 +101,6 @@
       "format": "Eye on the Market research note (Michael Cembalest, Chairman of Market and Investment Strategy, J.P. Morgan Asset & Wealth Management). Both papers cited by name in footnotes; scatter chart sourced directly to Della Vedova (University of San Diego), 2026."
     },
     {
-      "date": "2026-05-04",
-      "outlet": "The Outraged Consumer",
-      "headline": "Prediction markets pitched as side hustle — but most traders are losing money",
-      "url": "https://www.theoutragedconsumer.com/p/prediction-markets-pitched-as-side",
-      "format": "Reported (Substack)"
-    },
-    {
       "date": "2026-05-05",
       "outlet": "Blockhead",
       "headline": "The House Always Wins: Who's Really Profiting From Prediction Markets",
@@ -81,18 +108,18 @@
       "format": "Reported feature"
     },
     {
+      "date": "2026-05-04",
+      "outlet": "The Outraged Consumer",
+      "headline": "Prediction markets pitched as side hustle — but most traders are losing money",
+      "url": "https://www.theoutragedconsumer.com/p/prediction-markets-pitched-as-side",
+      "format": "Reported (Substack)"
+    },
+    {
       "date": "2026-05-01",
       "outlet": "CNBC",
       "headline": "Finance Professor Josh Della Vedova talks new report bots are outperforming traders in prediction markets",
       "url": "https://www.cnbc.com/video/2026/05/01/finance-professor-josh-della-vedova-talks-new-report-bots-are-outperforming-traders-in-prediction-markets.html",
       "format": "On-camera segment"
-    },
-    {
-      "date": "2026-04-29",
-      "outlet": "CryptoRank",
-      "headline": "Polymarket Users Lose Money as Automated Bots Steal Profits: A Shocking Study",
-      "url": "https://cryptorank.io/news/feed/490b8-polymarket-users-lose-money-bots",
-      "format": "Wire pickup"
     },
     {
       "date": "2026-04-30",
@@ -151,18 +178,18 @@
       "format": "Wire pickup"
     },
     {
+      "date": "2026-04-29",
+      "outlet": "CryptoRank",
+      "headline": "Polymarket Users Lose Money as Automated Bots Steal Profits: A Shocking Study",
+      "url": "https://cryptorank.io/news/feed/490b8-polymarket-users-lose-money-bots",
+      "format": "Wire pickup"
+    },
+    {
       "date": "2026-04-03",
       "outlet": "Medium (Federico M. Glancszpigel)",
       "headline": "Debunking the Polymarket Dream",
       "url": "https://fglancszpigel.medium.com/debunking-the-polymarket-dream-d67ba3922e4b",
       "format": "Independent research analysis"
-    },
-    {
-      "date": "2026-06-17",
-      "outlet": "Bloomberg",
-      "headline": "Polymarket Bets on Iran Deal Fuel Fresh Insider-Trading Fears",
-      "url": "https://www.bloomberg.com/graphics/2026-polymarket-bets-iran-war-insider-trading/",
-      "format": "Graphics feature"
     }
   ],
   "speaking": [],
