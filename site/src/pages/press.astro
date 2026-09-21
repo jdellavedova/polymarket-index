@@ -5,6 +5,12 @@ import MentionedIn from "../components/redesign/MentionedIn.astro";
 import press from "../../public/data/press_quotes.json";
 
 const allQuotes = press.quotes;
+// The CNBC on-camera segment is the featured video above the list; everything
+// else splits into original coverage and folded syndication/pickups.
+const FEATURED_VIDEO = "https://www.cnbc.com/video/2026/05/01/";
+const listed = press.media_mentions.filter((m: any) => !(m.url ?? "").startsWith(FEATURED_VIDEO));
+const originals = listed.filter((m: any) => m.tier !== "pickup");
+const pickups = listed.filter((m: any) => m.tier === "pickup");
 const commentTopics = [
   "Prediction-market microstructure",
   "Polymarket and Kalshi market integrity",
@@ -106,9 +112,9 @@ const commentTopics = [
   {press.media_mentions.length === 0 && (
     <p class="bf-section-sub">Recent media mentions will appear here as pieces run.</p>
   )}
-  {press.media_mentions.length > 0 && (
+  {originals.length > 0 && (
     <div class="pr-media-list">
-      {press.media_mentions.filter(m => m.outlet !== "CNBC").map(m => (
+      {originals.map(m => (
         <a class="pr-media-row" href={m.url ?? "#"}>
           <span class="pr-media-date">{m.date}</span>
           <span class="pr-media-outlet">{m.outlet}</span>
@@ -117,6 +123,21 @@ const commentTopics = [
         </a>
       ))}
     </div>
+  )}
+  {pickups.length > 0 && (
+    <details class="pr-pickups">
+      <summary>Syndication and pickups ({pickups.length})</summary>
+      <div class="pr-media-list">
+        {pickups.map(m => (
+          <a class="pr-media-row" href={m.url ?? "#"}>
+            <span class="pr-media-date">{m.date}</span>
+            <span class="pr-media-outlet">{m.outlet}</span>
+            <span class="pr-media-headline">{m.headline}</span>
+            <span class="pr-media-arrow">&rarr;</span>
+          </a>
+        ))}
+      </div>
+    </details>
   )}
 
   <MentionedIn />
@@ -149,3 +170,20 @@ const commentTopics = [
 
   <AuthorityStrip />
 </Base>
+
+<style>
+  .pr-pickups { margin: 4px 0 24px; }
+  .pr-pickups summary {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    width: fit-content;
+    padding: 6px 0;
+  }
+  .pr-pickups summary:hover { color: var(--founders); }
+  .pr-pickups[open] summary { margin-bottom: 8px; }
+</style>

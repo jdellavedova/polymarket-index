@@ -49,161 +49,184 @@
       "outlet": "Stocktonia",
       "headline": "'You can’t predict fire. But you can trade on it': California senators warn bets could encourage arson",
       "url": "https://stocktonia.org/news/environment/2026/08/18/prediction-market-senators-wildfires-arson/",
-      "format": "Syndicated (Times of San Diego)"
+      "format": "Syndicated (Times of San Diego)",
+      "tier": "pickup"
     },
     {
       "date": "2026-08-16",
       "outlet": "Times of San Diego",
       "headline": "'You can’t predict fire. But you can trade on it' – Senators warn prediction market activity on wildfires could encourage arson",
       "url": "https://timesofsandiego.com/politics/2026/08/16/prediction-market-senators-wildfires-arson/",
-      "format": "Quoted expert commentary (Alysa Horton). On the senators' letter to the CFTC about wildfire contracts: markets where a trader could cause the outcome are small because few counterparties will take the other side, and on-chain trading records make such trades traceable."
+      "format": "Quoted expert commentary (Alysa Horton). On the senators' letter to the CFTC about wildfire contracts: markets where a trader could cause the outcome are small because few counterparties will take the other side, and on-chain trading records make such trades traceable.",
+      "tier": "original"
     },
     {
       "date": "2026-07-20",
       "outlet": "Bloomberg Businessweek",
       "headline": "The Big Take: Prediction Markets Are Minting a New Type of Insider Trader — quotes Della Vedova on where private-information trading concentrates",
       "url": "https://www.bloomberg.com/graphics/2026-polymarket-traders-who-knew-the-future/",
-      "format": "Quoted expert commentary (Denitsa Tsekova and Leonardo Nicoletti; August 2026 issue). Credits the method for categorizing informed trading; category ordering (vote/committee markets highest, financial markets lowest) consistent with the paper's MNPI taxonomy."
+      "format": "Quoted expert commentary (Denitsa Tsekova and Leonardo Nicoletti; August 2026 issue). Credits the method for categorizing informed trading; category ordering (vote/committee markets highest, financial markets lowest) consistent with the paper's MNPI taxonomy.",
+      "tier": "original"
     },
     {
       "date": "2026-07-20",
       "outlet": "The Atlantic",
       "headline": "The 'Hair-Dryer Incident' Is Just the Start — quotes Della Vedova on detecting and designing against 'outsider trading' in prediction markets",
       "url": "https://www.theatlantic.com/technology/2026/07/prediction-market-outsider-trading/687975/",
-      "format": "Quoted expert commentary (Kaitlyn Tiffany, staff writer). Recommendations cited: excess-accuracy screening, bet-size limits in riggable markets, no single-source resolution."
+      "format": "Quoted expert commentary (Kaitlyn Tiffany, staff writer). Recommendations cited: excess-accuracy screening, bet-size limits in riggable markets, no single-source resolution.",
+      "tier": "original"
     },
     {
       "date": "2026-07-14",
       "outlet": "GamingToday",
       "headline": "Prediction Markets Are Booming. Most of Their Markets Are Still Empty.",
       "url": "https://www.gamingtoday.com/news/prediction-markets-booming-most-markets-are-empty/",
-      "format": "Reported (John Cole Dileva; indexed by Google News as 'Prediction Markets Hit Record Volume, But Still Face Liquidity Gap'). Cites Della Vedova's bot classification and bot profits across market sizes, via the CNBC analysis."
+      "format": "Reported (John Cole Dileva; indexed by Google News as 'Prediction Markets Hit Record Volume, But Still Face Liquidity Gap'). Cites Della Vedova's bot classification and bot profits across market sizes, via the CNBC analysis.",
+      "tier": "pickup"
     },
     {
       "date": "2026-07-03",
       "outlet": "BeInCrypto",
       "headline": "45,000 Polymarket Markets Recorded Zero Trading Volume, CNBC Analysis Shows",
       "url": "https://beincrypto.com/polymarket-closed-markets-low-volume-cnbc/",
-      "format": "Reported pickup of the CNBC analysis (Kamina Bashir; carried by Yahoo Finance). Quotes Della Vedova on bot volume in sub-$10,000 markets."
+      "format": "Reported pickup of the CNBC analysis (Kamina Bashir; carried by Yahoo Finance). Quotes Della Vedova on bot volume in sub-$10,000 markets.",
+      "tier": "pickup"
     },
     {
       "date": "2026-07-02",
       "outlet": "CNBC",
       "headline": "Prediction markets mostly have thinly traded contracts — quotes Della Vedova; analysis cross-checked against his 222 million-trade on-chain dataset",
       "url": "https://www.cnbc.com/2026/07/02/prediction-markets-mostly-have-thinly-traded-contracts-.html",
-      "format": "Reported data analysis (Ananya Chetia). Quoted on bot behavior across market sizes; over 80% of volume in sub-$10,000 markets comes from bots."
+      "format": "Reported data analysis (Ananya Chetia). Quoted on bot behavior across market sizes; over 80% of volume in sub-$10,000 markets comes from bots.",
+      "tier": "original"
     },
     {
       "date": "2026-07-02",
       "outlet": "Briefs Finance",
       "headline": "70% of Polymarket Markets See Under $10,000 in Volume",
       "url": "https://www.briefs.co/news/most-polymarket-markets-see-under-10000-in-volume/",
-      "format": "Reported pickup of the CNBC analysis (Nate Gregory). Quotes Della Vedova on bot profits in thin and deep markets."
+      "format": "Reported pickup of the CNBC analysis (Nate Gregory). Quotes Della Vedova on bot profits in thin and deep markets.",
+      "tier": "pickup"
     },
     {
       "date": "2026-06-17",
       "outlet": "Bloomberg",
       "headline": "Polymarket Bets on Iran Deal Fuel Fresh Insider-Trading Fears",
       "url": "https://www.bloomberg.com/graphics/2026-polymarket-bets-iran-war-insider-trading/",
-      "format": "Graphics feature"
+      "format": "Graphics feature",
+      "tier": "original"
     },
     {
       "date": "2026-05-26",
       "outlet": "J.P. Morgan Private Bank",
       "headline": "Eye on the Market: 'Predation in Prediction Markets' — cites Della Vedova research on execution vs. accuracy and insider trading detection",
       "url": "https://privatebank.jpmorgan.com/nam/en/insights/latest-and-featured/eotm/home-alone",
-      "format": "Eye on the Market research note (Michael Cembalest, Chairman of Market and Investment Strategy, J.P. Morgan Asset & Wealth Management). Both papers cited by name in footnotes; scatter chart sourced directly to Della Vedova (University of San Diego), 2026."
+      "format": "Eye on the Market research note (Michael Cembalest, Chairman of Market and Investment Strategy, J.P. Morgan Asset & Wealth Management). Both papers cited by name in footnotes; scatter chart sourced directly to Della Vedova (University of San Diego), 2026.",
+      "tier": "original"
     },
     {
       "date": "2026-05-05",
       "outlet": "Blockhead",
       "headline": "The House Always Wins: Who's Really Profiting From Prediction Markets",
       "url": "https://www.blockhead.co/2026/05/05/the-house-always-wins-whos-really-profiting-from-prediction-markets/",
-      "format": "Reported feature"
+      "format": "Reported feature",
+      "tier": "original"
     },
     {
       "date": "2026-05-04",
       "outlet": "The Outraged Consumer",
       "headline": "Prediction markets pitched as side hustle — but most traders are losing money",
       "url": "https://www.theoutragedconsumer.com/p/prediction-markets-pitched-as-side",
-      "format": "Reported (Substack)"
+      "format": "Reported (Substack)",
+      "tier": "original"
     },
     {
       "date": "2026-05-01",
       "outlet": "CNBC",
       "headline": "Finance Professor Josh Della Vedova talks new report bots are outperforming traders in prediction markets",
       "url": "https://www.cnbc.com/video/2026/05/01/finance-professor-josh-della-vedova-talks-new-report-bots-are-outperforming-traders-in-prediction-markets.html",
-      "format": "On-camera segment"
+      "format": "On-camera segment",
+      "tier": "original"
     },
     {
       "date": "2026-04-30",
       "outlet": "Bloomberg",
       "headline": "100,000 Polymarket Accounts Booked Four-Figure Losses Since 2025",
       "url": "https://finance.yahoo.com/markets/crypto/articles/100-000-polymarket-accounts-booked-062234759.html",
-      "format": "Reported feature (carried by Yahoo Finance)"
+      "format": "Reported feature (carried by Yahoo Finance)",
+      "tier": "original"
     },
     {
       "date": "2026-04-30",
       "outlet": "Yahoo Finance",
       "headline": "100,000 Polymarket Accounts Booked Four-Figure Losses Since 2025, Bloomberg Finds",
       "url": "https://finance.yahoo.com/markets/crypto/articles/100-000-polymarket-accounts-booked-062234759.html",
-      "format": "Syndicated"
+      "format": "Syndicated",
+      "tier": "pickup"
     },
     {
       "date": "2026-04-30",
       "outlet": "Financial Advisor Magazine",
       "headline": "Most Prediction Market Traders Are Losing Money While Bots Rack Up Gains",
       "url": "https://www.fa-mag.com/news/most-prediction-market-traders-are-losing-money-while-bots-rack-up-gains-86783.html",
-      "format": "Wire pickup"
+      "format": "Wire pickup",
+      "tier": "pickup"
     },
     {
       "date": "2026-04-30",
       "outlet": "Benzinga",
       "headline": "Can You Consistently Win On Prediction Markets? This Study Says 'Probably Not'",
       "url": "https://www.benzinga.com/markets/prediction-markets/26/04/52101404/can-you-consistently-win-on-prediction-markets-this-study-says-probably-not",
-      "format": "Reported"
+      "format": "Reported",
+      "tier": "original"
     },
     {
       "date": "2026-04-30",
       "outlet": "BeInCrypto",
       "headline": "Prediction Markets Yield Losses for Most: Bloomberg Finds",
       "url": "https://beincrypto.com/prediction-market-retail-traders-losses-bloomberg/",
-      "format": "Wire pickup"
+      "format": "Wire pickup",
+      "tier": "pickup"
     },
     {
       "date": "2026-04-30",
       "outlet": "CXO Advisory",
       "headline": "Prediction Versus Execution",
       "url": "https://www.cxoadvisory.com/investing-expertise/prediction-versus-execution/",
-      "format": "Research review"
+      "format": "Research review",
+      "tier": "original"
     },
     {
       "date": "2026-04-30",
       "outlet": "IPO Scanner",
       "headline": "Prediction Market Traders Trail Behind Bots in Lopsided Performance",
       "url": "https://www.iposcanner.ai/news/prediction-market-traders-trail-behind-bots-in-lopsided-performance",
-      "format": "Wire pickup"
+      "format": "Wire pickup",
+      "tier": "pickup"
     },
     {
       "date": "2026-04-30",
       "outlet": "MEXC News",
       "headline": "Polymarket Users Lose Money as Automated Bots Steal Profits",
       "url": "https://www.mexc.com/news/1061296",
-      "format": "Wire pickup"
+      "format": "Wire pickup",
+      "tier": "pickup"
     },
     {
       "date": "2026-04-29",
       "outlet": "CryptoRank",
       "headline": "Polymarket Users Lose Money as Automated Bots Steal Profits: A Shocking Study",
       "url": "https://cryptorank.io/news/feed/490b8-polymarket-users-lose-money-bots",
-      "format": "Wire pickup"
+      "format": "Wire pickup",
+      "tier": "pickup"
     },
     {
       "date": "2026-04-03",
       "outlet": "Medium (Federico M. Glancszpigel)",
       "headline": "Debunking the Polymarket Dream",
       "url": "https://fglancszpigel.medium.com/debunking-the-polymarket-dream-d67ba3922e4b",
-      "format": "Independent research analysis"
+      "format": "Independent research analysis",
+      "tier": "original"
     }
   ],
   "speaking": [],
