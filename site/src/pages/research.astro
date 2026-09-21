@@ -153,47 +153,117 @@ const researchJsonLd = graph(
 
   <h2 class="rs-section-h">DV-PMI program</h2>
   <p class="rs-section-sub">The three working papers behind the indices on this site.</p>
-  <div class="rs-grid">
+  <ol class="rl-list">
     {programPapers.map(p => (
-      <a class="rs-card rs-card-program" href={p.href}>
-        <div class="rs-card-top">
-          <span class="rs-paper-n">{p.n}</span>
-          <span class={`rs-status rs-status-${p.statusTone}`}>{p.status}</span>
+      <li class="rl-item">
+        <div class="rl-title">
+          <span class="rl-n">{p.n}</span>
+          <a href={p.href}>{p.title}</a>
         </div>
-        <div class="rs-card-title">{p.title}</div>
-        <div class="rs-card-meta">{p.authors} &middot; {p.venue}</div>
-        <p class="rs-card-summary">{p.summary}</p>
-        <div class="rs-card-link">{p.hrefLabel} &rarr;</div>
-      </a>
+        <div class="rl-meta">
+          {p.authors} &middot; <em>{p.venue}</em> &middot; <a href={p.href}>{p.hrefLabel}</a>
+        </div>
+        <details class="rl-abs"><summary>Abstract</summary><p>{p.summary}</p></details>
+      </li>
     ))}
-  </div>
+  </ol>
 
   <h2 class="rs-section-h">Peer-reviewed publications</h2>
-  <div class="rs-grid">
-    {peerReviewed.map(p => (
-      <article class="rs-card">
-        <div class="rs-card-top">
-          <span class="rs-rank">{p.rank}</span>
+  <ol class="rl-list">
+    {peerReviewed.map((p: any) => (
+      <li class="rl-item">
+        <div class="rl-title">
+          {p.href ? <a href={p.href}>{p.title}</a> : p.title}
         </div>
-        <div class="rs-card-title">{p.title}</div>
-        <div class="rs-card-meta">{p.authors} &middot; {p.venue}</div>
-        {p.summary && <p class="rs-card-summary">{p.summary}</p>}
-        {p.href && <a class="rs-card-link" href={p.href}>DOI &rarr;</a>}
-      </article>
+        <div class="rl-meta">
+          {p.authors} &middot; <em>{p.venue}</em>
+          <span class="rl-rank">{p.rank}</span>
+        </div>
+        {p.summary && <details class="rl-abs"><summary>Abstract</summary><p>{p.summary}</p></details>}
+      </li>
     ))}
-  </div>
+  </ol>
 
   <h2 class="rs-section-h">Other working papers</h2>
-  <div class="rs-grid">
+  <ol class="rl-list">
     {otherWorking.map(p => (
-      <a class="rs-card" href={p.href}>
-        <div class="rs-card-title">{p.title}</div>
-        <div class="rs-card-meta">{p.authors} &middot; {p.venue}</div>
-        <p class="rs-card-summary">{p.summary}</p>
-        <div class="rs-card-link">SSRN &rarr;</div>
-      </a>
+      <li class="rl-item">
+        <div class="rl-title"><a href={p.href}>{p.title}</a></div>
+        <div class="rl-meta">
+          {p.authors} &middot; <em>{p.venue}</em> &middot; <a href={p.href}>SSRN</a>
+        </div>
+        <details class="rl-abs"><summary>Abstract</summary><p>{p.summary}</p></details>
+      </li>
     ))}
-  </div>
+  </ol>
 
   <AuthorityStrip />
 </Base>
+
+<style>
+  .rl-list {
+    list-style: none;
+    margin: 0 0 28px;
+    padding: 0;
+    max-width: 86ch;
+  }
+  .rl-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .rl-item:last-child { border-bottom: 0; }
+  .rl-title {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .rl-title a { color: inherit; text-decoration: none; }
+  .rl-title a:hover { color: var(--founders); text-decoration: underline; }
+  .rl-n {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--founders);
+    margin-right: 10px;
+    vertical-align: 2px;
+  }
+  .rl-meta {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .rl-meta a { color: var(--founders); text-decoration: none; font-weight: 600; }
+  .rl-meta a:hover { text-decoration: underline; }
+  .rl-rank {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+  .rl-abs { margin-top: 6px; }
+  .rl-abs summary {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    width: fit-content;
+  }
+  .rl-abs summary:hover { color: var(--founders); }
+  .rl-abs p {
+    font-family: var(--serif);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text);
+    margin: 8px 0 2px;
+  }
+</style>
