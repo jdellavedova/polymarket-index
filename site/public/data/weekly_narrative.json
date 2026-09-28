@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-09-14",
-  "generated_at": "2026-09-21T21:08:04+00:00",
+  "as_of": "2026-09-21",
+  "generated_at": "2026-09-28T15:35:27+00:00",
   "sentences": [
-    "Traders moved $541 million through Polymarket in the week of 2026-09-14, across 16.0 million individual trades. Algorithmic wallets accounted for 63% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 37%.",
-    "The most-traded market was \"Will United Russia (ER) gain the most seats in the next Russian parliamentary election?\", pulling in $7 million of volume. Politics dominated the week's attention.",
-    "Both sides made money this week. Bots collected $8K (+100 bps); retail collected $76 (+25 bps)."
+    "Traders moved $479 million through Polymarket in the week of 2026-09-21, across 16.0 million individual trades. Algorithmic wallets accounted for 61% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 39%.",
+    "The most-traded market was \"Will the U.S. invade Iran before 2027?\", pulling in $2 million of volume.",
+    "Both sides made money this week. Bots collected $67K (+295 bps); retail collected $540 (+25 bps)."
   ],
-  "headline_quote": "Polymarket traders moved $541 million this week, with the biggest action on \"Will United Russia (ER) gain the most seats in the next Russian parliamentary election?\".",
+  "headline_quote": "Polymarket traders moved $479 million this week across 16.0 million individual trades.",
   "author": "Joshua Della Vedova, University of San Diego",
   "attribution_short": "Della Vedova (2026), Della Vedova Prediction Market Indices",
   "hand_edited": false,

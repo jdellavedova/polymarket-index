@@ -1,9 +1,9 @@
 {
-  "as_of": "2026-09-14",
-  "generated_at": "2026-09-21T21:08:09+00:00",
+  "as_of": "2026-09-21",
+  "generated_at": "2026-09-28T15:35:32+00:00",
   "hand_edited": false,
-  "linkedin": "DV-PMI Weekly Update | Week of 2026-09-14\n\nPolymarket traders moved $541 million this week across 16.0M individual trades.\n\nKey numbers:\n  Bot share of counterparty events: 63%\n  Non-bot probability-weighting index (Prelec alpha): 0.963 (Kahneman-Tversky benchmark: 0.65)\n  Highest-volume market: \"Will United Russia (ER) gain the most seats in the next Russian parliamentary election?\" ($7 million)\n  On resolved trades: bots +$8K, active retail +$76.\n\nCumulative since Nov 2022: bots $140 million, active retail -$81 million.\n\nThese indices are updated every Monday from on-chain Polymarket data (312 GB, 274 million resolved trades). Full methodology and downloads at https://jdellavedova.com\n\n#PredictionMarkets #Finance #Polymarket #BehavioralFinance",
-  "twitter": "Polymarket W38 update: $541 million traded, bots 63% of counterparty events. Cumulative since 2022: bots +$140M, retail -$81M.\n\nhttps://jdellavedova.com",
+  "linkedin": "DV-PMI Weekly Update | Week of 2026-09-21\n\nPolymarket traders moved $479 million this week across 16.0M individual trades.\n\nKey numbers:\n  Bot share of counterparty events: 61%\n  Non-bot probability-weighting index (Prelec alpha): 0.965 (Kahneman-Tversky benchmark: 0.65)\n  Highest-volume market: \"Will the U.S. invade Iran before 2027?\" ($2 million)\n  On resolved trades: bots +$67K, active retail +$540.\n\nCumulative since Nov 2022: bots $140 million, active retail -$81 million.\n\nThese indices are updated every Monday from on-chain Polymarket data (312 GB, 274 million resolved trades). Full methodology and downloads at https://jdellavedova.com\n\n#PredictionMarkets #Finance #Polymarket #BehavioralFinance",
+  "twitter": "Polymarket W39 update: $479 million traded, bots 61% of counterparty events. Cumulative since 2022: bots +$140M, retail -$81M.\n\nhttps://jdellavedova.com",
   "twitter_note": "(152 chars incl. URL. Attach press/cumulative_pnl.png from the press kit.)",
   "suggested_image": "press/cumulative_pnl.png",
   "notes": "Set hand_edited to true and edit linkedin/twitter to preserve your edits across future pipeline runs (as long as as_of matches)."
