@@ -12,6 +12,12 @@ const sentences: string[] = narrative.sentences ?? [];
 const lede: string =
   sentences.slice(0, 2).join(" ") || narrative.headline_quote || "";
 
+function weekEnd(isoDate: string): string {
+  const d = new Date(isoDate + "T00:00:00Z");
+  d.setUTCDate(d.getUTCDate() + 6);
+  return d.toISOString().slice(0, 10);
+}
+
 const botEnd = cumulative.endpoints?.bot ?? 0;
 const retailEnd = cumulative.endpoints?.active_retail ?? 0;
 
@@ -26,7 +32,7 @@ function fmtUsd(n: number): string {
 ---
 <section class="re-hero">
   <div class="re-hero-text">
-    <p class="re-stamp">Updated {activity.week} &middot; week of {activity.as_of}</p>
+    <p class="re-stamp">Updated {activity.week} &middot; week ending {weekEnd(activity.as_of)}</p>
     <h1 class="re-h1">Della Vedova Prediction Market Indices</h1>
     <p class="re-lede">{lede}</p>
     <p class="re-cum-line">
