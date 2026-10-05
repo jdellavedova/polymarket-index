@@ -966,27 +966,32 @@
   },
   {
     "date": "2026-08-24",
-    "weekly_volume": 524700814.8864575,
-    "weekly_volume_ma13w": 797331547.6566695
+    "weekly_volume": 524700814.8864605,
+    "weekly_volume_ma13w": 797331547.6566696
   },
   {
     "date": "2026-08-31",
-    "weekly_volume": 470334961.354043,
-    "weekly_volume_ma13w": 771417990.2085062
+    "weekly_volume": 470334961.35402864,
+    "weekly_volume_ma13w": 771417990.2085054
   },
   {
     "date": "2026-09-07",
-    "weekly_volume": 516106778.1302277,
-    "weekly_volume_ma13w": 745250122.6464471
+    "weekly_volume": 516106778.1301746,
+    "weekly_volume_ma13w": 745250122.6464422
   },
   {
     "date": "2026-09-14",
-    "weekly_volume": 541019209.0947356,
-    "weekly_volume_ma13w": 690248549.8322278
+    "weekly_volume": 541019209.0947273,
+    "weekly_volume_ma13w": 690248549.8322222
   },
   {
     "date": "2026-09-21",
-    "weekly_volume": 479119457.8890364,
-    "weekly_volume_ma13w": 642022614.2210032
+    "weekly_volume": 479119457.8889208,
+    "weekly_volume_ma13w": 642022614.2209886
+  },
+  {
+    "date": "2026-09-28",
+    "weekly_volume": 512341174.08803797,
+    "weekly_volume_ma13w": 584251866.0464039
   }
 ]
