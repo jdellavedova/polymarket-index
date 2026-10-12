@@ -1,58 +1,58 @@
-DV-PMI WEEKLY DIGEST / Week of 2026-09-28
+DV-PMI WEEKLY DIGEST / Week of 2026-10-05
 ============================================================
 
-Polymarket traders moved $512 million this week, with the biggest action on "Will Flávio Bolsonaro win the 2026 Brazilian presidential election?".
+Polymarket traders moved $499 million this week, with the biggest action on "Will Flávio Bolsonaro win the 2026 Brazilian presidential election?".
 
 ------------------------------------------------------------
 THIS WEEK VS LAST
 ------------------------------------------------------------
-  Total USD volume        $512M  (+6.9% WoW)
-  Total trades            16.2M  (+1.4% WoW)
-  Active wallets          120,070  (-2.5% WoW)
-  Bot share of trades     58.5%  (-2.7pp WoW)
+  Total USD volume        $499M  (-2.6% WoW)
+  Total trades            16.2M  (-0.2% WoW)
+  Active wallets          110,057  (-8.3% WoW)
+  Bot share of trades     56.9%  (-1.6pp WoW)
 
 ------------------------------------------------------------
 INDEX SCOREBOARD (ranked by stretch vs own 52-week history)
 ------------------------------------------------------------
-  Bot Share of Volume                       58.5%   4w avg    62.0%   z -2.60
-  Longshot/Favorite Gap                    +0.029   4w avg   +0.020   z +1.94
-  Probability Weighting (non-bot alpha)     1.018   4w avg    0.965   z +0.84
-  Market Efficiency (Prelec R2)             0.996   4w avg    0.994   z +0.79
-  Execution Gap (bot vs retail)            -0.030   4w avg   +0.012   z -0.71
+  Bot Share of Volume                       56.9%   4w avg    60.0%   z -2.53
+  Longshot/Favorite Gap                    +0.026   4w avg   +0.023   z +1.68
+  Probability Weighting (non-bot alpha)     1.046   4w avg    0.998   z +1.09
+  Execution Gap (bot vs retail)            -0.046   4w avg   -0.016   z -0.84
+  Market Efficiency (Prelec R2)             0.994   4w avg    0.995   z +0.65
 
 ------------------------------------------------------------
 THE STORY
 ------------------------------------------------------------
-Traders moved $512 million through Polymarket in the week of 2026-09-28, across 16.2 million individual trades. Algorithmic wallets accounted for 59% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 41%.
+Traders moved $499 million through Polymarket in the week of 2026-10-05, across 16.2 million individual trades. Algorithmic wallets accounted for 57% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 43%.
 
 The most-traded market was "Will Flávio Bolsonaro win the 2026 Brazilian presidential election?", pulling in $2 million of volume. Politics dominated the week's attention.
 
-The usual pattern held: algorithmic traders made $201K (+126 bps on volume) while retail traders lost $33K (-347 bps).
+Both sides lost money on resolved trades this week. Bots dropped $515K (-158 bps); retail dropped $232K (-956 bps). Much of the activity was in markets that have not yet resolved.
 
 ------------------------------------------------------------
 MOST-TRADED MARKETS THIS WEEK
 ------------------------------------------------------------
   1. $2M  Will Flávio Bolsonaro win the 2026 Brazilian presidential election? [Politics]
   2. $2M  Will Luiz Inácio Lula da Silva win the 2026 Brazilian presidential election? [Politics]
-  3. $1M  Will Renan Santos win the 2026 Brazilian presidential election? [Politics]
-  4. $1M  Will the U.S. invade Iran before 2027? [Geopolitics]
-  5. $881K  Will Benjamin Netanyahu be the next Prime Minister of Israel? [Geopolitics]
+  3. $1M  Will Donald Trump win the Nobel Peace Prize in 2026? [Politics]
+  4. $1M  Will the Republican Party control the House after the 2026 Midterm elections? [Politics]
+  5. $1M  Will the U.S. invade Iran before 2027? [Geopolitics]
 
 ------------------------------------------------------------
 WHO MADE MONEY (resolved trades only)
 ------------------------------------------------------------
-  Active Retail         -$33K   (-347 bps on volume)
-  Bot                   $201K   (+126 bps on volume)
-  Casual                  $3K   (+308 bps on volume)
-  One-Shot               $170   (+107 bps on volume)
-  Sophisticated           $6K   (+607 bps on volume)
-  unclassified         -$177K   (-248 bps on volume)
+  Active Retail        -$232K   (-956 bps on volume)
+  Bot                  -$515K   (-158 bps on volume)
+  Casual                 -$5K   (-332 bps on volume)
+  One-Shot               -$3K   (-1052 bps on volume)
+  Sophisticated          $22K   (+447 bps on volume)
+  unclassified          $733K   (+517 bps on volume)
 
 ------------------------------------------------------------
 SURVEILLANCE
 ------------------------------------------------------------
   Event-level informed-trading test:    11 trader-event pairs survive at 5% (0 on placebo)
-  Accuracy-outlier wallets active this week: 382 of 10,485
+  Accuracy-outlier wallets active this week: 431 of 10,485
   Sustained-accuracy outliers (skill screen): 10,485 of 705,883 tested (1.49%)
   After strict statistical correction:  1,558
   Flags mark statistical patterns, not proof; the wallet-level screen measures sustained skill, not information.
@@ -63,4 +63,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-10-05T18:38:40+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-10-12T14:50:56+00:00)
