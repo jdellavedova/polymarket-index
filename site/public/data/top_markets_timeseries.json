@@ -1,190 +1,5 @@
 [
   {
-    "week": "2026-W30",
-    "top": [
-      {
-        "rank": 1,
-        "market_id": "558934",
-        "question": "Will Spain win the 2026 FIFA World Cup?",
-        "usd_volume": 5384514.100004006
-      },
-      {
-        "rank": 2,
-        "market_id": "665374",
-        "question": "Will the U.S. invade Iran before 2027?",
-        "usd_volume": 1784371.1669340003
-      },
-      {
-        "rank": 3,
-        "market_id": "608547",
-        "question": "Will Harry Kane win the 2026 Ballon d'Or?",
-        "usd_volume": 486368.086797996
-      },
-      {
-        "rank": 4,
-        "market_id": "663583",
-        "question": "Will the Iranian regime fall before 2027?",
-        "usd_volume": 456800.412141
-      },
-      {
-        "rank": 5,
-        "market_id": "677408",
-        "question": "China x Philippines military clash before 2027?",
-        "usd_volume": 455958.723803
-      },
-      {
-        "rank": 6,
-        "market_id": "1163699",
-        "question": "Clarity Act signed into law in 2026?",
-        "usd_volume": 385524.49548000016
-      },
-      {
-        "rank": 7,
-        "market_id": "608545",
-        "question": "Will Lamine Yamal win the 2026 Ballon d'Or?",
-        "usd_volume": 341175.5352069998
-      },
-      {
-        "rank": 8,
-        "market_id": "908713",
-        "question": "Fed rate hike in 2026?",
-        "usd_volume": 253896.754357
-      },
-      {
-        "rank": 9,
-        "market_id": "601825",
-        "question": "Will Renan Santos win the 2026 Brazilian presidential election?",
-        "usd_volume": 232729.691078
-      },
-      {
-        "rank": 10,
-        "market_id": "637910",
-        "question": "Will Mitch McConnell step down from the Senate before his term ends?",
-        "usd_volume": 217882.48185299995
-      },
-      {
-        "rank": 11,
-        "market_id": "677366",
-        "question": "Will Russia capture Kostyantynivka by December 31, 2026?",
-        "usd_volume": 180936.556211
-      },
-      {
-        "rank": 12,
-        "market_id": "701552",
-        "question": "Will Ethereum dip to $1,500 by December 31, 2026?",
-        "usd_volume": 179635.778221
-      },
-      {
-        "rank": 13,
-        "market_id": "567621",
-        "question": "Will China invade Taiwan by end of 2026?",
-        "usd_volume": 175176.79245799995
-      },
-      {
-        "rank": 14,
-        "market_id": "608540",
-        "question": "Will Kylian Mbapp\u00e9 win the 2026 Ballon d'Or?",
-        "usd_volume": 165744.10018999962
-      },
-      {
-        "rank": 15,
-        "market_id": "560317",
-        "question": "Putin out as President of Russia by end of 2026?",
-        "usd_volume": 160662.09908100002
-      },
-      {
-        "rank": 16,
-        "market_id": "701501",
-        "question": "Will Bitcoin dip to $55,000 by December 31, 2026?",
-        "usd_volume": 159842.48438799998
-      },
-      {
-        "rank": 17,
-        "market_id": "1105744",
-        "question": "Will Nicol\u00e1s Maduro be the leader of Venezuela end of 2026?",
-        "usd_volume": 157001.42976699997
-      },
-      {
-        "rank": 18,
-        "market_id": "703257",
-        "question": "Will the US confirm that aliens exist before 2027?",
-        "usd_volume": 155611.569655
-      },
-      {
-        "rank": 19,
-        "market_id": "1090496",
-        "question": "NATO x Russia military clash by December 31, 2026?",
-        "usd_volume": 132378.107892
-      },
-      {
-        "rank": 20,
-        "market_id": "559651",
-        "question": "Xi Jinping out before 2027?",
-        "usd_volume": 124075.73852499996
-      },
-      {
-        "rank": 21,
-        "market_id": "666861",
-        "question": "Trump out as President before 2027?",
-        "usd_volume": 111436.69681599998
-      },
-      {
-        "rank": 22,
-        "market_id": "608543",
-        "question": "Will Ousmane Demb\u00e9l\u00e9 win the 2026 Ballon d'Or?",
-        "usd_volume": 91581.05667299993
-      },
-      {
-        "rank": 23,
-        "market_id": "682710",
-        "question": "Will Avigdor Lieberman be the next Prime Minister of Israel?",
-        "usd_volume": 88861.281347
-      },
-      {
-        "rank": 24,
-        "market_id": "599304",
-        "question": "Will Haley Stevens win the 2026 Michigan Democratic Primary?",
-        "usd_volume": 86739.10436699998
-      },
-      {
-        "rank": 25,
-        "market_id": "601819",
-        "question": "Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
-        "usd_volume": 85349.60282399997
-      },
-      {
-        "rank": 26,
-        "market_id": "1130012",
-        "question": "Will United Russia (ER) gain the most seats in the next Russian parliamentary election?",
-        "usd_volume": 80584.421438
-      },
-      {
-        "rank": 27,
-        "market_id": "599305",
-        "question": "Will Abdul El-Sayed win the 2026 Michigan Democratic Primary?",
-        "usd_volume": 79442.28983200002
-      },
-      {
-        "rank": 28,
-        "market_id": "561229",
-        "question": "Will JD Vance win the 2028 US Presidential Election?",
-        "usd_volume": 76033.81967599997
-      },
-      {
-        "rank": 29,
-        "market_id": "1294368",
-        "question": "Will Gold (GC) hit (HIGH) $6,000 by end of December?",
-        "usd_volume": 74027.714144
-      },
-      {
-        "rank": 30,
-        "market_id": "677407",
-        "question": "China x Taiwan military clash before 2027?",
-        "usd_volume": 73231.96788699996
-      }
-    ]
-  },
-  {
     "week": "2026-W31",
     "top": [
       {
@@ -967,7 +782,7 @@
         "rank": 7,
         "market_id": "601826",
         "question": "Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
-        "usd_volume": 257950.47181199997
+        "usd_volume": 257950.471812
       },
       {
         "rank": 8,
@@ -1152,19 +967,19 @@
         "rank": 7,
         "market_id": "908713",
         "question": "Fed rate hike in 2026?",
-        "usd_volume": 253920.41506499998
+        "usd_volume": 253920.415065
       },
       {
         "rank": 8,
         "market_id": "663583",
         "question": "Will the Iranian regime fall before 2027?",
-        "usd_volume": 227937.87256000002
+        "usd_volume": 227937.87256
       },
       {
         "rank": 9,
         "market_id": "601826",
         "question": "Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
-        "usd_volume": 215605.75309700012
+        "usd_volume": 215605.75309700007
       },
       {
         "rank": 10,
@@ -1212,13 +1027,13 @@
         "rank": 17,
         "market_id": "1088478",
         "question": "Will Daniil Medvedev win the 2026 Men's US Open?",
-        "usd_volume": 119167.17950500007
+        "usd_volume": 119167.17950500008
       },
       {
         "rank": 18,
         "market_id": "559651",
         "question": "Xi Jinping out before 2027?",
-        "usd_volume": 115028.40503299997
+        "usd_volume": 115028.40503299996
       },
       {
         "rank": 19,
@@ -1230,7 +1045,7 @@
         "rank": 20,
         "market_id": "561229",
         "question": "Will JD Vance win the 2028 US Presidential Election?",
-        "usd_volume": 104711.64683200001
+        "usd_volume": 104711.646832
       },
       {
         "rank": 21,
@@ -1307,13 +1122,13 @@
         "rank": 2,
         "market_id": "560317",
         "question": "Putin out as President of Russia by end of 2026?",
-        "usd_volume": 739126.516269
+        "usd_volume": 739126.5162689995
       },
       {
         "rank": 3,
         "market_id": "1193094",
         "question": "Will Magdalena Andersson be the next Prime Minister of Sweden?",
-        "usd_volume": 587939.1501920002
+        "usd_volume": 587939.1501919999
       },
       {
         "rank": 4,
@@ -1331,13 +1146,13 @@
         "rank": 6,
         "market_id": "665374",
         "question": "Will the U.S. invade Iran before 2027?",
-        "usd_volume": 520810.8454100001
+        "usd_volume": 520810.84540999995
       },
       {
         "rank": 7,
         "market_id": "1088476",
         "question": "Will Ben Shelton win the 2026 Men's US Open?",
-        "usd_volume": 414579.99916099984
+        "usd_volume": 414579.999161
       },
       {
         "rank": 8,
@@ -1349,37 +1164,37 @@
         "rank": 9,
         "market_id": "601826",
         "question": "Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
-        "usd_volume": 392750.18207800004
+        "usd_volume": 392750.1820779999
       },
       {
         "rank": 10,
         "market_id": "1130012",
         "question": "Will United Russia (ER) gain the most seats in the next Russian parliamentary election?",
-        "usd_volume": 366901.28700200014
+        "usd_volume": 366901.28700199997
       },
       {
         "rank": 11,
         "market_id": "601825",
         "question": "Will Renan Santos win the 2026 Brazilian presidential election?",
-        "usd_volume": 340217.89242100023
+        "usd_volume": 340217.8924210001
       },
       {
         "rank": 12,
         "market_id": "567621",
         "question": "Will China invade Taiwan by end of 2026?",
-        "usd_volume": 301438.4095720001
+        "usd_volume": 301438.40957200003
       },
       {
         "rank": 13,
         "market_id": "1088472",
         "question": "Will Carlos Alcaraz win the 2026 Men's US Open?",
-        "usd_volume": 301074.422843
+        "usd_volume": 301074.42284300004
       },
       {
         "rank": 14,
         "market_id": "1088656",
         "question": "Will Elena Rybakina win the 2026 Women\u2019s US Open?",
-        "usd_volume": 266489.98177699995
+        "usd_volume": 266489.9817769999
       },
       {
         "rank": 15,
@@ -1391,43 +1206,43 @@
         "rank": 16,
         "market_id": "562802",
         "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
-        "usd_volume": 226993.37908200003
+        "usd_volume": 226993.37908199994
       },
       {
         "rank": 17,
         "market_id": "1088652",
         "question": "Will Aryna Sabalenka win the 2026 Women\u2019s US Open?",
-        "usd_volume": 221608.48985400004
+        "usd_volume": 221608.4898540001
       },
       {
         "rank": 18,
         "market_id": "562803",
         "question": "Will the Republican Party control the House after the 2026 Midterm elections?",
-        "usd_volume": 210885.97373
+        "usd_volume": 210885.97372999997
       },
       {
         "rank": 19,
         "market_id": "703257",
         "question": "Will the US confirm that aliens exist before 2027?",
-        "usd_volume": 208370.92409600006
+        "usd_volume": 208370.92409600003
       },
       {
         "rank": 20,
         "market_id": "665513",
         "question": "Friedrich Merz out as Chancellor of Germany before 2027?",
-        "usd_volume": 202497.00736599998
+        "usd_volume": 202497.00736599992
       },
       {
         "rank": 21,
         "market_id": "562831",
         "question": "2026 Balance of Power: R Senate, R House",
-        "usd_volume": 168286.50690500002
+        "usd_volume": 168286.506905
       },
       {
         "rank": 22,
         "market_id": "682705",
         "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
-        "usd_volume": 151700.93240300004
+        "usd_volume": 151700.93240299998
       },
       {
         "rank": 23,
@@ -1439,13 +1254,13 @@
         "rank": 24,
         "market_id": "666861",
         "question": "Trump out as President before 2027?",
-        "usd_volume": 141096.32730199996
+        "usd_volume": 141096.327302
       },
       {
         "rank": 25,
         "market_id": "1130016",
         "question": "Will New People (NL) gain the most seats in the next Russian parliamentary election?",
-        "usd_volume": 135953.057112
+        "usd_volume": 135953.05711200004
       },
       {
         "rank": 26,
@@ -1457,25 +1272,25 @@
         "rank": 27,
         "market_id": "608540",
         "question": "Will Kylian Mbapp\u00e9 win the 2026 Ballon d'Or?",
-        "usd_volume": 119827.17793700004
+        "usd_volume": 119827.17793699999
       },
       {
         "rank": 28,
         "market_id": "811719",
         "question": "Will the Swedish Social Democratic Party (S) win the most seats in the 2026 Swedish parliamentary election?",
-        "usd_volume": 119677.56924100014
+        "usd_volume": 119677.56924099996
       },
       {
         "rank": 29,
         "market_id": "701502",
         "question": "Will Bitcoin dip to $45,000 by December 31, 2026?",
-        "usd_volume": 105567.48569599999
+        "usd_volume": 105567.485696
       },
       {
         "rank": 30,
         "market_id": "561234",
         "question": "Will Marco Rubio win the 2028 US Presidential Election?",
-        "usd_volume": 101053.73277999998
+        "usd_volume": 101053.73277999996
       }
     ]
   },
@@ -1486,7 +1301,7 @@
         "rank": 1,
         "market_id": "1130012",
         "question": "Will United Russia (ER) gain the most seats in the next Russian parliamentary election?",
-        "usd_volume": 7126891.859612009
+        "usd_volume": 7126891.859612005
       },
       {
         "rank": 2,
@@ -1498,13 +1313,13 @@
         "rank": 3,
         "market_id": "1130016",
         "question": "Will New People (NL) gain the most seats in the next Russian parliamentary election?",
-        "usd_volume": 1289708.9715790001
+        "usd_volume": 1289708.9715790006
       },
       {
         "rank": 4,
         "market_id": "665374",
         "question": "Will the U.S. invade Iran before 2027?",
-        "usd_volume": 991858.8984130004
+        "usd_volume": 991858.8984129998
       },
       {
         "rank": 5,
@@ -1522,61 +1337,61 @@
         "rank": 7,
         "market_id": "1129894",
         "question": "Will United Russia (ER) win the most seats in the next Russian parliamentary election?",
-        "usd_volume": 659824.2248290002
+        "usd_volume": 659824.2248290001
       },
       {
         "rank": 8,
         "market_id": "701502",
         "question": "Will Bitcoin dip to $45,000 by December 31, 2026?",
-        "usd_volume": 402977.125719
+        "usd_volume": 402977.12571899995
       },
       {
         "rank": 9,
         "market_id": "665513",
         "question": "Friedrich Merz out as Chancellor of Germany before 2027?",
-        "usd_volume": 392297.7741340001
+        "usd_volume": 392297.7741339999
       },
       {
         "rank": 10,
         "market_id": "1193094",
         "question": "Will Magdalena Andersson be the next Prime Minister of Sweden?",
-        "usd_volume": 359490.21861400007
+        "usd_volume": 359490.218614
       },
       {
         "rank": 11,
         "market_id": "560317",
         "question": "Putin out as President of Russia by end of 2026?",
-        "usd_volume": 351458.0439779999
+        "usd_volume": 351458.04397799994
       },
       {
         "rank": 12,
         "market_id": "559651",
         "question": "Xi Jinping out before 2027?",
-        "usd_volume": 347086.46249899996
+        "usd_volume": 347086.462499
       },
       {
         "rank": 13,
         "market_id": "601825",
         "question": "Will Renan Santos win the 2026 Brazilian presidential election?",
-        "usd_volume": 313839.496751
+        "usd_volume": 313839.49675099994
       },
       {
         "rank": 14,
         "market_id": "601826",
         "question": "Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
-        "usd_volume": 301054.099418
+        "usd_volume": 301054.0994180001
       },
       {
         "rank": 15,
         "market_id": "1193093",
         "question": "Will Ulf Kristersson be the next Prime Minister of Sweden?",
-        "usd_volume": 299857.66740200005
+        "usd_volume": 299857.66740199993
       },
       {
         "rank": 16,
         "market_id": "637002",
         "question": "Will Donald Trump win the Nobel Peace Prize in 2026?",
-        "usd_volume": 285106.66036499996
+        "usd_volume": 285106.66036499984
       },
       {
         "rank": 17,
@@ -1588,7 +1403,7 @@
         "rank": 18,
         "market_id": "682705",
         "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
-        "usd_volume": 251835.93964599923
+        "usd_volume": 251835.93964599978
       },
       {
         "rank": 19,
@@ -1600,7 +1415,7 @@
         "rank": 20,
         "market_id": "562802",
         "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
-        "usd_volume": 228616.887215
+        "usd_volume": 228616.88721499997
       },
       {
         "rank": 21,
@@ -1612,19 +1427,19 @@
         "rank": 22,
         "market_id": "789957",
         "question": null,
-        "usd_volume": 213969.73382999992
+        "usd_volume": 213969.73382999998
       },
       {
         "rank": 23,
         "market_id": "703257",
         "question": "Will the US confirm that aliens exist before 2027?",
-        "usd_volume": 186140.60620199997
+        "usd_volume": 186140.60620200005
       },
       {
         "rank": 24,
         "market_id": "1130015",
         "question": "Will the Liberal Democratic Party of Russia (LDPR) gain the most seats in the next Russian parliamentary election?",
-        "usd_volume": 179984.53643100013
+        "usd_volume": 179984.53643100004
       },
       {
         "rank": 25,
@@ -1648,7 +1463,7 @@
         "rank": 28,
         "market_id": "666861",
         "question": "Trump out as President before 2027?",
-        "usd_volume": 154473.564841
+        "usd_volume": 154473.56484099998
       },
       {
         "rank": 29,
@@ -1660,7 +1475,7 @@
         "rank": 30,
         "market_id": "1105742",
         "question": "Will Delcy Rodr\u00edguez be the leader of Venezuela end of 2026?",
-        "usd_volume": 137312.9895219999
+        "usd_volume": 137312.989522
       }
     ]
   },
@@ -1671,7 +1486,7 @@
         "rank": 1,
         "market_id": "665374",
         "question": "Will the U.S. invade Iran before 2027?",
-        "usd_volume": 1582526.3733370006
+        "usd_volume": 1582526.3733370001
       },
       {
         "rank": 2,
@@ -1683,13 +1498,13 @@
         "rank": 3,
         "market_id": "562831",
         "question": "2026 Balance of Power: R Senate, R House",
-        "usd_volume": 531856.479408
+        "usd_volume": 531856.4794080002
       },
       {
         "rank": 4,
         "market_id": "601825",
         "question": "Will Renan Santos win the 2026 Brazilian presidential election?",
-        "usd_volume": 471369.43776600005
+        "usd_volume": 471369.43776599993
       },
       {
         "rank": 5,
@@ -1701,43 +1516,43 @@
         "rank": 6,
         "market_id": "601826",
         "question": "Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
-        "usd_volume": 437967.9222329999
+        "usd_volume": 437967.9222329998
       },
       {
         "rank": 7,
         "market_id": "703257",
         "question": "Will the US confirm that aliens exist before 2027?",
-        "usd_volume": 331693.488327
+        "usd_volume": 331693.48832699994
       },
       {
         "rank": 8,
         "market_id": "567621",
         "question": "Will China invade Taiwan by end of 2026?",
-        "usd_volume": 269095.8344000009
+        "usd_volume": 269095.8343999999
       },
       {
         "rank": 9,
         "market_id": "701552",
         "question": "Will Ethereum dip to $1,500 by December 31, 2026?",
-        "usd_volume": 250616.37171200002
+        "usd_volume": 250616.37171200005
       },
       {
         "rank": 10,
         "market_id": "637002",
         "question": "Will Donald Trump win the Nobel Peace Prize in 2026?",
-        "usd_volume": 249472.60950799956
+        "usd_volume": 249472.60950800002
       },
       {
         "rank": 11,
         "market_id": "628940",
         "question": "Will Steve Hilton win the California Governor Election in 2026?",
-        "usd_volume": 214159.20716799994
+        "usd_volume": 214159.20716799996
       },
       {
         "rank": 12,
         "market_id": "560317",
         "question": "Putin out as President of Russia by end of 2026?",
-        "usd_volume": 212001.49207400004
+        "usd_volume": 212001.492074
       },
       {
         "rank": 13,
@@ -1755,7 +1570,7 @@
         "rank": 15,
         "market_id": "562828",
         "question": "2026 Balance of Power: D Senate, D House",
-        "usd_volume": 183425.93700899993
+        "usd_volume": 183425.937009
       },
       {
         "rank": 16,
@@ -1767,7 +1582,7 @@
         "rank": 17,
         "market_id": "665513",
         "question": "Friedrich Merz out as Chancellor of Germany before 2027?",
-        "usd_volume": 174210.25560399995
+        "usd_volume": 174210.25560399998
       },
       {
         "rank": 18,
@@ -1785,13 +1600,13 @@
         "rank": 20,
         "market_id": "630772",
         "question": "Will the Democrats win the Maine Senate race in 2026?",
-        "usd_volume": 159641.8075
+        "usd_volume": 159641.8074999999
       },
       {
         "rank": 21,
         "market_id": "634976",
         "question": "Will Mary Peltola win the Alaska Senate race in 2026?",
-        "usd_volume": 159059.84662800006
+        "usd_volume": 159059.84662800003
       },
       {
         "rank": 22,
@@ -1809,19 +1624,19 @@
         "rank": 24,
         "market_id": "562793",
         "question": "Will the Democratic Party control the Senate after the 2026 Midterm elections?",
-        "usd_volume": 155786.16237900002
+        "usd_volume": 155786.16237900004
       },
       {
         "rank": 25,
         "market_id": "630773",
         "question": "Will the Republicans win the Maine Senate race in 2026?",
-        "usd_volume": 147850.06712400002
+        "usd_volume": 147850.067124
       },
       {
         "rank": 26,
         "market_id": "666861",
         "question": "Trump out as President before 2027?",
-        "usd_volume": 146436.48022799997
+        "usd_volume": 146436.480228
       },
       {
         "rank": 27,
@@ -1833,19 +1648,19 @@
         "rank": 28,
         "market_id": "629030",
         "question": "Will Karen Bass win the 2026 Los Angeles mayoral election?",
-        "usd_volume": 145242.620097
+        "usd_volume": 145242.62009699998
       },
       {
         "rank": 29,
         "market_id": "1193094",
         "question": "Will Magdalena Andersson be the next Prime Minister of Sweden?",
-        "usd_volume": 133728.48107699997
+        "usd_volume": 133728.48107699995
       },
       {
         "rank": 30,
         "market_id": "703258",
         "question": "Will Jesus Christ return before 2027?",
-        "usd_volume": 125458.0168259999
+        "usd_volume": 125458.01682599993
       }
     ]
   },
@@ -1862,67 +1677,67 @@
         "rank": 2,
         "market_id": "601819",
         "question": "Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
-        "usd_volume": 2119421.8157810005
+        "usd_volume": 2119421.8157810024
       },
       {
         "rank": 3,
         "market_id": "601825",
         "question": "Will Renan Santos win the 2026 Brazilian presidential election?",
-        "usd_volume": 1286964.883951
+        "usd_volume": 1286964.8839510002
       },
       {
         "rank": 4,
         "market_id": "665374",
         "question": "Will the U.S. invade Iran before 2027?",
-        "usd_volume": 1078622.046874
+        "usd_volume": 1078622.0468739998
       },
       {
         "rank": 5,
         "market_id": "682705",
         "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
-        "usd_volume": 880531.794510997
+        "usd_volume": 880531.7945110055
       },
       {
         "rank": 6,
         "market_id": "562831",
         "question": "2026 Balance of Power: R Senate, R House",
-        "usd_volume": 835677.7065089999
+        "usd_volume": 835677.7065090002
       },
       {
         "rank": 7,
         "market_id": "637002",
         "question": "Will Donald Trump win the Nobel Peace Prize in 2026?",
-        "usd_volume": 620541.6493810001
+        "usd_volume": 620541.6493810002
       },
       {
         "rank": 8,
         "market_id": "562828",
         "question": "2026 Balance of Power: D Senate, D House",
-        "usd_volume": 523904.17343900044
+        "usd_volume": 523904.1734390007
       },
       {
         "rank": 9,
         "market_id": "601920",
         "question": "Will any presidential candidate win outright in the first round of the Brazil election?",
-        "usd_volume": 505772.5731119999
+        "usd_volume": 505772.573112
       },
       {
         "rank": 10,
         "market_id": "562803",
         "question": "Will the Republican Party control the House after the 2026 Midterm elections?",
-        "usd_volume": 494615.57306300016
+        "usd_volume": 494615.573063
       },
       {
         "rank": 11,
         "market_id": "679022",
         "question": "Will David Lisnard win the 2027 French presidential election?",
-        "usd_volume": 470417.0924250001
+        "usd_volume": 470417.092425
       },
       {
         "rank": 12,
         "market_id": "562802",
         "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
-        "usd_volume": 389815.9563599999
+        "usd_volume": 389815.95635999984
       },
       {
         "rank": 13,
@@ -1934,79 +1749,79 @@
         "rank": 14,
         "market_id": "567621",
         "question": "Will China invade Taiwan by end of 2026?",
-        "usd_volume": 327871.862925
+        "usd_volume": 327871.8629249999
       },
       {
         "rank": 15,
         "market_id": "663583",
         "question": "Will the Iranian regime fall before 2027?",
-        "usd_volume": 269464.107902
+        "usd_volume": 269464.1079020001
       },
       {
         "rank": 16,
         "market_id": "560317",
         "question": "Putin out as President of Russia by end of 2026?",
-        "usd_volume": 265794.990441
+        "usd_volume": 265794.99044100003
       },
       {
         "rank": 17,
         "market_id": "601922",
         "question": "Will Luiz In\u00e1cio Lula da Silva qualify for Brazil's presidential runoff?",
-        "usd_volume": 260707.6344249999
+        "usd_volume": 260707.63442499997
       },
       {
         "rank": 18,
         "market_id": "608547",
         "question": "Will Harry Kane win the 2026 Ballon d'Or?",
-        "usd_volume": 252406.53828899979
+        "usd_volume": 252406.53828900013
       },
       {
         "rank": 19,
         "market_id": "666861",
         "question": "Trump out as President before 2027?",
-        "usd_volume": 250043.68962700013
+        "usd_volume": 250043.6896270001
       },
       {
         "rank": 20,
         "market_id": "1163699",
         "question": "Clarity Act signed into law in 2026?",
-        "usd_volume": 239257.696142
+        "usd_volume": 239257.69614199997
       },
       {
         "rank": 21,
         "market_id": "703258",
         "question": "Will Jesus Christ return before 2027?",
-        "usd_volume": 194968.950185
+        "usd_volume": 194968.95018500008
       },
       {
         "rank": 22,
         "market_id": "679018",
         "question": "Will Marine Le Pen win the 2027 French presidential election?",
-        "usd_volume": 177843.278879
+        "usd_volume": 177843.27887899996
       },
       {
         "rank": 23,
         "market_id": "559651",
         "question": "Xi Jinping out before 2027?",
-        "usd_volume": 174671.75798899998
+        "usd_volume": 174671.7579889999
       },
       {
         "rank": 24,
         "market_id": "1193094",
         "question": "Will Magdalena Andersson be the next Prime Minister of Sweden?",
-        "usd_volume": 165482.43151199995
+        "usd_volume": 165482.43151200004
       },
       {
         "rank": 25,
         "market_id": "608540",
         "question": "Will Kylian Mbapp\u00e9 win the 2026 Ballon d'Or?",
-        "usd_volume": 158014.34350300013
+        "usd_volume": 158014.34350300007
       },
       {
         "rank": 26,
         "market_id": "682708",
         "question": "Will Gadi Eizenkot be the next Prime Minister of Israel?",
-        "usd_volume": 142121.17783100012
+        "usd_volume": 142121.17783100007
       },
       {
         "rank": 27,
@@ -2018,19 +1833,19 @@
         "rank": 28,
         "market_id": "703257",
         "question": "Will the US confirm that aliens exist before 2027?",
-        "usd_volume": 134837.884818
+        "usd_volume": 134837.88481800002
       },
       {
         "rank": 29,
         "market_id": "630747",
         "question": "Will the Republicans win the Kansas Senate race in 2026?",
-        "usd_volume": 134640.726065
+        "usd_volume": 134640.72606500005
       },
       {
         "rank": 30,
         "market_id": "628940",
         "question": "Will Steve Hilton win the California Governor Election in 2026?",
-        "usd_volume": 134280.16792199996
+        "usd_volume": 134280.167922
       }
     ]
   },
@@ -2047,13 +1862,13 @@
         "rank": 2,
         "market_id": "601819",
         "question": "Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
-        "usd_volume": 1876997.0229180017
+        "usd_volume": 1876997.0229180004
       },
       {
         "rank": 3,
         "market_id": "637002",
         "question": "Will Donald Trump win the Nobel Peace Prize in 2026?",
-        "usd_volume": 1408627.9902110002
+        "usd_volume": 1408627.9902110011
       },
       {
         "rank": 4,
@@ -2065,7 +1880,7 @@
         "rank": 5,
         "market_id": "665374",
         "question": "Will the U.S. invade Iran before 2027?",
-        "usd_volume": 1014568.4495199996
+        "usd_volume": 1014568.4495199994
       },
       {
         "rank": 6,
@@ -2077,43 +1892,43 @@
         "rank": 7,
         "market_id": "562802",
         "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
-        "usd_volume": 859365.3874690006
+        "usd_volume": 859365.387469
       },
       {
         "rank": 8,
         "market_id": "562831",
         "question": "2026 Balance of Power: R Senate, R House",
-        "usd_volume": 804060.4650380003
+        "usd_volume": 804060.4650379999
       },
       {
         "rank": 9,
         "market_id": "682705",
         "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
-        "usd_volume": 557583.2168260005
+        "usd_volume": 557583.216825999
       },
       {
         "rank": 10,
         "market_id": "560317",
         "question": "Putin out as President of Russia by end of 2026?",
-        "usd_volume": 460425.13987499994
+        "usd_volume": 460425.1398750001
       },
       {
         "rank": 11,
         "market_id": "679022",
         "question": "Will David Lisnard win the 2027 French presidential election?",
-        "usd_volume": 444052.0270379999
+        "usd_volume": 444052.0270379998
       },
       {
         "rank": 12,
         "market_id": "630964",
         "question": "Will the Republicans win the Texas Senate race in 2026?",
-        "usd_volume": 418430.717708
+        "usd_volume": 418430.7177079999
       },
       {
         "rank": 13,
         "market_id": "562830",
         "question": "2026 Balance of Power: R Senate, D House",
-        "usd_volume": 405443.66148200014
+        "usd_volume": 405443.6614820002
       },
       {
         "rank": 14,
@@ -2125,13 +1940,13 @@
         "rank": 15,
         "market_id": "562828",
         "question": "2026 Balance of Power: D Senate, D House",
-        "usd_volume": 298815.280523
+        "usd_volume": 298815.28052300005
       },
       {
         "rank": 16,
         "market_id": "630963",
         "question": "Will the Democrats win the Texas Senate race in 2026?",
-        "usd_volume": 277741.56886299996
+        "usd_volume": 277741.5688630001
       },
       {
         "rank": 17,
@@ -2143,25 +1958,25 @@
         "rank": 18,
         "market_id": "559651",
         "question": "Xi Jinping out before 2027?",
-        "usd_volume": 255503.73537700006
+        "usd_volume": 255503.735377
       },
       {
         "rank": 19,
         "market_id": "608547",
         "question": "Will Harry Kane win the 2026 Ballon d'Or?",
-        "usd_volume": 246226.656476
+        "usd_volume": 246226.65647600006
       },
       {
         "rank": 20,
         "market_id": "679018",
         "question": "Will Marine Le Pen win the 2027 French presidential election?",
-        "usd_volume": 214332.8508
+        "usd_volume": 214332.85080000001
       },
       {
         "rank": 21,
         "market_id": "567621",
         "question": "Will China invade Taiwan by end of 2026?",
-        "usd_volume": 196792.66741899998
+        "usd_volume": 196792.66741900003
       },
       {
         "rank": 22,
@@ -2185,37 +2000,222 @@
         "rank": 25,
         "market_id": "562793",
         "question": "Will the Democratic Party control the Senate after the 2026 Midterm elections?",
-        "usd_volume": 154154.57311599975
+        "usd_volume": 154154.57311599966
       },
       {
         "rank": 26,
         "market_id": "562794",
         "question": "Will the Republican Party control the Senate after the 2026 Midterm elections?",
-        "usd_volume": 139452.496523
+        "usd_volume": 139452.49652299998
       },
       {
         "rank": 27,
         "market_id": "608540",
         "question": "Will Kylian Mbapp\u00e9 win the 2026 Ballon d'Or?",
-        "usd_volume": 126048.67768799997
+        "usd_volume": 126048.67768799995
       },
       {
         "rank": 28,
         "market_id": "637009",
         "question": "Will the International Court of Justice win the Nobel Peace Prize in 2026?",
-        "usd_volume": 121240.41759400006
+        "usd_volume": 121240.41759400004
       },
       {
         "rank": 29,
         "market_id": "701502",
         "question": "Will Bitcoin dip to $45,000 by December 31, 2026?",
-        "usd_volume": 120223.81099299999
+        "usd_volume": 120223.81099300005
       },
       {
         "rank": 30,
         "market_id": "682708",
         "question": "Will Gadi Eizenkot be the next Prime Minister of Israel?",
-        "usd_volume": 117654.954453
+        "usd_volume": 117654.95445299997
+      }
+    ]
+  },
+  {
+    "week": "2026-W42",
+    "top": [
+      {
+        "rank": 1,
+        "market_id": "601826",
+        "question": "Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
+        "usd_volume": 1719493.182019
+      },
+      {
+        "rank": 2,
+        "market_id": "601819",
+        "question": "Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
+        "usd_volume": 1701666.9017730001
+      },
+      {
+        "rank": 3,
+        "market_id": "682705",
+        "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
+        "usd_volume": 869139.242902
+      },
+      {
+        "rank": 4,
+        "market_id": "703257",
+        "question": "Will the US confirm that aliens exist before 2027?",
+        "usd_volume": 853456.4821960002
+      },
+      {
+        "rank": 5,
+        "market_id": "665374",
+        "question": "Will the U.S. invade Iran before 2027?",
+        "usd_volume": 786054.5704610001
+      },
+      {
+        "rank": 6,
+        "market_id": "562802",
+        "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
+        "usd_volume": 680538.9911039998
+      },
+      {
+        "rank": 7,
+        "market_id": "562803",
+        "question": "Will the Republican Party control the House after the 2026 Midterm elections?",
+        "usd_volume": 434691.74496399984
+      },
+      {
+        "rank": 8,
+        "market_id": "560317",
+        "question": "Putin out as President of Russia by end of 2026?",
+        "usd_volume": 374761.3329049999
+      },
+      {
+        "rank": 9,
+        "market_id": "663583",
+        "question": "Will the Iranian regime fall before 2027?",
+        "usd_volume": 328794.9441810002
+      },
+      {
+        "rank": 10,
+        "market_id": "562828",
+        "question": "2026 Balance of Power: D Senate, D House",
+        "usd_volume": 260187.85236599992
+      },
+      {
+        "rank": 11,
+        "market_id": "559651",
+        "question": "Xi Jinping out before 2027?",
+        "usd_volume": 257410.97692699998
+      },
+      {
+        "rank": 12,
+        "market_id": "630964",
+        "question": "Will the Republicans win the Texas Senate race in 2026?",
+        "usd_volume": 254636.535028
+      },
+      {
+        "rank": 13,
+        "market_id": "608547",
+        "question": "Will Harry Kane win the 2026 Ballon d'Or?",
+        "usd_volume": 251170.16549700004
+      },
+      {
+        "rank": 14,
+        "market_id": "562831",
+        "question": "2026 Balance of Power: R Senate, R House",
+        "usd_volume": 249697.75738299987
+      },
+      {
+        "rank": 15,
+        "market_id": "679018",
+        "question": "Will Marine Le Pen win the 2027 French presidential election?",
+        "usd_volume": 249029.21785800002
+      },
+      {
+        "rank": 16,
+        "market_id": "567621",
+        "question": "Will China invade Taiwan by end of 2026?",
+        "usd_volume": 238297.20224300184
+      },
+      {
+        "rank": 17,
+        "market_id": "1090496",
+        "question": "NATO x Russia military clash by December 31, 2026?",
+        "usd_volume": 226892.64316300003
+      },
+      {
+        "rank": 18,
+        "market_id": "1235572",
+        "question": "Will the Los Angeles Dodgers win the 2026 World Series?",
+        "usd_volume": 221388.17512899998
+      },
+      {
+        "rank": 19,
+        "market_id": "562794",
+        "question": "Will the Republican Party control the Senate after the 2026 Midterm elections?",
+        "usd_volume": 211713.27929600002
+      },
+      {
+        "rank": 20,
+        "market_id": "608545",
+        "question": "Will Lamine Yamal win the 2026 Ballon d'Or?",
+        "usd_volume": 196333.18821899997
+      },
+      {
+        "rank": 21,
+        "market_id": "630963",
+        "question": "Will the Democrats win the Texas Senate race in 2026?",
+        "usd_volume": 173966.20195000002
+      },
+      {
+        "rank": 22,
+        "market_id": "682708",
+        "question": "Will Gadi Eizenkot be the next Prime Minister of Israel?",
+        "usd_volume": 172011.37282900006
+      },
+      {
+        "rank": 23,
+        "market_id": "608540",
+        "question": "Will Kylian Mbapp\u00e9 win the 2026 Ballon d'Or?",
+        "usd_volume": 168809.875025
+      },
+      {
+        "rank": 24,
+        "market_id": "562793",
+        "question": "Will the Democratic Party control the Senate after the 2026 Midterm elections?",
+        "usd_volume": 163627.84075200008
+      },
+      {
+        "rank": 25,
+        "market_id": "679022",
+        "question": "Will David Lisnard win the 2027 French presidential election?",
+        "usd_volume": 163256.00437500002
+      },
+      {
+        "rank": 26,
+        "market_id": "666861",
+        "question": "Trump out as President before 2027?",
+        "usd_volume": 155845.80197099998
+      },
+      {
+        "rank": 27,
+        "market_id": "1235552",
+        "question": "Will the Cleveland Guardians win the 2026 World Series?",
+        "usd_volume": 147619.22795999993
+      },
+      {
+        "rank": 28,
+        "market_id": "562830",
+        "question": "2026 Balance of Power: R Senate, D House",
+        "usd_volume": 105655.02482699999
+      },
+      {
+        "rank": 29,
+        "market_id": "682706",
+        "question": "Will Naftali Bennett be the next Prime Minister of Israel?",
+        "usd_volume": 105150.46394899998
+      },
+      {
+        "rank": 30,
+        "market_id": "1235568",
+        "question": "Will the Milwaukee Brewers win the 2026 World Series?",
+        "usd_volume": 98968.40012500001
       }
     ]
   }

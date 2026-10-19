@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-10-05",
-  "generated_at": "2026-10-12T14:50:51+00:00",
+  "as_of": "2026-10-12",
+  "generated_at": "2026-10-19T16:12:49+00:00",
   "sentences": [
-    "Traders moved $499 million through Polymarket in the week of 2026-10-05, across 16.2 million individual trades. Algorithmic wallets accounted for 57% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 43%.",
+    "Traders moved $558 million through Polymarket in the week of 2026-10-12, across 16.4 million individual trades. Algorithmic wallets accounted for 56% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 44%.",
     "The most-traded market was \"Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?\", pulling in $2 million of volume. Politics dominated the week's attention.",
-    "Both sides lost money on resolved trades this week. Bots dropped $515K (-158 bps); retail dropped $232K (-956 bps). Much of the activity was in markets that have not yet resolved."
+    "The usual pattern held: algorithmic traders made $4K (+19 bps on volume) while retail traders lost $6K (-680 bps)."
   ],
-  "headline_quote": "Polymarket traders moved $499 million this week, with the biggest action on \"Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?\".",
+  "headline_quote": "Polymarket traders moved $558 million this week, with the biggest action on \"Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?\".",
   "author": "Joshua Della Vedova, University of San Diego",
   "attribution_short": "Della Vedova (2026), Della Vedova Prediction Market Indices",
   "hand_edited": false,
