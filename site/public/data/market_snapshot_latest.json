@@ -1,194 +1,992 @@
 {
-  "as_of_week": "2026-W42",
-  "generated_at": "2026-10-19T16:12:49+00:00",
+  "as_of_week": "2026-W44",
+  "generated_at": "2026-10-26T16:16:33+00:00",
   "markets": [
-    {
-      "market_id": "601826",
-      "question": "Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
-      "yes_price": 0.7575,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.7575,
-        0.2425
-      ],
-      "yes_token_id": "109876868437950584369987384406356259939519193117253465815665152916226511121427",
-      "end_date": "2026-10-05T03:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 23023373.900034,
-      "volume_24hr": 531488.818376,
-      "end_date_iso": "2026-10-05",
-      "fetched_at": "2026-10-19T16:12:26+00:00",
-      "yes_book": {
-        "n_bid_levels": 118,
-        "n_ask_levels": 156,
-        "top5_bids": [
-          {
-            "price": 0.757,
-            "size": 21610.61,
-            "dollars": 16359.23177
-          },
-          {
-            "price": 0.756,
-            "size": 1512.09,
-            "dollars": 1143.14004
-          },
-          {
-            "price": 0.755,
-            "size": 2664.9,
-            "dollars": 2011.9995000000001
-          },
-          {
-            "price": 0.754,
-            "size": 235.0,
-            "dollars": 177.19
-          },
-          {
-            "price": 0.753,
-            "size": 1350.0,
-            "dollars": 1016.55
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.758,
-            "size": 13437.86,
-            "dollars": 10185.89788
-          },
-          {
-            "price": 0.759,
-            "size": 1342.0,
-            "dollars": 1018.578
-          },
-          {
-            "price": 0.764,
-            "size": 2260.77,
-            "dollars": 1727.22828
-          },
-          {
-            "price": 0.767,
-            "size": 39.99,
-            "dollars": 30.672330000000002
-          },
-          {
-            "price": 0.768,
-            "size": 3262.6,
-            "dollars": 2505.6768
-          }
-        ],
-        "top_bid_price": 0.757,
-        "top_bid_dollars": 16359.23177,
-        "top_ask_price": 0.758,
-        "top_ask_dollars": 10185.89788,
-        "mid": 0.7575000000000001,
-        "spread_cents": 0.10000000000000009,
-        "spread_bps": 13.201320132013212,
-        "depth_5pct_bid_dollars": 155896.11963,
-        "depth_5pct_ask_dollars": 327261.46023
-      },
-      "rank": 1,
-      "category": "Politics",
-      "weekly_volume_usd": 1719493.182019,
-      "weekly_trades": 7899,
-      "yes_price_7d_ago": 0.8685,
-      "yes_price_change_pp": -11.10000000000001
-    },
     {
       "market_id": "601819",
       "question": "Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
-      "yes_price": 0.235,
+      "yes_price": 1.0,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.235,
-        0.765
+        1.0,
+        0.0
       ],
       "yes_token_id": "30630994248667897740988010928640156931882346081873066002335460180076741328029",
-      "end_date": "2026-10-05T03:59:00Z",
+      "end_date": "2026-10-26T03:59:00Z",
+      "active": true,
+      "closed": true,
+      "volume_total_num": 48514562.175727,
+      "volume_24hr": 17352246.787056003,
+      "end_date_iso": "2026-10-26",
+      "fetched_at": "2026-10-26T16:15:54+00:00",
+      "yes_book": {},
+      "rank": 1,
+      "category": "Politics",
+      "weekly_volume_usd": 4849485.844846,
+      "weekly_trades": 1610,
+      "yes_price_7d_ago": 0.235,
+      "yes_price_change_pp": 76.5
+    },
+    {
+      "market_id": "601826",
+      "question": "Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
+      "yes_price": 0.0,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.0,
+        1.0
+      ],
+      "yes_token_id": "109876868437950584369987384406356259939519193117253465815665152916226511121427",
+      "end_date": "2026-10-26T03:59:00Z",
+      "active": true,
+      "closed": true,
+      "volume_total_num": 62159932.427386,
+      "volume_24hr": 33586623.88053196,
+      "end_date_iso": "2026-10-26",
+      "fetched_at": "2026-10-26T16:15:55+00:00",
+      "yes_book": {},
+      "rank": 2,
+      "category": "Politics",
+      "weekly_volume_usd": 2556208.885714004,
+      "weekly_trades": 1281,
+      "yes_price_7d_ago": 0.7575,
+      "yes_price_change_pp": -75.75
+    },
+    {
+      "market_id": "608547",
+      "question": "Will Harry Kane win the 2026 Ballon d'Or?",
+      "yes_price": 0.6035,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.6035,
+        0.3965
+      ],
+      "yes_token_id": "72710166409980712002774407052535905861151156175854323762835102340552522606004",
+      "end_date": "2026-10-27T03:59:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 26655541.109031,
-      "volume_24hr": 460843.09145599994,
-      "end_date_iso": "2026-10-05",
-      "fetched_at": "2026-10-19T16:12:26+00:00",
+      "volume_total_num": 9384960.922782,
+      "volume_24hr": 1946817.0746429993,
+      "end_date_iso": "2026-10-27",
+      "fetched_at": "2026-10-26T16:15:57+00:00",
       "yes_book": {
-        "n_bid_levels": 23,
-        "n_ask_levels": 65,
+        "n_bid_levels": 199,
+        "n_ask_levels": 114,
         "top5_bids": [
           {
-            "price": 0.23,
-            "size": 60734.4,
-            "dollars": 13968.912
+            "price": 0.606,
+            "size": 5073.66,
+            "dollars": 3074.63796
           },
           {
-            "price": 0.22,
-            "size": 46471.31,
-            "dollars": 10223.688199999999
+            "price": 0.605,
+            "size": 894.94,
+            "dollars": 541.4387
           },
           {
-            "price": 0.21,
-            "size": 153856.93,
-            "dollars": 32309.955299999998
+            "price": 0.604,
+            "size": 509.99,
+            "dollars": 308.03396
           },
           {
-            "price": 0.2,
-            "size": 108617.64,
-            "dollars": 21723.528000000002
+            "price": 0.603,
+            "size": 514.17,
+            "dollars": 310.04450999999995
           },
           {
-            "price": 0.19,
-            "size": 230394.77,
-            "dollars": 43775.0063
+            "price": 0.602,
+            "size": 1210.0,
+            "dollars": 728.42
           }
         ],
         "top5_asks": [
           {
-            "price": 0.24,
-            "size": 90155.81,
-            "dollars": 21637.394399999997
+            "price": 0.608,
+            "size": 40.0,
+            "dollars": 24.32
           },
           {
-            "price": 0.25,
-            "size": 70212.02,
-            "dollars": 17553.005
+            "price": 0.609,
+            "size": 1026.95,
+            "dollars": 625.41255
           },
           {
-            "price": 0.26,
-            "size": 132763.61,
-            "dollars": 34518.5386
+            "price": 0.611,
+            "size": 99.0,
+            "dollars": 60.489
           },
           {
-            "price": 0.27,
-            "size": 18168.56,
-            "dollars": 4905.511200000001
+            "price": 0.612,
+            "size": 25.0,
+            "dollars": 15.299999999999999
           },
           {
-            "price": 0.28,
-            "size": 12386.77,
-            "dollars": 3468.2956000000004
+            "price": 0.613,
+            "size": 80.0,
+            "dollars": 49.04
           }
         ],
-        "top_bid_price": 0.23,
-        "top_bid_dollars": 13968.912,
-        "top_ask_price": 0.24,
-        "top_ask_dollars": 21637.394399999997,
-        "mid": 0.235,
-        "spread_cents": 0.9999999999999981,
-        "spread_bps": 425.53191489361626,
-        "depth_5pct_bid_dollars": 13968.912,
-        "depth_5pct_ask_dollars": 21637.394399999997
+        "top_bid_price": 0.606,
+        "top_bid_dollars": 3074.63796,
+        "top_ask_price": 0.608,
+        "top_ask_dollars": 24.32,
+        "mid": 0.607,
+        "spread_cents": 0.20000000000000018,
+        "spread_bps": 32.94892915980234,
+        "depth_5pct_bid_dollars": 20467.43068,
+        "depth_5pct_ask_dollars": 8663.07089
       },
-      "rank": 2,
+      "rank": 3,
+      "category": "Other",
+      "weekly_volume_usd": 152974.749792,
+      "weekly_trades": 2310,
+      "yes_price_7d_ago": 0.6965,
+      "yes_price_change_pp": -9.299999999999997
+    },
+    {
+      "market_id": "608540",
+      "question": "Will Kylian Mbapp\u00e9 win the 2026 Ballon d'Or?",
+      "yes_price": 0.3495,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.3495,
+        0.6505
+      ],
+      "yes_token_id": "95640549996905293510297955529586737178285694064878854803914367446504739764113",
+      "end_date": "2026-10-27T03:59:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 9240283.272230001,
+      "volume_24hr": 2553919.8398639993,
+      "end_date_iso": "2026-10-27",
+      "fetched_at": "2026-10-26T16:15:58+00:00",
+      "yes_book": {
+        "n_bid_levels": 92,
+        "n_ask_levels": 112,
+        "top5_bids": [
+          {
+            "price": 0.331,
+            "size": 3549.32,
+            "dollars": 1174.82492
+          },
+          {
+            "price": 0.33,
+            "size": 24300.84,
+            "dollars": 8019.2772
+          },
+          {
+            "price": 0.329,
+            "size": 6050.0,
+            "dollars": 1990.45
+          },
+          {
+            "price": 0.325,
+            "size": 2196.17,
+            "dollars": 713.75525
+          },
+          {
+            "price": 0.316,
+            "size": 999.99,
+            "dollars": 315.99684
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.332,
+            "size": 267.63,
+            "dollars": 88.85316
+          },
+          {
+            "price": 0.333,
+            "size": 487.74,
+            "dollars": 162.41742000000002
+          },
+          {
+            "price": 0.338,
+            "size": 260.0,
+            "dollars": 87.88000000000001
+          },
+          {
+            "price": 0.34,
+            "size": 225.63,
+            "dollars": 76.7142
+          },
+          {
+            "price": 0.344,
+            "size": 4600.0,
+            "dollars": 1582.3999999999999
+          }
+        ],
+        "top_bid_price": 0.331,
+        "top_bid_dollars": 1174.82492,
+        "top_ask_price": 0.332,
+        "top_ask_dollars": 88.85316,
+        "mid": 0.3315,
+        "spread_cents": 0.10000000000000009,
+        "spread_bps": 30.165912518853723,
+        "depth_5pct_bid_dollars": 12214.30421,
+        "depth_5pct_ask_dollars": 9714.79008
+      },
+      "rank": 4,
+      "category": "Other",
+      "weekly_volume_usd": 128730.81999400003,
+      "weekly_trades": 2401,
+      "yes_price_7d_ago": 0.0335,
+      "yes_price_change_pp": 31.599999999999994
+    },
+    {
+      "market_id": "898412",
+      "question": "Will Kimi Antonelli be the 2026 F1 Drivers' Champion?",
+      "yes_price": 0.9965,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.9965,
+        0.0035
+      ],
+      "yes_token_id": "32950178421556833525068948927823594772134813180063196823389171317494746105102",
+      "end_date": "2026-12-06T00:00:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 5163897.491091001,
+      "volume_24hr": 257738.312014,
+      "end_date_iso": "2026-12-06",
+      "fetched_at": "2026-10-26T16:15:59+00:00",
+      "yes_book": {
+        "n_bid_levels": 63,
+        "n_ask_levels": 3,
+        "top5_bids": [
+          {
+            "price": 0.996,
+            "size": 5024.92,
+            "dollars": 5004.82032
+          },
+          {
+            "price": 0.995,
+            "size": 48084.91,
+            "dollars": 47844.48545
+          },
+          {
+            "price": 0.994,
+            "size": 6580.56,
+            "dollars": 6541.07664
+          },
+          {
+            "price": 0.993,
+            "size": 1029.75,
+            "dollars": 1022.54175
+          },
+          {
+            "price": 0.992,
+            "size": 622.81,
+            "dollars": 617.8275199999999
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.997,
+            "size": 5883.51,
+            "dollars": 5865.85947
+          },
+          {
+            "price": 0.998,
+            "size": 18146.04,
+            "dollars": 18109.74792
+          },
+          {
+            "price": 0.999,
+            "size": 28443.09,
+            "dollars": 28414.64691
+          }
+        ],
+        "top_bid_price": 0.996,
+        "top_bid_dollars": 5004.82032,
+        "top_ask_price": 0.997,
+        "top_ask_dollars": 5865.85947,
+        "mid": 0.9964999999999999,
+        "spread_cents": 0.10000000000000009,
+        "spread_bps": 10.035122930255906,
+        "depth_5pct_bid_dollars": 67108.0258,
+        "depth_5pct_ask_dollars": 52390.2543
+      },
+      "rank": 5,
+      "category": "Sports",
+      "weekly_volume_usd": 119459.21898,
+      "weekly_trades": 60,
+      "yes_price_7d_ago": 0.849,
+      "yes_price_change_pp": 14.750000000000007
+    },
+    {
+      "market_id": "562829",
+      "question": "2026 Balance of Power: D Senate, R House",
+      "yes_price": 0.0085,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.0085,
+        0.9915
+      ],
+      "yes_token_id": "70997927349469817841862065582625658840347600365813612622959588796331622340305",
+      "end_date": "2026-11-04T04:59:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 8292604.184400001,
+      "volume_24hr": 166278.87421600003,
+      "end_date_iso": "2026-11-04",
+      "fetched_at": "2026-10-26T16:16:00+00:00",
+      "yes_book": {
+        "n_bid_levels": 8,
+        "n_ask_levels": 114,
+        "top5_bids": [
+          {
+            "price": 0.008,
+            "size": 30.72,
+            "dollars": 0.24576
+          },
+          {
+            "price": 0.007,
+            "size": 7686.99,
+            "dollars": 53.80893
+          },
+          {
+            "price": 0.006,
+            "size": 762566.3,
+            "dollars": 4575.397800000001
+          },
+          {
+            "price": 0.005,
+            "size": 19330.0,
+            "dollars": 96.65
+          },
+          {
+            "price": 0.004,
+            "size": 1558988.0,
+            "dollars": 6235.952
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.009,
+            "size": 71498.96,
+            "dollars": 643.49064
+          },
+          {
+            "price": 0.01,
+            "size": 67584.7,
+            "dollars": 675.847
+          },
+          {
+            "price": 0.012,
+            "size": 433.0,
+            "dollars": 5.196
+          },
+          {
+            "price": 0.013,
+            "size": 2100.0,
+            "dollars": 27.299999999999997
+          },
+          {
+            "price": 0.014,
+            "size": 22500.0,
+            "dollars": 315.0
+          }
+        ],
+        "top_bid_price": 0.008,
+        "top_bid_dollars": 0.24576,
+        "top_ask_price": 0.009,
+        "top_ask_dollars": 643.49064,
+        "mid": 0.0085,
+        "spread_cents": 0.09999999999999992,
+        "spread_bps": 1176.470588235293,
+        "depth_5pct_bid_dollars": 0,
+        "depth_5pct_ask_dollars": 0
+      },
+      "rank": 6,
       "category": "Politics",
-      "weekly_volume_usd": 1701666.9017730001,
-      "weekly_trades": 4645,
-      "yes_price_7d_ago": 0.125,
-      "yes_price_change_pp": 10.999999999999998
+      "weekly_volume_usd": 100049.868365,
+      "weekly_trades": 43,
+      "yes_price_7d_ago": null,
+      "yes_price_change_pp": null
+    },
+    {
+      "market_id": "562803",
+      "question": "Will the Republican Party control the House after the 2026 Midterm elections?",
+      "yes_price": 0.08,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.08,
+        0.92
+      ],
+      "yes_token_id": "65139230827417363158752884968303867495725894165574887635816574090175320800482",
+      "end_date": "2026-11-04T04:59:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 10123954.274081001,
+      "volume_24hr": 1152100.489912,
+      "end_date_iso": "2026-11-04",
+      "fetched_at": "2026-10-26T16:16:01+00:00",
+      "yes_book": {
+        "n_bid_levels": 8,
+        "n_ask_levels": 58,
+        "top5_bids": [
+          {
+            "price": 0.08,
+            "size": 22.75,
+            "dollars": 1.82
+          },
+          {
+            "price": 0.07,
+            "size": 817795.25,
+            "dollars": 57245.6675
+          },
+          {
+            "price": 0.06,
+            "size": 2502870.58,
+            "dollars": 150172.2348
+          },
+          {
+            "price": 0.05,
+            "size": 1140273.24,
+            "dollars": 57013.662000000004
+          },
+          {
+            "price": 0.04,
+            "size": 3157.2,
+            "dollars": 126.288
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.09,
+            "size": 1826544.18,
+            "dollars": 164388.97619999998
+          },
+          {
+            "price": 0.1,
+            "size": 755488.5,
+            "dollars": 75548.85
+          },
+          {
+            "price": 0.11,
+            "size": 44194.47,
+            "dollars": 4861.3917
+          },
+          {
+            "price": 0.12,
+            "size": 8383.37,
+            "dollars": 1006.0044
+          },
+          {
+            "price": 0.13,
+            "size": 8448.37,
+            "dollars": 1098.2881000000002
+          }
+        ],
+        "top_bid_price": 0.08,
+        "top_bid_dollars": 1.82,
+        "top_ask_price": 0.09,
+        "top_ask_dollars": 164388.97619999998,
+        "mid": 0.08499999999999999,
+        "spread_cents": 0.9999999999999996,
+        "spread_bps": 1176.4705882352937,
+        "depth_5pct_bid_dollars": 0,
+        "depth_5pct_ask_dollars": 0
+      },
+      "rank": 7,
+      "category": "Politics",
+      "weekly_volume_usd": 89507.21032100002,
+      "weekly_trades": 233,
+      "yes_price_7d_ago": 0.095,
+      "yes_price_change_pp": -1.5
+    },
+    {
+      "market_id": "608545",
+      "question": "Will Lamine Yamal win the 2026 Ballon d'Or?",
+      "yes_price": 0.0625,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.0625,
+        0.9375
+      ],
+      "yes_token_id": "10466835326554416965099784068156829774726248334728156046559014834812912458273",
+      "end_date": "2026-10-27T03:59:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 8070839.805606,
+      "volume_24hr": 2017100.3125359993,
+      "end_date_iso": "2026-10-27",
+      "fetched_at": "2026-10-26T16:16:03+00:00",
+      "yes_book": {
+        "n_bid_levels": 53,
+        "n_ask_levels": 154,
+        "top5_bids": [
+          {
+            "price": 0.077,
+            "size": 288.83,
+            "dollars": 22.23991
+          },
+          {
+            "price": 0.076,
+            "size": 1000.0,
+            "dollars": 76.0
+          },
+          {
+            "price": 0.075,
+            "size": 1333.32,
+            "dollars": 99.999
+          },
+          {
+            "price": 0.074,
+            "size": 675.67,
+            "dollars": 49.999579999999995
+          },
+          {
+            "price": 0.073,
+            "size": 2031.07,
+            "dollars": 148.26810999999998
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.086,
+            "size": 250.0,
+            "dollars": 21.5
+          },
+          {
+            "price": 0.087,
+            "size": 170.14,
+            "dollars": 14.802179999999998
+          },
+          {
+            "price": 0.088,
+            "size": 24.72,
+            "dollars": 2.17536
+          },
+          {
+            "price": 0.094,
+            "size": 39.99,
+            "dollars": 3.7590600000000003
+          },
+          {
+            "price": 0.098,
+            "size": 29.9,
+            "dollars": 2.9302
+          }
+        ],
+        "top_bid_price": 0.077,
+        "top_bid_dollars": 22.23991,
+        "top_ask_price": 0.086,
+        "top_ask_dollars": 21.5,
+        "mid": 0.08149999999999999,
+        "spread_cents": 0.8999999999999995,
+        "spread_bps": 1104.2944785276068,
+        "depth_5pct_bid_dollars": 0,
+        "depth_5pct_ask_dollars": 0
+      },
+      "rank": 8,
+      "category": "Other",
+      "weekly_volume_usd": 79006.667658,
+      "weekly_trades": 1865,
+      "yes_price_7d_ago": 0.231,
+      "yes_price_change_pp": -16.85
+    },
+    {
+      "market_id": "562828",
+      "question": "2026 Balance of Power: D Senate, D House",
+      "yes_price": 0.655,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.655,
+        0.345
+      ],
+      "yes_token_id": "34722410608062854697106861099776685947172185964394483545370684749662285977831",
+      "end_date": "2026-11-04T04:59:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 8346085.165063002,
+      "volume_24hr": 314757.521952,
+      "end_date_iso": "2026-11-04",
+      "fetched_at": "2026-10-26T16:16:05+00:00",
+      "yes_book": {
+        "n_bid_levels": 47,
+        "n_ask_levels": 29,
+        "top5_bids": [
+          {
+            "price": 0.65,
+            "size": 19476.99,
+            "dollars": 12660.043500000002
+          },
+          {
+            "price": 0.64,
+            "size": 719462.52,
+            "dollars": 460456.0128
+          },
+          {
+            "price": 0.63,
+            "size": 864359.18,
+            "dollars": 544546.2834000001
+          },
+          {
+            "price": 0.62,
+            "size": 2012393.03,
+            "dollars": 1247683.6786
+          },
+          {
+            "price": 0.61,
+            "size": 23087.67,
+            "dollars": 14083.478699999998
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.66,
+            "size": 118434.0,
+            "dollars": 78166.44
+          },
+          {
+            "price": 0.67,
+            "size": 483507.9,
+            "dollars": 323950.29300000006
+          },
+          {
+            "price": 0.68,
+            "size": 677454.15,
+            "dollars": 460668.82200000004
+          },
+          {
+            "price": 0.69,
+            "size": 122594.08,
+            "dollars": 84589.91519999999
+          },
+          {
+            "price": 0.7,
+            "size": 115150.13,
+            "dollars": 80605.091
+          }
+        ],
+        "top_bid_price": 0.65,
+        "top_bid_dollars": 12660.043500000002,
+        "top_ask_price": 0.66,
+        "top_ask_dollars": 78166.44,
+        "mid": 0.655,
+        "spread_cents": 1.0000000000000009,
+        "spread_bps": 152.67175572519096,
+        "depth_5pct_bid_dollars": 1017662.3397000001,
+        "depth_5pct_ask_dollars": 862785.5550000002
+      },
+      "rank": 9,
+      "category": "Politics",
+      "weekly_volume_usd": 75801.947201,
+      "weekly_trades": 134,
+      "yes_price_7d_ago": 0.625,
+      "yes_price_change_pp": 3.0000000000000027
+    },
+    {
+      "market_id": "562802",
+      "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
+      "yes_price": 0.925,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.925,
+        0.075
+      ],
+      "yes_token_id": "83247781037352156539108067944461291821683755894607244160607042790356561625563",
+      "end_date": "2026-11-04T04:59:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 13534208.321451003,
+      "volume_24hr": 1041261.0980569999,
+      "end_date_iso": "2026-11-04",
+      "fetched_at": "2026-10-26T16:16:06+00:00",
+      "yes_book": {
+        "n_bid_levels": 54,
+        "n_ask_levels": 7,
+        "top5_bids": [
+          {
+            "price": 0.92,
+            "size": 76.0,
+            "dollars": 69.92
+          },
+          {
+            "price": 0.91,
+            "size": 2937007.96,
+            "dollars": 2672677.2436
+          },
+          {
+            "price": 0.9,
+            "size": 652340.98,
+            "dollars": 587106.882
+          },
+          {
+            "price": 0.89,
+            "size": 71637.76,
+            "dollars": 63757.6064
+          },
+          {
+            "price": 0.88,
+            "size": 16242.24,
+            "dollars": 14293.1712
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.93,
+            "size": 1608419.22,
+            "dollars": 1495829.8746
+          },
+          {
+            "price": 0.94,
+            "size": 3286537.32,
+            "dollars": 3089345.0807999996
+          },
+          {
+            "price": 0.95,
+            "size": 2248599.92,
+            "dollars": 2136169.9239999996
+          },
+          {
+            "price": 0.96,
+            "size": 23603.87,
+            "dollars": 22659.7152
+          },
+          {
+            "price": 0.97,
+            "size": 31995.69,
+            "dollars": 31035.8193
+          }
+        ],
+        "top_bid_price": 0.92,
+        "top_bid_dollars": 69.92,
+        "top_ask_price": 0.93,
+        "top_ask_dollars": 1495829.8746,
+        "mid": 0.925,
+        "spread_cents": 1.0000000000000009,
+        "spread_bps": 108.1081081081082,
+        "depth_5pct_bid_dollars": 3337904.8232,
+        "depth_5pct_ask_dollars": 6775040.413899999
+      },
+      "rank": 10,
+      "category": "Politics",
+      "weekly_volume_usd": 65415.36119000001,
+      "weekly_trades": 218,
+      "yes_price_7d_ago": 0.915,
+      "yes_price_change_pp": 1.0000000000000009
+    },
+    {
+      "market_id": "562831",
+      "question": "2026 Balance of Power: R Senate, R House",
+      "yes_price": 0.075,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.075,
+        0.925
+      ],
+      "yes_token_id": "103704141773947678931823410030956181918562062788486034785782641603149828893320",
+      "end_date": "2026-11-04T04:59:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 12246561.328733,
+      "volume_24hr": 179835.741569,
+      "end_date_iso": "2026-11-04",
+      "fetched_at": "2026-10-26T16:16:08+00:00",
+      "yes_book": {
+        "n_bid_levels": 7,
+        "n_ask_levels": 52,
+        "top5_bids": [
+          {
+            "price": 0.07,
+            "size": 461796.41,
+            "dollars": 32325.7487
+          },
+          {
+            "price": 0.06,
+            "size": 2348374.17,
+            "dollars": 140902.4502
+          },
+          {
+            "price": 0.05,
+            "size": 1104734.65,
+            "dollars": 55236.7325
+          },
+          {
+            "price": 0.04,
+            "size": 13925.0,
+            "dollars": 557.0
+          },
+          {
+            "price": 0.03,
+            "size": 10788.95,
+            "dollars": 323.6685
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.08,
+            "size": 266962.82,
+            "dollars": 21357.0256
+          },
+          {
+            "price": 0.09,
+            "size": 2199414.95,
+            "dollars": 197947.3455
+          },
+          {
+            "price": 0.1,
+            "size": 53483.3,
+            "dollars": 5348.330000000001
+          },
+          {
+            "price": 0.11,
+            "size": 11246.63,
+            "dollars": 1237.1292999999998
+          },
+          {
+            "price": 0.12,
+            "size": 64583.82,
+            "dollars": 7750.0584
+          }
+        ],
+        "top_bid_price": 0.07,
+        "top_bid_dollars": 32325.7487,
+        "top_ask_price": 0.08,
+        "top_ask_dollars": 21357.0256,
+        "mid": 0.07500000000000001,
+        "spread_cents": 0.9999999999999996,
+        "spread_bps": 1333.3333333333326,
+        "depth_5pct_bid_dollars": 0,
+        "depth_5pct_ask_dollars": 0
+      },
+      "rank": 11,
+      "category": "Politics",
+      "weekly_volume_usd": 53862.56299999998,
+      "weekly_trades": 81,
+      "yes_price_7d_ago": 0.085,
+      "yes_price_change_pp": -1.0000000000000009
+    },
+    {
+      "market_id": "665374",
+      "question": "Will the U.S. invade Iran before 2027?",
+      "yes_price": 0.185,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.185,
+        0.815
+      ],
+      "yes_token_id": "55115078421062885512539156303747803058407616201213034911037320915726138659123",
+      "end_date": "2027-01-01T04:59:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 75493863.13505499,
+      "volume_24hr": 138481.477545,
+      "end_date_iso": "2027-01-01",
+      "fetched_at": "2026-10-26T16:16:09+00:00",
+      "yes_book": {
+        "n_bid_levels": 18,
+        "n_ask_levels": 81,
+        "top5_bids": [
+          {
+            "price": 0.18,
+            "size": 4145.42,
+            "dollars": 746.1756
+          },
+          {
+            "price": 0.17,
+            "size": 49714.03,
+            "dollars": 8451.3851
+          },
+          {
+            "price": 0.16,
+            "size": 112844.02,
+            "dollars": 18055.0432
+          },
+          {
+            "price": 0.15,
+            "size": 482060.98,
+            "dollars": 72309.147
+          },
+          {
+            "price": 0.14,
+            "size": 49650.52,
+            "dollars": 6951.0728
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.19,
+            "size": 41346.55,
+            "dollars": 7855.844500000001
+          },
+          {
+            "price": 0.2,
+            "size": 25972.36,
+            "dollars": 5194.472000000001
+          },
+          {
+            "price": 0.21,
+            "size": 18198.48,
+            "dollars": 3821.6807999999996
+          },
+          {
+            "price": 0.22,
+            "size": 18720.87,
+            "dollars": 4118.5914
+          },
+          {
+            "price": 0.23,
+            "size": 2326.48,
+            "dollars": 535.0904
+          }
+        ],
+        "top_bid_price": 0.18,
+        "top_bid_dollars": 746.1756,
+        "top_ask_price": 0.19,
+        "top_ask_dollars": 7855.844500000001,
+        "mid": 0.185,
+        "spread_cents": 1.0000000000000009,
+        "spread_bps": 540.5405405405411,
+        "depth_5pct_bid_dollars": 746.1756,
+        "depth_5pct_ask_dollars": 7855.844500000001
+      },
+      "rank": 12,
+      "category": "Geopolitics",
+      "weekly_volume_usd": 43776.905288000016,
+      "weekly_trades": 138,
+      "yes_price_7d_ago": 0.155,
+      "yes_price_change_pp": 3.0
     },
     {
       "market_id": "682705",
@@ -206,1892 +1004,1117 @@
       "end_date": "2026-10-28T03:59:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 8820023.096068,
-      "volume_24hr": 369108.77907700004,
+      "volume_total_num": 12378577.261342002,
+      "volume_24hr": 1205038.816307,
       "end_date_iso": "2026-10-28",
-      "fetched_at": "2026-10-19T16:12:27+00:00",
+      "fetched_at": "2026-10-26T16:16:10+00:00",
       "yes_book": {
-        "n_bid_levels": 27,
-        "n_ask_levels": 60,
+        "n_bid_levels": 26,
+        "n_ask_levels": 63,
         "top5_bids": [
           {
-            "price": 0.27,
-            "size": 7371.29,
-            "dollars": 1990.2483000000002
-          },
-          {
             "price": 0.26,
-            "size": 23135.24,
-            "dollars": 6015.162400000001
+            "size": 10572.84,
+            "dollars": 2748.9384
           },
           {
             "price": 0.25,
-            "size": 65431.55,
-            "dollars": 16357.8875
+            "size": 18530.63,
+            "dollars": 4632.6575
           },
           {
             "price": 0.24,
-            "size": 17382.09,
-            "dollars": 4171.7016
+            "size": 45325.4,
+            "dollars": 10878.096
           },
           {
             "price": 0.23,
-            "size": 6794.94,
-            "dollars": 1562.8362
+            "size": 66229.51,
+            "dollars": 15232.7873
+          },
+          {
+            "price": 0.22,
+            "size": 1206.24,
+            "dollars": 265.3728
           }
         ],
         "top5_asks": [
           {
+            "price": 0.27,
+            "size": 7788.34,
+            "dollars": 2102.8518000000004
+          },
+          {
             "price": 0.28,
-            "size": 24268.45,
-            "dollars": 6795.166000000001
+            "size": 187255.64,
+            "dollars": 52431.57920000001
           },
           {
             "price": 0.29,
-            "size": 79398.57,
-            "dollars": 23025.5853
+            "size": 325909.09,
+            "dollars": 94513.6361
           },
           {
             "price": 0.3,
-            "size": 32482.96,
-            "dollars": 9744.887999999999
+            "size": 196613.21,
+            "dollars": 58983.962999999996
           },
           {
             "price": 0.31,
-            "size": 18845.8,
-            "dollars": 5842.197999999999
-          },
-          {
-            "price": 0.32,
-            "size": 65261.56,
-            "dollars": 20883.6992
+            "size": 44419.53,
+            "dollars": 13770.0543
           }
         ],
-        "top_bid_price": 0.27,
-        "top_bid_dollars": 1990.2483000000002,
-        "top_ask_price": 0.28,
-        "top_ask_dollars": 6795.166000000001,
-        "mid": 0.275,
+        "top_bid_price": 0.26,
+        "top_bid_dollars": 2748.9384,
+        "top_ask_price": 0.27,
+        "top_ask_dollars": 2102.8518000000004,
+        "mid": 0.265,
         "spread_cents": 1.0000000000000009,
-        "spread_bps": 363.6363636363639,
-        "depth_5pct_bid_dollars": 1990.2483000000002,
-        "depth_5pct_ask_dollars": 6795.166000000001
+        "spread_bps": 377.3584905660381,
+        "depth_5pct_bid_dollars": 2748.9384,
+        "depth_5pct_ask_dollars": 2102.8518000000004
       },
-      "rank": 3,
+      "rank": 13,
       "category": "Geopolitics",
-      "weekly_volume_usd": 869139.242902,
-      "weekly_trades": 4623,
-      "yes_price_7d_ago": 0.305,
-      "yes_price_change_pp": -3.9999999999999982
-    },
-    {
-      "market_id": "703257",
-      "question": "Will the US confirm that aliens exist before 2027?",
-      "yes_price": 0.0475,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.0475,
-        0.9525
-      ],
-      "yes_token_id": "107505882767731489358349912513945399560393482969656700824895970500493757150417",
-      "end_date": "2027-01-01T04:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 42187874.379553005,
-      "volume_24hr": 63244.56680399999,
-      "end_date_iso": "2027-01-01",
-      "fetched_at": "2026-10-19T16:12:28+00:00",
-      "yes_book": {
-        "n_bid_levels": 46,
-        "n_ask_levels": 123,
-        "top5_bids": [
-          {
-            "price": 0.047,
-            "size": 2538.04,
-            "dollars": 119.28788
-          },
-          {
-            "price": 0.045,
-            "size": 4393.89,
-            "dollars": 197.72505
-          },
-          {
-            "price": 0.044,
-            "size": 18250.1,
-            "dollars": 803.0043999999999
-          },
-          {
-            "price": 0.043,
-            "size": 5400.0,
-            "dollars": 232.2
-          },
-          {
-            "price": 0.042,
-            "size": 31526.99,
-            "dollars": 1324.1335800000002
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.048,
-            "size": 5416.83,
-            "dollars": 260.00784
-          },
-          {
-            "price": 0.049,
-            "size": 3220.0,
-            "dollars": 157.78
-          },
-          {
-            "price": 0.05,
-            "size": 3500.0,
-            "dollars": 175.0
-          },
-          {
-            "price": 0.051,
-            "size": 20208.8,
-            "dollars": 1030.6488
-          },
-          {
-            "price": 0.052,
-            "size": 1074.0,
-            "dollars": 55.848
-          }
-        ],
-        "top_bid_price": 0.047,
-        "top_bid_dollars": 119.28788,
-        "top_ask_price": 0.048,
-        "top_ask_dollars": 260.00784,
-        "mid": 0.0475,
-        "spread_cents": 0.10000000000000009,
-        "spread_bps": 210.52631578947384,
-        "depth_5pct_bid_dollars": 119.28788,
-        "depth_5pct_ask_dollars": 417.78783999999996
-      },
-      "rank": 4,
-      "category": "Other",
-      "weekly_volume_usd": 853456.4821960002,
-      "weekly_trades": 2063,
-      "yes_price_7d_ago": 0.0315,
-      "yes_price_change_pp": 1.6
-    },
-    {
-      "market_id": "665374",
-      "question": "Will the U.S. invade Iran before 2027?",
-      "yes_price": 0.155,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.155,
-        0.845
-      ],
-      "yes_token_id": "55115078421062885512539156303747803058407616201213034911037320915726138659123",
-      "end_date": "2027-01-01T04:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 74642569.543506,
-      "volume_24hr": 61498.013537,
-      "end_date_iso": "2027-01-01",
-      "fetched_at": "2026-10-19T16:12:29+00:00",
-      "yes_book": {
-        "n_bid_levels": 15,
-        "n_ask_levels": 80,
-        "top5_bids": [
-          {
-            "price": 0.15,
-            "size": 30669.95,
-            "dollars": 4600.4925
-          },
-          {
-            "price": 0.14,
-            "size": 146713.32,
-            "dollars": 20539.864800000003
-          },
-          {
-            "price": 0.13,
-            "size": 238981.85,
-            "dollars": 31067.6405
-          },
-          {
-            "price": 0.12,
-            "size": 25136.59,
-            "dollars": 3016.3908
-          },
-          {
-            "price": 0.11,
-            "size": 25629.0,
-            "dollars": 2819.19
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.16,
-            "size": 60044.6,
-            "dollars": 9607.136
-          },
-          {
-            "price": 0.17,
-            "size": 45728.21,
-            "dollars": 7773.795700000001
-          },
-          {
-            "price": 0.18,
-            "size": 37562.89,
-            "dollars": 6761.320199999999
-          },
-          {
-            "price": 0.19,
-            "size": 48685.99,
-            "dollars": 9250.338099999999
-          },
-          {
-            "price": 0.2,
-            "size": 3557.73,
-            "dollars": 711.546
-          }
-        ],
-        "top_bid_price": 0.15,
-        "top_bid_dollars": 4600.4925,
-        "top_ask_price": 0.16,
-        "top_ask_dollars": 9607.136,
-        "mid": 0.155,
-        "spread_cents": 1.0000000000000009,
-        "spread_bps": 645.1612903225812,
-        "depth_5pct_bid_dollars": 4600.4925,
-        "depth_5pct_ask_dollars": 9607.136
-      },
-      "rank": 5,
-      "category": "Geopolitics",
-      "weekly_volume_usd": 786054.5704610001,
-      "weekly_trades": 1747,
-      "yes_price_7d_ago": 0.175,
-      "yes_price_change_pp": -1.9999999999999991
-    },
-    {
-      "market_id": "562802",
-      "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
-      "yes_price": 0.915,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.915,
-        0.085
-      ],
-      "yes_token_id": "83247781037352156539108067944461291821683755894607244160607042790356561625563",
-      "end_date": "2026-11-04T04:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 10703983.954002002,
-      "volume_24hr": 76438.94395,
-      "end_date_iso": "2026-11-04",
-      "fetched_at": "2026-10-19T16:12:30+00:00",
-      "yes_book": {
-        "n_bid_levels": 55,
-        "n_ask_levels": 8,
-        "top5_bids": [
-          {
-            "price": 0.91,
-            "size": 36378.78,
-            "dollars": 33104.6898
-          },
-          {
-            "price": 0.9,
-            "size": 1187772.29,
-            "dollars": 1068995.061
-          },
-          {
-            "price": 0.89,
-            "size": 515851.59,
-            "dollars": 459107.91510000004
-          },
-          {
-            "price": 0.88,
-            "size": 945324.56,
-            "dollars": 831885.6128
-          },
-          {
-            "price": 0.87,
-            "size": 354032.53,
-            "dollars": 308008.30110000004
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.92,
-            "size": 1266943.34,
-            "dollars": 1165587.8728
-          },
-          {
-            "price": 0.93,
-            "size": 1742817.43,
-            "dollars": 1620820.2099000001
-          },
-          {
-            "price": 0.94,
-            "size": 597162.48,
-            "dollars": 561332.7311999999
-          },
-          {
-            "price": 0.95,
-            "size": 538967.29,
-            "dollars": 512018.9255
-          },
-          {
-            "price": 0.96,
-            "size": 510499.12,
-            "dollars": 490079.1552
-          }
-        ],
-        "top_bid_price": 0.91,
-        "top_bid_dollars": 33104.6898,
-        "top_ask_price": 0.92,
-        "top_ask_dollars": 1165587.8728,
-        "mid": 0.915,
-        "spread_cents": 1.0000000000000009,
-        "spread_bps": 109.28961748633888,
-        "depth_5pct_bid_dollars": 2701101.5798,
-        "depth_5pct_ask_dollars": 4349838.8946
-      },
-      "rank": 6,
-      "category": "Politics",
-      "weekly_volume_usd": 680538.9911039998,
-      "weekly_trades": 967,
-      "yes_price_7d_ago": 0.905,
-      "yes_price_change_pp": 1.0000000000000009
-    },
-    {
-      "market_id": "562803",
-      "question": "Will the Republican Party control the House after the 2026 Midterm elections?",
-      "yes_price": 0.095,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.095,
-        0.905
-      ],
-      "yes_token_id": "65139230827417363158752884968303867495725894165574887635816574090175320800482",
-      "end_date": "2026-11-04T04:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 7840888.201720999,
-      "volume_24hr": 119303.89174299999,
-      "end_date_iso": "2026-11-04",
-      "fetched_at": "2026-10-19T16:12:30+00:00",
-      "yes_book": {
-        "n_bid_levels": 9,
-        "n_ask_levels": 57,
-        "top5_bids": [
-          {
-            "price": 0.09,
-            "size": 66305.23,
-            "dollars": 5967.4707
-          },
-          {
-            "price": 0.08,
-            "size": 1280767.93,
-            "dollars": 102461.4344
-          },
-          {
-            "price": 0.07,
-            "size": 1733664.84,
-            "dollars": 121356.53880000002
-          },
-          {
-            "price": 0.06,
-            "size": 799929.63,
-            "dollars": 47995.777799999996
-          },
-          {
-            "price": 0.05,
-            "size": 505865.85,
-            "dollars": 25293.2925
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.1,
-            "size": 1170153.72,
-            "dollars": 117015.372
-          },
-          {
-            "price": 0.11,
-            "size": 499720.77,
-            "dollars": 54969.284700000004
-          },
-          {
-            "price": 0.12,
-            "size": 472396.42,
-            "dollars": 56687.5704
-          },
-          {
-            "price": 0.13,
-            "size": 365515.42,
-            "dollars": 47517.0046
-          },
-          {
-            "price": 0.14,
-            "size": 8032.89,
-            "dollars": 1124.6046000000001
-          }
-        ],
-        "top_bid_price": 0.09,
-        "top_bid_dollars": 5967.4707,
-        "top_ask_price": 0.1,
-        "top_ask_dollars": 117015.372,
-        "mid": 0.095,
-        "spread_cents": 1.0000000000000009,
-        "spread_bps": 1052.6315789473692,
-        "depth_5pct_bid_dollars": 0,
-        "depth_5pct_ask_dollars": 0
-      },
-      "rank": 7,
-      "category": "Politics",
-      "weekly_volume_usd": 434691.74496399984,
-      "weekly_trades": 443,
-      "yes_price_7d_ago": 0.095,
+      "weekly_volume_usd": 43639.201381,
+      "weekly_trades": 193,
+      "yes_price_7d_ago": 0.265,
       "yes_price_change_pp": 0.0
     },
     {
-      "market_id": "560317",
-      "question": "Putin out as President of Russia by December 31, 2026?",
-      "yes_price": 0.0245,
+      "market_id": "562830",
+      "question": "2026 Balance of Power: R Senate, D House",
+      "yes_price": 0.265,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.0245,
-        0.9755
+        0.265,
+        0.735
       ],
-      "yes_token_id": "350977769852917329387037893294763093471844346281449484439085576212613048126",
-      "end_date": "2027-01-01T04:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 25684592.725961003,
-      "volume_24hr": 213168.62820000004,
-      "end_date_iso": "2027-01-01",
-      "fetched_at": "2026-10-19T16:12:31+00:00",
-      "yes_book": {
-        "n_bid_levels": 24,
-        "n_ask_levels": 114,
-        "top5_bids": [
-          {
-            "price": 0.024,
-            "size": 9437.04,
-            "dollars": 226.48896000000002
-          },
-          {
-            "price": 0.023,
-            "size": 4996.31,
-            "dollars": 114.91513
-          },
-          {
-            "price": 0.022,
-            "size": 9277.63,
-            "dollars": 204.10785999999996
-          },
-          {
-            "price": 0.021,
-            "size": 134736.85,
-            "dollars": 2829.4738500000003
-          },
-          {
-            "price": 0.02,
-            "size": 30284.61,
-            "dollars": 605.6922000000001
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.025,
-            "size": 17764.54,
-            "dollars": 444.11350000000004
-          },
-          {
-            "price": 0.026,
-            "size": 215.0,
-            "dollars": 5.59
-          },
-          {
-            "price": 0.027,
-            "size": 22924.31,
-            "dollars": 618.95637
-          },
-          {
-            "price": 0.029,
-            "size": 10241.81,
-            "dollars": 297.01249
-          },
-          {
-            "price": 0.03,
-            "size": 21308.8,
-            "dollars": 639.264
-          }
-        ],
-        "top_bid_price": 0.024,
-        "top_bid_dollars": 226.48896000000002,
-        "top_ask_price": 0.025,
-        "top_ask_dollars": 444.11350000000004,
-        "mid": 0.0245,
-        "spread_cents": 0.10000000000000009,
-        "spread_bps": 408.16326530612275,
-        "depth_5pct_bid_dollars": 226.48896000000002,
-        "depth_5pct_ask_dollars": 444.11350000000004
-      },
-      "rank": 8,
-      "category": "Geopolitics",
-      "weekly_volume_usd": 374761.3329049999,
-      "weekly_trades": 1295,
-      "yes_price_7d_ago": 0.0285,
-      "yes_price_change_pp": -0.4
-    },
-    {
-      "market_id": "663583",
-      "question": "Will the Iranian regime fall before 2027?",
-      "yes_price": 0.045,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.045,
-        0.955
-      ],
-      "yes_token_id": "10991849228756847439673778874175365458450913336396982752046655649803657501964",
-      "end_date": "2027-01-01T04:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 27561073.902713004,
-      "volume_24hr": 23079.030001999992,
-      "end_date_iso": "2027-01-01",
-      "fetched_at": "2026-10-19T16:12:32+00:00",
-      "yes_book": {
-        "n_bid_levels": 4,
-        "n_ask_levels": 88,
-        "top5_bids": [
-          {
-            "price": 0.04,
-            "size": 92048.53,
-            "dollars": 3681.9412
-          },
-          {
-            "price": 0.03,
-            "size": 398003.92,
-            "dollars": 11940.1176
-          },
-          {
-            "price": 0.02,
-            "size": 857431.01,
-            "dollars": 17148.6202
-          },
-          {
-            "price": 0.01,
-            "size": 1350854.15,
-            "dollars": 13508.5415
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.05,
-            "size": 93468.07,
-            "dollars": 4673.4035
-          },
-          {
-            "price": 0.06,
-            "size": 135891.72,
-            "dollars": 8153.5032
-          },
-          {
-            "price": 0.07,
-            "size": 42109.73,
-            "dollars": 2947.6811000000007
-          },
-          {
-            "price": 0.08,
-            "size": 5940.78,
-            "dollars": 475.2624
-          },
-          {
-            "price": 0.09,
-            "size": 28108.88,
-            "dollars": 2529.7992
-          }
-        ],
-        "top_bid_price": 0.04,
-        "top_bid_dollars": 3681.9412,
-        "top_ask_price": 0.05,
-        "top_ask_dollars": 4673.4035,
-        "mid": 0.045,
-        "spread_cents": 1.0000000000000002,
-        "spread_bps": 2222.2222222222226,
-        "depth_5pct_bid_dollars": 0,
-        "depth_5pct_ask_dollars": 0
-      },
-      "rank": 9,
-      "category": "Other",
-      "weekly_volume_usd": 328794.9441810002,
-      "weekly_trades": 402,
-      "yes_price_7d_ago": 0.055,
-      "yes_price_change_pp": -1.0000000000000002
-    },
-    {
-      "market_id": "562828",
-      "question": "2026 Balance of Power: D Senate, D House",
-      "yes_price": 0.625,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.625,
-        0.375
-      ],
-      "yes_token_id": "34722410608062854697106861099776685947172185964394483545370684749662285977831",
+      "yes_token_id": "6302359956133594764084277082169634158291609371270652093164054687145970756151",
       "end_date": "2026-11-04T04:59:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 5857608.806763,
-      "volume_24hr": 54555.74960499999,
+      "volume_total_num": 5343220.377037999,
+      "volume_24hr": 114567.04121000001,
       "end_date_iso": "2026-11-04",
-      "fetched_at": "2026-10-19T16:12:33+00:00",
+      "fetched_at": "2026-10-26T16:16:11+00:00",
       "yes_book": {
-        "n_bid_levels": 49,
-        "n_ask_levels": 31,
-        "top5_bids": [
-          {
-            "price": 0.62,
-            "size": 115608.08,
-            "dollars": 71677.0096
-          },
-          {
-            "price": 0.61,
-            "size": 2866840.38,
-            "dollars": 1748772.6317999999
-          },
-          {
-            "price": 0.6,
-            "size": 899833.19,
-            "dollars": 539899.914
-          },
-          {
-            "price": 0.59,
-            "size": 413828.0,
-            "dollars": 244158.52
-          },
-          {
-            "price": 0.58,
-            "size": 390.0,
-            "dollars": 226.2
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.63,
-            "size": 30967.03,
-            "dollars": 19509.2289
-          },
-          {
-            "price": 0.64,
-            "size": 787094.76,
-            "dollars": 503740.6464
-          },
-          {
-            "price": 0.65,
-            "size": 379021.18,
-            "dollars": 246363.767
-          },
-          {
-            "price": 0.66,
-            "size": 17785.86,
-            "dollars": 11738.6676
-          },
-          {
-            "price": 0.67,
-            "size": 7079.74,
-            "dollars": 4743.4258
-          }
-        ],
-        "top_bid_price": 0.62,
-        "top_bid_dollars": 71677.0096,
-        "top_ask_price": 0.63,
-        "top_ask_dollars": 19509.2289,
-        "mid": 0.625,
-        "spread_cents": 1.0000000000000009,
-        "spread_bps": 160.00000000000014,
-        "depth_5pct_bid_dollars": 2360349.5554,
-        "depth_5pct_ask_dollars": 769613.6423000001
-      },
-      "rank": 10,
-      "category": "Politics",
-      "weekly_volume_usd": 260187.85236599992,
-      "weekly_trades": 837,
-      "yes_price_7d_ago": 0.615,
-      "yes_price_change_pp": 1.0000000000000009
-    },
-    {
-      "market_id": "559651",
-      "question": "Xi Jinping out before 2027?",
-      "yes_price": 0.0275,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.0275,
-        0.9725
-      ],
-      "yes_token_id": "32338220190071351435772801779725302244575775216413325951443816017994629993401",
-      "end_date": "2027-01-01T04:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 15137553.948918002,
-      "volume_24hr": 35799.994431,
-      "end_date_iso": "2027-01-01",
-      "fetched_at": "2026-10-19T16:12:33+00:00",
-      "yes_book": {
-        "n_bid_levels": 26,
-        "n_ask_levels": 133,
-        "top5_bids": [
-          {
-            "price": 0.027,
-            "size": 6342.25,
-            "dollars": 171.24075
-          },
-          {
-            "price": 0.026,
-            "size": 4510.0,
-            "dollars": 117.25999999999999
-          },
-          {
-            "price": 0.025,
-            "size": 20450.01,
-            "dollars": 511.25025
-          },
-          {
-            "price": 0.024,
-            "size": 25202.51,
-            "dollars": 604.86024
-          },
-          {
-            "price": 0.023,
-            "size": 7867.54,
-            "dollars": 180.95342
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.028,
-            "size": 93068.83,
-            "dollars": 2605.92724
-          },
-          {
-            "price": 0.029,
-            "size": 7699.98,
-            "dollars": 223.29942
-          },
-          {
-            "price": 0.03,
-            "size": 10888.8,
-            "dollars": 326.664
-          },
-          {
-            "price": 0.031,
-            "size": 18238.4,
-            "dollars": 565.3904
-          },
-          {
-            "price": 0.032,
-            "size": 7274.36,
-            "dollars": 232.77952
-          }
-        ],
-        "top_bid_price": 0.027,
-        "top_bid_dollars": 171.24075,
-        "top_ask_price": 0.028,
-        "top_ask_dollars": 2605.92724,
-        "mid": 0.0275,
-        "spread_cents": 0.10000000000000009,
-        "spread_bps": 363.63636363636397,
-        "depth_5pct_bid_dollars": 171.24075,
-        "depth_5pct_ask_dollars": 2605.92724
-      },
-      "rank": 11,
-      "category": "Other",
-      "weekly_volume_usd": 257410.97692699998,
-      "weekly_trades": 1554,
-      "yes_price_7d_ago": 0.0285,
-      "yes_price_change_pp": -0.10000000000000009
-    },
-    {
-      "market_id": "630964",
-      "question": "Will the Republicans win the Texas Senate race in 2026?",
-      "yes_price": 0.385,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.385,
-        0.615
-      ],
-      "yes_token_id": "21265207456609426291246075480390336499088453711419597084147957999650569091884",
-      "end_date": "2026-11-04T04:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 2255700.0204290003,
-      "volume_24hr": 54528.19893500001,
-      "end_date_iso": "2026-11-04",
-      "fetched_at": "2026-10-19T16:12:34+00:00",
-      "yes_book": {
-        "n_bid_levels": 36,
-        "n_ask_levels": 48,
-        "top5_bids": [
-          {
-            "price": 0.38,
-            "size": 34903.25,
-            "dollars": 13263.235
-          },
-          {
-            "price": 0.37,
-            "size": 53419.11,
-            "dollars": 19765.0707
-          },
-          {
-            "price": 0.36,
-            "size": 53451.55,
-            "dollars": 19242.558
-          },
-          {
-            "price": 0.35,
-            "size": 61755.81,
-            "dollars": 21614.533499999998
-          },
-          {
-            "price": 0.34,
-            "size": 57212.81,
-            "dollars": 19452.3554
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.39,
-            "size": 25956.68,
-            "dollars": 10123.1052
-          },
-          {
-            "price": 0.4,
-            "size": 124560.12,
-            "dollars": 49824.048
-          },
-          {
-            "price": 0.41,
-            "size": 71638.3,
-            "dollars": 29371.702999999998
-          },
-          {
-            "price": 0.42,
-            "size": 83278.27,
-            "dollars": 34976.873400000004
-          },
-          {
-            "price": 0.43,
-            "size": 5431.48,
-            "dollars": 2335.5364
-          }
-        ],
-        "top_bid_price": 0.38,
-        "top_bid_dollars": 13263.235,
-        "top_ask_price": 0.39,
-        "top_ask_dollars": 10123.1052,
-        "mid": 0.385,
-        "spread_cents": 1.0000000000000009,
-        "spread_bps": 259.74025974025994,
-        "depth_5pct_bid_dollars": 33028.3057,
-        "depth_5pct_ask_dollars": 59947.1532
-      },
-      "rank": 12,
-      "category": "Politics",
-      "weekly_volume_usd": 254636.535028,
-      "weekly_trades": 1167,
-      "yes_price_7d_ago": 0.375,
-      "yes_price_change_pp": 1.0000000000000009
-    },
-    {
-      "market_id": "608547",
-      "question": "Will Harry Kane win the 2026 Ballon d'Or?",
-      "yes_price": 0.6965,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.6965,
-        0.3035
-      ],
-      "yes_token_id": "72710166409980712002774407052535905861151156175854323762835102340552522606004",
-      "end_date": "2027-01-01T04:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 6092108.527903,
-      "volume_24hr": 114577.624719,
-      "end_date_iso": "2027-01-01",
-      "fetched_at": "2026-10-19T16:12:35+00:00",
-      "yes_book": {
-        "n_bid_levels": 173,
-        "n_ask_levels": 115,
-        "top5_bids": [
-          {
-            "price": 0.694,
-            "size": 164.0,
-            "dollars": 113.81599999999999
-          },
-          {
-            "price": 0.693,
-            "size": 100.0,
-            "dollars": 69.3
-          },
-          {
-            "price": 0.69,
-            "size": 50.0,
-            "dollars": 34.5
-          },
-          {
-            "price": 0.686,
-            "size": 89.0,
-            "dollars": 61.054
-          },
-          {
-            "price": 0.68,
-            "size": 83.0,
-            "dollars": 56.440000000000005
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.699,
-            "size": 79.99,
-            "dollars": 55.91300999999999
-          },
-          {
-            "price": 0.7,
-            "size": 100.0,
-            "dollars": 70.0
-          },
-          {
-            "price": 0.703,
-            "size": 80.0,
-            "dollars": 56.239999999999995
-          },
-          {
-            "price": 0.712,
-            "size": 240.0,
-            "dollars": 170.88
-          },
-          {
-            "price": 0.714,
-            "size": 5.0,
-            "dollars": 3.57
-          }
-        ],
-        "top_bid_price": 0.694,
-        "top_bid_dollars": 113.81599999999999,
-        "top_ask_price": 0.699,
-        "top_ask_dollars": 55.91300999999999,
-        "mid": 0.6964999999999999,
-        "spread_cents": 0.5000000000000004,
-        "spread_bps": 71.78750897343869,
-        "depth_5pct_bid_dollars": 2800.1643400000003,
-        "depth_5pct_ask_dollars": 3193.5321
-      },
-      "rank": 13,
-      "category": "Other",
-      "weekly_volume_usd": 251170.16549700004,
-      "weekly_trades": 4787,
-      "yes_price_7d_ago": 0.6575,
-      "yes_price_change_pp": 3.9000000000000035
-    },
-    {
-      "market_id": "562831",
-      "question": "2026 Balance of Power: R Senate, R House",
-      "yes_price": 0.085,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.085,
-        0.915
-      ],
-      "yes_token_id": "103704141773947678931823410030956181918562062788486034785782641603149828893320",
-      "end_date": "2026-11-04T04:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 7714659.0127380015,
-      "volume_24hr": 4041.724971,
-      "end_date_iso": "2026-11-04",
-      "fetched_at": "2026-10-19T16:12:36+00:00",
-      "yes_book": {
-        "n_bid_levels": 8,
+        "n_bid_levels": 22,
         "n_ask_levels": 47,
         "top5_bids": [
           {
-            "price": 0.08,
-            "size": 276241.21,
-            "dollars": 22099.296800000004
+            "price": 0.26,
+            "size": 11187.01,
+            "dollars": 2908.6226
           },
           {
-            "price": 0.07,
-            "size": 1183105.91,
-            "dollars": 82817.4137
+            "price": 0.25,
+            "size": 257304.93,
+            "dollars": 64326.2325
           },
           {
-            "price": 0.06,
-            "size": 1952636.44,
-            "dollars": 117158.18639999999
+            "price": 0.24,
+            "size": 1729661.37,
+            "dollars": 415118.7288
           },
           {
-            "price": 0.05,
-            "size": 908250.67,
-            "dollars": 45412.533500000005
+            "price": 0.23,
+            "size": 106133.18,
+            "dollars": 24410.6314
           },
           {
-            "price": 0.04,
-            "size": 9475.0,
-            "dollars": 379.0
+            "price": 0.22,
+            "size": 318304.13,
+            "dollars": 70026.9086
           }
         ],
         "top5_asks": [
           {
-            "price": 0.09,
-            "size": 157254.07,
-            "dollars": 14152.8663
+            "price": 0.27,
+            "size": 35211.81,
+            "dollars": 9507.1887
           },
           {
-            "price": 0.1,
-            "size": 1881248.34,
-            "dollars": 188124.83400000003
+            "price": 0.28,
+            "size": 766538.78,
+            "dollars": 214630.85840000003
           },
           {
-            "price": 0.11,
-            "size": 675359.32,
-            "dollars": 74289.52519999999
+            "price": 0.29,
+            "size": 1650516.64,
+            "dollars": 478649.8255999999
           },
           {
-            "price": 0.12,
-            "size": 476644.0,
-            "dollars": 57197.28
+            "price": 0.3,
+            "size": 254091.0,
+            "dollars": 76227.3
           },
           {
-            "price": 0.13,
-            "size": 360976.16,
-            "dollars": 46926.900799999996
+            "price": 0.31,
+            "size": 1650.23,
+            "dollars": 511.5713
           }
         ],
-        "top_bid_price": 0.08,
-        "top_bid_dollars": 22099.296800000004,
-        "top_ask_price": 0.09,
-        "top_ask_dollars": 14152.8663,
-        "mid": 0.08499999999999999,
-        "spread_cents": 0.9999999999999996,
-        "spread_bps": 1176.4705882352937,
-        "depth_5pct_bid_dollars": 0,
-        "depth_5pct_ask_dollars": 0
+        "top_bid_price": 0.26,
+        "top_bid_dollars": 2908.6226,
+        "top_ask_price": 0.27,
+        "top_ask_dollars": 9507.1887,
+        "mid": 0.265,
+        "spread_cents": 1.0000000000000009,
+        "spread_bps": 377.3584905660381,
+        "depth_5pct_bid_dollars": 2908.6226,
+        "depth_5pct_ask_dollars": 9507.1887
       },
       "rank": 14,
       "category": "Politics",
-      "weekly_volume_usd": 249697.75738299987,
-      "weekly_trades": 648,
-      "yes_price_7d_ago": 0.085,
-      "yes_price_change_pp": 0.0
-    },
-    {
-      "market_id": "679018",
-      "question": "Will Marine Le Pen win the 2027 French presidential election?",
-      "yes_price": 0.4685,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.4685,
-        0.5315
-      ],
-      "yes_token_id": "55764212211467781322980371912612507865974994976253196346176314491480419639168",
-      "end_date": "2027-04-19T03:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 4098171.3969429997,
-      "volume_24hr": 75495.066268,
-      "end_date_iso": "2027-04-19",
-      "fetched_at": "2026-10-19T16:12:36+00:00",
-      "yes_book": {
-        "n_bid_levels": 145,
-        "n_ask_levels": 104,
-        "top5_bids": [
-          {
-            "price": 0.468,
-            "size": 1736.41,
-            "dollars": 812.6398800000001
-          },
-          {
-            "price": 0.467,
-            "size": 100.0,
-            "dollars": 46.7
-          },
-          {
-            "price": 0.466,
-            "size": 866.0,
-            "dollars": 403.55600000000004
-          },
-          {
-            "price": 0.464,
-            "size": 200.0,
-            "dollars": 92.80000000000001
-          },
-          {
-            "price": 0.463,
-            "size": 105.85,
-            "dollars": 49.00855
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.469,
-            "size": 10898.15,
-            "dollars": 5111.232349999999
-          },
-          {
-            "price": 0.47,
-            "size": 439.0,
-            "dollars": 206.32999999999998
-          },
-          {
-            "price": 0.472,
-            "size": 1000.0,
-            "dollars": 472.0
-          },
-          {
-            "price": 0.473,
-            "size": 490.0,
-            "dollars": 231.76999999999998
-          },
-          {
-            "price": 0.476,
-            "size": 220.0,
-            "dollars": 104.72
-          }
-        ],
-        "top_bid_price": 0.468,
-        "top_bid_dollars": 812.6398800000001,
-        "top_ask_price": 0.469,
-        "top_ask_dollars": 5111.232349999999,
-        "mid": 0.4685,
-        "spread_cents": 0.09999999999999454,
-        "spread_bps": 21.344717182496165,
-        "depth_5pct_bid_dollars": 40915.71389,
-        "depth_5pct_ask_dollars": 259264.08377
-      },
-      "rank": 15,
-      "category": "Politics",
-      "weekly_volume_usd": 249029.21785800002,
-      "weekly_trades": 1490,
-      "yes_price_7d_ago": 0.3995,
-      "yes_price_change_pp": 6.9
+      "weekly_volume_usd": 27536.507357,
+      "weekly_trades": 92,
+      "yes_price_7d_ago": 0.275,
+      "yes_price_change_pp": -1.0000000000000009
     },
     {
       "market_id": "567621",
       "question": "Will China invade Taiwan by end of 2026?",
-      "yes_price": 0.021,
+      "yes_price": 0.0195,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.021,
-        0.979
+        0.0195,
+        0.9805
       ],
       "yes_token_id": "94559586571241563470235664821564670251180951772614764383113614156422396181162",
       "end_date": "2027-01-01T04:59:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 44328458.985891,
-      "volume_24hr": 60911.66931000001,
+      "volume_total_num": 45040061.457371995,
+      "volume_24hr": 78321.29514,
       "end_date_iso": "2027-01-01",
-      "fetched_at": "2026-10-19T16:12:37+00:00",
+      "fetched_at": "2026-10-26T16:16:13+00:00",
       "yes_book": {
-        "n_bid_levels": 20,
-        "n_ask_levels": 155,
+        "n_bid_levels": 19,
+        "n_ask_levels": 159,
         "top5_bids": [
           {
-            "price": 0.02,
-            "size": 85134.97,
-            "dollars": 1702.6994
-          },
-          {
             "price": 0.019,
-            "size": 27564.26,
-            "dollars": 523.7209399999999
+            "size": 7417.82,
+            "dollars": 140.93858
           },
           {
             "price": 0.018,
-            "size": 27080.59,
-            "dollars": 487.45061999999996
+            "size": 20739.64,
+            "dollars": 373.31352
           },
           {
             "price": 0.017,
-            "size": 103362.44,
-            "dollars": 1757.1614800000002
+            "size": 96473.07,
+            "dollars": 1640.0421900000003
           },
           {
             "price": 0.016,
-            "size": 27891.15,
-            "dollars": 446.25840000000005
+            "size": 13461.3,
+            "dollars": 215.3808
+          },
+          {
+            "price": 0.015,
+            "size": 18163.23,
+            "dollars": 272.44845
           }
         ],
         "top5_asks": [
           {
+            "price": 0.02,
+            "size": 15201.74,
+            "dollars": 304.0348
+          },
+          {
+            "price": 0.021,
+            "size": 2561.99,
+            "dollars": 53.80179
+          },
+          {
             "price": 0.022,
-            "size": 32755.62,
-            "dollars": 720.6236399999999
+            "size": 57061.97,
+            "dollars": 1255.3633399999999
           },
           {
             "price": 0.023,
-            "size": 9485.48,
-            "dollars": 218.16603999999998
+            "size": 4695.5,
+            "dollars": 107.9965
           },
           {
             "price": 0.024,
-            "size": 3870.45,
-            "dollars": 92.8908
-          },
-          {
-            "price": 0.025,
-            "size": 5455.32,
-            "dollars": 136.383
-          },
-          {
-            "price": 0.026,
-            "size": 2030.52,
-            "dollars": 52.793519999999994
+            "size": 1444.94,
+            "dollars": 34.678560000000004
           }
         ],
-        "top_bid_price": 0.02,
-        "top_bid_dollars": 1702.6994,
-        "top_ask_price": 0.022,
-        "top_ask_dollars": 720.6236399999999,
-        "mid": 0.020999999999999998,
-        "spread_cents": 0.19999999999999984,
-        "spread_bps": 952.3809523809516,
-        "depth_5pct_bid_dollars": 1702.6994,
-        "depth_5pct_ask_dollars": 720.6236399999999
+        "top_bid_price": 0.019,
+        "top_bid_dollars": 140.93858,
+        "top_ask_price": 0.02,
+        "top_ask_dollars": 304.0348,
+        "mid": 0.0195,
+        "spread_cents": 0.10000000000000009,
+        "spread_bps": 512.8205128205133,
+        "depth_5pct_bid_dollars": 140.93858,
+        "depth_5pct_ask_dollars": 304.0348
       },
-      "rank": 16,
+      "rank": 15,
       "category": "Geopolitics",
-      "weekly_volume_usd": 238297.20224300184,
-      "weekly_trades": 3058,
-      "yes_price_7d_ago": 0.0225,
-      "yes_price_change_pp": -0.1499999999999998
+      "weekly_volume_usd": 26711.102049999994,
+      "weekly_trades": 51,
+      "yes_price_7d_ago": 0.021,
+      "yes_price_change_pp": -0.15000000000000013
     },
     {
-      "market_id": "1090496",
-      "question": "NATO x Russia military clash by December 31, 2026?",
-      "yes_price": 0.255,
+      "market_id": "630964",
+      "question": "Will the Republicans win the Texas Senate race in 2026?",
+      "yes_price": 0.355,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.255,
-        0.745
+        0.355,
+        0.645
       ],
-      "yes_token_id": "105031123790227090351610621121319179238510007553875150023320472711583933704999",
-      "end_date": "2027-01-01T04:59:00Z",
+      "yes_token_id": "21265207456609426291246075480390336499088453711419597084147957999650569091884",
+      "end_date": "2026-11-04T04:59:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 2947022.6665409994,
-      "volume_24hr": 15334.545985,
-      "end_date_iso": "2027-01-01",
-      "fetched_at": "2026-10-19T16:12:38+00:00",
+      "volume_total_num": 3796249.2291550003,
+      "volume_24hr": 161070.652799,
+      "end_date_iso": "2026-11-04",
+      "fetched_at": "2026-10-26T16:16:14+00:00",
       "yes_book": {
-        "n_bid_levels": 24,
-        "n_ask_levels": 40,
+        "n_bid_levels": 32,
+        "n_ask_levels": 50,
         "top5_bids": [
           {
-            "price": 0.25,
-            "size": 21.0,
-            "dollars": 5.25
+            "price": 0.35,
+            "size": 31407.65,
+            "dollars": 10992.6775
           },
           {
-            "price": 0.24,
-            "size": 3156.85,
-            "dollars": 757.644
+            "price": 0.34,
+            "size": 39231.67,
+            "dollars": 13338.7678
           },
           {
-            "price": 0.23,
-            "size": 5082.04,
-            "dollars": 1168.8692
+            "price": 0.33,
+            "size": 267485.23,
+            "dollars": 88270.1259
           },
           {
-            "price": 0.22,
-            "size": 12491.64,
-            "dollars": 2748.1608
+            "price": 0.32,
+            "size": 15344.61,
+            "dollars": 4910.2752
           },
           {
-            "price": 0.21,
-            "size": 6305.64,
-            "dollars": 1324.1844
+            "price": 0.31,
+            "size": 106294.28,
+            "dollars": 32951.2268
           }
         ],
         "top5_asks": [
           {
-            "price": 0.26,
-            "size": 6155.0,
-            "dollars": 1600.3
+            "price": 0.36,
+            "size": 10947.91,
+            "dollars": 3941.2475999999997
           },
           {
-            "price": 0.27,
-            "size": 6788.83,
-            "dollars": 1832.9841000000001
+            "price": 0.37,
+            "size": 32179.25,
+            "dollars": 11906.3225
           },
           {
-            "price": 0.28,
-            "size": 1395.23,
-            "dollars": 390.66440000000006
+            "price": 0.38,
+            "size": 72744.31,
+            "dollars": 27642.8378
           },
           {
-            "price": 0.29,
-            "size": 803.73,
-            "dollars": 233.08169999999998
+            "price": 0.39,
+            "size": 36870.2,
+            "dollars": 14379.377999999999
           },
           {
-            "price": 0.3,
-            "size": 211.29,
-            "dollars": 63.38699999999999
+            "price": 0.4,
+            "size": 54772.0,
+            "dollars": 21908.800000000003
           }
         ],
-        "top_bid_price": 0.25,
-        "top_bid_dollars": 5.25,
-        "top_ask_price": 0.26,
-        "top_ask_dollars": 1600.3,
-        "mid": 0.255,
+        "top_bid_price": 0.35,
+        "top_bid_dollars": 10992.6775,
+        "top_ask_price": 0.36,
+        "top_ask_dollars": 3941.2475999999997,
+        "mid": 0.355,
         "spread_cents": 1.0000000000000009,
-        "spread_bps": 392.1568627450984,
-        "depth_5pct_bid_dollars": 5.25,
-        "depth_5pct_ask_dollars": 1600.3
+        "spread_bps": 281.6901408450707,
+        "depth_5pct_bid_dollars": 24331.4453,
+        "depth_5pct_ask_dollars": 15847.5701
       },
-      "rank": 17,
-      "category": "Geopolitics",
-      "weekly_volume_usd": 226892.64316300003,
-      "weekly_trades": 1186,
-      "yes_price_7d_ago": 0.285,
-      "yes_price_change_pp": -2.9999999999999973
+      "rank": 16,
+      "category": "Politics",
+      "weekly_volume_usd": 24483.666362000004,
+      "weekly_trades": 91,
+      "yes_price_7d_ago": 0.385,
+      "yes_price_change_pp": -3.0000000000000027
     },
     {
-      "market_id": "1235572",
-      "question": "Will the Los Angeles Dodgers win the 2026 World Series?",
-      "yes_price": 0.0,
+      "market_id": "1283128",
+      "question": "Will the Republican Party win the FL-25 House seat?",
+      "yes_price": 0.205,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.0,
-        1.0
+        0.205,
+        0.795
       ],
-      "yes_token_id": "1204155327844132216976037605131756626466220080116229118353112706411786559118",
-      "end_date": "2026-10-31T23:55:00Z",
+      "yes_token_id": "88625635826311282954459288792974205917874189458207628607255011895070058940952",
+      "end_date": "2026-11-04T04:59:00Z",
       "active": true,
-      "closed": true,
-      "volume_total_num": 1344592.579427,
-      "volume_24hr": null,
-      "end_date_iso": "2026-10-31",
-      "fetched_at": "2026-10-19T16:12:39+00:00",
-      "yes_book": {},
-      "rank": 18,
-      "category": "Sports",
-      "weekly_volume_usd": 221388.17512899998,
-      "weekly_trades": 1452,
+      "closed": false,
+      "volume_total_num": 66228.797116,
+      "volume_24hr": 38056.910107,
+      "end_date_iso": "2026-11-04",
+      "fetched_at": "2026-10-26T16:16:15+00:00",
+      "yes_book": {
+        "n_bid_levels": 16,
+        "n_ask_levels": 51,
+        "top5_bids": [
+          {
+            "price": 0.2,
+            "size": 546.52,
+            "dollars": 109.304
+          },
+          {
+            "price": 0.19,
+            "size": 4329.9,
+            "dollars": 822.6809999999999
+          },
+          {
+            "price": 0.18,
+            "size": 11412.58,
+            "dollars": 2054.2644
+          },
+          {
+            "price": 0.17,
+            "size": 25131.82,
+            "dollars": 4272.4094000000005
+          },
+          {
+            "price": 0.16,
+            "size": 50.0,
+            "dollars": 8.0
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.21,
+            "size": 605.0,
+            "dollars": 127.05
+          },
+          {
+            "price": 0.22,
+            "size": 4188.61,
+            "dollars": 921.4942
+          },
+          {
+            "price": 0.23,
+            "size": 7944.85,
+            "dollars": 1827.3155000000002
+          },
+          {
+            "price": 0.24,
+            "size": 10829.28,
+            "dollars": 2599.0272
+          },
+          {
+            "price": 0.25,
+            "size": 2252.0,
+            "dollars": 563.0
+          }
+        ],
+        "top_bid_price": 0.2,
+        "top_bid_dollars": 109.304,
+        "top_ask_price": 0.21,
+        "top_ask_dollars": 127.05,
+        "mid": 0.20500000000000002,
+        "spread_cents": 0.9999999999999981,
+        "spread_bps": 487.8048780487795,
+        "depth_5pct_bid_dollars": 109.304,
+        "depth_5pct_ask_dollars": 127.05
+      },
+      "rank": 17,
+      "category": "Politics",
+      "weekly_volume_usd": 23425.815600999995,
+      "weekly_trades": 117,
       "yes_price_7d_ago": null,
       "yes_price_change_pp": null
     },
     {
-      "market_id": "562794",
-      "question": "Will the Republican Party control the Senate after the 2026 Midterm elections?",
-      "yes_price": 0.365,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.365,
-        0.635
-      ],
-      "yes_token_id": "51939490109676186832507970701169130490548061087912630009168726706475001411420",
-      "end_date": "2026-11-04T04:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 3087798.182253,
-      "volume_24hr": 31160.855312,
-      "end_date_iso": "2026-11-04",
-      "fetched_at": "2026-10-19T16:12:39+00:00",
-      "yes_book": {
-        "n_bid_levels": 30,
-        "n_ask_levels": 53,
-        "top5_bids": [
-          {
-            "price": 0.36,
-            "size": 56034.19,
-            "dollars": 20172.3084
-          },
-          {
-            "price": 0.35,
-            "size": 238040.02,
-            "dollars": 83314.007
-          },
-          {
-            "price": 0.34,
-            "size": 503136.37,
-            "dollars": 171066.3658
-          },
-          {
-            "price": 0.33,
-            "size": 306600.0,
-            "dollars": 101178.0
-          },
-          {
-            "price": 0.32,
-            "size": 20085.0,
-            "dollars": 6427.2
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.37,
-            "size": 100807.17,
-            "dollars": 37298.6529
-          },
-          {
-            "price": 0.38,
-            "size": 877388.16,
-            "dollars": 333407.50080000004
-          },
-          {
-            "price": 0.39,
-            "size": 2736504.76,
-            "dollars": 1067236.8564
-          },
-          {
-            "price": 0.4,
-            "size": 532986.0,
-            "dollars": 213194.40000000002
-          },
-          {
-            "price": 0.41,
-            "size": 9483.3,
-            "dollars": 3888.1529999999993
-          }
-        ],
-        "top_bid_price": 0.36,
-        "top_bid_dollars": 20172.3084,
-        "top_ask_price": 0.37,
-        "top_ask_dollars": 37298.6529,
-        "mid": 0.365,
-        "spread_cents": 1.0000000000000009,
-        "spread_bps": 273.9726027397263,
-        "depth_5pct_bid_dollars": 103486.31539999999,
-        "depth_5pct_ask_dollars": 370706.1537
-      },
-      "rank": 19,
-      "category": "Politics",
-      "weekly_volume_usd": 211713.27929600002,
-      "weekly_trades": 979,
-      "yes_price_7d_ago": 0.365,
-      "yes_price_change_pp": 0.0
-    },
-    {
-      "market_id": "608545",
-      "question": "Will Lamine Yamal win the 2026 Ballon d'Or?",
-      "yes_price": 0.231,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.231,
-        0.769
-      ],
-      "yes_token_id": "10466835326554416965099784068156829774726248334728156046559014834812912458273",
-      "end_date": "2027-01-01T04:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 4571402.137894,
-      "volume_24hr": 90489.26723900001,
-      "end_date_iso": "2027-01-01",
-      "fetched_at": "2026-10-19T16:12:40+00:00",
-      "yes_book": {
-        "n_bid_levels": 111,
-        "n_ask_levels": 172,
-        "top5_bids": [
-          {
-            "price": 0.222,
-            "size": 248.26,
-            "dollars": 55.11372
-          },
-          {
-            "price": 0.221,
-            "size": 20.06,
-            "dollars": 4.43326
-          },
-          {
-            "price": 0.219,
-            "size": 50.0,
-            "dollars": 10.95
-          },
-          {
-            "price": 0.214,
-            "size": 5.0,
-            "dollars": 1.07
-          },
-          {
-            "price": 0.212,
-            "size": 257.63,
-            "dollars": 54.61756
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.24,
-            "size": 13.75,
-            "dollars": 3.3
-          },
-          {
-            "price": 0.241,
-            "size": 318.86,
-            "dollars": 76.84526
-          },
-          {
-            "price": 0.244,
-            "size": 52.03,
-            "dollars": 12.69532
-          },
-          {
-            "price": 0.245,
-            "size": 184.0,
-            "dollars": 45.08
-          },
-          {
-            "price": 0.246,
-            "size": 30.0,
-            "dollars": 7.38
-          }
-        ],
-        "top_bid_price": 0.222,
-        "top_bid_dollars": 55.11372,
-        "top_ask_price": 0.24,
-        "top_ask_dollars": 3.3,
-        "mid": 0.23099999999999998,
-        "spread_cents": 1.799999999999999,
-        "spread_bps": 779.2207792207788,
-        "depth_5pct_bid_dollars": 59.54698,
-        "depth_5pct_ask_dollars": 80.14526
-      },
-      "rank": 20,
-      "category": "Other",
-      "weekly_volume_usd": 196333.18821899997,
-      "weekly_trades": 4094,
-      "yes_price_7d_ago": 0.2825,
-      "yes_price_change_pp": -5.149999999999996
-    },
-    {
-      "market_id": "630963",
-      "question": "Will the Democrats win the Texas Senate race in 2026?",
-      "yes_price": 0.625,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.625,
-        0.375
-      ],
-      "yes_token_id": "15290572385458522370285732869432740297199321382471116558439914335588167718663",
-      "end_date": "2026-11-04T04:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 1852379.3415690002,
-      "volume_24hr": 16191.618783999997,
-      "end_date_iso": "2026-11-04",
-      "fetched_at": "2026-10-19T16:12:41+00:00",
-      "yes_book": {
-        "n_bid_levels": 52,
-        "n_ask_levels": 33,
-        "top5_bids": [
-          {
-            "price": 0.62,
-            "size": 60152.62,
-            "dollars": 37294.6244
-          },
-          {
-            "price": 0.61,
-            "size": 26981.87,
-            "dollars": 16458.9407
-          },
-          {
-            "price": 0.6,
-            "size": 68155.0,
-            "dollars": 40893.0
-          },
-          {
-            "price": 0.59,
-            "size": 69718.3,
-            "dollars": 41133.797
-          },
-          {
-            "price": 0.58,
-            "size": 60815.3,
-            "dollars": 35272.873999999996
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.63,
-            "size": 35143.87,
-            "dollars": 22140.6381
-          },
-          {
-            "price": 0.64,
-            "size": 31037.29,
-            "dollars": 19863.8656
-          },
-          {
-            "price": 0.65,
-            "size": 69331.24,
-            "dollars": 45065.306000000004
-          },
-          {
-            "price": 0.66,
-            "size": 49828.96,
-            "dollars": 32887.113600000004
-          },
-          {
-            "price": 0.67,
-            "size": 1380.0,
-            "dollars": 924.6
-          }
-        ],
-        "top_bid_price": 0.62,
-        "top_bid_dollars": 37294.6244,
-        "top_ask_price": 0.63,
-        "top_ask_dollars": 22140.6381,
-        "mid": 0.625,
-        "spread_cents": 1.0000000000000009,
-        "spread_bps": 160.00000000000014,
-        "depth_5pct_bid_dollars": 94646.5651,
-        "depth_5pct_ask_dollars": 87069.80970000001
-      },
-      "rank": 21,
-      "category": "Politics",
-      "weekly_volume_usd": 173966.20195000002,
-      "weekly_trades": 1034,
-      "yes_price_7d_ago": 0.625,
-      "yes_price_change_pp": 0.0
-    },
-    {
       "market_id": "682708",
       "question": "Will Gadi Eizenkot be the next Prime Minister of Israel?",
-      "yes_price": 0.496,
+      "yes_price": 0.583,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.496,
-        0.504
+        0.583,
+        0.417
       ],
       "yes_token_id": "52487256270918227930942830546248720603566203568229607048093730748840489555808",
       "end_date": "2026-10-28T03:59:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 3345264.3124929992,
-      "volume_24hr": 90261.73056699999,
+      "volume_total_num": 3908016.9789549997,
+      "volume_24hr": 164728.55005500003,
       "end_date_iso": "2026-10-28",
-      "fetched_at": "2026-10-19T16:12:42+00:00",
+      "fetched_at": "2026-10-26T16:16:17+00:00",
       "yes_book": {
-        "n_bid_levels": 99,
-        "n_ask_levels": 101,
+        "n_bid_levels": 88,
+        "n_ask_levels": 97,
         "top5_bids": [
           {
-            "price": 0.492,
-            "size": 49.99,
-            "dollars": 24.59508
+            "price": 0.578,
+            "size": 997.78,
+            "dollars": 576.7168399999999
           },
           {
-            "price": 0.491,
-            "size": 1282.02,
-            "dollars": 629.47182
+            "price": 0.576,
+            "size": 174.15,
+            "dollars": 100.3104
           },
           {
-            "price": 0.49,
-            "size": 1182.62,
-            "dollars": 579.4838
+            "price": 0.575,
+            "size": 2000.0,
+            "dollars": 1150.0
           },
           {
-            "price": 0.489,
-            "size": 1585.39,
-            "dollars": 775.25571
+            "price": 0.574,
+            "size": 479.2,
+            "dollars": 275.0608
           },
           {
-            "price": 0.488,
-            "size": 150.0,
-            "dollars": 73.2
+            "price": 0.573,
+            "size": 160.0,
+            "dollars": 91.67999999999999
           }
         ],
         "top5_asks": [
           {
-            "price": 0.5,
-            "size": 6290.25,
-            "dollars": 3145.125
+            "price": 0.581,
+            "size": 1696.13,
+            "dollars": 985.45153
           },
           {
-            "price": 0.503,
-            "size": 530.43,
-            "dollars": 266.80629
+            "price": 0.582,
+            "size": 150.0,
+            "dollars": 87.3
           },
           {
-            "price": 0.504,
-            "size": 2000.0,
-            "dollars": 1008.0
+            "price": 0.592,
+            "size": 245.0,
+            "dollars": 145.04
           },
           {
-            "price": 0.505,
-            "size": 3300.0,
-            "dollars": 1666.5
+            "price": 0.595,
+            "size": 44.0,
+            "dollars": 26.18
           },
           {
-            "price": 0.507,
-            "size": 226.04,
-            "dollars": 114.60228
+            "price": 0.596,
+            "size": 589.57,
+            "dollars": 351.38372000000004
           }
         ],
-        "top_bid_price": 0.492,
-        "top_bid_dollars": 24.59508,
-        "top_ask_price": 0.5,
-        "top_ask_dollars": 3145.125,
-        "mid": 0.496,
-        "spread_cents": 0.8000000000000007,
-        "spread_bps": 161.2903225806453,
-        "depth_5pct_bid_dollars": 6453.32641,
-        "depth_5pct_ask_dollars": 12790.91092
+        "top_bid_price": 0.578,
+        "top_bid_dollars": 576.7168399999999,
+        "top_ask_price": 0.581,
+        "top_ask_dollars": 985.45153,
+        "mid": 0.5794999999999999,
+        "spread_cents": 0.30000000000000027,
+        "spread_bps": 51.76876617773949,
+        "depth_5pct_bid_dollars": 11272.65956,
+        "depth_5pct_ask_dollars": 6958.63385
       },
-      "rank": 22,
+      "rank": 18,
       "category": "Geopolitics",
-      "weekly_volume_usd": 172011.37282900006,
-      "weekly_trades": 3555,
-      "yes_price_7d_ago": 0.45,
-      "yes_price_change_pp": 4.599999999999999
+      "weekly_volume_usd": 19798.066885,
+      "weekly_trades": 88,
+      "yes_price_7d_ago": 0.496,
+      "yes_price_change_pp": 8.699999999999996
     },
     {
-      "market_id": "608540",
-      "question": "Will Kylian Mbapp\u00e9 win the 2026 Ballon d'Or?",
-      "yes_price": 0.0335,
+      "market_id": "703257",
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "yes_price": 0.041,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.0335,
-        0.9665
+        0.041,
+        0.959
       ],
-      "yes_token_id": "95640549996905293510297955529586737178285694064878854803914367446504739764113",
+      "yes_token_id": "107505882767731489358349912513945399560393482969656700824895970500493757150417",
       "end_date": "2027-01-01T04:59:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 4242992.56182,
-      "volume_24hr": 71879.883193,
+      "volume_total_num": 42918490.08603401,
+      "volume_24hr": 304705.86841999996,
       "end_date_iso": "2027-01-01",
-      "fetched_at": "2026-10-19T16:12:43+00:00",
+      "fetched_at": "2026-10-26T16:16:18+00:00",
       "yes_book": {
-        "n_bid_levels": 31,
-        "n_ask_levels": 186,
+        "n_bid_levels": 39,
+        "n_ask_levels": 131,
         "top5_bids": [
           {
-            "price": 0.032,
-            "size": 36085.98,
-            "dollars": 1154.7513600000002
+            "price": 0.04,
+            "size": 2459.75,
+            "dollars": 98.39
           },
           {
-            "price": 0.031,
-            "size": 19.48,
-            "dollars": 0.60388
+            "price": 0.039,
+            "size": 3931.2,
+            "dollars": 153.3168
           },
           {
-            "price": 0.029,
-            "size": 5335.97,
-            "dollars": 154.74313
+            "price": 0.038,
+            "size": 443.25,
+            "dollars": 16.8435
           },
           {
-            "price": 0.028,
-            "size": 9464.0,
-            "dollars": 264.992
+            "price": 0.037,
+            "size": 1038.0,
+            "dollars": 38.406
           },
           {
-            "price": 0.027,
-            "size": 25000.0,
-            "dollars": 675.0
+            "price": 0.036,
+            "size": 7758.34,
+            "dollars": 279.30024
           }
         ],
         "top5_asks": [
           {
-            "price": 0.035,
-            "size": 676.32,
-            "dollars": 23.671200000000002
+            "price": 0.042,
+            "size": 24738.33,
+            "dollars": 1039.0098600000001
           },
           {
-            "price": 0.036,
-            "size": 6502.65,
-            "dollars": 234.09539999999996
+            "price": 0.043,
+            "size": 7891.33,
+            "dollars": 339.32719
           },
           {
-            "price": 0.037,
-            "size": 3816.31,
-            "dollars": 141.20346999999998
+            "price": 0.044,
+            "size": 3560.52,
+            "dollars": 156.66288
           },
           {
-            "price": 0.038,
-            "size": 4011.29,
-            "dollars": 152.42902
+            "price": 0.045,
+            "size": 8199.99,
+            "dollars": 368.99955
           },
           {
-            "price": 0.04,
-            "size": 5400.0,
-            "dollars": 216.0
+            "price": 0.046,
+            "size": 8690.0,
+            "dollars": 399.74
           }
         ],
-        "top_bid_price": 0.032,
-        "top_bid_dollars": 1154.7513600000002,
-        "top_ask_price": 0.035,
-        "top_ask_dollars": 23.671200000000002,
-        "mid": 0.0335,
-        "spread_cents": 0.30000000000000027,
-        "spread_bps": 895.5223880597023,
-        "depth_5pct_bid_dollars": 1154.7513600000002,
-        "depth_5pct_ask_dollars": 23.671200000000002
+        "top_bid_price": 0.04,
+        "top_bid_dollars": 98.39,
+        "top_ask_price": 0.042,
+        "top_ask_dollars": 1039.0098600000001,
+        "mid": 0.041,
+        "spread_cents": 0.20000000000000018,
+        "spread_bps": 487.8048780487809,
+        "depth_5pct_bid_dollars": 251.7068,
+        "depth_5pct_ask_dollars": 1378.33705
+      },
+      "rank": 19,
+      "category": "Other",
+      "weekly_volume_usd": 13554.456756,
+      "weekly_trades": 57,
+      "yes_price_7d_ago": 0.0475,
+      "yes_price_change_pp": -0.6499999999999999
+    },
+    {
+      "market_id": "1194643",
+      "question": "Will Iliana Iotova win the next Bulgarian presidential election?",
+      "yes_price": 0.745,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.745,
+        0.255
+      ],
+      "yes_token_id": "50441114645457108268892324313719484550984676393068151334263975251311332365159",
+      "end_date": "2026-10-26T03:59:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 819993.7925110001,
+      "volume_24hr": 137239.16535800003,
+      "end_date_iso": "2026-10-26",
+      "fetched_at": "2026-10-26T16:16:19+00:00",
+      "yes_book": {
+        "n_bid_levels": 44,
+        "n_ask_levels": 25,
+        "top5_bids": [
+          {
+            "price": 0.72,
+            "size": 2170.0,
+            "dollars": 1562.3999999999999
+          },
+          {
+            "price": 0.71,
+            "size": 5662.0,
+            "dollars": 4020.02
+          },
+          {
+            "price": 0.7,
+            "size": 3778.01,
+            "dollars": 2644.607
+          },
+          {
+            "price": 0.69,
+            "size": 2406.55,
+            "dollars": 1660.5195
+          },
+          {
+            "price": 0.68,
+            "size": 1740.11,
+            "dollars": 1183.2748
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.73,
+            "size": 180.45,
+            "dollars": 131.7285
+          },
+          {
+            "price": 0.74,
+            "size": 2053.3,
+            "dollars": 1519.442
+          },
+          {
+            "price": 0.75,
+            "size": 4751.23,
+            "dollars": 3563.4224999999997
+          },
+          {
+            "price": 0.76,
+            "size": 4308.28,
+            "dollars": 3274.2927999999997
+          },
+          {
+            "price": 0.77,
+            "size": 7181.08,
+            "dollars": 5529.4316
+          }
+        ],
+        "top_bid_price": 0.72,
+        "top_bid_dollars": 1562.3999999999999,
+        "top_ask_price": 0.73,
+        "top_ask_dollars": 131.7285,
+        "mid": 0.725,
+        "spread_cents": 1.0000000000000009,
+        "spread_bps": 137.93103448275875,
+        "depth_5pct_bid_dollars": 9887.5465,
+        "depth_5pct_ask_dollars": 8488.8858
+      },
+      "rank": 20,
+      "category": "Politics",
+      "weekly_volume_usd": 10472.75327,
+      "weekly_trades": 145,
+      "yes_price_7d_ago": null,
+      "yes_price_change_pp": null
+    },
+    {
+      "market_id": "701501",
+      "question": "Will Bitcoin dip to $55,000 by December 31, 2026?",
+      "yes_price": 0.115,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.115,
+        0.885
+      ],
+      "yes_token_id": "115462087336983275104521488923966022755348986822352694745153736621832003960847",
+      "end_date": "2027-01-01T05:00:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 6948763.393841999,
+      "volume_24hr": 43168.569212,
+      "end_date_iso": "2027-01-01",
+      "fetched_at": "2026-10-26T16:16:21+00:00",
+      "yes_book": {
+        "n_bid_levels": 11,
+        "n_ask_levels": 67,
+        "top5_bids": [
+          {
+            "price": 0.11,
+            "size": 49665.18,
+            "dollars": 5463.1698
+          },
+          {
+            "price": 0.1,
+            "size": 554.0,
+            "dollars": 55.400000000000006
+          },
+          {
+            "price": 0.09,
+            "size": 92944.01,
+            "dollars": 8364.9609
+          },
+          {
+            "price": 0.08,
+            "size": 502164.37,
+            "dollars": 40173.1496
+          },
+          {
+            "price": 0.07,
+            "size": 10513.06,
+            "dollars": 735.9142
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.12,
+            "size": 1072.0,
+            "dollars": 128.64
+          },
+          {
+            "price": 0.13,
+            "size": 17120.99,
+            "dollars": 2225.7287
+          },
+          {
+            "price": 0.14,
+            "size": 14219.95,
+            "dollars": 1990.7930000000003
+          },
+          {
+            "price": 0.15,
+            "size": 8065.97,
+            "dollars": 1209.8955
+          },
+          {
+            "price": 0.16,
+            "size": 60.0,
+            "dollars": 9.6
+          }
+        ],
+        "top_bid_price": 0.11,
+        "top_bid_dollars": 5463.1698,
+        "top_ask_price": 0.12,
+        "top_ask_dollars": 128.64,
+        "mid": 0.11499999999999999,
+        "spread_cents": 0.9999999999999996,
+        "spread_bps": 869.565217391304,
+        "depth_5pct_bid_dollars": 5463.1698,
+        "depth_5pct_ask_dollars": 128.64
+      },
+      "rank": 21,
+      "category": "Crypto",
+      "weekly_volume_usd": 10098.3399,
+      "weekly_trades": 20,
+      "yes_price_7d_ago": 0.215,
+      "yes_price_change_pp": -10.0
+    },
+    {
+      "market_id": "630805",
+      "question": "Will the Democrats win the Michigan Senate race in 2026?",
+      "yes_price": 0.675,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.675,
+        0.325
+      ],
+      "yes_token_id": "71772627544132140586824126381855151743830987860593343955509593715269534710061",
+      "end_date": "2026-11-04T04:59:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 1537719.013058,
+      "volume_24hr": 75622.54640199999,
+      "end_date_iso": "2026-11-04",
+      "fetched_at": "2026-10-26T16:16:22+00:00",
+      "yes_book": {
+        "n_bid_levels": 46,
+        "n_ask_levels": 24,
+        "top5_bids": [
+          {
+            "price": 0.67,
+            "size": 4388.88,
+            "dollars": 2940.5496000000003
+          },
+          {
+            "price": 0.66,
+            "size": 14636.79,
+            "dollars": 9660.281400000002
+          },
+          {
+            "price": 0.65,
+            "size": 8525.06,
+            "dollars": 5541.289
+          },
+          {
+            "price": 0.64,
+            "size": 387.81,
+            "dollars": 248.19840000000002
+          },
+          {
+            "price": 0.63,
+            "size": 5899.03,
+            "dollars": 3716.3889
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.69,
+            "size": 6177.41,
+            "dollars": 4262.412899999999
+          },
+          {
+            "price": 0.7,
+            "size": 24809.51,
+            "dollars": 17366.657
+          },
+          {
+            "price": 0.71,
+            "size": 48759.98,
+            "dollars": 34619.5858
+          },
+          {
+            "price": 0.72,
+            "size": 13679.51,
+            "dollars": 9849.2472
+          },
+          {
+            "price": 0.73,
+            "size": 7620.0,
+            "dollars": 5562.599999999999
+          }
+        ],
+        "top_bid_price": 0.67,
+        "top_bid_dollars": 2940.5496000000003,
+        "top_ask_price": 0.69,
+        "top_ask_dollars": 4262.412899999999,
+        "mid": 0.6799999999999999,
+        "spread_cents": 1.9999999999999907,
+        "spread_bps": 294.1176470588222,
+        "depth_5pct_bid_dollars": 18142.120000000003,
+        "depth_5pct_ask_dollars": 56248.6557
+      },
+      "rank": 22,
+      "category": "Politics",
+      "weekly_volume_usd": 10033.121524,
+      "weekly_trades": 171,
+      "yes_price_7d_ago": null,
+      "yes_price_change_pp": null
+    },
+    {
+      "market_id": "629030",
+      "question": "Will Karen Bass win the 2026 Los Angeles mayoral election?",
+      "yes_price": 0.445,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.445,
+        0.555
+      ],
+      "yes_token_id": "21099887182068653164347641846316470453763034851874063977340528628016776716246",
+      "end_date": "2026-06-03T03:59:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 1735835.9449250002,
+      "volume_24hr": 86170.361549,
+      "end_date_iso": "2026-06-03",
+      "fetched_at": "2026-10-26T16:16:23+00:00",
+      "yes_book": {
+        "n_bid_levels": 28,
+        "n_ask_levels": 41,
+        "top5_bids": [
+          {
+            "price": 0.44,
+            "size": 11518.81,
+            "dollars": 5068.2764
+          },
+          {
+            "price": 0.43,
+            "size": 1582.65,
+            "dollars": 680.5395
+          },
+          {
+            "price": 0.42,
+            "size": 8616.94,
+            "dollars": 3619.1148000000003
+          },
+          {
+            "price": 0.41,
+            "size": 11059.51,
+            "dollars": 4534.3991
+          },
+          {
+            "price": 0.4,
+            "size": 1227.12,
+            "dollars": 490.84799999999996
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.45,
+            "size": 12399.49,
+            "dollars": 5579.7705
+          },
+          {
+            "price": 0.46,
+            "size": 5522.63,
+            "dollars": 2540.4098000000004
+          },
+          {
+            "price": 0.47,
+            "size": 2176.18,
+            "dollars": 1022.8045999999998
+          },
+          {
+            "price": 0.48,
+            "size": 2110.8,
+            "dollars": 1013.1840000000001
+          },
+          {
+            "price": 0.49,
+            "size": 3250.0,
+            "dollars": 1592.5
+          }
+        ],
+        "top_bid_price": 0.44,
+        "top_bid_dollars": 5068.2764,
+        "top_ask_price": 0.45,
+        "top_ask_dollars": 5579.7705,
+        "mid": 0.445,
+        "spread_cents": 1.0000000000000009,
+        "spread_bps": 224.71910112359572,
+        "depth_5pct_bid_dollars": 5748.8159,
+        "depth_5pct_ask_dollars": 8120.1803
       },
       "rank": 23,
-      "category": "Other",
-      "weekly_volume_usd": 168809.875025,
-      "weekly_trades": 3318,
-      "yes_price_7d_ago": 0.0225,
-      "yes_price_change_pp": 1.1000000000000003
+      "category": "Politics",
+      "weekly_volume_usd": 9746.786600000001,
+      "weekly_trades": 38,
+      "yes_price_7d_ago": 0.415,
+      "yes_price_change_pp": 3.0000000000000027
+    },
+    {
+      "market_id": "630963",
+      "question": "Will the Democrats win the Texas Senate race in 2026?",
+      "yes_price": 0.635,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.635,
+        0.365
+      ],
+      "yes_token_id": "15290572385458522370285732869432740297199321382471116558439914335588167718663",
+      "end_date": "2026-11-04T04:59:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 2740771.595352,
+      "volume_24hr": 158575.116618,
+      "end_date_iso": "2026-11-04",
+      "fetched_at": "2026-10-26T16:16:24+00:00",
+      "yes_book": {
+        "n_bid_levels": 52,
+        "n_ask_levels": 33,
+        "top5_bids": [
+          {
+            "price": 0.63,
+            "size": 9692.09,
+            "dollars": 6106.0167
+          },
+          {
+            "price": 0.62,
+            "size": 34878.47,
+            "dollars": 21624.6514
+          },
+          {
+            "price": 0.61,
+            "size": 53754.17,
+            "dollars": 32790.043699999995
+          },
+          {
+            "price": 0.6,
+            "size": 150059.83,
+            "dollars": 90035.89799999999
+          },
+          {
+            "price": 0.59,
+            "size": 2325.35,
+            "dollars": 1371.9564999999998
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.64,
+            "size": 2063.01,
+            "dollars": 1320.3264000000001
+          },
+          {
+            "price": 0.65,
+            "size": 8747.53,
+            "dollars": 5685.8945
+          },
+          {
+            "price": 0.66,
+            "size": 74206.78,
+            "dollars": 48976.4748
+          },
+          {
+            "price": 0.67,
+            "size": 32177.86,
+            "dollars": 21559.166200000003
+          },
+          {
+            "price": 0.68,
+            "size": 26784.88,
+            "dollars": 18213.7184
+          }
+        ],
+        "top_bid_price": 0.63,
+        "top_bid_dollars": 6106.0167,
+        "top_ask_price": 0.64,
+        "top_ask_dollars": 1320.3264000000001,
+        "mid": 0.635,
+        "spread_cents": 1.0000000000000009,
+        "spread_bps": 157.48031496063007,
+        "depth_5pct_bid_dollars": 60520.71179999999,
+        "depth_5pct_ask_dollars": 55982.695700000004
+      },
+      "rank": 24,
+      "category": "Politics",
+      "weekly_volume_usd": 9658.433152000001,
+      "weekly_trades": 146,
+      "yes_price_7d_ago": 0.625,
+      "yes_price_change_pp": 1.0000000000000009
     },
     {
       "market_id": "562793",
@@ -2109,645 +2132,551 @@
       "end_date": "2026-11-04T04:59:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 4064496.10474,
-      "volume_24hr": 20443.046639,
+      "volume_total_num": 5407451.490641,
+      "volume_24hr": 132259.79884600002,
       "end_date_iso": "2026-11-04",
-      "fetched_at": "2026-10-19T16:12:44+00:00",
+      "fetched_at": "2026-10-26T16:16:26+00:00",
       "yes_book": {
-        "n_bid_levels": 55,
+        "n_bid_levels": 51,
         "n_ask_levels": 32,
         "top5_bids": [
           {
             "price": 0.64,
-            "size": 30010.01,
-            "dollars": 19206.4064
+            "size": 16928.6,
+            "dollars": 10834.304
           },
           {
             "price": 0.63,
-            "size": 178014.02,
-            "dollars": 112148.8326
+            "size": 429180.1,
+            "dollars": 270383.463
           },
           {
             "price": 0.62,
-            "size": 300086.28,
-            "dollars": 186053.49360000002
+            "size": 44679.95,
+            "dollars": 27701.569
           },
           {
             "price": 0.61,
-            "size": 606381.0,
-            "dollars": 369892.41
+            "size": 776.0,
+            "dollars": 473.36
           },
           {
             "price": 0.6,
-            "size": 353767.33,
-            "dollars": 212260.39800000002
+            "size": 1590.0,
+            "dollars": 954.0
           }
         ],
         "top5_asks": [
           {
             "price": 0.65,
-            "size": 94130.37,
-            "dollars": 61184.7405
+            "size": 4586.85,
+            "dollars": 2981.4525000000003
           },
           {
             "price": 0.66,
-            "size": 305497.78,
-            "dollars": 201628.53480000002
+            "size": 33134.19,
+            "dollars": 21868.565400000003
           },
           {
             "price": 0.67,
-            "size": 340631.17,
-            "dollars": 228222.88390000002
+            "size": 61068.74,
+            "dollars": 40916.0558
           },
           {
             "price": 0.68,
-            "size": 267769.25,
-            "dollars": 182083.09000000003
+            "size": 5571.95,
+            "dollars": 3788.926
           },
           {
             "price": 0.69,
-            "size": 90619.19,
-            "dollars": 62527.2411
+            "size": 34287.32,
+            "dollars": 23658.250799999998
           }
         ],
         "top_bid_price": 0.64,
-        "top_bid_dollars": 19206.4064,
+        "top_bid_dollars": 10834.304,
         "top_ask_price": 0.65,
-        "top_ask_dollars": 61184.7405,
+        "top_ask_dollars": 2981.4525000000003,
         "mid": 0.645,
         "spread_cents": 1.0000000000000009,
         "spread_bps": 155.0387596899226,
-        "depth_5pct_bid_dollars": 317408.7326,
-        "depth_5pct_ask_dollars": 491036.15920000005
-      },
-      "rank": 24,
-      "category": "Politics",
-      "weekly_volume_usd": 163627.84075200008,
-      "weekly_trades": 2719,
-      "yes_price_7d_ago": 0.635,
-      "yes_price_change_pp": 1.0000000000000009
-    },
-    {
-      "market_id": "679022",
-      "question": "Will David Lisnard win the 2027 French presidential election?",
-      "yes_price": 0.1165,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.1165,
-        0.8835
-      ],
-      "yes_token_id": "55404192439775628931124671719520886657525387168536821457706619003199189099864",
-      "end_date": "2027-04-19T03:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 5055929.255059999,
-      "volume_24hr": 65491.315667,
-      "end_date_iso": "2027-04-19",
-      "fetched_at": "2026-10-19T16:12:44+00:00",
-      "yes_book": {
-        "n_bid_levels": 74,
-        "n_ask_levels": 113,
-        "top5_bids": [
-          {
-            "price": 0.116,
-            "size": 28839.68,
-            "dollars": 3345.40288
-          },
-          {
-            "price": 0.115,
-            "size": 14567.76,
-            "dollars": 1675.2924
-          },
-          {
-            "price": 0.114,
-            "size": 1000.0,
-            "dollars": 114.0
-          },
-          {
-            "price": 0.112,
-            "size": 18043.15,
-            "dollars": 2020.8328000000001
-          },
-          {
-            "price": 0.111,
-            "size": 1300.0,
-            "dollars": 144.3
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.117,
-            "size": 23495.28,
-            "dollars": 2748.94776
-          },
-          {
-            "price": 0.118,
-            "size": 27342.41,
-            "dollars": 3226.40438
-          },
-          {
-            "price": 0.119,
-            "size": 20317.82,
-            "dollars": 2417.82058
-          },
-          {
-            "price": 0.12,
-            "size": 1000.0,
-            "dollars": 120.0
-          },
-          {
-            "price": 0.122,
-            "size": 300.0,
-            "dollars": 36.6
-          }
-        ],
-        "top_bid_price": 0.116,
-        "top_bid_dollars": 3345.40288,
-        "top_ask_price": 0.117,
-        "top_ask_dollars": 2748.94776,
-        "mid": 0.1165,
-        "spread_cents": 0.10000000000000009,
-        "spread_bps": 85.8369098712447,
-        "depth_5pct_bid_dollars": 7299.82808,
-        "depth_5pct_ask_dollars": 8549.77272
+        "depth_5pct_bid_dollars": 308919.336,
+        "depth_5pct_ask_dollars": 65766.07370000001
       },
       "rank": 25,
       "category": "Politics",
-      "weekly_volume_usd": 163256.00437500002,
-      "weekly_trades": 976,
-      "yes_price_7d_ago": 0.138,
-      "yes_price_change_pp": -2.1500000000000004
-    },
-    {
-      "market_id": "666861",
-      "question": "Trump out as President before 2027?",
-      "yes_price": 0.0365,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.0365,
-        0.9635
-      ],
-      "yes_token_id": "59252515735652674747158950210016502214756531287333895140318848923768750410355",
-      "end_date": "2027-01-01T04:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 12769709.848398998,
-      "volume_24hr": 86941.539148,
-      "end_date_iso": "2027-01-01",
-      "fetched_at": "2026-10-19T16:12:45+00:00",
-      "yes_book": {
-        "n_bid_levels": 32,
-        "n_ask_levels": 110,
-        "top5_bids": [
-          {
-            "price": 0.036,
-            "size": 3040.0,
-            "dollars": 109.44
-          },
-          {
-            "price": 0.035,
-            "size": 1426.72,
-            "dollars": 49.93520000000001
-          },
-          {
-            "price": 0.034,
-            "size": 532.0,
-            "dollars": 18.088
-          },
-          {
-            "price": 0.033,
-            "size": 1939.5,
-            "dollars": 64.0035
-          },
-          {
-            "price": 0.032,
-            "size": 1028.0,
-            "dollars": 32.896
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.037,
-            "size": 861.84,
-            "dollars": 31.88808
-          },
-          {
-            "price": 0.038,
-            "size": 1743.07,
-            "dollars": 66.23666
-          },
-          {
-            "price": 0.039,
-            "size": 1755.17,
-            "dollars": 68.45163000000001
-          },
-          {
-            "price": 0.04,
-            "size": 5223.55,
-            "dollars": 208.942
-          },
-          {
-            "price": 0.041,
-            "size": 1397.24,
-            "dollars": 57.286840000000005
-          }
-        ],
-        "top_bid_price": 0.036,
-        "top_bid_dollars": 109.44,
-        "top_ask_price": 0.037,
-        "top_ask_dollars": 31.88808,
-        "mid": 0.0365,
-        "spread_cents": 0.10000000000000009,
-        "spread_bps": 273.9726027397263,
-        "depth_5pct_bid_dollars": 159.3752,
-        "depth_5pct_ask_dollars": 98.12474
-      },
-      "rank": 26,
-      "category": "Politics",
-      "weekly_volume_usd": 155845.80197099998,
-      "weekly_trades": 926,
-      "yes_price_7d_ago": 0.0365,
+      "weekly_volume_usd": 9029.730351,
+      "weekly_trades": 78,
+      "yes_price_7d_ago": 0.645,
       "yes_price_change_pp": 0.0
     },
     {
-      "market_id": "1235552",
-      "question": "Will the Cleveland Guardians win the 2026 World Series?",
-      "yes_price": 0.06,
+      "market_id": "701502",
+      "question": "Will Bitcoin dip to $45,000 by December 31, 2026?",
+      "yes_price": 0.059,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.06,
-        0.94
+        0.059,
+        0.941
       ],
-      "yes_token_id": "86836855507912353672331273895741550012643122260675758564432763672972116051156",
-      "end_date": "2026-10-31T23:55:00Z",
+      "yes_token_id": "9894510651052373088408067031031513212801618531203062911959630395716258202132",
+      "end_date": "2027-01-01T05:00:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 1733819.248529,
-      "volume_24hr": 46068.891362,
-      "end_date_iso": "2026-10-31",
-      "fetched_at": "2026-10-19T16:12:46+00:00",
+      "volume_total_num": 8817691.233106,
+      "volume_24hr": 10832.443334,
+      "end_date_iso": "2027-01-01",
+      "fetched_at": "2026-10-26T16:16:27+00:00",
       "yes_book": {
-        "n_bid_levels": 32,
-        "n_ask_levels": 94,
+        "n_bid_levels": 44,
+        "n_ask_levels": 91,
         "top5_bids": [
           {
+            "price": 0.059,
+            "size": 10007.04,
+            "dollars": 590.41536
+          },
+          {
+            "price": 0.058,
+            "size": 50.0,
+            "dollars": 2.9000000000000004
+          },
+          {
+            "price": 0.057,
+            "size": 50.0,
+            "dollars": 2.85
+          },
+          {
             "price": 0.056,
-            "size": 8875.8,
-            "dollars": 497.04479999999995
+            "size": 50.0,
+            "dollars": 2.8000000000000003
           },
           {
-            "price": 0.054,
-            "size": 9888.0,
-            "dollars": 533.952
-          },
-          {
-            "price": 0.05,
-            "size": 125.0,
-            "dollars": 6.25
-          },
-          {
-            "price": 0.047,
-            "size": 236.0,
-            "dollars": 11.092
-          },
-          {
-            "price": 0.046,
-            "size": 300.0,
-            "dollars": 13.799999999999999
+            "price": 0.055,
+            "size": 50.0,
+            "dollars": 2.75
           }
         ],
         "top5_asks": [
           {
+            "price": 0.061,
+            "size": 50.0,
+            "dollars": 3.05
+          },
+          {
+            "price": 0.062,
+            "size": 50.0,
+            "dollars": 3.1
+          },
+          {
             "price": 0.063,
-            "size": 812.0,
-            "dollars": 51.156
+            "size": 50.0,
+            "dollars": 3.15
           },
           {
             "price": 0.064,
-            "size": 200.0,
-            "dollars": 12.8
+            "size": 50.0,
+            "dollars": 3.2
           },
           {
-            "price": 0.066,
-            "size": 257.0,
-            "dollars": 16.962
-          },
-          {
-            "price": 0.067,
-            "size": 6761.02,
-            "dollars": 452.98834000000005
-          },
-          {
-            "price": 0.068,
-            "size": 1050.0,
-            "dollars": 71.4
+            "price": 0.065,
+            "size": 50.0,
+            "dollars": 3.25
           }
         ],
-        "top_bid_price": 0.056,
-        "top_bid_dollars": 497.04479999999995,
-        "top_ask_price": 0.063,
-        "top_ask_dollars": 51.156,
-        "mid": 0.0595,
-        "spread_cents": 0.7,
-        "spread_bps": 1176.4705882352941,
+        "top_bid_price": 0.059,
+        "top_bid_dollars": 590.41536,
+        "top_ask_price": 0.061,
+        "top_ask_dollars": 3.05,
+        "mid": 0.06,
+        "spread_cents": 0.20000000000000018,
+        "spread_bps": 333.33333333333366,
+        "depth_5pct_bid_dollars": 596.16536,
+        "depth_5pct_ask_dollars": 9.3
+      },
+      "rank": 26,
+      "category": "Crypto",
+      "weekly_volume_usd": 8591.795569999998,
+      "weekly_trades": 3,
+      "yes_price_7d_ago": 0.041,
+      "yes_price_change_pp": 1.7999999999999996
+    },
+    {
+      "market_id": "629490",
+      "question": "Will the Democrats win the Nebraska governor race in 2026?",
+      "yes_price": 0.17,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.17,
+        0.83
+      ],
+      "yes_token_id": "3466069051818884243073756614952529401222377791973010490050674378116587529746",
+      "end_date": "2026-11-04T04:59:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 21056.730517,
+      "volume_24hr": 9677.856896,
+      "end_date_iso": "2026-11-04",
+      "fetched_at": "2026-10-26T16:16:28+00:00",
+      "yes_book": {
+        "n_bid_levels": 16,
+        "n_ask_levels": 45,
+        "top5_bids": [
+          {
+            "price": 0.16,
+            "size": 746.0,
+            "dollars": 119.36
+          },
+          {
+            "price": 0.15,
+            "size": 4041.75,
+            "dollars": 606.2624999999999
+          },
+          {
+            "price": 0.14,
+            "size": 5942.38,
+            "dollars": 831.9332
+          },
+          {
+            "price": 0.13,
+            "size": 13910.76,
+            "dollars": 1808.3988000000002
+          },
+          {
+            "price": 0.12,
+            "size": 586.0,
+            "dollars": 70.32
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.18,
+            "size": 947.0,
+            "dollars": 170.45999999999998
+          },
+          {
+            "price": 0.19,
+            "size": 13181.07,
+            "dollars": 2504.4033
+          },
+          {
+            "price": 0.2,
+            "size": 12807.75,
+            "dollars": 2561.55
+          },
+          {
+            "price": 0.21,
+            "size": 3667.92,
+            "dollars": 770.2632
+          },
+          {
+            "price": 0.22,
+            "size": 1464.0,
+            "dollars": 322.08
+          }
+        ],
+        "top_bid_price": 0.16,
+        "top_bid_dollars": 119.36,
+        "top_ask_price": 0.18,
+        "top_ask_dollars": 170.45999999999998,
+        "mid": 0.16999999999999998,
+        "spread_cents": 1.9999999999999991,
+        "spread_bps": 1176.4705882352937,
         "depth_5pct_bid_dollars": 0,
         "depth_5pct_ask_dollars": 0
       },
       "rank": 27,
-      "category": "Sports",
-      "weekly_volume_usd": 147619.22795999993,
-      "weekly_trades": 1926,
+      "category": "Politics",
+      "weekly_volume_usd": 7055.001917999998,
+      "weekly_trades": 40,
       "yes_price_7d_ago": null,
       "yes_price_change_pp": null
     },
     {
-      "market_id": "562830",
-      "question": "2026 Balance of Power: R Senate, D House",
-      "yes_price": 0.275,
+      "market_id": "1283129",
+      "question": "Will the Democratic Party win the FL-25 House seat?",
+      "yes_price": 0.795,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.275,
-        0.725
+        0.795,
+        0.205
       ],
-      "yes_token_id": "6302359956133594764084277082169634158291609371270652093164054687145970756151",
+      "yes_token_id": "84319454573662085210770106575059573110977726805918419997163222348941856635019",
       "end_date": "2026-11-04T04:59:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 3710910.9510739995,
-      "volume_24hr": 49231.36269900001,
+      "volume_total_num": 29640.173230999997,
+      "volume_24hr": 13215.300598,
       "end_date_iso": "2026-11-04",
-      "fetched_at": "2026-10-19T16:12:47+00:00",
+      "fetched_at": "2026-10-26T16:16:30+00:00",
       "yes_book": {
-        "n_bid_levels": 20,
-        "n_ask_levels": 46,
+        "n_bid_levels": 41,
+        "n_ask_levels": 19,
         "top5_bids": [
           {
-            "price": 0.27,
-            "size": 96195.36,
-            "dollars": 25972.7472
+            "price": 0.79,
+            "size": 100.0,
+            "dollars": 79.0
           },
           {
-            "price": 0.26,
-            "size": 286681.99,
-            "dollars": 74537.3174
+            "price": 0.78,
+            "size": 1257.66,
+            "dollars": 980.9748000000001
           },
           {
-            "price": 0.25,
-            "size": 1700137.88,
-            "dollars": 425034.47
+            "price": 0.77,
+            "size": 976.89,
+            "dollars": 752.2053
           },
           {
-            "price": 0.24,
-            "size": 267872.0,
-            "dollars": 64289.28
+            "price": 0.76,
+            "size": 487.0,
+            "dollars": 370.12
           },
           {
-            "price": 0.23,
-            "size": 275095.0,
-            "dollars": 63271.850000000006
+            "price": 0.74,
+            "size": 10.0,
+            "dollars": 7.4
           }
         ],
         "top5_asks": [
           {
-            "price": 0.28,
-            "size": 167010.55,
-            "dollars": 46762.954
+            "price": 0.8,
+            "size": 53.15,
+            "dollars": 42.52
           },
           {
-            "price": 0.29,
-            "size": 578216.68,
-            "dollars": 167682.8372
+            "price": 0.81,
+            "size": 6866.88,
+            "dollars": 5562.1728
           },
           {
-            "price": 0.3,
-            "size": 2166545.96,
-            "dollars": 649963.788
+            "price": 0.82,
+            "size": 23215.22,
+            "dollars": 19036.4804
           },
           {
-            "price": 0.31,
-            "size": 376639.03,
-            "dollars": 116758.0993
+            "price": 0.83,
+            "size": 31198.64,
+            "dollars": 25894.871199999998
           },
           {
-            "price": 0.32,
-            "size": 6231.54,
-            "dollars": 1994.0928000000001
+            "price": 0.84,
+            "size": 5050.0,
+            "dollars": 4242.0
           }
         ],
-        "top_bid_price": 0.27,
-        "top_bid_dollars": 25972.7472,
-        "top_ask_price": 0.28,
-        "top_ask_dollars": 46762.954,
-        "mid": 0.275,
+        "top_bid_price": 0.79,
+        "top_bid_dollars": 79.0,
+        "top_ask_price": 0.8,
+        "top_ask_dollars": 42.52,
+        "mid": 0.795,
         "spread_cents": 1.0000000000000009,
-        "spread_bps": 363.6363636363639,
-        "depth_5pct_bid_dollars": 25972.7472,
-        "depth_5pct_ask_dollars": 46762.954
+        "spread_bps": 125.78616352201269,
+        "depth_5pct_bid_dollars": 2182.3001,
+        "depth_5pct_ask_dollars": 50536.0444
       },
       "rank": 28,
       "category": "Politics",
-      "weekly_volume_usd": 105655.02482699999,
-      "weekly_trades": 382,
-      "yes_price_7d_ago": 0.285,
-      "yes_price_change_pp": -0.9999999999999953
-    },
-    {
-      "market_id": "682706",
-      "question": "Will Naftali Bennett be the next Prime Minister of Israel?",
-      "yes_price": 0.125,
-      "outcomes": [
-        "Yes",
-        "No"
-      ],
-      "outcome_prices": [
-        0.125,
-        0.875
-      ],
-      "yes_token_id": "58945936829392654397399777214757608864525173988558750256164021442231118224154",
-      "end_date": "2026-10-28T03:59:00Z",
-      "active": true,
-      "closed": false,
-      "volume_total_num": 3953307.609225999,
-      "volume_24hr": 58329.277848,
-      "end_date_iso": "2026-10-28",
-      "fetched_at": "2026-10-19T16:12:47+00:00",
-      "yes_book": {
-        "n_bid_levels": 12,
-        "n_ask_levels": 62,
-        "top5_bids": [
-          {
-            "price": 0.12,
-            "size": 23183.21,
-            "dollars": 2781.9851999999996
-          },
-          {
-            "price": 0.11,
-            "size": 73964.62,
-            "dollars": 8136.1082
-          },
-          {
-            "price": 0.1,
-            "size": 66297.75,
-            "dollars": 6629.775000000001
-          },
-          {
-            "price": 0.09,
-            "size": 107491.96,
-            "dollars": 9674.2764
-          },
-          {
-            "price": 0.08,
-            "size": 305.0,
-            "dollars": 24.400000000000002
-          }
-        ],
-        "top5_asks": [
-          {
-            "price": 0.13,
-            "size": 2011.64,
-            "dollars": 261.51320000000004
-          },
-          {
-            "price": 0.14,
-            "size": 2599.18,
-            "dollars": 363.8852
-          },
-          {
-            "price": 0.15,
-            "size": 2242.04,
-            "dollars": 336.306
-          },
-          {
-            "price": 0.16,
-            "size": 1040.82,
-            "dollars": 166.53119999999998
-          },
-          {
-            "price": 0.17,
-            "size": 5.0,
-            "dollars": 0.8500000000000001
-          }
-        ],
-        "top_bid_price": 0.12,
-        "top_bid_dollars": 2781.9851999999996,
-        "top_ask_price": 0.13,
-        "top_ask_dollars": 261.51320000000004,
-        "mid": 0.125,
-        "spread_cents": 1.0000000000000009,
-        "spread_bps": 800.0000000000007,
-        "depth_5pct_bid_dollars": 2781.9851999999996,
-        "depth_5pct_ask_dollars": 261.51320000000004
-      },
-      "rank": 29,
-      "category": "Geopolitics",
-      "weekly_volume_usd": 105150.46394899998,
-      "weekly_trades": 1033,
+      "weekly_volume_usd": 6553.115566,
+      "weekly_trades": 76,
       "yes_price_7d_ago": null,
       "yes_price_change_pp": null
     },
     {
-      "market_id": "1235568",
-      "question": "Will the Milwaukee Brewers win the 2026 World Series?",
-      "yes_price": 0.6175,
+      "market_id": "629397",
+      "question": "Will the Democrats win the Iowa governor race in 2026?",
+      "yes_price": 0.855,
       "outcomes": [
         "Yes",
         "No"
       ],
       "outcome_prices": [
-        0.6175,
-        0.3825
+        0.855,
+        0.145
       ],
-      "yes_token_id": "68495273029336552259622116656826978391613637593537133254546205487243272235948",
-      "end_date": "2026-10-31T23:55:00Z",
+      "yes_token_id": "45621938709469399887344165091123819127263258871102896783851049824656362940868",
+      "end_date": "2026-11-04T04:59:00Z",
       "active": true,
       "closed": false,
-      "volume_total_num": 2045765.6519160005,
-      "volume_24hr": 15885.510895,
-      "end_date_iso": "2026-10-31",
-      "fetched_at": "2026-10-19T16:12:48+00:00",
+      "volume_total_num": 181431.168551,
+      "volume_24hr": 15405.662602,
+      "end_date_iso": "2026-11-04",
+      "fetched_at": "2026-10-26T16:16:31+00:00",
       "yes_book": {
-        "n_bid_levels": 180,
-        "n_ask_levels": 78,
+        "n_bid_levels": 44,
+        "n_ask_levels": 14,
         "top5_bids": [
           {
-            "price": 0.616,
-            "size": 1000.0,
-            "dollars": 616.0
+            "price": 0.85,
+            "size": 2951.75,
+            "dollars": 2508.9874999999997
           },
           {
-            "price": 0.615,
-            "size": 4820.0,
-            "dollars": 2964.3
+            "price": 0.84,
+            "size": 3463.23,
+            "dollars": 2909.1132
           },
           {
-            "price": 0.612,
-            "size": 8763.69,
-            "dollars": 5363.37828
+            "price": 0.83,
+            "size": 7550.52,
+            "dollars": 6266.9316
           },
           {
-            "price": 0.61,
-            "size": 4999.41,
-            "dollars": 3049.6400999999996
+            "price": 0.82,
+            "size": 7021.95,
+            "dollars": 5757.999
           },
           {
-            "price": 0.609,
-            "size": 2500.0,
-            "dollars": 1522.5
+            "price": 0.81,
+            "size": 1560.0,
+            "dollars": 1263.6000000000001
           }
         ],
         "top5_asks": [
           {
-            "price": 0.619,
-            "size": 200.0,
-            "dollars": 123.8
+            "price": 0.86,
+            "size": 1005.54,
+            "dollars": 864.7643999999999
           },
           {
-            "price": 0.628,
-            "size": 50.0,
-            "dollars": 31.4
+            "price": 0.87,
+            "size": 4446.13,
+            "dollars": 3868.1331
           },
           {
-            "price": 0.629,
-            "size": 400.0,
-            "dollars": 251.6
+            "price": 0.88,
+            "size": 16665.48,
+            "dollars": 14665.6224
           },
           {
-            "price": 0.63,
-            "size": 5668.88,
-            "dollars": 3571.3944
+            "price": 0.89,
+            "size": 11908.64,
+            "dollars": 10598.6896
           },
           {
-            "price": 0.634,
-            "size": 1500.0,
-            "dollars": 951.0
+            "price": 0.9,
+            "size": 18850.09,
+            "dollars": 16965.081000000002
           }
         ],
-        "top_bid_price": 0.616,
-        "top_bid_dollars": 616.0,
-        "top_ask_price": 0.619,
-        "top_ask_dollars": 123.8,
-        "mid": 0.6174999999999999,
-        "spread_cents": 0.30000000000000027,
-        "spread_bps": 48.58299595141705,
-        "depth_5pct_bid_dollars": 20496.902149999998,
-        "depth_5pct_ask_dollars": 20161.1776
+        "top_bid_price": 0.85,
+        "top_bid_dollars": 2508.9874999999997,
+        "top_ask_price": 0.86,
+        "top_ask_dollars": 864.7643999999999,
+        "mid": 0.855,
+        "spread_cents": 1.0000000000000009,
+        "spread_bps": 116.95906432748549,
+        "depth_5pct_bid_dollars": 17443.0313,
+        "depth_5pct_ask_dollars": 29997.2095
+      },
+      "rank": 29,
+      "category": "Politics",
+      "weekly_volume_usd": 5686.116056000004,
+      "weekly_trades": 78,
+      "yes_price_7d_ago": null,
+      "yes_price_change_pp": null
+    },
+    {
+      "market_id": "561239",
+      "question": "Will Kamala Harris win the 2028 US Presidential Election?",
+      "yes_price": 0.0385,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcome_prices": [
+        0.0385,
+        0.9615
+      ],
+      "yes_token_id": "70663352401606372246362604193214664065595751757222752105245221905399175050480",
+      "end_date": "2028-11-08T04:59:00Z",
+      "active": true,
+      "closed": false,
+      "volume_total_num": 9332919.522497,
+      "volume_24hr": 11671.608248,
+      "end_date_iso": "2028-11-08",
+      "fetched_at": "2026-10-26T16:16:32+00:00",
+      "yes_book": {
+        "n_bid_levels": 37,
+        "n_ask_levels": 146,
+        "top5_bids": [
+          {
+            "price": 0.038,
+            "size": 1200.38,
+            "dollars": 45.61444
+          },
+          {
+            "price": 0.037,
+            "size": 1738.72,
+            "dollars": 64.33264
+          },
+          {
+            "price": 0.036,
+            "size": 3114.35,
+            "dollars": 112.11659999999999
+          },
+          {
+            "price": 0.035,
+            "size": 2099.54,
+            "dollars": 73.4839
+          },
+          {
+            "price": 0.034,
+            "size": 37.65,
+            "dollars": 1.2801
+          }
+        ],
+        "top5_asks": [
+          {
+            "price": 0.039,
+            "size": 14859.76,
+            "dollars": 579.5306400000001
+          },
+          {
+            "price": 0.04,
+            "size": 3154.88,
+            "dollars": 126.19520000000001
+          },
+          {
+            "price": 0.043,
+            "size": 20286.69,
+            "dollars": 872.3276699999999
+          },
+          {
+            "price": 0.044,
+            "size": 3328.51,
+            "dollars": 146.45444
+          },
+          {
+            "price": 0.045,
+            "size": 30.0,
+            "dollars": 1.3499999999999999
+          }
+        ],
+        "top_bid_price": 0.038,
+        "top_bid_dollars": 45.61444,
+        "top_ask_price": 0.039,
+        "top_ask_dollars": 579.5306400000001,
+        "mid": 0.0385,
+        "spread_cents": 0.10000000000000009,
+        "spread_bps": 259.74025974025994,
+        "depth_5pct_bid_dollars": 109.94708,
+        "depth_5pct_ask_dollars": 705.7258400000001
       },
       "rank": 30,
-      "category": "Sports",
-      "weekly_volume_usd": 98968.40012500001,
-      "weekly_trades": 1656,
+      "category": "Politics",
+      "weekly_volume_usd": 5567.631937,
+      "weekly_trades": 23,
       "yes_price_7d_ago": null,
       "yes_price_change_pp": null
     }
