@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-10-19",
-  "generated_at": "2026-10-26T16:16:33+00:00",
+  "as_of": "2026-10-26",
+  "generated_at": "2026-11-02T06:50:25+00:00",
   "sentences": [
-    "Traders moved $669 million through Polymarket in the week of 2026-10-19, across 17.3 million individual trades. Algorithmic wallets accounted for 54% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 46%.",
-    "The most-traded market was \"Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?\", pulling in $5 million of volume. Politics dominated the week's attention.",
-    "The usual pattern held: algorithmic traders made $183K (+148 bps on volume) while retail traders lost $4K (-42 bps)."
+    "Traders moved $707 million through Polymarket in the week of 2026-10-26, across 16.6 million individual trades. Algorithmic wallets accounted for 53% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 47%.",
+    "The most-traded market was \"Will Benjamin Netanyahu be the next Prime Minister of Israel?\", pulling in $11 million of volume. Politics dominated the week's attention.",
+    "Both sides made money this week. Bots collected $173K (+110 bps); retail collected $32K (+261 bps)."
   ],
-  "headline_quote": "Polymarket traders moved $669 million this week, with the biggest action on \"Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?\".",
+  "headline_quote": "Polymarket traders moved $707 million this week, with the biggest action on \"Will Benjamin Netanyahu be the next Prime Minister of Israel?\".",
   "author": "Joshua Della Vedova, University of San Diego",
   "attribution_short": "Della Vedova (2026), Della Vedova Prediction Market Indices",
   "hand_edited": false,

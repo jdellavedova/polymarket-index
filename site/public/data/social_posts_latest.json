@@ -1,9 +1,9 @@
 {
-  "as_of": "2026-10-19",
-  "generated_at": "2026-10-26T16:16:39+00:00",
+  "as_of": "2026-10-26",
+  "generated_at": "2026-11-02T06:50:30+00:00",
   "hand_edited": false,
-  "linkedin": "DV-PMI Weekly Update | Week of 2026-10-19\n\nPolymarket traders moved $669 million this week across 17.3M individual trades.\n\nKey numbers:\n  Bot share of counterparty events: 54%\n  Non-bot probability-weighting index (Prelec alpha): 0.984 (Kahneman-Tversky benchmark: 0.65)\n  Highest-volume market: \"Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?\" ($5 million)\n  On resolved trades: bots +$183K, active retail -$4K.\n\nCumulative since Nov 2022: bots $140 million, active retail -$82 million.\n\nThese indices are updated every Monday from on-chain Polymarket data (312 GB, 274 million resolved trades). Full methodology and downloads at https://jdellavedova.com\n\n#PredictionMarkets #Finance #Polymarket #BehavioralFinance",
-  "twitter": "Polymarket W43 update: $669 million traded, bots 54% of counterparty events. Cumulative since 2022: bots +$140M, retail -$82M.\n\nhttps://jdellavedova.com",
+  "linkedin": "DV-PMI Weekly Update | Week of 2026-10-26\n\nPolymarket traders moved $707 million this week across 16.6M individual trades.\n\nKey numbers:\n  Bot share of counterparty events: 53%\n  Non-bot probability-weighting index (Prelec alpha): 1.037 (Kahneman-Tversky benchmark: 0.65)\n  Highest-volume market: \"Will Benjamin Netanyahu be the next Prime Minister of Israel?\" ($11 million)\n  On resolved trades: bots +$173K, active retail +$32K.\n\nCumulative since Nov 2022: bots $140 million, active retail -$82 million.\n\nThese indices are updated every Monday from on-chain Polymarket data (312 GB, 274 million resolved trades). Full methodology and downloads at https://jdellavedova.com\n\n#PredictionMarkets #Finance #Polymarket #BehavioralFinance",
+  "twitter": "Polymarket W44 update: $707 million traded, bots 53% of counterparty events. Cumulative since 2022: bots +$140M, retail -$82M.\n\nhttps://jdellavedova.com",
   "twitter_note": "(152 chars incl. URL. Attach press/cumulative_pnl.png from the press kit.)",
   "suggested_image": "press/cumulative_pnl.png",
   "notes": "Set hand_edited to true and edit linkedin/twitter to preserve your edits across future pipeline runs (as long as as_of matches)."
