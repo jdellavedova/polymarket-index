@@ -1,20 +1,20 @@
-DV-PMI WEEKLY DIGEST / Week of 2026-10-26
+DV-PMI WEEKLY DIGEST / Week of 2026-11-02
 ============================================================
 
-Polymarket traders moved $707 million this week, with the biggest action on "Will Benjamin Netanyahu be the next Prime Minister of Israel?".
+Polymarket traders moved $683 million this week, with the biggest action on "Will the Democratic Party control the House after the 2026 Midterm elections?".
 
 ------------------------------------------------------------
 THIS WEEK VS LAST
 ------------------------------------------------------------
-  Total USD volume        $707M  (+5.6% WoW)
-  Total trades            16.6M  (-4.2% WoW)
-  Active wallets          131,290  (+4.0% WoW)
-  Bot share of trades     53.5%  (-0.3pp WoW)
+  Total USD volume        $683M  (-3.4% WoW)
+  Total trades            17.0M  (+2.4% WoW)
+  Active wallets          122,433  (-6.7% WoW)
+  Bot share of trades     49.8%  (-3.7pp WoW)
 
 ------------------------------------------------------------
 INDEX SCOREBOARD (ranked by stretch vs own 52-week history)
 ------------------------------------------------------------
-  Bot Share of Volume                       53.5%   4w avg    54.9%   z -2.27
+  Bot Share of Volume                       49.8%   4w avg    53.1%   z -2.35
   Longshot/Favorite Gap                    +0.031   4w avg   +0.028   z +1.76
   Probability Weighting (non-bot alpha)     1.037   4w avg    1.022   z +0.95
   Market Efficiency (Prelec R2)             0.997   4w avg    0.996   z +0.77
@@ -23,36 +23,36 @@ INDEX SCOREBOARD (ranked by stretch vs own 52-week history)
 ------------------------------------------------------------
 THE STORY
 ------------------------------------------------------------
-Traders moved $707 million through Polymarket in the week of 2026-10-26, across 16.6 million individual trades. Algorithmic wallets accounted for 53% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 47%.
+Traders moved $683 million through Polymarket in the week of 2026-11-02, across 17.0 million individual trades. Algorithmic wallets accounted for 50% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 50%.
 
-The most-traded market was "Will Benjamin Netanyahu be the next Prime Minister of Israel?", pulling in $11 million of volume. Politics dominated the week's attention.
+The most-traded market was "Will the Democratic Party control the House after the 2026 Midterm elections?", pulling in $9 million of volume. Politics dominated the week's attention.
 
-Both sides made money this week. Bots collected $173K (+110 bps); retail collected $32K (+261 bps).
+Both sides made money this week. Bots collected $677 (+29 bps); retail collected $117 (+105 bps).
 
 ------------------------------------------------------------
 MOST-TRADED MARKETS THIS WEEK
 ------------------------------------------------------------
-  1. $11M  Will Benjamin Netanyahu be the next Prime Minister of Israel? [Geopolitics]
-  2. $5M  Will Luiz Inácio Lula da Silva win the 2026 Brazilian presidential election? [Politics]
-  3. $5M  Will Harry Kane win the 2026 Ballon d'Or? [Other]
-  4. $4M  Will the Democratic Party control the House after the 2026 Midterm elections? [Politics]
-  5. $3M  Will the Republican Party control the House after the 2026 Midterm elections? [Politics]
+  1. $9M  Will the Democratic Party control the House after the 2026 Midterm elections? [Politics]
+  2. $8M  2026 Balance of Power: R Senate, R House [Politics]
+  3. $6M  Will the Republican Party control the House after the 2026 Midterm elections? [Politics]
+  4. $5M  Will the Democratic Party control the Senate after the 2026 Midterm elections? [Politics]
+  5. $4M  2026 Balance of Power: D Senate, D House [Politics]
 
 ------------------------------------------------------------
 WHO MADE MONEY (resolved trades only)
 ------------------------------------------------------------
-  Active Retail          $32K   (+261 bps on volume)
-  Bot                   $173K   (+110 bps on volume)
-  Casual                 $14K   (+705 bps on volume)
-  One-Shot                $4K   (+1923 bps on volume)
-  Sophisticated          -$5K   (-190 bps on volume)
-  unclassified         -$219K   (-218 bps on volume)
+  Active Retail          $117   (+105 bps on volume)
+  Bot                    $677   (+29 bps on volume)
+  Casual                  $13   (+43 bps on volume)
+  One-Shot                 $5   (+881 bps on volume)
+  Sophisticated          $145   (+1286 bps on volume)
+  unclassified          -$957   (-43 bps on volume)
 
 ------------------------------------------------------------
 SURVEILLANCE
 ------------------------------------------------------------
   Event-level informed-trading test:    11 trader-event pairs survive at 5% (0 on placebo)
-  Accuracy-outlier wallets active this week: 357 of 10,485
+  Accuracy-outlier wallets active this week: 437 of 10,485
   Sustained-accuracy outliers (skill screen): 10,485 of 705,883 tested (1.49%)
   After strict statistical correction:  1,558
   Flags mark statistical patterns, not proof; the wallet-level screen measures sustained skill, not information.
@@ -63,4 +63,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-11-02T06:50:30+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-11-09T06:34:53+00:00)

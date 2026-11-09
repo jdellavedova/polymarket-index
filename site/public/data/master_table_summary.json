@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-02T06:50:25+00:00",
-  "n_weeks": 206,
+  "generated_at": "2026-11-09T06:34:49+00:00",
+  "n_weeks": 207,
   "first_date": "2022-11-21",
-  "last_date": "2026-10-26",
+  "last_date": "2026-11-02",
   "columns": [
     "date",
     "pwi_alpha",

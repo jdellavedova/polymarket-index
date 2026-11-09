@@ -1,56 +1,56 @@
 {
   "index_name": "Weekly Activity",
   "short_name": "Activity",
-  "as_of": "2026-10-26",
-  "week": "2026-W44",
-  "total_usd_volume": 706829957.8564976,
-  "total_trades": 16616564,
-  "total_participations": 33233128,
-  "active_wallets": 131290,
+  "as_of": "2026-11-02",
+  "week": "2026-W45",
+  "total_usd_volume": 683088098.3546609,
+  "total_trades": 17019417,
+  "total_participations": 34038834,
+  "active_wallets": 122433,
   "new_wallets": 0,
-  "flagged_active_this_week": 357,
+  "flagged_active_this_week": 437,
   "by_type_participations": {
-    "bot": 17767036,
-    "active_retail": 1687951,
-    "sophisticated": 254433,
-    "casual": 228017,
-    "one_shot": 31986
+    "bot": 16939364,
+    "active_retail": 1808103,
+    "sophisticated": 251809,
+    "casual": 200510,
+    "one_shot": 33376
   },
   "by_type_volume": {
-    "bot": 849738342.6567173,
-    "active_retail": 67413775.29693499,
-    "sophisticated": 21994208.983240988,
-    "casual": 9133569.900429001,
-    "one_shot": 1394768.5478629998
+    "bot": 788187867.2646146,
+    "active_retail": 68925031.70006998,
+    "sophisticated": 22258466.02632501,
+    "casual": 8527936.589994002,
+    "one_shot": 730717.290901
   },
   "by_type_share": {
-    "bot": 0.5346182279320802,
-    "active_retail": 0.050791216523464175,
-    "sophisticated": 0.0076560051765214516,
-    "casual": 0.006861135671610569,
-    "one_shot": 0.0009624733488824766
+    "bot": 0.4976481861864011,
+    "active_retail": 0.05311882892345842,
+    "sophisticated": 0.007397697582708033,
+    "casual": 0.005890624808123569,
+    "one_shot": 0.0009805271238139356
   },
-  "volume_ma4w": 608139615.541659,
-  "volume_ma13w": 541300148.2847878,
-  "volume_z52w": 0.09941963766740258,
+  "volume_ma4w": 654214813.0895177,
+  "volume_ma13w": 558599737.3343157,
+  "volume_z52w": -0.030007545130269965,
   "new_wallets_ma4w": 0.0,
   "new_wallets_ma13w": 0.0,
   "rolling_volume": {
-    "mean_52w": 684431119.3971075,
-    "sd_52w": 225295917.23441103,
+    "mean_52w": 689745284.9041883,
+    "sd_52w": 221850421.97310564,
     "min_52w": 364878803.36539686,
     "max_52w": 1263360900.3576396,
     "n_obs_52w": 52
   },
   "rolling_new_wallets": {
-    "mean_52w": 27330.25,
-    "sd_52w": 18937.101456234675,
+    "mean_52w": 26639.75,
+    "sd_52w": 19269.965644906646,
     "min_52w": 0.0,
     "max_52w": 61323.0,
     "n_obs_52w": 52
   },
-  "n_weeks_history": 203,
+  "n_weeks_history": 204,
   "methodology": "Every Polymarket match has a maker (limit order) and a taker (market order). Per-type shares count each match twice, once for the maker's type and once for the taker's type \u2014 an honest participation measure. `total_trades` is the match count (single-count), so total_participations = 2 * total_trades by construction. new_wallets is the count of wallets whose first-ever trade fell in the week. flagged_active_this_week is the count of Paper 2-flagged wallets that participated. Settled weeks are computed once and kept; each refresh recomputes the trailing 4 weeks.",
-  "generated_at": "2026-11-02T06:25:43+00:00",
+  "generated_at": "2026-11-09T06:10:27+00:00",
   "source": "read_parquet('H:/Research/10. Prediction/data/blockchain/trades_parquet/**/*.parquet', hive_partitioning=1)"
 }
