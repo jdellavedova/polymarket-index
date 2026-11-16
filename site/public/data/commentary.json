@@ -1,6 +1,15 @@
 {
   "notes": [
     {
+      "date": "2026-11-09",
+      "tag": "POLITICS",
+      "title": "Week of 2026-11-09: Will the Democratic Party control the House after the 2026 Midterm elections?",
+      "body": "Polymarket traders moved $524 million this week, with the biggest action on \"Will the Democratic Party control the House after the 2026 Midterm elections?\". Traders moved $524 million through Polymarket in the week of 2026-11-09, across 15.4 million individual trades. Algorithmic wallets accounted for 49% of weekly counterparty events (both maker and taker sides counted); everyone else split the...",
+      "href": "/briefings",
+      "href_label": "See this week's briefings",
+      "auto_generated": true
+    },
+    {
       "date": "2026-11-02",
       "tag": "POLITICS",
       "title": "Week of 2026-11-02: Will the Democratic Party control the House after the 2026 Midterm elections?",
@@ -263,5 +272,5 @@
     }
   ],
   "notes_url": "/notes",
-  "generated_at": "2026-11-09T06:34:49+00:00"
+  "generated_at": "2026-11-16T06:57:48+00:00"
 }

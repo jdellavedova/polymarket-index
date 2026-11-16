@@ -1,33 +1,33 @@
-DV-PMI WEEKLY DIGEST / Week of 2026-11-02
+DV-PMI WEEKLY DIGEST / Week of 2026-11-09
 ============================================================
 
-Polymarket traders moved $683 million this week, with the biggest action on "Will the Democratic Party control the House after the 2026 Midterm elections?".
+Polymarket traders moved $524 million this week, with the biggest action on "Will the Democratic Party control the House after the 2026 Midterm elections?".
 
 ------------------------------------------------------------
 THIS WEEK VS LAST
 ------------------------------------------------------------
-  Total USD volume        $683M  (-3.4% WoW)
-  Total trades            17.0M  (+2.4% WoW)
-  Active wallets          122,433  (-6.7% WoW)
-  Bot share of trades     49.8%  (-3.7pp WoW)
+  Total USD volume        $524M  (-23.2% WoW)
+  Total trades            15.4M  (-9.2% WoW)
+  Active wallets          114,007  (-6.9% WoW)
+  Bot share of trades     48.8%  (-1.0pp WoW)
 
 ------------------------------------------------------------
 INDEX SCOREBOARD (ranked by stretch vs own 52-week history)
 ------------------------------------------------------------
-  Bot Share of Volume                       49.8%   4w avg    53.1%   z -2.35
-  Longshot/Favorite Gap                    +0.031   4w avg   +0.028   z +1.76
-  Probability Weighting (non-bot alpha)     1.037   4w avg    1.022   z +0.95
-  Market Efficiency (Prelec R2)             0.997   4w avg    0.996   z +0.77
-  Execution Gap (bot vs retail)            -0.036   4w avg   -0.030   z -0.67
+  Bot Share of Volume                       48.8%   4w avg    51.4%   z -2.25
+  Longshot/Favorite Gap                    +0.031   4w avg   +0.029   z +1.67
+  Market Efficiency (Prelec R2)             0.997   4w avg    0.997   z +0.73
+  Execution Gap (bot vs retail)            -0.001   4w avg   -0.019   z -0.22
+  Probability Weighting (non-bot alpha)     0.975   4w avg    1.004   z +0.20
 
 ------------------------------------------------------------
 THE STORY
 ------------------------------------------------------------
-Traders moved $683 million through Polymarket in the week of 2026-11-02, across 17.0 million individual trades. Algorithmic wallets accounted for 50% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 50%.
+Traders moved $524 million through Polymarket in the week of 2026-11-09, across 15.4 million individual trades. Algorithmic wallets accounted for 49% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 51%.
 
 The most-traded market was "Will the Democratic Party control the House after the 2026 Midterm elections?", pulling in $9 million of volume. Politics dominated the week's attention.
 
-Both sides made money this week. Bots collected $677 (+29 bps); retail collected $117 (+105 bps).
+Both sides lost money on resolved trades this week. Bots dropped $2K (-83 bps); retail dropped $67 (-60 bps). Much of the activity was in markets that have not yet resolved.
 
 ------------------------------------------------------------
 MOST-TRADED MARKETS THIS WEEK
@@ -41,18 +41,18 @@ MOST-TRADED MARKETS THIS WEEK
 ------------------------------------------------------------
 WHO MADE MONEY (resolved trades only)
 ------------------------------------------------------------
-  Active Retail          $117   (+105 bps on volume)
-  Bot                    $677   (+29 bps on volume)
-  Casual                  $13   (+43 bps on volume)
-  One-Shot                 $5   (+881 bps on volume)
-  Sophisticated          $145   (+1286 bps on volume)
-  unclassified          -$957   (-43 bps on volume)
+  Active Retail          -$67   (-60 bps on volume)
+  Bot                    -$2K   (-83 bps on volume)
+  Casual                   $7   (+17 bps on volume)
+  One-Shot               -$20   (-915 bps on volume)
+  Sophisticated          -$21   (-116 bps on volume)
+  unclassified            $2K   (+108 bps on volume)
 
 ------------------------------------------------------------
 SURVEILLANCE
 ------------------------------------------------------------
   Event-level informed-trading test:    11 trader-event pairs survive at 5% (0 on placebo)
-  Accuracy-outlier wallets active this week: 437 of 10,485
+  Accuracy-outlier wallets active this week: 344 of 10,485
   Sustained-accuracy outliers (skill screen): 10,485 of 705,883 tested (1.49%)
   After strict statistical correction:  1,558
   Flags mark statistical patterns, not proof; the wallet-level screen measures sustained skill, not information.
@@ -63,4 +63,4 @@ Downloads + DOI: https://jdellavedova.com/data
 Methodology:     https://jdellavedova.com/methodology
 
 To unsubscribe, reply with UNSUBSCRIBE.
--- Joshua Della Vedova, University of San Diego (2026-11-09T06:34:53+00:00)
+-- Joshua Della Vedova, University of San Diego (2026-11-16T06:57:53+00:00)

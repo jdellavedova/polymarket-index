@@ -1,9 +1,9 @@
 {
-  "as_of": "2026-11-02",
-  "generated_at": "2026-11-09T06:34:53+00:00",
+  "as_of": "2026-11-09",
+  "generated_at": "2026-11-16T06:57:53+00:00",
   "hand_edited": false,
-  "linkedin": "DV-PMI Weekly Update | Week of 2026-11-02\n\nPolymarket traders moved $683 million this week across 17.0M individual trades.\n\nKey numbers:\n  Bot share of counterparty events: 50%\n  Non-bot probability-weighting index (Prelec alpha): 1.037 (Kahneman-Tversky benchmark: 0.65)\n  Highest-volume market: \"Will the Democratic Party control the House after the 2026 Midterm elections?\" ($9 million)\n  On resolved trades: bots +$677, active retail +$117.\n\nCumulative since Nov 2022: bots $140 million, active retail -$82 million.\n\nThese indices are updated every Monday from on-chain Polymarket data (312 GB, 274 million resolved trades). Full methodology and downloads at https://jdellavedova.com\n\n#PredictionMarkets #Finance #Polymarket #BehavioralFinance",
-  "twitter": "Polymarket W45 update: $683 million traded, bots 50% of counterparty events. Cumulative since 2022: bots +$140M, retail -$82M.\n\nhttps://jdellavedova.com",
+  "linkedin": "DV-PMI Weekly Update | Week of 2026-11-09\n\nPolymarket traders moved $524 million this week across 15.4M individual trades.\n\nKey numbers:\n  Bot share of counterparty events: 49%\n  Non-bot probability-weighting index (Prelec alpha): 0.975 (Kahneman-Tversky benchmark: 0.65)\n  Highest-volume market: \"Will the Democratic Party control the House after the 2026 Midterm elections?\" ($9 million)\n  On resolved trades: bots -$2K, active retail -$67.\n\nCumulative since Nov 2022: bots $140 million, active retail -$82 million.\n\nThese indices are updated every Monday from on-chain Polymarket data (312 GB, 274 million resolved trades). Full methodology and downloads at https://jdellavedova.com\n\n#PredictionMarkets #Finance #Polymarket #BehavioralFinance",
+  "twitter": "Polymarket W46 update: $524 million traded, bots 49% of counterparty events. Cumulative since 2022: bots +$140M, retail -$82M.\n\nhttps://jdellavedova.com",
   "twitter_note": "(152 chars incl. URL. Attach press/cumulative_pnl.png from the press kit.)",
   "suggested_image": "press/cumulative_pnl.png",
   "notes": "Set hand_edited to true and edit linkedin/twitter to preserve your edits across future pipeline runs (as long as as_of matches)."

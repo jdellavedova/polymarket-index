@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-11-02",
-  "generated_at": "2026-11-09T06:34:49+00:00",
+  "as_of": "2026-11-09",
+  "generated_at": "2026-11-16T06:57:48+00:00",
   "sentences": [
-    "Traders moved $683 million through Polymarket in the week of 2026-11-02, across 17.0 million individual trades. Algorithmic wallets accounted for 50% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 50%.",
+    "Traders moved $524 million through Polymarket in the week of 2026-11-09, across 15.4 million individual trades. Algorithmic wallets accounted for 49% of weekly counterparty events (both maker and taker sides counted); everyone else split the remaining 51%.",
     "The most-traded market was \"Will the Democratic Party control the House after the 2026 Midterm elections?\", pulling in $9 million of volume. Politics dominated the week's attention.",
-    "Both sides made money this week. Bots collected $677 (+29 bps); retail collected $117 (+105 bps)."
+    "Both sides lost money on resolved trades this week. Bots dropped $2K (-83 bps); retail dropped $67 (-60 bps). Much of the activity was in markets that have not yet resolved."
   ],
-  "headline_quote": "Polymarket traders moved $683 million this week, with the biggest action on \"Will the Democratic Party control the House after the 2026 Midterm elections?\".",
+  "headline_quote": "Polymarket traders moved $524 million this week, with the biggest action on \"Will the Democratic Party control the House after the 2026 Midterm elections?\".",
   "author": "Joshua Della Vedova, University of San Diego",
   "attribution_short": "Della Vedova (2026), Della Vedova Prediction Market Indices",
   "hand_edited": false,
